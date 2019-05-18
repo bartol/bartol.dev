@@ -1,19 +1,53 @@
 {
   "name": "blog.bartol.dev",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Bartol's blog",
+  "author": "Bartol Deak <b@bartol.dev>",
+  "main": "n/a",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bartold3ak/blog.bartol.dev.git"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bartold3ak/blog.bartol.dev/issues"
   },
-  "homepage": "https://github.com/bartold3ak/blog.bartol.dev#readme"
+  "homepage": "https://github.com/bartold3ak/blog.bartol.dev#readme",
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.11",
+    "@mdx-js/mdx": "^1.0.19",
+    "@mdx-js/react": "^1.0.16",
+    "gatsby": "^2.5.5",
+    "gatsby-image": "^2.1.0",
+    "gatsby-mdx": "^0.6.3",
+    "gatsby-plugin-emotion": "^4.0.6",
+    "gatsby-plugin-feed": "^2.2.0",
+    "gatsby-plugin-google-analytics": "^2.0.20",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.1",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.37",
+    "gatsby-remark-images": "^3.0.11",
+    "gatsby-remark-prismjs": "^3.2.9",
+    "gatsby-remark-responsive-iframe": "^2.1.1",
+    "gatsby-source-filesystem": "^2.0.36",
+    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.1.19",
+    "prismjs": "^1.16.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.1"
+  }
 }

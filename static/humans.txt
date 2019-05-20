@@ -1,0 +1,24 @@
+humanstxt.org
+
+/* TEAM */
+
+  Me: Bartol Deak
+  Site: https://blog.bartol.dev/
+  Contact: contact@bartol.dev
+  Twitter: @BartolDeak
+  Location: Zadar, Croatia
+
+
+/* THANKS */
+
+  Stack Overflow for helping me fix rookie mistakes
+  Gatsby for making such great and easy tool for making awesome web pages
+
+
+/* SITE */
+
+  Last update: 2019/05/19
+  Standards: HTML5, CSS3, SVG
+  Components: Gatsby, React
+  Tools: Yarn
+  Software: VS Code

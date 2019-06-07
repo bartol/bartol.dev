@@ -8,7 +8,9 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
-    "serve": "gatsby build && gatsby serve"
+    "serve": "gatsby build && gatsby serve",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,10 @@
   },
   "homepage": "https://github.com/bartold3ak/blog.bartol.dev#readme",
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.11",
     "gatsby": "^2.5.5",
+    "gatsby-plugin-emotion": "^4.0.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },

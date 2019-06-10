@@ -11,11 +11,7 @@ const usePosts = () => {
             spoiler
             image {
               sharp: childImageSharp {
-                fluid(
-                  maxWidth: 100
-                  maxHeight: 100
-                  duotone: { shadow: "#663399", highlight: "#ddbbff" }
-                ) {
+                fluid(duotone: { shadow: "#212121", highlight: "#299999" }) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

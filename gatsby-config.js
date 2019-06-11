@@ -16,7 +16,8 @@ module.exports = {
         },
         gatsbyRemarkPlugins: [
           { resolve: 'gatsby-remark-images' },
-          { resolve: 'gatsby-remark-prismjs' }
+          { resolve: 'gatsby-remark-prismjs' },
+          { resolve: 'gatsby-remark-reading-time' }
         ]
       }
     },
@@ -36,18 +37,5 @@ module.exports = {
         analyzerMode: 'static'
       }
     }
-    // {
-    //   resolve: 'gatsby-transformer-remark',
-    //   options: {
-    //     plugins: [
-    //       {
-    //         resolve: `gatsby-remark-prismjs`,
-    //         options: {
-    //           showLineNumbers: true
-    //         }
-    //       }
-    //     ]
-    //   }
-    // }
   ]
 }

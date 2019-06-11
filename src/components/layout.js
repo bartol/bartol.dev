@@ -32,11 +32,12 @@ const Layout = ({ children }) => {
           html,
           body {
             margin: 0;
-            color: rgba(0, 0, 0, 0.84);
-            font-family: 'Source Sans Pro', sans-serif;
+            color: #3b3b3b; /* text color */
+            /* font-family: 'Source Sans Pro', sans-serif; */
+            font-family: 'IBM Plex Sans', sans-serif;
             font-size: 20px;
-            line-height: 1.6;
-            background-color: #fafafa;
+            line-height: 1.75;
+            background-color: #f7f7f7; /* bg col */
 
             > div {
               margin-top: 0;
@@ -48,7 +49,7 @@ const Layout = ({ children }) => {
             h4,
             h5,
             h6 {
-              color: #222;
+              color: #222222;
               font-weight: 600;
               line-height: 1.1;
 
@@ -57,18 +58,34 @@ const Layout = ({ children }) => {
               }
             }
 
+            p {
+              font-family: 'IBM Plex Serif', serif;
+              /* font-family: 'Source Serif Pro', serif; */
+            }
+
             strong {
-              color: #222;
+              color: #222222;
             }
 
             li {
               margin-top: 0.25rem;
+            }
+
+            br {
+              user-select: none;
+            }
+
+            a {
+              color: #17b897;
             }
           }
 
           img {
             box-shadow: 0 5px 10px rgba(154, 160, 185, 0.5),
               0 15px 40px rgba(166, 173, 201, 0.8) !important;
+            /* box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+              0 15px 40px rgba(166, 173, 201, 0.2) !important;  dark mode*/
+
             border-radius: 10px;
           }
 
@@ -79,6 +96,11 @@ const Layout = ({ children }) => {
             vertical-align: -0.1em;
             box-shadow: none !important;
             border-radius: 0;
+          }
+
+          p > div {
+            /* background-color: red; */
+            display: inline;
           }
 
           .gatsby-highlight-code-line {
@@ -125,17 +147,23 @@ const Layout = ({ children }) => {
           .gatsby-highlight pre[class*='language-'].line-numbers {
             padding-left: 2.8em;
           } */
+          /* p:first-of-type::first-letter {
+            font-weight: 600;
+            float: left;
+            font-size: 75px;
+            line-height: 60px;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+            margin: 0;
+          } */
         `}
       />
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
         <link
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap"
+          href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,600|IBM+Plex+Sans|IBM+Plex+Serif&display=swap"
           rel="stylesheet"
         />
       </Helmet>

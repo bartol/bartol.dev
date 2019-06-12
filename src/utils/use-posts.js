@@ -8,7 +8,8 @@ const usePosts = () => {
           frontmatter {
             title
             slug
-            spoiler
+            date(formatString: "MMMM Do, YYYY")
+            tags
             image {
               sharp: childImageSharp {
                 fluid(duotone: { shadow: "#212121", highlight: "#299999" }) {
@@ -17,7 +18,8 @@ const usePosts = () => {
               }
             }
           }
-          excerpt
+          timeToRead
+          excerpt(pruneLength: 110)
         }
       }
     }
@@ -26,8 +28,10 @@ const usePosts = () => {
   return data.allMdx.nodes.map(post => ({
     title: post.frontmatter.title,
     slug: post.frontmatter.slug,
-    spoiler: post.frontmatter.spoiler,
+    date: post.frontmatter.date,
+    tags: post.frontmatter.tags,
     image: post.frontmatter.image,
+    timeToRead: post.timeToRead,
     excerpt: post.excerpt
   }))
 }

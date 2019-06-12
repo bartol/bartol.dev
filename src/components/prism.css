@@ -2,7 +2,8 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: #d6deeb;
   /* font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; */
-  font-family: 'Source Code Pro', monospace;
+  /* font-family: 'Source Code Pro', monospace; */
+  font-family: 'IBM Plex Mono', monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;

@@ -1,3 +1,31 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
+const postQuery = `{
+  posts: allMdx {
+    edges {
+      node {
+          frontmatter {
+            title
+            spoiler
+            date(formatString: "MMMM Do, YYYY")
+            tags
+          }
+          excerpt(pruneLength: 100000)
+      }
+    }
+  }
+}`
+
+const queries = [
+  {
+    query: postQuery,
+    transformer: ({ data }) => data.posts.edges.map(({ node }) => node), // optional
+    settings: {}
+  }
+]
+
 module.exports = {
   siteMetadata: {
     title: "Bartol's Blog",
@@ -26,6 +54,23 @@ module.exports = {
       options: {
         name: 'posts',
         path: 'posts'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000 // default: 1000
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: process.env.GA_TRACKING
       }
     },
     {

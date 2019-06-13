@@ -3,12 +3,13 @@ require('dotenv').config({
 })
 
 const postQuery = `{
-  posts: allMdx {
+  posts: allMdx(
+    filter: { frontmatter: { published: { eq: true } } }
+  ) {
     edges {
       node {
           frontmatter {
             title
-            spoiler
             date(formatString: "MMMM Do, YYYY")
             tags
           }
@@ -36,6 +37,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-dark-mode',
     {
       resolve: 'gatsby-mdx',
       options: {
@@ -69,7 +71,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
         trackingId: process.env.GA_TRACKING
       }
     },

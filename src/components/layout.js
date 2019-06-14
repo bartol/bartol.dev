@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import Header from '../components/header'
 import Helmet from 'react-helmet'
 import useSiteMetadata from '../utils/use-sitemetadata'
-import '../../public/prism.css'
+import './prism.css'
 // import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 const Main = styled.main`
@@ -29,15 +29,50 @@ const Layout = ({ children }) => {
             margin-top: 1rem;
           } */
 
+          /* colors */
+
+          body {
+            --bg: #f7f7f7; /* 1 */
+            --main: #089a82; /* 7 */
+            --heading: #222222; /* 10 */
+            --parameters: #7e7e7e; /* 6 */
+            --text: #3b3b3b; /* 9 */
+            --link: #089a82; /* 7 */
+            --line: #cfcfcf; /* 3 */
+            --shadow: 0 5px 10px rgba(154, 160, 185, 0.5),
+              0 15px 40px rgba(166, 173, 201, 0.8);
+          }
+
+          body.dark {
+            --bg: #222222; /* 10 */
+            --main: #089a82; /* 6 */
+            --heading: #f7f7f7; /* 1 */
+            --parameters: #b1b1b1; /* 4 */
+            --text: #e1e1e1; /* 2 */
+            --link: #089a82; /* 6 */
+            --line: #515151; /* 8 */
+            --shadow: 0 5px 10px rgba(15, 15, 15, 0.5),
+              0 15px 40px rgba(15, 15, 15, 0.8);
+          }
+
           html,
           body {
             margin: 0;
-            color: #3b3b3b; /* text color */
+            color: var(--text); /* text color */
+
             /* font-family: 'Source Sans Pro', sans-serif; */
             font-family: 'IBM Plex Sans', sans-serif;
-            font-size: 20px;
+            /* font-size: 20px; */
+            @media (min-width: 320px) {
+              font-size: calc(16px + 4 * ((100vw - 320px) / (640 - 320)));
+            }
+
+            @media (min-width: 640px) {
+              font-size: 20px;
+            }
+
             line-height: 1.75;
-            background-color: #f7f7f7; /* bg col */
+            background-color: var(--bg);
 
             > div {
               margin-top: 0;
@@ -49,7 +84,7 @@ const Layout = ({ children }) => {
             h4,
             h5,
             h6 {
-              color: #222222;
+              color: var(--heading);
               font-weight: 600;
               line-height: 1.1;
 
@@ -58,13 +93,20 @@ const Layout = ({ children }) => {
               }
             }
 
-            p {
-              font-family: 'IBM Plex Serif', serif;
-              /* font-family: 'Source Serif Pro', serif; */
+            h1 {
+              font-size: 1.8rem;
+            }
+
+            h2 {
+              font-size: 1.5rem;
+            }
+
+            h3 {
+              font-size: 1.2rem;
             }
 
             strong {
-              color: #222222;
+              color: var(--heading);
             }
 
             li {
@@ -76,17 +118,14 @@ const Layout = ({ children }) => {
             }
 
             a {
-              color: #17b897;
+              color: var(--link);
+              text-decoration: none;
             }
           }
 
           img {
-            box-shadow: 0 5px 10px rgba(154, 160, 185, 0.5),
-              0 15px 40px rgba(166, 173, 201, 0.8) !important;
-            /* box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-              0 15px 40px rgba(166, 173, 201, 0.2) !important;  dark mode*/
-
-            border-radius: 10px;
+            box-shadow: var(--shadow) !important;
+            border-radius: 5px;
           }
 
           img.emoji {
@@ -118,13 +157,12 @@ const Layout = ({ children }) => {
           */
           .gatsby-highlight {
             background-color: #011627;
-            border-radius: 10px;
+            border-radius: 8px;
             /* margin: 20px 0; */
             padding: 1em;
             overflow: auto;
-            font-size: 16px;
-            box-shadow: 0 5px 10px rgba(154, 160, 185, 0.5),
-              0 15px 40px rgba(166, 173, 201, 0.8);
+            font-size: 0.8rem;
+            box-shadow: var(--shadow);
           }
 
           /**
@@ -162,6 +200,7 @@ const Layout = ({ children }) => {
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
+        <meta name="description" content={description} />
         <link
           href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,600|IBM+Plex+Sans|IBM+Plex+Serif&display=swap"
           rel="stylesheet"

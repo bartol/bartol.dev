@@ -9,9 +9,9 @@ const NavLink = styled.a`
   color: #f7f7f7;
   font-size: 0.9rem;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.1;
   margin: 0 0.75rem 0 0;
-  padding: 0.25rem 0;
+  /* padding: 0.25rem 0; */
   text-decoration: none;
 
   &.current-page {
@@ -24,28 +24,28 @@ const NavLink = styled.a`
 `
 
 const Wrapper = styled.div`
-  height: 56px;
+  height: 60px;
   position: sticky;
   top: 0;
   z-index: 99;
   background: var(--main);
-  /* border-bottom: 1px solid #17b897; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  /* padding: 1rem calc((100vw - 640px - 0.5rem) / 2); */
 `
 
 const HeaderBox = styled.header`
+  margin-top: 4.5px;
   max-width: 90vw;
   width: 640px;
   display: flex;
-  /* padding: 1rem 0; */
+  height: 92.5%;
   justify-content: space-between;
   align-items: center;
+  align-self: center;
 `
 
 const NavBox = styled.nav`
-  margin-top: 0;
   display: flex;
   align-items: center;
 `
@@ -90,6 +90,31 @@ const Slider = styled.div`
   }
 `
 
+const ProgressContainer = styled.div`
+  width: 100%;
+  height: 7.5%;
+  background: var(--main);
+`
+
+const ProgressBar = styled.div`
+  height: 100%;
+  background: #f7f7f7;
+  width: 0%;
+`
+
+window.onscroll = function() {
+  scrollBar()
+}
+
+function scrollBar() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop
+  let height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight
+  let scrolled = (winScroll / height) * 100
+  document.getElementById('progressbar').style.width = scrolled + '%'
+}
+
 const Header = () => (
   <Wrapper>
     <HeaderBox>
@@ -122,6 +147,9 @@ const Header = () => (
         )}
       </ThemeToggler>
     </HeaderBox>
+    <ProgressContainer>
+      <ProgressBar id="progressbar" />
+    </ProgressContainer>
   </Wrapper>
 )
 

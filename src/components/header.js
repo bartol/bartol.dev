@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 // import { Link } from 'gatsby'
 // import { Image } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import Scroll from './scroll'
 
 const NavLink = styled.a`
   color: #f7f7f7;
@@ -90,30 +91,30 @@ const Slider = styled.div`
   }
 `
 
-const ProgressContainer = styled.div`
-  width: 100%;
-  height: 7.5%;
-  background: var(--main);
-`
+// const ProgressContainer = styled.div`
+//   width: 100%;
+//   height: 7.5%;
+//   background: var(--main);
+// `
 
-const ProgressBar = styled.div`
-  height: 100%;
-  background: #f7f7f7;
-  width: 0%;
-`
+// const ProgressBar = styled.div`
+//   height: 100%;
+//   background: #f7f7f7;
+//   width: 0%;
+// `
 
-window.onscroll = function() {
-  scrollBar()
-}
+// window.onscroll = function() {
+//   scrollBar()
+// }
 
-function scrollBar() {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop
-  let height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight
-  let scrolled = (winScroll / height) * 100
-  document.getElementById('progressbar').style.width = scrolled + '%'
-}
+// function scrollBar() {
+//   let winScroll = document.body.scrollTop || document.documentElement.scrollTop
+//   let height =
+//     document.documentElement.scrollHeight -
+//     document.documentElement.clientHeight
+//   let scrolled = (winScroll / height) * 100
+//   document.getElementById('progressbar').style.width = scrolled + '%'
+// }
 
 const Header = () => (
   <Wrapper>
@@ -147,9 +148,7 @@ const Header = () => (
         )}
       </ThemeToggler>
     </HeaderBox>
-    <ProgressContainer>
-      <ProgressBar id="progressbar" />
-    </ProgressContainer>
+    <Scroll />
   </Wrapper>
 )
 

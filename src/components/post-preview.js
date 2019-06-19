@@ -6,9 +6,11 @@ import { css } from '@emotion/core'
 import Twemoji from 'react-twemoji'
 
 const Article = styled.article`
-  border-bottom: 1px solid var(--line); /* 3 */
-  margin-top: 0rem;
-  padding-bottom: 1rem;
+  /* border-bottom: 1px solid var(--line);  */
+  /* margin-top: 0.8rem; */
+  /* padding-bottom: 0.8rem; */
+  padding: 1.5rem 0;
+  position: relative;
   display: flex;
   flex-direction: row;
 
@@ -20,24 +22,41 @@ const Article = styled.article`
     font-size: 0.9rem;
   } */
 
-  &:first-of-type {
-    margin-top: 1rem;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 1px;
+    width: 98%;
+    border-bottom: 1px solid var(--line);
   }
 
-  &:last-of-type {
-    border-bottom: none;
+  h2 {
+    margin: 0;
+  }
+
+  &:first-of-type {
+    /* margin-top: 1.2rem; */
   }
 `
 
 const LinkBox = styled(Link)`
-  margin: 1rem 1rem 0 0;
-  width: 7.5rem;
+  margin-right: 1rem;
+  width: 75px;
+  height: 75px;
+  img {
+    width: 75px;
+    height: 75px;
+    box-shadow: none;
+  }
 `
 
 const ImageBox = styled(Image)`
-  width: 7.5rem;
-  height: 7.5rem;
-  box-shadow: var(--shadow);
+  width: 75px;
+  height: 75px;
+  /* box-shadow: var(--shadow); */
   /* @media (max-width: 720px) {
     width: 40vw;
     height: auto;
@@ -51,7 +70,7 @@ const FluidBox = styled.div`
   display: flex;
   /* background-color: red; */
   justify-content: start;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   /* @media (max-width: 590px) {
     flex-direction: column;
   } */
@@ -60,83 +79,79 @@ const FluidBox = styled.div`
 
 const Test = styled.p`
   display: inline-block;
-  margin: 12px 18px 0 0;
+  margin: 0.55rem 1rem 0 0;
   font-size: 0.9rem;
   color: var(--parameters);
   line-height: 1.1;
 
   @media (max-width: 380px) {
-    font-size: 0.7rem;
+    /* font-size: 0.7rem; */
   }
 `
 
-const Excerpt = styled.p`
-  color: var(--text);
-  line-height: 1.4;
-  margin-top: 5px;
-  @media (max-width: 720px) {
-    display: none;
+const PostPreview = ({ hit }) => {
+  let img
+  if (!hit.frontmatter.image || hit.frontmatter.image.extension === 'svg') {
+    img = <img src={hit.frontmatter.image.publicURL} />
+  } else {
+    img = (
+      <ImageBox
+        fluid={hit.frontmatter.image.sharp.fluid}
+        alt={hit.frontmatter.title}
+      />
+    )
   }
-`
 
-const PostPreview = ({ post }) => (
-  <Article>
-    <LinkBox to={post.slug}>
-      <ImageBox fluid={post.image.sharp.fluid} alt={post.title} />
-    </LinkBox>
-    <div
-      css={css`
-        /* max-width: calc(640px - 150px - 20px); */
-        word-wrap: break-word;
-      `}
-    >
-      <h2
-        css={css`
-          margin-top: 1.1rem;
-
-          @media (max-width: 560px) {
-            font-size: 1.3rem;
-          }
-
-          @media (max-width: 450px) {
-            font-size: 1.2rem;
-          }
-
-          @media (max-width: 380px) {
-            font-size: 1.075rem;
-          }
-        `}
-      >
-        <Link
-          to={post.slug}
+  return (
+    <>
+      <Article>
+        <LinkBox to={hit.frontmatter.slug}>{img}</LinkBox>
+        <div
           css={css`
-            color: var(--main);
+            /* max-width: calc(640px - 150px - 20px); */
+            height: 70px;
+            /* margin-top: 0.4rem; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
           `}
         >
-          {post.title}
-        </Link>
-      </h2>
-      <FluidBox>
-        <Test>
-          <Twemoji>
-            <span role="img" aria-label="calendar emoji">
-              🗓
-            </span>{' '}
-            {post.date}
-          </Twemoji>
-        </Test>
-        <Test>
-          <Twemoji>
-            <span role="img" aria-label="clock emoji">
-              ⏱️
-            </span>{' '}
-            {post.timeToRead} min read
-          </Twemoji>
-        </Test>
-      </FluidBox>
-      <Excerpt>{post.excerpt}</Excerpt>
-    </div>
-  </Article>
-)
-
+          <h2
+            css={css`
+              font-size: 24px;
+            `}
+          >
+            <Link
+              to={hit.frontmatter.slug}
+              css={css`
+                color: var(--heading);
+                font-weight: 600;
+              `}
+            >
+              {hit.frontmatter.title}
+            </Link>
+          </h2>
+          <FluidBox>
+            <Test>
+              <Twemoji>
+                <span role="img" aria-label="calendar emoji">
+                  🗓
+                </span>{' '}
+                {hit.frontmatter.date}
+              </Twemoji>
+            </Test>
+            <Test>
+              <Twemoji>
+                <span role="img" aria-label="clock emoji">
+                  ⏱️
+                </span>{' '}
+                {hit.timeToRead} min read
+              </Twemoji>
+            </Test>
+          </FluidBox>
+        </div>
+      </Article>
+    </>
+  )
+}
 export default PostPreview

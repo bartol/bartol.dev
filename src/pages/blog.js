@@ -5,11 +5,10 @@ import algoliasearch from 'algoliasearch/lite'
 import {
   InstantSearch, Hits, connectSearchBox, connectStats,
 } from 'react-instantsearch-dom'
-// import usePosts from '../utils/use-posts'
-import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import PostPreview from '../components/post-preview'
 import Exit from '../../static/exit.svg'
+import SEO from '../components/SEO'
 
 const searchClient = algoliasearch('YMC567Y2Z5', '433ac749b039503ffe3f555236fdced1')
 
@@ -73,8 +72,9 @@ const Search = ({ currentRefinement, /* isSearchStalled, */ refine }) => (
       type="search"
       value={currentRefinement}
       onChange={event => refine(event.currentTarget.value)}
-      placeholder="Filter posts"
+      placeholder="Search posts"
       autoFocus
+      aria-label="Search posts"
     />
     {/* {isSearchStalled ? 'Search is stalled' : ''} */}
   </form>
@@ -90,9 +90,7 @@ export default () => (
   // const posts = usePosts()
 
   <Layout>
-    <Helmet defer={false}>
-      <title>Posts • Bartol's Blog</title>
-    </Helmet>
+    <SEO title="Posts" />
     <InstantSearch searchClient={searchClient} indexName="blog">
       <FlexBox>
         <h1>Posts</h1>

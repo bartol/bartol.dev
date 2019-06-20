@@ -27,18 +27,25 @@ const InputBox = styled.input`
   -webkit-appearance: none;
   background-color: var(--nav);
   width: 175px;
-  padding: 6px 8px;
+  padding: 8px 8px 6px 8px;
   margin-bottom: 1rem;
   font-family: 'IBM Plex Sans', sans-serif !important;
   font-size: 0.8rem;
   border: 2px solid #a0a0a0;
+  /* border: none; */
   border-radius: var(--radius);
   color: #e1e1e1;
+
+  position: relative;
 
   :focus {
     border-color: var(--main);
     outline: none;
     /* background-color: var(--bg); */
+  }
+
+  :focus .input {
+    border-color: var(--main);
   }
 
   /* :focus:invalid {
@@ -88,24 +95,27 @@ export default class Form extends React.Component {
 
     return (
       <div>
-        <label htmlFor="name">
-          <InputBox
-            ref={node => (name = node)}
-            type="text"
-            placeholder="First Name (Optional)"
-            id="name"
-          />
-        </label>
+        {/* <div className="input"> */}
 
-        <label htmlFor="email">
-          <InputBox
-            ref={node => (email = node)}
-            type="email"
-            placeholder="Email"
-            id="email"
-            required
-          />
-        </label>
+        <InputBox
+          ref={node => (name = node)}
+          type="text"
+          placeholder="First Name (Optional)"
+          id="name"
+          aria-label="Your First Name (Optional)"
+        />
+        {/* </div> */}
+        {/* <div className="input"> */}
+
+        <InputBox
+          ref={node => (email = node)}
+          type="email"
+          placeholder="Email"
+          name="email"
+          required
+          aria-label="Your email address"
+        />
+        {/* </div> */}
 
         <ButtonBox onClick={submit}>Submit</ButtonBox>
         <MessageBox>

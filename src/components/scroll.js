@@ -3,13 +3,14 @@ import styled from '@emotion/styled'
 
 const ProgressContainer = styled.div`
   width: 100%;
-  height: 7.5%;
-  background: var(--main);
+  height: 3.33%;
+  /* background: #1f1f1f; */
+  background: var(--nav);
 `
 
 const ProgressBar = styled.div`
   height: 100%;
-  background: #f7f7f7;
+  background: #f35627;
   width: 0%;
 `
 

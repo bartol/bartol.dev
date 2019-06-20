@@ -1,0 +1,14 @@
+<svg width="132" height="204" viewBox="0 0 132 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="logo">
+<path id="gore krug" d="M52.4843 8.02904C60.4286 8.02904 68.2137 10.2044 74.9781 14.3087C81.742 18.4126 87.2185 24.2826 90.8104 31.2623C94.402 38.2414 95.9722 46.0628 95.3521 53.8634C94.7321 61.6642 91.945 69.1494 87.2915 75.491" stroke="#F35627" stroke-width="14" stroke-linecap="round"/>
+<path id="dolje krug" d="M76.4842 101.118C82.7973 101.118 89.0469 102.349 94.8757 104.74C100.704 107.13 105.996 110.632 110.45 115.042C114.904 119.452 118.433 124.683 120.84 130.436C123.246 136.188 124.484 142.351 124.484 148.574C124.484 154.796 123.246 160.959 120.84 166.711C118.433 172.464 114.904 177.695 110.45 182.105C105.996 186.515 100.704 190.017 94.8757 192.407C89.0469 194.798 82.7973 196.029 76.4842 196.029" stroke="#F35627" stroke-width="14"/>
+<line id="Line" x1="7.11601" y1="8.00417" x2="7.00417" y2="195.921" stroke="#F35627" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<line id="gore" x1="7.99978" y1="7.91625" x2="50.5807" y2="7.91492" stroke="#F35627" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<line id="dolje" x1="8.00966" y1="195.926" x2="75.4939" y2="196.019" stroke="#F35627" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="strelica">
+<line id="Line_2" x1="5" y1="-5" x2="29.8272" y2="-5" transform="matrix(0.710616 0.70358 -0.710616 0.70358 27 102.916)" stroke="#F35627" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<line id="Line_3" x1="5" y1="-5" x2="29.8272" y2="-5" transform="matrix(0.710616 -0.70358 0.710616 0.70358 34 106.42)" stroke="#F35627" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<line id="Line_4" x1="35.173" y1="101.011" x2="76.173" y2="101.011" stroke="#F35627" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

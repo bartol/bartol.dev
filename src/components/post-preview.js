@@ -35,10 +35,24 @@ const Article = styled.article`
 
   h2 {
     margin: 0;
+    padding-bottom: 0;
+    padding-left: 1px;
+    border-bottom: none;
   }
 
   &:first-of-type {
     /* margin-top: 1.2rem; */
+  }
+
+  a::-moz-selection {
+    /* Code for Firefox */
+    background: rgba(243, 86, 39, 0.99);
+    color: var(--bg);
+  }
+
+  a::selection {
+    background: rgba(243, 86, 39, 0.99);
+    color: var(--bg);
   }
 `
 
@@ -79,7 +93,7 @@ const FluidBox = styled.div`
 
 const Test = styled.p`
   display: inline-block;
-  margin: 0.55rem 1rem 0 0;
+  margin: 8px 1rem 0 0;
   font-size: 0.9rem;
   color: var(--parameters);
   line-height: 1.1;
@@ -92,14 +106,9 @@ const Test = styled.p`
 const PostPreview = ({ hit }) => {
   let img
   if (!hit.frontmatter.image || hit.frontmatter.image.extension === 'svg') {
-    img = <img src={hit.frontmatter.image.publicURL} />
+    img = <img src={hit.frontmatter.image.publicURL} alt={hit.frontmatter.title} />
   } else {
-    img = (
-      <ImageBox
-        fluid={hit.frontmatter.image.sharp.fluid}
-        alt={hit.frontmatter.title}
-      />
-    )
+    img = <ImageBox fixed={hit.frontmatter.image.sharp.fixed} alt={hit.frontmatter.title} />
   }
 
   return (
@@ -136,7 +145,8 @@ const PostPreview = ({ hit }) => {
               <Twemoji>
                 <span role="img" aria-label="calendar emoji">
                   🗓
-                </span>{' '}
+                </span>
+                {' '}
                 {hit.frontmatter.date}
               </Twemoji>
             </Test>
@@ -144,8 +154,11 @@ const PostPreview = ({ hit }) => {
               <Twemoji>
                 <span role="img" aria-label="clock emoji">
                   ⏱️
-                </span>{' '}
-                {hit.timeToRead} min read
+                </span>
+                {' '}
+                {hit.timeToRead}
+                {' '}
+min read
               </Twemoji>
             </Test>
           </FluidBox>

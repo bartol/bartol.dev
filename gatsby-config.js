@@ -16,11 +16,10 @@ const postQuery = `{
             tags
               image {
               sharp: childImageSharp {
-                fluid {
+                fixed(width: 75, height: 75) {
                   src
                   srcSetWebp
                   aspectRatio
-                  sizes
                   base64
                 }
               }
@@ -45,9 +44,14 @@ const queries = [
 
 module.exports = {
   siteMetadata: {
-    title: "Bartol's Blog",
-    description: 'site description. add later ',
-    siteUrl: 'https://bartol.dev/',
+    defaultTitle: "Bartol's Blog",
+    titleTemplate: "%s • Bartol's Blog",
+    defaultDescription:
+      'Personal blog where you can find web development posts and tutorials. Updated weekly.',
+    siteUrl: 'https://bartol.dev',
+    defaultImage: '/social.png',
+    twitterUsername: '@BartolDeak',
+    facebookAppID: '370797287125807',
   },
   plugins: [
     'gatsby-plugin-emotion',
@@ -139,8 +143,8 @@ module.exports = {
           {
             site {
               siteMetadata {
-                title
-                description
+                defaultTitle
+                defaultDescription
                 siteUrl
                 site_url: siteUrl
               }

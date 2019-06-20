@@ -1,7 +1,9 @@
 import React from 'react'
-import Layout from '../components/layout'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
+import { css } from '@emotion/core'
+import Layout from '../components/layout'
+import SEO from '../components/SEO'
 
 const Ascii = styled.div`
   width: 100%;
@@ -23,7 +25,7 @@ const Ascii = styled.div`
 const Err = styled.div`
   /* font-family: 'IBM Plex Mono', monospace; */
   font-size: 3.5rem;
-  line-height: 1;
+  line-height: 0.9;
   padding-right: 1rem;
   font-weight: 600;
 `
@@ -44,22 +46,31 @@ const Message = styled.div`
 //   margin-top: -5rem;
 // `
 
-const emojis = ['(>_<)', '(·.·)', 'ಠ_ಠ', '(⊙_☉)']
+const emojis = ['(>_<)', '(·.·)', 'ಠ_ಠ', '(⊙_☉)', '(#^.^#)', '(~_~;)']
 
-export default () => {
-  return (
-    <Layout>
-      <Ascii>{emojis[Math.floor(Math.random() * emojis.length)]}</Ascii>
-      <Message>
-        <Err>404</Err>
-        <div>
-          Page was not found.
-          <br />
-          Go back to <Link to="/">Home</Link>.
-        </div>
-      </Message>
-    </Layout>
-  )
-}
+export default () => (
+  <Layout>
+    <SEO title="Not found" />
+    <Ascii>{emojis[Math.floor(Math.random() * emojis.length)]}</Ascii>
+    <Message>
+      <Err>404</Err>
+      <div>
+        Page was not found.
+        <br />
+        Go back to
+        {' '}
+        <Link
+          to="/"
+          css={css`
+            font-weight: 600;
+          `}
+        >
+          Home
+        </Link>
+        .
+      </div>
+    </Message>
+  </Layout>
+)
 
 // (>_<) (·.·) ಠ_ಠ (⊙_☉)

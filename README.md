@@ -2,7 +2,7 @@
   <img alt="Bartol's logo" src="./static/logo.svg" align="right" width="145" height="155" />
 </a>
 
-# [bartol.dev](https://bartol.dev)
+# [bartol.dev](https://bartol.dev) [![Build Status](https://travis-ci.com/bartold3ak/bartol.dev.svg?branch=master)](https://travis-ci.com/bartold3ak/bartol.dev) [![License: MIT](https://img.shields.io/badge/License-MIT-informational.svg)](https://opensource.org/licenses/MIT)
 
 <!-- ![logo](./static/logo.svg) -->
 

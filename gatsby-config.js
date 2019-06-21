@@ -45,8 +45,11 @@ const queries = [
 module.exports = {
   siteMetadata: {
     defaultTitle: "Bartol's Blog",
+    title: "Bartol's Blog RSS Feed",
     titleTemplate: "%s • Bartol's Blog",
     defaultDescription:
+      'Personal blog where you can find web development posts and tutorials. Updated weekly.',
+    description:
       'Personal blog where you can find web development posts and tutorials. Updated weekly.',
     siteUrl: 'https://bartol.dev',
     defaultImage: '/social.png',
@@ -87,7 +90,7 @@ module.exports = {
       options: {
         appId: process.env.ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        indexName: process.env.ALGOLIA_INDEX_NAME,
         queries,
         chunkSize: 10000, // default: 1000
       },
@@ -117,7 +120,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: "Bartol's Blog",
-        short_name: "Bartol's Blog",
+        short_name: 'Blog',
         start_url: '/',
         background_color: '#121212',
         theme_color: '#f35627',
@@ -139,57 +142,39 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-feed',
       options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                defaultTitle
-                defaultDescription
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
         feeds: [
           {
-            // eslint-disable-next-line max-len
-            serialize: ({ query: { site, allMdx } }) => allMdx.edges.map(edge => Object.assign({}, edge.node.frontmatter, {
+            serialize: ({ query: { site, allMdx } }) => allMdx.edges.map(edge => ({
               ...edge.node.frontmatter,
               description: edge.node.excerpt,
-              url: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
-              guid: site.siteMetadata.siteUrl + edge.node.frontmatter.slug,
+              url: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
+              guid: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
+              custom_elements: [{ 'content:encoded': edge.node.html }],
             })),
             query: `
-              {
-                allMdx(
-                  limit: 1000,
-                  sort: {
-                    order: DESC,
-                    fields: [frontmatter___date]
-                  }
-                  filter: { frontmatter: { published: { eq: true } } }
-                ) {
-                  edges {
-                    node {
-                      frontmatter {
-                        title
-                        date
-                        slug
+                {
+                  allMdx(
+                    limit: 1000,
+                    sort: {
+                      order: DESC,
+                      fields: [frontmatter___date]
+                    }
+                  ) {
+                    edges {
+                      node {
+                        frontmatter {
+                          title
+                          date
+                          slug
+                        }
+                        excerpt
+                        html
                       }
-                      excerpt(pruneLength: 100000)
                     }
                   }
                 }
-              }
-            `,
-            output: '/rss.xml',
-            title: "Bartol's Blog RSS Feed",
-            // optional configuration to insert feed reference in pages:
-            // if `string` is used, it will be used to create RegExp and then test if pathname of
-            // current page satisfied this regular expression;
-            // if not provided or `undefined`, all pages will have feed reference inserted
-            match: '^/blog/',
+              `,
+            output: 'rss.xml',
           },
         ],
       },

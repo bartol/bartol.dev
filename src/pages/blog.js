@@ -73,8 +73,8 @@ const Search = ({ currentRefinement, /* isSearchStalled, */ refine }) => (
       value={currentRefinement}
       onChange={event => refine(event.currentTarget.value)}
       placeholder="Search posts"
-      autoFocus
       aria-label="Search posts"
+      autoFocus={typeof window !== 'undefined' && window.innerWidth >= 1025}
     />
     {/* {isSearchStalled ? 'Search is stalled' : ''} */}
   </form>

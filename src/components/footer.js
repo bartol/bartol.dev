@@ -31,8 +31,8 @@ const FooterBox = styled.div`
 
 const Copyright = styled.p`
   color: var(--parameters);
-  padding-top: 0.5rem;
-  font-size: 0.65rem;
+  padding-top: 0.4rem;
+  font-size: 12px;
   line-height: 1.1;
 `
 

@@ -4,14 +4,14 @@ import styled from '@emotion/styled'
 
 const Message = styled.div`
   color: var(--main);
-  font-size: 0.65rem;
+  font-size: 12px;
   line-height: 1.15;
   padding-left: 1px;
 `
 
 const DefaultMessage = styled.div`
   color: #a0a0a0;
-  font-size: 0.65rem;
+  font-size: 12px;
   line-height: 1.15;
   padding-left: 1px;
 `

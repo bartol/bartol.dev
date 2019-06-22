@@ -137,7 +137,6 @@ module.exports = {
         trackingId: process.env.GA_TRACKING,
       },
     },
-    'gatsby-guess-js-link-highlight',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

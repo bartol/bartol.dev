@@ -162,6 +162,7 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-netlify',
+    'gatsby-plugin-netlify-cache',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

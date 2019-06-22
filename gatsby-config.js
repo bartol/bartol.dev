@@ -132,6 +132,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: [
+          'https://www.google.com',
+          'https://marketingplatform.google.com',
+          'https://www.google-analytics.com',
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GA_TRACKING,

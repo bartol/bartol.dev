@@ -42,6 +42,27 @@ const queries = [
   },
 ]
 
+const dynamicPlugins = []
+if (process.env.GA_SERVICE_ACCOUNT) {
+  // // pick data from 3 months ago
+  // const startDate = new Date()
+  // startDate.setMonth(startDate.getMonth() - 12)
+  dynamicPlugins.push({
+    resolve: 'gatsby-plugin-guess-js',
+    options: {
+      GAViewID: process.env.GA_VIEW_ID,
+      jwt: {
+        client_email: process.env.GA_SERVICE_ACCOUNT,
+        private_key: process.env.GA_SERVICE_ACCOUNT_KEY,
+      },
+      period: {
+        startDate: new Date('2018-1-1'),
+        endDate: new Date(),
+      },
+    },
+  })
+}
+
 module.exports = {
   siteMetadata: {
     defaultTitle: "Bartol's Blog",
@@ -116,6 +137,7 @@ module.exports = {
         trackingId: process.env.GA_TRACKING,
       },
     },
+    'gatsby-guess-js-link-highlight',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

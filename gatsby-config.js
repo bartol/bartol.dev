@@ -65,9 +65,9 @@ if (process.env.GA_SERVICE_ACCOUNT) {
 
 module.exports = {
   siteMetadata: {
-    defaultTitle: "Bartol's Blog",
-    title: "Bartol's Blog RSS Feed",
-    titleTemplate: "%s • Bartol's Blog",
+    defaultTitle: "Bartol's Coding Blog",
+    title: "Bartol's Coding Blog",
+    titleTemplate: "%s • Bartol's Coding Blog",
     defaultDescription:
       'Personal blog where you can find web development posts and tutorials. Updated weekly.',
     description:

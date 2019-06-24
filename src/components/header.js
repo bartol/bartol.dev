@@ -40,6 +40,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  box-shadow: var(--shadow);
 `
 
 const HeaderBox = styled.header`

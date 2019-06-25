@@ -60,11 +60,6 @@ const LinkBox = styled(Link)`
   margin-right: 1rem;
   width: 75px;
   height: 75px;
-  img {
-    width: 75px;
-    height: 75px;
-    box-shadow: none;
-  }
 `
 
 const ImageBox = styled(Image)`
@@ -103,10 +98,17 @@ const Test = styled.p`
   }
 `
 
+const SVG = styled.img`
+  width: 75px;
+  height: 75px;
+  box-shadow: none;
+  border-radius: 0px;
+`
+
 const PostPreview = ({ hit }) => {
   let img
   if (!hit.frontmatter.image || hit.frontmatter.image.extension === 'svg') {
-    img = <img src={hit.frontmatter.image.publicURL} alt={hit.frontmatter.title} />
+    img = <SVG src={hit.frontmatter.image.publicURL} alt={hit.frontmatter.title} />
   } else {
     img = <ImageBox fixed={hit.frontmatter.image.sharp.fixed} alt={hit.frontmatter.title} />
   }

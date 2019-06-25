@@ -15,6 +15,8 @@ const Main = styled.main`
   width: 640px;
 `
 
+// 0 0 3px rgba(0,0,0,0.3)
+
 const Layout = ({ children }) => (
   <>
     <Global
@@ -51,7 +53,8 @@ const Layout = ({ children }) => (
           --link: #d23000; /* 7 */
           --line: #cfcfcf; /* 3 */
           /* --shadoww: 0 5px 10px rgba(155, 160, 185, 0.5), 0 15px 40px rgba(165, 175, 200, 0.8); */
-          --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
+          /* --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15); */
+          --shadow: 0 0 3px rgba(0, 0, 0, 0.3);
           --radius: 5px;
         }
 
@@ -66,7 +69,8 @@ const Layout = ({ children }) => (
           --link: #f35627; /* 7 */
           --line: #515151; /* 8 */
           /* --shadow: 0 5px 10px rgba(23, 23, 23, 0.5), 0 15px 40px rgba(21, 21, 21, 0.8); */
-          --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
+          /* --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15); */
+          --shadow: 0 0 3px rgba(0, 0, 0, 0.3);
           --radius: 5px;
         }
 

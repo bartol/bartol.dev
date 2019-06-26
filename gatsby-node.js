@@ -58,8 +58,8 @@ function getPopularPosts() {
     queryData(analytics)
   })
 
-  function queryData(analytics) {
-    analytics.data.ga.get(
+  async function queryData(analytics) {
+    await analytics.data.ga.get(
       {
         auth: jwtClient,
         ids: VIEW_ID,

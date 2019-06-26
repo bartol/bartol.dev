@@ -1,4 +1,5 @@
 const { google } = require('googleapis')
+const replace = require('lodash.replace')
 
 require('dotenv').config({
   // path: `.env.${process.env.NODE_ENV}`,
@@ -37,11 +38,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
 function getPopularPosts() {
   const VIEW_ID = 'ga:196730733'
+  const googleApiKey = replace(process.env.GOOGLE_API_KEY, new RegExp('\\\\n', 'g'), '\n')
 
   const jwtClient = new google.auth.JWT(
     process.env.GA_SERVICE_ACCOUNT,
     null,
-    process.env.GA_SERVICE_ACCOUNT_KEY,
+    googleApiKey,
     ['https://www.googleapis.com/auth/analytics.readonly'],
     null,
   )

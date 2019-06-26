@@ -53,8 +53,8 @@ const ImageBox = styled(Image)`
   margin: 0;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
-  width: 101px;
-  height: 101px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 `
 
@@ -122,8 +122,9 @@ const PostContent = styled.div`
 
 const SVG = styled.img`
   width: 100px;
-  height: 100px;
+  /* height: 100px; */
   box-shadow: none;
+  border-radius: 0px;
 `
 
 const ReadLink = styled(Link)`
@@ -167,7 +168,7 @@ const HeaderTitle = styled.div`
 
 const PostTemplate = ({ data: { mdx: post } }) => {
   let img
-  if (!post.frontmatter.image.sharp && post.frontmatter.image.extension === 'svg') {
+  if (!post.frontmatter.image.childImageSharp && post.frontmatter.image.extension === 'svg') {
     img = <SVG src={post.frontmatter.image.publicURL} />
   } else {
     img = (

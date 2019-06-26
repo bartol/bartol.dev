@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import LastPosts from '../components/last-posts'
-
+import PopularPosts from '../components/popular-posts'
 import Newsletter from '../components/newsletter-card'
 
 export default () => (
@@ -30,6 +30,7 @@ export default () => (
       technologies, concepts and tools I learn.
     </p>
     <LastPosts />
+    <PopularPosts />
     <Newsletter />
   </Layout>
 )

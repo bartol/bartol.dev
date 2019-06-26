@@ -39,10 +39,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 function getPopularPosts() {
   const VIEW_ID = 'ga:196730733'
 
+  // fix for failing build on the cloud
+  const googleApiKey = replace(process.env.GA_SERVICE_ACCOUNT_KEY, new RegExp('\\\\n', 'g'), '\n')
+
   const jwtClient = new google.auth.JWT(
     process.env.GA_SERVICE_ACCOUNT,
     null,
-    replace(process.env.GOOGLE_API_KEY, new RegExp('\\\\n', 'g'), '\n'),
+    googleApiKey,
     ['https://www.googleapis.com/auth/analytics.readonly'],
     null,
   )

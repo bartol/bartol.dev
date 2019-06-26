@@ -60,6 +60,7 @@
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.21",
+    "googleapis": "^40.0.0",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",

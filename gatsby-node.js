@@ -1,3 +1,10 @@
+const { google } = require('googleapis')
+
+require('dotenv').config({
+  // path: `.env.${process.env.NODE_ENV}`,
+  path: '.env.production',
+})
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     query {
@@ -9,13 +16,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
     }
-  `);
+  `)
 
   if (result.errors) {
-    reporter.panic('failed to create posts', result.errors);
+    reporter.panic('failed to create posts', result.errors)
   }
 
-  const posts = result.data.allMdx.nodes;
+  const posts = result.data.allMdx.nodes
 
   posts.forEach((post) => {
     actions.createPage({
@@ -24,6 +31,63 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         slug: post.frontmatter.slug,
       },
-    });
-  });
-};
+    })
+  })
+}
+
+function getPopularPosts() {
+  const VIEW_ID = 'ga:196730733'
+
+  const jwtClient = new google.auth.JWT(
+    process.env.GA_SERVICE_ACCOUNT,
+    null,
+    process.env.GA_SERVICE_ACCOUNT_KEY,
+    ['https://www.googleapis.com/auth/analytics.readonly'],
+    null,
+  )
+  jwtClient.authorize((err, tokens) => {
+    if (err) {
+      console.log(err)
+      return
+    }
+    const analytics = google.analytics('v3')
+    queryData(analytics)
+  })
+
+  function queryData(analytics) {
+    analytics.data.ga.get(
+      {
+        auth: jwtClient,
+        ids: VIEW_ID,
+        metrics: 'ga:uniquePageviews',
+        dimensions: 'ga:pagePath',
+        'start-date': '2019-01-01', // or 30daysAgo
+        'end-date': 'today',
+        sort: '-ga:uniquePageviews',
+        'max-results': 5,
+        filters: 'ga:pagePath=~/blog/.*/',
+      },
+      (err, response) => {
+        if (err) {
+          console.log(err)
+        }
+        // console.log(JSON.stringify(response, null, 4))
+
+        data = response.data.rows
+      },
+    )
+  }
+}
+
+let data
+getPopularPosts()
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+
+  createNodeField({
+    node,
+    name: 'popularPosts',
+    value: data,
+  })
+}

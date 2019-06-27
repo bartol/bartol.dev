@@ -38,5 +38,7 @@ Open browser and navigate to
 - [mdx](https://mdxjs.com/)
 - [React](https://reactjs.org/)
 - [GraphQL](https://graphql.org/)
+- [Node.js](https://nodejs.org/en/)
 - [Algolia](https://www.algolia.com)
 - [PrismJS](https://prismjs.com/)
+- [Google Analytics Reporting API](https://developers.google.com/analytics/devguides/reporting/core/v3/)

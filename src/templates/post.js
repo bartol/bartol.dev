@@ -169,7 +169,7 @@ const HeaderTitle = styled.div`
 const PostTemplate = ({ data: { mdx: post } }) => {
   let img
   if (!post.frontmatter.image.childImageSharp && post.frontmatter.image.extension === 'svg') {
-    img = <SVG src={post.frontmatter.image.publicURL} />
+    img = <SVG src={post.frontmatter.image.publicURL} alt={post.frontmatter.title} />
   } else {
     img = (
       <ImageBox fixed={post.frontmatter.image.childImageSharp.fixed} alt={post.frontmatter.title} />

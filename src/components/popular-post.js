@@ -57,7 +57,7 @@ const PopularPost = (props) => {
     && match.node.frontmatter.image.extension === 'svg'
     // data
   ) {
-    img = <SVG src={match.node.frontmatter.image.publicURL} />
+    img = <SVG src={match.node.frontmatter.image.publicURL} alt={match.node.frontmatter.title} />
   } else {
     img = (
       <ImageBox

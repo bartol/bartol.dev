@@ -125,7 +125,7 @@ const LastPosts = () => {
       && edge.node.frontmatter.image.extension === 'svg'
       // data
     ) {
-      img = <SVG src={edge.node.frontmatter.image.publicURL} />
+      img = <SVG src={edge.node.frontmatter.image.publicURL} alt={edge.node.frontmatter.title} />
     } else {
       img = (
         <ImageBox

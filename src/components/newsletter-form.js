@@ -75,6 +75,12 @@ const ButtonBox = styled.button`
     border-color: var(--main);
   } */
 
+  :focus {
+    /* color: var(--main); */
+    border-color: var(--main);
+    outline: 0;
+  }
+
   :active {
     color: var(--main);
     border-color: var(--main);

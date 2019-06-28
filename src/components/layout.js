@@ -3,6 +3,7 @@ import { Global, css } from '@emotion/core'
 import styled from '@emotion/styled'
 import Header from './header'
 import Footer from './footer'
+import ScrollBack from './scroll-back'
 import '../styles/prism.css'
 import 'normalize.css'
 import SEO from './SEO'
@@ -34,6 +35,14 @@ const Layout = ({ children }) => (
           ::selection {
             background: rgba(243, 86, 39, 0.99);
             color: var(--bg);
+          }
+
+          :focus {
+            outline-color: var(--link);
+            outline-style: dashed;
+            outline-offset: 5px;
+            outline-width: 2px;
+            /* outline: 0; */
           }
         }
 
@@ -84,6 +93,7 @@ const Layout = ({ children }) => (
 
         html,
         body {
+          scroll-behavior: smooth;
           margin: 0;
           color: var(--text); /* text color */
           height: 100%;
@@ -274,6 +284,7 @@ const Layout = ({ children }) => (
     />
     <SEO />
     <Header />
+    <ScrollBack />
     <Main>{children}</Main>
     <Footer />
   </>

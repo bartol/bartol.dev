@@ -65,10 +65,6 @@ const FluidBox = styled.div`
 `
 
 const PostContent = styled.div`
-  p {
-    /* font-family: 'IBM Plex Serif', serif; */
-  }
-
   /* p:first-of-type::first-letter {
     font-weight: 600;
     float: left;

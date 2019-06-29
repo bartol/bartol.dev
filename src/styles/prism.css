@@ -26,7 +26,10 @@ pre[class*='language-'] ::-moz-selection,
 code[class*='language-']::-moz-selection,
 code[class*='language-'] ::-moz-selection {
   text-shadow: none;
-  background: #011627;
+
+  /* Code for Firefox */
+  background: rgba(243, 86, 39, 0.99);
+  color: var(--bg);
 }
 
 pre[class*='language-']::selection,
@@ -34,7 +37,9 @@ pre[class*='language-'] ::selection,
 code[class*='language-']::selection,
 code[class*='language-'] ::selection {
   text-shadow: none;
-  background: #011627;
+
+  background: rgba(243, 86, 39, 0.99);
+  color: var(--bg);
 }
 
 @media print {

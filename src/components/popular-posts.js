@@ -6,15 +6,13 @@ import PopularPost from './popular-post'
 const PopularPosts = () => {
   const posts = useStaticQuery(graphql`
     query getPopularPosts {
-      file {
-        fields {
-          popularPosts
-        }
+      googleApiData {
+        popularPosts
       }
     }
   `)
 
-  const { popularPosts } = posts.file.fields
+  const { popularPosts } = posts.googleApiData
 
   const popularPostsList = popularPosts.map(post => (
     <PopularPost Slug={post[0]} />
@@ -39,6 +37,7 @@ const PopularPosts = () => {
         `}
       >
         {popularPostsList}
+        {/* <pre>{posts.googleApiData.internal.content}</pre> */}
       </ul>
     </>
   )

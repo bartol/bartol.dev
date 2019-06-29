@@ -40,7 +40,7 @@ const Layout = ({ children }) => (
           :focus {
             outline-color: var(--link);
             outline-style: dashed;
-            outline-offset: 5px;
+            outline-offset: 2px;
             outline-width: 2px;
             /* outline: 0; */
           }
@@ -228,10 +228,9 @@ const Layout = ({ children }) => (
           border-radius: 0;
         }
 
-        p > div {
-          /* background-color: red; */
+        /* p > div {
           display: inline;
-        }
+        } */
 
         .gatsby-highlight-code-line {
           background-color: #012a4a;

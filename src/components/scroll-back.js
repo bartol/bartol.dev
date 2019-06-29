@@ -30,7 +30,6 @@ class ScrollBack extends Component {
   }
 
   handleClick = () => {
-    // window.scrollTo(0, 0)
     document.body.scrollTop = 0 // For Safari
     document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
   }
@@ -64,6 +63,11 @@ const Circle = styled.button`
   color: #a0a0a0;
   font-size: 28px;
   font-weight: 400;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 
   :focus {
     outline: 0;

@@ -36,7 +36,7 @@ const Input = styled.input`
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border: 2px solid var(--parameters);
   border-radius: var(--radius);
   color: var(--heading);

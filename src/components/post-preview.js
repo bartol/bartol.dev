@@ -80,9 +80,9 @@ const FluidBox = styled.div`
   /* background-color: red; */
   justify-content: start;
   /* flex-wrap: wrap; */
-  /* @media (max-width: 590px) {
+  @media (max-width: 400px) {
     flex-direction: column;
-  } */
+  }
   margin: 0;
 `
 
@@ -92,10 +92,6 @@ const Test = styled.p`
   font-size: 0.9rem;
   color: var(--parameters);
   line-height: 1.1;
-
-  @media (max-width: 380px) {
-    /* font-size: 0.7rem; */
-  }
 `
 
 const SVG = styled.img`
@@ -129,7 +125,16 @@ const PostPreview = ({ hit }) => {
         >
           <h2
             css={css`
-              font-size: 24px;
+              /* font-size: 24px; */
+              font-size: 1.333rem;
+
+              @media (max-width: 460px) {
+                font-size: 1.15rem;
+              }
+
+              @media (max-width: 400px) {
+                font-size: 1.05rem;
+              }
             `}
           >
             <Link

@@ -12,7 +12,12 @@ const regex = /\/blog\/..*/
 
 const NavLink = styled(Link)`
   color: #e1e1e1;
-  font-size: 1rem;
+  font-size: 18px;
+
+  @media (max-width: 400px) {
+    font-size: 16px;
+  }
+
   font-weight: 400;
   line-height: 1.1;
   margin: 0 1rem 0 0;

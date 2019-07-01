@@ -104,13 +104,20 @@ const Layout = ({ children }) => (
           -webkit-font-smoothing: antialiased;
 
           /* font-size: 20px; */
+          @media (max-width: 320px) {
+            font-size: 13px;
+          }
+
           @media (min-width: 320px) {
-            font-size: calc(16px + 2 * ((100vw - 320px) / (640 - 320)));
+            font-size: calc(13px + 5 * ((100vw - 320px) / (640 - 320)));
+            /* font-size: calc(12px + 0.938vw); */
           }
 
           @media (min-width: 640px) {
             font-size: 18px;
           }
+
+          /* font-size: calc(12px + 0.938vw); */
 
           line-height: 1.6;
           background-color: var(--main);
@@ -136,30 +143,36 @@ const Layout = ({ children }) => (
           }
 
           h1 {
-            font-size: 32px;
+            /* font-size: 32px; */
+            font-size: 1.778rem;
           }
 
           h2 {
-            font-size: 28px;
+            font-size: 1.556rem;
+            /* font-size: 28px; */
             border-bottom: 1px solid var(--line);
             padding-bottom: 0.4rem;
             /* margin-bottom: 0.6rem; */
           }
 
           h3 {
-            font-size: 24px;
+            font-size: 1.333rem;
+            /* font-size: 24px; */
           }
 
           h4 {
-            font-size: 22px;
+            font-size: 1.222rem;
+            /* font-size: 22px; */
           }
 
           h5 {
-            font-size: 20px;
+            font-size: 1.111rem;
+            /* font-size: 20px; */
           }
 
           h6 {
-            font-size: 18px;
+            font-size: 1rem;
+            /* font-size: 18px; */
           }
 
           strong {
@@ -235,10 +248,13 @@ const Layout = ({ children }) => (
         .gatsby-highlight-code-line {
           background-color: #012a4a;
           display: block;
-          margin-right: -1em;
-          margin-left: -1em;
-          padding-right: 1em;
-          padding-left: 0.75em;
+          border-left: 2px solid var(--main);
+          /* border-right: 2px solid #011627; */
+          /* border-bottom: 2px solid #011627; */
+          margin-right: -1rem;
+          margin-left: -1rem;
+          padding-right: 1rem;
+          padding-left: calc(1rem - 2px);
         }
 
         /**
@@ -251,7 +267,7 @@ const Layout = ({ children }) => (
           border-bottom-right-radius: var(--radius);
 
           /* margin: 20px 0; */
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 1rem 1rem 1rem;
           margin-bottom: 1.5rem;
           overflow: auto;
           font-size: 0.9rem;

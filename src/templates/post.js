@@ -17,7 +17,6 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         foldername
         filename
-        description
         image {
           childImageSharp {
             fixed(width: 100, height: 100) {
@@ -41,7 +40,7 @@ export const query = graphql`
 
 const Test = styled.p`
   display: inline-block;
-  margin: 8px 1rem 5px 0;
+  margin: 8px 1rem 0 0;
   font-size: 0.9rem;
   color: var(--parameters);
   line-height: 1.1;
@@ -55,6 +54,8 @@ const ImageBox = styled(Image)`
   border-radius: var(--radius);
   width: 100px;
   height: 100px;
+  min-width: 100px;
+  min-height: 100px;
   object-fit: cover;
 `
 
@@ -79,9 +80,6 @@ const PostContent = styled.div`
 
   ul {
     list-style: outside;
-  }
-
-  > ul:first-of-type {
     padding-left: 40px;
   }
 
@@ -159,6 +157,21 @@ const HeaderTitle = styled.div`
   padding-left: 1.3rem;
   h1 {
     margin: 0;
+    font-size: 1.556rem;
+    @media (max-width: 500px) {
+      font-size: 1.333rem;
+    }
+  }
+`
+
+const Share = styled.p`
+  @media (max-width: 440px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    span {
+      display: none;
+    }
   }
 `
 
@@ -223,15 +236,15 @@ min read
           {' '}
 Back to all posts
         </ReadLink>
-        <p>
+        <Share>
           <a href={discussUrl} target="_blank" rel="nofollow noopener noreferrer">
             Discuss on Twitter
           </a>
-          {' • '}
+          <span> • </span>
           <a href={editUrl} target="_blank" rel="nofollow noopener noreferrer">
             Edit on GitHub
           </a>
-        </p>
+        </Share>
       </FooterNav>
       <Newsletter />
     </Layout>

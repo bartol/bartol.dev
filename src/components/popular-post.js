@@ -81,7 +81,13 @@ const PopularPost = (props) => {
       >
         <h3
           css={css`
-            font-size: 20px;
+            /* font-size: 20px; */
+            font-size: 1.12rem;
+            /* line-height: 1; */
+
+            /* @media (max-width: 350px) {
+              font-size: 1.075rem;
+            } */
           `}
         >
           <Link

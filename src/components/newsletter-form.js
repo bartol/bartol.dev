@@ -30,7 +30,7 @@ const InputBox = styled.input`
   padding: 8px 8px 6px 8px;
   margin-bottom: 1rem;
   font-family: 'IBM Plex Sans', sans-serif !important;
-  font-size: 0.8rem;
+  font-size: 14px;
   border: 2px solid #a0a0a0;
   /* border: none; */
   border-radius: var(--radius);
@@ -62,10 +62,10 @@ const ButtonBox = styled.button`
   -webkit-appearance: none;
   background-color: var(--nav);
   width: 100px;
-  height: calc(0.8rem * 1.15 + 8px + 8px);
+  height: calc(14px * 1.15 + 8px + 8px);
   padding: 6px 8px;
   font-family: 'IBM Plex Sans', sans-serif !important;
-  font-size: 0.8rem;
+  font-size: 14px;
   border: 2px solid #a0a0a0;
   border-radius: var(--radius);
   color: #a0a0a0;

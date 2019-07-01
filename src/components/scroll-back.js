@@ -47,21 +47,26 @@ const Wrapper = styled.div`
   position: fixed;
   right: 3vw;
   bottom: 5vh;
+
+  @media (max-width: 640px) {
+    right: 5vw;
+    bottom: 3vh;
+  }
   -webkit-transform: translateZ(0);
 
   z-index: 200130;
 `
 
 const Circle = styled.button`
-  width: 50px;
-  height: 50px;
+  width: 2.75rem;
+  height: 2.75rem;
   background-color: var(--nav);
   border-radius: 50%;
   border: 0;
   box-shadow: var(--shadow);
 
   color: #a0a0a0;
-  font-size: 28px;
+  font-size: 1.55rem;
   font-weight: 400;
 
   -webkit-user-select: none; /* Safari */

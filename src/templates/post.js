@@ -94,6 +94,10 @@ const PostContent = styled.div`
     margin-top: 1rem;
   }
 
+  hr {
+    border-color: var(--line);
+  }
+
   figure {
     margin-top: 1.5rem;
     padding-bottom: 10px;

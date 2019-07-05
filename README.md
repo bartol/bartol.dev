@@ -20,17 +20,39 @@
 
 ## Run locally
 
-Install Dependencies
+Add environment variables in `.env.production` file
 
-`yarn`
+Install dependencies
+
+```bash
+yarn
+
+# or with npm
+
+npm install
+```
 
 Start development environment
 
-`yarn dev`
+```bash
+yarn dev
 
-Open browser and navigate to
+# or with npm
 
-`localhost:8000`
+npm run dev
+```
+
+Open browser and navigate to `localhost:8000`
+
+Build project
+
+```bash
+yarn build
+
+# or with npm
+
+npm run build
+```
 
 ## Tech stack
 

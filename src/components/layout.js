@@ -28,12 +28,12 @@ const Layout = ({ children }) => (
 
           ::-moz-selection {
             /* Code for Firefox */
-            background: rgba(243, 86, 39, 0.99);
+            background: #42c5f1;
             color: var(--bg);
           }
 
           ::selection {
-            background: rgba(243, 86, 39, 0.99);
+            background: #42c5f1;
             color: var(--bg);
           }
 
@@ -55,11 +55,11 @@ const Layout = ({ children }) => (
         body {
           --bg: #f7f7f7; /* 1 */
           --nav: #1f1f1f;
-          --main: #f35627; /* 7 */
+          --main: #42c5f1; /* 7 */
           --heading: #222222; /* 10 */
           --parameters: #626262; /* 6 */
           --text: #222222; /* 9 */
-          --link: #d23000; /* 7 */
+          --link: #42c5f1; /* 7 */
           --line: #cfcfcf; /* 3 */
           /* --shadoww: 0 5px 10px rgba(155, 160, 185, 0.5), 0 15px 40px rgba(165, 175, 200, 0.8); */
           /* --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15); */
@@ -71,11 +71,11 @@ const Layout = ({ children }) => (
           --bg: #121212;
           /* --bg: #303030; */
           --nav: #1f1f1f;
-          --main: #f35627; /* 7 */
+          --main: #42c5f1; /* 7 */
           --heading: #e1e1e1; /* 1 */
           --parameters: #a0a0a0; /* 4 */
           --text: #e1e1e1; /* 2 */
-          --link: #f35627; /* 7 */
+          --link: #42c5f1; /* 7 */
           --line: #515151; /* 8 */
           /* --shadow: 0 5px 10px rgba(23, 23, 23, 0.5), 0 15px 40px rgba(21, 21, 21, 0.8); */
           /* --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15); */
@@ -206,18 +206,17 @@ const Layout = ({ children }) => (
           }
 
           a {
-            /* color: rgba(243, 86, 39, 0.99); */
             color: var(--link);
             text-decoration: none;
 
             ::-moz-selection {
               /* Code for Firefox */
-              background: rgba(243, 86, 39, 0.99);
+              background: var(--link);
               color: var(--heading);
             }
 
             ::selection {
-              background: rgba(243, 86, 39, 0.99);
+              background: var(--link);
               color: var(--heading);
             }
           }

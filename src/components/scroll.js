@@ -10,7 +10,7 @@ const ProgressContainer = styled.div`
 
 const ProgressBar = styled.div`
   height: 100%;
-  background: #f35627;
+  background: var(--main);
   width: 0%;
 `
 
@@ -24,11 +24,8 @@ export default class Scroll extends React.Component {
   }
 
   handleScroll = ev => {
-    let winScroll =
-      document.body.scrollTop || document.documentElement.scrollTop
-    let height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
     let scrolled = (winScroll / height) * 100
     document.getElementById('progressbar').style.width = scrolled + '%'
   }

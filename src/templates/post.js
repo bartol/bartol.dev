@@ -244,7 +244,9 @@ Back to all posts
           <a href={discussUrl} target="_blank" rel="nofollow noopener noreferrer">
             Discuss on Twitter
           </a>
+          {' '}
           <span> • </span>
+          {' '}
           <a href={editUrl} target="_blank" rel="nofollow noopener noreferrer">
             Edit on GitHub
           </a>

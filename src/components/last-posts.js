@@ -49,12 +49,12 @@ const Item = styled.li`
 
   a::-moz-selection {
     /* Code for Firefox */
-    background: rgba(243, 86, 39, 0.99);
+    background: var(--main);
     color: var(--bg);
   }
 
   a::selection {
-    background: rgba(243, 86, 39, 0.99);
+    background: var(--main);
     color: var(--bg);
   }
 `

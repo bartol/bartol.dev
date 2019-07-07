@@ -158,7 +158,7 @@ module.exports = {
         short_name: 'Blog',
         start_url: '/',
         background_color: '#121212',
-        theme_color: '#f35627',
+        theme_color: '#42c5f1',
         display: 'standalone',
         icon: 'static/logo.svg',
       },

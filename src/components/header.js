@@ -70,9 +70,25 @@ const B = styled(Link)`
   display: flex;
   justify-content: flex-start;
   margin-left: -2px;
+
   & svg {
     height: 100%;
     width: 30px;
+  }
+
+  &.current-page {
+    /* background-color: rebeccapurple; */
+  }
+
+  transform: scale(1);
+  transition: all 167ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  :focus {
+    outline: 0;
   }
 `
 
@@ -83,6 +99,13 @@ const Switch = styled.label`
   width: 30px;
   & input {
     display: none;
+  }
+
+  transform: scale(1);
+  transition: all 167ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:active {
+    transform: scale(0.9);
   }
 `
 
@@ -95,7 +118,7 @@ const NotScroll = styled.div`
 const Header = () => (
   <Wrapper>
     <HeaderBox>
-      <B to="/">
+      <B to="/" activeClassName="current-page">
         <svg
           width="132"
           height="204"
@@ -172,6 +195,8 @@ const Header = () => (
                 `}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 36 36"
+                onClick={() => (document.getElementById('___gatsby').style.cssText = 'transition: color 0.2s ease-out, background 0.2s ease-out;')
+                }
               >
                 <path
                   fill="#FFAC33"
@@ -195,6 +220,8 @@ const Header = () => (
                 `}
                 preserveAspectRatio="xMidYMid meet"
                 viewBox="0 0 36 36"
+                onClick={() => (document.getElementById('___gatsby').style.cssText = 'transition: color 0.2s ease-out, background 0.2s ease-out;')
+                }
               >
                 <path
                   fill="#FFD983"

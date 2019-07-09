@@ -9,7 +9,8 @@ require('dotenv').config({
 let data
 
 function getPopularPosts() {
-  const VIEW_ID = 'ga:196730733'
+  // const VIEW_ID = 'ga:196730733' // 198179761
+  const VIEW_ID = 'ga:198179761'
 
   // fix for failing build on the cloud
   const googleApiKey = replace(process.env.GA_SERVICE_ACCOUNT_KEY, new RegExp('\\\\n', 'g'), '\n')

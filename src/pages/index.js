@@ -30,7 +30,7 @@ export default () => (
       technologies, concepts and tools I learn.
     </p>
     <LastPosts />
-    <PopularPosts />
+    {/* <PopularPosts /> */}
     <Newsletter />
   </Layout>
 )

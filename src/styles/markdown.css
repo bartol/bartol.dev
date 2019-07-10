@@ -1,0 +1,16 @@
+.paragraph,
+.heading-1,
+.heading-2,
+.heading-3,
+.blockquote,
+.unordered-list,
+.ordered-list,
+.list-item,
+.emphasis,
+.strong,
+.strikethrough,
+.break,
+.link,
+.image {
+  /* markdown elements */
+}

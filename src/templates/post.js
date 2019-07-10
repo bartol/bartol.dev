@@ -1,12 +1,18 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { MDXRenderer } from 'gatsby-mdx'
 import styled from '@emotion/styled'
 import Image from 'gatsby-image'
 import Twemoji from 'react-twemoji'
+import { MDXProvider } from '@mdx-js/react'
+import { css } from '@emotion/core'
 import Layout from '../components/layout'
 import Newsletter from '../components/newsletter-card'
 import SEO from '../components/SEO'
+// import '../styles/markdown.css'
 
 export const query = graphql`
   query($slug: String!) {
@@ -19,7 +25,7 @@ export const query = graphql`
         filename
         image {
           childImageSharp {
-            fixed(width: 100, height: 100) {
+            fixed(width: 120, height: 120) {
               src
               srcSetWebp
               aspectRatio
@@ -38,7 +44,7 @@ export const query = graphql`
   }
 `
 
-const Test = styled.p`
+const Parameters = styled.div`
   display: inline-block;
   margin: 8px 1rem 0 0;
   font-size: 0.9rem;
@@ -52,10 +58,10 @@ const ImageBox = styled(Image)`
   margin: 0;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
-  width: 100px;
-  height: 100px;
-  min-width: 100px;
-  min-height: 100px;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
   object-fit: cover;
 `
 
@@ -81,6 +87,10 @@ const PostContent = styled.div`
   ul {
     list-style: outside;
     padding-left: 40px;
+  }
+
+  li > ul {
+    padding-left: 0;
   }
 
   li > ul,
@@ -119,19 +129,41 @@ const PostContent = styled.div`
 `
 
 const SVG = styled.img`
-  width: 100px;
-  /* height: 100px; */
+  width: 120px;
+  /* height: 120px; */
   box-shadow: none;
   border-radius: 0px;
 `
 
 const ReadLink = styled(Link)`
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 1rem;
+  display: flex;
+  align-items: center;
 
-  span {
-    color: var(--text);
+  svg {
+    /* position: absolute; */
+    /* color: var(--text); */
     font-weight: 600;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.1rem;
+    stroke: var(--heading);
+
+    transition: all 0.15s cubic-bezier(0, -0.22, 1, 1.22);
+
+    /* background-color: red; */
+    /* display: flex; */
+    /* justify-content: center; */
+  }
+
+  :hover {
+    svg {
+      transform: translateX(-0.15rem);
+      stroke: var(--main);
+
+      /* transform: rotate(360deg); */
+    }
   }
 `
 
@@ -157,7 +189,7 @@ const HeaderWrapper = styled.div`
 const HeaderTitle = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   padding-left: 1.3rem;
   h1 {
     margin: 0;
@@ -178,6 +210,23 @@ const Share = styled.p`
     }
   }
 `
+
+const components = {
+  p: props => <p className="paragraph" {...props} />,
+  h1: props => <h1 className="heading-1" {...props} />,
+  h2: props => <h2 className="heading-2" {...props} />,
+  h3: props => <h3 className="heading-3" {...props} />,
+  blockquote: props => <blockquote className="blockquote" {...props} />,
+  ul: props => <ul className="unordered-list" {...props} />,
+  ol: props => <ol className="ordered-list" {...props} />,
+  li: props => <li className="list-item" {...props} />,
+  em: props => <em className="emphasis" {...props} />,
+  strong: props => <strong className="strong" {...props} />,
+  delete: props => <delete className="strikethrough" {...props} />,
+  hr: props => <hr className="break" {...props} />,
+  a: props => <a className="link" {...props} />,
+  img: props => <img className="image" {...props} />,
+}
 
 const PostTemplate = ({ data: { mdx: post } }) => {
   let img
@@ -207,7 +256,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
         <HeaderTitle>
           <Title>{post.frontmatter.title}</Title>
           <FluidBox>
-            <Test>
+            <Parameters>
               <Twemoji>
                 <span role="img" aria-label="calendar emoji">
                   🗓
@@ -215,8 +264,8 @@ const PostTemplate = ({ data: { mdx: post } }) => {
                 {' '}
                 {post.frontmatter.date}
               </Twemoji>
-            </Test>
-            <Test>
+            </Parameters>
+            <Parameters>
               <Twemoji>
                 <span role="img" aria-label="clock emoji">
                   ⏱️
@@ -226,20 +275,33 @@ const PostTemplate = ({ data: { mdx: post } }) => {
                 {' '}
 min read
               </Twemoji>
-            </Test>
+            </Parameters>
           </FluidBox>
         </HeaderTitle>
       </HeaderWrapper>
 
-      <PostContent>
-        <MDXRenderer>{post.code.body}</MDXRenderer>
-      </PostContent>
+      <MDXProvider components={components}>
+        <PostContent>
+          <MDXRenderer>{post.code.body}</MDXRenderer>
+        </PostContent>
+      </MDXProvider>
       <FooterNav>
-        <ReadLink to="/blog/">
-          <span>&larr;</span>
-          {' '}
-Back to all posts
-        </ReadLink>
+        {/* <a href="/blog/">
+
+        </a> */}
+        <Share>
+          <Link to="/blog/">
+            <span
+              css={css`
+                border-bottom: 0;
+              `}
+            >
+              &larr;
+            </span>
+            {' '}
+            Back to all posts
+          </Link>
+        </Share>
         <Share>
           <a href={discussUrl} target="_blank" rel="nofollow noopener noreferrer">
             Discuss on Twitter

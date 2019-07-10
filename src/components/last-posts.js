@@ -43,20 +43,26 @@ const Item = styled.li`
     /* border-bottom: none; */
   }
 
+  a {
+    text-decoration: none;
+  }
+
   &:first-of-type {
     /* margin-top: 1.2rem; */
   }
 
-  a::-moz-selection {
-    /* Code for Firefox */
+  /* a::-moz-selection {
+
     background: var(--main);
     color: var(--bg);
+    text-decoration-color: var(--bg);
   }
 
   a::selection {
     background: var(--main);
     color: var(--bg);
-  }
+    text-decoration-color: var(--bg);
+  } */
 `
 
 const SVG = styled.img`
@@ -136,7 +142,7 @@ const LastPosts = () => {
     }
     return (
       <Item>
-        <LinkBox to={edge.node.frontmatter.slug}>{img}</LinkBox>
+        <LinkBox to={`/${edge.node.frontmatter.slug}`}>{img}</LinkBox>
         <div
           css={css`
             /* max-width: calc(640px - 150px - 20px); */
@@ -159,7 +165,7 @@ const LastPosts = () => {
             `}
           >
             <Link
-              to={edge.node.frontmatter.slug}
+              to={`/${edge.node.frontmatter.slug}`}
               css={css`
                 color: var(--heading);
                 font-weight: 600;
@@ -181,6 +187,7 @@ const LastPosts = () => {
           padding-bottom: 0; */
           /* padding-left: 1px; */
           border-bottom: none;
+          text-decoration: none;
         `}
       >
         Recent posts

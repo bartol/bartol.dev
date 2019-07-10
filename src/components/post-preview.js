@@ -44,16 +44,21 @@ const Article = styled.article`
     /* margin-top: 1.2rem; */
   }
 
-  a::-moz-selection {
-    /* Code for Firefox */
+  a {
+    text-decoration: none;
+  }
+
+  /* a::-moz-selection {
     background: var(--main);
     color: var(--bg);
+    text-decoration-color: var(--bg);
   }
 
   a::selection {
     background: var(--main);
     color: var(--bg);
-  }
+    text-decoration-color: var(--bg);
+  } */
 `
 
 const LinkBox = styled(Link)`
@@ -86,7 +91,7 @@ const FluidBox = styled.div`
   margin: 0;
 `
 
-const Test = styled.p`
+const Parameters = styled.div`
   display: inline-block;
   margin: 8px 1rem 0 0;
   font-size: 0.9rem;
@@ -112,7 +117,7 @@ const PostPreview = ({ hit }) => {
   return (
     <>
       <Article>
-        <LinkBox to={hit.frontmatter.slug}>{img}</LinkBox>
+        <LinkBox to={`/${hit.frontmatter.slug}`}>{img}</LinkBox>
         <div
           css={css`
             /* max-width: calc(640px - 150px - 20px); */
@@ -138,7 +143,7 @@ const PostPreview = ({ hit }) => {
             `}
           >
             <Link
-              to={hit.frontmatter.slug}
+              to={`/${hit.frontmatter.slug}`}
               css={css`
                 color: var(--heading);
                 font-weight: 600;
@@ -148,7 +153,7 @@ const PostPreview = ({ hit }) => {
             </Link>
           </h2>
           <FluidBox>
-            <Test>
+            <Parameters>
               <Twemoji>
                 <span role="img" aria-label="calendar emoji">
                   🗓
@@ -156,8 +161,8 @@ const PostPreview = ({ hit }) => {
                 {' '}
                 {hit.frontmatter.date}
               </Twemoji>
-            </Test>
-            <Test>
+            </Parameters>
+            <Parameters>
               <Twemoji>
                 <span role="img" aria-label="clock emoji">
                   ⏱️
@@ -167,7 +172,7 @@ const PostPreview = ({ hit }) => {
                 {' '}
 min read
               </Twemoji>
-            </Test>
+            </Parameters>
           </FluidBox>
         </div>
       </Article>

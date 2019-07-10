@@ -68,7 +68,7 @@ const PopularPost = (props) => {
   }
   return (
     <Item>
-      <LinkBox to={match.node.frontmatter.slug}>{img}</LinkBox>
+      <LinkBox to={`/${match.node.frontmatter.slug}`}>{img}</LinkBox>
       <div
         css={css`
           /* max-width: calc(640px - 150px - 20px); */
@@ -91,7 +91,7 @@ const PopularPost = (props) => {
           `}
         >
           <Link
-            to={match.node.frontmatter.slug}
+            to={`/${match.node.frontmatter.slug}`}
             css={css`
               color: var(--heading);
               font-weight: 600;
@@ -129,16 +129,22 @@ const Item = styled.li`
     /* margin-top: 1.2rem; */
   }
 
-  a::-moz-selection {
-    /* Code for Firefox */
+  a {
+    text-decoration: none;
+  }
+
+  /*a::-moz-selection {
+
     background: var(--main);
     color: var(--bg);
+    text-decoration-color: var(--bg);
   }
 
   a::selection {
     background: var(--main);
     color: var(--bg);
-  }
+    text-decoration-color: var(--bg);
+  } */
 `
 
 const SVG = styled.img`

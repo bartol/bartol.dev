@@ -28,57 +28,45 @@ const Layout = ({ children }) => (
 
           ::-moz-selection {
             /* Code for Firefox */
-            background: #42c5f1;
-            color: var(--bg);
+            background-color: var(--selection);
+            color: var(--text);
           }
 
           ::selection {
-            background: #42c5f1;
-            color: var(--bg);
+            background-color: var(--selection);
+            color: var(--text);
           }
 
           :focus {
-            outline-color: var(--link);
+            outline-color: var(--main);
             outline-style: dashed;
             outline-offset: 2px;
             outline-width: 2px;
-            /* outline: 0; */
           }
         }
 
-        /* * + * {
-            margin-top: 1rem;
-          } */
-
-        /* colors */
-
         body {
-          --bg: #f7f7f7; /* 1 */
+          --bg: #f7f7f7;
           --nav: #1f1f1f;
-          --main: #42c5f1; /* 7 */
-          --heading: #222222; /* 10 */
-          --parameters: #626262; /* 6 */
-          --text: #222222; /* 9 */
-          --link: #42c5f1; /* 7 */
-          --line: #cfcfcf; /* 3 */
-          /* --shadoww: 0 5px 10px rgba(155, 160, 185, 0.5), 0 15px 40px rgba(165, 175, 200, 0.8); */
-          /* --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15); */
+          --main: #0c78b3;
+          --heading: #222222;
+          --text: #222222;
+          --parameters: #626262;
+          --line: #cfcfcf;
+          --selection: rgba(12, 120, 179, 0.99);
           --shadow: 0 0 3px rgba(0, 0, 0, 0.3);
           --radius: 5px;
         }
 
         body.dark {
           --bg: #121212;
-          /* --bg: #303030; */
           --nav: #1f1f1f;
-          --main: #42c5f1; /* 7 */
-          --heading: #e1e1e1; /* 1 */
-          --parameters: #a0a0a0; /* 4 */
-          --text: #e1e1e1; /* 2 */
-          --link: #42c5f1; /* 7 */
-          --line: #515151; /* 8 */
-          /* --shadow: 0 5px 10px rgba(23, 23, 23, 0.5), 0 15px 40px rgba(21, 21, 21, 0.8); */
-          /* --shadow: 2px 4px 25px rgba(0, 0, 0, 0.15); */
+          --main: #0e8fd5;
+          --heading: #e1e1e1;
+          --text: #e1e1e1;
+          --parameters: #a0a0a0;
+          --line: #515151;
+          --selection: rgba(14, 143, 213, 0.99);
           --shadow: 0 0 3px rgba(0, 0, 0, 0.3);
           --radius: 5px;
         }
@@ -89,6 +77,7 @@ const Layout = ({ children }) => (
           /* margin-bottom: -50px; */
           background-color: var(--bg);
           position: relative;
+          /* transition: color 0.2s ease-out, background 0.2s ease-out; */
         }
 
         html,
@@ -206,18 +195,24 @@ const Layout = ({ children }) => (
           }
 
           a {
-            color: var(--link);
-            text-decoration: none;
+            color: var(--main);
+            /* text-decoration: none; */
+            text-decoration: underline;
+            text-underline-position: under;
+            /* text-decoration-color: red; */
+            /* border-bottom: 1px solid var(--main); */
+
+            :hover,
+            :focus {
+              text-decoration: none;
+            }
 
             ::-moz-selection {
-              /* Code for Firefox */
-              background: var(--link);
-              color: var(--heading);
+              text-decoration-color: var(--text);
             }
 
             ::selection {
-              background: var(--link);
-              color: var(--heading);
+              text-decoration-color: var(--text);
             }
           }
         }
@@ -239,10 +234,6 @@ const Layout = ({ children }) => (
           box-shadow: none !important;
           border-radius: 0;
         }
-
-        /* p > div {
-          display: inline;
-        } */
 
         .gatsby-highlight-code-line {
           background-color: #012a4a;
@@ -287,6 +278,11 @@ const Layout = ({ children }) => (
           overflow: initial;
           float: left; /* 1 */
           min-width: 100%;
+        }
+
+        p > code {
+          padding: 0.2rem 0.4rem;
+          border-radius: var(--radius);
         }
 
         /* .activeLink {

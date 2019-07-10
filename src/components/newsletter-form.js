@@ -71,12 +71,8 @@ const ButtonBox = styled.button`
   color: #a0a0a0;
   outline: none;
 
-  /* :hover {
-    border-color: var(--main);
-  } */
-
   :focus {
-    /* color: var(--main); */
+    color: var(--main);
     border-color: var(--main);
     outline: 0;
   }

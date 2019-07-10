@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 
 const Wrapper = styled.footer`
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -23,7 +23,7 @@ const FooterBox = styled.div`
   align-self: center;
 
   a {
-    color: var(--link);
+    color: var(--main);
     font-size: 0.9rem;
 
     @media (max-width: 525px) {
@@ -78,7 +78,15 @@ const Footer = () => (
           Twitter
         </a>
       </div>
-      <Link to="/license/">
+      <Link
+        to="/license/"
+        css={css`
+          text-decoration: none;
+          :focus {
+            outline: 0;
+          }
+        `}
+      >
         <Copyright>
           <span>&copy; 2019 Bartol Deak. </span>
           <span>All rights reserved.</span>

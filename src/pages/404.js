@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { Location } from '@reach/router'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
 
@@ -12,6 +13,7 @@ const Ascii = styled.div`
   text-align: center;
   color: var(--line);
   font-family: 'IBM Plex Mono', monospace;
+  user-select: none;
 
   @media (max-width: 600px) {
     font-size: 100px;
@@ -24,7 +26,7 @@ const Ascii = styled.div`
 
 const Err = styled.div`
   /* font-family: 'IBM Plex Mono', monospace; */
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   line-height: 0.9;
   padding-right: 1rem;
   font-weight: 600;
@@ -46,7 +48,7 @@ const Message = styled.div`
 //   margin-top: -5rem;
 // `
 
-const emojis = ['(>_<)', '(·.·)', 'ಠ_ಠ', '(⊙_☉)', '(#^.^#)', '(~_~;)']
+const emojis = ['(>_<)', '(·.·)', 'ಠ_ಠ', '(⊙_☉)', '(~_~;)']
 
 export default () => (
   <Layout>
@@ -55,18 +57,60 @@ export default () => (
     <Message>
       <Err>404</Err>
       <div>
-        Page was not found.
+        <Location>
+          {({ location }) => {
+            if (/\/blog\/..*/.test(location.pathname)) {
+              return 'Post'
+            }
+            if (/\/tags\/..*/.test(location.pathname)) {
+              return 'Tag'
+            }
+            return 'Page'
+          }}
+        </Location>
+        {' '}
+        was not found.
         <br />
         Go back to
         {' '}
-        <Link
-          to="/"
-          css={css`
-            font-weight: 600;
-          `}
-        >
-          Home
-        </Link>
+        <Location>
+          {({ location }) => {
+            if (/\/blog\/..*/.test(location.pathname)) {
+              return (
+                <Link
+                  to="/blog/"
+                  css={css`
+                    font-weight: 600;
+                  `}
+                >
+                  Posts
+                </Link>
+              )
+            }
+            if (/\/tags\/..*/.test(location.pathname)) {
+              return (
+                <Link
+                  to="/tags/"
+                  css={css`
+                    font-weight: 600;
+                  `}
+                >
+                  Tags
+                </Link>
+              )
+            }
+            return (
+              <Link
+                to="/"
+                css={css`
+                  font-weight: 600;
+                `}
+              >
+                Home
+              </Link>
+            )
+          }}
+        </Location>
         .
       </div>
     </Message>

@@ -154,13 +154,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Bartol's Blog",
-        short_name: 'Blog',
+        name: "Bartol's Coding Blog",
+        short_name: "Bartol's Blog",
         start_url: '/',
         background_color: '#121212',
-        theme_color: '#42c5f1',
+        theme_color: '#1f1f1f',
         display: 'standalone',
-        icon: 'static/logo.svg',
+        icon: 'static/logo.png',
       },
     },
     'gatsby-plugin-offline',

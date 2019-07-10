@@ -7,8 +7,9 @@ import {
 } from 'react-instantsearch-dom'
 import Layout from '../components/layout'
 import PostPreview from '../components/post-preview'
-import Exit from '../../static/exit.svg'
+import Exit from '../../static/x.svg'
 import SEO from '../components/SEO'
+import NoHits from '../components/no-hits'
 
 const searchClient = algoliasearch('YMC567Y2Z5', '433ac749b039503ffe3f555236fdced1')
 
@@ -31,8 +32,9 @@ const FlexBox = styled.div`
 const Input = styled.input`
   -webkit-appearance: none;
   background-color: var(--bg);
-  width: 175px;
-  padding: 6px 8px;
+  max-width: 175px;
+  width: 45vw;
+  padding: 6px 6px 6px 8px;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: 'IBM Plex Sans', sans-serif;
@@ -55,14 +57,13 @@ const Input = styled.input`
     -webkit-appearance: none;
 
     /* Now your own custom styles */
-    height: 10px;
-    width: 10px;
+    height: 0.95rem;
+    width: 0.95rem;
+
     /* margin-right: 2px; */
     margin-left: 5px;
     background: url(${Exit});
     cursor: pointer;
-
-    /* Will place small red box on the right of input (positioning carries over) */
   }
 `
 
@@ -76,19 +77,27 @@ const Search = ({ currentRefinement, /* isSearchStalled, */ refine }) => (
       aria-label="Search posts"
       autoFocus={typeof window !== 'undefined' && window.innerWidth >= 1025}
     />
-    {/* {isSearchStalled ? 'Search is stalled' : ''} */}
+    {/* {isSearchStalled ? <NoHits /> : ''} */}
   </form>
 )
 
 const CustomSearchBox = connectSearchBox(Search)
 
-const Stats = ({ nbHits }) => <div className="numOfHits">{nbHits}</div>
+const Stats = ({ nbHits }) => {
+  if (nbHits === 0) {
+    return (
+      <>
+        <div className="numOfHits">{nbHits}</div>
+        <NoHits />
+      </>
+    )
+  }
+  return <div className="numOfHits">{nbHits}</div>
+}
 
 const CustomStats = connectStats(Stats)
 
 export default () => (
-  // const posts = usePosts()
-
   <Layout>
     <SEO title="Posts" />
     <InstantSearch searchClient={searchClient} indexName="blog">
@@ -101,8 +110,5 @@ export default () => (
       </FlexBox>
       <Hits hitComponent={PostPreview} />
     </InstantSearch>
-    {/* {posts.map(post => (
-        <PostPreview key={post.slug} post={post} />
-      ))} */}
   </Layout>
 )

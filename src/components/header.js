@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import React from 'react'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
@@ -11,6 +12,7 @@ import Scroll from './scroll'
 const regex = /\/blog\/..*/
 
 const NavLink = styled(Link)`
+  text-decoration: none;
   color: #e1e1e1;
   font-size: 18px;
 
@@ -22,10 +24,10 @@ const NavLink = styled(Link)`
   line-height: 1.1;
   margin: 0 1rem 0 0;
   /* padding: 0.25rem 0; */
-  text-decoration: none;
 
   &.current-page {
-    color: var(--main);
+    /* color: var(--main); */
+    color: #0e8fd5;
   }
 
   &:last-of-type {
@@ -65,11 +67,11 @@ const NavBox = styled.nav`
 `
 
 const B = styled(Link)`
-  height: 34px;
+  height: 32px;
   width: 30px;
   display: flex;
   justify-content: flex-start;
-  margin-left: -2px;
+  margin-left: -7px;
 
   & svg {
     height: 100%;
@@ -94,8 +96,10 @@ const B = styled(Link)`
 
 const Switch = styled.label`
   display: inline-block;
-  height: 34px;
+  height: 32px;
   position: relative;
+  margin-right: -3px;
+
   width: 30px;
   & input {
     display: none;
@@ -118,7 +122,7 @@ const NotScroll = styled.div`
 const Header = () => (
   <Wrapper>
     <HeaderBox>
-      <B to="/" activeClassName="current-page">
+      <B to="/">
         <svg
           width="132"
           height="204"
@@ -183,55 +187,113 @@ const Header = () => (
             {theme === 'dark' && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-                width="28px"
-                height="28px"
+                // aria-hidden="true"
+                // focusable="false"
+                width="30px"
+                height="30px"
                 css={css`
-                  margin-top: 3px;
+                  margin-top: 1.5px;
                   -ms-transform: rotate(360deg);
                   -webkit-transform: rotate(360deg);
                   transform: rotate(360deg);
                 `}
                 preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 36 36"
                 onClick={() => (document.getElementById('___gatsby').style.cssText = 'transition: color 0.2s ease-out, background 0.2s ease-out;')
                 }
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#e1e1e1"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path
-                  fill="#FFAC33"
-                  d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828 2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"
-                />
-                <circle fill="#FFAC33" cx="18" cy="18" r="10" />
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
+
+            // <svg
+            //   xmlns="http://www.w3.org/2000/svg"
+            //   aria-hidden="true"
+            //   focusable="false"
+            //   width="28px"
+            //   height="28px"
+            //   css={css`
+            //     margin-top: 3px;
+            //     -ms-transform: rotate(360deg);
+            //     -webkit-transform: rotate(360deg);
+            //     transform: rotate(360deg);
+            //   `}
+            //   preserveAspectRatio="xMidYMid meet"
+            //   viewBox="0 0 36 36"
+            //   onClick={() => (document.getElementById('___gatsby').style.cssText = 'transition: color 0.2s ease-out, background 0.2s ease-out;')
+            //   }
+            // >
+            //   <path
+            //     fill="#FFAC33"
+            //     d="M16 2s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2V2zm18 14s2 0 2 2-2 2-2 2h-2s-2 0-2-2 2-2 2-2h2zM4 16s2 0 2 2-2 2-2 2H2s-2 0-2-2 2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828 2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0 0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0 0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2 2 2 2 2v2s0 2-2 2-2-2-2-2v-2z"
+            //   />
+            //   <circle fill="#FFAC33" cx="18" cy="18" r="10" />
+            // </svg>
             )}
             {theme === 'light' && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-                focusable="false"
-                width="28px"
-                height="28px"
+                // aria-hidden="true"
+                // focusable="false"
+                width="30px"
+                height="30px"
                 css={css`
-                  margin-top: 3px;
+                  margin-top: 1.5px;
                   -ms-transform: rotate(360deg);
                   -webkit-transform: rotate(360deg);
                   transform: rotate(360deg);
                 `}
                 preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 36 36"
                 onClick={() => (document.getElementById('___gatsby').style.cssText = 'transition: color 0.2s ease-out, background 0.2s ease-out;')
                 }
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#e1e1e1"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <path
-                  fill="#FFD983"
-                  d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"
-                />
-                <path
-                  d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641 1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465 1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0 2.902 2.902 0 0 1 0-4.107 2.902 2.902 0 0 1 4.108 0 2.902 2.902 0 0 1 0 4.107z"
-                  fill="#FFCC4D"
-                />
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
+
+            // <svg
+            //   xmlns="http://www.w3.org/2000/svg"
+            //   aria-hidden="true"
+            //   focusable="false"
+            //   width="28px"
+            //   height="28px"
+            //   css={css`
+            //     margin-top: 3px;
+            //     -ms-transform: rotate(360deg);
+            //     -webkit-transform: rotate(360deg);
+            //     transform: rotate(360deg);
+            //   `}
+            //   preserveAspectRatio="xMidYMid meet"
+            //   viewBox="0 0 36 36"
+            //   onClick={() => (document.getElementById('___gatsby').style.cssText = 'transition: color 0.2s ease-out, background 0.2s ease-out;')
+            //   }
+            // >
+            //   <path
+            //     fill="#FFD983"
+            //     d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"
+            //   />
+            //   <path
+            //     d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641 1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465 1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0 2.902 2.902 0 0 1 0-4.107 2.902 2.902 0 0 1 4.108 0 2.902 2.902 0 0 1 0 4.107z"
+            //     fill="#FFCC4D"
+            //   />
+            // </svg>
             )}
           </Switch>
         )}

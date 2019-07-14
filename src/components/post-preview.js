@@ -44,10 +44,6 @@ const Article = styled.article`
     /* margin-top: 1.2rem; */
   }
 
-  a {
-    text-decoration: none;
-  }
-
   /* a::-moz-selection {
     background: var(--main);
     color: var(--bg);

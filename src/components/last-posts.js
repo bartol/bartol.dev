@@ -43,10 +43,6 @@ const Item = styled.li`
     /* border-bottom: none; */
   }
 
-  a {
-    text-decoration: none;
-  }
-
   &:first-of-type {
     /* margin-top: 1.2rem; */
   }
@@ -187,7 +183,6 @@ const LastPosts = () => {
           padding-bottom: 0; */
           /* padding-left: 1px; */
           border-bottom: none;
-          text-decoration: none;
         `}
       >
         Recent posts

@@ -149,7 +149,6 @@ const TagTemplate = ({ data }) => {
               css={css`
                 color: var(--heading);
                 font-weight: 600;
-                text-decoration: none;
               `}
             >
               {edge.node.frontmatter.title}

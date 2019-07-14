@@ -196,16 +196,7 @@ const Layout = ({ children }) => (
 
           a {
             color: var(--main);
-            /* text-decoration: none; */
-            text-decoration: underline;
-            text-underline-position: under;
-            /* text-decoration-color: red; */
-            /* border-bottom: 1px solid var(--main); */
-
-            :hover,
-            :focus {
-              text-decoration: none;
-            }
+            text-decoration: none;
 
             ::-moz-selection {
               text-decoration-color: var(--text);

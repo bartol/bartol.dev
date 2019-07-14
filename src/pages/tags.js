@@ -11,10 +11,6 @@ const Tag = styled.li`
   display: inline-block;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-
-  a {
-    text-decoration: none;
-  }
 `
 
 const List = styled.ul`

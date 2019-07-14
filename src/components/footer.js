@@ -81,7 +81,6 @@ const Footer = () => (
       <Link
         to="/license/"
         css={css`
-          text-decoration: none;
           :focus {
             outline: 0;
           }

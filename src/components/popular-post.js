@@ -129,10 +129,6 @@ const Item = styled.li`
     /* margin-top: 1.2rem; */
   }
 
-  a {
-    text-decoration: none;
-  }
-
   /*a::-moz-selection {
 
     background: var(--main);

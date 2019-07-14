@@ -12,7 +12,6 @@ import Scroll from './scroll'
 const regex = /\/blog\/..*/
 
 const NavLink = styled(Link)`
-  text-decoration: none;
   color: #e1e1e1;
   font-size: 18px;
 

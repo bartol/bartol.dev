@@ -19,7 +19,7 @@ const PopularPosts = () => {
     //   return <PopularPost Slug={post[0]} />
     // }
     if (post[0] !== '/blog/another-post/') {
-      return <PopularPost Slug={post[0]} />
+      return <PopularPost Slug={post[0]} key={post[0]} />
     }
   })
   return (

@@ -105,9 +105,12 @@ const LastPosts = () => {
                 sharp: childImageSharp {
                   fixed(width: 50, height: 50) {
                     src
+                    srcSet
                     srcSetWebp
                     aspectRatio
                     base64
+                    width
+                    height
                   }
                 }
                 extension
@@ -137,7 +140,7 @@ const LastPosts = () => {
       )
     }
     return (
-      <Item>
+      <Item key={edge.node.frontmatter.slug}>
         <LinkBox to={`/${edge.node.frontmatter.slug}`}>{img}</LinkBox>
         <div
           css={css`

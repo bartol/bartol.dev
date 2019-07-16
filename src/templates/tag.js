@@ -21,9 +21,12 @@ export const query = graphql`
               sharp: childImageSharp {
                 fixed(width: 50, height: 50) {
                   src
+                  srcSet
                   srcSetWebp
                   aspectRatio
                   base64
+                  width
+                  height
                 }
               }
               extension

@@ -27,9 +27,12 @@ export const query = graphql`
           childImageSharp {
             fixed(width: 120, height: 120) {
               src
+              srcSet
               srcSetWebp
               aspectRatio
               base64
+              width
+              height
             }
           }
           extension
@@ -238,7 +241,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
     )
   }
 
-  const editUrl = `https://github.com/bartold3ak/bartol.dev/edit/master/posts/${post.frontmatter.foldername}/${post.frontmatter.filename}.mdx`
+  const editUrl = `https://github.com/bartol/bartol.dev/edit/master/posts/${post.frontmatter.foldername}/${post.frontmatter.filename}.mdx`
   const discussUrl = `https://twitter.com/search?q=${encodeURIComponent(
     `https://bartol.dev/${post.frontmatter.slug}`,
   )}`

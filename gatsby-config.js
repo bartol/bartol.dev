@@ -18,9 +18,12 @@ const postQuery = `{
               sharp: childImageSharp {
                 fixed(width: 75, height: 75) {
                   src
+                  srcSet
                   srcSetWebp
                   aspectRatio
                   base64
+                  width
+                  height
                 }
               }
               extension

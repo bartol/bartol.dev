@@ -9,7 +9,7 @@ console.log(`
 ((((                   ((((
 ((((                  ((((     Hey! If you are interested in source code
 ((((         ..      ((((      of this website visit github repository:
-((((        (((                https://github.com/bartold3ak/bartol.dev
+((((        (((                https://github.com/bartol/bartol.dev
 ((((      ((((
 ((((    (((((((((((((((((*.
 ((((     ((((((((((((((((((((

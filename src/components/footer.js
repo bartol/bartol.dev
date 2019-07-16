@@ -60,7 +60,7 @@ const Footer = () => (
           }
         `}
       >
-        <a href="https://github.com/bartold3ak/" target="_blank" rel="nofollow noopener noreferrer">
+        <a href="https://github.com/bartol/" target="_blank" rel="nofollow noopener noreferrer">
           Github
         </a>
         <a

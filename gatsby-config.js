@@ -1,3 +1,5 @@
+const replace = require('lodash.replace')
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -54,13 +56,14 @@ if (
   && process.env.GA_SERVICE_ACCOUNT_KEY
   && process.env.GA_VIEW_ID
 ) {
+  const googleApiKey = replace(process.env.GA_SERVICE_ACCOUNT_KEY, new RegExp('\\\\n', 'g'), '\n')
   dynamicPlugins.push({
     resolve: 'gatsby-plugin-guess-js',
     options: {
       GAViewID: `${process.env.GA_VIEW_ID}`,
       jwt: {
         client_email: process.env.GA_SERVICE_ACCOUNT,
-        private_key: process.env.GA_SERVICE_ACCOUNT_KEY,
+        private_key: googleApiKey,
       },
       period: {
         startDate,

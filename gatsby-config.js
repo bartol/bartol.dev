@@ -236,6 +236,6 @@ module.exports = {
         analyzerMode: 'static',
       },
     },
-    // ].concat(dynamicPlugins),
-  ],
+  ].concat(dynamicPlugins),
+  // ],
 }

@@ -1,101 +1,54 @@
 ---
 title: Hello World!
 slug: blog/hello-world/
-image: ./jisu-han.jpg
-imagealt: image of a rock
+image: ./logo.svg
+imagealt: my logo
 tags: ['hello', 'world', 'blog']
-date: 2002-09-16
+date: 2002-08-05
 datetimestamp: 1032134400
 foldername: 00-hello-world
 filename: hello-world
 published: true
 ---
 
-import Caption from '../../src/components/caption'
-import T from '../../src/components/twemoji'
-import Code from '../../src/components/code-prop'
+Hey! Welcome to my blog! As this is my first post I traditionally named it Hello World. Very nerdy indeed. In this post I'll go over past, present and future of this blog.
 
-Cupcake <T e="😂" alt="crying emoji" /> ipsum dolor sit amet pudding. I love dessert dragée sugar plum. Halvah I love tart marzipan muffin cake candy. I love lemon drops brownie macaroon bonbon. Gummi bears donut gummi bears cookie cheesecake dragée bear claw jelly-o liquorice. Cookie toffee I love I love cheesecake. Oat cake cupcake caramels wafer ice cream sesame snaps. I love sugar plum gummies chocolate bar. Marzipan apple pie I love bonbon topping. Pudding I love lollipop. I love bonbon dragée marzipan liquorice tiramisu. Bear claw sugar plum biscuit chocolate cake topping I love.
+## This is blog about programming. We gotta start with stack!
 
-## heading h2
+As you probably imagined from JavaScript cool boy programmer, stack is pretty much bleeding edge.
 
-"Danish chocolate I love jelly-o pudding." I love topping cheesecake bear claw apple pie caramels topping. Cupcake chupa chups gummies gummies lemon drops dessert.
+I used [Gatsby](https://www.gatsbyjs.org) to get these fancy static sites from [React](https://reactjs.org/) and [MDX](https://mdxjs.com). For those who aren't living on the edge, MDX is kind of markdown on steroids. Imagine putting `<FancyComponentDownloadedFromNpm />` inside your markdown text. That is MDX in nutshell.
 
-### heading h3
+Next, we have [Algolia](https://www.algolia.com/). Algolia is really fast search. And it's easy to setup on static site. I've actually written post about Algolia integration with Gatsby that you can see [here](https://bartol.dev/blog/algolia-search-gatsby/).
 
-Sugar plum muffin topping oat cake jelly. Pudding ice cream I love toffee. Lemon drops cake chupa chups gummi bears. Cookie I love macaroon caramels sweet candy.
+Other than that [PrismJS](https://prismjs.com/) with [Night Owl theme](https://github.com/SaraVieira/prism-theme-night-owl) (port from [this](https://github.com/sdras/night-owl-vscode-theme) theme by [Sarah Drasner](https://github.com/sdras)) is used for code highlighting and [GuessJS](https://guess-js.github.io/) is used for pre-fetching pages with machine learning using data from Google Analytics. A lot of buzzwords, but it's really cool. Google talk about it can be found [here](https://youtu.be/Mv-l3-tJgGk?t=2093). I plan to write about it more soon.
 
-#### heading h4
+## Enough about stupid tech stuff. What are you gonna post?
 
-Muffin I love jelly beans dragée. Cookie sweet roll soufflé powder. Macaroon fruitcake I love. I love halvah chocolate pudding lollipop danish marshmallow. Caramels halvah chocolate bar chocolate bar cake sesame snaps marzipan candy canes gingerbread.
+For now I plan to post as frequently as I can, about things that I learn and use.
 
-##### heading h5
+In following format:
 
-Brownie liquorice biscuit I love ice cream jelly. Halvah lollipop I love cookie sweet roll cupcake donut. Sesame snaps croissant I love I love cake chupa chups. Topping pie carrot cake
+**How to map over array in JavaScript**
 
-###### heading h6
+...small description...
 
-wafer pastry fruitcake. Jelly-o chocolate cake gummies chupa chups I love. Lollipop marzipan I love soufflé. Muffin pudding I love pie I love cotton candy. Carrot cake tiramisu candy carrot cake. Liquorice candy I love brownie chocolate. Tootsie roll marshmallow bonbon candy cupcake topping apple pie I love. Ice cream wafer I love cake jujubes tart chupa chups I love. I love cake halvah halvah cookie carrot cake jelly-o dragée. Topping soufflé fruitcake candy I love liquorice.
+```JavaScript
+const array = ['one', 'two']
 
-<figure>
+array.map(item => {
+  console.log(item)
+})
 
-![image of rock](./jisu-han.jpg)
-
-<Caption>cap for img</Caption>
-</figure>
-
-## another heading
-
-Bear claw candy canes donut cake. Cheesecake toffee jelly wafer jelly-o cheesecake. Caramels sweet roll lemon drops. Lemon drops pie sweet halvah jujubes. Ice cream fruitcake cookie I love jujubes croissant tiramisu. Pie dragée ice cream lemon drops bonbon dragée I love jelly-o I love. Apple pie jelly cheesecake I love toffee bear claw biscuit liquorice. Cupcake caramels ice cream pastry I love. Pie cookie cheesecake biscuit sweet sweet roll danish tart I love. Jelly donut pie I love chupa chups I love candy canes. Cake carrot cake I love halvah icing. Candy canes candy candy canes chocolate bar I love.
-
-I love chocolate bar biscuit. Croissant oat cake pudding jelly-o gummies. Ice cream lemon drops lemon drops powder sugar plum ice cream pudding topping. Jujubes jelly beans gummies I love ice cream I love chupa chups. Danish sweet roll powder cake sesame snaps I love. Bear claw pie brownie gummi bears chupa chups powder. Jujubes I love tart chupa chups dragée chupa chups I love muffin. I love toffee jelly beans I love pudding sweet roll. Soufflé I love sweet toffee. Toffee carrot cake candy powder toffee chocolate cake jujubes jelly. Lollipop I love bonbon. Pastry I love I love sesame snaps lemon drops pie. Chocolate cake candy jelly beans sugar plum cheesecake soufflé. Donut dragée cupcake.
-
-<Code path="/src/pages/index.js" lang="JSX" />
-
-```jsx
-import React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
-import usePosts from '../utils/use-posts'
-import PostPreview from '../components/post-preview'
-
-export default () => {
-  const posts = usePosts()
-
-  return (
-    <Layout>
-      <h1>Hello...</h1>
-      <p>...world!</p>
-      <Link to="/about/">Learn more about me</Link>
-      <h2>Read my blog. Just do it.</h2>
-      {posts.map(post => (
-        <PostPreview key={post.slug} post={post} />
-      ))}
-    </Layout>
-  )
-}
+// Output:
+// one
+// two
 ```
 
-Biscuit topping pastry. Wafer donut macaroon dessert. Tiramisu dragée chupa chups cake wafer pie. Bear claw macaroon I love toffee pudding powder. Tootsie roll I love I love wafer ice cream wafer liquorice. Donut topping sugar plum halvah muffin marzipan I love donut. Dessert tart pie. Tootsie roll candy pudding cotton candy gingerbread cake cookie. Liquorice powder bonbon danish. Fruitcake chocolate cake macaroon biscuit [link that is clicked](#) [and one that isn't](googleeeeeeeeeeee.com) cake I love I love donut bear claw. Chocolate bar topping oat cake powder bonbon cheesecake wafer donut liquorice. Danish carrot cake chupa chups cheesecake. Jelly sugar plum I love. Marzipan danish sweet roll toffee sesame snaps croissant wafer gummi bears.
+You can find ideas and plans for future posts on [/roadmap](https://bartol.dev/roadmap/). I'll do my best to keep it up to date.
 
-<!-- [![this is video](http://img.youtube.com/vi/YS4e4q9oBaU/0.jpg)](http://www.youtube.com/watch?v=YS4e4q9oBaU) -->
+## What about the future?
 
-Cake icing sugar plum cheesecake brownie `inline code` I love chocolate bar sesame snaps jelly-o. Dragée sweet roll oat cake marzipan. Dragée tiramisu jelly beans sesame snaps candy. Gummies lemon drops I love jelly tootsie roll I love. <T e="😂" alt="crying emoji" /> Powder sesame snaps lemon drops dessert cheesecake I love dragée soufflé. Dragée halvah I love sweet roll jelly beans sweet roll. Brownie sugar plum marzipan marzipan lollipop I love gummies. Chocolate bar sesame snaps pudding ice cream muffin. I love candy tiramisu biscuit powder I love. Lollipop soufflé cake gummies sugar plum chocolate bar. Powder muffin lollipop biscuit dessert carrot cake. Candy sugar plum apple pie. Carrot cake sesame snaps I love tootsie roll I love gingerbread donut. Cheesecake pastry biscuit tart muffin.
+For the near future, I plan to add few extra qualify of life features for readers and kill some bugs.
 
-- sum
-  - nested
-    - nested
-- lists
-  - nested
-  - nested
-- wierd
-
-**this is bold text** and _this one is cursive_
-
-1. First ordered list item
-2. Another item
-
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Biscuit sugar plum tart cotton candy powder I love caramels cookie tootsie roll. Brownie muffin muffin I love dragée lollipop jelly. Jelly-o lemon drops soufflé jelly-o caramels soufflé cake. Cupcake I love soufflé <T e="😂" alt="crying emoji" /> carrot cake macaroon. Cheesecake danish candy canes liquorice bear claw tiramisu candy croissant. Jelly-o apple pie jelly toffee muffin I love. Cake fruitcake icing I love cheesecake I love gingerbread I love I love. Topping oat cake gingerbread soufflé wafer icing dragée sugar plum. Cheesecake apple pie I love halvah I love liquorice. Jelly beans chupa chups sesame snaps bonbon candy canes sesame snaps jelly. Fruitcake sweet halvah cookie fruitcake cake I love cookie. Icing I <T e="😂" alt="crying emoji" /> love wafer gingerbread biscuit dragée biscuit chupa chups dessert. Gummi bears I love gingerbread pie <T e="😂" alt="sad emoji" /> I love macaroon. Jelly jelly fruitcake sweet I love bear claw lemon drops.
+Aaand that was it! Be sure to take a look at [my other posts](https://bartol.dev/blog/). Maybe you'll find something nice!

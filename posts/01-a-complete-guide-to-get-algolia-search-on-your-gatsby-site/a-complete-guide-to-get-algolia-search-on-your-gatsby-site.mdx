@@ -38,7 +38,7 @@ First things first, you should register for [Algolia account](https://www.algoli
 
 When you get to your dashboard, navigate to 'Indices' and click big blue button called 'Create Index'. Give it a name and leave it for now.
 
-![](Screen_Shot_2019-06-29_at_21-c4ed7f59-ecd2-49a8-9611-b2168f171fc5.24.59.png)
+![](create-index.png)
 
 After that is done, we are going back to terminal to install some dependencies for our project.
 
@@ -60,7 +60,7 @@ Okay, okay...can you tell me **_where to find those environment variables?_**
 
 In tab called 'API keys' you can find your Application ID, Search-Only API Key and Admin API Key. Index name is name that you gave to your Index few minutes ago.
 
-![](Screen_Shot_2019-06-29_at_21-9e7eb1da-b7bc-4243-9576-6d1fedcddf63.24.59.png)
+![](api-keys.png)
 
 Copy them to file called .env.production in root of your project.
 
@@ -270,13 +270,13 @@ export default PostPreview
 
 List of attributes that will be used for searching. Navigate to your Index, click on tab 'Configuration' and in navigation bar select 'Searchable attributes'. Add all your Searchable attributes and rank them based on importance.
 
-![](Screen_Shot_2019-06-30_at_12-b0e4b6a9-b58c-4397-b311-490a4559fd47.43.37.png)
+![](searchable-attributes.png)
 
 ### Sorting
 
 For sorting to work you will need to create datetimestamp in your frontmatter. Date timestamp must be in [unix time](https://en.wikipedia.org/wiki/Unix_time) format. Here is link to [online date to unix timestamp converter](https://www.unixtimestamp.com/), or if you are using Alfred you can install [this](http://www.packal.org/workflow/timestamp) awesome workflow.
 
-![](Screen_Shot_2019-06-30_at_12-d427a728-0094-4566-a5df-e764ff30b810.44.12.png)
+![](sorting.png)
 
 ### Display number of hits (optional)
 

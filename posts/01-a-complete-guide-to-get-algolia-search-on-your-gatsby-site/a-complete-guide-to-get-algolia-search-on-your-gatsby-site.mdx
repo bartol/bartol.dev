@@ -13,7 +13,7 @@ published: true
 
 import Code from '../../src/components/code-prop'
 
-As a first _real_ post in which you can learn something, I have chosen Algolia search because this is one of things for which I didn't really find complete tutorial, until I found [this one](https://www.youtube.com/watch?v=VSkXyuXzwlc). But still I would like to write this post just with a bit more clarification around little things that took me _too long_ to figure out myself.
+As a first _real_ post in which you can learn something, I have chosen Algolia search because this is one of things for which I didn't really find complete tutorial. I would like to write this post with more clarification around little things that took me _too long_ to figure out myself.
 
 ### Prerequisites
 
@@ -38,7 +38,7 @@ First things first, you should register for [Algolia account](https://www.algoli
 
 When you get to your dashboard, navigate to 'Indices' and click big blue button called 'Create Index'. Give it a name and leave it for now.
 
-![](create-index.png)
+![how to create algolia index](create-index.png)
 
 After that is done, we are going back to terminal to install some dependencies for our project.
 
@@ -123,6 +123,15 @@ const postQuery = `{
     }
   }
 }`
+
+// you can add more queries to this array
+const queries = [
+  {
+    query: postQuery,
+    transformer: ({ data }) => data.posts.edges.map(({ node }) => node),
+    settings: {}
+  }
+]
 ```
 
 This query is filtering so only posts declared as published are returned and everything that is returned here (title, slug, date, tags, post body...) is searchable. There is also image stuff for thumbnail and datetimestamp which is used for sorting (we will look into sorting hits later).
@@ -270,64 +279,13 @@ export default PostPreview
 
 List of attributes that will be used for searching. Navigate to your Index, click on tab 'Configuration' and in navigation bar select 'Searchable attributes'. Add all your Searchable attributes and rank them based on importance.
 
-![](searchable-attributes.png)
+![how to add searchable attributes](searchable-attributes.png)
 
 ### Sorting
 
-For sorting to work you will need to create datetimestamp in your frontmatter. Date timestamp must be in [unix time](https://en.wikipedia.org/wiki/Unix_time) format. Here is link to [online date to unix timestamp converter](https://www.unixtimestamp.com/), or if you are using Alfred you can install [this](http://www.packal.org/workflow/timestamp) awesome workflow.
+For sorting to work you will need to create datetimestamp in your frontmatter. Date timestamp must be in [unix time](https://en.wikipedia.org/wiki/Unix_time) format. Here is link to [online date to unix timestamp converter](https://www.unixtimestamp.com/), or if you are using [Alfred](https://www.alfredapp.com/) you can install [this](http://www.packal.org/workflow/timestamp) awesome workflow.
 
-![](sorting.png)
-
-### Display number of hits (optional)
-
-Show number of search results next to search box.
-For this to work, you will only need to add 4 more lines to your search component.
-
-<Code path="src/components/custom-search.js" lang="JSX" />
-
-```jsx
-import algoliasearch from 'algoliasearch/lite'
-import {
-  InstantSearch,
-  Hits,
-  connectSearchBox,
-  connectStats // highlight-line
-} from 'react-instantsearch-dom'
-import PostPreview from './post-preview'
-
-const searchClient = algoliasearch('APP_ID', 'SEARCH_KEY')
-
-const Search = ({ currentRefinement, refine }) => (
-  <form
-    noValidate
-    action=""
-    role="search"
-    onSubmit={event => event.preventDefault()}
-  >
-    <input
-      type="search"
-      value={currentRefinement}
-      onChange={event => refine(event.currentTarget.value)}
-      placeholder="Search"
-      aria-label="Search"
-    />
-  </form>
-)
-
-const CustomSearchBox = connectSearchBox(Search)
-
-const Stats = ({ nbHits }) => <div>{nbHits}</div> // highlight-line
-
-const CustomStats = connectStats(Stats) // highlight-line
-
-export default () => (
-  <InstantSearch searchClient={searchClient} indexName="INDEX_NAME">
-    <CustomStats /> {/* highlight-line */}
-    <CustomSearchBox />
-    <Hits hitComponent={PostPreview} />
-  </InstantSearch>
-)
-```
+![how to add sorting](sorting.png)
 
 ### Conclusion
 

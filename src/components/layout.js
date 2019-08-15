@@ -80,6 +80,10 @@ const Layout = ({ children }) => (
           /* transition: color 0.2s ease-out, background 0.2s ease-out; */
         }
 
+        html {
+          overflow-y: scroll;
+        }
+
         html,
         body {
           scroll-behavior: smooth;
@@ -87,6 +91,7 @@ const Layout = ({ children }) => (
           color: var(--text); /* text color */
           height: 100%;
           width: 100%;
+          /* overflow-x: hidden; */
 
           /* font-family: 'Source Sans Pro', sans-serif; */
           font-family: 'IBM Plex Sans', sans-serif;

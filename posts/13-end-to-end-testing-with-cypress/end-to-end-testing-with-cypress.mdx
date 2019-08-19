@@ -39,7 +39,9 @@ While Cypress is installing add `cy:open` to list of scripts in your projects's 
 
 To start it you need is to run script that we added in previous step.
 
-    yarn cy:open
+```bash
+yarn cy:open
+```
 
 Then click "Ok, got it" and "Run all specs" in top right.
 
@@ -50,9 +52,7 @@ Next thing we'll have to do is make our own tests. This process will start with 
 ```json
 {
   "baseUrl": "http://localhost:8000",
-  "integrationFolder": "cypress/e2e", // optional
-  "viewportHeight": 900, // optional
-  "viewportWidth": 400 // optional
+  "integrationFolder": "cypress/e2e" // optional
 }
 ```
 
@@ -61,22 +61,22 @@ There are few more optional _cleanup things to do._
 1. Open cypress folder.
 2. If you changed integration folder in config, delete `integration` and make new folder with name you specified in Cypress config.
 3. Delete `fixtures` and `screenshots` folders. We won't need them.
-4. Open `index.js` in plugins directory and add underscore to start of params so ESLint doesn't complain. (like this `... (_firstparam, _secondparam) {...` )
+4. If you enabled "[argsIgnorePattern](https://eslint.org/docs/rules/no-unused-vars#argsignorepattern)" feature of ESLint, open `index.js` in plugins directory and add underscore to start of params so ESLint doesn't complain. (like this `... (_firstparam, _secondparam) {...` )
 
 Let's do some testing already!
 
 ## Actual testing
 
-But wait! You first need to first install cypress testing library.
+But wait! You first need to first install [cypress testing library](https://www.npmjs.com/package/@testing-library/cypress).
 
 ```bash
-yarn add -D cypress-testing-library
+yarn add -D @testing-library/cypress
 ```
 
 Then import it in `cypress/support/commands.js` file.
 
 ```js
-import 'cypress-testing-library/add-commands'
+import '@testing-library/cypress/add-commands'
 ```
 
 Now we are ready for testing. We will make one smoke test as an example.
@@ -91,13 +91,15 @@ Create `smoke.js` in your `cypress/integration/` folder (or custom one if you sp
 describe('app', () => {
   it('works', () => {
     cy.visit('/')
-      .getByText(/about/i)
+      .getByText(/Undo last Git commit/i)
       .click()
-      .getByText(/My About Page/i)
+      .getByText(/git push origin -f/i)
   })
 })
 ```
 
-This will open your website and click element with text "about" (regex will match every every casing of word). It will throw an error if it cant find "My About Page" text after click.
+This will open your website and click element with text "Undo last Git commit" (regex will match every every casing of words). It will throw an error if it cant find "git push origin -f" text after click.
 
 Now you can run your tests with `cy:open` and see them passing, or failing ☹️.
+
+If ESLint is throwing errors in your Cypress test file read [this](https://bartol.dev/blog/fix-cypress-tests-eslint-errors) article...

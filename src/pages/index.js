@@ -8,7 +8,7 @@ export default () => (
   <Layout>
     <h1>Bartol's Coding Blog</h1>
     <p>
-      Hey! I'm Bartol Deak, 16 years old High School student currently living in
+      Hey! I'm Bartol Deak, High School student currently living in
       {' '}
       <a
         href="https://www.google.com/maps/place/Zadar/"

@@ -11,8 +11,6 @@ filename: a-complete-guide-to-get-algolia-search-on-your-gatsby-site
 published: true
 ---
 
-import Code from '../../src/components/code-prop'
-
 As a first _real_ post in which you can learn something, I have chosen Algolia search because this is one of things for which I didn't really find complete tutorial. I would like to write this post with more clarification around little things that took me _too long_ to figure out myself.
 
 ### Prerequisites
@@ -42,8 +40,6 @@ When you get to your dashboard, navigate to 'Indices' and click big blue button 
 
 After that is done, we are going back to terminal to install some dependencies for our project.
 
-<Code path="Root of your project" lang="Bash" />
-
 ```bash
 # for awesome people using yarn
 yarn add gatsby-plugin-algolia algoliasearch react-instantsearch-dom dotenv
@@ -64,8 +60,6 @@ In tab called 'API keys' you can find your Application ID, Search-Only API Key a
 
 Copy them to file called .env.production in root of your project.
 
-<Code path=".env.production" lang="Plain Text" />
-
 ```
 ALGOLIA_APP_ID=insertValue
 ALGOLIA_API_KEY=insertValue
@@ -79,8 +73,6 @@ Enough of boring setup. Let's upload some records!
 
 Now we are going to build 'back-end' of our search. Open your Gatsby config file and add [dotenv](https://github.com/motdotla/dotenv/blob/master/README.md) configuration to the top of file so environment variables work.
 
-<Code path="gatsby-config.js" lang="JavaScript" />
-
 ```js
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
@@ -88,8 +80,6 @@ require('dotenv').config({
 ```
 
 Next, you will create GraphQL query that will return all information you need to search. For [MDX](https://mdxjs.com/) blog that you are reading right now it looks like this but yours will most likely be very different.
-
-<Code path="gatsby-config.js" lang="JavaScript" />
 
 ```js
 const postQuery = `{
@@ -138,8 +128,6 @@ This query is filtering so only posts declared as published are returned and eve
 
 After that all that's left to do for back-end of search is to add gatsby-plugin-algolia to plugins array and pass some options to it.
 
-<Code path="gatsby-config.js" lang="JavaScript" />
-
 ```js
 module.exports = {
   ...
@@ -168,8 +156,6 @@ If your back-end is working and you saw records in dashboard, hard part is done!
 
 I'll first show you basic pre-made search box and then we will look into building custom one.
 
-<Code path="src/components/search.js" lang="JSX" />
-
 ```jsx
 import algoliasearch from 'algoliasearch/lite'
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom'
@@ -187,8 +173,6 @@ export default () => (
 - Note: You don't need to use dotenv in component file as APP_ID, SEARCH_KEY and INDEX_NAME can be public.
 
 Now let's see how we can build custom search box.
-
-<Code path="src/components/custom-search.js" lang="JSX" />
 
 ```jsx
 import algoliasearch from 'algoliasearch/lite'
@@ -229,8 +213,6 @@ And now you can style or customize your search box. However we are still not don
 When someone searches on your site Algolia will send hits in JSON and wrap them in component that you pass (in this case post-preview.js).
 
 Here is how it looks like for my blog (simplified, without styles). [Full version](https://github.com/bartol/bartol.dev/blob/master/src/components/post-preview.js).
-
-<Code path="src/components/post-preview.js" lang="JSX" />
 
 ```jsx
 import React from 'react'

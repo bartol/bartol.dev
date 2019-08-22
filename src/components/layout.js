@@ -249,12 +249,12 @@ const Layout = ({ children }) => (
           */
         .gatsby-highlight {
           background-color: #011627;
-          border-bottom-left-radius: var(--radius);
-          border-bottom-right-radius: var(--radius);
+          /* border-bottom-left-radius: var(--radius);
+          border-bottom-right-radius: var(--radius); */
+          border-radius: var(--radius);
 
-          /* margin: 20px 0; */
-          padding: 0.5rem 1rem 1rem 1rem;
-          margin-bottom: 1.5rem;
+          margin: 1.5rem 0;
+          padding: 1rem;
           overflow: auto;
           font-size: 0.9rem;
           box-shadow: var(--shadow);
@@ -277,7 +277,7 @@ const Layout = ({ children }) => (
         }
 
         p > code {
-          padding: 0.2rem 0.4rem;
+          padding: 0.1rem 0.4rem;
           border-radius: var(--radius);
         }
 

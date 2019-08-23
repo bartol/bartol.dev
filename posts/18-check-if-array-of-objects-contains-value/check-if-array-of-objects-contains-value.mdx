@@ -1,0 +1,41 @@
+---
+title: Check if array of objects contains value
+slug: blog/check-if-array-of-objects-contains-value/
+image: ./javascript-original.svg
+imagealt: javascript icon
+tags: ['javascript', 'array', 'object']
+date: 2019-08-23
+datetimestamp: 1566518400
+foldername: 18-check-if-array-of-objects-contains-value
+filename: check-if-array-of-objects-contains-value
+published: true
+---
+
+This is one of those simple problems I encounter every few days and find myself searching through visited stack overflow questions, so here is solution, once and for all.
+
+Let's say you have some object data in array similar to this.
+
+```js
+const users = [
+  {
+    name: 'John',
+    email: 'john@gmail.com'
+  },
+  {
+    name: 'Bartol',
+    email: 'b@bartol.dev'
+  }
+]
+```
+
+And you want do something only for user with specific name.
+
+```js
+if (users.some(e => e.name === 'Bartol')) {
+  // do something
+}
+```
+
+### Resources
+
+- [Stack Overflow Answer](https://stackoverflow.com/a/8217584/11197595)

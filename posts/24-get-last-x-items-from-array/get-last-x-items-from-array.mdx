@@ -1,0 +1,28 @@
+---
+title: Get last X items from array
+slug: blog/get-last-x-items-from-array/
+image: ./javascript-original.svg
+imagealt: javascript icon
+tags: ['javascript', 'array']
+date: 2019-08-29
+datetimestamp: 1567036800
+foldername: 24-get-last-x-items-from-array
+filename: get-last-x-items-from-array
+published: true
+---
+
+Here is yet another one of those JavaScript 'one line utility' articles.
+
+Let's say you array of elements similar to this one, and you want to get last 3 elements from it.
+
+```js
+const array = ['first', 'second', 'third', 'fourth', 'fifth']
+```
+
+You'll have to use JavaScript `.splice` array method.
+
+```js
+const last3 = array.splice(-3, 3) // ['third', 'fourth', 'fifth']
+```
+
+And that's it! So easy!

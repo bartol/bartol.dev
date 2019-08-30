@@ -1,0 +1,21 @@
+---
+title: Get date X months ago
+slug: blog/get-date-x-months-ago/
+image: ./javascript-original.svg
+imagealt: javascript icon
+tags: ['javascript', 'date']
+date: 2019-08-30
+datetimestamp: 1567123200
+foldername: 25-get-date-x-months-ago
+filename: get-date-x-months-ago
+published: true
+---
+
+You actually can't do this in one-liner. Can't really understand why. Future me, please update this after that 'AHA' moment.
+
+```js
+const threeMonthsAgo = new Date()
+threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3)
+```
+
+Still, can't understand why `getMonth` works on `new Date()` but `setMonth` doesn't. If you know why, seriously, send me email (contact@bartol.dev).

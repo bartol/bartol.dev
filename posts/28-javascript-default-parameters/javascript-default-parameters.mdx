@@ -1,0 +1,26 @@
+---
+title: JavaScript default parameters
+slug: blog/javascript-default-parameters/
+image: ./javascript-original.svg
+imagealt: javascript icon
+tags: ['javascript']
+date: 2019-09-02
+datetimestamp: 1567382400
+foldername: 28-javascript-default-parameters
+filename: javascript-default-parameters
+published: true
+---
+
+Passing default parameters to JavaScript function is as easy as declaring them in function 'head' (I really can't think of a better name for _that_).
+
+```js
+const sayHi = (user = 'default user') => {
+  return `Hey, ${user}!`
+}
+```
+
+Now, if we don't pass `user` parameter or it's undefined, it will use default value.
+
+### Resources
+
+- [Default parameters MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)

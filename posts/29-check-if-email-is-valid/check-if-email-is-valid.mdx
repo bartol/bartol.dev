@@ -102,8 +102,9 @@ r\\]|\\.)*\](?:(?:\r\n)?[ \t])*)(?:\.(?:(?:\r\n)?[ \t])*(?:[^()<>@,;:\\".\[\]
 
 I am sorry, but this is a [thing](http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html). Of course, I am kidding. You don't have to use this gigantic block of regex. Here is simple one that will do it for virtually every use case. It's not prone to bugs where `@.@.@.@` is validated like some other short ones.
 
+<!-- prettier-ignore -->
 ```js
-;/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/
 ```
 
 While this will do for mere mortals, there is other option for cool JavaScript kids.

@@ -12,7 +12,11 @@ function getPopularPosts() {
   const VIEW_ID = 'ga:196730733'
 
   // fix for failing build on the cloud
-  const googleApiKey = replace(process.env.GA_SERVICE_ACCOUNT_KEY, new RegExp('\\\\n', 'g'), '\n')
+  const googleApiKey = replace(
+    process.env.GA_SERVICE_ACCOUNT_KEY,
+    new RegExp('\\\\n', 'g'),
+    '\n',
+  )
 
   const jwtClient = new google.auth.JWT(
     process.env.GA_SERVICE_ACCOUNT,
@@ -60,7 +64,11 @@ function getPopularPosts() {
   })
 }
 
-exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
+exports.sourceNodes = async ({
+  actions,
+  createNodeId,
+  createContentDigest,
+}) => {
   const { createNode } = actions
 
   await getPopularPosts()
@@ -117,38 +125,38 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
-  const tagQuery = await graphql(`
-    query {
-      allMdx {
-        edges {
-          node {
-            frontmatter {
-              tags
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const tagQuery = await graphql(`
+  //   query {
+  //     allMdx {
+  //       edges {
+  //         node {
+  //           frontmatter {
+  //             tags
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  if (tagQuery.errors) {
-    reporter.panic('failed to create tags', tagQuery.errors)
-  }
+  // if (tagQuery.errors) {
+  //   reporter.panic('failed to create tags', tagQuery.errors)
+  // }
 
-  const tags = []
-  const tagsList = tagQuery.data.allMdx.edges.map(edge => edge.node.frontmatter.tags.map((tag) => {
-    if (tags.indexOf(tag) === -1) {
-      return tags.push(tag)
-    }
-  }))
+  // const tags = []
+  // tagQuery.data.allMdx.edges.map(edge => edge.node.frontmatter.tags.map((tag) => {
+  //   if (tags.indexOf(tag) === -1) {
+  //     return tags.push(tag)
+  //   }
+  // }))
 
-  tags.forEach((oneTag) => {
-    actions.createPage({
-      path: `/tags/${oneTag}/`,
-      component: require.resolve('./src/templates/tag.js'),
-      context: {
-        tag: oneTag,
-      },
-    })
-  })
+  // tags.forEach((oneTag) => {
+  //   actions.createPage({
+  //     path: `/tags/${oneTag}/`,
+  //     component: require.resolve('./src/templates/tag.js'),
+  //     context: {
+  //       tag: oneTag,
+  //     },
+  //   })
+  // })
 }

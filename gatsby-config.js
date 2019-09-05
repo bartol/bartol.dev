@@ -15,7 +15,6 @@ const postQuery = `{
             slug
             date(formatString: "MMMM Do, YYYY")
             datetimestamp
-            tags
               image {
               sharp: childImageSharp {
                 fixed(width: 75, height: 75) {
@@ -56,7 +55,11 @@ if (
   && process.env.GA_SERVICE_ACCOUNT_KEY
   && process.env.GA_VIEW_ID
 ) {
-  const googleApiKey = replace(process.env.GA_SERVICE_ACCOUNT_KEY, new RegExp('\\\\n', 'g'), '\n')
+  const googleApiKey = replace(
+    process.env.GA_SERVICE_ACCOUNT_KEY,
+    new RegExp('\\\\n', 'g'),
+    '\n',
+  )
   dynamicPlugins.push({
     resolve: 'gatsby-plugin-guess-js',
     options: {
@@ -151,12 +154,12 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.GA_TRACKING,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-analytics',
+    //   options: {
+    //     trackingId: process.env.GA_TRACKING,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -195,12 +198,12 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMdx } }) => allMdx.edges.map(edge => ({
-              ...edge.node.frontmatter,
-              description: edge.node.excerpt,
-              url: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
-              guid: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
-              custom_elements: [{ 'content:encoded': edge.node.html }],
-            })),
+                ...edge.node.frontmatter,
+                description: edge.node.excerpt,
+                url: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
+                guid: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
+                custom_elements: [{ 'content:encoded': edge.node.html }],
+              })),
             query: `
                 {
                   allMdx(

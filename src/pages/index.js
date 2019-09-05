@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-// import LastPosts from '../components/last-posts'
+import LastPosts from '../components/last-posts'
 import PopularPosts from '../components/popular-posts'
 import Newsletter from '../components/newsletter-card'
 
@@ -29,7 +29,7 @@ export default () => (
       . Started learning web development last year and these days I am writing
       blog posts about technologies, concepts and tools I learn.
     </p>
-    {/* <LastPosts /> */}
+    <LastPosts />
     <PopularPosts />
     <Newsletter />
   </Layout>

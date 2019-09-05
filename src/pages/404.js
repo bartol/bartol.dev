@@ -62,17 +62,17 @@ export default () => (
             if (/\/blog\/..*/.test(location.pathname)) {
               return 'Post'
             }
-            if (/\/tags\/..*/.test(location.pathname)) {
-              return 'Tag'
-            }
+            // if (/\/tags\/..*/.test(location.pathname)) {
+            //   return 'Tag'
+            // }
             return 'Page'
           }}
         </Location>
-        {' '}
+{' '}
         was not found.
         <br />
         Go back to
-        {' '}
+{' '}
         <Location>
           {({ location }) => {
             if (/\/blog\/..*/.test(location.pathname)) {
@@ -87,18 +87,18 @@ export default () => (
                 </Link>
               )
             }
-            if (/\/tags\/..*/.test(location.pathname)) {
-              return (
-                <Link
-                  to="/tags/"
-                  css={css`
-                    font-weight: 600;
-                  `}
-                >
-                  Tags
-                </Link>
-              )
-            }
+            // if (/\/tags\/..*/.test(location.pathname)) {
+            //   return (
+            //     <Link
+            //       to="/tags/"
+            //       css={css`
+            //         font-weight: 600;
+            //       `}
+            //     >
+            //       Tags
+            //     </Link>
+            //   )
+            // }
             return (
               <Link
                 to="/"

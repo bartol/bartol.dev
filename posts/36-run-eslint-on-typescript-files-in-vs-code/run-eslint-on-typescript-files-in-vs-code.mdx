@@ -1,0 +1,27 @@
+---
+title: Run ESLint on TypeScript files in VS Code
+slug: blog/run-eslint-on-typescript-files-in-vs-code/
+image: ./vsc.svg
+imagealt: vs code icon
+tags: ['vscode']
+date: 2019-09-10
+datetimestamp: 1568073600
+foldername: 36-run-eslint-on-typescript-files-in-vs-code
+filename: run-eslint-on-typescript-files-in-vs-code
+published: true
+---
+
+As of lately VS Code TSLint extension is being deprecated and TypeScript linting is moving to ESLint. When I was moving linting of this website to ESLint recently, I've encountered this weird problem. ESLint would just refuse to run on .ts or .tsx files. Problem was easily fixed by adding `eslint.validate` property to VS Code `settings.json`.
+
+```json
+{
+  // ...
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
+  // ...
+}
+```

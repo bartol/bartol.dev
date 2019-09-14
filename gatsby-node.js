@@ -1,30 +1,4 @@
-const getPopularPages = require('./src/utils/getPopularPages')
-
-exports.sourceNodes = async ({
-  actions,
-  createNodeId,
-  createContentDigest
-}) => {
-  const { createNode } = actions
-
-  const data = {
-    popularPages: await getPopularPages().then(res => res.data.rows)
-  }
-
-  const meta = {
-    id: createNodeId('popularPages'),
-    parent: null,
-    children: [],
-    internal: {
-      type: 'googleApiData',
-      mediaType: 'text/html',
-      content: JSON.stringify(data),
-      contentDigest: createContentDigest(data)
-    }
-  }
-
-  createNode({ ...data, ...meta })
-}
+// const getPopularPages = require('./src/utils/getPopularPages')
 
 exports.onCreateNode = async ({ node, actions }) => {
   const { createNodeField } = actions
@@ -42,13 +16,15 @@ exports.onCreateNode = async ({ node, actions }) => {
       .splice(-3, 3)
       .join('/')
 
-    const views = await getPopularPages().then(res =>
-      res.data.rows
-        .filter(r => r[0].includes(slug))
-        .reduce((a, b) => {
-          return a + parseInt(b[1], 10)
-        }, 0)
-    )
+    // const views = await getPopularPages().then(res =>
+    //   res.data.rows
+    //     .filter(r => r[0].includes(slug))
+    //     .reduce((a, b) => {
+    //       return a + parseInt(b[1], 10)
+    //     }, 0)
+    // )
+
+    const views = 0
 
     createNodeField({
       node,

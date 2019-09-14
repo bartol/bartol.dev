@@ -44,7 +44,11 @@ module.exports = () => {
             reject(getDataError)
           }
 
-          resolve(response.data.rows)
+          if (response && response.data) {
+            resolve(response.data.rows)
+          } else {
+            reject(new Error('error'))
+          }
         }
       )
     })

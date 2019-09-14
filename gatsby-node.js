@@ -8,7 +8,7 @@ exports.sourceNodes = async ({
   const { createNode } = actions
 
   const data = {
-    popularPages: await getPopularPages().then(res => res)
+    popularPages: await getPopularPages().then(res => res.data.rows)
   }
 
   const meta = {
@@ -43,7 +43,7 @@ exports.onCreateNode = async ({ node, actions }) => {
       .join('/')
 
     const views = await getPopularPages().then(res =>
-      res
+      res.data.rows
         .filter(r => r[0].includes(slug))
         .reduce((a, b) => {
           return a + parseInt(b[1], 10)

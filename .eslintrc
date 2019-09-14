@@ -1,13 +1,47 @@
 {
-  "extends": "airbnb",
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "plugin:jest/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["jest"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "env": {
+    "jest/globals": true
+  },
   "rules": {
+    "semi": 0,
+    "react/prop-types": 0,
+    "react/no-unescaped-entities": 0,
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".jsx", ".tsx"]
       }
-    ],
-    "semi": 0,
-    "react/prop-types": 0
+    ]
   }
 }

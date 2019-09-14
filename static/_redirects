@@ -1,3 +1,2 @@
-# my manually set redirects
-/git              https://github.com/bartol
-/t                https://twitter.com/BartolDeak
+# redirects
+/git            https://github.com/bartol

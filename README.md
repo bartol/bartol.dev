@@ -1,17 +1,16 @@
 <a href="https://bartol.dev">
-  <img alt="Bartol's logo" src="./static/logo.svg" align="right" width="145" height="155" />
+  <img alt="Bartol's logo" src="./images/me.svg" align="right" width="145" height="155" />
 </a>
-
-<!-- # [bartol.dev](https://bartol.dev) [![Netlify Status](https://api.netlify.com/api/v1/badges/f87ba513-159f-4d19-81a3-1dd06e9ec817/deploy-status)](https://app.netlify.com/sites/bartol/deploys) [![Build Status](https://travis-ci.com/bartol/bartol.dev.svg?branch=master)](https://travis-ci.com/bartol/bartol.dev) -->
 
 # [bartol.dev](https://bartol.dev)
 
-<p align='right'>Personal blog where you can find web development posts and tutorials.
+<p align='right'>Personal website where you can find web development articles.
+
 <a href="https://travis-ci.com/bartol/bartol.dev">
   <img align="left" src="https://travis-ci.com/bartol/bartol.dev.svg?branch=master" alt="Build Status">
 </a>
 </p>
-<p align='right'>Updated weekly.
+<p align='right'>Updated daily.
 <a href="https://app.netlify.com/sites/bartol/deploys">
   <img align="left" src="https://api.netlify.com/api/v1/badges/f87ba513-159f-4d19-81a3-1dd06e9ec817/deploy-status" alt="Netlify Status">
 </a>
@@ -20,47 +19,34 @@
 
 ## Run locally
 
-Add environment variables in `.env.production` file
+1. Run `cp .env.example .env` and add environment variables.
 
-Install dependencies
+2. Install dependencies.
 
-```bash
-yarn
+   ```bash
+   yarn
+   ```
 
-# or with npm
+3. Start development environment.
 
-npm install
-```
+   ```bash
+   yarn dev
+   ```
 
-Start development environment
+4. Open browser and navigate to `localhost:8000`
 
-```bash
-yarn dev
+5. Build project
 
-# or with npm
-
-npm run dev
-```
-
-Open browser and navigate to `localhost:8000`
-
-Build project
-
-```bash
-yarn build
-
-# or with npm
-
-npm run build
-```
+   ```bash
+   yarn build
+   ```
 
 ## Tech stack
 
 - [Gatsby](https://www.gatsbyjs.org)
-- [mdx](https://mdxjs.com/)
 - [React](https://reactjs.org/)
 - [GraphQL](https://graphql.org/)
 - [Node.js](https://nodejs.org/en/)
-- [Algolia](https://www.algolia.com)
+- [Fuse.js](https://fusejs.io/)
 - [PrismJS](https://prismjs.com/)
 - [Google Analytics Reporting API](https://developers.google.com/analytics/devguides/reporting/core/v3/)

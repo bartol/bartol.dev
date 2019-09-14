@@ -1,247 +1,234 @@
+/* eslint-disable camelcase */
 const replace = require('lodash.replace')
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require('dotenv').config()
 
-const postQuery = `{
-  posts: allMdx(
-    filter: { frontmatter: { published: { eq: true } } }
-  ) {
-    edges {
-      node {
-          frontmatter {
-            title
-            slug
-            date(formatString: "MMMM Do, YYYY")
-            datetimestamp
-              image {
-              sharp: childImageSharp {
-                fixed(width: 75, height: 75) {
-                  src
-                  srcSet
-                  srcSetWebp
-                  aspectRatio
-                  base64
-                  width
-                  height
-                }
-              }
-              extension
-              publicURL
-            }
-          }
-          timeToRead
-          excerpt(pruneLength: 100000)
-      }
-    }
-  }
-}`
+const MAIN_COLOR = 'hsla(190, 80%, 50%, 1)'
 
-const queries = [
-  {
-    query: postQuery,
-    transformer: ({ data }) => data.posts.edges.map(({ node }) => node), // optional
-    settings: {},
-  },
-]
+const googleApiKey = replace(
+  process.env.GA_SERVICE_ACCOUNT_KEY,
+  new RegExp('\\\\n', 'g'),
+  '\n'
+)
 
-const dynamicPlugins = []
-// pick data from 3 months ago
-const startDate = new Date()
-startDate.setMonth(startDate.getMonth() - 3)
-if (
-  process.env.GA_SERVICE_ACCOUNT
-  && process.env.GA_SERVICE_ACCOUNT_KEY
-  && process.env.GA_VIEW_ID
-) {
-  const googleApiKey = replace(
-    process.env.GA_SERVICE_ACCOUNT_KEY,
-    new RegExp('\\\\n', 'g'),
-    '\n',
-  )
-  dynamicPlugins.push({
-    resolve: 'gatsby-plugin-guess-js',
-    options: {
-      GAViewID: `${process.env.GA_VIEW_ID}`,
-      jwt: {
-        client_email: process.env.GA_SERVICE_ACCOUNT,
-        private_key: googleApiKey,
-      },
-      period: {
-        startDate,
-        endDate: new Date(),
-      },
-    },
-  })
-}
+const threeMonthsAgo = new Date()
+threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3)
 
 module.exports = {
   siteMetadata: {
-    defaultTitle: "Bartol's Coding Blog",
-    title: "Bartol's Coding Blog",
-    titleTemplate: "%s • Bartol's Coding Blog",
-    defaultDescription:
-      'Personal blog where you can find web development posts and tutorials. Updated weekly.',
+    title: 'Bartol Deak',
     description:
-      'Personal blog where you can find web development posts and tutorials. Updated weekly.',
-    siteUrl: 'https://bartol.dev',
-    defaultImage: '/social.png',
-    twitterUsername: '@BartolDeak',
-    facebookAppID: '370797287125807',
+      'Personal website where you can find web development articles. Updated daily.',
+    siteUrl: 'https://bartol.dev'
   },
   plugins: [
-    'gatsby-plugin-emotion',
+    'gatsby-plugin-eslint',
+    'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-dark-mode',
-    'gatsby-plugin-force-trailing-slashes',
+    'gatsby-plugin-typescript',
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-source-filesystem',
       options: {
-        defaultLayouts: {
-          default: require.resolve('./src/components/layout.js'),
-        },
-        gatsbyRemarkPlugins: [
-          { resolve: 'gatsby-remark-images' },
-          { resolve: 'gatsby-remark-prismjs' },
-          { resolve: 'gatsby-remark-reading-time' },
-          { resolve: 'gatsby-remark-smartypants' },
-          { resolve: 'gatsby-remark-external-links' },
-        ],
-      },
+        name: 'articles',
+        path: `${__dirname}/articles`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts',
-        path: './posts/',
-      },
+        name: 'images',
+        path: `${__dirname}/images`
+      }
     },
     {
-      resolve: 'gatsby-plugin-algolia',
+      resolve: 'gatsby-transformer-remark',
       options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-        queries,
-        chunkSize: 10000, // default: 1000
-      },
+        plugins: [
+          'gatsby-remark-code-language',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 700,
+              showCaptions: true,
+              wrapperStyle: 'margin: 1rem 0;',
+              backgroundColor: '#212121',
+              linkImagesToOriginal: false
+            }
+          },
+          {
+            resolve: 'gatsby-remark-images-medium-zoom',
+            options: {
+              background: '#212121',
+              scrollOffset: 0,
+              margin: 30
+            }
+          },
+          {
+            resolve: 'gatsby-remark-embed-video',
+            options: {
+              width: 700,
+              related: false,
+              noIframeBorder: true
+            }
+          },
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon:
+                '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>',
+              className: 'header-autolink',
+              maintainCase: false,
+              offsetY: '30'
+            }
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              aliases: {
+                // terminal: 'bash'
+              }
+            }
+          },
+          'gatsby-remark-emoji',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-external-links',
+          'gatsby-remark-smartypants',
+          'gatsby-remark-check-links'
+        ]
+      }
     },
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        fonts: [
-          {
-            family: 'IBM Plex Sans',
-            variants: ['400', '600'],
-          },
-          {
-            family: 'IBM Plex Mono',
-            variants: ['400'],
-          },
-        ],
-      },
+        name: 'Bartol Deak',
+        short_name: 'Bartol',
+        start_url: '/',
+        background_color: '#212121',
+        theme_color: '#212121',
+        display: 'standalone',
+        icon: 'static/images/logo.png'
+      }
+    },
+    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GA_TRACKING
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-guess-js',
+      options: {
+        GAViewID: process.env.GA_VIEW_ID,
+        jwt: {
+          client_email: process.env.GA_SERVICE_ACCOUNT,
+          private_key: googleApiKey
+        },
+        minimumThreshold: 0.03,
+        period: {
+          startDate: threeMonthsAgo,
+          endDate: new Date()
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-preconnect',
       options: {
         domains: [
-          'https://www.google.com',
-          'https://marketingplatform.google.com',
+          'https://bartol.dev',
           'https://www.google-analytics.com',
-        ],
-      },
+          'https://marketingplatform.google.com',
+          'https://www.google.com'
+        ]
+      }
     },
-    // {
-    //   resolve: 'gatsby-plugin-google-analytics',
-    //   options: {
-    //     trackingId: process.env.GA_TRACKING,
-    //   },
-    // },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-plugin-sentry',
       options: {
-        name: "Bartol's Coding Blog",
-        short_name: "Bartol's Blog",
-        start_url: '/',
-        background_color: '#121212',
-        theme_color: '#1f1f1f',
-        display: 'standalone',
-        icon: 'static/logo.png',
-      },
+        dsn: process.env.SENTRY_DSN,
+        environment: process.env.NODE_ENV
+      }
     },
-    'gatsby-plugin-offline',
     'gatsby-plugin-sitemap',
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-netlify',
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: 'https://bartol.dev/',
-        sitemap: 'https://bartol.dev/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
-      },
-    },
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        // Setting a color is optional.
-        color: '#0e8fd5',
-        // Disable the loading spinner.
-        showSpinner: false,
-      },
+        color: MAIN_COLOR,
+        showSpinner: false
+      }
     },
     {
-      resolve: 'gatsby-plugin-feed',
+      resolve: 'gatsby-plugin-react-svg',
       options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
         feeds: [
           {
-            serialize: ({ query: { site, allMdx } }) => allMdx.edges.map(edge => ({
-                ...edge.node.frontmatter,
-                description: edge.node.excerpt,
-                url: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
-                guid: `${site.siteMetadata.siteUrl}/${edge.node.frontmatter.slug}`,
-                custom_elements: [{ 'content:encoded': edge.node.html }],
-              })),
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
+                return {
+                  ...node.frontmatter,
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ 'content:encoded': node.html }]
+                }
+              })
+            },
             query: `
-                {
-                  allMdx(
-                    limit: 1000,
-                    sort: {
-                      order: DESC,
-                      fields: [frontmatter___date]
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    frontmatter {
+                      title
+                      date(formatString: "MMMM Do, YYYY")
                     }
-                  ) {
-                    edges {
-                      node {
-                        frontmatter {
-                          title
-                          date
-                          slug
-                        }
-                        excerpt
-                        html
-                      }
+                    fields {
+                      slug
                     }
+                    excerpt
+                    html
                   }
                 }
-              `,
-            output: 'rss.xml',
-          },
-        ],
-      },
+              }
+            `,
+            output: '/rss.xml',
+            title: "Bartol Deak's website RSS Feed"
+          }
+        ]
+      }
     },
-    // 'gatsby-plugin-eslint',
+    'gatsby-plugin-accessibilityjs',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
         production: true,
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
         generateStatsFile: true,
-        analyzerMode: 'static',
-      },
-    },
-  ].concat(dynamicPlugins),
-  // ],
+        analyzerMode: 'static'
+      }
+    }
+  ]
 }

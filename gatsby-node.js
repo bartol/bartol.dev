@@ -1,107 +1,87 @@
-const { google } = require('googleapis')
-const replace = require('lodash.replace')
-
-require('dotenv').config({
-  // path: `.env.${process.env.NODE_ENV}`,
-  path: '.env.production',
-})
-
-let data
-
-function getPopularPosts() {
-  const VIEW_ID = 'ga:196730733'
-
-  // fix for failing build on the cloud
-  const googleApiKey = replace(
-    process.env.GA_SERVICE_ACCOUNT_KEY,
-    new RegExp('\\\\n', 'g'),
-    '\n',
-  )
-
-  const jwtClient = new google.auth.JWT(
-    process.env.GA_SERVICE_ACCOUNT,
-    null,
-    googleApiKey,
-    ['https://www.googleapis.com/auth/analytics.readonly'],
-    null,
-  )
-
-  return new Promise((resolve, reject) => {
-    // Do async job
-    jwtClient.authorize((err, tokens) => {
-      if (err) {
-        console.log(err)
-        return
-      }
-      const analytics = google.analytics('v3')
-
-      analytics.data.ga.get(
-        {
-          auth: jwtClient,
-          ids: VIEW_ID,
-          metrics: 'ga:uniquePageviews',
-          dimensions: 'ga:pagePath',
-          'start-date': '2019-01-01', // or 30daysAgo
-          'end-date': 'today',
-          sort: '-ga:uniquePageviews',
-          'max-results': 5,
-          filters: 'ga:pagePath=~/blog/.*/',
-        },
-        (err, response) => {
-          if (err) {
-            reject(err)
-          }
-
-          // console.log(JSON.stringify(response, null, 4))
-          console.log(JSON.stringify(response.data.rows, null, 4))
-
-          data = response.data.rows
-
-          resolve(data)
-        },
-      )
-    })
-  })
-}
+const getPopularPages = require('./src/utils/getPopularPages')
 
 exports.sourceNodes = async ({
   actions,
   createNodeId,
-  createContentDigest,
+  createContentDigest
 }) => {
   const { createNode } = actions
 
-  await getPopularPosts()
-
-  const myData = {
-    popularPosts: data,
+  const data = {
+    popularPages: await getPopularPages().then(res => res)
   }
 
-  const nodeContent = JSON.stringify(myData)
-
-  const nodeMeta = {
-    id: createNodeId('popular-posts'),
+  const meta = {
+    id: createNodeId('popularPages'),
     parent: null,
     children: [],
     internal: {
       type: 'googleApiData',
       mediaType: 'text/html',
-      content: nodeContent,
-      contentDigest: createContentDigest(myData),
-    },
+      content: JSON.stringify(data),
+      contentDigest: createContentDigest(data)
+    }
   }
 
-  const node = Object.assign({}, myData, nodeMeta)
+  createNode({ ...data, ...meta })
+}
 
-  createNode(node)
+exports.onCreateNode = async ({ node, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === 'MarkdownRemark') {
+    const slug = node.frontmatter.title
+      .toLowerCase() // convert to lower case
+      .replace(/[^\w\s]/g, '') // remove everything that isn't letter or number
+      .replace(/([a-z])([A-Z])/g, '$1-$2') // get all lowercase letters that are near to uppercase ones
+      .replace(/[\s_]+/g, '-') // replace all spaces and low dash
+
+    const timestamp = new Date(node.frontmatter.date).getTime() / 1000
+
+    const edit = node.fileAbsolutePath
+      .split('/')
+      .splice(-3, 3)
+      .join('/')
+
+    const views = await getPopularPages().then(res =>
+      res
+        .filter(r => r[0].includes(slug))
+        .reduce((a, b) => {
+          return a + parseInt(b[1], 10)
+        }, 0)
+    )
+
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug
+    })
+
+    createNodeField({
+      node,
+      name: 'timestamp',
+      value: timestamp
+    })
+
+    createNodeField({
+      node,
+      name: 'edit',
+      value: edit
+    })
+
+    createNodeField({
+      node,
+      name: 'views',
+      value: views
+    })
+  }
 }
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
-  const postQuery = await graphql(`
-    query {
-      allMdx(filter: { frontmatter: { published: { eq: true } } }) {
+  const query = await graphql(`
+    {
+      allMarkdownRemark {
         nodes {
-          frontmatter {
+          fields {
             slug
           }
         }
@@ -109,54 +89,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `)
 
-  if (postQuery.errors) {
-    reporter.panic('failed to create posts', postQuery.errors)
+  if (query.errors) {
+    reporter.panic('failed to create pages', query.errors)
   }
 
-  const posts = postQuery.data.allMdx.nodes
+  const articles = query.data.allMarkdownRemark.nodes
 
-  posts.forEach((post) => {
+  articles.forEach(article => {
     actions.createPage({
-      path: `/${post.frontmatter.slug}`,
-      component: require.resolve('./src/templates/post.js'),
+      path: `/${article.fields.slug}/`,
+      component: require.resolve('./src/templates/Article.tsx'),
       context: {
-        slug: post.frontmatter.slug,
-      },
+        slug: article.fields.slug
+      }
     })
   })
-
-  // const tagQuery = await graphql(`
-  //   query {
-  //     allMdx {
-  //       edges {
-  //         node {
-  //           frontmatter {
-  //             tags
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  // if (tagQuery.errors) {
-  //   reporter.panic('failed to create tags', tagQuery.errors)
-  // }
-
-  // const tags = []
-  // tagQuery.data.allMdx.edges.map(edge => edge.node.frontmatter.tags.map((tag) => {
-  //   if (tags.indexOf(tag) === -1) {
-  //     return tags.push(tag)
-  //   }
-  // }))
-
-  // tags.forEach((oneTag) => {
-  //   actions.createPage({
-  //     path: `/tags/${oneTag}/`,
-  //     component: require.resolve('./src/templates/tag.js'),
-  //     context: {
-  //       tag: oneTag,
-  //     },
-  //   })
-  // })
 }

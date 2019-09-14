@@ -1,3 +1,6 @@
+require('./src/styles/prismjs.css')
+
+// eslint-disable-next-line no-console
 console.log(`
 .(((((((((((((((((..
 ((((((((((((((((((((((

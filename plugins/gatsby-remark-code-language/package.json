@@ -1,0 +1,7 @@
+{
+  "name": "gatsby-remark-code-language",
+  "dependencies": {
+    "unist-util-visit": "~1.3.0",
+    "query-string": "6.8.2"
+  }
+}

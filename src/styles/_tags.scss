@@ -30,6 +30,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .tag-generic {
@@ -48,33 +49,6 @@
   }
 }
 
-.tag-refined {
-  border-color: $text;
-}
-
-.showmoreless {
-  padding: 0.6rem 0.85rem 0.5rem 0.85rem;
-  margin: 0 0 0.55rem 0.5rem;
-  border-radius: $radius;
-  border: 3px solid $parameters;
-  background: transparent;
-  color: $text;
-  cursor: pointer;
-  white-space: nowrap;
-
-  &:active {
-    border-color: $main;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  [data-whatintent='keyboard'] &:focus {
-    border-color: $main;
-  }
-}
-
 .random {
   padding: 0.6rem 0.85rem 0.5rem 0.85rem;
   border-radius: $radius;
@@ -83,6 +57,7 @@
   cursor: pointer;
   color: $text;
   white-space: nowrap;
+  margin-left: 0.5rem;
 
   &:active {
     border-color: $main;
@@ -92,56 +67,4 @@
     outline: none;
     border-color: $main;
   }
-}
-
-// tags
-
-.tag-me:focus,
-.tag-me.tag-refined {
-  border-color: $main;
-}
-
-.tag-gatsby:focus,
-.tag-gatsby.tag-refined {
-  border-color: #639;
-}
-
-.tag-gatsby,
-.tag-react {
-  text-transform: capitalize;
-}
-
-.tag-react:focus,
-.tag-react.tag-refined {
-  border-color: #60dafb;
-}
-
-.tag-algolia:focus,
-.tag-algolia.tag-refined {
-  border-color: #5467ff;
-}
-
-.tag-css:focus,
-.tag-css.tag-refined {
-  border-color: #1572b6;
-}
-
-.tag-git:focus,
-.tag-git.tag-refined {
-  border-color: #f25029;
-}
-
-.tag-netlify:focus,
-.tag-netlify.tag-refined {
-  border-color: #00ad9f;
-}
-
-.tag-redux:focus,
-.tag-redux.tag-refined {
-  border-color: #764abc;
-}
-
-.tag-error:focus,
-.tag-error.tag-refined {
-  border-color: #e53934;
 }

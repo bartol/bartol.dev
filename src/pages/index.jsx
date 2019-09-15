@@ -9,7 +9,9 @@ import Collapse from '@kunukn/react-collapse'
 import ArticlePreview from '../components/articlePreview'
 import Settings from '../components/settings'
 import Layout from '../components/layout'
+import Random from '../components/random'
 import Logo from '../assets/logo.inline.svg'
+import tagsList from '../assets/tags'
 
 const filterArray = (array, filters) => {
   const filterKeys = Object.keys(filters)
@@ -27,7 +29,7 @@ const DEBOUNCE_TIME = 400
 
 const urlToState = location => {
   const parsedUrl = queryString.parse(location.search.slice(1), {
-    arrayFormat: 'comma'
+    arrayFormat: 'comma',
   })
 
   return {
@@ -38,7 +40,7 @@ const urlToState = location => {
         ? parsedUrl.tags
         : [parsedUrl.tags]
       : [],
-    sort: parsedUrl.sort || 'recent'
+    sort: parsedUrl.sort || 'recent',
   }
 }
 
@@ -60,7 +62,7 @@ const stateToUrl = (location, params) => {
     state.q || state.tags || state.sort ? '?' : ''
   }${queryString.stringify(state, {
     arrayFormat: 'comma',
-    sort: false
+    sort: false,
   })}`
 }
 
@@ -109,7 +111,7 @@ export default ({ location }) => {
   const params = {
     query,
     tags,
-    sort
+    sort,
   }
 
   const options = {
@@ -124,8 +126,8 @@ export default ({ location }) => {
     keys: [
       { name: 'frontmatter.title', weight: 1 },
       { name: 'frontmatter.tags', weight: 0.75 },
-      { name: 'frontmatter.excerpt', weight: 0.5 }
-    ]
+      { name: 'frontmatter.excerpt', weight: 0.5 },
+    ],
   }
 
   useEffect(() => {
@@ -152,7 +154,7 @@ export default ({ location }) => {
     }
 
     const filters = {
-      frontmatter: frontmatter => frontmatter.tags.find(x => tags.includes(x))
+      frontmatter: frontmatter => frontmatter.tags.find(x => tags.includes(x)),
     }
 
     const filtered = filterArray(allResults, filters)
@@ -170,7 +172,7 @@ export default ({ location }) => {
     setDebouncedSetResults(
       setTimeout(() => {
         navigate(stateToUrl(location, params), {
-          replace: true
+          replace: true,
         })
       }, DEBOUNCE_TIME)
     )
@@ -178,7 +180,7 @@ export default ({ location }) => {
 
   useEffect(() => {
     navigate(stateToUrl(location, params), {
-      replace: true
+      replace: true,
     })
   }, [tags, sort])
 
@@ -242,53 +244,45 @@ export default ({ location }) => {
         </header>
       </div>
       <Collapse isOpen={filter}>
-        <button
-          type='button'
-          value='til'
-          onClick={e => handleTag(e.target.value)}
-        >
-          TIL
-        </button>
-        <button
-          type='button'
-          value='guide'
-          onClick={e => handleTag(e.target.value)}
-        >
-          Guide
-        </button>
-        <button
-          type='button'
-          value='gatsby'
-          onClick={e => handleTag(e.target.value)}
-        >
-          add tag: gatsby
-        </button>
-        <button
-          type='button'
-          value='react'
-          onClick={e => handleTag(e.target.value)}
-        >
-          add tag: react
-        </button>
-        <button
-          type='button'
-          value='javascript'
-          onClick={e => handleTag(e.target.value)}
-        >
-          add tag: javascript
-        </button>
-        <select
-          onChange={e => setSort(e.target.value)}
-          value={sort}
-          className='selector'
-          aria-label='sort select'
-        >
-          <option value='recent'>Recent</option>
-          <option value='oldest'>Oldest</option>
-          <option value='popular'>Popular</option>
-          <option value='alphabetical'>A to Z</option>
-          <option value='unalphabetical'>Z to A</option>
-        </select>
+        {tagsList.length ? (
+          <ul className='tag-container-wrapper tag-container'>
+            {tagsList.map(tag => {
+              const { value, label, color } = tag
+
+              return (
+                <li key={value}>
+                  <button
+                    type='button'
+                    value={value}
+                    onClick={e => handleTag(e.target.value)}
+                    className='tag-generic'
+                    style={{
+                      borderColor: tags.includes(value) ? color : '#8c8c8c',
+                    }}
+                  >
+                    {label}
+                  </button>
+                </li>
+              )
+            })}
+          </ul>
+        ) : null}
+        <div className='spacebetween'>
+          <select
+            onChange={e => setSort(e.target.value)}
+            value={sort}
+            className='selector'
+            aria-label='sort select'
+          >
+            <option value='recent'>Recent</option>
+            <option value='oldest'>Oldest</option>
+            <option value='popular'>Popular</option>
+            <option value='alphabetical'>A to Z</option>
+            <option value='unalphabetical'>Z to A</option>
+          </select>
+          <p className='stats'>{results.length} results</p>
+          <Random />
+        </div>
       </Collapse>
       <Collapse isOpen={more}>
         <Settings />

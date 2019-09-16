@@ -1,5 +1,5 @@
 ---
-title: Past year in retrospection
+title: 2019 in review
 date: 2019-09-16
 tags:
   - me

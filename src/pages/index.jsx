@@ -12,6 +12,7 @@ import Layout from '../components/layout'
 import Random from '../components/random'
 import Logo from '../assets/logo.inline.svg'
 import tagsList from '../assets/tags'
+import useWindowDimensions from '../hooks/useWindowDimensions'
 
 const filterArray = (array, filters) => {
   const filterKeys = Object.keys(filters)
@@ -90,9 +91,11 @@ export default ({ location }) => {
 
   const allResults = data.allMarkdownRemark.nodes
 
+  const { width } = useWindowDimensions()
+
   const [filter, toggleFilter] = useState(false)
   const [more, toggleMore] = useState(false)
-  const [placeholder, setPlaceholder] = useState('Search articles')
+  const [placeholder, setPlaceholder] = useState('Search')
 
   // search stuff
   const [results, setResults] = useState([])
@@ -101,9 +104,9 @@ export default ({ location }) => {
   const [sort, setSort] = useState(urlToState(location).sort)
   const [debouncedSetResults, setDebouncedSetResults] = useState(null)
 
-  const DEFAULT_PLACEHODLER = 'Search articles'
-  const FILTER_PLACEHOLDER = !filter ? 'Filter articles' : DEFAULT_PLACEHODLER
-  const MORE_PLACEHOLDER = !more ? 'Me and this site' : DEFAULT_PLACEHODLER
+  const DEFAULT_PLACEHODLER = 'Search'
+  const FILTER_PLACEHOLDER = !filter ? 'Filter' : DEFAULT_PLACEHODLER
+  const MORE_PLACEHOLDER = !more ? 'Me' : DEFAULT_PLACEHODLER
 
   const MAIN_COLOR = 'hsla(190, 80%, 50%, 1)'
   const PARAMETERS_COLOR = '#8c8c8c'
@@ -244,6 +247,7 @@ export default ({ location }) => {
         </header>
       </div>
       <Collapse isOpen={filter}>
+        {width < 500 ? <p className='stats'>{results.length} results</p> : null}
         {tagsList.length ? (
           <ul className='tag-container-wrapper tag-container'>
             {tagsList.map(tag => {
@@ -280,7 +284,9 @@ export default ({ location }) => {
             <option value='alphabetical'>A to Z</option>
             <option value='unalphabetical'>Z to A</option>
           </select>
-          <p className='stats'>{results.length} results</p>
+          {width > 500 ? (
+            <p className='stats'>{results.length} results</p>
+          ) : null}
           <Random />
         </div>
       </Collapse>

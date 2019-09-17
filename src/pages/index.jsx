@@ -247,7 +247,9 @@ export default ({ location }) => {
         </header>
       </div>
       <Collapse isOpen={filter}>
-        {width < 500 ? <p className='stats'>{results.length} results</p> : null}
+        {width <= 500 ? (
+          <p className='stats'>{results.length} results</p>
+        ) : null}
         {tagsList.length ? (
           <ul className='tag-container-wrapper tag-container'>
             {tagsList.map(tag => {
@@ -261,7 +263,9 @@ export default ({ location }) => {
                     onClick={e => handleTag(e.target.value)}
                     className='tag-generic'
                     style={{
-                      borderColor: tags.includes(value) ? color : '#8c8c8c',
+                      borderColor: tags.includes(value)
+                        ? color
+                        : PARAMETERS_COLOR,
                     }}
                   >
                     {label}

@@ -604,3 +604,34 @@ header {
   color: $parameters;
   white-space: pre;
 }
+
+.settingsSection {
+  padding: 0.6rem 0.85rem 0.5rem 0.85rem;
+  border-radius: $radius;
+  border: 3px solid $parameters;
+  background: transparent;
+  color: $text;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: 0.3rem 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.settingsWrapper {
+  margin-top: 1rem;
+}
+
+.settingsSectionWrapper {
+  margin: 1rem 0;
+}

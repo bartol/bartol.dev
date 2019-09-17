@@ -16,7 +16,11 @@ export default () => {
         <p>
           <strong>Just be sure to attribute the author (Bartol Deak).</strong>
         </p>
-        <button type='button' onClick={() => setFullLicense(!fullLicense)}>
+        <button
+          type='button'
+          onClick={() => setFullLicense(!fullLicense)}
+          className='expandMit'
+        >
           View full MIT license
         </button>
         <Collapse isOpen={fullLicense}>

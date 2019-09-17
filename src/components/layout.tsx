@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({
   children,
   title,
   isArticle = false,
-  url = '/'
+  url = '/',
 }) => {
   const description =
     'Personal website where you can find web development articles. Updated daily.'

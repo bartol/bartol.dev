@@ -19,7 +19,7 @@ module.exports = {
     title: 'Bartol Deak',
     description:
       'Personal website where you can find web development articles. Updated daily.',
-    siteUrl: 'https://bartol.dev'
+    siteUrl: 'https://bartol.dev',
   },
   plugins: [
     'gatsby-plugin-eslint',
@@ -30,15 +30,15 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'articles',
-        path: `${__dirname}/articles`
-      }
+        path: `${__dirname}/articles`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/images`
-      }
+        path: `${__dirname}/images`,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -52,24 +52,24 @@ module.exports = {
               showCaptions: true,
               wrapperStyle: 'margin: 1rem 0;',
               backgroundColor: '#212121',
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           {
             resolve: 'gatsby-remark-images-medium-zoom',
             options: {
               background: '#212121',
               scrollOffset: 0,
-              margin: 30
-            }
+              margin: 0,
+            },
           },
           {
             resolve: 'gatsby-remark-embed-video',
             options: {
               width: 700,
               related: false,
-              noIframeBorder: true
-            }
+              noIframeBorder: true,
+            },
           },
           {
             resolve: 'gatsby-remark-autolink-headers',
@@ -78,24 +78,24 @@ module.exports = {
                 '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>',
               className: 'header-autolink',
               maintainCase: false,
-              offsetY: '30'
-            }
+              offsetY: '30',
+            },
           },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
               aliases: {
                 // terminal: 'bash'
-              }
-            }
+              },
+            },
           },
           'gatsby-remark-emoji',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-external-links',
           'gatsby-remark-smartypants',
-          'gatsby-remark-check-links'
-        ]
-      }
+          'gatsby-remark-check-links',
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -106,15 +106,15 @@ module.exports = {
         background_color: '#212121',
         theme_color: '#212121',
         display: 'standalone',
-        icon: 'static/images/logo.png'
-      }
+        icon: 'static/images/logo.png',
+      },
     },
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: process.env.GA_TRACKING
-      }
+        trackingId: process.env.GA_TRACKING,
+      },
     },
     {
       resolve: 'gatsby-plugin-guess-js',
@@ -122,14 +122,14 @@ module.exports = {
         GAViewID: process.env.GA_VIEW_ID,
         jwt: {
           client_email: process.env.GA_SERVICE_ACCOUNT,
-          private_key: googleApiKey
+          private_key: googleApiKey,
         },
         minimumThreshold: 0.03,
         period: {
           startDate: threeMonthsAgo,
-          endDate: new Date()
-        }
-      }
+          endDate: new Date(),
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-preconnect',
@@ -138,16 +138,16 @@ module.exports = {
           'https://bartol.dev',
           'https://www.google-analytics.com',
           'https://marketingplatform.google.com',
-          'https://www.google.com'
-        ]
-      }
+          'https://www.google.com',
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
         dsn: process.env.SENTRY_DSN,
-        environment: process.env.NODE_ENV
-      }
+        environment: process.env.NODE_ENV,
+      },
     },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-catch-links',
@@ -156,16 +156,16 @@ module.exports = {
       resolve: 'gatsby-plugin-nprogress',
       options: {
         color: MAIN_COLOR,
-        showSpinner: false
-      }
+        showSpinner: false,
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /\.inline\.svg$/
-        }
-      }
+          include: /\.inline\.svg$/,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -191,7 +191,7 @@ module.exports = {
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ 'content:encoded': node.html }]
+                  custom_elements: [{ 'content:encoded': node.html }],
                 }
               })
             },
@@ -215,10 +215,10 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Bartol Deak's website RSS Feed"
-          }
-        ]
-      }
+            title: "Bartol Deak's website RSS Feed",
+          },
+        ],
+      },
     },
     'gatsby-plugin-accessibilityjs',
     {
@@ -227,8 +227,8 @@ module.exports = {
         production: true,
         disable: !process.env.ANALYZE_BUNDLE_SIZE,
         generateStatsFile: true,
-        analyzerMode: 'static'
-      }
-    }
-  ]
+        analyzerMode: 'static',
+      },
+    },
+  ],
 }

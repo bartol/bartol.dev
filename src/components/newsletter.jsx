@@ -14,8 +14,8 @@ const newsletter = () => {
       url: 'https://api.bartol.dev/newsletter/subscribe',
       data: {
         email,
-        name
-      }
+        name,
+      },
     })
       .then(res => {
         setToast(res.data.message)

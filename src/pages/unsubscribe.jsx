@@ -11,13 +11,13 @@ const unsubscribe = ({ location }) => {
     const data = queryString.parse(location.search.slice(1))
 
     navigate(location.pathname, {
-      replace: true
+      replace: true,
     })
 
     axios({
       method: 'post',
       url: 'https://api.bartol.dev/newsletter/unsubscribe',
-      data
+      data,
     })
       .then(() => setToast('Successfully unsubscribed.'))
       .catch(() => setToast('There was a problem.'))

@@ -16,8 +16,8 @@ const contact = () => {
       data: {
         name,
         email,
-        content
-      }
+        content,
+      },
     })
       .then(res => {
         setToast(res.data.message)

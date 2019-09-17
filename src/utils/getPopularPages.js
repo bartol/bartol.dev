@@ -37,7 +37,7 @@ module.exports = () => {
           dimensions: 'ga:pagePath',
           'start-date': '2019-01-01',
           'end-date': 'today',
-          sort: '-ga:uniquePageviews'
+          sort: '-ga:uniquePageviews',
         },
         (getDataError, response) => {
           if (getDataError) {

@@ -30,6 +30,7 @@
   },
   "rules": {
     "semi": 0,
+    "no-console": "warn",
     "react/prop-types": 0,
     "react/no-unescaped-entities": 0,
     "import/no-unresolved": 0,

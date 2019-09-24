@@ -2,6 +2,7 @@
 title: Use Webpack to write AWS Lambda Functions in ES6
 date: 2019-09-08
 tags:
+  - serverless
   - lambda
   - aws
   - til
@@ -15,12 +16,9 @@ Make sure that you npm/yarn initialized your repository and then install these p
 yarn add -D serverless-bundle
 ```
 
-And another thing you have to do is add these few lines to `serverless.yml`.
+And another thing you have to do is add these two lines to `serverless.yml`.
 
 ```yml
-package:
-  individually: true
-
 plugins:
   - serverless-bundle
 ```

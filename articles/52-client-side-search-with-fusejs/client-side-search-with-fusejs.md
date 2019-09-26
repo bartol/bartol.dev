@@ -146,3 +146,5 @@ While you are at it, you can also handle situation when search has no results.
 ```
 
 And that is now it. Everything should be working great. Don't forget to play with search and adjust search options!
+
+Whole component for reference can be found in this [gist](https://gist.github.com/bartol/bdf23c6f32f44e40a33e7f289e9daad2).

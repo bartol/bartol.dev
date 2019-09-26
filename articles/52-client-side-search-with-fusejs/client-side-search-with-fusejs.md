@@ -120,31 +120,29 @@ That is it. Your search is working, when you change query, results will be filte
 
 And to see results you will map over result array from state. Notice line 4 in this snippet. It is important because fuse.js returns original data in item property.
 
+<!-- prettier-ignore -->
 ```jsx
-{
-  results.length && (
-    <ul>
-      {results.map(article => {
-        const { id, frontmatter } = article.item || article // <= this is important
-        const { title, date } = frontmatter
-        return (
-          <li key={id}>
-            <h2>{title}</h2>
-            <p>{date}</p>
-          </li>
-        )
-      })}
-    </ul>
-  )
-}
+{results.length && (
+  <ul>
+    {results.map(article => {
+      const { id, frontmatter } = article.item || article // <= this is important
+      const { title, date } = frontmatter
+      return (
+        <li key={id}>
+          <h2>{title}</h2>
+          <p>{date}</p>
+        </li>
+      )
+    })}
+  </ul>
+)}
 ```
 
 While you are at it, you can also handle situation when search has no results.
 
+<!-- prettier-ignore -->
 ```jsx
-{
-  !results.length && query && <h2>No results</h2>
-}
+{!results.length && query && <h2>No results</h2>}
 ```
 
 And that is now it. Everything should be working great. Don't forget to play with search and adjust search options!

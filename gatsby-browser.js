@@ -1,4 +1,7 @@
-require('./src/styles/prismjs.css')
+// tailwind css
+import './src/styles/global.css'
+
+import './src/styles/prismjs.css'
 
 // eslint-disable-next-line no-console
 console.log(`

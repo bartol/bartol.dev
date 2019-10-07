@@ -1,2 +1,3 @@
 # redirects
 /git            https://github.com/bartol
+/blog/*         /:splat

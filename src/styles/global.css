@@ -32,6 +32,8 @@ body {
   scrollbar-width: thin;
 }
 
+/*      skip to articles      */
+
 .skipToArticles {
   transform: translateY(-100px);
 

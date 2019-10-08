@@ -38,6 +38,12 @@ body {
   -webkit-user-drag: none;
 }
 
+/* unused */
+.text-vertical {
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+}
+
 .trans {
   transition: all 0.25s;
 }

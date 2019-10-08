@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import Image from '../components/image'
 import { getCardBackgroundColor } from '../utils/getCardBackgroundColor'
+import Logo from '../assets/logo.inline.svg'
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -28,14 +29,27 @@ export default () => {
   const results = data.allMarkdownRemark.nodes
 
   return (
-    <div>
-      <ul className='container mx-auto flex flex-wrap md:py-3 py-2'>
+    <div className='container mx-auto flex'>
+      <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:px-5 px-4'>
+        <h1 className='w-full'>
+          <Logo className='stroke-current text-gray-400 w-3/5 py-1' />
+        </h1>
+        <p>Hi, welcome to Bartol's personal cyberspace!</p>
+        <ul className='sticky top-0'>
+          <li>Test</li>
+          <li>Test</li>
+          <li>Test</li>
+          <li>Test</li>
+          <li>Test</li>
+        </ul>
+      </div>
+      <ul className='flex flex-wrap md:py-3 py-2 xl:px-0 lg:px-1 lg:w-4/5 xl:w-5/6'>
         {results.map(article => {
           const { id, frontmatter, fields } = article
           const { title, date, tags } = frontmatter
           const { slug } = fields
           return (
-            <li className='md:my-3 my-2 px-4 xl:w-1/4 lg:w-1/3 lg:h-40 md:w-1/2 w-full h-48'>
+            <li className='md:my-3 my-2 xl:px-4 lg:px-5 px-4 xl:w-1/3 lg:w-1/2  md:w-1/2 w-full h-48'>
               <Link to={`/${slug}/`} key={id} tabIndex={-1}>
                 <div
                   className='flex flex-col justify-between px-4 py-3 h-full relative overflow-hidden rounded bg-gray-800 shadow-md'

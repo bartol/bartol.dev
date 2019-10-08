@@ -4,4 +4,48 @@
 
 @tailwind utilities;
 
-/* @import './utilities.css'; */
+@tailwind screens;
+
+/*          global css          */
+
+body {
+  @apply bg-gray-900 leading-normal text-gray-300;
+}
+
+/*      scrollbar      */
+
+/* chrome & safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  @apply bg-gray-900;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid #1a202c;
+
+  @apply bg-gray-700 rounded-full;
+}
+
+/* firefox */
+* {
+  scrollbar-color: #4a5568 #1a202c;
+  scrollbar-width: thin;
+}
+
+/*      utilities      */
+
+.drag-none {
+  -webkit-user-drag: none;
+}
+
+.trans {
+  transition: all 0.25s;
+}
+
+.trans-slow {
+  transition-duration: 0.5s;
+}
+
+.trans-fast {
+  transition-duration: 0.15s;
+}

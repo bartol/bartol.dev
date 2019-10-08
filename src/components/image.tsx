@@ -6,7 +6,7 @@ interface Props {
   env: string
 }
 
-const Image: React.FC<Props> = ({ name, env }) => {
+const Image: React.FC<Props> = ({ name, env, className }) => {
   const data = useStaticQuery(graphql`
     {
       allFile(filter: { sourceInstanceName: { eq: "images" } }) {
@@ -28,7 +28,14 @@ const Image: React.FC<Props> = ({ name, env }) => {
   const alt = `${result[0].name} icon`
 
   // @ts-ignore
-  return <img src={url} alt={alt} loading='lazy' className={`image ${env}`} />
+  return (
+    <img
+      src={url}
+      alt={alt}
+      loading='lazy'
+      className={`image ${env} ${className}`}
+    />
+  )
 }
 
 export default Image

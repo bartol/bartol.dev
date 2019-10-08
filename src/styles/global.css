@@ -32,10 +32,30 @@ body {
   scrollbar-width: thin;
 }
 
+.skipToArticles {
+  transform: translateY(-100px);
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
 /*      utilities      */
 
 .drag-none {
   -webkit-user-drag: none;
+}
+
+.hover\:color-main:hover {
+  color: hsla(190, 80%, 50%, 1);
+}
+
+.focus\:color-main:focus {
+  color: hsla(190, 80%, 50%, 1);
+}
+
+.focus\:shadow-outline-color-main:focus {
+  box-shadow: 0 0 0 3px hsla(190, 80%, 50%, 1);
 }
 
 /* unused */
@@ -44,12 +64,16 @@ body {
   transform: rotate(-180deg);
 }
 
-.trans {
+.transition {
   transition: all 0.25s;
 }
 
-.trans-slow {
+.transition-slow {
   transition-duration: 0.5s;
+}
+
+.transition-slower {
+  transition-duration: 0.75s;
 }
 
 .trans-fast {

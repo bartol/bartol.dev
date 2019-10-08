@@ -31,6 +31,14 @@ export default () => {
 
   return (
     <div className='container mx-auto flex'>
+      <button
+        type='button'
+        className='fixed top-0 left-0 p-2 m-4 bg-gray-900 rounded focus:outline-none focus:shadow-outline-color-main z-10 skipToArticles'
+        // eslint-disable-next-line no-undef
+        onClick={() => document.getElementsByClassName('card')[0].focus()}
+      >
+        Skip to articles
+      </button>
       <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:pl-6 lg:pr-3 px-4 relative'>
         <header>
           <h1 className='w-12'>

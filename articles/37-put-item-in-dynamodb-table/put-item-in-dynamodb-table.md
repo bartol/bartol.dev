@@ -52,4 +52,4 @@ try {
 }
 ```
 
-And that's petty much it! Be sure to deploy your function and after running it data should appear in DynamoDB table dashboard.
+And that's pretty much it! Be sure to deploy your function and after running it data should appear in DynamoDB table dashboard.

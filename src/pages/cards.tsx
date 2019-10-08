@@ -30,9 +30,9 @@ export default () => {
 
   return (
     <div className='container mx-auto flex'>
-      <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:px-5 px-4'>
+      <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:px-5 px-4 relative'>
         <h1 className='w-full'>
-          <Logo className='stroke-current text-gray-400 w-3/5 py-1' />
+          <Logo className='stroke-current text-gray-400 w-3/5' />
         </h1>
         <p>Hi, welcome to Bartol's personal cyberspace!</p>
         <ul className='sticky top-0'>
@@ -42,6 +42,11 @@ export default () => {
           <li>Test</li>
           <li>Test</li>
         </ul>
+        <footer className='absolute bottom-0 right-0 mb-4'>
+          <a href='https://github.com/bartol'>GitHub</a>{' '}
+          <Link to='/rss.xml'>RSS</Link>
+          <span className='block text-gray-500'>© 2019 Bartol Deak</span>
+        </footer>
       </div>
       <ul className='flex flex-wrap md:py-3 py-2 xl:px-0 lg:px-1 lg:w-4/5 xl:w-5/6'>
         {results.map(article => {

@@ -42,22 +42,29 @@ body {
   }
 }
 
+/*      image opacity on card focus      */
+
+.card:focus {
+  .cardImage {
+    opacity: 0.75;
+  }
+}
+
 /*      utilities      */
 
 .drag-none {
   -webkit-user-drag: none;
 }
 
+.focus\:color-main:focus,
 .hover\:color-main:hover {
-  color: hsla(190, 80%, 50%, 1);
-}
-
-.focus\:color-main:focus {
-  color: hsla(190, 80%, 50%, 1);
+  /* color: hsla(190, 80%, 50%, 1); */
+  @apply text-teal-500;
 }
 
 .focus\:shadow-outline-color-main:focus {
-  box-shadow: 0 0 0 3px hsla(190, 80%, 50%, 1);
+  /* box-shadow: 0 0 0 3px hsla(190, 80%, 50%, 1); */
+  box-shadow: 0 0 0 3px #edf2f7;
 }
 
 /* unused */

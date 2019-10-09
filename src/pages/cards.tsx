@@ -1,17 +1,18 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { getCardBackgroundColor } from '../components/list/getCardBackgroundColor'
 import listOfTags from '../assets/tags'
 import Logo from '../assets/logo.inline.svg'
+import List from '../components/list'
 
 export default ({ data }) => {
   const results = data.allMarkdownRemark.nodes
 
   return (
     <div className='container mx-auto flex'>
+      {/* skip to articles button */}
       <button
         type='button'
-        className='fixed top-0 left-0 p-2 m-4 bg-gray-900 rounded focus:outline-none focus:shadow-outline-gray-200 z-20 skipToArticles'
+        className='fixed top-0 left-0 px-3 py-2 m-6 bg-gray-900 rounded focus:outline-none focus:shadow-outline-gray-200 z-20 skipToArticles'
         // eslint-disable-next-line no-undef
         onClick={() => document.getElementById('focusFirstCard').focus()}
       >
@@ -66,37 +67,7 @@ export default ({ data }) => {
         </footer>
       </div>
       <main className='flex flex-col lg:w-4/5 xl:w-5/6'>
-        <ul className='flex flex-wrap md:py-3 py-2 xl:px-0 lg:px-1'>
-          {results.map((article, index) => {
-            const { id, frontmatter, fields } = article
-            const { title, date, tags } = frontmatter
-            const { slug } = fields
-            return (
-              <li
-                className='md:my-3 my-2 xl:px-4 lg:px-5 px-4 xl:w-1/3 lg:w-1/2  md:w-1/2 w-full h-48'
-                key={id}
-              >
-                <Link
-                  to={`/${slug}/`}
-                  id={index === 0 ? 'focusFirstCard' : undefined}
-                  className='flex flex-col justify-between px-4 py-3 h-full relative overflow-hidden rounded bg-gray-800 shadow-md focus:outline-none card focus:shadow-outline-gray-200'
-                  style={{ backgroundColor: getCardBackgroundColor(tags[0]) }}
-                >
-                  <h2 className='md:text-2xl text-3xl font-medium text-gray-300 leading-tight z-10'>
-                    {title}
-                  </h2>
-                  <h3 className='opacity-75'>{date}</h3>
-                  <img
-                    src={`/images/${tags[0]}.svg`}
-                    alt={`${tags[0]} icon`}
-                    loading='lazy'
-                    className='md:w-40 w-48 md:h-40 h-48 md:-m-8 -m-10 opacity-25 absolute bottom-0 right-0 drag-none cardImage transition'
-                  />
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
+        <List articles={results} />
       </main>
     </div>
   )

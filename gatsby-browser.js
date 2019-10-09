@@ -1,5 +1,5 @@
 // tailwind css
-import './src/styles/global.css'
+import './src/pages/index.css'
 
 import './src/styles/prismjs.css'
 

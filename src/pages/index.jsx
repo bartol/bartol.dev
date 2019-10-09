@@ -129,7 +129,7 @@ export default ({ location }) => {
     keys: [
       { name: 'frontmatter.title', weight: 1 },
       { name: 'frontmatter.tags', weight: 0.75 },
-      { name: 'frontmatter.excerpt', weight: 0.5 },
+      { name: 'excerpt', weight: 0.5 },
     ],
   }
 

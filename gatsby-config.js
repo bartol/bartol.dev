@@ -35,13 +35,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/images`,
-      },
-    },
-    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -107,7 +100,7 @@ module.exports = {
         background_color: '#212121',
         theme_color: '#212121',
         display: 'standalone',
-        icon: 'static/images/logo.png',
+        icon: 'static/favicon.png',
       },
     },
     'gatsby-plugin-offline',

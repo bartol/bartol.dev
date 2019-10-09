@@ -44,5 +44,3 @@ export const getCardBackgroundColor = (name: string) => {
       return '#951613'
   }
 }
-
-// #049ac3

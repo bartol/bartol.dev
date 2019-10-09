@@ -30,6 +30,8 @@ export const getCardBackgroundColor = (name: string) => {
       return '#105b91'
     case 'apollo':
       return '#290aa0'
+    case 'yarn':
+      return '#237195'
     case 'sass':
       return '#882e5b'
     case 'eslint':

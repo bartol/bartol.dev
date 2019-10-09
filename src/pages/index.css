@@ -32,25 +32,7 @@ body {
   scrollbar-width: thin;
 }
 
-/*      skip to articles      */
-
-.skipToArticles {
-  transform: translateY(-100px);
-
-  &:focus {
-    transform: translateY(0);
-  }
-}
-
-/*      image opacity on card focus      */
-
-.card:focus {
-  .cardImage {
-    opacity: 0.75;
-  }
-}
-
-/*      utilities      */
+/*          utilities          */
 
 .drag-none {
   -webkit-user-drag: none;
@@ -65,24 +47,14 @@ body {
   box-shadow: 0 0 0 3px #edf2f7; /* gray-200 */
 }
 
-/* unused */
-.text-vertical {
-  writing-mode: vertical-lr;
-  transform: rotate(-180deg);
-}
-
 .transition {
   transition: all 0.25s;
 }
 
 .transition-slow {
-  transition-duration: 0.5s;
-}
-
-.transition-slower {
-  transition-duration: 0.75s;
+  transition: all 0.75s;
 }
 
 .trans-fast {
-  transition-duration: 0.15s;
+  transition: all 0.15s;
 }

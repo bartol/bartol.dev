@@ -14,7 +14,7 @@ const Sidebar = () => {
             to='/'
             className='text-gray-400 focus:outline-none focus:color-main'
           >
-            <Logo className='stroke-current hover:color-main transition transition-slower' />
+            <Logo className='stroke-current hover:color-main transition-slow' />
           </Link>
         </h1>
         <p className='pt-4 pb-2'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import './skip.css'
 
 const Skip = () => {
   return (

@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Image from '../components/image'
-import { getCardBackgroundColor } from '../utils/getCardBackgroundColor'
+import { getCardBackgroundColor } from '../components/list/getCardBackgroundColor'
 import listOfTags from '../assets/tags'
 import Logo from '../assets/logo.inline.svg'
 
@@ -87,9 +86,10 @@ export default ({ data }) => {
                     {title}
                   </h2>
                   <h3 className='opacity-75'>{date}</h3>
-                  <Image
-                    name={tags[0]}
-                    env='preview'
+                  <img
+                    src={`/images/${tags[0]}.svg`}
+                    alt={`${tags[0]} icon`}
+                    loading='lazy'
                     className='md:w-40 w-48 md:h-40 h-48 md:-m-8 -m-10 opacity-25 absolute bottom-0 right-0 drag-none cardImage transition'
                   />
                 </Link>

@@ -10,7 +10,7 @@ import ArticlePreview from '../components/articlePreview'
 import Settings from '../components/settings'
 import Layout from '../components/layout'
 import Random from '../components/random'
-import Logo from '../assets/logo.inline.svg'
+import Logo from '../components/sidebar/logo.inline.svg'
 import tagsList from '../assets/tags'
 import useWindowDimensions from '../hooks/useWindowDimensions'
 

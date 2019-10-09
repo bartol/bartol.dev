@@ -1,5 +1,5 @@
 <a href="https://bartol.dev">
-  <img alt="Bartol's logo" src="./images/me.svg" align="right" width="145" height="155" />
+  <img alt="Bartol's logo" src="./static/logo.svg" align="right" width="145" height="155" />
 </a>
 
 # [bartol.dev](https://bartol.dev)

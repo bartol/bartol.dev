@@ -60,7 +60,7 @@ export default () => {
           <input
             type='text'
             placeholder='Search'
-            className='w-full text-xl bg-gray-800 px-2 my-2 rounded focus:outline-none focus:shadow-outline-color-main'
+            className='w-full text-xl bg-gray-800 px-2 my-2 rounded shadow focus:outline-none focus:shadow-outline-color-main'
             aria-label='search'
           />
         </header>
@@ -111,7 +111,7 @@ export default () => {
                   <Image
                     name={tags[0]}
                     env='preview'
-                    className='md:w-40 w-48 md:h-40 h-48 md:-m-8 -m-10 opacity-25 absolute bottom-0 right-0 drag-none'
+                    className='md:w-40 w-48 md:h-40 h-48 md:-m-8 -m-10 opacity-25 absolute bottom-0 right-0 drag-none cardImage transition'
                   />
                 </Link>
               </li>

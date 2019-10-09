@@ -1,6 +1,6 @@
 ---
 title: Better way to upgrade node packages
-date: 2019-10-10
+date: 2019-10-09
 tags:
   - yarn
   - til

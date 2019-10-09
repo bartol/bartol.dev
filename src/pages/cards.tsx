@@ -1,32 +1,11 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Image from '../components/image'
 import { getCardBackgroundColor } from '../utils/getCardBackgroundColor'
 import listOfTags from '../assets/tags'
 import Logo from '../assets/logo.inline.svg'
 
-export default () => {
-  const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark {
-        nodes {
-          frontmatter {
-            title
-            tags
-            date(formatString: "MMMM Do, YYYY")
-          }
-          fields {
-            slug
-            timestamp
-            views
-          }
-          id
-          excerpt(pruneLength: 1000000)
-        }
-      }
-    }
-  `)
-
+export default ({ data }) => {
   const results = data.allMarkdownRemark.nodes
 
   return (
@@ -122,3 +101,24 @@ export default () => {
     </div>
   )
 }
+
+export const query = graphql`
+  {
+    allMarkdownRemark {
+      nodes {
+        frontmatter {
+          title
+          tags
+          date(formatString: "MMMM Do, YYYY")
+        }
+        fields {
+          slug
+          timestamp
+          views
+        }
+        id
+        excerpt(pruneLength: 1000000)
+      }
+    }
+  }
+`

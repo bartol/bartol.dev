@@ -58,13 +58,11 @@ body {
 
 .focus\:color-main:focus,
 .hover\:color-main:hover {
-  /* color: hsla(190, 80%, 50%, 1); */
-  @apply text-teal-500;
+  color: hsla(190, 80%, 50%, 1);
 }
 
-.focus\:shadow-outline-color-main:focus {
-  /* box-shadow: 0 0 0 3px hsla(190, 80%, 50%, 1); */
-  box-shadow: 0 0 0 3px #edf2f7;
+.focus\:shadow-outline-gray-200:focus {
+  box-shadow: 0 0 0 3px #edf2f7; /* gray-200 */
 }
 
 /* unused */

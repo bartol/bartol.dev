@@ -33,7 +33,7 @@ export default () => {
     <div className='container mx-auto flex'>
       <button
         type='button'
-        className='fixed top-0 left-0 p-2 m-4 bg-gray-900 rounded focus:outline-none focus:shadow-outline-color-main z-20 skipToArticles'
+        className='fixed top-0 left-0 p-2 m-4 bg-gray-900 rounded focus:outline-none focus:shadow-outline-gray-200 z-20 skipToArticles'
         // eslint-disable-next-line no-undef
         onClick={() => document.getElementById('focusFirstCard').focus()}
       >
@@ -41,26 +41,26 @@ export default () => {
       </button>
       <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:pl-6 lg:pr-3 px-4 relative'>
         <header>
-          <Link
-            to='/'
-            className='text-gray-400 focus:outline-none focus:color-main'
-          >
-            <h1 className='w-12'>
+          <h1 className='w-12 pt-1'>
+            <Link
+              to='/'
+              className='text-gray-400 focus:outline-none focus:color-main'
+            >
               <Logo className='stroke-current hover:color-main transition transition-slower' />
-            </h1>
-          </Link>
+            </Link>
+          </h1>
           <p className='pt-4 pb-2'>
             <span className='block py-1'>
               Hi, welcome to Bartol's personal cyberspace!
             </span>
             <span className='block py-1'>
-              Here you can find my thoughts and web development articles.
+              Here are my thoughts and notes about web development.
             </span>
           </p>
           <input
             type='text'
             placeholder='Search'
-            className='w-full text-xl bg-gray-800 px-2 my-2 rounded shadow focus:outline-none focus:shadow-outline-color-main'
+            className='w-full text-xl bg-gray-800 px-2 my-2 rounded shadow focus:outline-none focus:shadow-outline-gray-200'
             aria-label='search'
           />
         </header>
@@ -101,7 +101,7 @@ export default () => {
                 <Link
                   to={`/${slug}/`}
                   id={index === 0 ? 'focusFirstCard' : undefined}
-                  className='flex flex-col justify-between px-4 py-3 h-full relative overflow-hidden rounded bg-gray-800 shadow-md focus:outline-none card focus:shadow-outline-color-main'
+                  className='flex flex-col justify-between px-4 py-3 h-full relative overflow-hidden rounded bg-gray-800 shadow-md focus:outline-none card focus:shadow-outline-gray-200'
                   style={{ backgroundColor: getCardBackgroundColor(tags[0]) }}
                 >
                   <h2 className='md:text-2xl text-3xl font-medium text-gray-300 leading-tight z-10'>

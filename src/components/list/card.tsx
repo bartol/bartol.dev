@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { getCardBackgroundColor } from './getCardBackgroundColor'
+import './card.css'
 
 const Card = ({ title, date, slug, imageName, first }: Props) => {
   return (

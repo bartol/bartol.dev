@@ -50,3 +50,6 @@
 - [Fuse.js](https://fusejs.io/)
 - [PrismJS](https://prismjs.com/)
 - [Google Analytics Reporting API](https://developers.google.com/analytics/devguides/reporting/core/v3/)
+
+<br />
+<p>Cross-browser testing powered by: </p><a href="https://www.browserstack.com/"><img src='.github/images/browserstack.png' alt='BrowserStack' height='50px'/><a>

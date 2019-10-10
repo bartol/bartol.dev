@@ -52,7 +52,7 @@ In tab called 'API keys' you can find your Application ID, Search-Only API Key a
 
 Copy them to file called .env.production in root of your project.
 
-```env
+```text
 ALGOLIA_APP_ID=insertValue
 ALGOLIA_API_KEY=insertValue
 ALGOLIA_SEARCH_KEY=insertValue
@@ -67,7 +67,7 @@ Now we are going to build 'back-end' of our search. Open your Gatsby config file
 
 ```js
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 ```
 
@@ -111,8 +111,8 @@ const queries = [
   {
     query: postQuery,
     transformer: ({ data }) => data.posts.edges.map(({ node }) => node),
-    settings: {}
-  }
+    settings: {},
+  },
 ]
 ```
 
@@ -155,7 +155,7 @@ import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom'
 const searchClient = algoliasearch('APP_ID', 'SEARCH_KEY')
 
 export default () => (
-  <InstantSearch searchClient={searchClient} indexName="INDEX_NAME">
+  <InstantSearch searchClient={searchClient} indexName='INDEX_NAME'>
     <SearchBox />
     <Hits />
   </InstantSearch>
@@ -176,16 +176,16 @@ const searchClient = algoliasearch('APP_ID', 'SEARCH_KEY')
 const Search = ({ currentRefinement, refine }) => (
   <form
     noValidate
-    action=""
-    role="search"
+    action=''
+    role='search'
     onSubmit={event => event.preventDefault()}
   >
     <input
-      type="search"
+      type='search'
       value={currentRefinement}
       onChange={event => refine(event.currentTarget.value)}
-      placeholder="Search"
-      aria-label="Search"
+      placeholder='Search'
+      aria-label='Search'
     />
   </form>
 )
@@ -193,7 +193,7 @@ const Search = ({ currentRefinement, refine }) => (
 const CustomSearchBox = connectSearchBox(Search)
 
 export default () => (
-  <InstantSearch searchClient={searchClient} indexName="INDEX_NAME">
+  <InstantSearch searchClient={searchClient} indexName='INDEX_NAME'>
     <CustomSearchBox />
     <Hits hitComponent={PostPreview} />
   </InstantSearch>

@@ -22,4 +22,4 @@ test:       adding missing tests, refactoring tests; no production code change
 chore:      updating dependencies etc; no production code change
 ```
 
-After using this system for a while, your Git history will be easy to skim and find specific change.
+After using this system for a while, you'll be able to easily navigate through your Git history.

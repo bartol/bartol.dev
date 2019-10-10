@@ -17,13 +17,12 @@ body {
 /* chrome & safari */
 *::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
   @apply bg-gray-900;
 }
 
 *::-webkit-scrollbar-thumb {
-  border: 2px solid #1a202c;
-
-  @apply bg-gray-700 rounded-full;
+  @apply bg-gray-700 rounded-full border-2 border-solid border-gray-900;
 }
 
 /* firefox */

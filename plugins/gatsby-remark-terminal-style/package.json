@@ -1,0 +1,6 @@
+{
+  "name": "gatsby-remark-terminal-style",
+  "dependencies": {
+    "unist-util-visit": "~1.3.0"
+  }
+}

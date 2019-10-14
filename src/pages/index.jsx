@@ -4,7 +4,6 @@ import Fuse from 'fuse.js'
 import queryString from 'query-string'
 import { useStaticQuery, graphql } from 'gatsby'
 import { navigate } from '@reach/router'
-// eslint-disable-next-line import/no-unresolved
 import Collapse from '@kunukn/react-collapse'
 import ArticlePreview from '../components/articlePreview'
 import Settings from '../components/settings'
@@ -279,7 +278,7 @@ export default ({ location }) => {
           <select
             onChange={e => setSort(e.target.value)}
             value={sort}
-            className='selector'
+            className='sort-selector'
             aria-label='sort select'
           >
             <option value='recent'>Recent</option>

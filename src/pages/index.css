@@ -6,7 +6,33 @@
 
 @tailwind screens;
 
+/*          fonts          */
+
+@font-face {
+  font-family: 'Dank Mono';
+  font-display: swap;
+  src: url('../../static/fonts/DankMono/DankMono-Regular.woff2') format('woff2'),
+    url('../../static/fonts/DankMono/DankMono-Regular.woff') format('woff'),
+    url('../../static/fonts/DankMono/DankMono-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Dank Mono Italic';
+  font-display: fallback;
+  src: url('../../static/fonts/DankMono/DankMono-Italic.woff2') format('woff2'),
+    url('../../static/fonts/DankMono/DankMono-Italic.woff') format('woff'),
+    url('../../static/fonts/DankMono/DankMono-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
 /*          global css          */
+
+html {
+  @apply overflow-y-scroll;
+}
 
 body {
   @apply bg-dark-800 leading-normal text-dark-200 font-sans;
@@ -35,11 +61,6 @@ body {
 
 .drag-none {
   -webkit-user-drag: none;
-}
-
-.focus\:color-main:focus,
-.hover\:color-main:hover {
-  color: hsla(190, 80%, 50%, 1);
 }
 
 .focus\:shadow-outline-dark-200:focus {

@@ -12,7 +12,7 @@ const Categories = () => {
               type='button'
               value={value}
               // onClick={() => handleTag(value)}
-              className='w-full text-left px-2 py-1 my-1 rounded text-gray-400 hover:text-gray-200 focus:text-gray-200 focus:font-medium focus:outline-none focus:bg-gray-800'
+              className='w-full text-left px-2 py-1 my-1 rounded text-dark-300 focus:outline-none'
             >
               {label}
             </button>

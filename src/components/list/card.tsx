@@ -9,13 +9,13 @@ const Card = ({ title, date, slug, imageName, first }: Props) => {
       <Link
         to={`/${slug}/`}
         id={first ? 'focusFirstCard' : undefined}
-        className='flex flex-col justify-between px-4 py-3 h-full relative overflow-hidden rounded bg-gray-800 shadow-md focus:outline-none card focus:shadow-outline-gray-200'
+        className='flex flex-col justify-between px-4 py-3 h-full relative overflow-hidden rounded bg-dark-700 shadow focus:outline-none card focus:shadow-outline-dark-200'
         style={{ backgroundColor: getCardBackgroundColor(imageName) }}
       >
-        <h2 className='md:text-2xl text-3xl font-medium text-gray-300 leading-tight z-10'>
+        <h2 className='md:text-2xl text-3xl font-medium leading-tight z-10'>
           {title}
         </h2>
-        <h3 className='opacity-75'>{date}</h3>
+        <h3 className='text-dark-300'>{date}</h3>
         <img
           src={`/images/${imageName}.svg`}
           alt={`${imageName} icon`}

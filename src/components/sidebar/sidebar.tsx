@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Logo from './logo.inline.svg'
 import { Search, Categories } from '../filter'
 import Skip from './skip'
+import './sidebar.css'
 
 const Sidebar = () => {
   return (
@@ -12,9 +13,9 @@ const Sidebar = () => {
         <h1 className='w-12 pt-1'>
           <Link
             to='/'
-            className='text-gray-400 focus:outline-none focus:color-main'
+            className='logo-dark-300 focus:outline-none focus:text-main'
           >
-            <Logo className='stroke-current hover:color-main transition-slow' />
+            <Logo className='stroke-current hover:text-main transition-slow' />
           </Link>
         </h1>
         <p className='pt-4 pb-2'>
@@ -31,7 +32,7 @@ const Sidebar = () => {
       <footer className='absolute bottom-0 right-0 mb-4'>
         <a href='https://github.com/bartol'>GitHub</a>{' '}
         <Link to='/rss.xml'>RSS</Link>
-        <span className='block text-gray-500'>© 2019 Bartol Deak</span>
+        <span className='block text-dark-500'>© 2019 Bartol Deak</span>
       </footer>
     </div>
   )

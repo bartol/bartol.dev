@@ -34,19 +34,19 @@
   :not(pre) > code[class*='language-'] {
     padding: 0rem 0.4rem 0.2rem 0.4rem;
     color: rgba(239, 83, 80, 1);
-    @apply bg-gray-800 rounded;
+    @apply bg-dark-700 rounded;
   }
 
   /*      code blocks      */
   .gatsby-highlight {
-    @apply bg-gray-800 px-4 py-3 rounded shadow my-4 overflow-x-auto;
+    @apply bg-dark-700 px-4 py-3 rounded shadow my-4 overflow-x-auto;
 
     &::-webkit-scrollbar {
-      @apply bg-gray-800 rounded-b shadow;
+      @apply bg-dark-700 rounded-b shadow;
     }
 
     &::-webkit-scrollbar-thumb {
-      @apply bg-gray-700 rounded-full border-2 border-solid border-gray-800;
+      @apply bg-dark-600 rounded-full border-2 border-solid border-dark-700;
     }
 
     scrollbar-color: #4a5568 #2d3748;

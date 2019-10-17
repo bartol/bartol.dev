@@ -9,7 +9,7 @@
 /*          global css          */
 
 body {
-  @apply bg-gray-900 leading-normal text-gray-300;
+  @apply bg-dark-800 leading-normal text-dark-200 font-sans;
 }
 
 /*      scrollbar      */
@@ -18,16 +18,16 @@ body {
 *::-webkit-scrollbar {
   width: 10px;
   height: 10px;
-  @apply bg-gray-900;
+  @apply bg-dark-800;
 }
 
 *::-webkit-scrollbar-thumb {
-  @apply bg-gray-700 rounded-full border-2 border-solid border-gray-900;
+  @apply bg-dark-600 rounded-full border-2 border-solid border-dark-800;
 }
 
 /* firefox */
 * {
-  scrollbar-color: #4a5568 #1a202c;
+  scrollbar-color: #383b40 #1f2023;
   scrollbar-width: thin;
 }
 
@@ -42,8 +42,8 @@ body {
   color: hsla(190, 80%, 50%, 1);
 }
 
-.focus\:shadow-outline-gray-200:focus {
-  box-shadow: 0 0 0 3px #edf2f7; /* gray-200 */
+.focus\:shadow-outline-dark-200:focus {
+  box-shadow: 0 0 0 3px #ffffffe6; /* dark-200 */
 }
 
 .transition {

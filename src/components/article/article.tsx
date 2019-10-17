@@ -9,7 +9,7 @@ const Article = ({ data }: Props) => {
   const { views } = fields
 
   return (
-    <div className='container max-w-2xl w-90 mx-auto'>
+    <div className='container max-w-2xl w-90 mx-auto pt-12'>
       <h1 className='text-5xl leading-none font-medium'>{title}</h1>
       <p className=''>
         <span>Published on {date}</span>
@@ -29,8 +29,8 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "MMM Do, YYYY")
         title
+        date(formatString: "MMMM Do, YYYY")
       }
       fields {
         views

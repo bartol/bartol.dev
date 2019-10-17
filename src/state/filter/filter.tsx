@@ -1,7 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { navigate } from '@reach/router'
 import Fuse from 'fuse.js'
-import { filterArray } from './filterArray'
 import { urlToState } from './urlToState'
 import { stateToUrl } from './stateToUrl'
 import { isBrowser } from './isBrowser'
@@ -33,7 +32,7 @@ export const FilterProvider = ({ children }) => {
   const [allResults, setAllResults] = useState([])
   const [results, setResults] = useState([])
   const [query, setQuery] = useState(urlToState(location).q)
-  const [tags, setTags] = useState(urlToState(location).tags)
+  const [category, setCategory] = useState(urlToState(location).category)
   const [sort, setSort] = useState(urlToState(location).sort)
   const [debouncedSetResults, setDebouncedSetResults] = useState(null)
 
@@ -60,22 +59,20 @@ export const FilterProvider = ({ children }) => {
       })
     }
 
-    const filters = {
-      frontmatter: frontmatter => frontmatter.tags.find(x => tags.includes(x)),
-    }
-
-    const filtered = filterArray(allResults, filters)
+    const filtered = category
+      ? allResults.filter(result => result.frontmatter.tags.includes(category))
+      : []
 
     const list = filtered.length ? filtered : allResults
 
     const fuse = new Fuse(list, options)
 
     setResults(query ? fuse.search(query) : list)
-  }, [allResults, query, tags, sort])
+  }, [allResults, query, category, sort])
 
   const params = {
     query,
-    tags,
+    category,
     sort,
   }
 
@@ -95,7 +92,7 @@ export const FilterProvider = ({ children }) => {
     navigate(stateToUrl(location, params), {
       replace: true,
     })
-  }, [tags, sort])
+  }, [category, sort])
 
   return (
     <FilterContext.Provider
@@ -104,8 +101,8 @@ export const FilterProvider = ({ children }) => {
         results,
         query,
         setQuery,
-        tags,
-        setTags,
+        category,
+        setCategory,
         sort,
         setSort,
       }}

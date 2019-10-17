@@ -1,5 +1,5 @@
 // eslint-disable-next-line consistent-return
-export const getCardBackgroundColor = (name: string) => {
+export const cardBackgroundColor = (name: string) => {
   // eslint-disable-next-line default-case
   switch (name) {
     case 'javascript':
@@ -30,6 +30,8 @@ export const getCardBackgroundColor = (name: string) => {
       return '#105b91'
     case 'apollo':
       return '#290aa0'
+    case 'graphql':
+      return '#a21473'
     case 'yarn':
       return '#237195'
     case 'sass':

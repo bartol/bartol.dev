@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import List from '../components/list'
 import Sidebar from '../components/sidebar'
+import { FilterContext } from '../state'
 
 export default ({ data }) => {
-  const articles = data.allMarkdownRemark.nodes
+  const { setAllResults, results } = useContext(FilterContext)
+  setAllResults(data.allMarkdownRemark.nodes)
 
   return (
-    <div className='container mx-auto flex'>
+    <div className='container mx-auto flex min-h-screen'>
       <Sidebar />
-      <List articles={articles} />
+      <List articles={results} />
     </div>
   )
 }

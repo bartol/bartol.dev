@@ -33,9 +33,13 @@ const Sidebar = () => {
         {query && !!results.length && <Skip />}
       </header>
       <Categories />
-      <footer className='absolute bottom-0 right-0 mb-4'>
-        <a href='https://github.com/bartol'>GitHub</a>{' '}
-        <Link to='/rss.xml'>RSS</Link>
+      <footer className='absolute bottom-0 right-0 mb-4 text-right'>
+        <a href='https://github.com/bartol' className='mr-3 link'>
+          GitHub
+        </a>
+        <Link to='/rss.xml' className='link'>
+          RSS
+        </Link>
         <span className='block text-dark-500'>© 2019 Bartol Deak</span>
       </footer>
     </div>

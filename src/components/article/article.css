@@ -10,7 +10,7 @@
   :not(pre) > code[class*='language-'] {
     padding: 0rem 0.4rem 0.2rem 0.4rem;
     color: rgba(239, 83, 80, 1);
-    @apply bg-dark-700 rounded;
+    @apply bg-dark-700 rounded shadow;
   }
 
   /*      code blocks      */

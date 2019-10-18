@@ -21,7 +21,7 @@ const Categories = () => {
               className={`w-full text-left px-2 py-1 my-px rounded focus:outline-none transition-fast ${
                 category === value
                   ? 'bg-dark-700 text-dark-100 font-medium shadow'
-                  : 'text-dark-300'
+                  : 'text-dark-300 hover:bg-dark-700'
               }`}
               style={{
                 backgroundColor:

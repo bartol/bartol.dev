@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import Logo from './logo.inline.svg'
 import { Search, Categories } from '../filter'
+import { FilterContext } from '../../state'
 import Skip from './skip'
 import './sidebar.css'
 
 const Sidebar = () => {
+  const { query, results } = useContext(FilterContext)
+
   return (
     <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:pl-6 lg:pr-3 px-4 relative'>
       <Skip />
@@ -27,6 +30,7 @@ const Sidebar = () => {
           </span>
         </p>
         <Search />
+        {query && !!results.length && <Skip />}
       </header>
       <Categories />
       <footer className='absolute bottom-0 right-0 mb-4'>

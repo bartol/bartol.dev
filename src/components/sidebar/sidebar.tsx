@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import Logo from './logo.inline.svg'
-import { Search, Categories } from '../filter'
+import { Search, Categories, Sort } from '../filter'
 import { FilterContext } from '../../state'
 import Skip from './skip'
 import './sidebar.css'
@@ -32,6 +32,7 @@ const Sidebar = () => {
         <Search />
         {query && !!results.length && <Skip />}
       </header>
+      <Sort />
       <Categories />
       <footer className='absolute bottom-0 right-0 mb-4 text-right'>
         <a href='https://github.com/bartol' className='mr-3 link'>

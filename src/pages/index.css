@@ -57,6 +57,12 @@ body {
   scrollbar-width: thin;
 }
 
+/*      select      */
+
+*::selection {
+  background-color: hsla(190, 80%, 50%, 0.35);
+}
+
 /*          utilities          */
 
 .drag-none {

@@ -9,7 +9,7 @@ tags:
 Enum (short for Enumeration) is GraphQL special type that represents set of predefined values. You'll mostly use this type when you need more options than just Boolean, but still want to use only controlled set of values.
 
 ```graphql
-type articleStatus {
+enum articleStatus {
   IDEA
   DRAFT
   PUBLISHED

@@ -18,13 +18,13 @@ Simple and clear, if you are using Sass, this will give you useful functions out
 
 Modules can be imported with the `@use` keyword and all built-in module names start with `sass:`.
 
-```sass
+```scss
 @use "sass:math";
 ```
 
 After that you can access things from it using dot separated syntax. It's very similar to JavaScript so you'll most likely be in well known territory.
 
-```sass
+```scss
 width: button.$width                                  // access variable
 color: color.adjust(#1ac4e6, $red: -10, $blue: 10);   // call a function
 ```

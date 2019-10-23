@@ -5,8 +5,37 @@
 .markdown {
   @apply text-lg;
 
-  /*      inline code      */
+  .autolink {
+    @apply text-main flex justify-center items-center;
 
+    &:hover,
+    &:active,
+    &:focus {
+      @apply mr-2;
+    }
+  }
+
+  > p {
+    @apply bg-main;
+  }
+
+  h2 {
+    @apply text-4xl font-medium flex items-center mt-6;
+  }
+
+  h3 {
+    @apply text-2xl font-medium flex items-center mt-4;
+  }
+
+  ul {
+    @apply list-disc pl-8;
+  }
+
+  ol {
+    @apply list-decimal pl-8;
+  }
+
+  /*      inline code      */
   :not(pre) > code[class*='language-'] {
     padding: 0rem 0.4rem 0.2rem 0.4rem;
     color: rgba(239, 83, 80, 1);

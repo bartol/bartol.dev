@@ -8,6 +8,11 @@
   .autolink {
     @apply text-main flex justify-center items-center;
 
+    /* hide on md and below */
+    @media (max-width: 768px) {
+      display: none;
+    }
+
     &:hover,
     &:active,
     &:focus {
@@ -16,15 +21,23 @@
   }
 
   > p {
-    @apply bg-main;
+    @apply mb-2;
+  }
+
+  > ul {
+    @apply mb-3;
+  }
+
+  li {
+    margin: 0.1rem 0;
   }
 
   h2 {
-    @apply text-4xl font-medium flex items-center mt-6;
+    @apply text-4xl font-medium flex items-center mt-6 mb-1;
   }
 
   h3 {
-    @apply text-2xl font-medium flex items-center mt-4;
+    @apply text-2xl font-medium flex items-center mt-5 mb-1;
   }
 
   ul {
@@ -33,6 +46,10 @@
 
   ol {
     @apply list-decimal pl-8;
+  }
+
+  .gatsby-resp-image-wrapper * {
+    @apply rounded shadow;
   }
 
   /*      inline code      */
@@ -44,7 +61,7 @@
 
   /*      code blocks      */
   .gatsby-highlight {
-    @apply bg-dark-700 px-4 py-3 rounded shadow my-4 overflow-x-auto;
+    @apply bg-dark-700 px-4 py-3 rounded shadow my-5 overflow-x-auto;
 
     &::-webkit-scrollbar {
       @apply bg-dark-700 rounded-b shadow;
@@ -74,8 +91,8 @@
   }
 
   .terminalHeader {
-    padding-bottom: 0.65rem;
-    @apply flex pt-3 px-4 rounded-t shadow mt-4 bg-dark-900;
+    padding-bottom: 0.7rem;
+    @apply flex pt-3 px-4 rounded-t shadow mt-5 bg-dark-900;
 
     .red {
       @apply h-3 w-3 bg-red-500 rounded-full;

@@ -43,16 +43,15 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 700,
-              showCaptions: true,
-              wrapperStyle: 'margin: 1rem 0;',
-              backgroundColor: '#212121',
+              wrapperStyle: 'margin: 1.25rem 0;',
+              backgroundColor: '#1F2023',
               linkImagesToOriginal: false,
             },
           },
           {
             resolve: 'gatsby-remark-images-medium-zoom',
             options: {
-              background: '#212121',
+              background: '#1F2023',
               scrollOffset: 0,
               margin: 0,
             },

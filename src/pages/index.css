@@ -38,6 +38,12 @@ body {
   @apply bg-dark-800 leading-normal text-dark-200 font-sans;
 }
 
+/* remove firefox dotted border on focus */
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #ffffffe6 !important; /* dark-200 */
+}
+
 /*      scrollbar      */
 
 /* chrome & safari */

@@ -11,11 +11,11 @@ const Article = ({ data }: Props) => {
   return (
     <div className='container max-w-2xl w-90 mx-auto pt-12'>
       <h1 className='text-5xl leading-none font-medium'>{title}</h1>
-      <p className=''>
-        <span>Published on {date}</span>
-        {updated ? <span>Updated on {updated}</span> : null}
-        {views ? <span>{views} views</span> : null}
-      </p>
+      <div className='my-6 ml-4 opacity-75'>
+        <p>Published on {date}</p>
+        {updated ? <p>Updated on {updated}</p> : null}
+        {views ? <p>{views} views</p> : null}
+      </div>
       {/* eslint-disable-next-line react/no-danger */}
       <div className='markdown' dangerouslySetInnerHTML={{ __html: html }} />
     </div>

@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import './article.css'
 import { Card } from './card'
+import { Changelog } from './changelog'
 
 const Article = ({ data }: Props) => {
   const { markdownRemark } = data
@@ -13,11 +14,12 @@ const Article = ({ data }: Props) => {
       <Card
         title={title}
         date={date}
-        updated={changelog[changelog.length - 1].date}
+        updated={changelog ? changelog[changelog.length - 1].date : null}
         tag={tags[0]}
       />
       {/* eslint-disable-next-line react/no-danger */}
       <div className='markdown' dangerouslySetInnerHTML={{ __html: html }} />
+      {changelog ? <Changelog changelog={changelog || []} /> : null}
     </div>
   )
 }
@@ -32,6 +34,10 @@ export const query = graphql`
         title
         date(formatString: "MMMM Do, YYYY")
         tags
+        resources {
+          name
+          url
+        }
         changelog {
           date(formatString: "MMMM Do, YYYY")
           message
@@ -49,10 +55,16 @@ interface Props {
         title: string
         date: string
         tags: string[]
+        resource: Resource[]
         changelog: Changelog[]
       }
     }
   }
+}
+
+interface Resource {
+  name: string
+  url: string
 }
 
 interface Changelog {

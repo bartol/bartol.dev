@@ -37,9 +37,9 @@ export const FilterProvider = ({ children }) => {
   const [debouncedSetResults, setDebouncedSetResults] = useState(null)
 
   useEffect(() => {
-    if (sort === 'popular') {
+    if (sort === 'recent') {
       allResults.sort((a, b) => {
-        return b.fields.views - a.fields.views
+        return b.fields.timestamp - a.fields.timestamp
       })
     } else if (sort === 'oldest') {
       allResults.sort((a, b) => {
@@ -52,10 +52,6 @@ export const FilterProvider = ({ children }) => {
     } else if (sort === 'unalphabetical') {
       allResults.sort((a, b) => {
         return b.frontmatter.title.localeCompare(a.frontmatter.title)
-      })
-    } else {
-      allResults.sort((a, b) => {
-        return b.fields.timestamp - a.fields.timestamp
       })
     }
 

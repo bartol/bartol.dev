@@ -14,7 +14,6 @@ const Sort = () => {
       >
         <option value='recent'>Recent</option>
         <option value='oldest'>Oldest</option>
-        <option value='popular'>Popular</option>
         <option value='alphabetical'>A to Z</option>
         <option value='unalphabetical'>Z to A</option>
       </select>

@@ -2,20 +2,6 @@
   width: 90vw;
 }
 
-.articleCard {
-  height: 22.5rem;
-
-  .cardImage {
-    margin: -3.1rem;
-  }
-}
-
-.articleCard:hover {
-  .cardImage {
-    opacity: 0.75;
-  }
-}
-
 .markdown {
   @apply text-lg;
 

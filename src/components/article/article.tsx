@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import './article.css'
+import './code.css'
 import { Card } from './card'
 import { Changelog } from './changelog'
 import { Resources } from './resources'

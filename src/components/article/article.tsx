@@ -5,9 +5,8 @@ import { cardBackgroundColor } from '../list/cardBackgroundColor'
 
 const Article = ({ data }: Props) => {
   const { markdownRemark } = data
-  const { html, frontmatter, fields } = markdownRemark
+  const { html, frontmatter } = markdownRemark
   const { title, date, updated, tags } = frontmatter
-  const { views } = fields
 
   return (
     <div className='container max-w-2xl w-90 mx-auto pt-12'>
@@ -19,7 +18,6 @@ const Article = ({ data }: Props) => {
       >
         <h1 className='text-5xl leading-tight font-medium'>{title}</h1>
         <div className='text-xl text-dark-300'>
-          {views ? <p>{views} views</p> : null}
           <p>Published on {date}</p>
           {updated ? <p>Updated on {updated}</p> : null}
         </div>
@@ -47,9 +45,6 @@ export const query = graphql`
         date(formatString: "MMMM Do, YYYY")
         tags
       }
-      fields {
-        views
-      }
     }
   }
 `
@@ -62,11 +57,7 @@ interface Props {
         title: string
         date: string
         updated: string
-      }
-      fields: {
-        views: string
-        slug: string
-        edit: string
+        tags: string[]
       }
     }
   }

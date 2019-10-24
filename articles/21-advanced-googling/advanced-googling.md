@@ -4,6 +4,9 @@ date: 2019-08-26
 tags:
   - google
   - til
+resources:
+  - name: (PDF) Google search modifiers
+    url: https://static.googleusercontent.com/media/www.google.com/en//educators/downloads/Tips_Tricks_17x22.pdf
 ---
 
 ## Exact
@@ -48,6 +51,3 @@ My desperate coding question site:stackoverflow.com
 
 I hope that you learned something useful from this article. These aren't all modifiers for Google search, but are most important in my opinion.
 
-### Resources
-
-- [(PDF) Google search modifiers](https://static.googleusercontent.com/media/www.google.com/en//educators/downloads/Tips_Tricks_17x22.pdf)

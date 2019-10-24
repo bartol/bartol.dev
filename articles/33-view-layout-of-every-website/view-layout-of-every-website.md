@@ -4,6 +4,9 @@ date: 2019-09-07
 tags:
   - css
   - til
+resources:
+  - name: GitHub Gist comment with script
+    url: https://gist.github.com/vcastroi/e0d296171842e74ad7d4eef7daf15df6#gistcomment-3017296
 ---
 
 I have recently came across [this](https://dev.to/gajus/my-favorite-css-hack-32g3) article on [dev.to](http://dev.to) titled 'My favorite CSS hack' about styles to see layout of every page. It's really awesome but hard to copy paste styles on every page. Luckily there is a better (and easier) way!
@@ -37,7 +40,3 @@ javascript: (function() {
 ```
 
 Now you can click to bookmark to CSS layout view!
-
-### Resources
-
-- [GitHub Gist comment with script](https://gist.github.com/vcastroi/e0d296171842e74ad7d4eef7daf15df6#gistcomment-3017296)

@@ -4,6 +4,9 @@ date: 2019-08-14
 tags:
   - javascript
   - til
+resources:
+  - name: Awesome post that resolved issue
+    url: https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
 ---
 
 I have recently worked on async data fetching where I needed to use forEach method to format every item in array. And it didn't work. For good 5-6 hours. I've tried everything. Only to find that JavaScript forEach method doesn't play nicely with async functions.
@@ -21,7 +24,3 @@ async function asyncForEach(array, callback) {
 ```
 
 Enjoy! It just works™️*.*
-
-### Resources
-
-- [Awesome post that resolved issue.](https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404)

@@ -5,6 +5,11 @@ tags:
   - react
   - hooks
   - til
+resources:
+  - name: Bind input to state demo
+    url: https://bind-input-to-state.netlify.com/
+  - name: Bind input to state demo source code
+    url: https://github.com/bartol/bind-input-to-state-hooks
 ---
 
 Used for _every_ React form, binding input to state is must have in your React toolbox. Now with hooks, easier than ever.
@@ -51,8 +56,3 @@ const ExampleComponent = () => {
 
 export default ExampleComponent
 ```
-
-### Resources
-
-- [Bind input to state demo](https://bind-input-to-state.netlify.com/)
-- [Bind input to state demo source code](https://github.com/bartol/bind-input-to-state-hooks)

@@ -5,6 +5,9 @@ tags:
   - eslint
   - cdci
   - til
+resources:
+  - name: Learn With Jason - Gatsby testing with Kent C. Dodds
+    url: https://youtu.be/BzRAYt7BHRw?t=510
 changelog:
   - date: 2019-10-24
     message: renamed
@@ -53,6 +56,3 @@ Easy setup, isn't it? On your next commit you'll see something like this.
 
 ![ESLint running before commit](./result.png)
 
-### Resources
-
-- [Learn With Jason: How to write tests for your Gatsby sites and apps with Kent C. Dodds](https://youtu.be/BzRAYt7BHRw?t=510)

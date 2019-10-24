@@ -4,6 +4,9 @@ date: 2019-09-04
 tags:
   - javascript
   - til
+resources:
+  - name: String.prototype.replace() MDN
+    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 ---
 
 Today I learned that JavaScript has replace method. It's fairly simple and gets the job done.
@@ -22,6 +25,3 @@ const newFavoriteFood = favoriteFood.replace('Pizza', 'Broccoli')
 
 That's it. Can't get much easier than this.
 
-### Resources
-
-- [String.prototype.replace() MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

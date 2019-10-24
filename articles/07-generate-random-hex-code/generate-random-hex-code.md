@@ -4,6 +4,11 @@ date: 2019-08-12
 tags:
   - hash
   - til
+resources:
+  - name: Random hex demo
+    url: https://random-hex.netlify.com/
+  - name: Random hex demo source code
+    url: https://github.com/bartol/random-hex
 ---
 
 This will be short and not really practical but fun article.
@@ -21,7 +26,3 @@ One-liner, short and sweet.
 
 Now you can use it to create fun web pages like [demo](http://random-hex.netlify.com) I've created for this article.
 
-### Resources
-
-- [Random hex demo](https://random-hex.netlify.com/)
-- [Random hex demo source code](https://github.com/bartol/random-hex)

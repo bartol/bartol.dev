@@ -4,6 +4,11 @@ date: 2019-09-03
 tags:
   - javascript
   - til
+resources:
+  - name: Stack Overflow question I was talking about
+    url: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+  - name: Awesome guy who made this gigantic regex
+    url: http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html
 ---
 
 Just by searching email validations on google you'll find stack overflow post with massive amount of different approaches to this problem. And you'll probably be as confused as I was. Do I use this massive regex from RFC something standard? Or just simple regex? Or some package from npm?
@@ -122,7 +127,3 @@ import isEmail from 'validator/lib/isEmail'
 
 And that's it. Who would say that you can validate email in _this_ many ways!
 
-## Resources
-
-- [Stack Overflow question I was talking about](https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript)
-- [Awesome guy who made this gigantic regex](http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html)

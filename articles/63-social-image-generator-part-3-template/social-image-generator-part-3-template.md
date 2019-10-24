@@ -1,9 +1,12 @@
 ---
-title: Building social media image generator — Part 3 Template
+title: Social image generator - Part 3 Template
 date: 2019-10-07
 tags:
   - lambda
   - series
+changelog:
+  - date: 2019-10-24
+    message: renamed
 ---
 
 This will probably be a quick on as I don't have a lot to talk about templates. In previous parts I've set up environment and worked on options that can be passed via query string. Today I'll work on templates that will be used to create screenshot.

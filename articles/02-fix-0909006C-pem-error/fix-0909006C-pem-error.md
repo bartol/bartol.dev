@@ -4,6 +4,9 @@ date: 2019-08-07
 tags:
   - error
   - til
+resources:
+  - name: Github issue comment with fix
+    url: https://github.com/googleapis/google-api-nodejs-client/issues/1110#issuecomment-436868760
 ---
 
 First a little bit of backstory. About one month ago I was working on fetching top posts from this blog from Google Analytics and I encountered this pretty cryptic error.
@@ -38,7 +41,3 @@ someCoolServiceThatNeedsApiKey(
   // ...
 )
 ```
-
-## Resources
-
-- [Github issue comment with fix](https://github.com/googleapis/google-api-nodejs-client/issues/1110#issuecomment-436868760)

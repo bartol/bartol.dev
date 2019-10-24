@@ -5,6 +5,9 @@ tags:
   - cypress
   - testing
   - guide
+resources:
+  - name: Learn With Jason - Gatsby testing with Kent C. Dodds
+    url: https://youtu.be/BzRAYt7BHRw?t=1313
 ---
 
 "What is End to End or E2E testing?", you may ask. It sounds fairly complicated. Don't judge a book by its cover. It is basically robot that opens browser and runs tests on website.
@@ -98,8 +101,4 @@ This will open your website and click element with text "Undo last Git commit" (
 
 Now you can run your tests with `cy:open` and see them passing, or failing ☹️.
 
-If ESLint is throwing errors in your Cypress test file read [this](https://bartol.dev/blog/fix-cypress-tests-eslint-errors) article...
-
-### Resources
-
-- [Learn With Jason: How to write tests for your Gatsby sites and apps with Kent C. Dodds](https://youtu.be/BzRAYt7BHRw?t=1313)
+If ESLint is throwing errors in your Cypress test file read [this](/fix-cypress-tests-eslint-errors) article...

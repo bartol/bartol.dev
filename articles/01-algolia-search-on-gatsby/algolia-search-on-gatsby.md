@@ -5,6 +5,17 @@ tags:
   - algolia
   - gatsby
   - guide
+resources:
+  - name: Add Algolia search to your Gatsby site - Jason Lengstorf
+    url: https://www.youtube.com/watch?v=VSkXyuXzwlc
+  - name: Adding search with Algolia - Gatsby docs
+    url: https://www.gatsbyjs.org/docs/adding-search-with-algolia/
+  - name: Building Search UI - Algolia docs
+    url: https://www.algolia.com/doc/guides/building-search-ui/getting-started/react/
+  - name: Online date to unix timestamp converter
+    url: https://www.unixtimestamp.com/
+  - name: Timestamp Alfred workflow
+    url: http://www.packal.org/workflow/timestamp
 changelog:
   - date: 2019-10-24
     message: renamed
@@ -267,11 +278,3 @@ For sorting to work you will need to create datetimestamp in your frontmatter. D
 ### Conclusion
 
 I hope that progress of building search was fun and easy also that you are proud of what you made. You should be! It's all about small steps.
-
-### Resources
-
-- [Add Algolia search to your Gatsby site - Jason Lengstorf](https://www.youtube.com/watch?v=VSkXyuXzwlc)
-- [Adding search with Algolia - Gatsby docs](https://www.gatsbyjs.org/docs/adding-search-with-algolia/)
-- [Building Search UI - Algolia docs](https://www.algolia.com/doc/guides/building-search-ui/getting-started/react/)
-- [Online date to unix timestamp converter](https://www.unixtimestamp.com/)
-- [Timestamp Alfred workflow](http://www.packal.org/workflow/timestamp)

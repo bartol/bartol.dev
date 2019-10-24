@@ -4,6 +4,9 @@ date: 2019-10-05
 tags:
   - seo
   - til
+resources:
+  - name: Google SEO Starter Guide
+    url: https://support.google.com/webmasters/answer/7451184?hl=en
 ---
 
 This checklist contains helpful SEO tips and some useful link. I use it day-to-day with my personal projects.
@@ -44,9 +47,5 @@ This checklist contains helpful SEO tips and some useful link. I use it day-to-d
 
 - [Google Search Console](https://www.google.com/webmasters/tools/home)
 - [Bing webmaster tools](https://www.bing.com/toolbox/webmaster)
-
-### Resources
-
-- [Google SEO Starter Guide](https://support.google.com/webmasters/answer/7451184?hl=en)
 
 **Optimize content for your users, not search engines.** I can't emphasize this enough!

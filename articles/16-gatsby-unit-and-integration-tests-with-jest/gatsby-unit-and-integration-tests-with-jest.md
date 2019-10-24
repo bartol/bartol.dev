@@ -6,6 +6,11 @@ tags:
   - gatsby
   - testing
   - guide
+resources:
+  - name: Learn With Jason - Gatsby testing with Kent C. Dodds
+    url: https://youtu.be/BzRAYt7BHRw?t=3046
+  - name: Gatsby Docs
+    url: https://www.gatsbyjs.org/docs/unit-testing/
 ---
 
 [Jest](https://jestjs.io/) is JavaScript testing framework used for testing plenty of technologies, including Gatsby (React). To get started all you need is to install [react testing library](https://github.com/testing-library/react-testing-library) (which will add React related functionality like rendering components) and Jest itself.
@@ -88,8 +93,3 @@ module.exports = 'test-file-stub'
 ```
 
 Finally, re-run tests and everything should work perfectly!
-
-### Resources
-
-- [Learn With Jason: How to write tests for your Gatsby sites and apps with Kent C. Dodds](https://youtu.be/BzRAYt7BHRw?t=3046)
-- [Gatsby Docs](https://www.gatsbyjs.org/docs/unit-testing/)

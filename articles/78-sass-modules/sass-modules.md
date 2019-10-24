@@ -4,6 +4,11 @@ date: 2019-10-22
 tags:
   - sass
   - til
+resources:
+  - name: Much more in-depth article on CSS-Tricks
+    url: https://css-tricks.com/introducing-sass-modules/
+  - name: Sass modules docs
+    url: https://sass-lang.com/documentation/modules
 ---
 
 Well, everything in 2019 has modules, and Sass is not an exception. Introduced earlier this month, Sass modules are big addition to Sass in general after long feature freeze and stagnation in recent years.
@@ -34,8 +39,3 @@ This was just high-level overview of feature. If it sparks joy to you, be sure t
 ## Compelling reason to switch?
 
 As always, it depends. For me answer is no. I am already moved from Sass world and heavily invested in CSS in JS type solutions for its many benefits. But I have to say this is really cool stuff.
-
-## Resources
-
-- [Much more in-depth article on CSS-Tricks](https://css-tricks.com/introducing-sass-modules/)
-- [Sass modules docs](https://sass-lang.com/documentation/modules)

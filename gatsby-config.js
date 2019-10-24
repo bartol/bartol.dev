@@ -44,7 +44,6 @@ module.exports = {
             options: {
               maxWidth: 700,
               withWebp: true,
-              tracedSVG: true,
               wrapperStyle: 'margin: 1.25rem 0;',
               backgroundColor: '#1F2023',
               linkImagesToOriginal: false,
@@ -106,12 +105,6 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: process.env.GA_TRACKING,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-guess-js',
       options: {
         GAViewID: process.env.GA_VIEW_ID,
@@ -124,17 +117,6 @@ module.exports = {
           startDate: threeMonthsAgo,
           endDate: new Date(),
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-preconnect',
-      options: {
-        domains: [
-          'https://bartol.dev',
-          'https://www.google-analytics.com',
-          'https://marketingplatform.google.com',
-          'https://www.google.com',
-        ],
       },
     },
     {

@@ -925,7 +925,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.6.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.3", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0":
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.6.0.tgz#4fc1d642a9fd0299754e8b5de62c631cf5568205"
   integrity sha512-89eSBLJsxNxOERC0Op4vd+0Bqm6wRMqMbFtV3i0/fbaWw/mJ8Q3eBvgX0G4SyrOOLCtbu98HspF8o09MRT+KzQ==
@@ -6704,13 +6704,6 @@ gatsby-plugin-feed@^2.3.12:
     lodash.merge "^4.6.2"
     rss "^1.2.2"
 
-gatsby-plugin-google-analytics@^2.0.21:
-  version "2.1.16"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.1.16.tgz#b818395673587aa5ad69f199389d07bfbdc89e34"
-  integrity sha512-r56AlYp702uAx1dx584tui7Bk496/YkAJ3rB+vbLehocif4zyhNsFSlE4vKDBqG83c+iGywFdaa6xUTvh14hbw==
-  dependencies:
-    "@babel/runtime" "^7.6.0"
-
 gatsby-plugin-guess-js@^1.1.8:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-guess-js/-/gatsby-plugin-guess-js-1.1.11.tgz#487f7bd31c1b619eecd1b4568c8da4c18fdeadcd"
@@ -6781,13 +6774,6 @@ gatsby-plugin-postcss@^2.1.10:
   dependencies:
     "@babel/runtime" "^7.6.2"
     postcss-loader "^3.0.0"
-
-gatsby-plugin-preconnect@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-preconnect/-/gatsby-plugin-preconnect-1.0.5.tgz#8c32602cacfdd6988bf6424dd27821a719d9820f"
-  integrity sha512-J/a7Ft1tFrnZOeJuclvDyIOLmBOqfvBOoGn5Tf9eVObfzlhZKq6O/89qbaTMUBUQOmlPa/RYSgq4BBMUX7pFpw==
-  dependencies:
-    "@babel/runtime" "^7.4.3"
 
 gatsby-plugin-react-helmet@^3.1.3:
   version "3.1.7"

@@ -15,7 +15,14 @@ export const Card = ({ title, date, updated, tag }) => {
         <p>Published on {date}</p>
         {updated ? (
           <p>
-            Updated on {updated} - <button type='button'>Changelog</button>
+            Updated on {updated} -{' '}
+            <a
+              href='#changelog'
+              aria-label='changelog permalink'
+              className='hover:text-dark-100 transition'
+            >
+              Changelog
+            </a>
           </p>
         ) : null}
       </div>

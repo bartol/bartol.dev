@@ -1,9 +1,12 @@
 ---
-title: Building social media image generator — Part 2 Options
+title: Social image generator - Part 2 Options
 date: 2019-10-06
 tags:
   - lambda
   - series
+changelog:
+  - date: 2019-10-24
+    message: renamed
 ---
 
 In previous article I've gone over setting up project and environment with Serverless Framework and TypeScript. Today, we will discuss options you can pass to function.

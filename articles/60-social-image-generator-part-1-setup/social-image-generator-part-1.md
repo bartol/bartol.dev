@@ -1,9 +1,12 @@
 ---
-title: Building social media image generator — Part 1 Setup
+title: Social image generator - Part 1 Setup
 date: 2019-10-04
 tags:
   - lambda
   - series
+changelog:
+  - date: 2019-10-24
+    message: renamed
 ---
 
 Before jumping into program solving and coding I have to set up environment. This includes serverless config, typescript and similar.

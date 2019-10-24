@@ -1,9 +1,12 @@
 ---
-title: Building social media image generator — Part 0
+title: Social image generator - Part 0
 date: 2019-10-02
 tags:
   - lambda
   - series
+changelog:
+  - date: 2019-10-24
+    message: renamed
 ---
 
 You know these images that pop up when you share websites on social media, right? They are nice and more engaging than text, but have one major drawback. It's hard to make new image for every article you make (especially if you post every day), so I just make one image and set it for all pages. There must be a better way. Enter serverless social media generator...

@@ -1,10 +1,13 @@
 ---
-title: Use Lint Staged and Husky to run ESLint on every commit
+title: Run ESLint on every commit
 date: 2019-08-16
 tags:
   - eslint
   - cdci
   - til
+changelog:
+  - date: 2019-10-24
+    message: renamed
 ---
 
 Adding lint staged to your project will be one of the best “low effort high reward” things as it will prevent you to commit if linters aren't happy. Did I mention that you can set it up in few minutes?

@@ -2,6 +2,12 @@
   width: 90vw;
 }
 
+.articleCard:hover {
+  .cardImage {
+    opacity: 0.75;
+  }
+}
+
 .markdown {
   @apply text-lg;
 

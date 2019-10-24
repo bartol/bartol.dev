@@ -15,7 +15,6 @@ const Article = ({ data }: Props) => {
         className='relative overflow-hidden py-4 px-6 rounded mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard'
         style={{
           backgroundColor: cardBackgroundColor(tags[0]),
-          height: '22.5rem',
         }}
       >
         <h1 className='text-5xl leading-tight font-medium'>{title}</h1>
@@ -29,9 +28,6 @@ const Article = ({ data }: Props) => {
           alt={`${tags[0]} icon`}
           loading='lazy'
           className='w-64 h-64 opacity-25 absolute bottom-0 right-0 drag-none cardImage transition-slow'
-          style={{
-            margin: '-3.1rem',
-          }}
         />
       </div>
       {/* eslint-disable-next-line react/no-danger */}

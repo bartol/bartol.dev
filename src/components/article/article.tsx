@@ -3,11 +3,12 @@ import { graphql } from 'gatsby'
 import './article.css'
 import { Card } from './card'
 import { Changelog } from './changelog'
+import { Resources } from './resources'
 
 const Article = ({ data }: Props) => {
   const { markdownRemark } = data
   const { html, frontmatter } = markdownRemark
-  const { title, date, changelog, tags } = frontmatter
+  const { title, date, changelog, resources, tags } = frontmatter
 
   return (
     <div className='container max-w-2xl w-90 mx-auto pt-12'>
@@ -19,7 +20,8 @@ const Article = ({ data }: Props) => {
       />
       {/* eslint-disable-next-line react/no-danger */}
       <div className='markdown' dangerouslySetInnerHTML={{ __html: html }} />
-      {changelog ? <Changelog changelog={changelog || []} /> : null}
+      {resources ? <Resources resources={resources} /> : null}
+      {changelog ? <Changelog changelog={changelog} /> : null}
     </div>
   )
 }

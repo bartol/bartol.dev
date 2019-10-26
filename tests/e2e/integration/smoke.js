@@ -1,7 +1,9 @@
-describe('app', () => {
+describe('navigating to article', () => {
   it('works', () => {
     cy.visit('/')
-      .getByText(/autocomplete/i)
+      .get('#focusFirstCard')
       .click()
+      .url()
+      .should('not.eq', Cypress.config().baseUrl)
   })
 })

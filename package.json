@@ -19,6 +19,11 @@
     "cleanup": "gatsby clean && rm -rf node_modules && yarn",
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@kunukn/react-collapse": "^2.2.7",
     "@reach/router": "^1.2.1",
@@ -91,8 +96,10 @@
     "gatsby-plugin-eslint": "^2.0.5",
     "gatsby-plugin-postcss": "^2.1.10",
     "googleapis": "^42.0.0",
+    "husky": "^3.0.9",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "lint-staged": "^9.4.2",
     "postcss-nested": "^4.1.2",
     "prettier": "^1.18.2",
     "tailwindcss": "^1.1.2",

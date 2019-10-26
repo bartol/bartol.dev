@@ -1,18 +1,6 @@
-/* eslint-disable camelcase */
-const replace = require('lodash.replace')
-
 require('dotenv').config()
 
 const MAIN_COLOR = 'hsla(190, 80%, 50%, 1)'
-
-const googleApiKey = replace(
-  process.env.GA_SERVICE_ACCOUNT_KEY,
-  new RegExp('\\\\n', 'g'),
-  '\n'
-)
-
-const threeMonthsAgo = new Date()
-threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3)
 
 module.exports = {
   siteMetadata: {
@@ -104,21 +92,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-guess-js',
-      options: {
-        GAViewID: process.env.GA_VIEW_ID,
-        jwt: {
-          client_email: process.env.GA_SERVICE_ACCOUNT,
-          private_key: googleApiKey,
-        },
-        minimumThreshold: 0.03,
-        period: {
-          startDate: threeMonthsAgo,
-          endDate: new Date(),
-        },
-      },
-    },
     {
       resolve: 'gatsby-plugin-sentry',
       options: {

@@ -1,5 +1,3 @@
-// const getPopularPages = require('./src/utils/getPopularPages')
-
 exports.onCreateNode = async ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === 'MarkdownRemark') {
@@ -16,38 +14,22 @@ exports.onCreateNode = async ({ node, actions }) => {
       .splice(-3, 3)
       .join('/')
 
-    // const views = await getPopularPages().then(res =>
-    //   res.data.rows
-    //     .filter(r => r[0].includes(slug))
-    //     .reduce((a, b) => {
-    //       return a + parseInt(b[1], 10)
-    //     }, 0)
-    // )
-
-    const views = 0
-
     createNodeField({
       node,
       name: 'slug',
-      value: slug
+      value: slug,
     })
 
     createNodeField({
       node,
       name: 'timestamp',
-      value: timestamp
+      value: timestamp,
     })
 
     createNodeField({
       node,
       name: 'edit',
-      value: edit
-    })
-
-    createNodeField({
-      node,
-      name: 'views',
-      value: views
+      value: edit,
     })
   }
 }
@@ -76,8 +58,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       path: `/${article.fields.slug}/`,
       component: require.resolve('./src/templates/Article.tsx'),
       context: {
-        slug: article.fields.slug
-      }
+        slug: article.fields.slug,
+      },
     })
   })
 }

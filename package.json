@@ -20,7 +20,6 @@
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test": "jest",
     "ci": "start-server-and-test 'yarn bs' http://localhost:9000 'yarn cy:run'"
   },
   "husky": {

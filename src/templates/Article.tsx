@@ -8,7 +8,7 @@ const Article = ({ data }: Props) => {
   const { markdownRemark } = data
   const { html, frontmatter, fields } = markdownRemark
   const { title, date, updated } = frontmatter
-  const { views, slug, edit } = fields
+  const { slug, edit } = fields
 
   return (
     <Layout title={`${title} • Bartol Deak`} url={`/${slug}/`} isArticle>
@@ -17,7 +17,6 @@ const Article = ({ data }: Props) => {
         <p className='parameters'>
           <span>Published on {date}</span>
           {updated ? <span>Updated on {updated}</span> : null}
-          {views ? <span>{views} views</span> : null}
         </p>
         {/* eslint-disable-next-line react/no-danger */}
         <div className='content' dangerouslySetInnerHTML={{ __html: html }} />
@@ -39,7 +38,6 @@ export const pageQuery = graphql`
         title
       }
       fields {
-        views
         slug
         edit
       }
@@ -57,7 +55,6 @@ interface Props {
         updated: string
       }
       fields: {
-        views: string
         slug: string
         edit: string
       }

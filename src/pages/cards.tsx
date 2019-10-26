@@ -28,7 +28,6 @@ export const query = graphql`
         fields {
           slug
           timestamp
-          views
         }
         id
         excerpt(pruneLength: 1000000)

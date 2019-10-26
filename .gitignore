@@ -54,3 +54,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+tests/e2e/screenshots
+tests/e2e/videos

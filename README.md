@@ -1,5 +1,5 @@
 <a href="https://bartol.dev">
-  <img alt="Bartol's logo" src="./static/logo.svg" align="right" width="200" height="180" />
+  <img alt="Bartol's logo" src="./static/logo.svg" align="right" width="200" height="205" />
 </a>
 
 # [bartol.dev](https://bartol.dev)
@@ -32,6 +32,12 @@ Personal cyberspace where you can find my thoughts and notes about web developme
 
    ```bash
    yarn build
+   ```
+
+6. Test project
+
+   ```bash
+   yarn test
    ```
 
 ## Tech stack

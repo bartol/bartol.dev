@@ -12,6 +12,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
+    "serve": "gatsby serve",
     "bs": "gatsby build && gatsby serve",
     "type-check": "tsc --noEmit",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
@@ -20,7 +21,8 @@
     "analyze": "ANALYZE_BUNDLE_SIZE=true gatsby build",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "ci": "start-server-and-test 'yarn bs' http://localhost:9000 'yarn cy:run'"
+    "test": "jest",
+    "ci": "start-server-and-test 'yarn build && yarn serve' http://localhost:9000 'yarn test && yarn cy:run'"
   },
   "husky": {
     "hooks": {
@@ -73,7 +75,9 @@
     "what-input": "^5.2.3"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.6.0",
     "@testing-library/cypress": "^4.1.1",
+    "@testing-library/jest-dom": "^4.2.0",
     "@testing-library/react": "^9.1.3",
     "@types/jest": "^24.0.20",
     "@types/react": "^16.8.24",

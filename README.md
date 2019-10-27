@@ -4,18 +4,11 @@
 
 # [bartol.dev](https://bartol.dev)
 
-<p align='right'>Personal website where you can find web development articles.
+Personal cyberspace where you can find my thoughts and notes about web development.
 
-<a href="https://travis-ci.com/bartol/bartol.dev">
-  <img align="left" src="https://travis-ci.com/bartol/bartol.dev.svg?branch=master" alt="Build Status">
-</a>
-</p>
-<p align='right'>Updated daily.
-<a href="https://app.netlify.com/sites/bartol/deploys">
-  <img align="left" src="https://api.netlify.com/api/v1/badges/f87ba513-159f-4d19-81a3-1dd06e9ec817/deploy-status" alt="Netlify Status">
-</a>
+[![Actions Status](https://github.com/bartol/bartol.dev/workflows/build/badge.svg)](https://github.com/bartol/bartol.dev/actions)
 
-</p>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f87ba513-159f-4d19-81a3-1dd06e9ec817/deploy-status)](https://app.netlify.com/sites/bartol/deploys)
 
 ## Run locally
 

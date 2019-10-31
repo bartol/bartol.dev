@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
-import Logo from './logo.inline.svg'
+import Logo from './logo'
 import { Search, Categories, Sort } from '../filter'
 import { FilterContext } from '../../state'
 import Skip from './skip'
@@ -16,7 +16,7 @@ const Sidebar = () => {
         <h1 className='w-12 pt-1'>
           <Link
             to='/'
-            className='logo-dark-300 focus:outline-none focus:text-main'
+            className='logo-dark-300 focus:outline-none hover:text-main'
           >
             <Logo className='stroke-current hover:text-main transition-slow' />
           </Link>

@@ -56,7 +56,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   articles.forEach(article => {
     actions.createPage({
       path: `/${article.fields.slug}/`,
-      component: require.resolve('./src/templates/Article.tsx'),
+      component: require.resolve('./src/components/article/article.tsx'),
       context: {
         slug: article.fields.slug,
       },

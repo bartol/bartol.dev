@@ -50,7 +50,7 @@ When you get to your dashboard, navigate to 'Indices' and click big blue button 
 
 After that is done, we are going back to terminal to install some dependencies for our project.
 
-```terminal
+```sh
 yarn add gatsby-plugin-algolia algoliasearch react-instantsearch-dom dotenv
 ```
 

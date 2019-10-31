@@ -11,7 +11,7 @@ Ah those ESLint errors again... At least they are easy to fix.
 
 Just install `eslint-plugin-jest` as dev dependency.
 
-```terminal
+```sh
 yarn add -D eslint-plugin-jest
 ```
 

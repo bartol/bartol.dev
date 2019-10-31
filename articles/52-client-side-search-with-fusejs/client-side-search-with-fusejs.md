@@ -18,7 +18,7 @@ I was recently in _search_ for this blog's search. Tried [Algolia](https://www.a
 
 First thing you have to do is, as expected, install [fuse.js](https://fusejs.io/).
 
-```terminal
+```sh
 yarn add fuse.js
 ```
 

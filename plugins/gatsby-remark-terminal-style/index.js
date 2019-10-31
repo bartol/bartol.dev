@@ -2,7 +2,7 @@ const visit = require('unist-util-visit')
 
 module.exports = ({ markdownAST }) => {
   visit(markdownAST, 'code', (node, index, parent) => {
-    if (node.lang !== 'terminal') return
+    if (node.lang !== 'sh') return
 
     const terminalNode = {
       type: 'html',

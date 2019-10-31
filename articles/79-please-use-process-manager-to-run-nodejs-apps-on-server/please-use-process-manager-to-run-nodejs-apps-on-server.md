@@ -13,7 +13,7 @@ Long story short. I have made script for scraping some stuff and put it on the D
 
 Like any other npm module.
 
-```terminal
+```sh
 npm i pm2 -g
 ```
 
@@ -21,7 +21,7 @@ npm i pm2 -g
 
 1. Start a process
 
-```terminal
+```sh
 pm2 start app.js --name "your_app_name"
 # next time start app with
 pm2 start your_app_name
@@ -29,13 +29,13 @@ pm2 start your_app_name
 
 2. Stop a process
 
-```terminal
+```sh
 pm2 stop your_app_name
 ```
 
 3. Delete a process
 
-```terminal
+```sh
 pm2 delete your_app_name
 ```
 
@@ -45,13 +45,13 @@ You can also use `all` instead of app name to do operation on all processes
 
 See list of all running processes.
 
-```terminal
+```sh
 pm2 list
 ```
 
 View dashboard with live info from processes.
 
-```terminal
+```sh
 pm2 monit   # this is not a typo
 ```
 
@@ -61,31 +61,31 @@ You can pass argument to pm2 to enhance your experience.
 
 Pass arguments to your app.
 
-```terminal
+```bash
 -- arg1 arg2 arg3
 ```
 
 Save console logs to file.
 
-```terminal
+```bash
 --log path/to/file
 # you can also prefix logs with time if you add --time
 ```
 
 Restart app on file change.
 
-```terminal
+```bash
 --watch
 ```
 
 Restart when app reaches memory limit.
 
-```terminal
+```bash
 --max-memory-restart 750M
 ```
 
 Restart on [cron](https://en.wikipedia.org/wiki/Cron) job.
 
-```terminal
+```bash
 --cron cron_pattern
 ```

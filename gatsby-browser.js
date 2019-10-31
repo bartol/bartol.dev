@@ -1,8 +1,6 @@
 // tailwind css
 import './src/pages/index.css'
 
-import './src/styles/prismjs.css'
-
 // context
 export { wrapRootElement } from './src/state/wrap-root-element'
 

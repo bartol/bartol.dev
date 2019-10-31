@@ -10,9 +10,10 @@ export const FilterContext = createContext()
 const DEBOUNCE_TIME = 400
 
 const options = {
-  shouldSort: true,
+  shouldSort: false,
   includeScore: true,
   includeMatches: true,
+  tokenize: true,
   threshold: 0.33,
   location: 0,
   distance: 100,

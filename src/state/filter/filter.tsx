@@ -91,6 +91,12 @@ export const FilterProvider = ({ children }) => {
     })
   }, [category, sort])
 
+  const reset = () => {
+    setQuery('')
+    setCategory('')
+    setSort('recent')
+  }
+
   return (
     <FilterContext.Provider
       value={{
@@ -102,6 +108,7 @@ export const FilterProvider = ({ children }) => {
         setCategory,
         sort,
         setSort,
+        reset,
       }}
     >
       {children}

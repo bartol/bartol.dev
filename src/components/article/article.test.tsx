@@ -15,6 +15,9 @@ describe('article', () => {
         date: 'Oct 27th, 2019',
         tags: ['typescript'],
       },
+      fields: {
+        slug: 'article–title',
+      },
     },
   }
 

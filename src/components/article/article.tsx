@@ -5,14 +5,17 @@ import './code.css'
 import { Card } from './card'
 import { Changelog } from './changelog'
 import { Resources } from './resources'
+import SEO from '../seo'
 
 const Article = ({ data }: Props) => {
   const { markdownRemark } = data
-  const { html, frontmatter } = markdownRemark
+  const { html, frontmatter, fields } = markdownRemark
   const { title, date, changelog, resources, tags } = frontmatter
+  const { slug } = fields
 
   return (
     <div className='container max-w-2xl w-90 mx-auto pt-12'>
+      <SEO title={`${title} • Bartol Deak`} url={`/${slug}/`} isArticle />
       <Card
         title={title}
         date={date}
@@ -45,6 +48,9 @@ export const query = graphql`
           date(formatString: "MMMM Do, YYYY")
           message
         }
+      }
+      fields {
+        slug
       }
     }
   }

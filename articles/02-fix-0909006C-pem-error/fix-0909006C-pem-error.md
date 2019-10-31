@@ -29,7 +29,7 @@ const apiKey = replace(process.env.YOUR_API_KEY, new RegExp('\\\\n', 'g'), '\n')
 
 Make sure to install lodash replace module.
 
-```terminal
+```sh
 yarn add lodash.replace
 ```
 

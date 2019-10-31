@@ -8,7 +8,7 @@ tags:
 
 I have just randomly discovered this awesome feature, so I figured out I'll share it. You can tab complete filename with `*` in it. It can also complete multiple filenames. For a quick example let's say you have `index.html`, `index.js` and `main.js` files in directory.
 
-```terminal
+```sh
 some_command *.js
 # will autocomplete to index.js main.js
 

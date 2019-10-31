@@ -25,7 +25,7 @@ int main () {
 
 Which will produce this output.
 
-```terminal
+```sh
 ./a.out
 31415
    24

@@ -20,7 +20,7 @@ End to End tests are very effective because they provide great testing value and
 
 Let's start with installing Cypress as dev dependency.
 
-```terminal
+```sh
 yarn add -D cypress
 ```
 
@@ -38,7 +38,7 @@ While Cypress is installing add `cy:open` to list of scripts in your projects's 
 
 To start it you need is to run script that we added in previous step.
 
-```terminal
+```sh
 yarn cy:open
 ```
 

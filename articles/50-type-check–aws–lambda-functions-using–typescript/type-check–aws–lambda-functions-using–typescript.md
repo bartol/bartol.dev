@@ -12,7 +12,7 @@ For the past few days I was working on Lambda Function that programmatically gen
 
 To start, as expected, you need to add plugin and typescript as dev dependencies.
 
-```terminal
+```sh
 yarn add -D serverless-plugin-typescript typescript
 ```
 

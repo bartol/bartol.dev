@@ -11,7 +11,7 @@ What? Sass in 2019? Isn't that _old_? Well, it isn't fancy new bleeding edge web
 
 First thing you have to do is install Gatsby plugin for Sass and Sass itself.
 
-```terminal
+```sh
 yarn add node-sass gatsby-plugin-sass
 ```
 

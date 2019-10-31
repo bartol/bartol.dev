@@ -15,13 +15,13 @@ Before jumping into program solving and coding I have to set up environment. Thi
 
 For managing packages I chose to use [Yarn](https://yarnpkg.com/lang/en/), without any special configuration.
 
-```terminal
+```sh
 yarn init -y
 ```
 
 For TypeScript support, I'll need `serverless-plugin-typescript` and `typescript` as dev dependencies.
 
-```terminal
+```sh
 yarn add -D serverless-plugin-typescript typescript
 ```
 

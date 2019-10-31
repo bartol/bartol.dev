@@ -16,13 +16,13 @@ Personal cyberspace where you can find my thoughts and notes about web developme
 
 2. Install dependencies.
 
-   ```bash
+   ```
    yarn
    ```
 
 3. Start development environment.
 
-   ```bash
+   ```
    yarn dev
    ```
 
@@ -30,13 +30,13 @@ Personal cyberspace where you can find my thoughts and notes about web developme
 
 5. Build project
 
-   ```bash
+   ```
    yarn build
    ```
 
 6. Test project
 
-   ```bash
+   ```
    yarn test
    ```
 

@@ -7,7 +7,7 @@ import Skip from './skip'
 import './sidebar.css'
 
 const Sidebar = () => {
-  const { query, results } = useContext(FilterContext)
+  const { query, results, reset } = useContext(FilterContext)
 
   return (
     <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:pl-6 lg:pr-3 px-4 relative'>
@@ -18,7 +18,10 @@ const Sidebar = () => {
             to='/'
             className='logo-dark-300 focus:outline-none hover:text-main'
           >
-            <Logo className='stroke-current hover:text-main transition-slow' />
+            <Logo
+              className='stroke-current hover:text-main transition-slow'
+              onClick={() => reset()}
+            />
           </Link>
         </h1>
         <p className='pt-4 pb-2'>

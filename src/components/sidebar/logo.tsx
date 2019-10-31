@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Logo = ({ className }) => {
+const Logo = ({ className, onClick }) => {
   return (
     <svg
       viewBox='0 0 132 204'
@@ -8,6 +8,7 @@ const Logo = ({ className }) => {
       xmlns='http://www.w3.org/2000/svg'
       role='img'
       className={className}
+      onClick={onClick}
     >
       <title>Bartol's logo</title>
       <g id='logo'>

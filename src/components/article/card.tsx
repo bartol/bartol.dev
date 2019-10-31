@@ -5,7 +5,7 @@ import './card.css'
 export const Card = ({ title, date, updated, tag }) => {
   return (
     <div
-      className='relative overflow-hidden py-4 px-6 rounded mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard'
+      className='relative overflow-hidden py-4 px-6 rounded-lg mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard'
       style={{
         backgroundColor: cardBackgroundColor(tag),
       }}

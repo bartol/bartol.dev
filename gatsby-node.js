@@ -9,11 +9,6 @@ exports.onCreateNode = async ({ node, actions }) => {
 
     const timestamp = new Date(node.frontmatter.date).getTime() / 1000
 
-    const edit = node.fileAbsolutePath
-      .split('/')
-      .splice(-3, 3)
-      .join('/')
-
     createNodeField({
       node,
       name: 'slug',
@@ -24,12 +19,6 @@ exports.onCreateNode = async ({ node, actions }) => {
       node,
       name: 'timestamp',
       value: timestamp,
-    })
-
-    createNodeField({
-      node,
-      name: 'edit',
-      value: edit,
     })
   }
 }

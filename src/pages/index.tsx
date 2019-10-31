@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import List from '../components/list'
 import Sidebar from '../components/sidebar'
 import { FilterContext } from '../state'
+import SEO from '../components/seo'
 
 export default ({ data }) => {
   const { setAllResults, results } = useContext(FilterContext)
@@ -10,6 +11,7 @@ export default ({ data }) => {
 
   return (
     <div className='container mx-auto flex min-h-screen'>
+      <SEO title={`Bartol's personal cyberspace`} />
       <Sidebar />
       <List articles={results} />
     </div>

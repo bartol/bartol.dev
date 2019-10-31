@@ -4,9 +4,9 @@ const MAIN_COLOR = 'hsla(190, 80%, 50%, 1)'
 
 module.exports = {
   siteMetadata: {
-    title: 'Bartol Deak',
+    title: `Bartol's personal cyberspace`,
     description:
-      'Personal website where you can find web development articles. Updated daily.',
+      'Personal cyberspace where you can find my thoughts and notes about web development. Updated daily.',
     siteUrl: 'https://bartol.dev',
   },
   plugins: [
@@ -82,11 +82,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Bartol Deak',
+        name: `Bartol's personal cyberspace`,
         short_name: 'Bartol',
         start_url: '/',
-        background_color: '#212121',
-        theme_color: '#212121',
+        background_color: '#1F2023',
+        theme_color: '#1F2023',
         display: 'standalone',
         icon: 'static/favicon.png',
       },

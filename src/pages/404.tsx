@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const emojis = ['(>_<)', '(·.·)', 'ಠ_ಠ', '(⊙_☉)', '(~_~;)']
 
@@ -8,7 +8,8 @@ const current = Math.floor(new Date().getSeconds() / 12)
 
 export default () => {
   return (
-    <Layout title='Not found' url='/404/' isArticle={false}>
+    <div className='container mx-auto'>
+      <SEO title='Oops' url='/404/' isArticle={false} />
       <div className='ascii'>{emojis[current]}</div>
       <div className='notFoundMessage'>
         <h1>404</h1>
@@ -19,6 +20,6 @@ export default () => {
           </h2>
         </section>
       </div>
-    </Layout>
+    </div>
   )
 }

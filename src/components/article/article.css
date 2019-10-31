@@ -79,7 +79,7 @@
     font-family: 'Dank Mono', monospace;
   }
 
-  [data-language='bash'] {
+  .terminalHeader + [data-language='bash'] {
     @apply rounded-t-none mt-0;
 
     > pre::before {

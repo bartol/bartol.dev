@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { cardBackgroundColor } from './cardBackgroundColor'
+import backgroundColors from '../../backgroundColors.json'
 import './card.css'
 
 const Card = ({ title, date, slug, tags, first }: Props) => {
@@ -10,7 +10,7 @@ const Card = ({ title, date, slug, tags, first }: Props) => {
         to={`/${slug}/`}
         id={first ? 'focusFirstCard' : undefined}
         className='flex flex-col justify-between px-4 py-3 h-full relative overflow-hidden rounded bg-dark-700 shadow focus:outline-none card focus:shadow-outline-dark-200'
-        style={{ backgroundColor: cardBackgroundColor(tags[0]) }}
+        style={{ backgroundColor: backgroundColors[tags[0]] }}
       >
         <h2 className='md:text-2xl text-3xl font-medium leading-tight z-10'>
           {title}

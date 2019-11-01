@@ -32,6 +32,8 @@ export const cardBackgroundColor = (name: string) => {
       return '#290aa0'
     case 'graphql':
       return '#a21473'
+    case 'github':
+      return '#78786d'
     case 'yarn':
       return '#237195'
     case 'sass':

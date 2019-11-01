@@ -1,5 +1,5 @@
 import React from 'react'
-import { cardBackgroundColor } from '../list/cardBackgroundColor'
+import backgroundColors from '../../backgroundColors.json'
 import './card.css'
 
 export const Card = ({ title, date, updated, tag }) => {
@@ -7,7 +7,7 @@ export const Card = ({ title, date, updated, tag }) => {
     <div
       className='relative overflow-hidden py-4 px-6 rounded-lg mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard'
       style={{
-        backgroundColor: cardBackgroundColor(tag),
+        backgroundColor: backgroundColors[tag],
       }}
     >
       <h1 className='text-5xl leading-tight font-medium'>{title}</h1>

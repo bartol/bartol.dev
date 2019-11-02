@@ -6,7 +6,7 @@ tags:
   - til
 ---
 
-Quick aside. After writing about common http status codes the other day, I figured out that I should also write about common methods and headers. So here is methods part.
+Quick aside. After writing about common HTTP status codes the other day, I figured out that I should also write about common methods and headers. So here is methods part.
 
 Methods **indicate action** that should be performed on resource.
 
@@ -30,5 +30,5 @@ Deletes specified resource.
 
 Same as GET, just response doesn't contain body.
 
-There are others, but they are almost never used. You can learn about them [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
-Also, there are new server arhitectures like [GraphQL](https://graphql.org/) that use POST for everything. Seems like HTTP methods will be less and less important in future. We'll see!
+There are others, but they are almost never used. You can learn about them on [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
+Also, there are new server architectures like [GraphQL](https://graphql.org/) that use POST for everything. Seems like HTTP methods will be less and less important in the future. We'll see!

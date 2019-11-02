@@ -18,6 +18,9 @@ describe('article', () => {
       fields: {
         slug: 'article–title',
       },
+      thumbnail: {
+        thumbnailURL: '/images/article–thumbnail',
+      },
     },
   }
 

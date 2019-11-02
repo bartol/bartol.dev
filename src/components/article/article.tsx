@@ -9,13 +9,19 @@ import SEO from '../seo'
 
 const Article = ({ data }: Props) => {
   const { markdownRemark } = data
-  const { html, frontmatter, fields } = markdownRemark
+  const { html, frontmatter, fields, thumbnail } = markdownRemark
   const { title, date, changelog, resources, tags } = frontmatter
   const { slug } = fields
+  const { publicURL: thumbnailURL } = thumbnail
 
   return (
     <div className='container max-w-2xl w-90 mx-auto pt-12'>
-      <SEO title={`${title} • Bartol Deak`} url={`/${slug}/`} isArticle />
+      <SEO
+        title={`${title} • Bartol Deak`}
+        url={`/${slug}/`}
+        image={thumbnailURL}
+        isArticle
+      />
       <Card
         title={title}
         date={date}
@@ -52,6 +58,9 @@ export const query = graphql`
       fields {
         slug
       }
+      thumbnail {
+        publicURL
+      }
     }
   }
 `
@@ -66,6 +75,12 @@ interface Props {
         tags: string[]
         resource: Resource[]
         changelog: Changelog[]
+      }
+      fields: {
+        slug: string
+      }
+      thumbnail: {
+        thumbnailURL: string
       }
     }
   }

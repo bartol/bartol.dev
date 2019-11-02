@@ -1,7 +1,20 @@
-exports.onCreateNode = async ({ node, actions }) => {
-  const { createNodeField } = actions
+const queryString = require('querystring')
+const dateFormat = require('dateformat')
+const { createRemoteFileNode } = require('gatsby-source-filesystem')
+const backgroundColors = require('./src/backgroundColors.json')
+
+exports.onCreateNode = async ({
+  node,
+  actions,
+  createNodeId,
+  cache,
+  store,
+}) => {
+  const { createNode, createNodeField } = actions
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = node.frontmatter.title
+    const { title, tags, date, changelog } = node.frontmatter
+
+    const slug = title
       .toLowerCase() // convert to lower case
       .replace(/[^\w\s]/g, '') // remove everything that isn't letter or number
       .replace(/([a-z])([A-Z])/g, '$1-$2') // get all lowercase letters that are near to uppercase ones
@@ -20,6 +33,32 @@ exports.onCreateNode = async ({ node, actions }) => {
       name: 'timestamp',
       value: timestamp,
     })
+
+    const imageQueryString = queryString.stringify({
+      title,
+      published: dateFormat(date, 'mmmm dS, yyyy'),
+      background: backgroundColors[tags[0]],
+      updated: changelog
+        ? dateFormat(changelog[changelog.length - 1].date, 'mmmm dS, yyyy')
+        : null,
+      image: `https://bartol.dev/images/${tags[0]}.svg`,
+    })
+
+    const url = `https://thumbnails.bartol.dev/img?${imageQueryString}`
+
+    const fileNode = await createRemoteFileNode({
+      parentNodeId: node.id,
+      url,
+      createNode,
+      createNodeId,
+      cache,
+      store,
+    })
+
+    if (fileNode) {
+      // eslint-disable-next-line no-param-reassign
+      node.thumbnail___NODE = fileNode.id
+    }
   }
 }
 

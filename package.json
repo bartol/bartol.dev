@@ -89,6 +89,7 @@
     "babel-jest": "^24.9.0",
     "babel-preset-gatsby": "^0.2.20",
     "cypress": "^3.4.1",
+    "dateformat": "^3.0.3",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.0",
     "eslint-config-prettier": "^6.4.0",

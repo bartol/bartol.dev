@@ -1,7 +1,5 @@
 require('dotenv').config()
 
-const MAIN_COLOR = 'hsla(190, 80%, 50%, 1)'
-
 module.exports = {
   siteMetadata: {
     title: `Bartol's personal cyberspace`,
@@ -11,10 +9,10 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-eslint',
-    'gatsby-plugin-sass',
+    'gatsby-plugin-sass', // !remove
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-postcss',
+    'gatsby-plugin-postcss', // ???
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -46,7 +44,7 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-embed-video',
+            resolve: 'gatsby-remark-embed-video', // ???
             options: {
               width: 700,
               related: false,
@@ -64,18 +62,17 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: 'gatsby-remark-prismjs', // refactor
             options: {
               aliases: {
                 // terminal: 'bash'
               },
             },
           },
-          'gatsby-remark-emoji',
-          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-emoji', // ???
+          'gatsby-remark-copy-linked-files', // ???
           'gatsby-remark-external-links',
           'gatsby-remark-smartypants',
-          'gatsby-remark-check-links',
         ],
       },
     },
@@ -105,12 +102,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: MAIN_COLOR,
+        color: 'hsla(190, 80%, 50%, 1)',
         showSpinner: false,
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: 'gatsby-plugin-react-svg', // !remove
       options: {
         rule: {
           include: /\.inline\.svg$/,
@@ -165,7 +162,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Bartol Deak's website RSS Feed",
+            title: "Bartol's personal cyberspace RSS Feed",
           },
         ],
       },

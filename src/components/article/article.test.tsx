@@ -14,6 +14,8 @@ describe('article', () => {
         title: 'Article title',
         date: 'Oct 27th, 2019',
         tags: ['typescript'],
+        resource: [],
+        changelog: [],
       },
       fields: {
         slug: 'article–title',

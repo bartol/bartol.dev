@@ -9,7 +9,7 @@ export const Resources = ({ resources }) => {
         Resources
       </h3>
       <ul>
-        {resources.map(resource => {
+        {resources.map((resource: Resource) => {
           const { name, url } = resource
           return (
             <li>
@@ -22,4 +22,9 @@ export const Resources = ({ resources }) => {
       </ul>
     </div>
   )
+}
+
+interface Resource {
+  name: string
+  url: string
 }

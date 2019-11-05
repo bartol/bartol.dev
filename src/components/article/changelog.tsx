@@ -9,7 +9,7 @@ export const Changelog = ({ changelog }) => {
         Changelog
       </h3>
       <ul>
-        {changelog.map(change => {
+        {changelog.map((change: Change) => {
           const { date, message } = change
           return (
             <li>
@@ -20,4 +20,9 @@ export const Changelog = ({ changelog }) => {
       </ul>
     </div>
   )
+}
+
+interface Change {
+  date: string
+  message: string
 }

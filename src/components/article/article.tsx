@@ -96,19 +96,28 @@ const Article = ({ data }: Props) => {
             Send edit
           </button>
         ) : null}
-        <button
-          className='block rounded-full bg-dark-700 px-6 py-3 shadow m-2'
-          style={{ backgroundColor: edit ? '#cc3737' : null }}
-          type='button'
-          onClick={() => {
-            setEdit(!edit)
-            if (edit) {
-              setRawMarkdown(rawMarkdownBody)
-            }
-          }}
-        >
-          {edit ? 'Discard edit' : 'Edit article'}
-        </button>
+        {edit ? (
+          <button
+            className='block rounded-full bg-red-700 px-6 py-3 shadow m-2'
+            type='button'
+            onClick={() => {
+              setEdit(!edit)
+              if (edit) {
+                setRawMarkdown(rawMarkdownBody)
+              }
+            }}
+          >
+            Discard edit
+          </button>
+        ) : (
+          <button
+            className='block rounded-full bg-dark-700 px-6 py-3 shadow m-2'
+            type='button'
+            onClick={() => setEdit(!edit)}
+          >
+            Edit article
+          </button>
+        )}
       </div>
     </div>
   )

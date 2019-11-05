@@ -33,11 +33,11 @@
   }
 
   h2 {
-    @apply text-4xl font-medium flex items-center mt-6 mb-1;
+    @apply text-4xl font-medium flex items-center mt-6 mb-1 leading-tight;
   }
 
   h3 {
-    @apply text-2xl font-medium flex items-center mt-5 mb-1;
+    @apply text-2xl font-medium flex items-center mt-5 mb-1 leading-tight;
   }
 
   ul {
@@ -46,6 +46,10 @@
 
   ol {
     @apply list-decimal pl-8;
+  }
+
+  blockquote {
+    @apply bg-dark-700 px-4 py-3 rounded shadow my-5;
   }
 
   .gatsby-resp-image-wrapper * {
@@ -114,4 +118,8 @@
       background-color: hsla(190, 80%, 50%, 1);
     }
   }
+}
+
+.rawMarkdown {
+  @apply w-full bg-dark-800 font-mono;
 }

@@ -14,7 +14,7 @@ First thing you have to do is navigate to [google.com](http://google.com) and cl
 
 From pop-up menu select `Search settings` option.
 
-![settuing pop up](./pop_up.png)
+![settings pop up](./pop_up.png)
 
 And in `Search settings` check `Where results open` checkbox.
 

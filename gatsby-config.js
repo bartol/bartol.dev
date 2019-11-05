@@ -167,6 +167,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: true,
+        develop: true,
+        tailwind: true,
+        ignore: ['/article.css', 'code.css'],
+      },
+    },
     'gatsby-plugin-accessibilityjs',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',

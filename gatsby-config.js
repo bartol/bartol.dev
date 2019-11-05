@@ -9,10 +9,9 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-eslint',
-    'gatsby-plugin-sass', // !remove
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-postcss', // ???
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -61,15 +60,7 @@ module.exports = {
               offsetY: '20',
             },
           },
-          {
-            resolve: 'gatsby-remark-prismjs', // refactor
-            options: {
-              aliases: {
-                // terminal: 'bash'
-              },
-            },
-          },
-          'gatsby-remark-emoji', // ???
+          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files', // ???
           'gatsby-remark-external-links',
           'gatsby-remark-smartypants',
@@ -104,14 +95,6 @@ module.exports = {
       options: {
         color: 'hsla(190, 80%, 50%, 1)',
         showSpinner: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-react-svg', // !remove
-      options: {
-        rule: {
-          include: /\.inline\.svg$/,
-        },
       },
     },
     {
@@ -170,8 +153,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        printRejected: true,
-        develop: true,
         tailwind: true,
         ignore: ['/article.css', 'code.css'],
       },

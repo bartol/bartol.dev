@@ -6,12 +6,11 @@ tags:
   - netrw
   - til
 ---
-
-Netrw is file explorer built in Vim. While not perfect, I don't think it deserves hate it gets. After coming to Vim world from more traditional code editor, VS Code, I thought that kind of explorer was a joke. Immidiately downloaded NERDTree and returned my well known explorer functionality. It turns out, that I was wrong. After playing few days with Netrw I _fell in love_ with it and ditched NERDTree.
+Netrw is file explorer built in Vim. While not perfect, I don't think it deserves hate it gets. After coming to Vim world from more traditional code editor, VS Code, I thought that kind of explorer was a joke. Immediately downloaded NERDTree and returned my well known explorer functionality. It turns out, that I was wrong. After playing few days with Netrw I _fell in love_ with it and ditched NERDTree.
 
 Area that this kind of explorer really shines is working with multiple opened files. When you have one explorer it is much harder to put one file in one split and another is second, and then change second... you get the point. Also, it takes valuable space from your monitor. Why have explorer opened when you're not using it.
 
-Now, you may realise that this short introduction is using phrase "this kind of editor". By that I mean that I don't care if my explorer is called Netrw, NERDTree or something else. Netrw is just what I find most convinient and effective right now, hence this post.
+Now, you may realize that this short introduction is using phrase "this kind of editor". By that I mean that I don't care if my explorer is called Netrw, NERDTree or something else. Netrw is just what I find most convenient and effective right now, hence this post.
 
 Let's explore some shortcuts, shall we?
 

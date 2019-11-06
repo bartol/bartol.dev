@@ -3,7 +3,7 @@ import { FilterContext } from '../../state'
 import Card from './card'
 import NoResults from './noResults'
 
-const List = ({ articles }: Article[]) => {
+const List = ({ articles }: Articles) => {
   const { results, query } = useContext(FilterContext)
 
   return (
@@ -33,7 +33,12 @@ const List = ({ articles }: Article[]) => {
 
 export default List
 
+interface Articles {
+  articles: Article[]
+}
+
 interface Article {
+  item: Article
   id: string
   frontmatter: {
     title: string

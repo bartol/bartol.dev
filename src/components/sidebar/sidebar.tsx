@@ -10,7 +10,7 @@ const Sidebar = () => {
   const { query, results, reset } = useContext(FilterContext)
 
   return (
-    <div className='hidden lg:block lg:w-1/5 xl:w-1/6 py-4 my-2 xl:px-4 lg:pl-6 lg:pr-3 px-4 relative'>
+    <div className='hidden lg:block lg:w-1/5 xl:w-1/6 pt-4 my-2 xl:px-4 lg:pl-6 lg:pr-3 px-4 relative'>
       <Skip />
       <header>
         <h1 className='w-12 pt-1'>
@@ -36,16 +36,18 @@ const Sidebar = () => {
         {query && !!results.length && <Skip />}
       </header>
       <Sort />
-      <Categories />
-      <footer className='absolute bottom-0 right-0 mb-4 text-right'>
-        <a href='https://github.com/bartol' className='mr-3 link'>
-          GitHub
-        </a>
-        <Link to='/rss.xml' className='link'>
-          RSS
-        </Link>
-        <span className='block text-dark-500'>© 2019 Bartol Deak</span>
-      </footer>
+      <div className='sticky top-0 h-screen w-full -mb-2'>
+        <Categories />
+        <footer className='absolute bottom-0 right-0 mb-5 text-right'>
+          <a href='https://github.com/bartol' className='mr-3 link'>
+            GitHub
+          </a>
+          <Link to='/rss.xml' className='link'>
+            RSS
+          </Link>
+          <span className='block text-dark-500'>© 2019 Bartol Deak</span>
+        </footer>
+      </div>
     </div>
   )
 }

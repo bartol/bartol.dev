@@ -70,7 +70,11 @@ const Article = ({ data }: Props) => {
       <Card
         title={title}
         date={date}
-        updated={changelog ? changelog[changelog.length - 1].date : null}
+        updated={
+          changelog && changelog.length
+            ? changelog[changelog.length - 1].date
+            : null
+        }
         tag={tags[0]}
       />
       {edit ? (

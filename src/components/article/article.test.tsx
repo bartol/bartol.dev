@@ -9,6 +9,7 @@ describe('article', () => {
   // mock article
   const data = {
     markdownRemark: {
+      rawMarkdownBody: 'This is article body',
       html: '<p>This is article body</p>',
       frontmatter: {
         title: 'Article title',

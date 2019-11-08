@@ -8,8 +8,8 @@ tags:
 
 After using Vim for about 10 or so days, one of the most annoying things was
 mouse scroll. I was trying to not do it but sometimes my muscle memory would
-just do it. Then I would find myself looking at half Vim window and half my
-previous terminal commands. So, I decided to fix it.
+just unconsciously do it. I would then find myself looking at half Vim window
+and half my previous terminal commands. So, I decided to fix it.
 
 ```vim
 set mouse=a

@@ -60,7 +60,7 @@ const Article = ({ data }: Props) => {
   }
 
   return (
-    <div className='container max-w-2xl w-90 mx-auto pt-12'>
+    <div className='container max-w-2xl w-full px-4 mx-auto'>
       <SEO
         title={`${title} • Bartol Deak`}
         url={`/${slug}/`}

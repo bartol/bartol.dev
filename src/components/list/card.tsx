@@ -5,7 +5,7 @@ import './card.css'
 
 const Card = ({ title, date, slug, tags, first }: Props) => {
   return (
-    <li className='md:my-3 my-2 xl:px-4 lg:px-5 px-4 xl:w-1/3 lg:w-1/2  md:w-1/2 w-full h-48'>
+    <li className='md:my-3 my-2 xl:px-4 lg:px-5 px-4 xl:w-1/3 lg:w-1/2  md:w-1/2 w-full md:h-48 h-56'>
       <Link
         to={`/${slug}/`}
         id={first ? 'focusFirstCard' : undefined}

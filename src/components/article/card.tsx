@@ -5,7 +5,7 @@ import './card.css'
 export const Card = ({ title, date, updated, tag }) => {
   return (
     <div
-      className='relative overflow-hidden sm:py-4 py-3 sm:px-6 px-4 my-4 sm:rounded-lg rounded mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard w-full h-56'
+      className='relative overflow-hidden sm:py-4 py-3 sm:px-6 px-4 sm:my-6 my-4 sm:rounded-lg rounded mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard w-full h-56'
       style={{
         backgroundColor: backgroundColors[tag],
       }}
@@ -13,7 +13,7 @@ export const Card = ({ title, date, updated, tag }) => {
       <h1 className='sm:text-5xl text-3xl leading-tight font-medium'>
         {title}
       </h1>
-      <div className='sm:text-xl text-dark-300'>
+      <div className='sm:text-xl text-dark-300 leading-snug'>
         <p>
           Published on <span className='date'>{date}</span>
         </p>

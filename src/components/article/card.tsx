@@ -5,24 +5,32 @@ import './card.css'
 export const Card = ({ title, date, updated, tag }) => {
   return (
     <div
-      className='relative overflow-hidden py-4 px-6 rounded-lg mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard'
+      className='relative overflow-hidden sm:py-4 py-3 sm:px-6 px-4 my-4 sm:rounded-lg rounded mb-8 flex flex-col justify-between shadow bg-dark-700 articleCard w-full h-56'
       style={{
         backgroundColor: backgroundColors[tag],
       }}
     >
-      <h1 className='text-5xl leading-tight font-medium'>{title}</h1>
-      <div className='text-xl text-dark-300'>
-        <p>Published on {date}</p>
+      <h1 className='sm:text-5xl text-3xl leading-tight font-medium'>
+        {title}
+      </h1>
+      <div className='sm:text-xl text-dark-300'>
+        <p>
+          Published on <span className='date'>{date}</span>
+        </p>
         {updated ? (
           <p>
-            Updated on {updated} -{' '}
-            <a
-              href='#changelog'
-              aria-label='changelog permalink'
-              className='hover:text-dark-100 transition'
-            >
-              Changelog
-            </a>
+            Updated on <span className='date'>{updated}</span>
+            <span className='changelog'>
+              {' '}
+              -{' '}
+              <a
+                href='#changelog'
+                aria-label='changelog permalink'
+                className='hover:text-dark-100 transition'
+              >
+                Changelog
+              </a>
+            </span>
           </p>
         ) : null}
       </div>
@@ -30,7 +38,7 @@ export const Card = ({ title, date, updated, tag }) => {
         src={`/images/${tag}.svg`}
         alt={`${tag} icon`}
         loading='lazy'
-        className='w-64 h-64 opacity-25 absolute bottom-0 right-0 drag-none cardImage transition-slow'
+        className='sm:w-64 w-48 sm:h-64 h-48 opacity-25 -m-10 absolute bottom-0 right-0 drag-none cardImage transition-slow'
       />
     </div>
   )

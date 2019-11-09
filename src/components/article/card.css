@@ -1,8 +1,21 @@
-.articleCard {
-  height: 22.5rem;
+@media (min-width: 640px) {
+  .articleCard {
+    height: 22.5rem;
 
-  .cardImage {
-    margin: -3.1rem;
+    .cardImage {
+      margin: -3.1rem !important;
+    }
+  }
+}
+
+@media (max-width: 525px) {
+  .articleCard {
+    .date {
+      display: block;
+    }
+    .changelog {
+      display: none;
+    }
   }
 }
 

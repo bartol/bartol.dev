@@ -42,9 +42,9 @@ const Sidebar = () => {
           <a href='https://github.com/bartol' className='mr-3 link'>
             GitHub
           </a>
-          <Link to='/rss.xml' className='link'>
+          <a href='/rss.xml' className='link'>
             RSS
-          </Link>
+          </a>
           <span className='block text-dark-500'>© 2019 Bartol Deak</span>
         </footer>
       </div>

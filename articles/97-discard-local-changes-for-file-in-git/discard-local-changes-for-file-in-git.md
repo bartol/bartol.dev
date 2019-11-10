@@ -11,7 +11,7 @@ but want to discard them. You could always delete and clone repository again
 but what if you have other files that you don't want to discard that won't
 work. Also, you could delete file and copy paste from repository. But there is
 better way. You just need to checkout file. Checkout will get file from HEAD
-and override uncommited changes.
+and override uncommitted changes.
 
 ```sh
 git checkout fileName

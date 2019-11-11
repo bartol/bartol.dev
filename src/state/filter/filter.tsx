@@ -7,7 +7,7 @@ import { isBrowser } from './isBrowser'
 
 export const FilterContext = createContext()
 
-const DEBOUNCE_TIME = 400
+const DEBOUNCE_TIME = 250
 
 const options = {
   shouldSort: false,
@@ -83,13 +83,7 @@ export const FilterProvider = ({ children }) => {
         })
       }, DEBOUNCE_TIME)
     )
-  }, [query])
-
-  useEffect(() => {
-    navigate(stateToUrl(location, params), {
-      replace: true,
-    })
-  }, [category, sort])
+  }, [query, category, sort])
 
   const reset = () => {
     setQuery('')

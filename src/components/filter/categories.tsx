@@ -7,7 +7,7 @@ const Categories = () => {
   const { category, setCategory } = useContext(FilterContext)
 
   return (
-    <ul className='absolute top-0 w-full'>
+    <ul className='sticky top-0'>
       {list.map(tag => {
         const { value, label } = tag
         return (

@@ -14,7 +14,7 @@ export const Card = ({ title, date, updated, tag }) => {
         {title}
       </h1>
       <div className='sm:text-xl text-dark-300 leading-snug'>
-        <p>
+        <p className='published'>
           Published on <span className='date'>{date}</span>
         </p>
         {updated ? (

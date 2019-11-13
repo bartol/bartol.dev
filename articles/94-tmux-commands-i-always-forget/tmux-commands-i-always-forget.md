@@ -45,7 +45,7 @@ tmux kill-session -a
 
 ### Rename current session
 
-`Ctrl/Cmd + b` and then `$`
+`Ctrl + b` and then `$`
 
 ### List all sessions
 
@@ -71,27 +71,27 @@ Don't worry, we aren't talking about Microsoft Windows. If you've never worked w
 
 ### Create new window
 
-`Ctrl/Cmd + b` and then `c`
+`Ctrl + b` and then `c`
 
 ### Close current window
 
-`Ctrl/Cmd + b` and then `&`
+`Ctrl + b` and then `&`
 
 ### Switch to next window
 
-`Ctrl/Cmd + b` and then `n`
+`Ctrl + b` and then `n`
 
 ### Switch to previous window
 
-`Ctrl/Cmd + b` and then `p`
+`Ctrl + b` and then `p`
 
 ### Switch to window with number
 
-`Ctrl/Cmd + b` and then number of window
+`Ctrl + b` and then number of window
 
 ### Rename current window
 
-`Ctrl/Cmd + b` and then `,`
+`Ctrl + b` and then `,`
 
 ## Panes
 
@@ -99,27 +99,27 @@ Like splits in Vim, tmux panes enable you to use two programs side by side.
 
 ### Split vertically
 
-`Ctrl/Cmd + b` and then `%`
+`Ctrl + b` and then `%`
 
 ### Split horizontally
 
-`Ctrl/Cmd + b` and then `"`
+`Ctrl + b` and then `"`
 
 ### Switch to pane
 
-`Ctrl/Cmd + b` and then arrow key in direction of pane.
+`Ctrl + b` and then arrow key in direction of pane.
 
 ### Resize current pane
 
-`Ctrl/Cmd + b` and then **hold** arrow key in direction you want to resize.
+`Ctrl + b` and then **hold** arrow key in direction you want to resize.
 
 ### Close current pane
 
-`Ctrl/Cmd + b` and then `x`
+`Ctrl + b` and then `x`
 
 ### Transform pane to window
 
-`Ctrl/Cmd + b` and then `!`
+`Ctrl + b` and then `!`
 
 ## Copy mode
 
@@ -130,7 +130,7 @@ familiar to Vim users.
 
 ### Switch to copy mode
 
-`Ctrl/Cmd + b` and then `[`
+`Ctrl + b` and then `[`
 
 ### Quit copy mode
 

@@ -45,7 +45,7 @@
   }
 
   blockquote {
-    @apply bg-dark-700 px-4 py-3 rounded shadow my-5;
+    @apply bg-dark-700 px-4 py-3 rounded shadow my-5 mx-0;
   }
 
   .gatsby-resp-image-wrapper * {

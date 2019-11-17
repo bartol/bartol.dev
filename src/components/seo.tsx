@@ -13,7 +13,6 @@ const SEO = ({
       <html lang='en' />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
-      <link rel='canonical' href='https://bartol.dev/' />
 
       <meta charSet='utf-8' />
       <meta name='title' content={title} />

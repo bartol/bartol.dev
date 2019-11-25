@@ -10,11 +10,16 @@ export default ({ data }) => {
   setAllResults(data.allMarkdownRemark.nodes)
 
   return (
-    <div className='container mx-auto flex min-h-screen'>
-      <SEO title={`Bartol's personal cyberspace`} />
-      <Sidebar />
-      <List articles={results} />
-    </div>
+    <>
+      <div className='bg-red-600 text-center'>
+        Site may not get updated for few days. Working on redesign.
+      </div>
+      <div className='container mx-auto flex min-h-screen'>
+        <SEO title={`Bartol's personal cyberspace`} />
+        <Sidebar />
+        <List articles={results} />
+      </div>
+    </>
   )
 }
 

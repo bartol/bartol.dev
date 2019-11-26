@@ -1,7 +1,0 @@
-.skipToArticles {
-  transform: translateY(-100px);
-
-  &:focus {
-    transform: translateY(0);
-  }
-}

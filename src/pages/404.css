@@ -1,9 +1,0 @@
-.ascii {
-  font-size: 10rem;
-}
-
-@media (max-width: 500px) {
-  .ascii {
-    font-size: 6.5rem;
-  }
-}

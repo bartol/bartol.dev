@@ -2,11 +2,13 @@
   "name": "bartol.dev",
   "version": "4.0.0",
   "description": "add later",
-  "main": "index.js",
   "repository": "git@github.com:bartol/bartol.dev.git",
   "author": "bartol <b@bartol.dev>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+      "dev": "eleventy --serve"
+  },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0"
   }

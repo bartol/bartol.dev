@@ -17,7 +17,7 @@ Adding lint staged to your project will be one of the best “low effort high re
 
 As usual, we will start with installing packages. [husky](https://github.com/typicode/husky) is used to run [git hooks](https://githooks.com/) and [lint-staged](https://www.npmjs.com/package/lint-staged) is used to run linters on staged files.
 
-```sh
+```bash
 yarn add -D husky lint-staged
 ```
 

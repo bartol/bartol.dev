@@ -8,7 +8,7 @@ tags:
 
 Ah, month ago I created 2 posts about CRUD functions (create and read) in DynamoDB and rest were left collecting dust in to-do list. Figured out I should get to it and cross it off as soon as possible. Anyways, lets see how you can delete item from DynamoDB table. First thing you should always do when working with DynamoDB and Lambda is provide permission to access it.
 
-```yml
+```yaml
 # serverless.yml
 # ...
 provider:

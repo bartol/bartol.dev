@@ -12,13 +12,13 @@ ES6 is fun! And you should use it, but you can't write ES6 and ES modules out of
 
 Make sure that you npm/yarn initialized your repository and then install these packages.
 
-```sh
+```bash
 yarn add -D serverless-bundle
 ```
 
 And another thing you have to do is add these two lines to `serverless.yml`.
 
-```yml
+```yaml
 plugins:
   - serverless-bundle
 ```

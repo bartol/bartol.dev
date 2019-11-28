@@ -11,7 +11,7 @@ about it is that you don't have to rewrite anything.
 
 Lets first install it.
 
-```sh
+```bash
 yarn add gatsby-plugin-typescript
 ```
 

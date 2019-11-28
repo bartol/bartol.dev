@@ -13,7 +13,7 @@ Long story short. I have made script for scraping some stuff and put it on the D
 
 Like any other npm module.
 
-```sh
+```bash
 npm i pm2 -g
 ```
 
@@ -21,7 +21,7 @@ npm i pm2 -g
 
 1. Start a process
 
-```sh
+```bash
 pm2 start app.js --name "your_app_name"
 # next time start app with
 pm2 start your_app_name
@@ -29,13 +29,13 @@ pm2 start your_app_name
 
 2. Stop a process
 
-```sh
+```bash
 pm2 stop your_app_name
 ```
 
 3. Delete a process
 
-```sh
+```bash
 pm2 delete your_app_name
 ```
 
@@ -45,13 +45,13 @@ You can also use `all` instead of app name to do operation on all processes
 
 See list of all running processes.
 
-```sh
+```bash
 pm2 list
 ```
 
 View dashboard with live info from processes.
 
-```sh
+```bash
 pm2 monit   # this is not a typo
 ```
 

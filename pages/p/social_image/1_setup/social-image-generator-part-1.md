@@ -15,13 +15,13 @@ Before jumping into program solving and coding I have to set up environment. Thi
 
 For managing packages I chose to use [Yarn](https://yarnpkg.com/lang/en/), without any special configuration.
 
-```sh
+```bash
 yarn init -y
 ```
 
 For TypeScript support, I'll need `serverless-plugin-typescript` and `typescript` as dev dependencies.
 
-```sh
+```bash
 yarn add -D serverless-plugin-typescript typescript
 ```
 
@@ -29,7 +29,7 @@ yarn add -D serverless-plugin-typescript typescript
 
 Serverless framework will help manage AWS resources. Much better than zipping and uploading code to Lambda Dashboard on every change.
 
-```yml
+```yaml
 # serverless.yml
 
 service: social-images
@@ -79,7 +79,7 @@ Just the most basic configuration I found in serverless plugin docs.
 
 Last thing for today will be function handler. It won't do anything for now.
 
-```ts
+```typescript
 // handler.ts
 
 export const handler = async event => {

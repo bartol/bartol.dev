@@ -9,7 +9,7 @@ tags:
 
 First thing we have to do is add permission to invoke function. Add following to your `serverless.yml` and replace `Resource` with [AWS ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of your function.
 
-```yml
+```yaml
 provider:
   iamRoleStatements:
     - Effect: Allow
@@ -39,8 +39,8 @@ const params = {
   FunctionName: 'functionName',
   InvocationType: 'Event',
   Payload: JSON.stringify({
-    id: 10239015
-  })
+    id: 10239015,
+  }),
 }
 ```
 

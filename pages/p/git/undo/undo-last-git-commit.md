@@ -12,7 +12,7 @@ You have sure encountered this issue many times, I certainly have. But you shoul
 
 All you need to is run this command.
 
-```sh
+```bash
 git reset --hard HEAD^
 ```
 

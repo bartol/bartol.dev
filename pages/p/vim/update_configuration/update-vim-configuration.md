@@ -14,7 +14,7 @@ First thing you have to do is open configuration file. For unix users it will
 be inside home directory. It's hidden file so you might not find it in file
 explorer by default.
 
-```sh
+```bash
 vim ~/.vimrc
 ```
 

@@ -12,7 +12,7 @@ Curl has a lot of options but I'll go through most used ones.
 
 Curl is probably already installed on your system. Check it by running:
 
-```sh
+```bash
 curl --version
 ```
 

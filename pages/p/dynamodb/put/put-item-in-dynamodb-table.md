@@ -9,7 +9,7 @@ tags:
 
 Okay, you've received some data in your lambda function and you want to save it to DynamoDB table. First thing you have to do is add permission to put item in `serverless.yml`.
 
-```yml
+```yaml
 # ...
 provider:
   # ...
@@ -41,8 +41,8 @@ const params = {
   TableName: tableName,
   Item: {
     someProperty: someValue,
-    anotherProperty: anotherValue
-  }
+    anotherProperty: anotherValue,
+  },
 }
 
 try {

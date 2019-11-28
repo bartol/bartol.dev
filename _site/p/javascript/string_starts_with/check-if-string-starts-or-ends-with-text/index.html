@@ -1,0 +1,8 @@
+<p>It's as easy as calling <code>startsWith()</code> or <code>endsWith()</code> methods on JavaScript string prototype.</p>
+<p>As an example we can use string similar to this.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> string <span class="token operator">=</span> <span class="token string">'Hey, have a great day!'</span></span></code></pre>
+<p>And check if string is question with simple function.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">isQuestion</span> <span class="token operator">=</span> <span class="token parameter">str</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">return</span> str<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>When we pass example string to this function it will, of course, return <code>false</code>.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token function">isQuestion</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span> <span class="token comment">// false</span></span></code></pre>
+<p>You can use <code>startsWith()</code> same way.</p>

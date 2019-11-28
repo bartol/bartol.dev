@@ -1,0 +1,12 @@
+<p>Well, everything in 2019 has modules, and Sass is not an exception. Introduced earlier this month, Sass modules are big addition to Sass in general after long feature freeze and stagnation in recent years.</p>
+<p>Modules are supported only in Dart Sass (version 1.23) at the time of writing.</p>
+<h2>Why should you care?</h2>
+<p>Simple and clear, if you are using Sass, this will give you useful functions out of the box and will be great addition to your toolkit.</p>
+<h2>Show, don't tell</h2>
+<p>Modules can be imported with the <code>@use</code> keyword and all built-in module names start with <code>sass:</code>.</p>
+<pre class="language-scss"><code class="language-scss"><span class="highlight-line">@use <span class="token string">"sass:math"</span><span class="token punctuation">;</span></span></code></pre>
+<p>After that you can access things from it using dot separated syntax. It's very similar to JavaScript so you'll most likely be in well known territory.</p>
+<pre class="language-scss"><code class="language-scss"><span class="highlight-line"><span class="token property">width</span><span class="token punctuation">:</span> button.<span class="token variable">$width</span>                                  <span class="token comment">// access variable</span></span><br><span class="highlight-line"><span class="token property">color</span><span class="token punctuation">:</span> color.<span class="token function">adjust</span><span class="token punctuation">(</span>#1ac4e6<span class="token punctuation">,</span> <span class="token property"><span class="token variable">$red</span></span><span class="token punctuation">:</span> -10<span class="token punctuation">,</span> <span class="token property"><span class="token variable">$blue</span></span><span class="token punctuation">:</span> 10<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// call a function</span></span></code></pre>
+<p>This was just high-level overview of feature. If it sparks joy to you, be sure to visit links in resources.</p>
+<h2>Compelling reason to switch?</h2>
+<p>As always, it depends. For me answer is no. I am already moved from Sass world and heavily invested in CSS in JS type solutions for its many benefits. But I have to say this is really cool stuff.</p>

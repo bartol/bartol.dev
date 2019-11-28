@@ -1,0 +1,12 @@
+<p>I've recently written about <a href="https://bartol.dev/a-complete-guide-to-get-algolia-search-on-your-gatsby-site/">adding Algolia search to Gatsby site</a> and while <a href="https://www.algolia.com/">Algolia</a> is awesome, I've found some problems that were deal breakers for me (and might for you). So I want to share them with you today.</p>
+<h2>Bundle size</h2>
+<p>Bundle size of Algolia React InstantSearch is absolutely massive. I have even written <a href="https://github.com/algolia/react-instantsearch/issues/2810">GitHub issue about it</a> recently. It has some improvements in version 6, which is now in beta, but it's still too much in my opinion. Here is its bundle size as of September 2019.</p>
+<p><img src="./bundle-size-import-cost.png" alt="Algolia React InstantSearch size"></p>
+<p><img src="./bundle-size-webpack-analyze.png" alt="Whole website bundle size"></p>
+<p>While it might not seem <em>too much</em> at the first glance, that is bundle of this blog (with Algolia) and as you can see there isn't much going on here but bundle is half of megabyte.</p>
+<h2>Offline search</h2>
+<p>Algolia search sends requests to Algolia server on every keystroke to receive results, and while it's impressively fast, it can't work offline. Or at least I can't find how to make it work offline. Pretty sure it can't do that.</p>
+<h2>Alternative</h2>
+<p>Enter <a href="https://fusejs.io/">fuse.js</a>. JavaScript fuzzy search library. While it isn't nearly as feature packed as Algolia, <strong>it fits my needs better</strong>. Fuse bundle size is only about 10 KB and it does all of its magic on client side (offline works out of the box). I'll make post how to integrate it on your site in next few days.</p>
+<h2>Conclusion</h2>
+<p>While Algolia definitely has better options to customize and personalize search that comes with the price. For simple blog it's definitely unnecessary. <strong>It all depends on your needs.</strong></p>

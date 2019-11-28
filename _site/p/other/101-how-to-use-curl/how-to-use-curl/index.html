@@ -1,0 +1,25 @@
+<p>Curl (Client URL) is command line tool used for transferring data using
+protocols like http, ftp or smtp. I mostly use it for quick testing of APIs.
+Curl has a lot of options but I'll go through most used ones.</p>
+<p>Curl is probably already installed on your system. Check it by running:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">curl</span> --version</span></code></pre>
+<p>If this command doesn't return version, install it from its <a href="https://curl.haxx.se/download.html">download
+page</a>.</p>
+<h2>HTTP</h2>
+<ul>
+<li><code>-X POST</code> - specify preferred http method</li>
+<li><code>-H &quot;Content-Type: application/json&quot;</code> - add headers to request</li>
+<li><code>-b &quot;NAME=VALUE&quot;</code> - add cookie to request</li>
+<li><code>-c /path/to/cookie</code> - save cookie to file</li>
+<li><code>-d '{&quot;key&quot;: &quot;data&quot;}</code> - data for POST request</li>
+<li><code>-I</code> - return only headers</li>
+</ul>
+<h2>General</h2>
+<ul>
+<li><code>-o /path/to/file</code> - write output to file</li>
+<li><code>-O</code> - write output to new file in current directory</li>
+<li><code>-v</code> - provide more informations</li>
+<li><code>-#</code> - display progress bar</li>
+<li><code>-f</code> - fail silently</li>
+<li><code>-k</code> - allow insecure connections</li>
+</ul>

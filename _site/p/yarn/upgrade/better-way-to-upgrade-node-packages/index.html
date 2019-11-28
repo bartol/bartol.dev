@@ -1,0 +1,5 @@
+<p>I don't know how I missed this for months, but Yarn has <code>upgrade-interactive</code> command that opens list of all outdated packages and lets you pick which ones to update. Also, it will show colors based on <a href="https://semver.org/">semantic version</a>, red for major version (breaking changes), yellow for minor versions (features, backwards compatible) and green for bug fixes.</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">yarn</span> upgrade-interactive --latest</span></code></pre>
+<p>Note that sometimes it can hang for a few seconds, just wait for it.</p>
+<p>When it lists all packages you can move with <code>up/down arrow</code>, choose package with <code>space</code> and <code>enter/return</code> to start upgrade. Another useful command is <code>a</code> to toggle all.</p>
+<p>As far as I know, npm (without plugins) doesn't have this feature.</p>

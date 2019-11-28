@@ -1,0 +1,7 @@
+<p>This will be short and not really practical but fun article.</p>
+<p>Have you ever wondered how to generate random hex code?</p>
+<p>Probably not, but here it is.</p>
+<!-- prettier-ignore  -->
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token string">'#'</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0xffffff</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">padEnd</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>One-liner, short and sweet.</p>
+<p>Now you can use it to create fun web pages like <a href="http://random-hex.netlify.com">demo</a> I've created for this article.</p>

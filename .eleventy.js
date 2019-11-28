@@ -2,16 +2,23 @@ const { readdirSync } = require('fs')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 module.exports = function(eleventyConfig) {
-  const excluded_directories = ['node_modules', 'js', 'css', 'fonts']
+  const excluded_directories = [
+    'node_modules',
+    '.git',
+    'js',
+    'css',
+    'fonts',
+    'img',
+  ]
+
   // source collections
   function getAllCollections(dir) {
     const content = readdirSync(dir, { withFileTypes: true })
       .filter(
         dir =>
           dir.isDirectory() &&
-          !excluded_directories.includes(dir.name) &&
           !dir.name.startsWith('_') &&
-          !dir.name.startsWith('.')
+          !excluded_directories.includes(dir.name)
       )
       .map(dirent => dirent.name)
 
@@ -56,10 +63,8 @@ module.exports = function(eleventyConfig) {
   // layout aliases
   eleventyConfig.addLayoutAlias('global', 'global.njk')
 
-  console.log(process.env.ELEVENTY_ENV)
-
   return {
-    dir: { input: '.', output: '_site', includes: '_includes' },
+    dir: { input: '.', output: '_site' },
     passthroughFileCopy: true,
     templateFormats: ['njk', 'md', 'css', 'html'],
     htmlTemplateEngine: 'njk',

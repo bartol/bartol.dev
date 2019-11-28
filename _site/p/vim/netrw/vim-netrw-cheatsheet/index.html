@@ -1,0 +1,46 @@
+<p>Netrw is file explorer built in Vim. While not perfect, I don't think it
+deserves hate it gets. After coming to Vim world from more traditional code
+editor, VS Code, I thought that kind of explorer was a joke. Immediately
+downloaded NERDTree and returned my well known explorer functionality. It turns
+out, that I was wrong. After playing few days with Netrw I <em>fell in love</em> with
+it and ditched NERDTree.</p>
+<p>Area that this kind of explorer really shines is working with multiple opened
+files. When you have one explorer it is much harder to put one file in one
+split and another is second, and then change second... you get the point. Also,
+it takes valuable space from your monitor. Why have explorer opened when you're
+not using it.</p>
+<p>Now, you may realize that this short introduction is using phrase &quot;this kind of
+editor&quot;. By that I mean that I don't care if my explorer is called Netrw,
+NERDTree or something else. Netrw is just what I find most convenient and
+effective right now, hence this post.</p>
+<p>Let's explore some shortcuts, shall we?</p>
+<h2>Where to get it</h2>
+<p>3 options. <code>:Explore</code>, <code>:Sexplore</code> and <code>:Vexplore</code> to open in full window, in
+horizontal or vertical split. You should map this to shortcut anyways.</p>
+<h2>Navigation</h2>
+<ul>
+<li><code>enter</code> - open file or directory</li>
+<li><code>-</code> - go to parent directory</li>
+<li><code>o</code> - open file or directory in horizontal split</li>
+<li><code>v</code> - open file or directory in vertical split</li>
+</ul>
+<h2>Tree manipulation</h2>
+<p>Fancy name for renaming, creating... files (and folders).</p>
+<ul>
+<li><code>%</code> - create file</li>
+<li><code>d</code> - create directory</li>
+<li><code>R</code> - rename file or directory</li>
+<li><code>D</code> - delete file or directory</li>
+<li><code>x</code> - open file in default program</li>
+</ul>
+<h2>Options</h2>
+<ul>
+<li><code>gh</code> - hide or show hidden files</li>
+<li><code>r</code> - reverse sort</li>
+<li><code>s</code> - change sort (by name, time or size)</li>
+</ul>
+<h2>Config</h2>
+<pre class="language-text"><code class="language-text"><span class="highlight-line">let g:netrw_banner = 0</span><br><span class="highlight-line">nnoremap <C-b> :<C-u>Explore<CR></span></code></pre>
+<p>Snippet from my Vim config. First line disables banner and second maps explorer
+to Ctrl + B.</p>
+<p>The only thing I kind of miss is not showing git status in explorer.</p>

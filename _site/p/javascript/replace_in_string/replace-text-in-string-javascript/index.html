@@ -1,0 +1,6 @@
+<p>Today I learned that JavaScript has replace method. It's fairly simple and gets the job done.</p>
+<p>For example, you have string similar to this one.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> favoriteFood <span class="token operator">=</span> <span class="token string">'My favorite food is Pizza'</span></span></code></pre>
+<p>And suddenly broccoli becomes your favorite food. All you need to do is run replace method on string, as first parameter pass text you want to replace (it can be regex too) and as second parameter pass new text.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">const</span> newFavoriteFood <span class="token operator">=</span> favoriteFood<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'Pizza'</span><span class="token punctuation">,</span> <span class="token string">'Broccoli'</span><span class="token punctuation">)</span></span></code></pre>
+<p>That's it. Can't get much easier than this.</p>

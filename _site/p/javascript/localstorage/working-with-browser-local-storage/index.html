@@ -1,0 +1,14 @@
+<p>Okay, you heard about that cool thingy called local storage where you can save client side data, but you don't know how to really use it. Great, you'll learn it here but first lets talk limitations.</p>
+<ul>
+<li>Storage limit varies from browser to browser and is from 3 MB to 10 MB. Not sure if modern react website JS bundle would fit. 🤔</li>
+<li>It can be deleted like cookies and history so make sure to send data to server.</li>
+</ul>
+<p>Enough about limitations. Let's dive into local storage! To set item you need to call <code>setItem</code> method and specify key and value as JSON.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">,</span> <span class="token string">'some json value'</span><span class="token punctuation">)</span></span></code></pre>
+<p>To get item you, obviously, need to call <code>getItem</code> and specify only key...</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span></span></code></pre>
+<p>...and same thing for removing item</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span><span class="token string">'key'</span><span class="token punctuation">)</span></span></code></pre>
+<p>Last thing I'll show you is how to wipe out whole local storage.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">localStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span></code></pre>
+<p>And there is nothing more to it than this. You are now local storage ninja!</p>

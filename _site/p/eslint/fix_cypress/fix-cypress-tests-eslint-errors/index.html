@@ -1,0 +1,6 @@
+<p>If you have recently tried using <a href="https://www.cypress.io/">Cypress</a> in project with ESLint, you've probably been greeted with a ton of errors. Luckily fix is quick and easy.</p>
+<p>First thing we have to do is to install ESLint plugin.</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">yarn</span> <span class="token function">add</span> -D eslint-plugin-cypress</span></code></pre>
+<p>After that you need to create <code>.eslintrc</code> file in <code>cypress</code> directory and populate it with following configuration.</p>
+<pre class="language-json"><code class="language-json"><span class="highlight-line"><span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"plugin:cypress/recommended"</span><span class="token punctuation">]</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>And that's it! ESLint won't complain about your tests anymore!</p>

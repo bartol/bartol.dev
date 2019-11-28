@@ -1,0 +1,9 @@
+<p>Symbolic constants in C are values that will never change. Why not just use variables you might ask?</p>
+<p>Answer from Stack Overflow explains this much better than me, so I'll just quote it here.</p>
+<blockquote>
+<p>The compiler knows that symbolic constants won't change. It substitutes the value for the constant at compile time. If the constant is in a variable, it usually can't figure out that the variable will never change value. In consequence, the compiled code has to read the value from the memory allocated to the variable, which can make the program slightly slower and larger.</p>
+</blockquote>
+<p>Also, you gotta admit that <code>#define</code> statements look super cool!</p>
+<p>They are usually defined on top of file, after <code>#include</code> statements, are all uppercase and have this form.</p>
+<pre class="language-c"><code class="language-c"><span class="highlight-line"><span class="token macro property">#<span class="token directive keyword">define</span> NAME value</span></span></code></pre>
+<p>After that you can use them as you would normal variables.</p>

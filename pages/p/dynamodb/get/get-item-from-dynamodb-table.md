@@ -9,7 +9,7 @@ tags:
 
 Have you just read my previous article about putting data in DynamoDB? And are you wondering how to get that data? You are at the right place. First of all you need to add permission for lambda to get item from DynamoDB.
 
-```yml
+```yaml
 # ...
 provider:
   # ...
@@ -40,8 +40,8 @@ And last thing you have to do is initialize `params` object that will contain Dy
 const params = {
   TableName: tableName,
   Key: {
-    id: 'value'
-  }
+    id: 'value',
+  },
 }
 
 try {

@@ -10,13 +10,13 @@ tags:
 
 There are number of things why I really like working with GraphQL. I also enjoy writing Lambda Functions to do simple things without needing to manage full-blown server. Why not merge both? Apollo is awesome tool that will make it super easy! To start, install Apollo Server and GraphQL.
 
-```sh
+```bash
 yarn add apollo-server-lambda graphql
 ```
 
 This article assumes that you already have [serverless framework](https://serverless.com/) up and running, so I'll show just functions section.
 
-```yml
+```yaml
 functions:
   graphql:
     handler: handler.graphql

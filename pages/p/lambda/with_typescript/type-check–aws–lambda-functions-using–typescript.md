@@ -12,13 +12,13 @@ For the past few days I was working on Lambda Function that programmatically gen
 
 To start, as expected, you need to add plugin and typescript as dev dependencies.
 
-```sh
+```bash
 yarn add -D serverless-plugin-typescript typescript
 ```
 
 And latter, you need to add plugin to `serverless.yml`.
 
-```yml
+```yaml
 plugins:
   - serverless-plugin-typescript
 ```

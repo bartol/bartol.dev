@@ -8,7 +8,7 @@ tags:
 
 I don't know how I missed this for months, but Yarn has `upgrade-interactive` command that opens list of all outdated packages and lets you pick which ones to update. Also, it will show colors based on [semantic version](https://semver.org/), red for major version (breaking changes), yellow for minor versions (features, backwards compatible) and green for bug fixes.
 
-```sh
+```bash
 yarn upgrade-interactive --latest
 ```
 

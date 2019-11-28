@@ -21,25 +21,25 @@ and turn them off (detach from them) and they'll save working state.
 
 ### Open new session
 
-```sh
+```bash
 tmux
 ```
 
 ### Open new session with name
 
-```sh
+```bash
 tmux new -s sessionName
 ```
 
 ### Delete session
 
-```sh
+```bash
 tmux kill-session -t sessionName
 ```
 
 ### Delete all sessions
 
-```sh
+```bash
 tmux kill-session -a
 ```
 
@@ -49,19 +49,19 @@ tmux kill-session -a
 
 ### List all sessions
 
-```sh
+```bash
 tmux ls
 ```
 
 ### Attach to last session
 
-```sh
+```bash
 tmux attach
 ```
 
 ### Attach to session with name
 
-```sh
+```bash
 tmux attach -t sessionName
 ```
 

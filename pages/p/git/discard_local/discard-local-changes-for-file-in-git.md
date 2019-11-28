@@ -13,7 +13,7 @@ work. Also, you could delete file and copy paste from repository. But there is
 better way. You just need to checkout file. Checkout will get file from HEAD
 and override uncommitted changes.
 
-```sh
+```bash
 git checkout fileName
 ```
 

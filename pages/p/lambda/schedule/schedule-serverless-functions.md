@@ -14,7 +14,7 @@ To run function in specific time you'll have to schedule it somehow.
 You can choose between 2 ways. Cron expression and rate expression.
 Both will be defined in events property of function.
 
-```yml
+```yaml
 functions:
   my_function_name:
     handler: my_function.handler

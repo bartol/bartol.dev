@@ -15,7 +15,7 @@ resources:
 
 [Jest](https://jestjs.io/) is JavaScript testing framework used for testing plenty of technologies, including Gatsby (React). To get started all you need is to install [react testing library](https://github.com/testing-library/react-testing-library) (which will add React related functionality like rendering components) and Jest itself.
 
-```sh
+```bash
 yarn add -D jest @testing-library/react
 ```
 
@@ -50,7 +50,7 @@ You have run into errors because Node doesn't support import statements, yet. Th
 
 Let's get back to command line for a few more packages.
 
-```sh
+```bash
 yarn add -D babel-jest babel-preset-gatsby identity-obj-proxy
 ```
 

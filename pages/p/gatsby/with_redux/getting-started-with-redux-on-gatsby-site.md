@@ -19,7 +19,7 @@ For the past few days I was learning Redux to use it for exciting project that w
 
 As you probably imagined we will first install some packages.
 
-```sh
+```bash
 yarn add redux react-redux
 ```
 

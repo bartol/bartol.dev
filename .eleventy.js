@@ -1,5 +1,7 @@
 const { readdirSync } = require('fs')
 
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+
 module.exports = function(eleventyConfig) {
   function getAllCollections(dir) {
     const content = readdirSync(dir, { withFileTypes: true })
@@ -37,6 +39,10 @@ module.exports = function(eleventyConfig) {
         return content.includes(itemPath)
       })
     })
+  })
+
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    templateFormats: ['njk', 'md'],
   })
 
   return {

@@ -9,7 +9,7 @@ module.exports = function(eleventyConfig) {
       .filter(
         dir =>
           dir.isDirectory() &&
-          !excluded_directories.contain(dir.name) &&
+          !excluded_directories.includes(dir.name) &&
           !dir.name.startsWith('_') &&
           !dir.name.startsWith('.')
       )

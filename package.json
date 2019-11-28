@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "eleventy --serve --quiet"
+    "dev": "eleventy --serve --quiet",
+    "debug": "DEBUG=Eleventy* yarn dev"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0"

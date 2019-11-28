@@ -1,8 +1,8 @@
 const { readdirSync } = require('fs')
-
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 
 module.exports = function(eleventyConfig) {
+  // source collections
   function getAllCollections(dir) {
     const content = readdirSync(dir, { withFileTypes: true })
       .filter(dirent => dirent.isDirectory())
@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
   }
 
   const collections = []
-  getAllCollections('./pages')
+  getAllCollections('./src')
 
   collections.forEach(collection => {
     const { name, content } = collection
@@ -41,14 +41,20 @@ module.exports = function(eleventyConfig) {
     })
   })
 
+  // syntax highlight
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ['njk', 'md'],
   })
 
+  // layout aliases
+  eleventyConfig.addLayoutAlias('global', 'global.njk')
+
+  console.log(process.env.ELEVENTY_ENV)
+
   return {
-    dir: { input: 'pages', output: '_site' },
+    dir: { input: 'src', output: 'dist', includes: '_includes' },
     passthroughFileCopy: true,
-    templateFormats: ['njk', 'md', 'css', 'html', 'yml'],
+    templateFormats: ['njk', 'md', 'css', 'html'],
     htmlTemplateEngine: 'njk',
   }
 }

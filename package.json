@@ -7,9 +7,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-      "dev": "eleventy --serve"
+    "dev": "eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0"
+  },
+  "dependencies": {
+    "eslint": "^6.7.1",
+    "prettier": "^1.19.1"
   }
 }

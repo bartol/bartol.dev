@@ -1,0 +1,324 @@
+[
+  {
+    "path": "./pages",
+    "name": "root",
+    "content": [
+      "./pages/c",
+      "./pages/e",
+      "./pages/me",
+      "./pages/p"
+    ]
+  },
+  {
+    "path": "./pages/me",
+    "name": "me",
+    "content": [
+      "./pages/me/100",
+      "./pages/me/2019",
+      "./pages/me/about",
+      "./pages/me/contact",
+      "./pages/me/hello_world",
+      "./pages/me/now",
+      "./pages/me/resources",
+      "./pages/me/site"
+    ]
+  },
+  {
+    "path": "./pages/p",
+    "name": "p",
+    "content": [
+      "./pages/p/apollo",
+      "./pages/p/c",
+      "./pages/p/cs",
+      "./pages/p/cypress",
+      "./pages/p/dynamodb",
+      "./pages/p/eslint",
+      "./pages/p/gatsby",
+      "./pages/p/git",
+      "./pages/p/github",
+      "./pages/p/graphql",
+      "./pages/p/html",
+      "./pages/p/http",
+      "./pages/p/javascript",
+      "./pages/p/lambda",
+      "./pages/p/node",
+      "./pages/p/npm",
+      "./pages/p/other",
+      "./pages/p/puppeteer",
+      "./pages/p/react",
+      "./pages/p/rust",
+      "./pages/p/sass",
+      "./pages/p/seo",
+      "./pages/p/social_image",
+      "./pages/p/tmux",
+      "./pages/p/vim",
+      "./pages/p/vscode",
+      "./pages/p/yarn"
+    ]
+  },
+  {
+    "path": "./pages/p/apollo",
+    "name": "p_apollo",
+    "content": [
+      "./pages/p/apollo/on_lambda",
+      "./pages/p/apollo/server_analytics"
+    ]
+  },
+  {
+    "path": "./pages/p/c",
+    "name": "p_c",
+    "content": [
+      "./pages/p/c/colorful_output",
+      "./pages/p/c/fraction_digits",
+      "./pages/p/c/i++_++i",
+      "./pages/p/c/number_width",
+      "./pages/p/c/symbolic_constants"
+    ]
+  },
+  {
+    "path": "./pages/p/cs",
+    "name": "p_cs",
+    "content": [
+      "./pages/p/cs/first_class"
+    ]
+  },
+  {
+    "path": "./pages/p/cypress",
+    "name": "p_cypress",
+    "content": [
+      "./pages/p/cypress/getting_started"
+    ]
+  },
+  {
+    "path": "./pages/p/dynamodb",
+    "name": "p_dynamodb",
+    "content": [
+      "./pages/p/dynamodb/delete",
+      "./pages/p/dynamodb/get",
+      "./pages/p/dynamodb/put"
+    ]
+  },
+  {
+    "path": "./pages/p/eslint",
+    "name": "p_eslint",
+    "content": [
+      "./pages/p/eslint/fix_cypress",
+      "./pages/p/eslint/fix_jest",
+      "./pages/p/eslint/on_commit",
+      "./pages/p/eslint/turn_off_file"
+    ]
+  },
+  {
+    "path": "./pages/p/gatsby",
+    "name": "p_gatsby",
+    "content": [
+      "./pages/p/gatsby/console_message",
+      "./pages/p/gatsby/window_undefined",
+      "./pages/p/gatsby/with_algolia",
+      "./pages/p/gatsby/with_jest",
+      "./pages/p/gatsby/with_redux",
+      "./pages/p/gatsby/with_sass",
+      "./pages/p/gatsby/with_typescript"
+    ]
+  },
+  {
+    "path": "./pages/p/git",
+    "name": "p_git",
+    "content": [
+      "./pages/p/git/better_messages",
+      "./pages/p/git/discard_local",
+      "./pages/p/git/undo"
+    ]
+  },
+  {
+    "path": "./pages/p/github",
+    "name": "p_github",
+    "content": [
+      "./pages/p/github/actions_ci"
+    ]
+  },
+  {
+    "path": "./pages/p/graphql",
+    "name": "p_graphql",
+    "content": [
+      "./pages/p/graphql/enum"
+    ]
+  },
+  {
+    "path": "./pages/p/html",
+    "name": "p_html",
+    "content": [
+      "./pages/p/html/clock",
+      "./pages/p/html/link_to_css",
+      "./pages/p/html/skip_to_content"
+    ]
+  },
+  {
+    "path": "./pages/p/http",
+    "name": "p_http",
+    "content": [
+      "./pages/p/http/headers",
+      "./pages/p/http/methods",
+      "./pages/p/http/status_codes"
+    ]
+  },
+  {
+    "path": "./pages/p/javascript",
+    "name": "p_javascript",
+    "content": [
+      "./pages/p/javascript/access_other_parameters",
+      "./pages/p/javascript/array_first",
+      "./pages/p/javascript/array_last",
+      "./pages/p/javascript/array_last_x",
+      "./pages/p/javascript/array_of_objects_contains",
+      "./pages/p/javascript/array_random",
+      "./pages/p/javascript/async_foreach",
+      "./pages/p/javascript/date_months_ago",
+      "./pages/p/javascript/default_parameters",
+      "./pages/p/javascript/destructuring_rename",
+      "./pages/p/javascript/email_valid",
+      "./pages/p/javascript/filter_array_with_array",
+      "./pages/p/javascript/kebab_case",
+      "./pages/p/javascript/localstorage",
+      "./pages/p/javascript/page_editable",
+      "./pages/p/javascript/page_reload",
+      "./pages/p/javascript/remove_duplicates",
+      "./pages/p/javascript/remove_html_tags",
+      "./pages/p/javascript/replace_in_string",
+      "./pages/p/javascript/reverse_string",
+      "./pages/p/javascript/split_in_chunks",
+      "./pages/p/javascript/string_ends_with",
+      "./pages/p/javascript/string_starts_with",
+      "./pages/p/javascript/timestamp"
+    ]
+  },
+  {
+    "path": "./pages/p/lambda",
+    "name": "p_lambda",
+    "content": [
+      "./pages/p/lambda/invoke_another",
+      "./pages/p/lambda/schedule",
+      "./pages/p/lambda/with_typescript",
+      "./pages/p/lambda/with_webpack"
+    ]
+  },
+  {
+    "path": "./pages/p/node",
+    "name": "p_node",
+    "content": [
+      "./pages/p/node/create_directory_if_doesnt_exist",
+      "./pages/p/node/process_manager"
+    ]
+  },
+  {
+    "path": "./pages/p/npm",
+    "name": "p_npm",
+    "content": [
+      "./pages/p/npm/private"
+    ]
+  },
+  {
+    "path": "./pages/p/other",
+    "name": "p_other",
+    "content": [
+      "./pages/p/other/02-fix-0909006C-pem-error",
+      "./pages/p/other/04-copy-css-styles-from-element-with-dev-tools",
+      "./pages/p/other/07-generate-random-hex-code",
+      "./pages/p/other/101-how-to-use-curl",
+      "./pages/p/other/21-advanced-googling",
+      "./pages/p/other/23-open-all-google-results-in-new-tab",
+      "./pages/p/other/32-self-host-google-fonts",
+      "./pages/p/other/33-view-layout-of-every-website",
+      "./pages/p/other/46-rethinking-fuzzy-search",
+      "./pages/p/other/52-client-side-search-with-fusejs",
+      "./pages/p/other/54-remove-apps-from-chrome-bookmark-bar",
+      "./pages/p/other/59-calculating-uncompressed-jpg-image-file-size",
+      "./pages/p/other/76-convert-celsius-temperature-to-fahrenheit-in-javascript",
+      "./pages/p/other/77-text-editor-snippets-made-easy",
+      "./pages/p/other/81-autocomplete-filenames-based-on-pattern-in-zsh",
+      "./pages/p/other/87-default-font-stack-and-why-is-it-awesome"
+    ]
+  },
+  {
+    "path": "./pages/p/puppeteer",
+    "name": "p_puppeteer",
+    "content": [
+      "./pages/p/puppeteer/screenshot"
+    ]
+  },
+  {
+    "path": "./pages/p/react",
+    "name": "p_react",
+    "content": [
+      "./pages/p/react/bind_input",
+      "./pages/p/react/count_characters",
+      "./pages/p/react/list_array",
+      "./pages/p/react/password_input"
+    ]
+  },
+  {
+    "path": "./pages/p/rust",
+    "name": "p_rust",
+    "content": [
+      "./pages/p/rust/variables"
+    ]
+  },
+  {
+    "path": "./pages/p/sass",
+    "name": "p_sass",
+    "content": [
+      "./pages/p/sass/modules"
+    ]
+  },
+  {
+    "path": "./pages/p/seo",
+    "name": "p_seo",
+    "content": [
+      "./pages/p/seo/checklist"
+    ]
+  },
+  {
+    "path": "./pages/p/social_image",
+    "name": "p_social_image",
+    "content": [
+      "./pages/p/social_image/0_idea",
+      "./pages/p/social_image/1_setup",
+      "./pages/p/social_image/2_options",
+      "./pages/p/social_image/3_template"
+    ]
+  },
+  {
+    "path": "./pages/p/tmux",
+    "name": "p_tmux",
+    "content": [
+      "./pages/p/tmux/94-tmux-commands-i-always-forget",
+      "./pages/p/tmux/panes",
+      "./pages/p/tmux/sessions",
+      "./pages/p/tmux/windows"
+    ]
+  },
+  {
+    "path": "./pages/p/vim",
+    "name": "p_vim",
+    "content": [
+      "./pages/p/vim/mouse_scroll",
+      "./pages/p/vim/netrw",
+      "./pages/p/vim/splits",
+      "./pages/p/vim/update_configuration"
+    ]
+  },
+  {
+    "path": "./pages/p/vscode",
+    "name": "p_vscode",
+    "content": [
+      "./pages/p/vscode/eslint_on_typescript"
+    ]
+  },
+  {
+    "path": "./pages/p/yarn",
+    "name": "p_yarn",
+    "content": [
+      "./pages/p/yarn/upgrade"
+    ]
+  }
+]

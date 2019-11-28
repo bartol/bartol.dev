@@ -1,9 +1,0 @@
-<p>Yeah, we've all been there. You accidentally committed but forgot to add one file. Quick! Search how to undo it on Stack Overflow! This comment looks nice, lets copy it in terminal. Ohh, this command messed up my whole project. I guess I'll just delete and clone last version from Github.</p>
-<p>You have sure encountered this issue many times, I certainly have. But you shouldn't anymore!</p>
-<p>All you need to is run this command.</p>
-<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> reset --hard HEAD^</span></code></pre>
-<h2>But I pushed my commit to Github</h2>
-<p><em>Am I screwed?</em></p>
-<p>No, just run these commands instead.</p>
-<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> reset --hard HEAD^</span><br><span class="highlight-line"><span class="token function">git</span> push origin -f</span></code></pre>
-<p>That's it! Be careful next time!</p>

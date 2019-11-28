@@ -1,6 +1,0 @@
-<p>ES6 is fun! And you should use it, but you can't write ES6 and ES modules out of box in Lambda Functions. We will need help from <a href="https://serverless.com/">Serverless Framework</a> and few of its <a href="https://serverless.com/plugins/">plugins</a>.</p>
-<p>Make sure that you npm/yarn initialized your repository and then install these packages.</p>
-<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">yarn</span> <span class="token function">add</span> -D serverless-bundle</span></code></pre>
-<p>And another thing you have to do is add these two lines to <code>serverless.yml</code>.</p>
-<pre class="language-yaml"><code class="language-yaml"><span class="highlight-line"><span class="token key atrule">plugins</span><span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token punctuation">-</span> serverless<span class="token punctuation">-</span>bundle</span></code></pre>
-<p>Now you can use stuff like <code>export default</code> and <code>import x from 'x'</code> in your function handlers.</p>

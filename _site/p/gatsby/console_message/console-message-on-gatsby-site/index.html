@@ -1,9 +1,0 @@
-<p>If you want to add console message on Gatsby website but don't want
-to mess with <code>useEffect</code> or <code>componentDidMount</code>, easiest way will be
-to do it in <code>gatsby-browser.js</code> file.</p>
-<p>Gatsby browser file will be skipped when statically generating site
-and will be executed on every page. It can be used to import global
-styles, but also to log messages.</p>
-<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token comment">// gatsby-browser.js</span></span><br><span class="highlight-line">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">)</span></span></code></pre>
-<p>And that is it. On next site visit you'll be greeted with message in
-your console.</p>

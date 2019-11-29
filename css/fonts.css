@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Fira Sans Regular';
+  src: url('../fonts/Fira_Sans_Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fira Sans Italic';
+  src: url('../fonts/Fira_Sans_Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Fira Sans SemiBold Regular';
+  src: url('../fonts/Fira_Sans_SemiBold_Regular.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dank Mono Regular';
+  src: url('../fonts/Dank_Mono_Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dank Mono Italic';
+  src: url('../fonts/Dank_Mono_Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}

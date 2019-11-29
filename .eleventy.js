@@ -60,6 +60,12 @@ module.exports = function(eleventyConfig) {
     templateFormats: ['njk', 'md'],
   })
 
+  // copy files
+  eleventyConfig.addPassthroughCopy('js')
+  eleventyConfig.addPassthroughCopy('css')
+  eleventyConfig.addPassthroughCopy('fonts')
+  eleventyConfig.addPassthroughCopy('img')
+
   // layout aliases
   eleventyConfig.addLayoutAlias('global', 'global.njk')
 

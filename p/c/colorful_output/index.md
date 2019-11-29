@@ -1,9 +1,7 @@
 ---
 title: Colorful printf output in C
 date: 2019-09-15
-tags:
-  - c
-  - til
+layout: global
 ---
 
 Ehh, default output is plain and boring. Why not spice it up with some colors!

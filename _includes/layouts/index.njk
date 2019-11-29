@@ -27,6 +27,9 @@ collection: root
      {{ js | jsmin | safe }}
    </script>
 
+   <link rel="preload" href="/fonts/Fira_Sans_Regular.woff2" as="font" type="font/woff2">
+   <link rel="preload" href="/fonts/Dank_Mono_Regular.woff2" as="font" type="font/woff2">
+
   </head>
   <body>
     {{ content | safe }}

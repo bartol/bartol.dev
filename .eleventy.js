@@ -75,8 +75,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('img')
 
   // layout aliases
-  eleventyConfig.addLayoutAlias('index', 'layouts/index.njk')
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
+  eleventyConfig.addLayoutAlias('list', 'layouts/list.njk')
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
 
   // minify

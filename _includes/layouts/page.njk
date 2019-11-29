@@ -1,14 +1,37 @@
 ---
-layout: index
-collection: root
+title: Bartol Deak
 root: false
+collection: root
 ---
-{% if root %}
-is root
-{% endif %}
-<ul>
-{%- for post in collections[collection] -%}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{%- endfor -%}
-</ul>
-{{ content | safe }}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <!-- inline minified css -->
+    {% set css %}
+      {% include "css/index.css" %}
+      {% include "css/fonts.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+
+    <!-- inline minified js -->
+   {% set js %}
+     {% include "js/index.js" %}
+   {% endset %}
+   <script>
+     {{ js | jsmin | safe }}
+   </script>
+
+   <link rel="preload" href="/fonts/Fira_Sans_Regular.woff2" as="font" type="font/woff2">
+   <link rel="preload" href="/fonts/Dank_Mono_Regular.woff2" as="font" type="font/woff2">
+
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
+</html>

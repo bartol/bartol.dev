@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bartol.dev/sitemap.xml

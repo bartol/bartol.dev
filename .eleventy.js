@@ -67,7 +67,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('img')
 
   // layout aliases
-  eleventyConfig.addLayoutAlias('global', 'global.njk')
+  eleventyConfig.addLayoutAlias('index', 'layouts/index.njk')
+  eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
+  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
 
   return {
     dir: { input: '.', output: '_site' },

@@ -1,7 +1,7 @@
 ---
 title: Colorful printf output in C
 date: 2019-09-15
-layout: global
+layout: post
 ---
 
 Ehh, default output is plain and boring. Why not spice it up with some colors!

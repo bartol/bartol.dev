@@ -1,5 +1,8 @@
 const { readdirSync } = require('fs')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const htmlmin = require('html-minifier')
+const CleanCSS = require('clean-css')
+const Terser = require('terser')
 
 module.exports = function(eleventyConfig) {
   const excluded_directories = [
@@ -55,6 +58,11 @@ module.exports = function(eleventyConfig) {
     })
   })
 
+  // filters
+  eleventyConfig.addFilter('toJSON', function(obj) {
+    return JSON.stringify(obj)
+  })
+
   // syntax highlight
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ['njk', 'md'],
@@ -70,6 +78,42 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias('index', 'layouts/index.njk')
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
+
+  // minify
+  eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
+    if (process.env.ELEVENTY_PRODUCTION && outputPath.endsWith('.html')) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      })
+      return minified
+    }
+
+    return content
+  })
+
+  eleventyConfig.addFilter('jsmin', function(code) {
+    if (process.env.ELEVENTY_PRODUCTION) {
+      let minified = Terser.minify(code)
+      if (minified.error) {
+        console.log('Terser error: ', minified.error)
+        return code
+      }
+
+      return minified.code
+    }
+
+    return code
+  })
+
+  eleventyConfig.addFilter('cssmin', function(code) {
+    if (process.env.ELEVENTY_PRODUCTION) {
+      return new CleanCSS({}).minify(code).styles
+    }
+
+    return code
+  })
 
   return {
     dir: { input: '.', output: '_site' },

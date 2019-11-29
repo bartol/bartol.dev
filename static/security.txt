@@ -1,9 +1,0 @@
-securitytxt.org
-
-# If you would like to report a security issue
-# you can report it to me on e-mail.
-
-Contact: contact@bartol.dev
-Acknowledgments: https://bartol.dev/contributors
-Preferred-Languages: en
-Canonical: https://bartol.dev/security.txt

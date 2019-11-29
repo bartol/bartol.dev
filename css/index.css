@@ -1,0 +1,33 @@
+body {
+  font-family: 'Fira Sans Regular', sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-family: 'Fira Sans SemiBold Regular', 'Fira Sans Regular', sans-serif;
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+em {
+  font-family: 'Fira Sans Italic', 'Fira Sans Regular', sans-serif;
+  font-style: italic;
+}
+
+code {
+  font-family: 'Dank Mono Regular', monospace;
+}

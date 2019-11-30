@@ -22,6 +22,9 @@ module.exports = function(eleventyConfig) {
         .join('_') || 'root'
 
     eleventyConfig.addCollection(collectionName, function(collection) {
+      // match posts if there are some in directory,
+      // if not then match categories below
+
       return collection.getFilteredByGlob([
         `${collectionPath}/!(index).md`,
         `${collectionPath}/*/index.md`,

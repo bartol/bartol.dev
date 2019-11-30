@@ -20,7 +20,8 @@ image: /img/thumbnails/default.png
     <!-- inline minified css -->
     {% set css %}
       {% include "css/index.css" %}
-      {% include "css/fonts.css" %}
+      {% include "css/markdown.css" %}
+      {% include "css/code.css" %}
     {% endset %}
     <style>
       {{ css | cssmin | safe }}

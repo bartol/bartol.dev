@@ -1,60 +1,26 @@
-const { readdirSync } = require('fs')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlmin = require('html-minifier')
 const CleanCSS = require('clean-css')
 const Terser = require('terser')
+const glob = require('glob')
 
 module.exports = function(eleventyConfig) {
-  const excluded_directories = [
-    'node_modules',
-    '.git',
-    'js',
-    'css',
-    'fonts',
-    'img',
-  ]
+  // get collections
+  const list_pages = glob
+    .sync('./!(node_modules|_includes|_data|_site|files)/**/*.md')
+    .filter(path => path.endsWith('index.md'))
 
-  // source collections
-  function getAllCollections(dir) {
-    const content = readdirSync(dir, { withFileTypes: true })
-      .filter(
-        dir =>
-          dir.isDirectory() &&
-          !dir.name.startsWith('_') &&
-          !excluded_directories.includes(dir.name)
-      )
-      .map(dirent => dirent.name)
+  console.log(list_pages)
 
-    if (content.length) {
-      collections.push({
-        path: dir,
-        name:
-          dir
-            .split('/')
-            .slice(1)
-            .join('_') || 'root',
-        content: content.map(e => dir + '/' + e),
-      })
-      content.forEach(path => {
-        getAllCollections(dir + '/' + path)
-      })
-    }
-  }
+  list_pages.forEach(path => {
+    const collectionPath = path.slice(0, -'index.md'.length)
+    const collectionName = path
+      .split('/')
+      .slice(1, -1)
+      .join('_')
 
-  const collections = []
-  getAllCollections('.')
-
-  collections.forEach(collection => {
-    const { name, content } = collection
-
-    eleventyConfig.addCollection(name, function(collection) {
-      return collection.getAll().filter(function(item) {
-        const itemPath = item.inputPath
-          .split('/')
-          .slice(0, -1)
-          .join('/')
-        return content.includes(itemPath)
-      })
+    eleventyConfig.addCollection(collectionName, function(collection) {
+      return collection.getFilteredByGlob(`${collectionPath}/*.md`)
     })
   })
 
@@ -73,6 +39,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('css')
   eleventyConfig.addPassthroughCopy('fonts')
   eleventyConfig.addPassthroughCopy('img')
+  eleventyConfig.addPassthroughCopy('files')
 
   // layout aliases
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')

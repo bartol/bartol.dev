@@ -5,7 +5,14 @@ const Terser = require('terser')
 const glob = require('glob')
 
 module.exports = function(eleventyConfig) {
-  // get collections
+  // add root collection
+  eleventyConfig.addCollection('root', function(collection) {
+    return collection
+      .getFilteredByGlob('./!(node_modules|_includes|_data|_site|files)/*.md')
+      .filter(item => item.inputPath.endsWith('index.md'))
+  })
+
+  // add other collections
   const list_pages = glob
     .sync('./!(node_modules|_includes|_data|_site|files)/**/*.md')
     .filter(path => path.endsWith('index.md'))

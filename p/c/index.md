@@ -1,5 +1,5 @@
 ---
 layout: list
-title: c
+title: C
 collection: p_c
 ---

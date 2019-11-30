@@ -1,5 +1,5 @@
 ---
 layout: list
-title: programming page
+title: Programming
 collection: p
 ---

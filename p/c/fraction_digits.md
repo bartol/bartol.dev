@@ -1,0 +1,24 @@
+---
+layout: post
+title: Set fraction digits to float in C
+---
+
+All you really need to do is add `.2` (for 2 fraction digits) between `%` and `f` in `printf` function.
+
+Here is working example:
+
+```c
+#include <stdio.h>
+
+int main () {
+  float pi;
+
+  pi = 3.1415;
+
+  printf("Pi: %.2f", pi);
+
+  return 0;
+}
+```
+
+That's all there is to it!

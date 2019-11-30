@@ -1,0 +1,4 @@
+---
+layout: list
+collection: root
+---

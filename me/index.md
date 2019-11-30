@@ -1,4 +1,5 @@
 ---
 layout: list
-title: me page
+title: Me
+collection: me
 ---

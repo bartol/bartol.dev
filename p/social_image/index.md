@@ -1,9 +1,5 @@
 ---
-title: Apollo posts
+layout: list
+title: Social image generator
+collection: p_social_image
 ---
-
-<ul>
-{%- for post in collections.p_apollo -%}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{%- endfor -%}
-</ul>

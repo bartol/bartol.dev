@@ -1,9 +1,5 @@
 ---
-title: Apollo posts
+layout: list
+title: ESLint
+collection: p_eslint
 ---
-
-<ul>
-{%- for post in collections.p_apollo -%}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{%- endfor -%}
-</ul>

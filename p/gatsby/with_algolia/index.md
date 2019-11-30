@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Algolia search on Gatsby
 date: 2019-08-06
 tags:

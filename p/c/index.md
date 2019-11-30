@@ -1,5 +1,5 @@
 ---
 layout: list
-title: C posts
+title: c
 collection: p_c
 ---

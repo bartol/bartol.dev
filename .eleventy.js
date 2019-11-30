@@ -5,29 +5,27 @@ const Terser = require('terser')
 const glob = require('glob')
 
 module.exports = function(eleventyConfig) {
-  // add root collection
-  eleventyConfig.addCollection('root', function(collection) {
-    return collection
-      .getFilteredByGlob('./!(node_modules|_includes|_data|_site|files)/*.md')
-      .filter(item => item.inputPath.endsWith('index.md'))
-  })
+  // collections
+  const list_pages = glob.sync(
+    './!(node_modules|_includes|_data|_site|files)/**/index.md'
+  )
 
-  // add other collections
-  const list_pages = glob
-    .sync('./!(node_modules|_includes|_data|_site|files)/**/*.md')
-    .filter(path => path.endsWith('index.md'))
-
-  console.log(list_pages)
+  // add root dir to array (it isn't matched by glob)
+  list_pages.push('./index.md')
 
   list_pages.forEach(path => {
     const collectionPath = path.slice(0, -'index.md'.length)
-    const collectionName = path
-      .split('/')
-      .slice(1, -1)
-      .join('_')
+    const collectionName =
+      path
+        .split('/')
+        .slice(1, -1)
+        .join('_') || 'root'
 
     eleventyConfig.addCollection(collectionName, function(collection) {
-      return collection.getFilteredByGlob(`${collectionPath}/*.md`)
+      return collection.getFilteredByGlob([
+        `${collectionPath}/!(index).md`,
+        `${collectionPath}/*/index.md`,
+      ])
     })
   })
 

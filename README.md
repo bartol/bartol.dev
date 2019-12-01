@@ -1,5 +1,5 @@
 <a href="https://bartol.dev">
-  <img alt="Bartol's logo" src="./static/logo.svg" align="right" width="200" height="205" />
+  <img alt="Bartol's logo" src="https://bartol.dev/img/logo.svg" align="right" width="200" height="205" />
 </a>
 
 # [bartol.dev](https://bartol.dev)
@@ -10,45 +10,41 @@ Personal cyberspace where you can find my thoughts and notes about web developme
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f87ba513-159f-4d19-81a3-1dd06e9ec817/deploy-status)](https://app.netlify.com/sites/bartol/deploys)
 
+## Navigate project
+
+- Directory names same as routes on website.
+
+| Posts about                         |  Directory   |
+| ----------------------------------- | :----------: |
+| [Programming](https://bartol.dev/p) |  [p/](./p/)  |
+| [Electronics](https://bartol.dev/e) |  [e/](./e/)  |
+| [Cooking](https://bartol.dev/c)     |  [c/](./c/)  |
+| [Me](https://bartol.dev/me)         | [me/](./me/) |
+
 ## Run locally
 
-1. Run `cp .env.example .env` and add environment variables.
-
-2. Install dependencies.
+1. Install dependencies.
 
    ```
    yarn
    ```
 
-3. Start development environment.
+2. Start development environment.
 
    ```
    yarn dev
    ```
 
-4. Open browser and navigate to `localhost:8000`
+   Navigate to `localhost:8080` in browser of your choice.
 
-5. Build project
-
-   ```
-   yarn build
-   ```
-
-6. Test project
+3. Generate static site.
 
    ```
-   yarn test
+   yarn prod
    ```
 
 ## Tech stack
 
-- [Gatsby](https://www.gatsbyjs.org)
-- [React](https://reactjs.org/)
-- [GraphQL](https://graphql.org/)
-- [Node.js](https://nodejs.org/en/)
-- [Fuse.js](https://fusejs.io/)
-- [PrismJS](https://prismjs.com/)
-- [Google Analytics Reporting API](https://developers.google.com/analytics/devguides/reporting/core/v3/)
-
-<br />
-<p>Cross-browser testing powered by:<a href="https://www.browserstack.com/"><p><img src='.github/images/browserstack.svg' alt='BrowserStack' height='50px'/><a>
+- [Eleventy](https://www.11ty.io/) - static site generator
+- [Fuse.js](https://fusejs.io/) - client side search
+- [Prism.js](https://prismjs.com/) - syntax highlighting

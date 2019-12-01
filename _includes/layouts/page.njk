@@ -9,7 +9,7 @@ image: /img/thumbnails/default.png
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>{{ title }}</title>
+    <title>{{ title }}{% if page.url !== '/' %} • Bartol's personal cyberspace{% endif %}</title>
     <meta name="description" content="{{ description }}" />
     <meta name="image" content="{{ image }}" />
 

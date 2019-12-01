@@ -49,6 +49,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('img')
   eleventyConfig.addPassthroughCopy('files')
 
+  eleventyConfig.addPassthroughCopy('robots.txt')
+  eleventyConfig.addPassthroughCopy('manifest.webmanifest')
+
   // layout aliases
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
   eleventyConfig.addLayoutAlias('list', 'layouts/list.njk')

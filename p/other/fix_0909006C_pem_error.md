@@ -11,7 +11,7 @@ resources:
 
 First a little bit of backstory. About one month ago I was working on fetching top posts from this blog from Google Analytics and I encountered this pretty cryptic error.
 
-![Error in netlify console](./error.png)
+![Error in netlify console](/img/md/0909006C_pem_error_output.png)
 
 Everything was working perfectly on local environment but on Travis CI and Netlify it was failing. After reading countless Stack Overflow questions and copy-pasting my API keys multiple times I stumbled on [this](https://github.com/googleapis/google-api-nodejs-client/issues/1110#issuecomment-436868760) issue comment.
 

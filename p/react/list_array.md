@@ -28,13 +28,13 @@ Second step is to just map over array in JSX and return list element. Sounds com
 
 If we take a look on page, it should look like this.
 
-![List](./result.png)
+![List](/img/md/react_list_array_result.png)
 
 ## But wait! There is still one thing we have to do
 
 When you open console you'll be greeted with friendly message.
 
-![Key prop console error](./error.png)
+![Key prop console error](/img/md/react_list_array_error.png)
 
 To fix this we will have to add key prop to list item.
 

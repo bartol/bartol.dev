@@ -39,4 +39,4 @@ But you still have no way to toggle between states. You'll need to create button
 
 That is it. You have just created password input that can be revealed, so cool!
 
-![password input demo](demo.gif)
+![password input demo](/img/md/react_password_input_demo.gif)

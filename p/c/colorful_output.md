@@ -20,7 +20,7 @@ int main () {
 
 This example will produce output:
 
-![output](/img/md/output.png)
+![output](/img/md/c_colorful_output.png)
 
 Here is table of different ANSI colors you can use.
 

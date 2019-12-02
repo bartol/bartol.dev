@@ -5,7 +5,7 @@ title: Gatsby fix window is not defined
 
 If you've tried to use browser window object recently, you've probably encountered window reference error similar to this one.
 
-![window reference error output](error.png)
+![window reference error output](/img/md/gatsby_window_undefined_error.png)
 
 That is because you are calling browser API that isn't available for Gatsby when building static HTML. To fix this error you need to wrap code where you're accessing window in if statement so it's not run when window isn't defined.
 

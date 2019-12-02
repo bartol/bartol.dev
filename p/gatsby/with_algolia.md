@@ -28,7 +28,7 @@ First things first, you should register for [Algolia account](https://www.algoli
 
 When you get to your dashboard, navigate to 'Indices' and click big blue button called 'Create Index'. Give it a name and leave it for now.
 
-![Create algolia index](./create-index.png)
+![Create algolia index](/img/md/algolia_create_index.png)
 
 After that is done, we are going back to terminal to install some dependencies for our project.
 
@@ -44,7 +44,7 @@ Okay, okay...can you tell me **_where to find those environment variables?_**
 
 In tab called 'API keys' you can find your Application ID, Search-Only API Key and Admin API Key. Index name is name that you gave to your Index few minutes ago.
 
-![Algolia api keys](./api-keys.png)
+![Algolia api keys](/img/md/algolia_api_keys.png)
 
 Copy them to file called .env.production in root of your project.
 
@@ -249,13 +249,13 @@ export default PostPreview
 
 List of attributes that will be used for searching. Navigate to your Index, click on tab 'Configuration' and in navigation bar select 'Searchable attributes'. Add all your Searchable attributes and rank them based on importance.
 
-![how to add searchable attributes](./searchable-attributes.png)
+![how to add searchable attributes](/img/md/algolia_searchable_attributes.png)
 
 ### Sorting
 
 For sorting to work you will need to create datetimestamp in your frontmatter. Date timestamp must be in [unix time](https://en.wikipedia.org/wiki/Unix_time) format. Here is link to [online date to unix timestamp converter](https://www.unixtimestamp.com/), or if you are using [Alfred](https://www.alfredapp.com/) you can install [this](http://www.packal.org/workflow/timestamp) awesome workflow.
 
-![Configure Algolia sorting](./sorting.png)
+![Configure Algolia sorting](/img/md/algolia_sorting.png)
 
 ### Conclusion
 

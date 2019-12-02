@@ -5,9 +5,26 @@ collection: root
 {% if collection === 'root' %}
 is root
 {% endif %}
+
 <ul>
-{%- for post in collections[collection] -%}
-  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{%- endfor -%}
+  {%- for post in collections[collection] | sortList(sort) -%}
+    <li>
+      <a href="{{ post.url }}">
+        <h2>{{ post.data.title }}</h2>
+
+        <h3>
+          {% if collections[post.data.collection] %}
+
+          {{ collections[post.data.collection] | length }}
+          post{% if collections[post.data.collection] | length > 1 %}s{% endif %}
+
+          {% else %}
+
+          Last updated in {{ post.date | formatDate }}
+
+          {% endif %}
+        </h3>
+      </a>
+    </li>
+  {%- endfor -%}
 </ul>
-{{ content | safe }}

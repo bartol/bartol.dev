@@ -41,6 +41,26 @@ module.exports = function(eleventyConfig) {
     return date.getMonth() + 1 + '/' + date.getFullYear()
   })
 
+  eleventyConfig.addFilter('sortList', function(list, sort) {
+    if (sort === 'abc') {
+      return list.sort(function(a, b) {
+        if (a.data.title < b.data.title) return -1
+        if (a.data.title > b.data.title) return 1
+        return 0
+      })
+    }
+
+    if (sort === 'custom') {
+      return list.sort(function(a, b) {
+        return a.data.order - b.data.order
+      })
+    }
+
+    return list.sort(function(a, b) {
+      return b.date - a.date
+    })
+  })
+
   // syntax highlight
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ['njk', 'md'],

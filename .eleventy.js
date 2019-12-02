@@ -37,6 +37,10 @@ module.exports = function(eleventyConfig) {
     return JSON.stringify(obj)
   })
 
+  eleventyConfig.addFilter('formatDate', function(date) {
+    return date.getMonth() + 1 + '/' + date.getFullYear()
+  })
+
   // syntax highlight
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ['njk', 'md'],
@@ -56,6 +60,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
   eleventyConfig.addLayoutAlias('list', 'layouts/list.njk')
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk')
+
+  // deep merge frontmatter data
+  eleventyConfig.setDataDeepMerge(true)
 
   // minify
   eleventyConfig.addTransform('htmlmin', function(content, outputPath) {

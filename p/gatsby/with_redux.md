@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting started with Redux on Gatsby site
+date: 2019-08-10
 ---
 
 For the past few days I was learning Redux to use it for exciting project that will be built with Gatsby. After unsuccessfully crawling Google for "getting started" guide and experimenting for couple hours earlier today I present you this guide.

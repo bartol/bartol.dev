@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Better Commit Messages
+date: 2019-10-10
 ---
 
 I'll start with a disclaimer. Whole idea and content from this article is heavily inspired by [Semantic Commit Messages](https://seesparkbox.com/foundry/semantic_commit_messages) post.

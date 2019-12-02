@@ -1,5 +1,5 @@
 ---
 layout: list
-title: AWS Lambda
+title: Lambda Functions
 collection: p_lambda
 ---

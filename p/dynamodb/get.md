@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Get item from DynamoDB table
+date: 2019-09-14
 ---
 
 Have you just read my previous article about putting data in DynamoDB? And are you wondering how to get that data? You are at the right place. First of all you need to add permission for lambda to get item from DynamoDB.

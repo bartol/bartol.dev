@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Gatsby fix window is not defined
+date: 2019-09-19
 ---
 
 If you've tried to use browser window object recently, you've probably encountered window reference error similar to this one.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Count characters in input React
+date: 2019-09-23
 ---
 
 You need to count characters of input? And you don't know how? Lucky you! It's super easy. And I'll show you how. First thing you have to do, after importing React library, is initialize characters state. I'll be using Hooks for this.

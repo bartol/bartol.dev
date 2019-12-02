@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Sass modules
+date: 2019-10-22
 ---
 
 Well, everything in 2019 has modules, and Sass is not an exception. Introduced earlier this month, Sass modules are big addition to Sass in general after long feature freeze and stagnation in recent years.

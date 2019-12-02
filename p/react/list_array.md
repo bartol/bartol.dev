@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Create list from array in React
+date: 2019-08-08
 ---
 
 Lists. Lists are everywhere. On social media sites, on blogs, on e-commerce. But it is so annoying to write `<li>Item 1</li>` every time you want to add item to list. There is sure a better way.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reload page using JavaScript
+date: 2019-08-31
 ---
 
 Hey, if you have option of refreshing something without reloading whole page I will strongly advise you to do it that way. However, if you really have to reload page here is how you do it.

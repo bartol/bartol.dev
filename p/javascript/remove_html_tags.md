@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Remove HTML tags from string
+date: 2019-10-19
 ---
 
 If you want to remove HTML tags from string for one reason or another, the easiest way will be using regular expressions (regex). Regex in code example below will replace everything inside `<` and `>`. This _can_ prevent XSS (cross-site scripting) vulnerability but it is not really flexible (normal content inside `<` and `>` will be replaced), so recommended way for doing this in production is using library like [DOMPurify](https://github.com/cure53/DOMPurify).

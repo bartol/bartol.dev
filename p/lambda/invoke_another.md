@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Invoke Lambda from another Lambda asynchronously
+date: 2019-09-05
 ---
 
 First thing we have to do is add permission to invoke function. Add following to your `serverless.yml` and replace `Resource` with [AWS ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of your function.

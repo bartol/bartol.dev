@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Console message on Gatsby site
+date: 2019-11-16
 ---
 
 If you want to add console message on Gatsby website but don't want

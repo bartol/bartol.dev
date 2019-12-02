@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Get last element in array
+date: 2019-09-27
 ---
 
 Getting item in array is as simple as calling `array[index]` for example `array[2]`. You can use same principle to get last item in array. Let's say you have array similar to this.

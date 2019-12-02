@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fix Cypress tests ESLint errors
+date: 2019-08-19
 ---
 
 If you have recently tried using [Cypress](https://www.cypress.io/) in project with ESLint, you've probably been greeted with a ton of errors. Luckily fix is quick and easy.

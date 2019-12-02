@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Vim netrw cheatsheet
+date: 2019-11-04
 ---
 
 Netrw is file explorer built in Vim. While not perfect, I don't think it

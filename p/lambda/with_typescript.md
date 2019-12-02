@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Type check AWS Lambda Functions using TypeScript
+date: 2019-09-24
 ---
 
 For the past few days I was working on Lambda Function that programmatically generates thumbnails for social media from URL. Also, I really want to dive in TypeScript more, so this was great opportunity to test the water with small project. Setting up TypeScript for Lambda was surprisingly easy thanks to [this serverless plugin](https://github.com/prisma-labs/serverless-plugin-typescript).

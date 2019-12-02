@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Set character width of number in C
+date: 2019-09-18
 ---
 
 I have recently found out that you can set width of number in C. This can be really useful for aligning numbers if they don't have same width. All you need to do is add number of characters between `%` and `d` (for int) in `printf` statement.

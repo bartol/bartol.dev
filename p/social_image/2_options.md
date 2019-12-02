@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Social image generator - Part 2 Options
+date: 2019-10-06
 ---
 
 In previous article I've gone over setting up project and environment with Serverless Framework and TypeScript. Today, we will discuss options you can pass to function.

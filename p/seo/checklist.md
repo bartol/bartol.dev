@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SEO checklist
+date: 2019-10-05
 ---
 
 This checklist contains helpful SEO tips and some useful link. I use it day-to-day with my personal projects.

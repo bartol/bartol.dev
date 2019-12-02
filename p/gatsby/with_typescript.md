@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Use TypeScript with Gatsby
+date: 2019-11-12
 ---
 
 TypeScript is hot new thing. Everyone is using it. And there is a reason for it.

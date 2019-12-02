@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Reverse string in JavaScript
+date: 2019-09-12
 ---
 
 You have string to reverse? Easy, just install _yet another_ package from npm! I'm kidding, there is an easier way with some array magic.

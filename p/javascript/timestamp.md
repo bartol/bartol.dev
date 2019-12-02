@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Calculate Unix timestamp from date
+date: 2019-08-24
 ---
 
 Unix time is a system for describing a point in time. It is the number of seconds that have elapsed since 00:00:00 Thursday, 1 January 1970. Good use case for it is sorting items (or blog posts) by time as it's much easier to compare 2 numbers than 2 strings.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Check if array of objects contains value
+date: 2019-08-23
 ---
 
 This is one of those simple problems I encounter every few days and find myself searching through visited stack overflow questions, so here is solution, once and for all.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Now
+date: 2019-10-16
 ---
 
 Hey, this is my 'now' page. Here you can find things that I am working on _right now_.

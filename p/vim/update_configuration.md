@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Update Vim configuration
+date: 2019-11-09
 ---
 
 People on the internet say Vim is fastest and most configurable text editor of

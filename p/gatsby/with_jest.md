@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Gatsby Unit and Integration tests with Jest
+date: 2019-08-21
 ---
 
 [Jest](https://jestjs.io/) is JavaScript testing framework used for testing plenty of technologies, including Gatsby (React). To get started all you need is to install [react testing library](https://github.com/testing-library/react-testing-library) (which will add React related functionality like rendering components) and Jest itself.

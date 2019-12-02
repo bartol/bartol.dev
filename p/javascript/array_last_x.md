@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Get last X items from array
+date: 2019-08-29
 ---
 
 Here is yet another one of those JavaScript 'one line utility' articles.

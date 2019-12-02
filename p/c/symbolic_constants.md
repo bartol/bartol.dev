@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Symbolic constants in C
+date: 2019-09-22
 ---
 
 Symbolic constants in C are values that will never change. Why not just use variables you might ask?

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Put item in DynamoDB table
+date: 2019-09-11
 ---
 
 Okay, you've received some data in your lambda function and you want to save it to DynamoDB table. First thing you have to do is add permission to put item in `serverless.yml`.

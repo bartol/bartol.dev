@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enums in GraphQL
+date: 2019-10-15
 ---
 
 Enum (short for Enumeration) is GraphQL special type that represents set of predefined values. You'll mostly use this type when you need more options than just Boolean, but still want to use only controlled set of values.

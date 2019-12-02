@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Common HTTP methods
+date: 2019-11-02
 ---
 
 Quick aside. After writing about common HTTP status codes the other day, I figured out that I should also write about common methods and headers. So here is methods part.

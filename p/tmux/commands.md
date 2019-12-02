@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Tmux commands I always forget
+date: 2019-11-07
 ---
 
 <!-- split this post -->

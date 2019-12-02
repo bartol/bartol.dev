@@ -8,7 +8,9 @@
   "scripts": {
     "dev": "eleventy --serve --quiet",
     "prod": "ELEVENTY_PRODUCTION=true eleventy",
-    "debug": "DEBUG=Eleventy* yarn dev"
+    "debug": "DEBUG=Eleventy* yarn dev",
+    "links-external": "hyperlink -r --root _site --canonicalroot https://bartol.dev/ --skip _site/*.html | tap-spot",
+    "links-internal": "hyperlink -ri --root _site --canonicalroot https://bartol.dev/ --skip _site/*.html | tap-spot"
   },
   "dependencies": {},
   "devDependencies": {
@@ -18,7 +20,9 @@
     "eslint": "^6.7.1",
     "glob": "^7.1.6",
     "html-minifier": "^4.0.0",
+    "hyperlink": "^4.4.3",
     "prettier": "^1.19.1",
+    "tap-spot": "^1.1.1",
     "terser": "^4.4.0"
   }
 }

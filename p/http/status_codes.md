@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Common HTTP status codes
+date: 2019-10-30
 ---
 
 These are some of the most common HTTP codes that everyone working or building servers should know. Here is high level meaning of codes. I'll go more in depth later.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: HTML link to CSS file
+date: 2019-08-15
 ---
 
 This one is so simple yet, I have to google it every time I need it.

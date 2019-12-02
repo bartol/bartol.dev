@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Schedule serverless functions
+date: 2019-11-15
 ---
 
 Serverless functions are most effective for jobs that need to happen

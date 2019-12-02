@@ -1,6 +1,7 @@
 ---
 layout: post
 title: End to End testing with Cypress
+date: 2019-08-18
 ---
 
 "What is End to End or E2E testing?", you may ask. It sounds fairly complicated. Don't judge a book by its cover. It is basically robot that opens browser and runs tests on website.

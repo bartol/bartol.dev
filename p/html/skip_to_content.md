@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Skip to content button
+date: 2019-10-14
 ---
 
 Skip to content buttons might seem a bit pointless at first but your users that navigate site with keyboard will love it. You most likely have some form of navigation on your page. Users who need to get to main content will have to hit tab like 10 or more times on every page. Not really most interesting thing to do on website.

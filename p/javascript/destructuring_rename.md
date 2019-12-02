@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Rename variable when destructuring
+date: 2019-09-21
 ---
 
 One of my favorite ES6 additions to JavaScript is array and object destructuring. And one of great things you might not know about it is that you can rename destructured variable.

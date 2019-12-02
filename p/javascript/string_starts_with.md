@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Check if string starts or ends with text
+date: 2019-09-01
 ---
 
 It's as easy as calling `startsWith()` or `endsWith()` methods on JavaScript string prototype.

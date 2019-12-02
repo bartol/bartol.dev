@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Private property in package.json
+date: 2019-11-17
 ---
 
 Private property in `package.json` is used to prevent accidental

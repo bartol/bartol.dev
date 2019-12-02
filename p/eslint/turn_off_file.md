@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Turn off ESLint rule for a file
+date: 2019-11-05
 ---
 
 ESLint is probaby the best tool to improve quality of your JavaScript

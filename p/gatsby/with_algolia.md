@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Algolia search on Gatsby
+date: 2019-08-06
 ---
 
 As a first _real_ post in which you can learn something, I have chosen Algolia search because this is one of things for which I didn't really find complete tutorial. I would like to write this post with more clarification around little things that took me _too long_ to figure out myself.

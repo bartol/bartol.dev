@@ -1,6 +1,7 @@
 ---
 layout: post
 title: First class data type
+date: 2019-10-18
 ---
 
 Some data types in programming languages can be "first class". But what does that really mean?

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Vim splits
+date: 2019-11-11
 ---
 
 Every day while implementing new features or fixing bugs you reference other

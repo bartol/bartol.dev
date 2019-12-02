@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Get date X months ago
+date: 2019-08-30
 ---
 
 You actually can't do this in one-liner. Can't really understand why. Future me, please update this after that 'AHA' moment.

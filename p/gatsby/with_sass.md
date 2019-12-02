@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Use Sass on Gatsby site
+date: 2019-09-09
 ---
 
 What? Sass in 2019? Isn't that _old_? Well, it isn't fancy new bleeding edge web technology, but it's very useful and I love it. So here is how to let Gatsby know you want to use Sass on your website.

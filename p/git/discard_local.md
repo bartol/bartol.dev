@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Discard local changes for file in Git
+date: 2019-11-10
 ---
 
 I am sure you've been in situation where you made significant changes to file

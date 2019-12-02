@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Bind input to state with React Hooks
+date: 2019-08-13
 ---
 
 Used for _every_ React form, binding input to state is must have in your React toolbox. Now with hooks, easier than ever.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Variables in Rust
+date: 2019-11-18
 ---
 
 I've recently started learning rust and reading "Rust the programming

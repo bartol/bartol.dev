@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Use Webpack to write AWS Lambda Functions in ES6
+date: 2019-09-08
 ---
 
 ES6 is fun! And you should use it, but you can't write ES6 and ES modules out of box in Lambda Functions. We will need help from [Serverless Framework](https://serverless.com/) and few of its [plugins](https://serverless.com/plugins/).

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Take screenshot of web page with Puppeteer
+date: 2019-10-29
 ---
 
 If you haven't already see, [Puppeteer](https://github.com/GoogleChrome/puppeteer) is new thing from Google Chrome team. It's node API for headless chrome. I have already used it for few automation scripts, so I figured out I'll write about it, web page screenshots for today. Let's first install package. This version will include Chromium built in. You can download `puppeteer-core` and supply your own Chromium executable.

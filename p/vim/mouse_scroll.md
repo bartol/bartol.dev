@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Enable mouse scroll in Vim
+date: 2019-11-08
 ---
 
 After using Vim for about 10 or so days, one of the most annoying things was

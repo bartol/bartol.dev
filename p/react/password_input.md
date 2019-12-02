@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Password input reveal
+date: 2019-10-17
 ---
 
 Today I was building some random login form and I had to create button that can toggle between shown and hidden password. It was surprisingly easy to do, but I still want to share it here.

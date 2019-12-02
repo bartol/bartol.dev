@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hello World
+date: 2019-08-05
 ---
 
 Hey! Welcome to my blog! As this is my first post I traditionally named it Hello World. Very nerdy indeed. In this post I'll go over past, present and future of this blog.

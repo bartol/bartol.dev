@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GitHub Actions CI
+date: 2019-11-01
 ---
 
 What? Another CI service? Don't we already have Travis CI, Circle CI and others? Well yes, there is no particular need for new service in that area. It's already pretty crowded. But GitHub Actions have an advantage. Most of the code that I am working on is already up on GitHub. Why not do CI there also.

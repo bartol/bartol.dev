@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Add analytics to Apollo server
+date: 2019-09-30
 ---
 
 Adding analytics to Apollo Server is a great way to monitor its performance and spot weak points of it (slow queries, ...).

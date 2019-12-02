@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fix Jest tests ESLint errors
+date: 2019-08-22
 ---
 
 Ah those ESLint errors again... At least they are easy to fix.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Difference between i++ and ++i in C
+date: 2019-10-01
 ---
 
 I am sure there was at least one time you've wondered why does C have `i++` and `++i` operators. Me too. That's why I've made this article.

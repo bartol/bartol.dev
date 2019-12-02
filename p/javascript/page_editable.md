@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Make whole web page editable
+date: 2019-11-06
 ---
 
 While randomly browsing reddit few days ago, I've found this really nice trick.

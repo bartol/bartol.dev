@@ -1,6 +1,7 @@
 ---
 layout: post
 title: JavaScript Async forEach
+date: 2019-08-14
 ---
 
 I have recently worked on async data fetching where I needed to use forEach method to format every item in array. And it didn't work. For good 5-6 hours. I've tried everything. Only to find that JavaScript forEach method doesn't play nicely with async functions.

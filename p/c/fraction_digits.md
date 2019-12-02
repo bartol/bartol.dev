@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Set fraction digits to float in C
+date: 2019-09-17
 ---
 
 All you really need to do is add `.2` (for 2 fraction digits) between `%` and `f` in `printf` function.

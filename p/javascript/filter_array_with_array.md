@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Filter array with another array
+date: 2019-10-27
 ---
 
 When I was working on v2 of this website (BTW now working on v3), about 2 months ago, I have encountered this seemingly easy feature to implement. Select one or more tags to filter results. And oh, boy it was harder than expected. After searching, I've found this mysterious function that gets the job done. It's like black box. I don't understand anything in it. But it works.

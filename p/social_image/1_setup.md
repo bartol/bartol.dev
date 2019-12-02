@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Social image generator - Part 1 Setup
+date: 2019-10-04
 ---
 
 Before jumping into program solving and coding I have to set up environment. This includes serverless config, typescript and similar.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Replace text in string JavaScript
+date: 2019-09-04
 ---
 
 Today I learned that JavaScript has replace method. It's fairly simple and gets the job done.

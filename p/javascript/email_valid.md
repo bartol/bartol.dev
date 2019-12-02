@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Check if email is valid
+date: 2019-09-03
 ---
 
 Just by searching email validations on google you'll find stack overflow post with massive amount of different approaches to this problem. And you'll probably be as confused as I was. Do I use this massive regex from RFC something standard? Or just simple regex? Or some package from npm?

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Remove duplicates from array
+date: 2019-10-26
 ---
 
 If you have array of simple data types like strings or numbers and you want to remove duplicates it's your lucky day. Because it's super easy. Filtering object is much more difficult.

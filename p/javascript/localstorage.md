@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Working with browser local storage
+date: 2019-09-13
 ---
 
 Okay, you heard about that cool thingy called local storage where you can save client side data, but you don't know how to really use it. Great, you'll learn it here but first lets talk limitations.

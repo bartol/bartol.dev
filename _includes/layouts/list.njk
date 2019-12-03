@@ -6,6 +6,8 @@ collection: root
 is root
 {% endif %}
 
+{% include "components/nav.njk" %}
+
 <ul>
   {%- for post in collections[collection] | sortList(sort) -%}
     <li>

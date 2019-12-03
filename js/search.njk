@@ -1,0 +1,14 @@
+---
+permalink: /js/search.json
+---
+{
+  "posts": [
+  {%- for entry in collections.posts %}
+    {
+      "url": "{{ entry.url }}",
+      "title": "{{ entry.data.title | striptags }}",
+      "content": {{ entry.templateContent | striptags(true) | toJSON | safe }}
+    }{% if loop.revindex0 != 0 %},{% endif %}
+  {%- endfor %}
+  ]
+}

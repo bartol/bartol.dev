@@ -34,6 +34,12 @@ module.exports = function(eleventyConfig) {
     })
   })
 
+  eleventyConfig.addCollection('posts', function(collection) {
+    return collection.getAll().filter(function(item) {
+      return item.data.layout === 'post'
+    })
+  })
+
   // filters
   eleventyConfig.addFilter('toJSON', function(obj) {
     return JSON.stringify(obj)

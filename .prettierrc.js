@@ -4,5 +4,5 @@ module.exports = {
   jsxSingleQuote: true,
   tabWidth: 2,
   useTabs: false,
-  trailingComma: "es5"
+  trailingComma: 'es5',
 }

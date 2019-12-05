@@ -7,7 +7,7 @@ permalink: /js/search.json
     {
       "url": "{{ entry.url }}",
       "title": "{{ entry.data.title | striptags }}",
-      "content": {{ entry.templateContent | striptags(true) | toJSON | safe }}
+      "category": "{{ entry.url | urlToCollection | collectionToCategory }}"
     }{% if loop.revindex0 != 0 %},{% endif %}
   {%- endfor %}
   ]

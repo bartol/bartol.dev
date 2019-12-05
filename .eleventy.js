@@ -69,6 +69,14 @@ module.exports = function(eleventyConfig) {
     })
   })
 
+  eleventyConfig.addFilter('urlToCollection', function(url) {
+    return url.split('/').slice(1, -2).join('_')
+  })
+
+  eleventyConfig.addFilter('collectionToCategory', function(collection) {
+    return collection.split('_').slice(-1)
+  })
+
   // syntax highlight
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ['njk', 'md'],

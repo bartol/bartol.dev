@@ -73,17 +73,14 @@ image: /img/thumbnails/default.png
       title="Bartol's personal cyberspace RSS Feed"
       href="/rss.xml"
     />
-
-    <!-- preload search data -->
-    <link rel="prefetch" href="/posts.json" />
-    <link rel="prefetch" href="/colors.json" />
   </head>
   <body>
 
     {{ content | safe }}
 
     <!-- search -->
-    <script src="/js/search.js" type="module" async></script>
+    <script src="/js/modules/fuse.js" async></script>
+    <script src="/js/search.js" async></script>
 
     <!-- message in console -->
     <script src="/js/message.js" async></script>

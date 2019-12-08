@@ -77,6 +77,42 @@ module.exports = function(eleventyConfig) {
     return collection.split('_').slice(-1)
   })
 
+  eleventyConfig.addFilter('getLength', function(collections, collection) {
+    // get all collections
+    // filter out collections that aren't wanted collection or its children
+    // filter out parent collection if it has children
+    // for each collection get length
+    // add all children lengths to parent
+
+    const length = Object.keys(collections).filter(c => {
+      if(collection === c) return true
+
+      let match = true
+      const collection_split = `${collection}_`.split('')
+      const c_split = c.split('')
+      collection_split.forEach((_, index) => {
+        if(collection_split[index] !== c_split[index]) {
+          match = false
+        }
+      })
+      return match
+    }).filter((c, _, arr) => {
+      let match = true
+      arr.forEach(item => {
+        if(item.startsWith(c + '_')) {
+          match = false
+        }
+      })
+      return match
+    }).map(c => {
+      return collections[c].length
+    }).reduce((a, b) => a + b)
+
+    const plural = length > 1 ? 's' : ''
+
+    return `${length} post${plural}`
+  })
+
   // syntax highlight
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ['njk', 'md'],

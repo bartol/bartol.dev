@@ -17,8 +17,7 @@ is root
         <h3>
           {% if collections[post.data.collection] %}
 
-          {{ collections[post.data.collection] | length }}
-          post{% if collections[post.data.collection] | length > 1 %}s{% endif %}
+          {{ collections | getLength(post.data.collection) }}
 
           {% else %}
 

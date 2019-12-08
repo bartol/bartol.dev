@@ -14,12 +14,13 @@ Personal cyberspace where you can find my thoughts and notes about web developme
 
 - Directory names same as routes on website.
 
-| Posts about                         |  Directory   |
-| ----------------------------------- | :----------: |
-| [Programming](https://bartol.dev/p) |  [p/](./p/)  |
-| [Electronics](https://bartol.dev/e) |  [e/](./e/)  |
-| [Cooking](https://bartol.dev/c)     |  [c/](./c/)  |
-| [Me](https://bartol.dev/me)         | [me/](./me/) |
+| Posts about                          |  Directory   |
+| ------------------------------------ | :----------: |
+| [Programming](https://bartol.dev/p/) |  [p/](./p/)  |
+| [Me](https://bartol.dev/me/)         | [me/](./me/) |
+
+<!--| [Electronics](https://bartol.dev/e/) |  [e/](./e/)  |-->
+<!--| [Cooking](https://bartol.dev/c/)     |  [c/](./c/)  |-->
 
 ## Run locally
 

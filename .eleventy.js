@@ -5,6 +5,7 @@ const glob = require('glob')
 const markdownIt = require('markdown-it')
 const iterator = require('markdown-it-for-inline')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const rss = require('@11ty/eleventy-plugin-rss')
 
 module.exports = function(eleventyConfig) {
   // collections
@@ -70,7 +71,10 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addFilter('urlToCollection', function(url) {
-    return url.split('/').slice(1, -2).join('_')
+    return url
+      .split('/')
+      .slice(1, -2)
+      .join('_')
   })
 
   eleventyConfig.addFilter('collectionToCategory', function(collection) {
@@ -84,39 +88,45 @@ module.exports = function(eleventyConfig) {
     // for each collection get length
     // add all children lengths to parent
 
-    const length = Object.keys(collections).filter(c => {
-      if(collection === c) return true
+    const length = Object.keys(collections)
+      .filter(c => {
+        if (collection === c) return true
 
-      let match = true
-      const collection_split = `${collection}_`.split('')
-      const c_split = c.split('')
-      collection_split.forEach((_, index) => {
-        if(collection_split[index] !== c_split[index]) {
-          match = false
-        }
+        let match = true
+        const collection_split = `${collection}_`.split('')
+        const c_split = c.split('')
+        collection_split.forEach((_, index) => {
+          if (collection_split[index] !== c_split[index]) {
+            match = false
+          }
+        })
+        return match
       })
-      return match
-    }).filter((c, _, arr) => {
-      let match = true
-      arr.forEach(item => {
-        if(item.startsWith(c + '_')) {
-          match = false
-        }
+      .filter((c, _, arr) => {
+        let match = true
+        arr.forEach(item => {
+          if (item.startsWith(c + '_')) {
+            match = false
+          }
+        })
+        return match
       })
-      return match
-    }).map(c => {
-      return collections[c].length
-    }).reduce((a, b) => a + b)
+      .map(c => {
+        return collections[c].length
+      })
+      .reduce((a, b) => a + b)
 
     const plural = length > 1 ? 's' : ''
 
     return `${length} post${plural}`
   })
 
-  // syntax highlight
+  // plugins
   eleventyConfig.addPlugin(syntaxHighlight, {
     templateFormats: ['njk', 'md'],
   })
+
+  eleventyConfig.addPlugin(rss)
 
   // copy files
   eleventyConfig.addPassthroughCopy('js')

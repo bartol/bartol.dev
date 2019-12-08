@@ -46,7 +46,9 @@ module.exports = function(eleventyConfig) {
     return JSON.stringify(obj)
   })
 
-  eleventyConfig.addFilter('formatDate', function(date) {
+  eleventyConfig.addFilter('formatDate', function(date, format) {
+    if (format === 'dash') return date.toISOString().substring(0, 10)
+
     return date.getMonth() + 1 + '/' + date.getFullYear()
   })
 

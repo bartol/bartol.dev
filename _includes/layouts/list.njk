@@ -9,19 +9,19 @@ is root
 {% include "components/nav.njk" %}
 
 <ul class="items">
-  {%- for post in collections[collection] | sortList(sort) -%}
+  {%- for item in collections[collection] | sortList(sort) -%}
     <li>
-      <a href="{{ post.url }}" class="item {{ collection }}">
-        <h2>{{ post.data.title }}</h2>
+      <a href="{{ item.url }}" class="item {{ item.url | urlToCollection(item.data.layout) }}">
+        <h2>{{ item.data.title }}</h2>
 
         <h3>
-          {% if collections[post.data.collection] %}
+          {% if collections[item.data.collection] %}
 
-            {{ collections | getLength(post.data.collection) }}
+            {{ collections | getLength(item.data.collection) }}
 
           {% else %}
 
-            Last updated in {{ post.date | formatDate }}
+            Last updated in {{ item.date | formatDate }}
 
           {% endif %}
         </h3>

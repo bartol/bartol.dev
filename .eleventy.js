@@ -7,6 +7,38 @@ const iterator = require('markdown-it-for-inline')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rss = require('@11ty/eleventy-plugin-rss')
 
+function getLength(collections, collection) {
+  const length = Object.keys(collections)
+    .filter(c => {
+      if (collection === c) return true
+
+      let match = true
+      const collection_split = `${collection}_`.split('')
+      const c_split = c.split('')
+      collection_split.forEach((_, index) => {
+        if (collection_split[index] !== c_split[index]) {
+          match = false
+        }
+      })
+      return match
+    })
+    .filter((c, _, arr) => {
+      let match = true
+      arr.forEach(item => {
+        if (item.startsWith(c + '_')) {
+          match = false
+        }
+      })
+      return match
+    })
+    .map(c => {
+      return collections[c].length
+    })
+    .reduce((a, b) => a + b)
+
+  return length
+}
+
 module.exports = function(eleventyConfig) {
   // collections
   const list_pages = glob.sync(
@@ -52,18 +84,15 @@ module.exports = function(eleventyConfig) {
     return date.getMonth() + 1 + '/' + date.getFullYear()
   })
 
-  eleventyConfig.addFilter('sortList', function(list, sort) {
-    if (sort === 'abc') {
+  eleventyConfig.addFilter('sortList', function(list, sort, collections) {
+    if (sort === 'len') {
       return list.sort(function(a, b) {
-        if (a.data.title < b.data.title) return -1
-        if (a.data.title > b.data.title) return 1
-        return 0
-      })
-    }
+        const a_len = getLength(collections, a.data.collection)
+        const b_len = getLength(collections, b.data.collection)
 
-    if (sort === 'custom') {
-      return list.sort(function(a, b) {
-        return a.data.order - b.data.order
+        if (a_len < b_len) return 1
+        if (a_len > b_len) return -1
+        return 0
       })
     }
 
@@ -96,34 +125,7 @@ module.exports = function(eleventyConfig) {
     // for each collection get length
     // add all children lengths to parent
 
-    const length = Object.keys(collections)
-      .filter(c => {
-        if (collection === c) return true
-
-        let match = true
-        const collection_split = `${collection}_`.split('')
-        const c_split = c.split('')
-        collection_split.forEach((_, index) => {
-          if (collection_split[index] !== c_split[index]) {
-            match = false
-          }
-        })
-        return match
-      })
-      .filter((c, _, arr) => {
-        let match = true
-        arr.forEach(item => {
-          if (item.startsWith(c + '_')) {
-            match = false
-          }
-        })
-        return match
-      })
-      .map(c => {
-        return collections[c].length
-      })
-      .reduce((a, b) => a + b)
-
+    const length = getLength(collections, collection)
     const plural = length > 1 ? 's' : ''
 
     return `${length} post${plural}`

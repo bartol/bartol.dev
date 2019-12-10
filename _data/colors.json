@@ -1,0 +1,110 @@
+[
+  {
+    "name": "p_javascript",
+    "value": "#c8b011"
+  },
+  {
+    "name": "p_gatsby",
+    "value": "#552a80"
+  },
+  {
+    "name": "p_react",
+    "value": "#05a1cb"
+  },
+  {
+    "name": "p_lambda",
+    "value": "#e05b1e"
+  },
+  {
+    "name": "p_redux",
+    "value": "#4c2e7c"
+  },
+  {
+    "name": "p_c",
+    "value": "#03599C"
+  },
+  {
+    "name": "p_dynamodb",
+    "value": "#443cd3"
+  },
+  {
+    "name": "p_serverless",
+    "value": "#a2140e"
+  },
+  {
+    "name": "p_git",
+    "value": "#ae2809"
+  },
+  {
+    "name": "p_vscode",
+    "value": "#00416d"
+  },
+  {
+    "name": "p_html",
+    "value": "#bd3917"
+  },
+  {
+    "name": "p_css",
+    "value": "#105b91"
+  },
+  {
+    "name": "p_apollo",
+    "value": "#290aa0"
+  },
+  {
+    "name": "p_graphql",
+    "value": "#a21473"
+  },
+  {
+    "name": "p_github",
+    "value": "#78786d"
+  },
+  {
+    "name": "p_yarn",
+    "value": "#237195"
+  },
+  {
+    "name": "p_sass",
+    "value": "#882e5b"
+  },
+  {
+    "name": "p_eslint",
+    "value": "#2d1d75"
+  },
+  {
+    "name": "p_jest",
+    "value": "#9b0f1d"
+  },
+  {
+    "name": "p_cypress",
+    "value": "#303032"
+  },
+  {
+    "name": "p_fonts",
+    "value": "#ff8585"
+  },
+  {
+    "name": "p_yarn",
+    "value": "#237195"
+  },
+  {
+    "name": "p_error",
+    "value": "#951613"
+  },
+  {
+    "name": "p_vim",
+    "value": "#005d04"
+  },
+  {
+    "name": "p_tmux",
+    "value": "#242424"
+  },
+  {
+    "name": "p_npm",
+    "value": "#731317"
+  },
+  {
+    "name": "p_rust",
+    "value": "#151515"
+  }
+]

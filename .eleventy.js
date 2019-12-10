@@ -72,7 +72,13 @@ module.exports = function(eleventyConfig) {
     })
   })
 
-  eleventyConfig.addFilter('urlToCollection', function(url) {
+  eleventyConfig.addFilter('urlToCollection', function(url, layout) {
+    if (layout === 'list') {
+      return url
+        .split('/')
+        .slice(1, -1)
+        .join('_')
+    }
     return url
       .split('/')
       .slice(1, -2)

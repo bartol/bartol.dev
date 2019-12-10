@@ -1,3 +1,7 @@
+:root {
+  --radius: 4px;
+}
+
 @font-face {
   font-family: 'Fira Sans Regular';
   src: url('/fonts/Fira_Sans_Regular.woff2') format('woff2');
@@ -61,7 +65,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1;
+  line-height: 1.1;
 }
 
 em {
@@ -71,6 +75,49 @@ em {
 
 code {
   font-family: 'Dank Mono Regular', monospace;
+}
+
+.list,
+.post {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.list {
+  max-width: 1200px;
+}
+
+.post {
+  max-width: 800px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(300px - 0.75rem), 1fr));
+  grid-auto-rows: minmax(calc(200px - 0.75rem), auto);
+  grid-gap: 1rem;
+}
+
+.item {
+  /* make whole card clickable */
+  display: flex;
+  height: 100%;
+
+  /* push title on top and date on bottom */
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* translate content from border */
+  padding: 0.6rem 0.7rem;
+
+
+  background-color: #ccc;
+  border-radius: var(--radius);
 }
 
 

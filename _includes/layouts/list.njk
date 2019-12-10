@@ -9,7 +9,7 @@ is root
 {% include "components/nav.njk" %}
 
 <ul class="items">
-  {%- for item in collections[collection] | sortList(sort) -%}
+  {%- for item in collections[collection] | sortList(sort, collections) -%}
     <li>
       <a href="{{ item.url }}" class="item {{ item.url | urlToCollection(item.data.layout) }}">
         <h2>{{ item.data.title }}</h2>

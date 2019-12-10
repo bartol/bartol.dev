@@ -1,5 +1,5 @@
 ---
 layout: list
 collection: root
-sort: custom
+sort: len
 ---

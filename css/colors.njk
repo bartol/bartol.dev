@@ -1,0 +1,12 @@
+/* colors */
+{%- for color in colors -%}
+.{{ color.name }} {
+  background-color: {{ color.value }};
+  {% if color.text %}color: {{ color.text }};{% endif %}
+}
+{% if color.text %}
+.{{ color.name }}:focus {
+  box-shadow:0 0 0 3px {{ color.text }};
+}
+{% endif %}
+{%- endfor -%}

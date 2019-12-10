@@ -54,16 +54,41 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.1;
-}
-
-em {
-  font-family: 'Fira Sans Italic';
-  font-style: italic;
+  line-height: 1.2;
 }
 
 code {
   font-family: 'Dank Mono Regular', monospace;
+}
+
+/*      scrollbar      */
+
+html {
+  overflow-y: scroll;
+}
+
+/* chrome & safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-dark-800);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark-600);
+  border-radius: 9999px;
+  border: 2px solid var(--color-dark-800);
+}
+
+/* firefox */
+* {
+  scrollbar-color: var(--color-dark-600) var(--color-dark-800);
+  scrollbar-width: thin;
+}
+
+/*      select      */
+*::selection {
+  background-color: hsla(190, 80%, 50%, 0.35);
 }
 
 .list,

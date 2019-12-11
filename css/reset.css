@@ -47,7 +47,7 @@ ol[class] {
 }
 
 /* A elements that don't have a class get default styles */
-a[class] {
+a {
   text-decoration: none;
 }
 

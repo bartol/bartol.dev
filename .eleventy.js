@@ -8,6 +8,11 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rss = require('@11ty/eleventy-plugin-rss')
 
 function getLength(collections, collection) {
+  // filter out collections that aren't wanted collection or its children
+  // filter out parent collection if it has children
+  // for each collection get length
+  // add all children lengths to parent
+
   const length = Object.keys(collections)
     .filter(c => {
       if (collection === c) return true
@@ -119,12 +124,6 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addFilter('getLength', function(collections, collection) {
-    // get all collections
-    // filter out collections that aren't wanted collection or its children
-    // filter out parent collection if it has children
-    // for each collection get length
-    // add all children lengths to parent
-
     const length = getLength(collections, collection)
     const plural = length > 1 ? 's' : ''
 

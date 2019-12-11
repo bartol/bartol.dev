@@ -1,21 +1,31 @@
-<nav>
 {% if collection === 'root' %}
 
-  <h1>
-    <img src="/img/logo.svg" height="200" />
-  </h1>
+  <nav class="root">
+    <h1>
+      {% include "components/logo.njk" %}
+    </h1>
+  </nav>
 
 {% else %}
 
-  <h1>
-    <a href="/">
-      <img src="/img/logo.svg" height="50" />
-    </a>
-  </h1>
-  <div>
-    <input type="search" id="search" />
-    <ol id="results" />
-  </div>
+  <nav class="normal">
+    <h1>
+      <a href="/">
+        {% include "components/logo.njk" %}
+      </a>
+    </h1>
+    <div>
+      <input type="search" id="search" placeholder="Search" />
+      <!-- <ol id="results" /> -->
+    </div>
+    <div class="icons">
+      <a href="https://github.com/bartol" target="_blank" rel="nofollow noopener noreferrer" class="first_icon">
+        {% include "components/github.njk" %}
+      </a>
+      <a href="/feed.xml" target="_blank" rel="nofollow noopener noreferrer">
+        {% include "components/feed.njk" %}
+      </a>
+    </div>
+  </nav>
 
 {% endif %}
-</nav>

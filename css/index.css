@@ -175,6 +175,7 @@ nav.breadcrumbs {
 
 nav.breadcrumbs,
 nav.breadcrumbs * {
+  transition: all .75s;
   color: var(--color-dark-400);
 }
 
@@ -185,7 +186,6 @@ nav.breadcrumbs .arrow {
 
 nav.breadcrumbs a:hover,
 nav.breadcrumbs a:focus {
-  transition: all .75s;
   color: var(--color-main);
 }
 
@@ -213,8 +213,8 @@ nav *:focus {
   height: 100px;
 }
 
-.first_icon {
-  margin-right: 1rem;
+.icon_with_margin {
+  margin: 0 1rem;
 }
 
 .icons {

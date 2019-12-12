@@ -2,11 +2,18 @@
 layout: page
 collection: root
 ---
-{% if collection === 'root' %}
-is root
-{% endif %}
 
-{% include "components/nav.njk" %}
+{% if collection === 'root' %}
+
+  {% include "components/banner.njk" %}
+
+{% else %}
+
+  {% include "components/nav.njk" %}
+
+  {% include "components/breadcrumbs.njk" %}
+
+{% endif %}
 
 <ul class="items">
   {%- for item in collections[collection] | sortList(sort, collections) -%}

@@ -4,9 +4,9 @@
   --color-dark-800: #1F2023; /* bg */
   --color-dark-700: #27292D; /* element bg */
   --color-dark-600: #383B40; /* ui elements */
-  --color-dark-500: #FFFFFF99; /* 60% bland */
-  --color-dark-400: #FFFFFFB3; /* 70% placeholder */
-  --color-dark-300: #FFFFFFCC; /* 80% atonic */
+  --color-dark-500: #FFFFFF99; /* 60% */
+  --color-dark-400: #FFFFFFB3; /* 70% */
+  --color-dark-300: #FFFFFFCC; /* 80% */
   --color-dark-200: #FFFFFFE6; /* 90% text */
   --color-dark-100: #FFFFFF; /* bold */
   --radius: 5px;
@@ -149,7 +149,7 @@ nav.normal {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 1.95rem 0.1rem;
+  margin: 2rem 0.1rem 1.5rem 0.1rem;
 }
 
 .icon {
@@ -168,7 +168,29 @@ nav a:focus svg,
   stroke: var(--color-main);
 }
 
-nav a:focus {
+nav.breadcrumbs {
+  margin-left: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+nav.breadcrumbs,
+nav.breadcrumbs * {
+  color: var(--color-dark-400);
+}
+
+/* breadcrumb arrows */
+nav.breadcrumbs .arrow {
+  color: var(--color-dark-500);
+}
+
+nav.breadcrumbs a:hover,
+nav.breadcrumbs a:focus {
+  transition: all .75s;
+  color: var(--color-main);
+}
+
+
+nav *:focus {
   outline: none;
 }
 
@@ -194,12 +216,17 @@ nav a:focus {
   border: none;
   border-radius: var(--radius);
   box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
-  color: var(--color-dark-300);
+  color: var(--color-dark-200);
   background-color: var(--color-dark-700);
 }
 
 #search::placeholder {
-  color: var(--color-dark-400)
+  color: var(--color-dark-500)
+}
+
+/* fix placeholder color in firefox */
+input::-moz-placeholder {
+  opacity: 1;
 }
 
 #results {

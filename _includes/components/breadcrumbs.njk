@@ -1,0 +1,21 @@
+<nav class="breadcrumbs">
+  {%- for breadcrumb in page.url | url_to_breadcrumbs(collections.all) -%}
+
+  {% if breadcrumb.show_arrow %}
+
+    <span class="arrow">&#8250;</span>
+
+  {% endif %}
+
+  {% if breadcrumb.url === page.url %}
+
+    <span title="You are here.">{{ breadcrumb.title }}</span>
+
+  {% else %}
+
+    <a href="{{ breadcrumb.url }}">{{ breadcrumb.title }}</a>
+
+  {% endif %}
+
+  {%- endfor -%}
+</nav>

@@ -123,6 +123,23 @@ module.exports = function(eleventyConfig) {
     return collection.split('_').slice(-1)
   })
 
+  eleventyConfig.addFilter('url_to_breadcrumbs', function(url, collections) {
+    const split_url = url.split('/').slice(1, -1)
+    const breadcrumbs = split_url.map((_, index) => {
+      const url = '/' + split_url.slice(0, index + 1).join('/') + '/'
+      const title = collections.filter(c => c.url === url)[0].data.title
+
+      return {
+        title,
+        url,
+        show_arrow: true,
+      }
+    })
+    breadcrumbs.unshift({ title: 'Home', url: '/', show_arrow: false })
+
+    return breadcrumbs
+  })
+
   eleventyConfig.addFilter('getLength', function(collections, collection) {
     const length = getLength(collections, collection)
     const plural = length > 1 ? 's' : ''

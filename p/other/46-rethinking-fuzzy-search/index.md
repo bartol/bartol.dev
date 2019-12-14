@@ -8,7 +8,7 @@ tags:
   - thoughts
 ---
 
-I've recently written about [adding Algolia search to Gatsby site](https://bartol.dev/a-complete-guide-to-get-algolia-search-on-your-gatsby-site/) and while [Algolia](https://www.algolia.com/) is awesome, I've found some problems that were deal breakers for me (and might for you). So I want to share them with you today.
+I've recently written about [adding Algolia search to Gatsby site](/p/gatsby/with_algolia/) and while [Algolia](https://www.algolia.com/) is awesome, I've found some problems that were deal breakers for me (and might for you). So I want to share them with you today.
 
 ## Bundle size
 

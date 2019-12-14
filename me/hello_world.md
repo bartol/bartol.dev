@@ -12,7 +12,7 @@ As you probably imagined from JavaScript cool boy programmer, stack is pretty mu
 
 I used [Gatsby](https://www.gatsbyjs.org) to get these fancy static sites from [React](https://reactjs.org/) and [MDX](https://mdxjs.com). For those who aren't living on the edge, MDX is kind of markdown on steroids. Imagine putting `<FancyComponentDownloadedFromNpm />` inside your markdown text. That is MDX in nutshell.
 
-Next, we have [Algolia](https://www.algolia.com/). Algolia is really fast search. And it's easy to setup on static site. I've actually written post about Algolia integration with Gatsby that you can see [here](https://bartol.dev/blog/algolia-search-gatsby/).
+Next, we have [Algolia](https://www.algolia.com/). Algolia is really fast search. And it's easy to setup on static site. I've actually written post about Algolia integration with Gatsby that you can see [here](https://bartol.dev/p/gatsby/with_algolia).
 
 Other than that [PrismJS](https://prismjs.com/) with [Night Owl theme](https://github.com/SaraVieira/prism-theme-night-owl) (port from [this](https://github.com/sdras/night-owl-vscode-theme) theme by [Sarah Drasner](https://github.com/sdras)) is used for code highlighting and [GuessJS](https://guess-js.github.io/) is used for pre-fetching pages with machine learning using data from Google Analytics. A lot of buzzwords, but it's really cool. Google talk about it can be found [here](https://youtu.be/Mv-l3-tJgGk?t=2093). I plan to write about it more soon.
 
@@ -38,7 +38,7 @@ array.map(item => {
 // two
 ```
 
-You can find ideas and plans for future posts on [/roadmap](https://bartol.dev/roadmap/). I'll do my best to keep it up to date.
+You can find ideas and plans for future posts on [/me/roadmap](https://bartol.dev/me/roadmap/). I'll do my best to keep it up to date.
 
 ## What about the future?
 

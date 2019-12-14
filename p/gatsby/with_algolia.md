@@ -201,7 +201,7 @@ And now you can style or customize your search box. However we are still not don
 
 When someone searches on your site Algolia will send hits in JSON and wrap them in component that you pass (in this case post-preview.js).
 
-Here is how it looks like for my blog (simplified, without styles). [Full version](https://github.com/bartol/bartol.dev/blob/master/src/components/post-preview.js).
+Here is how it looks like for my blog (simplified, without styles). [Full version](https://github.com/bartol/bartol.dev/blob/v1.0/src/components/post-preview.js).
 
 ```jsx
 import React from 'react'

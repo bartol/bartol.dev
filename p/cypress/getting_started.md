@@ -95,7 +95,7 @@ This will open your website and click element with text "Undo last Git commit" (
 
 Now you can run your tests with `cy:open` and see them passing, or failing ☹️.
 
-If ESLint is throwing errors in your Cypress test file read [this](https://bartol.dev/fix-cypress-tests-eslint-errors) article...
+If ESLint is throwing errors in your Cypress test file read [this](/p/eslint/fix_cypress/) article...
 
 <!-- resources:
   - name: Learn With Jason - Gatsby testing with Kent C. Dodds

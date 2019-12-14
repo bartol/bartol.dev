@@ -11,7 +11,7 @@ I'll be sure to update this article frequently.
 ## Docs
 
 - [MDN web docs](https://developer.mozilla.org/en-US/)
-- [web.dev](https://web.dev/learn)
+- [web.dev](https://web.dev/learn/)
 - [DevDocs](https://devdocs.io/)
 
 ## Videos

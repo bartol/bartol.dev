@@ -69,4 +69,4 @@ exports.graphql = server.createHandler({
 })
 ```
 
-There are still few things left to do! Run `sls deploy` to deploy Apollo Server. After Lambda is successfully uploaded to AWS API Gateway you can visit [https://YOUR-API-ENDPOINT/graphql](https://YOUR-API-ENDPOINT/graphql) to try API in GraphQL Playground!
+There are still few things left to do! Run `sls deploy` to deploy Apollo Server. After Lambda is successfully uploaded to AWS API Gateway you can visit YOUR-API-ENDPOINT/graphql to try API in GraphQL Playground!

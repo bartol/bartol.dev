@@ -60,10 +60,8 @@ async function handle_search() {
 handle_search()
 
 window.addEventListener('keyup', e => {
-  const { keyCode, shiftKey, ctrlKey } = e
+  const { keyCode, ctrlKey } = e
 
-  const is_tab = keyCode === 9 && !shiftKey
-  const is_shift_tab = keyCode === 9 && shiftKey
   const is_arrow_down = keyCode === 40
   const is_arrow_up = keyCode === 38
   const is_ctrl_j = keyCode === 74 && ctrlKey
@@ -75,7 +73,7 @@ window.addEventListener('keyup', e => {
   const prev = selected.previousElementSibling
 
   if (next) {
-    if (is_tab || is_arrow_down || is_ctrl_j) {
+    if (is_arrow_down || is_ctrl_j) {
       selected.classList.remove('selected')
       next.classList.add('selected')
       search_box.focus()
@@ -83,7 +81,7 @@ window.addEventListener('keyup', e => {
   }
 
   if (prev) {
-    if (is_shift_tab || is_arrow_up || is_ctrl_k) {
+    if (is_arrow_up || is_ctrl_k) {
       selected.classList.remove('selected')
       prev.classList.add('selected')
       search_box.focus()

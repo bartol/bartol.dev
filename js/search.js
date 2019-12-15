@@ -27,6 +27,13 @@ async function handle_search() {
         .join('')
 
       if (results.children.length) results.firstChild.classList.add('selected')
+
+      if (query && !results.children.length) {
+        results.innerHTML = `<li class="not_found">
+            <div class="not_found_ascii">(·.·)</div>
+            <div class="not_found_text">Oops, seems like there is no results.</div>
+          </li>`
+      }
     }
   }
 

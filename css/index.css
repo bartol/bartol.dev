@@ -269,7 +269,7 @@ input::-moz-placeholder {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .result a {

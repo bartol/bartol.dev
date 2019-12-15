@@ -264,6 +264,14 @@ input::-moz-placeholder {
   background-color: var(--color-dark-600);
 }
 
+.result.selected {
+  background-color: rebeccapurple;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
 .result a {
   display: block;
   width: 100%;

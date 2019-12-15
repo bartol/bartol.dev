@@ -162,6 +162,10 @@ nav.normal {
   height: 2.6rem;
 }
 
+.logo.root {
+  height: 12rem;
+}
+
 nav a:focus svg,
 .icon:hover {
   transition: all .75s;
@@ -209,10 +213,6 @@ nav *:focus {
   outline: none;
 }
 
-.logo.root {
-  height: 100px;
-}
-
 .icon_with_margin {
   margin-left: 1rem;
   margin-right: 0.9rem;
@@ -240,6 +240,10 @@ nav *:focus {
   color: var(--color-dark-500)
 }
 
+.search_wrapper {
+  position: relative;
+}
+
 /* fix placeholder color in firefox */
 input::-moz-placeholder {
   opacity: 1;
@@ -247,13 +251,17 @@ input::-moz-placeholder {
 
 #results {
   list-style: none;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 99999;
 }
 
 .result {
-  width: 25rem;
   height: 2.5rem;
-  background-color: #eee;
-  margin: 0.2rem 0
+  padding: 0.2rem;
+  background-color: var(--color-dark-600);
 }
 
 .result a {

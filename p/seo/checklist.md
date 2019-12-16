@@ -22,7 +22,7 @@ This checklist contains helpful SEO tips and some useful link. I use it day-to-d
 
    [Data Highlighter (Show off your site's data in search)](https://www.google.com/webmasters/tools/data-highlighter)
 
-   [Structured Data Markup Helper](https://www.google.com/webmasters/markup-helper/u/0/)
+   [Structured Data Markup Helper](https://www.google.com/webmasters/markup-helper/)
 
    [Rich Results Test](https://search.google.com/test/rich-results)
 
@@ -40,7 +40,7 @@ This checklist contains helpful SEO tips and some useful link. I use it day-to-d
 
 ### After creating site, you should analyze user behavior on it
 
-- [Google Search Console](https://www.google.com/webmasters/tools/home)
+- [Google Search Console](https://search.google.com/search-console/about)
 - [Bing webmaster tools](https://www.bing.com/toolbox/webmaster)
 
 **Optimize content for your users, not search engines.** I can't emphasize this enough!

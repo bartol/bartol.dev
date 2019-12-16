@@ -4,7 +4,7 @@ title: Please use process manager to run Node.js apps on server
 date: 2019-10-23
 ---
 
-Long story short. I have made script for scraping some stuff and put it on the DigitalOcean droplet and as I had problems with crashing (\*cough poorly written code), I have found this process manager called [PM2](http://pm2.keymetrics.io/) (Process Manager 2). Heard about it long time but never got to use one. Oh, boy! It's awesome.
+Long story short. I have made script for scraping some stuff and put it on the DigitalOcean droplet and as I had problems with crashing (\*cough poorly written code), I have found this process manager called [PM2](https://pm2.keymetrics.io/) (Process Manager 2). Heard about it long time but never got to use one. Oh, boy! It's awesome.
 
 ## Installation
 

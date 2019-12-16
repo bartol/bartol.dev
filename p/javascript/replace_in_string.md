@@ -20,6 +20,6 @@ const newFavoriteFood = favoriteFood.replace('Pizza', 'Broccoli')
 
 That's it. Can't get much easier than this.
 
-<!-- resources:
-  - name: String.prototype.replace() MDN
-    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace -->
+## Resources
+
+- [String.prototype.replace() MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

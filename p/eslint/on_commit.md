@@ -47,6 +47,6 @@ Easy setup, isn't it? On your next commit you'll see something like this.
 
 ![ESLint running before commit](/img/md/eslint_on_commit_output.png)
 
-<!-- resources:
-  - name: Learn With Jason - Gatsby testing with Kent C. Dodds
-    url: https://youtu.be/BzRAYt7BHRw?t=510 -->
+## Resources
+
+- [Learn With Jason - Gatsby testing with Kent C. Dodds](https://youtu.be/BzRAYt7BHRw?t=510)

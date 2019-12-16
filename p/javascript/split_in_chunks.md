@@ -15,6 +15,6 @@ for (let i = 0; i < array.length; i += chunk) {
 }
 ```
 
-<!-- resources:
-  - name: Stack Overflow Answer
-    url: https://stackoverflow.com/a/8495740 -->
+## Resources
+
+- [Stack Overflow Answer](https://stackoverflow.com/a/8495740)

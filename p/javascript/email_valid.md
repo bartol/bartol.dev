@@ -120,8 +120,7 @@ import isEmail from 'validator/lib/isEmail'
 
 And that's it. Who would say that you can validate email in _this_ many ways!
 
-<!-- resources:
-  - name: Stack Overflow question I was talking about
-    url: https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-  - name: Awesome guy who made this gigantic regex
-    url: http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html -->
+## Resources
+
+- [Stack Overflow question I was talking about](https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript)
+- [Awesome guy who made this gigantic regex](http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html)

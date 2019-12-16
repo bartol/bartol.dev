@@ -20,6 +20,6 @@ Or if you want to calculate timestamp for this moment, you can achieve it with t
 Math.round(new Date().getTime() / 1000)
 ```
 
-<!-- resources:
-  - name: Stack Overflow Answer
-    url: https://stackoverflow.com/a/11893157/11197595 -->
+## Resources
+
+- [Stack Overflow Answer](https://stackoverflow.com/a/11893157/11197595)

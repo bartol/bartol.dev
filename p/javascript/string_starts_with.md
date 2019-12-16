@@ -28,8 +28,7 @@ isQuestion(string) // false
 
 You can use `startsWith()` same way.
 
-<!-- resources:
-  - name: String.prototype.startsWith() MDN
-    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
-  - name: String.prototype.endsWith() MDN
-    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith -->
+## Resources
+
+- [String.prototype.startsWith() MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+- [String.prototype.endsWith() MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)

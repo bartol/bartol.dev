@@ -45,6 +45,6 @@ This checklist contains helpful SEO tips and some useful link. I use it day-to-d
 
 **Optimize content for your users, not search engines.** I can't emphasize this enough!
 
-<!-- resources:
-  - name: Google SEO Starter Guide
-    url: https://support.google.com/webmasters/answer/7451184?hl=en -->
+## Resources
+
+- [Google SEO Starter Guide](https://support.google.com/webmasters/answer/7451184?hl=en)

@@ -13,6 +13,6 @@ string
   .toLowerCase() // convert to lower case
 ```
 
-<!-- resources:
-  - name: GitHub Gist comment
-    url: https://gist.github.com/thevangelist/8ff91bac947018c9f3bfaad6487fa149#gistcomment-2659294 -->
+## Resources
+
+- [GitHub Gist comment](https://gist.github.com/thevangelist/8ff91bac947018c9f3bfaad6487fa149#gistcomment-2659294)

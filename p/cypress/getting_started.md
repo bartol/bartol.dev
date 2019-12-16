@@ -97,6 +97,7 @@ Now you can run your tests with `cy:open` and see them passing, or failing â˜¹ï¸
 
 If ESLint is throwing errors in your Cypress test file read [this](/p/eslint/fix_cypress/) article...
 
-<!-- resources:
-  - name: Learn With Jason - Gatsby testing with Kent C. Dodds
-    url: https://youtu.be/BzRAYt7BHRw?t=1313 -->
+
+## Resources
+
+- [Learn With Jason - Gatsby testing with Kent C. Dodds](https://youtu.be/BzRAYt7BHRw?t=1313)

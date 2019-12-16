@@ -85,8 +85,7 @@ module.exports = 'test-file-stub'
 
 Finally, re-run tests and everything should work perfectly!
 
-<!-- resources:
-  - name: Learn With Jason - Gatsby testing with Kent C. Dodds
-    url: https://youtu.be/BzRAYt7BHRw?t=3046
-  - name: Gatsby Docs
-    url: https://www.gatsbyjs.org/docs/unit-testing/ -->
+## Resources
+
+- [Learn With Jason - Gatsby testing with Kent C. Dodds](https://youtu.be/BzRAYt7BHRw?t=3046)
+- [Gatsby Docs](https://www.gatsbyjs.org/docs/unit-testing/)

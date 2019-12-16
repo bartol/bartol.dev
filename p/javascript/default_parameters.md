@@ -14,6 +14,6 @@ const sayHi = (user = 'default user') => {
 
 Now, if we don't pass `user` parameter or it's undefined, it will use default value.
 
-<!-- resources:
-  - name: Default parameters MDN
-    url: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters -->
+## Resources
+
+- [Default parameters MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)

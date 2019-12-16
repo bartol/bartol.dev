@@ -33,8 +33,7 @@ This was just high-level overview of feature. If it sparks joy to you, be sure t
 
 As always, it depends. For me answer is no. I am already moved from Sass world and heavily invested in CSS in JS type solutions for its many benefits. But I have to say this is really cool stuff.
 
-<!-- resources:
-  - name: Much more in-depth article on CSS-Tricks
-    url: https://css-tricks.com/introducing-sass-modules/
-  - name: Sass modules docs
-    url: https://sass-lang.com/documentation/modules -->
+## Resources:
+
+- [Much more in-depth article on CSS-Tricks](https://css-tricks.com/introducing-sass-modules/)
+- [Sass modules docs](https://sass-lang.com/documentation/modules)

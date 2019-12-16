@@ -16,8 +16,7 @@ This is also one of those fun and not the most practical articles. But it can wo
 
 You can visit cool [demo](https://html-clock.netlify.com/) I've made for this article.
 
-<!-- resources:
-  - name: Working HTML clock demo
-    url: https://html-clock.netlify.com/
-  - name: Working HTML clock demo source code
-    url: https://github.com/bartol/html-clock/ -->
+## Resources
+
+- [Working HTML clock demo](https://html-clock.netlify.com/)
+- [Working HTML clock demo source code](https://github.com/bartol/html-clock/)

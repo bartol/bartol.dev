@@ -18,6 +18,6 @@ const hexCodes = ['#0e8fd5', '#663399', '#212121']
 const randomHexCode = hexCodes[Math.floor(Math.random() * hexCodes.length)]
 ```
 
-<!-- resources:
-  - name: Stack Overflow Answer
-    url: https://stackoverflow.com/a/5915122/11197595 -->
+## Resources
+
+- [Stack Overflow Answer](https://stackoverflow.com/a/5915122/11197595)

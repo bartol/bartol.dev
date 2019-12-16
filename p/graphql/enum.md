@@ -14,8 +14,7 @@ enum articleStatus {
 }
 ```
 
-<!-- resources:
-  - name: How to use GraphQL enum type and its best practices
-    url: https://graphqlmastery.com/blog/how-to-use-graphql-enum-type-and-its-best-practices
-  - name: Schemas and Types | GraphQL
-    url: https://graphql.org/learn/schema/#enumeration-types -->
+## Resources
+
+- [How to use GraphQL enum type and its best practices](https://graphqlmastery.com/blog/how-to-use-graphql-enum-type-and-its-best-practices)
+- [Schemas and Types | GraphQL](https://graphql.org/learn/schema/#enumeration-types)

@@ -29,6 +29,6 @@ if (users.some(e => e.name === 'Bartol')) {
 }
 ```
 
-<!-- resources:
-  - name: Stack Overflow Answer
-    url: https://stackoverflow.com/a/8217584/11197595 -->
+## Resources
+
+- [Stack Overflow Answer](https://stackoverflow.com/a/8217584/11197595)

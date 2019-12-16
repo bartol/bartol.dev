@@ -20,6 +20,6 @@ async function asyncForEach(array, callback) {
 
 Enjoy! It just works™️*.*
 
-<!-- resources:
-  - name: Awesome post that resolved issue
-    url: https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404 -->
+## Resources
+
+- [Awesome post that resolved issue](https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404)

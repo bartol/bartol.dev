@@ -49,8 +49,7 @@ const ExampleComponent = () => {
 export default ExampleComponent
 ```
 
-<!-- resources:
-  - name: Bind input to state demo
-    url: https://bind-input-to-state.netlify.com/
-  - name: Bind input to state demo source code
-    url: https://github.com/bartol/bind-input-to-state-hooks -->
+## Resources
+
+- [Bind input to state demo](https://bind-input-to-state.netlify.com/)
+- [Bind input to state demo source code](https://github.com/bartol/bind-input-to-state-hooks)

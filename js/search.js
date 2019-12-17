@@ -22,7 +22,7 @@ async function handle_search() {
       results.innerHTML = res
         .map(item => {
           const { title, category, url } = item
-          return `<li class="result ${category}"><a href="${url}" tabindex="-1">${title}</a></li>`
+          return `<li class="result ${category}" onmouseenter="const results = [...this.parentElement.childNodes];results.forEach(result => result.classList.remove('selected'));this.classList.add('selected')" onmouseleave="if(this.parentElement.matches(':hover')){this.classList.remove('selected')}"><a href="${url}" tabindex="-1">${title}</a></li>`
         })
         .join('')
 

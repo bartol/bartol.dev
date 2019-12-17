@@ -10,11 +10,11 @@ async function handle_search() {
 
   const fuse = new Fuse(posts, options)
 
-  const search = e => {
+  const handle_search = (e, skip_validation) => {
     const query = e.target.value
     const old_query = search_box.getAttribute('data-query')
 
-    if (query !== old_query) {
+    if (query !== old_query || skip_validation) {
       search_box.setAttribute('data-query', query)
 
       const res = fuse.search(query).slice(0, 5)
@@ -22,7 +22,7 @@ async function handle_search() {
       results.innerHTML = res
         .map(item => {
           const { title, category, url } = item
-          return `<li class="result ${category}"><a href="${url}">${title}</a></li>`
+          return `<li class="result ${category}"><a href="${url}" tabindex="-1">${title}</a></li>`
         })
         .join('')
 
@@ -37,58 +37,55 @@ async function handle_search() {
     }
   }
 
-  search_box.addEventListener('focus', e => {
-    if (results.children.length) {
-      results.classList.remove('hidden')
-      return
-    }
+  search_box.addEventListener('keyup', e => {
+    handle_search(e)
+  })
 
-    if (e.target.value) search(e)
+  search_box.addEventListener('focus', e => {
+    handle_search(e, 'skip_validation')
   })
 
   search_box.addEventListener('blur', () => {
-    if (results.children.length) {
-      results.classList.add('hidden')
+    if (!results.matches(':hover')) {
+      results.innerHTML = ''
     }
   })
 
-  search_box.addEventListener('keyup', e => {
-    search(e)
+  search_box.addEventListener('keydown', e => {
+    const { keyCode, ctrlKey } = e
+
+    const is_arrow_down = keyCode === 40
+    const is_arrow_up = keyCode === 38
+    const is_ctrl_j = keyCode === 74 && ctrlKey
+    const is_ctrl_k = keyCode === 75 && ctrlKey
+    const is_enter = keyCode === 13
+
+    if (is_arrow_down || is_arrow_up || is_ctrl_j || is_ctrl_k) {
+      e.preventDefault()
+    }
+
+    const selected = document.getElementsByClassName('selected')[0] || {}
+    const next = selected.nextElementSibling
+    const prev = selected.previousElementSibling
+
+    if (next) {
+      if (is_arrow_down || is_ctrl_j) {
+        selected.classList.remove('selected')
+        next.classList.add('selected')
+      }
+    }
+
+    if (prev) {
+      if (is_arrow_up || is_ctrl_k) {
+        selected.classList.remove('selected')
+        prev.classList.add('selected')
+      }
+    }
+
+    if (is_enter) {
+      selected.firstChild.click()
+    }
   })
 }
 
 handle_search()
-
-window.addEventListener('keyup', e => {
-  const { keyCode, ctrlKey } = e
-
-  const is_arrow_down = keyCode === 40
-  const is_arrow_up = keyCode === 38
-  const is_ctrl_j = keyCode === 74 && ctrlKey
-  const is_ctrl_k = keyCode === 75 && ctrlKey
-  const is_enter = keyCode === 13
-
-  const selected = document.getElementsByClassName('selected')[0] || {}
-  const next = selected.nextElementSibling
-  const prev = selected.previousElementSibling
-
-  if (next) {
-    if (is_arrow_down || is_ctrl_j) {
-      selected.classList.remove('selected')
-      next.classList.add('selected')
-      search_box.focus()
-    }
-  }
-
-  if (prev) {
-    if (is_arrow_up || is_ctrl_k) {
-      selected.classList.remove('selected')
-      prev.classList.add('selected')
-      search_box.focus()
-    }
-  }
-
-  if (is_enter) {
-    selected.firstChild.click()
-  }
-})

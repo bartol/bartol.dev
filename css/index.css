@@ -240,6 +240,10 @@ nav *:focus {
   color: var(--color-dark-500)
 }
 
+.root {
+  display: flex;
+}
+
 .search_wrapper {
   position: relative;
 }

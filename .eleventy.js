@@ -140,7 +140,8 @@ module.exports = function(eleventyConfig) {
     return breadcrumbs
   })
 
-  eleventyConfig.addFilter('getLength', function(collections, collection) {
+  // get collection length
+  eleventyConfig.addFilter('get_length', function(collections, collection) {
     const length = getLength(collections, collection)
     const plural = length > 1 ? 's' : ''
 

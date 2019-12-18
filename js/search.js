@@ -22,11 +22,25 @@ async function handle_search() {
       results.innerHTML = res
         .map(item => {
           const { title, category, url } = item
-          return `<li class="result ${category}" onmouseenter="const results = [...this.parentElement.childNodes];results.forEach(result => result.classList.remove('selected'));this.classList.add('selected')" onmouseleave="if(this.parentElement.matches(':hover')){this.classList.remove('selected')}"><a href="${url}" tabindex="-1">${title}</a></li>`
+          return `<li class="result ${category}"><a href="${url}" tabindex="-1">${title}</a></li>`
         })
         .join('')
 
       if (results.children.length) results.firstChild.classList.add('selected')
+
+      const results_arr = [...results.childNodes]
+      results_arr.forEach(result => {
+        result.addEventListener('mouseenter', () => {
+          results_arr.forEach(result => result.classList.remove('selected'))
+          result.classList.add('selected')
+        })
+
+        result.addEventListener('mouseleave', () => {
+          if (results.parentElement.matches(':hover')) {
+            result.classList.remove('selected')
+          }
+        })
+      })
 
       if (query && !results.children.length) {
         results.innerHTML = `<li class="not_found">

@@ -10,6 +10,7 @@
   --color-dark-200: #FFFFFFE6; /* 90% text */
   --color-dark-100: #FFFFFF; /* bold */
   --radius: 5px;
+  --shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
 }
 
 @font-face {
@@ -125,7 +126,7 @@ html {
   padding: .75rem 1rem;
 
 
-  box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+  box-shadow: var(--shadow);
   background-color: var(--color-dark-700);
   border-radius: var(--radius);
 }

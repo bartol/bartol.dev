@@ -73,3 +73,8 @@
 .post .content a:hover {
   text-decoration: underline;
 }
+
+.post .content mark {
+  color: var(--color-dark-800);
+  background: var(--color-main);
+}

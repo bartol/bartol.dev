@@ -21,8 +21,8 @@ async function handle_search() {
 
       results.innerHTML = res
         .map(item => {
-          const { title, category, url } = item
-          return `<li class="result ${category}"><a href="${url}" tabindex="-1">${title}</a></li>`
+          const { title, url } = item
+          return `<li class="result"><a href="${url}" tabindex="-1">${title}</a></li>`
         })
         .join('')
 

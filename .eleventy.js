@@ -4,6 +4,7 @@ const Terser = require('terser')
 const glob = require('glob')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
+const markdownItMark = require('markdown-it-mark')
 const iterator = require('markdown-it-for-inline')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rss = require('@11ty/eleventy-plugin-rss')
@@ -184,6 +185,7 @@ module.exports = function(eleventyConfig) {
       tokens[idx].attrPush(['target', '_blank'])
       tokens[idx].attrPush(['rel', 'nofollow noopener noreferrer'])
     })
+    // add links to headings
     .use(markdownItAnchor, {
       permalink: true,
       slugify: string =>
@@ -196,6 +198,8 @@ module.exports = function(eleventyConfig) {
       permalinkSymbol: '#',
       level: [2, 3],
     })
+    // marked text
+    .use(markdownItMark)
 
   eleventyConfig.setLibrary('md', markdownLib)
 

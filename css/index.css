@@ -269,16 +269,20 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   margin: 0;
   padding: 0;
   z-index: 99999;
+  margin-top: 0.5rem;
+  background-color: var(--color-dark-700);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .result {
   height: 2.5rem;
-  padding: 0.2rem;
-  background-color: var(--color-dark-600);
 }
 
 .result.selected {
-  background-color: rebeccapurple;
+  background-color: var(--color-main);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .hidden {
@@ -289,4 +293,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   display: block;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+}
+
+.result.selected a {
+  color: var(--color-dark-700);
 }

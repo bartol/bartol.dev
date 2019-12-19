@@ -24,24 +24,45 @@
   visibility: visible;
 }
 
-
-/* change below */
-.post .content h2 {
-  margin-top: 3rem;
+.post .content h2,
+.post .content h3 {
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
+}
+
+
+.post .content h2 {
   font-size: 1.75rem;
-  padding-bottom: 0.15rem;
-  border-bottom: 2px solid var(--color-dark-600);
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--color-dark-600);
 }
 
 .post .content h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+}
+
+.post .content p {
+  text-align: justify;
+}
+
+.post .content p,
+.post .content ul,
+.post .content ol {
+  margin-bottom: 1rem;
+}
+
+.post .content ul,
+.post .content ol {
+  padding-left: 2rem;
+}
+
+.post .content li:not(:first-of-type) {
+  margin-top: 0.25rem;
 }
 
 .post .content img {
-  margin: 1rem 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .post .content a {

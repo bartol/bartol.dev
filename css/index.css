@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 code {
@@ -93,16 +93,18 @@ html {
 }
 
 .list,
-.post {
+.post,
+.post .content {
   width: 95%;
   margin: 0 auto;
 }
 
+.post,
 .list {
   max-width: 1200px;
 }
 
-.post {
+.post .content {
   max-width: 750px;
 }
 

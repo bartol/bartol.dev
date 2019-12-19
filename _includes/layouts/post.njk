@@ -2,11 +2,16 @@
 layout: page
 date: Created
 ---
-<main>
+{% include "components/nav.njk" %}
+{% include "components/breadcrumbs.njk" %}
+
+<h1 class="title">{{ title }}</h1>
+<h2 class="date">Last updated in {{ page.date | formatDate }}</h2>
+
+<main class="content">
   {% if draft %}
   is draft
   {% endif %}
-  <h1>{{ title }}</h1>
-  <h2>Last updated in {{ page.date | formatDate }}</h2>
+
   {{ content | safe }}
 </main>

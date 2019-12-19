@@ -26,7 +26,6 @@
     "markdown-it-anchor": "^5.2.5",
     "markdown-it-for-inline": "^0.1.1",
     "markdown-it-mark": "^3.0.0",
-    "markdown-it-task-lists": "^2.1.1",
     "prettier": "^1.19.1",
     "tap-spot": "^1.1.1",
     "terser": "^4.4.0"

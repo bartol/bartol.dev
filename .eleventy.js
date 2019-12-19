@@ -3,6 +3,7 @@ const CleanCSS = require('clean-css')
 const Terser = require('terser')
 const glob = require('glob')
 const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
 const iterator = require('markdown-it-for-inline')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rss = require('@11ty/eleventy-plugin-rss')
@@ -173,20 +174,28 @@ module.exports = function(eleventyConfig) {
   // deep merge frontmatter data
   eleventyConfig.setDataDeepMerge(true)
 
-  // open links in new tab
   let options = {
     html: true,
     linkify: true,
   }
-  let markdownLib = markdownIt(options).use(
-    iterator,
-    'url_in_new_tab',
-    'link_open',
-    function(tokens, idx) {
+  let markdownLib = markdownIt(options)
+    // open links in new tab
+    .use(iterator, 'url_in_new_tab', 'link_open', function(tokens, idx) {
       tokens[idx].attrPush(['target', '_blank'])
       tokens[idx].attrPush(['rel', 'nofollow noopener noreferrer'])
-    }
-  )
+    })
+    .use(markdownItAnchor, {
+      permalink: true,
+      slugify: string =>
+        string
+          .toLowerCase() // convert to lower case
+          .replace(/[^\w\s]/g, '') // remove everything that isn't letter or number
+          .replace(/[\s_]+/g, '_'), // replace all spaces and low dash
+      permalinkBefore: false,
+      permalinkClass: 'header_link',
+      permalinkSymbol: '#',
+      level: [2, 3],
+    })
 
   eleventyConfig.setLibrary('md', markdownLib)
 

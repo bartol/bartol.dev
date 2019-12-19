@@ -1,1 +1,54 @@
-/* splat */
+.post .title,
+.post .date {
+  text-align: center;
+}
+
+.post .title {
+  font-size: 2.75rem;
+  margin-top: 2rem;
+}
+
+.post .date {
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-dark-500);
+}
+
+.header_link {
+  visibility: hidden;
+}
+
+.post .content h2:hover .header_link,
+.post .content h3:hover .header_link {
+  visibility: visible;
+}
+
+
+/* change below */
+.post .content h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid var(--color-dark-600);
+}
+
+.post .content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.post .content img {
+  margin: 1rem 0;
+}
+
+.post .content a {
+  text-decoration: none;
+  color: var(--color-main);
+}
+
+.post .content a:hover {
+  text-decoration: underline;
+}

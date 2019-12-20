@@ -129,7 +129,8 @@ module.exports = function(eleventyConfig) {
     const split_url = url.split('/').slice(1, -1)
     const breadcrumbs = split_url.map((_, index) => {
       const url = '/' + split_url.slice(0, index + 1).join('/') + '/'
-      const title = collections.filter(c => c.url === url)[0].data.title
+      const collection = collections.filter(c => c.url === url)[0]
+      const title = collection ? collection.data.title : ''
 
       return {
         title,

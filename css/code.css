@@ -17,7 +17,7 @@ pre[class*='language-'] {
 }
 
 pre {
-  padding: 1rem;
+  padding: 0.8rem 1rem;
   margin-bottom: 1rem;
   overflow: auto;
 }
@@ -31,10 +31,9 @@ pre,
 
 :not(pre) > code {
   color: rgba(239, 83, 80, 1);
-  padding: 0.15rem 0.4rem;
+  padding: 0.2rem 0.4rem;
   white-space: normal;
   border-radius: 3px;
-  font-size: 90%;
 }
 
 .token.comment,

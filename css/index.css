@@ -109,10 +109,13 @@ html {
 }
 
 .items {
+  /* responsive grid */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(calc(300px - 1rem), 1fr));
   grid-auto-rows: minmax(calc(200px - 1rem), auto);
   grid-gap: 1rem;
+
+  margin-bottom: 1rem;
 }
 
 .item {

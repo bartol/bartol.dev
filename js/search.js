@@ -59,8 +59,10 @@ async function handle_search() {
     handle_search(e, 'skip_validation')
   })
 
-  search_box.addEventListener('blur', () => {
-    if (!results.matches(':hover')) {
+  search_box.addEventListener('blur', e => {
+    const is_keyboard = e.explicitOriginalTarget === search_box
+
+    if (!results.matches(':hover') || is_keyboard) {
       results.innerHTML = ''
     }
   })

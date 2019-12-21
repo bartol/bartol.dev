@@ -1,5 +1,11 @@
-{%- for color in colors -%}
+/*
+--------------------------------------------------
+name: Colors
+path: /css/colors.css
+--------------------------------------------------
+*/
+{% for color in colors %}
 .{{ color.name }} {
   background-color: {{ color.value }};
 }
-{%- endfor -%}
+{% endfor %}

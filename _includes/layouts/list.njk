@@ -15,23 +15,23 @@ collection: root
 {% endif %}
 
 <ul class="items">
-  {%- for item in collections[collection] | sortList(sort, collections) -%}
+  {% for item in collections[collection] | sortList(sort, collections) %}
     <li>
       <a href="{{ item.url }}" class="item {{ item.url | urlToCollection(item.data.layout) }}">
         <h2>{{ item.data.title }}</h2>
 
         <h3>
-          {% if collections[item.data.collection] %}
+          {%- if collections[item.data.collection] -%}
 
             {{ collections | get_length(item.data.collection) }}
 
-          {% else %}
+          {%- else -%}
 
             Last updated in {{ item.date | formatDate }}
 
-          {% endif %}
+          {%- endif -%}
         </h3>
       </a>
     </li>
-  {%- endfor -%}
+  {% endfor %}
 </ul>

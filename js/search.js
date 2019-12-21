@@ -1,3 +1,10 @@
+/*
+--------------------------------------------------
+name: Search
+path: /js/search.js
+--------------------------------------------------
+*/
+
 const search_box = document.getElementById('search')
 const results = document.getElementById('results')
 

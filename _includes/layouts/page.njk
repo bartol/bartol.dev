@@ -14,28 +14,20 @@ image: /img/thumbnails/default.png
     <meta name="image" content="{{ image }}" />
 
     <!-- preload fonts -->
-    <link rel="preload" href="/fonts/Fira_Sans_Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Dank_Mono_Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Dank_Mono_Italic.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- inline minified css -->
+    <!-- inline css -->
     {% set css %}
-      {% include "css/reset.css" %}
-      {% include "css/index.css" %}
-      {% include "css/markdown.css" %}
-      {% include "css/code.css" %}
-      {% include "css/colors.njk" %}
+    {% include "css/reset.css" %}
+    {% include "css/index.css" %}
+    {% if layout === "post" %}{% include "css/markdown.css" %}{% endif %}
+    {% if layout === "post" %}{% include "css/code.css" %}{% endif %}
+    {% if layout === "list" %}{% include "css/colors.njk" %}{% endif %}
     {% endset %}
     <style>
-      {{ css | cssmin | safe }}
+      {{ css | safe }}
     </style>
-
-    <!-- inline minified js -->
-    {% set js %}
-      {% include "js/index.js" %}
-    {% endset %}
-    <script>
-      {{ js | jsmin | safe }}
-    </script>
 
     <!-- icons -->
     <link rel="shortcut icon" href="/img/icons/icon-48x48.png" />
@@ -82,14 +74,19 @@ image: /img/thumbnails/default.png
 
     {{ content | safe }}
 
-    <!-- search -->
-    <script src="/js/modules/fuse.js" defer></script>
-    <script src="/js/search.js" defer></script>
-
-    <!-- page preload -->
+    <!-- preload pages -->
     <script src="/js/modules/instant_page.js" defer></script>
 
-    <!-- message in console -->
-    <script src="/js/message.js" defer></script>
+    <!-- search engine -->
+    <script src="/js/modules/fuse.js" defer></script>
+
+    <!-- inline js -->
+    {% set js %}
+    {% include "js/search.js" %}
+    {% include "js/message.js" %}
+    {% endset %}
+    <script>
+      {{ js | safe }}
+    </script>
   </body>
 </html>

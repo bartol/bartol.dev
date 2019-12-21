@@ -2,4 +2,31 @@
   <h1>
     {% include "components/logo.njk" %}
   </h1>
+
+  <section>
+    <section>
+      <p>Hi, welcome to Bartol's personal cyberspace!</p>
+      <p>On this website you can find my thoughts and notes mostly about web development.</p>
+
+    </section>
+
+
+    <div class="icons">
+      <a href="https://github.com/bartol" target="_blank" rel="nofollow noopener noreferrer">
+        {% include "components/github_icon.njk" %}
+      </a>
+      <a href="mailto:contact@bartol.dev" target="_blank" rel="nofollow noopener noreferrer" class="icon_with_margin">
+        {% include "components/email_icon.njk" %}
+      </a>
+      <a href="/feed.xml" target="_blank" rel="nofollow noopener noreferrer">
+        {% include "components/feed_icon.njk" %}
+      </a>
+    </div>
+
+
+    <div class="search_wrapper">
+      <input type="search" id="search" placeholder="Search" />
+      <ol id="results"></ol>
+    </div>
+  </section>
 </nav>

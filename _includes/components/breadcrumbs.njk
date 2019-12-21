@@ -1,5 +1,5 @@
 <nav class="breadcrumbs">
-  {%- for breadcrumb in page.url | url_to_breadcrumbs(collections.all) -%}
+  {% for breadcrumb in page.url | url_to_breadcrumbs(collections.all) %}
 
   {% if breadcrumb.show_arrow %}
 
@@ -17,5 +17,5 @@
 
   {% endif %}
 
-  {%- endfor -%}
+  {% endfor %}
 </nav>

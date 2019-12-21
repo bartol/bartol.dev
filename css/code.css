@@ -1,3 +1,10 @@
+/*
+--------------------------------------------------
+name: Code Styles
+path: /css/code.css
+--------------------------------------------------
+*/
+
 code[class*='language-'],
 pre[class*='language-'] {
   color: #cbccc5;

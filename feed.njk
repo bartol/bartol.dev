@@ -14,7 +14,7 @@ sitemap_ignore: true
     <name>Bartol Deak</name>
     <email>b@bartol.dev</email>
   </author>
-  {%- for post in collections.posts %}
+  {% for post in collections.posts %}
   {% set absolutePostUrl %}{{ post.url | url | absoluteUrl("https://bartol.dev/") }}{% endset %}
   <entry>
     <title>{{ post.data.title }}</title>
@@ -23,5 +23,5 @@ sitemap_ignore: true
     <id>{{ absolutePostUrl }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
   </entry>
-  {%- endfor %}
+  {% endfor %}
 </feed>

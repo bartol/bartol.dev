@@ -74,14 +74,10 @@ image: /img/thumbnails/default.png
 
     {{ content | safe }}
 
-    <!-- preload pages -->
-    <script src="/js/modules/instant_page.js" defer></script>
-
-    <!-- search engine -->
-    <script src="/js/modules/fuse.js" defer></script>
-
     <!-- inline js -->
     {% set js %}
+    {% include "js/modules/instant_page.js" %}
+    {% include "js/modules/fuse.js" %}
     {% include "js/search.js" %}
     {% include "js/message.js" %}
     {% endset %}

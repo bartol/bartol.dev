@@ -175,10 +175,6 @@ nav.normal {
   height: 2.6rem;
 }
 
-.logo.root {
-  height: 12rem;
-}
-
 nav a:focus svg,
 .icon:hover {
   transition: all .75s;
@@ -226,15 +222,44 @@ nav *:focus {
   outline: none;
 }
 
-.icon_with_margin {
-  margin-left: 1rem;
-  margin-right: 0.9rem;
+.icons {
+  width: 110px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.icons {
+/* banner */
+nav.root {
+  margin: 2rem 0.1rem;
   display: flex;
 }
 
+.logo.root {
+  height: 12rem;
+}
+
+nav.root > section.main {
+  flex-grow: 1;
+  margin: 0.1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav.root .description {
+  flex-grow: 1;
+  font-size: 1.1rem;
+  color: var(--color-dark-300);
+  margin: 0.75rem 20%;
+  text-align: justify;
+}
+
+nav.root .icons {
+  width: auto;
+  height: 105px;
+  flex-direction: column;
+  align-self: center;
+}
 
 /* search */
 

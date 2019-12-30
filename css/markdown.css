@@ -59,7 +59,9 @@ path: /css/markdown.css
   font-size: 1.25rem;
 }
 
-.post .content p {
+.post .content p,
+.post .content li,
+.post .content blockquote {
   text-align: justify;
 }
 
@@ -108,4 +110,22 @@ path: /css/markdown.css
 .post .content mark {
   color: var(--color-dark-800);
   background: var(--color-main);
+}
+
+.post .content blockquote {
+  border-left: 3px solid var(--color-main);
+  padding: 0rem 1rem;
+  margin: 1.5rem 0 1.5rem 1rem;
+}
+
+.post .content blockquote p {
+  display: inline;
+}
+
+.post .content blockquote:before {
+  color: var(--color-main);
+  content: open-quote;
+  font-size: 4rem;
+  line-height: 1px;
+  vertical-align: -0.4em;
 }

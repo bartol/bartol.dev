@@ -109,6 +109,14 @@ async function handle_search() {
       selected.firstChild.click()
     }
   })
+
+  // focus search box on '/'
+  window.addEventListener('keydown', e => {
+    if (e.keyCode === 191 && document.activeElement !== search_box) {
+      e.preventDefault()
+      search_box.focus()
+    }
+  })
 }
 
 handle_search()

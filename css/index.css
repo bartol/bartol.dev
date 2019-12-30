@@ -180,20 +180,20 @@ nav.normal {
     display: none;
   }
 
-  .menu_icon {
+  nav.normal .menu_icon {
     display: block;
     flex-basis: 3.2rem;
   }
 
-  .menu_icon > svg {
+  nav.normal .menu_icon > svg {
     margin-left: 1rem;
   }
 
-  .search_wrapper {
+  nav.normal .search_wrapper {
     flex-basis: calc(100% - 3.2rem);
   }
 
-  .icons {
+  nav.normal .icons {
     opacity: 0;
     transform: translateY(-20px);
     pointer-events: none;
@@ -202,28 +202,28 @@ nav.normal {
     right: 2.5%;
     top: 4.5rem;
     flex-direction: column;
-    width: auto !important;
+    width: auto;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     background: var(--color-dark-700);
     padding: 0.3rem;
   }
 
-  .icons > * {
+  nav.normal .icons > * {
     padding: 0.3rem;
   }
 
-  .email {
-    margin-left: 0 !important;
+  nav.normal .email {
+    margin-left: 0;
   }
 
-  #menu:checked ~ .icons {
+  nav.normal #menu:checked ~ .icons {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
   }
 
-  #menu:checked ~ .menu_icon .icon {
+  nav.normal #menu:checked ~ .menu_icon .icon {
     transition: all .75s;
     stroke: var(--color-main);
   }

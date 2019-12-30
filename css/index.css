@@ -165,6 +165,70 @@ nav.normal {
   margin: 2rem 0.1rem 1.5rem 0.1rem;
 }
 
+#menu,
+.menu_icon {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  nav.normal {
+    flex-wrap: wrap;
+    margin: 1rem 0.1rem;
+  }
+
+  nav.normal h1 {
+    display: none;
+  }
+
+  .menu_icon {
+    display: block;
+    flex-basis: 3.2rem;
+  }
+
+  .menu_icon > svg {
+    margin-left: 1rem;
+  }
+
+  .search_wrapper {
+    flex-basis: calc(100% - 3.2rem);
+  }
+
+  .icons {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    position: absolute;
+    right: 2.5%;
+    top: 4.5rem;
+    flex-direction: column;
+    width: auto !important;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--color-dark-700);
+    padding: 0.3rem;
+  }
+
+  .icons > * {
+    padding: 0.3rem;
+  }
+
+  .email {
+    margin-left: 0 !important;
+  }
+
+  #menu:checked ~ .icons {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  #menu:checked ~ .menu_icon .icon {
+    transition: all .75s;
+    stroke: var(--color-main);
+  }
+}
+
 .icon {
   stroke: #e5e5e5;
   display: block;
@@ -173,6 +237,10 @@ nav.normal {
 
 .logo {
   height: 2.6rem;
+}
+
+.email {
+  margin-left: 0.12rem;
 }
 
 nav a:focus svg,
@@ -266,10 +334,10 @@ nav.root .icons {
 #search {
   font-size: 2rem;
   padding: 0 0.6rem;
-  width: 450px;
+  width: 100%;
   border: none;
   border-radius: var(--radius);
-  box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+  box-shadow: var(--shadow);
   color: var(--color-dark-200);
   background-color: var(--color-dark-700);
 }
@@ -284,6 +352,7 @@ nav.root .icons {
 
 .search_wrapper {
   position: relative;
+  width: 450px;
 }
 
 /* fix placeholder color in firefox */

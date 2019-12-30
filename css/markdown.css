@@ -60,7 +60,6 @@ path: /css/markdown.css
 }
 
 .post .content p,
-.post .content li,
 .post .content blockquote {
   text-align: justify;
 }

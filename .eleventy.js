@@ -5,6 +5,7 @@ const markdownItMark = require('markdown-it-mark')
 const iterator = require('markdown-it-for-inline')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rss = require('@11ty/eleventy-plugin-rss')
+const colors = require('./_data/colors.json')
 
 function getLength(collections, collection) {
   // filter out collections that aren't wanted collection or its children
@@ -146,6 +147,13 @@ module.exports = function(eleventyConfig) {
     const plural = length > 1 ? 's' : ''
 
     return `${length} post${plural}`
+  })
+
+  eleventyConfig.addFilter('collection_to_color', function(collection) {
+    const match = colors.filter(color => color.name === collection)[0]
+    const color = match ? match.value.slice(1) : '19c0e6'
+
+    return color
   })
 
   // plugins

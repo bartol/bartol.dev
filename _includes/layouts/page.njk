@@ -1,7 +1,6 @@
 ---
 title: Bartol's personal cyberspace
 description: Personal cyberspace where you can find my thoughts and notes mostly about web development. Updated daily.
-image: /img/thumbnails/default.png
 ---
 <!doctype html>
 <html lang="en">
@@ -11,7 +10,7 @@ image: /img/thumbnails/default.png
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>{{ title }}</title>
     <meta name="description" content="{{ description }}" />
-    <meta name="image" content="{{ image }}" />
+    <meta name="image" content="https://colors.bartol.dev/?hex={{ page.url | urlToCollection(layout) | collection_to_color }}" />
     <meta name="generator" content="Eleventy" />
 
     <!-- preload fonts -->
@@ -49,13 +48,13 @@ image: /img/thumbnails/default.png
     <meta name="twitter:creator" content="@BartolDeak" />
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:image" content="{{ image }}" />
+    <meta name="twitter:image" content="https://colors.bartol.dev/?hex={{ page.url | urlToCollection(layout) | collection_to_color }}" />
 
     <meta property="og:url" content="https://bartol.dev{{ page.url }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:image" content="https://colors.bartol.dev/?hex={{ page.url | urlToCollection(layout) | collection_to_color }}" />
 
     <!-- sitemap -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />

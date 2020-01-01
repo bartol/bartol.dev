@@ -243,9 +243,13 @@ nav.normal {
   margin-left: 0.12rem;
 }
 
+nav a svg,
+.icon {
+  transition: all .75s;
+}
+
 nav a:focus svg,
 .icon:hover {
-  transition: all .75s;
   stroke: var(--color-main);
 }
 

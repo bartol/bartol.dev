@@ -19,11 +19,11 @@ description: Personal cyberspace where you can find my thoughts and notes mostly
 
     <!-- inline css -->
     {% set css %}
-    {% include "css/reset.css" %}
-    {% include "css/index.css" %}
-    {% if layout === "post" %}{% include "css/markdown.css" %}{% endif %}
-    {% if layout === "post" %}{% include "css/code.css" %}{% endif %}
-    {% if layout === "list" %}{% include "css/colors.njk" %}{% endif %}
+{% include "css/reset.css" %}
+{% include "css/index.css" %}
+{% if layout === "post" %}{% include "css/markdown.css" %}{% endif %}
+{% if layout === "post" %}{% include "css/code.css" %}{% endif %}
+{% if layout === "list" %}{% include "css/colors.njk" %}{% endif %}
     {% endset %}
     <style>
       {{ css | safe }}
@@ -76,10 +76,10 @@ description: Personal cyberspace where you can find my thoughts and notes mostly
 
     <!-- inline js -->
     {% set js %}
-    {% include "js/modules/instant_page.js" %}
-    {% include "js/modules/fuse.js" %}
-    {% include "js/search.js" %}
-    {% include "js/message.js" %}
+{% include "js/modules/instant_page.js" %}
+{% include "js/modules/fuse.js" %}
+{% include "js/search.js" %}
+{% include "js/message.js" %}
     {% endset %}
     <script>
       {{ js | safe }}

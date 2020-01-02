@@ -15,6 +15,12 @@ path: /css/markdown.css
   margin-top: 2rem;
 }
 
+@media (max-width: 700px) {
+  .post .title {
+    font-size: 2rem;
+  }
+}
+
 .post .date {
   font-weight: 400;
   font-size: 1.1rem;

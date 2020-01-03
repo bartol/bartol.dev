@@ -7,38 +7,20 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const rss = require('@11ty/eleventy-plugin-rss')
 const colors = require('./_data/colors.json')
 
-function getLength(collections, collection) {
-  // filter out collections that aren't wanted collection or its children
-  // filter out parent collection if it has children
-  // for each collection get length
-  // add all children lengths to parent
-
-  const length = Object.keys(collections)
+function get_collection_length(all_collections, collection) {
+  const length = Object.keys(all_collections)
+    // get all collections and its children
     .filter(c => {
-      if (collection === c) return true
-
-      let match = true
-      const collection_split = `${collection}_`.split('')
-      const c_split = c.split('')
-      collection_split.forEach((_, index) => {
-        if (collection_split[index] !== c_split[index]) {
-          match = false
-        }
-      })
-      return match
+      return c === collection || c.startsWith(`${collection}_`)
     })
-    .filter((c, _, arr) => {
-      let match = true
-      arr.forEach(item => {
-        if (item.startsWith(c + '_')) {
-          match = false
-        }
-      })
-      return match
-    })
+    // get children length
     .map(c => {
-      return collections[c].length
+      const len = all_collections[c].length
+      // if child is parent itself only return its children lenght
+      if (len && c !== collection) return len - 1
+      return len
     })
+    // add all children lengths to parent
     .reduce((a, b) => a + b)
 
   return length
@@ -89,11 +71,11 @@ module.exports = function(eleventyConfig) {
     return date.getMonth() + 1 + '/' + date.getFullYear()
   })
 
-  eleventyConfig.addFilter('sortList', function(list, sort, collections) {
+  eleventyConfig.addFilter('sortList', function(list, sort, all_collections) {
     if (sort === 'len') {
       return list.sort(function(a, b) {
-        const a_len = getLength(collections, a.data.collection)
-        const b_len = getLength(collections, b.data.collection)
+        const a_len = get_collection_length(all_collections, a.data.collection)
+        const b_len = get_collection_length(all_collections, b.data.collection)
 
         if (a_len < b_len) return 1
         if (a_len > b_len) return -1
@@ -142,8 +124,8 @@ module.exports = function(eleventyConfig) {
   })
 
   // get collection length
-  eleventyConfig.addFilter('get_length', function(collections, collection) {
-    const length = getLength(collections, collection)
+  eleventyConfig.addFilter('get_length', function(all_collections, collection) {
+    const length = get_collection_length(all_collections, collection)
     const plural = length > 1 ? 's' : ''
 
     return `${length} post${plural}`

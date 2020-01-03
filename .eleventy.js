@@ -77,19 +77,19 @@ module.exports = function(eleventyConfig) {
     return date.getMonth() + 1 + '/' + date.getFullYear()
   })
 
-  eleventyConfig.addFilter('sortList', function(list, sort, all_collections) {
-    if (sort === 'len') {
-      return list.sort(function(a, b) {
+  eleventyConfig.addFilter('sort_list', function(list, all_collections) {
+    return list.sort(function(a, b) {
+      if (a.data.collection && b.data.collection) {
         const a_len = get_collection_length(all_collections, a.data.collection)
         const b_len = get_collection_length(all_collections, b.data.collection)
 
-        if (a_len < b_len) return 1
-        if (a_len > b_len) return -1
-        return 0
-      })
-    }
-
-    return list.sort(function(a, b) {
+        if (typeof a_len === 'number' && typeof b_len === 'number') {
+          if (a_len < b_len) return 1
+          if (a_len > b_len) return -1
+        }
+        if (a.data.collection > b.data.collection) return 1
+        if (a.data.collection < b.data.collection) return -1
+      }
       return b.date - a.date
     })
   })

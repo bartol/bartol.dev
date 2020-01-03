@@ -60,6 +60,12 @@ module.exports = function(eleventyConfig) {
     })
   })
 
+  eleventyConfig.addCollection('drafts', function(collection) {
+    return collection.getAll().filter(function(item) {
+      return item.data.draft
+    })
+  })
+
   // filters
   eleventyConfig.addFilter('toJSON', function(obj) {
     return JSON.stringify(obj)

@@ -6,13 +6,11 @@
 
 Personal cyberspace where you can find my thoughts and notes about web development.
 
-[![Actions Status](https://github.com/bartol/bartol.dev/workflows/build/badge.svg)](https://github.com/bartol/bartol.dev/actions)
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f87ba513-159f-4d19-81a3-1dd06e9ec817/deploy-status)](https://app.netlify.com/sites/bartol/deploys)
 
 ## Navigate project
 
-- Directory names same as routes on website.
+Directory names same as routes on website.
 
 | Posts about                          |  Directory   |
 | ------------------------------------ | :----------: |

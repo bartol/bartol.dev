@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Common HTTP status codes
+title: Status codes
 date: 2019-10-30
 ---
 

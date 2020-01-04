@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gatsby fix window is not defined
+title: Window is not defined
 date: 2019-09-19
 ---
 

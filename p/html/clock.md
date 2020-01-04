@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Working HTML clock with no dependencies
+title: Clock
 date: 2019-08-17
 ---
 

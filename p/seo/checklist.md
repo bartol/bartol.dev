@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SEO checklist
+title: Checklist
 date: 2019-10-05
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Set character width of number in C
+title: Character width of number
 date: 2019-09-18
 ---
 

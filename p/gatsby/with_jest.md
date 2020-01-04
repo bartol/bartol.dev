@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gatsby Unit and Integration tests with Jest
+title: Unit and Integration tests 
 date: 2019-08-21
 ---
 

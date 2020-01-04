@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Password input reveal
+title: Reveal password input 
 date: 2019-10-17
 ---
 

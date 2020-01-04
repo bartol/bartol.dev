@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bind input to state with React Hooks
+title: Bind input to state with Hooks
 date: 2019-08-13
 ---
 

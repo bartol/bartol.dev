@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Set fraction digits to float in C
+title: Float fraction digits
 date: 2019-09-17
 ---
 

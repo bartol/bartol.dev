@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Common HTTP methods
+title: Methods
 date: 2019-11-02
 ---
 

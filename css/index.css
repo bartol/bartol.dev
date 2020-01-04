@@ -141,6 +141,7 @@ html {
   box-shadow: var(--shadow);
   background-color: var(--color-dark-700);
   border-radius: var(--radius);
+  position: relative;
 }
 
 .item h2 {
@@ -155,6 +156,15 @@ html {
 .item:focus {
   outline: none;
   box-shadow:0 0 0 3px var(--color-dark-200);
+}
+
+.item .draft {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  margin: .75rem 1rem;
 }
 
 nav.normal {

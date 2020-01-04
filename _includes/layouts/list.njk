@@ -27,10 +27,16 @@ collection: root
 
           {%- else -%}
 
-            Last updated in {{ item.date | formatDate }}
+            Last update in {{ item.date | formatDate }}
 
           {%- endif -%}
         </h3>
+
+        {%- if item.data.draft -%}
+          <div class="draft">
+            {% include "components/draft_icon.njk" %}
+          </div>
+        {%- endif -%}
       </a>
     </li>
   {% endfor %}

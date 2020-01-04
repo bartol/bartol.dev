@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Symbolic constants in C
+title: Symbolic constants
 date: 2019-09-22
 ---
 

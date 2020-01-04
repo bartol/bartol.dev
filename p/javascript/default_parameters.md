@@ -1,6 +1,6 @@
 ---
 layout: post
-title: JavaScript default parameters
+title: Default parameters
 date: 2019-09-02
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Count characters in input React
+title: Count characters in input 
 date: 2019-09-23
 ---
 

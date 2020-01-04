@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTML link to CSS file
+title: Link to CSS file
 date: 2019-08-15
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting started with Redux on Gatsby site
+title: Setup Redux
 date: 2019-08-10
 ---
 

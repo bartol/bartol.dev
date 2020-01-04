@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Create list from array in React
+title: Create list from array 
 date: 2019-08-08
 ---
 

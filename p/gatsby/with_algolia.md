@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algolia search on Gatsby
+title: Algolia search
 date: 2019-08-06
 ---
 

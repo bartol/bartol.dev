@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Take screenshot of web page with Puppeteer
+title: Take screenshot
 date: 2019-10-29
 ---
 

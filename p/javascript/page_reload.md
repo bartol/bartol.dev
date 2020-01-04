@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reload page using JavaScript
+title: Reload page
 date: 2019-08-31
 ---
 

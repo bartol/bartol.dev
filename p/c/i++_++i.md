@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Difference between i++ and ++i in C
+title: Difference between i++ and ++i
 date: 2019-10-01
 ---
 

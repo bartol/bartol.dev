@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Enums in GraphQL
+title: Enums
 date: 2019-10-15
 ---
 

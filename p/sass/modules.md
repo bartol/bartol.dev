@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sass modules
+title: Modules
 date: 2019-10-22
 ---
 

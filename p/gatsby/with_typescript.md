@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use TypeScript with Gatsby
+title: Setup TypeScript
 date: 2019-11-12
 ---
 

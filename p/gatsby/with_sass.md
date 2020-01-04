@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Use Sass on Gatsby site
+title: Setup Sass
 date: 2019-09-09
 ---
 

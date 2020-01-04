@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Variables in Rust
+title: Variables 
 date: 2019-11-18
 ---
 

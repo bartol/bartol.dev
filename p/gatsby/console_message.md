@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Console message on Gatsby site
+title: Message in console
 date: 2019-11-16
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Colorful printf output in C
+title: Colorful printf output
 date: 2019-09-15
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Access other parameters in function default parameters
+title: Access other parameters in default parameters
 date: 2019-09-25
 ---
 

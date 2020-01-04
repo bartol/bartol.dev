@@ -7,7 +7,7 @@ sitemap_ignore: true
   {%- for entry in collections.posts %}
     {
       "url": "{{ entry.url }}",
-      "title": "{{ entry.data.title | striptags }}",
+      "title": "{{ entry.data.title }}",
       "category": "{{ entry.url | urlToCollection | collectionToCategory }}"
     }{% if loop.revindex0 != 0 %},{% endif %}
   {%- endfor %}

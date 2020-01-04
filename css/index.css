@@ -411,3 +411,37 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .result.selected a {
   color: var(--color-dark-700);
 }
+
+.not_found {
+  text-align: center;
+}
+
+.not_found_ascii {
+  font-family: 'Dank Mono', monospace;
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.not_found_text {
+  margin: 1.5rem 0 1rem 0;
+}
+
+@media screen and (max-width: 450px) {
+  .not_found_ascii {
+    font-size: 6rem;
+  }
+
+  .not_found_text {
+    margin: 1rem 0 0.75rem 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .not_found_ascii {
+    font-size: 4rem;
+  }
+
+  .not_found_text {
+    margin: 0.75rem 1rem 0.5rem 1rem;
+  }
+}

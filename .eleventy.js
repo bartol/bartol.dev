@@ -8,7 +8,7 @@ const rss = require('@11ty/eleventy-plugin-rss')
 const colors = require('./_data/colors.json')
 
 function get_collection_length(all_collections, collection) {
-  const length = Object.keys(all_collections)
+  const len = Object.keys(all_collections)
     // get all collections and its children
     .filter(c => {
       return c === collection || c.startsWith(`${collection}_`)
@@ -20,10 +20,13 @@ function get_collection_length(all_collections, collection) {
       if (len && c !== collection) return len - 1
       return len
     })
-    // add all children lengths to parent
-    .reduce((a, b) => a + b)
 
-  return length
+  if (len.length) {
+    // add all children lengths to parent
+    return len.reduce((a, b) => a + b)
+  } else {
+    return len
+  }
 }
 
 module.exports = function(eleventyConfig) {
@@ -78,6 +81,8 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addFilter('sort_list', function(list, all_collections) {
+    if (!list || list.length < 2) return list
+
     return list.sort(function(a, b) {
       if (a.data.collection && b.data.collection) {
         const a_len = get_collection_length(all_collections, a.data.collection)
@@ -90,7 +95,12 @@ module.exports = function(eleventyConfig) {
         if (a.data.collection > b.data.collection) return 1
         if (a.data.collection < b.data.collection) return -1
       }
-      return b.date - a.date
+      if (a.date && b.date) {
+        return b.date - a.date
+      }
+      if (a.data.date && b.data.date) {
+        return b.data.date - a.data.date
+      }
     })
   })
 

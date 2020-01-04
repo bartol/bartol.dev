@@ -17,10 +17,13 @@ Personal cyberspace where you can find my thoughts and notes about web developme
 | Posts about                          |  Directory   |
 | ------------------------------------ | :----------: |
 | [Programming](https://bartol.dev/p/) |  [p/](./p/)  |
+| [Software](https://bartol.dev/s/)    |  [s/](./s/)  |
+| [Electronics](https://bartol.dev/e/) |  [e/](./e/)  |
 | [Me](https://bartol.dev/me/)         | [me/](./me/) |
 
-<!--| [Electronics](https://bartol.dev/e/) |  [e/](./e/)  |-->
-<!--| [Cooking](https://bartol.dev/c/)     |  [c/](./c/)  |-->
+<!--
+| [Cooking](https://bartol.dev/c/)     |  [c/](./c/)  |
+-->
 
 ## Run locally
 

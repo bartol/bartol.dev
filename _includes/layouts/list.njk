@@ -15,7 +15,7 @@ collection: root
 {% endif %}
 
 <ul class="items">
-  {% for item in collections[collection] | sortList(sort, collections) %}
+  {% for item in collections[collection] | sort_list(collections) %}
     <li>
       <a href="{{ item.url }}" class="item {{ item.url | urlToCollection(item.data.layout) }}">
         <h2>{{ item.data.title }}</h2>

@@ -24,8 +24,6 @@ function get_collection_length(all_collections, collection) {
   if (len.length) {
     // add all children lengths to parent
     return len.reduce((a, b) => a + b)
-  } else {
-    return len
   }
 }
 

@@ -32,11 +32,11 @@
     "value": "#a2140e"
   },
   {
-    "name": "p_git",
+    "name": "s_git",
     "value": "#ae2809"
   },
   {
-    "name": "p_vscode",
+    "name": "s_vscode",
     "value": "#00416d"
   },
   {
@@ -56,11 +56,11 @@
     "value": "#a21473"
   },
   {
-    "name": "p_github",
+    "name": "s_github",
     "value": "#78786d"
   },
   {
-    "name": "p_yarn",
+    "name": "s_yarn",
     "value": "#237195"
   },
   {
@@ -68,7 +68,7 @@
     "value": "#882e5b"
   },
   {
-    "name": "p_eslint",
+    "name": "s_eslint",
     "value": "#2d1d75"
   },
   {
@@ -80,27 +80,23 @@
     "value": "#303032"
   },
   {
-    "name": "p_fonts",
+    "name": "s_fonts",
     "value": "#ff8585"
-  },
-  {
-    "name": "p_yarn",
-    "value": "#237195"
   },
   {
     "name": "p_error",
     "value": "#951613"
   },
   {
-    "name": "p_vim",
+    "name": "s_vim",
     "value": "#005d04"
   },
   {
-    "name": "p_tmux",
+    "name": "s_tmux",
     "value": "#242424"
   },
   {
-    "name": "p_npm",
+    "name": "s_npm",
     "value": "#731317"
   },
   {

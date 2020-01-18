@@ -168,6 +168,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('robots.txt')
   eleventyConfig.addPassthroughCopy('manifest.webmanifest')
+  eleventyConfig.addPassthroughCopy('_redirects')
 
   // layout aliases
   eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')

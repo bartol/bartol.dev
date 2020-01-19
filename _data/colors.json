@@ -12,7 +12,7 @@
     "value": "#05a1cb"
   },
   {
-    "name": "p_lambda",
+    "name": "p_aws_lambda",
     "value": "#e05b1e"
   },
   {
@@ -24,12 +24,8 @@
     "value": "#03599C"
   },
   {
-    "name": "p_dynamodb",
+    "name": "p_aws_dynamodb",
     "value": "#443cd3"
-  },
-  {
-    "name": "p_serverless",
-    "value": "#a2140e"
   },
   {
     "name": "s_git",

@@ -5,7 +5,7 @@ path: /css/colors.css
 --------------------------------------------------
 */
 {% for color in colors %}
-.{{ color.name }} {
+[class^="item {{ color.name }}"] {
   background-color: {{ color.value }};
 }
 {% endfor %}

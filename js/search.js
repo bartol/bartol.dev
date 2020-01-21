@@ -15,6 +15,7 @@ async function handle_search() {
     keys: ['title', 'category', 'url'],
   }
 
+  // eslint-disable-next-line
   const fuse = new Fuse(posts, options)
 
   const handle_search = (e, skip_validation) => {

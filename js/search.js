@@ -80,11 +80,20 @@ async function handle_search() {
 
     const is_arrow_down = keyCode === 40
     const is_arrow_up = keyCode === 38
+    const is_ctrl_n = keyCode === 78 && ctrlKey
+    const is_ctrl_p = keyCode === 80 && ctrlKey
     const is_ctrl_j = keyCode === 74 && ctrlKey
     const is_ctrl_k = keyCode === 75 && ctrlKey
     const is_enter = keyCode === 13
 
-    if (is_arrow_down || is_arrow_up || is_ctrl_j || is_ctrl_k) {
+    if (
+      is_arrow_down ||
+      is_arrow_up ||
+      is_ctrl_n ||
+      is_ctrl_p ||
+      is_ctrl_j ||
+      is_ctrl_k
+    ) {
       e.preventDefault()
     }
 
@@ -93,14 +102,14 @@ async function handle_search() {
     const prev = selected.previousElementSibling
 
     if (next) {
-      if (is_arrow_down || is_ctrl_j) {
+      if (is_arrow_down || is_ctrl_n || is_ctrl_j) {
         selected.classList.remove('selected')
         next.classList.add('selected')
       }
     }
 
     if (prev) {
-      if (is_arrow_up || is_ctrl_k) {
+      if (is_arrow_up || is_ctrl_p || is_ctrl_k) {
         selected.classList.remove('selected')
         prev.classList.add('selected')
       }

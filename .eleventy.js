@@ -186,7 +186,7 @@ module.exports = function(eleventyConfig) {
     // open links in new tab
     .use(iterator, 'url_in_new_tab', 'link_open', function(tokens, idx) {
       tokens[idx].attrPush(['target', '_blank'])
-      tokens[idx].attrPush(['rel', 'nofollow noopener noreferrer'])
+      tokens[idx].attrPush(['rel', 'noopener noreferrer'])
     })
     // add links to headings
     .use(markdownItAnchor, {

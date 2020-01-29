@@ -4,12 +4,7 @@ collection: root
 ---
 
 {% include "components/nav.njk" %}
-
-{% if collection !== 'root' %}
-
-  {% include "components/breadcrumbs.njk" %}
-
-{% endif %}
+{% include "components/breadcrumbs.njk" %}
 
 <ul class="items">
   {% for item in collections[collection] | sort_list(collections) %}

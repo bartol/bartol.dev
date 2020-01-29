@@ -284,23 +284,6 @@ nav.breadcrumbs a:focus {
   color: var(--color-main);
 }
 
-.breadcrumb_current::before {
-  content: "You are here";
-  position: absolute;
-  transition: all 0.5s;
-  opacity: 0;
-  z-index: 99999;
-  border-radius: var(--radius);
-  padding: 0.1rem 0.4rem;
-  color: var(--color-dark-300);
-  background-color: var(--color-dark-700);
-}
-
-.breadcrumb_current:hover::before {
-  opacity: 1;
-  transform: translateY(1.55rem);
-}
-
 nav *:focus {
   outline: none;
 }

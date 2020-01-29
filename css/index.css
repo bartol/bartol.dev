@@ -213,6 +213,7 @@ nav.normal {
     top: 4.5rem;
     flex-direction: column;
     width: auto;
+    z-index: 99999;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     background: var(--color-dark-700);

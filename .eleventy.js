@@ -61,6 +61,12 @@ module.exports = function(eleventyConfig) {
     })
   })
 
+  eleventyConfig.addCollection('lists', function(collection) {
+    return collection.getAll().filter(function(item) {
+      return item.data.layout === 'list' && item.data.collection !== 'root'
+    })
+  })
+
   eleventyConfig.addCollection('drafts', function(collection) {
     return collection.getAll().filter(function(item) {
       return item.data.draft
@@ -116,7 +122,10 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addFilter('collectionToCategory', function(collection) {
-    return collection.split('_').slice(-1)
+    return collection
+      .split('_')
+      .slice(-1)
+      .join(' ')
   })
 
   eleventyConfig.addFilter('url_to_breadcrumbs', function(url, collections) {

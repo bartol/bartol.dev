@@ -3,13 +3,10 @@ layout: page
 collection: root
 ---
 
-{% if collection === 'root' %}
+{% include "components/nav.njk" %}
 
-  {% include "components/banner.njk" %}
+{% if collection !== 'root' %}
 
-{% else %}
-
-  {% include "components/nav.njk" %}
   {% include "components/breadcrumbs.njk" %}
 
 {% endif %}

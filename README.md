@@ -4,7 +4,7 @@
 
 # [bartol.dev](https://bartol.dev)
 
-Personal cyberspace where you can find my thoughts and notes about web development.
+Personal cyberspace where you can find my thoughts and notes.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f87ba513-159f-4d19-81a3-1dd06e9ec817/deploy-status)](https://app.netlify.com/sites/bartol/deploys)
 

@@ -22,5 +22,5 @@ not the directory itself.
 cp -R dir_1/ dir_2
 ```
 
-View how to copy files and useful options for command `cp`
+View how to copy files and useful flags for command `cp`
 [here](/s/unix/copy_file/).

@@ -5,7 +5,7 @@ date: 2020-01-19
 ---
 
 To view contents of directory you can use `ls`. Default output of `ls` may
-not be informative enough so you can use following options:
+not be informative enough so you can use following flags:
 
 - `-a` - show hidden files
 - `-l` - show more info (permissions, size, time modified,...)
@@ -14,7 +14,7 @@ not be informative enough so you can use following options:
 - `-S` - sort files by size
 - `-t` - sort files by time modified
 
-Options can be combined, for example `ls -la` to show hidden files and
+Flags can be combined, for example `ls -la` to show hidden files and
 more info.
 
 But output is still monotone and boring. To add colors you can pass

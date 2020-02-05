@@ -19,7 +19,7 @@ Copying multiple files in directory works the same way.
 cp file_1 file_2 directory_1
 ```
 
-Useful options for command `cp`:
+Useful flags for command `cp`:
 
 - `-n` - don't overwrite an existing file
 - `-f` - if destination file can't be opened, delete it and create new file

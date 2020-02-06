@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Run ESLint on Filetype
+title: Run ESLint on file type
 date: 2019-09-10
 ---
 

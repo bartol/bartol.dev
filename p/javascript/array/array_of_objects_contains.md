@@ -4,8 +4,6 @@ title: Check if array of objects contains
 date: 2019-08-23
 ---
 
-This is one of those simple problems I encounter every few days and find myself searching through visited stack overflow questions, so here is solution, once and for all.
-
 Let's say you have some object data in array similar to this.
 
 ```js
@@ -16,7 +14,7 @@ const users = [
   },
   {
     name: 'Bartol',
-    email: 'contact@bartol.dev',
+    email: 'b@bartol.dev',
   },
 ]
 ```

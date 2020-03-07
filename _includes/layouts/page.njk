@@ -1,5 +1,6 @@
 ---
 title: Bartol's personal cyberspace
+default_title: Bartol's personal cyberspace
 description: Personal cyberspace where you can find my thoughts and notes mostly about web development. Updated daily.
 ---
 <!doctype html>
@@ -8,7 +9,7 @@ description: Personal cyberspace where you can find my thoughts and notes mostly
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>{{ title }}</title>
+    <title>{{ title }}{% if title !== default_title %} :: {{ default_title }}{% endif %}</title>
     <meta name="description" content="{{ description }}" />
     <meta name="image" content="https://colors.bartol.dev/?hex={{ page.url | urlToCollection(layout) | collection_to_color }}" />
     <meta name="generator" content="Eleventy" />

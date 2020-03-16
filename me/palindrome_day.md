@@ -23,7 +23,3 @@ because 2020 is leap year there are 333 days left.
 
 It is safe to assume that today is most palindromic day humans will ever live,
 so don't forget to celebrate it.
-
-To celebrate it myself I have made a web page that shows how much until the
-next palindrome date and more. Check it out
-[here](https://2020-02-02.netlify.com/).

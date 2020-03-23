@@ -24,7 +24,7 @@
     "markdown-it-anchor": "^5.2.5",
     "markdown-it-for-inline": "^0.1.1",
     "markdown-it-mark": "^3.0.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.1",
     "tap-spot": "^1.1.1"
   }
 }

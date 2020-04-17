@@ -1,0 +1,12 @@
+---
+layout: page
+---
+
+<ul>
+  {% for post in collections.post %}
+    <li>
+      {{ post.date | formatDate }}
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

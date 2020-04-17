@@ -1,0 +1,24 @@
+---
+layout: page
+pagination:
+  data: collections.post
+  size: 2
+permalink: "{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{% endif %}/index.html"
+---
+
+<ul>
+  {% for post in pagination.items %}
+    <li>
+      {{ post.date | formatDate }}
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% if pagination.href.previous %}
+  <a href="{{ pagination.href.previous }}">&larr; Previous</a>
+{% endif %}
+
+{% if pagination.href.next %}
+  <a href="{{ pagination.href.next }}">Next &rarr;</a>
+{% endif %}

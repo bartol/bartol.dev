@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog
 title: Complete file name in Vim
 date: 2020-02-05
 ---

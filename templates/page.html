@@ -1,6 +1,6 @@
 ---
-title: Bartol's blog
-short_title: Bartol's blog
+title: Bartol's website
+short_title: Bartol's website
 ---
 <!doctype html>
 <html lang="en">
@@ -10,8 +10,7 @@ short_title: Bartol's blog
     <title>
       {{ title }}{% if title !== short_title %} :: {{ short_title }}{% endif %}
     </title>
-    <link rel="stylesheet" type="text/css" href="/css/base.css" />
-    <link rel="stylesheet" type="text/css" href="/css/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="/css/page.css" />
   </head>
   <body>
     <div class="content">
@@ -22,12 +21,12 @@ short_title: Bartol's blog
         <img src="/files/logo.svg" alt="Bartol's logo" class="logo" />
       </a>
 
-      <a href="/posts/">Posts</a>
-      <a href="/snippets/">Snippets</a>
+      <a href="/blog/">Blog</a> (<a href="/blog.xml">RSS</a>)
+      <a href="/til/">Today I learned</a> (<a href="/til.xml">RSS</a>)
 
       <form action="https://www.google.com/search" method="get" class="search">
         <input type="hidden" name="q" value="site:bartol.dev">
-        <input type="text" name="q">
+        <input type="text" name="q" autocomplete="off">
         <button type="submit">Search</button>
       </form>
     </div>

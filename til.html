@@ -1,0 +1,15 @@
+---
+layout: page
+title: Today I learned
+---
+
+<h1>Today I learned</h1>
+
+<ul>
+  {% for post in collections.til %}
+    <li>
+      {{ post.date | formatDate }}
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

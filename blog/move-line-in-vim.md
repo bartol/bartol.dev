@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog
 title: Move line in Vim
 date: 2019-11-22
 ---

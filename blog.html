@@ -1,10 +1,12 @@
 ---
 layout: page
-title: Posts
+title: Blog
 ---
 
+<h1>Blog</h1>
+
 <ul>
-  {% for post in collections.post %}
+  {% for post in collections.blog %}
     <li>
       {{ post.date | formatDate }}
       <a href="{{ post.url | url }}">{{ post.data.title }}</a>

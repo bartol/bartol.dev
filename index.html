@@ -9,8 +9,11 @@ permalink: "{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber + 1 }}{%
 <ul>
   {% for post in pagination.items %}
     <li>
-      {{ post.date | formatDate }}
+      <time>{{ post.date | formatDate }}</time>
       <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      <summary>
+        {{ post.templateContent | striptags(true) | truncate(280) }}
+      </summary>
     </li>
   {% endfor %}
 </ul>

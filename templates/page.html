@@ -1,15 +1,12 @@
 ---
-title: Bartol's website
-short_title: Bartol's website
+title: Bartol Deak
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      {{ title }}{% if title !== short_title %} :: {{ short_title }}{% endif %}
-    </title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" type="text/css" href="/css/page.css" />
   </head>
   <body>
@@ -23,6 +20,7 @@ short_title: Bartol's website
 
       <a href="/blog/">Blog</a> (<a href="/blog.xml">RSS</a>)
       <a href="/til/">Today I learned</a> (<a href="/til.xml">RSS</a>)
+      <a href="/reading/">Reading list</a> (<a href="/reading.xml">RSS</a>)
 
       <form action="https://www.google.com/search" method="get" class="search">
         <input type="hidden" name="q" value="site:bartol.dev">

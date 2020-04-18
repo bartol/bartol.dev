@@ -12,6 +12,12 @@ module.exports = function(eleventyConfig) {
     })
   })
 
+  eleventyConfig.addCollection('reading', function(collection) {
+    return collection.getAll().filter(function(item) {
+      return item.data.layout === 'reading'
+    })
+  })
+
   // eleventyConfig.addCollection('file', function(collection) {
 
   // })
@@ -20,8 +26,13 @@ module.exports = function(eleventyConfig) {
     return date.toISOString().substring(0, 10)
   })
 
-  eleventyConfig.addPassthroughCopy("posts");
+  eleventyConfig.addPassthroughCopy("blog");
+  eleventyConfig.addPassthroughCopy("blog.xml");
   eleventyConfig.addPassthroughCopy("til");
+  eleventyConfig.addPassthroughCopy("til.xml");
+  eleventyConfig.addPassthroughCopy("reading");
+  eleventyConfig.addPassthroughCopy("reading.xml");
+
   eleventyConfig.addPassthroughCopy("files");
   eleventyConfig.addPassthroughCopy("css");
 

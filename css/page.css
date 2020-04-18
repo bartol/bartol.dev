@@ -1,5 +1,26 @@
 html {
   scroll-behavior: smooth;
+  color: #eee;
+  background-color: black;
+}
+
+body {
+  width: 90%;
+  max-width: 550px;
+  margin: 0 auto;
+  /* background: red; */
+}
+
+a {
+  text-decoration: none;
+  color: hsla(190, 80%, 50%, 1);
+}
+
+a:hover {
+  /* text-decoration: none; */
+  text-decoration: underline;
+  /* color: black; */
+  /* background-color: hsla(190, 80%, 50%, 1); */
 }
 
 .logo {

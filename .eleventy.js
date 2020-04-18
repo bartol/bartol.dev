@@ -40,6 +40,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       output: "build",
       layouts: "templates",
+      data: "data"
     },
     htmlTemplateEngine: "njk",
   }

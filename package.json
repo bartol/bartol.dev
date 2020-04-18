@@ -1,0 +1,13 @@
+{
+  "name": "bartol.dev",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "prod": "ELEVENTY_PRODUCTION=true eleventy",
+    "debug": "DEBUG=Eleventy* eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "directory-tree": "^2.2.4"
+  }
+}

@@ -1,3 +1,5 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection('blog', function(collection) {
@@ -27,14 +29,13 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addPassthroughCopy("blog");
-  eleventyConfig.addPassthroughCopy("blog.xml");
   eleventyConfig.addPassthroughCopy("til");
-  eleventyConfig.addPassthroughCopy("til.xml");
   eleventyConfig.addPassthroughCopy("reading");
-  eleventyConfig.addPassthroughCopy("reading.xml");
 
   eleventyConfig.addPassthroughCopy("files");
   eleventyConfig.addPassthroughCopy("css");
+
+  eleventyConfig.addPlugin(pluginRss);
 
   return {
     dir: {

@@ -3,7 +3,7 @@
 /me/github              https://github.com/bartol
 /me/twitter             https://twitter.com/BartolDeak
 /me/reddit              https://www.reddit.com/user/hello_I_am_bad_dev
-/g                      https://github.com/bartol
+/g/*                    https://github.com/bartol/:splat
 /t                      https://twitter.com/BartolDeak
 /r                      https://www.reddit.com/user/hello_I_am_bad_dev
 

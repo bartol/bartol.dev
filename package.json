@@ -1,30 +1,20 @@
 {
   "name": "bartol.dev",
-  "version": "4.0.0",
-  "description": "add later",
   "repository": "git@github.com:bartol/bartol.dev.git",
   "author": "bartol <b@bartol.dev>",
-  "license": "MIT",
   "scripts": {
-    "dev": "eleventy --serve --quiet",
-    "prod": "ELEVENTY_PRODUCTION=true eleventy",
-    "debug": "DEBUG=Eleventy* yarn dev",
-    "links-external": "hyperlink -r --root _site --canonicalroot https://bartol.dev/ --skip _site/*.html | tap-spot",
-    "links-internal": "hyperlink -ri --root _site --canonicalroot https://bartol.dev/ --skip _site/*.html | tap-spot"
+    "dev": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy --serve",
+    "build": "ELEVENTY_PRODUCTION=true eleventy"
   },
-  "dependencies": {},
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "eslint": "^6.8.0",
     "glob": "^7.1.6",
-    "hyperlink": "^4.4.3",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.5",
     "markdown-it-for-inline": "^0.1.1",
-    "markdown-it-mark": "^3.0.0",
-    "prettier": "^1.19.1",
-    "tap-spot": "^1.1.1"
+    "markdown-it-mark": "^3.0.0"
   }
 }

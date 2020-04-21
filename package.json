@@ -1,0 +1,8 @@
+{
+  "name": "bartol.dev",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "prod": "ELEVENTY_PRODUCTION=true eleventy",
+    "debug": "DEBUG=Eleventy* eleventy --serve"
+  }
+}

@@ -1,0 +1,15 @@
+---
+layout: page.html
+---
+
+<h1>{{ title }}</h1>
+
+<ul>
+  {% for post in posts %}
+    <li>
+      {{ post.date | formatDate }}
+      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      {{ post.data.tags }}
+    </li>
+  {% endfor %}
+</ul>

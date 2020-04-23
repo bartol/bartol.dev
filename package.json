@@ -4,5 +4,8 @@
     "dev": "eleventy --serve",
     "prod": "ELEVENTY_PRODUCTION=true eleventy",
     "debug": "DEBUG=Eleventy* eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
   }
 }

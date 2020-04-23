@@ -1,0 +1,20 @@
+body {
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #eee;
+  background-color: #222;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: hsla(190, 80%, 50%, 1);
+}
+
+a:hover {
+  text-decoration: underline;
+}

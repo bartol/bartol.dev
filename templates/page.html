@@ -16,6 +16,7 @@ title: Bartol Deak
           {% include "files/logo.svg" %}
         </div>
       </a>
+
       <span>
         <a href="/blog/">Blog</a>
         (<a href="/blog.xml">RSS</a>)
@@ -24,6 +25,21 @@ title: Bartol Deak
         <a href="/til/">TIL</a>
         (<a href="/til.xml">RSS</a>)
       </span>
+
+      <form method="get" action="https://duckduckgo.com/" id="search">
+        <input type="text" name="q" value="site:bartol.dev " placeholder="Search"
+          autocomplete="off" spellcheck="off" autocorrect="off" autocapitalize="off" />
+      </form>
+
+      <script>
+        const search_input = document.querySelector("#search [name=q]")
+        const default_value = search_input.value
+        search_input.value = ""
+
+        document.getElementById("search").addEventListener("submit", e => {
+          search_input.value = search_input.value.replace(/^/, default_value)
+        })
+      </script>
     </header>
 
     <main>
@@ -36,7 +52,7 @@ title: Bartol Deak
       <a href="https://web.archive.org/web/*/https://bartol.dev/*">
         Web Archive
       </a>
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
         <div class="license">
           <img alt="cc-by-sa" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
         </div>

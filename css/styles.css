@@ -35,6 +35,10 @@ header {
   height: 100%;
 }
 
+.search {
+  width: 100px;
+}
+
 footer {
   display: flex;
   justify-content: space-between;

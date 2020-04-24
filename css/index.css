@@ -440,3 +440,21 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     margin: 0.75rem 1rem 0.5rem 1rem;
   }
 }
+
+/* til */
+.posts {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.posts time {
+  color: var(--color-dark-400);
+}
+
+.posts a {
+  color: hsla(190, 80%, 50%, 1);
+}
+
+.posts a:hover {
+  text-decoration: underline;
+}

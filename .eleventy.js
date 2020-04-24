@@ -51,6 +51,7 @@ module.exports = function(eleventyConfig) {
       return collection.getFilteredByGlob([
         `${collectionPath}/!(index).md`,
         `${collectionPath}/*/index.md`,
+        `${collectionPath}/til.html`,
       ])
     })
   })
@@ -71,6 +72,10 @@ module.exports = function(eleventyConfig) {
     return collection.getAll().filter(function(item) {
       return item.data.draft
     })
+  })
+
+  eleventyConfig.addCollection('til', function(collection) {
+    return collection.getFilteredByGlob('./til/*.md')
   })
 
   // filters

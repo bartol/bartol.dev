@@ -451,10 +451,18 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   color: var(--color-dark-400);
 }
 
-.posts a {
-  color: hsla(190, 80%, 50%, 1);
+.posts a,
+.not-really-list-its-404 a {
+  color: var(--color-main);
 }
 
-.posts a:hover {
+.posts a:hover,
+.not-really-list-its-404 a:hover {
   text-decoration: underline;
+}
+
+/* 404 */
+.notfound {
+  max-width: 550px;
+  margin: 0 auto;
 }

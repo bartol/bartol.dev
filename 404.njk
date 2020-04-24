@@ -1,9 +1,21 @@
 ---
 layout: page
-title: Oops! Not Found
+title: Oops! Page Not Found
 permalink: 404.html
-sitemap_ignore: true
 ---
 
-<h1>{{ title }}</h1>
-<a href="{{ "/" | url }}">Go back to safety</a>
+<div class="list not-really-list-its-404">
+  {% include "components/nav.njk" %}
+
+  <h1>Page Not Found</h1>
+
+  <a href="/">Go to home</a>
+  or
+  <a href="https://web.archive.org/web/*/" id="web_archive_link">
+    look in web archive
+  </a>
+
+  <script>
+    document.getElementById("web_archive_link").href+=location.href
+  </script>
+</div>

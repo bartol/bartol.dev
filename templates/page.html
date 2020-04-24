@@ -10,14 +10,36 @@ title: Bartol Deak
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
   </head>
   <body>
-    {{ content | safe }}
+    <header>
+      <a href="/">
+        <div class="logo">
+          {% include "files/logo.svg" %}
+        </div>
+      </a>
+      <span>
+        <a href="/blog/">Blog</a>
+        (<a href="/blog.xml">RSS</a>)
+      </span>
+      <span>
+        <a href="/til/">TIL</a>
+        (<a href="/til.xml">RSS</a>)
+      </span>
+    </header>
+
+    <main>
+      {{ content | safe }}
+    </main>
 
     <footer>
+      <a href="mailto:b@bartol.dev">b@bartol.dev</a>
+      <a href="https://github.com/bartol/">Github</a>
       <a href="https://web.archive.org/web/*/https://bartol.dev/*">
         Web Archive
       </a>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="cc-by-sa" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+        <div class="license">
+          <img alt="cc-by-sa" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+        </div>
       </a>
     </footer>
   </body>

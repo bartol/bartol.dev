@@ -1,5 +1,5 @@
 body {
-  width: 90%;
+  width: 95%;
   max-width: 500px;
   margin: 0 auto;
   color: #eee;
@@ -17,4 +17,31 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+}
+
+.logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.license {
+  width: 88px;
+  height: 31px;
 }

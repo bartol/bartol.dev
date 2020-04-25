@@ -8,7 +8,7 @@ layout: page
   {% include "components/breadcrumbs.njk" %}
 
   <ul class="posts">
-    {% for post in collections.til %}
+    {% for post in collections.til | reverse %}
     <li>
       <time>{{ post.date | formatDate('dash') }}</time>
       <a href="{{ post.url }}">{{ post.data.title }}</a>

@@ -81,13 +81,7 @@ description: Personal cyberspace where you can find my thoughts and notes mostly
     </footer>
 #}
 
-    {% set js %}
-{% include "js/modules/fuse.js" %}
-{% include "js/search.js" %}
-{% include "js/message.js" %}
-    {% endset %}
-    <script>
-      {{ js | safe }}
-    </script>
+    <script src="/js/modules/fuse.js"></script>
+    <script src="/js/search.js"></script>
   </body>
 </html>

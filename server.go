@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"strings"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
@@ -44,6 +45,11 @@ func main() {
 	r.Get("/", indexHandler)
 	serveStatic(r, "/robots.txt")
 
+	r.Route("/til", func(r chi.Router) {
+		// r.Get("/", tilIndexHandler)
+		r.Get("/{path}", tilPostHandler)
+	})
+
 	redirectSlash(r, "/files")
 	r.Get("/files/*", filesHandler)
 
@@ -54,7 +60,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
 
-// helpers /////////////////////////////////////////////////////////////////////
+// utils ///////////////////////////////////////////////////////////////////////
 
 func redirect(r chi.Router, from, to string, method int) {
 	r.Get(
@@ -86,9 +92,14 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("index"))
 }
 
-func fileHandler(w http.ResponseWriter, r *http.Request) {
-	file := "./static" + chi.RouteContext(r.Context()).RoutePattern()
-	w.Write([]byte(file))
+func tilPostHandler(w http.ResponseWriter, r *http.Request) {
+	path := "./til/" + chi.URLParam(r, "path")
+
+	if strings.HasSuffix(path, ".md") {
+		w.Write([]byte("md: " + path))
+		return
+	}
+	w.Write([]byte("html: " + path))
 }
 
 func filesHandler(w http.ResponseWriter, r *http.Request) {

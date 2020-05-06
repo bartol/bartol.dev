@@ -35,6 +35,9 @@ import (
 // GET  - /share           - webrtc file share
 // GET  - /chess           - webrtc chess
 
+// GET  - /color           - color image api
+// GET  - /random          - generate random number
+
 // GET  - /ping            - pong
 
 func main() {

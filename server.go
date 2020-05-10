@@ -37,6 +37,8 @@ func main() {
 	serveDir("/js/")
 	serveDir("/files/")
 
+	http.HandleFunc("/search", searchHandler)
+
 	http.HandleFunc("/ping", pingHandler)
 
 	log.Fatal(http.ListenAndServe(":8080", logRequest(http.DefaultServeMux)))
@@ -70,6 +72,16 @@ func tilHandler(w http.ResponseWriter, r *http.Request) {
 
 func tilFeedHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("til feed"))
+}
+
+func searchHandler(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query().Get("q")
+	if query != "" {
+		w.Write([]byte("search query: " + query))
+		return
+	}
+
+	w.Write([]byte("enter search query"))
 }
 
 func pingHandler(w http.ResponseWriter, r *http.Request) {

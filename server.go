@@ -39,10 +39,8 @@ func main() {
 
 	http.HandleFunc("/ping", pingHandler)
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8080", logRequest(http.DefaultServeMux)))
 }
-
-// middleware //////////////////////////////////////////////////////////////////
 
 // handlers ////////////////////////////////////////////////////////////////////
 
@@ -93,4 +91,11 @@ func serveFile(path string) {
 func serveDir(path string) {
 	fs := http.FileServer(http.Dir("." + path))
 	http.Handle(path, http.StripPrefix(path, fs))
+}
+
+func logRequest(handler http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("%s %s %s\n", r.RemoteAddr, r.Method, r.URL)
+		handler.ServeHTTP(w, r)
+	})
 }

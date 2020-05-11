@@ -21,10 +21,6 @@ import (
 // POST - /upload          - new upload
 // GET  - /upload/:id      - view upload
 
-// GET  - /paste           - paste index
-// POST - /paste           - new paste
-// GET  - /paste/:id       - view paste
-
 // GET  - /share           - webrtc file share
 // GET  - /chess           - webrtc chess
 
@@ -65,6 +61,7 @@ func main() {
 	http.HandleFunc("/search", searchHandler)
 
 	http.HandleFunc("/paste/", pasteHandler)
+	cleanTable("paste")
 
 	http.HandleFunc("/ping", pingHandler)
 
@@ -220,6 +217,20 @@ func serveFile(path string) {
 func serveDir(path string) {
 	fs := http.FileServer(http.Dir("." + path))
 	http.Handle(path, http.StripPrefix(path, fs))
+}
+
+func cleanTable(table string) {
+	path := "/" + table + "/clean"
+	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+		stmt := "DELETE FROM " + table +
+			" WHERE created_at < DATETIME('NOW', '-1 DAYS');"
+		_, err := db.Exec(stmt, table)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+		w.Write([]byte("done"))
+	})
 }
 
 func logRequest(handler http.Handler) http.Handler {

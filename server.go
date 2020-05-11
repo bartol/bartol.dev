@@ -206,6 +206,9 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("404"))
 }
 
+// internalServerErrorHandler
+// unauthorizedHandler
+
 // utils ///////////////////////////////////////////////////////////////////////
 
 func serveFile(path string) {
@@ -222,6 +225,12 @@ func serveDir(path string) {
 func cleanTable(table string) {
 	path := "/" + table + "/clean"
 	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
+		ok := basicAuth(w, r)
+		if !ok {
+			http.Error(w, "Not authorized", 401)
+			return
+		}
+
 		stmt := "DELETE FROM " + table +
 			" WHERE created_at < DATETIME('NOW', '-1 DAYS');"
 		_, err := db.Exec(stmt, table)
@@ -229,8 +238,17 @@ func cleanTable(table string) {
 			w.Write([]byte("internal server error" + err.Error()))
 			return
 		}
-		w.Write([]byte("done"))
+
+		w.Write([]byte("done https://log:out@bartol.dev/" + table))
 	})
+}
+
+func basicAuth(w http.ResponseWriter, r *http.Request) bool {
+	w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
+
+	username, password, authOK := r.BasicAuth()
+
+	return authOK && username == "uname" && password == "pw"
 }
 
 func logRequest(handler http.Handler) http.Handler {

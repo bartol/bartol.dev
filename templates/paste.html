@@ -1,0 +1,31 @@
+<form action="/paste/" method="POST">
+	<textarea name="content" placeholder="paste here" rows="20" cols="80"></textarea>
+	<button type="submit">Paste</button>
+</form>
+
+<div class="items">
+{{ range $item := .Items }}
+	<div class="item">
+		{{ $item.Date }} <a href="/paste/{{ $item.ID }}">{{ $item.ID }}</a>
+	</div>
+{{ end }}
+</div>
+
+
+<style>
+	form, .items {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	textarea, button {
+		display: block;
+		margin: 1rem;
+	}
+	.items {
+		margin-top: 5rem;
+	}
+	.item {
+		display: block;
+		margin: 0.5rem 1rem;
+	}
+</style>

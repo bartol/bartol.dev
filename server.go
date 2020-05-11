@@ -1,9 +1,14 @@
 package main
 
 import (
+	"database/sql"
+	"html/template"
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
+
+	_ "github.com/mattn/go-sqlite3"
 )
 
 // GET  - /blog            - blog index
@@ -26,7 +31,27 @@ import (
 // GET  - /color           - color image api
 // GET  - /random          - generate random number
 
+var db *sql.DB
+
 func main() {
+	var err error
+	db, err = sql.Open("sqlite3", "./data.db")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	_, err = db.Exec(`
+	CREATE TABLE IF NOT EXISTS
+		paste (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			content TEXT,
+			created_at TEXT
+		);
+	`)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	http.HandleFunc("/", indexHandler)
 
 	http.HandleFunc("/til/", tilHandler)
@@ -38,6 +63,8 @@ func main() {
 	serveDir("/files/")
 
 	http.HandleFunc("/search", searchHandler)
+
+	http.HandleFunc("/paste/", pasteHandler)
 
 	http.HandleFunc("/ping", pingHandler)
 
@@ -82,6 +109,96 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Write([]byte("enter search query"))
+}
+
+type item struct {
+	ID   int
+	Date string
+}
+
+type pastePage struct {
+	Items []item
+}
+
+func pasteHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		content := r.FormValue("content")
+
+		if content == "" {
+			w.Write([]byte("bad request"))
+			return
+		}
+
+		result, err := db.Exec(`
+			INSERT INTO
+				paste (
+					content,
+					created_at
+				)
+				VALUES (
+					?,
+					DATETIME('NOW')
+				)
+		`, content)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+
+		id, err := result.LastInsertId()
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+		location := "/paste/" + strconv.FormatInt(id, 10)
+		w.Header().Add("Location", location)
+		w.WriteHeader(http.StatusSeeOther)
+		return
+	}
+
+	id := r.URL.Path[len("/paste/"):]
+	if id != "" {
+		row := db.QueryRow("SELECT content FROM paste WHERE id=?", id)
+		var content string
+		err := row.Scan(&content)
+		if err != nil {
+			notFoundHandler(w, r)
+			return
+		}
+		w.Write([]byte(content))
+		return
+	}
+
+	page := pastePage{}
+
+	rows, err := db.Query("SELECT id,created_at FROM paste ORDER BY id DESC")
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+		return
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var (
+			id   int
+			date string
+		)
+		err := rows.Scan(&id, &date)
+
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+		page.Items = append(page.Items, item{id, date})
+	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	tmpl, err := template.ParseFiles("templates/paste.html")
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+		return
+	}
+	tmpl.Execute(w, page)
 }
 
 func pingHandler(w http.ResponseWriter, r *http.Request) {

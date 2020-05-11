@@ -61,7 +61,7 @@ func main() {
 	http.HandleFunc("/search", searchHandler)
 
 	http.HandleFunc("/paste/", pasteHandler)
-	cleanTable("paste")
+	flushTable("paste")
 
 	http.HandleFunc("/ping", pingHandler)
 
@@ -222,8 +222,8 @@ func serveDir(path string) {
 	http.Handle(path, http.StripPrefix(path, fs))
 }
 
-func cleanTable(table string) {
-	path := "/" + table + "/clean"
+func flushTable(table string) {
+	path := "/" + table + "/flush"
 	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
 		ok := basicAuth(w, r)
 		if !ok {
@@ -231,15 +231,13 @@ func cleanTable(table string) {
 			return
 		}
 
-		stmt := "DELETE FROM " + table +
-			" WHERE created_at < DATETIME('NOW', '-1 DAYS');"
-		_, err := db.Exec(stmt, table)
+		_, err := db.Exec("DELETE FROM " + table)
 		if err != nil {
 			w.Write([]byte("internal server error" + err.Error()))
 			return
 		}
 
-		w.Write([]byte("done https://log:out@bartol.dev/" + table))
+		w.Write([]byte("done"))
 	})
 }
 
@@ -247,8 +245,8 @@ func basicAuth(w http.ResponseWriter, r *http.Request) bool {
 	w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
 
 	username, password, authOK := r.BasicAuth()
-
-	return authOK && username == "uname" && password == "pw"
+	// env[pw]...
+	return authOK && username == "usr" && password == "pw"
 }
 
 func logRequest(handler http.Handler) http.Handler {

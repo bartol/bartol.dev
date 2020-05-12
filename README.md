@@ -78,6 +78,8 @@ After nginx config changes run:
 
 ```bash
 sudo cp -svf ~/bartol.dev/deploy/nginx /etc/nginx/sites-available/bartol.dev
+sudo nginx -t
+sudo nginx -s reload
 sudo certbot --nginx -n -d bartol.dev -d www.bartol.dev --reinstall
 ```
 

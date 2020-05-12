@@ -3,3 +3,5 @@ _site
 .DS_Store
 tags
 stuff.db
+stuff.log
+bartol.dev

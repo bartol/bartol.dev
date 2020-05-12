@@ -1,6 +1,7 @@
 server {
     server_name bartol.dev www.bartol.dev;
     listen 443 ssl;
+    gzip on;
 
     location / {
         proxy_pass http://localhost:8080;

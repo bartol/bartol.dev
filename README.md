@@ -45,6 +45,20 @@ Directory names same as routes on website.
    yarn prod
    ```
 
+## Deploy
+
+Install:
+
+```bash
+curl https://raw.githubusercontent.com/bartol/bartol.dev/master/deploy/install.sh | bash
+```
+
+Update:
+
+```bash
+up
+```
+
 ## Tech stack
 
 - [Eleventy](https://www.11ty.io/) - static site generator

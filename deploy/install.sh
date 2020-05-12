@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # dependencies
-sudo apt update -y
-sudo apt install -y curl git gcc
+sudo apt update
+sudo apt install -y git gcc
 
 # go
 GOVERSION=1.14.2
@@ -45,4 +45,3 @@ sudo certbot renew --dry-run
 
 # alias
 echo "alias up=~/bartol.dev/deploy/update.sh" >> .profile
-source .profile

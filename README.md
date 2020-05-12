@@ -50,6 +50,17 @@ Directory names same as routes on website.
 Install:
 
 ```bash
+# setup non-root user
+adduser bartol
+usermod -aG sudo bartol
+cp -r ~/.ssh /home/bartol
+chown -R bartol:bartol /home/bartol/.ssh
+
+# install curl
+apt update
+apt install -y curl
+
+# run script
 curl https://raw.githubusercontent.com/bartol/bartol.dev/master/deploy/install.sh | bash
 ```
 

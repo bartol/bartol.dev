@@ -36,13 +36,13 @@ yes | sudo ufw enable
 # nginx
 sudo apt install -y nginx
 sudo ufw allow 'Nginx Full'
-sudo ln -siv ~/bartol.dev/deploy/nginx /etc/nginx/sites-available/bartol.dev
-sudo ln -siv /etc/nginx/sites-available/bartol.dev /etc/nginx/sites-enabled/
+sudo ln -sv ~/bartol.dev/deploy/nginx /etc/nginx/sites-available/bartol.dev
+sudo ln -sv /etc/nginx/sites-available/bartol.dev /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo nginx -s reload
 
 # service
-sudo ln -siv ~/bartol.dev/deploy/service /lib/systemd/system/web.service
+sudo ln -sv ~/bartol.dev/deploy/service /lib/systemd/system/web.service
 sudo service web start
 
 # certbot

@@ -1,17 +1,15 @@
-<form action="/paste/" method="POST">
-	<input type="text" name="name" placeholder="name">
-	<textarea name="content" placeholder="paste here" rows="20"></textarea>
-	<button type="submit">Paste</button>
+<form action="/upload/" method="POST" enctype="multipart/form-data">
+	<input type="file" name="file">
+	<button type="submit">Upload</button>
 </form>
 
 <div class="items">
 {{ range $item := .Items }}
 	<div class="item">
-		{{ $item.Date }} <a href="/paste/{{ $item.ID }}">{{ $item.Name }}</a>
+		{{ $item.Date }} <a href="/upload/{{ $item.Name }}">{{ $item.Name }}</a>
 	</div>
 {{ end }}
 </div>
-
 
 <style>
 	form, .items {

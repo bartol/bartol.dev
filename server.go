@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bytes"
 	"database/sql"
 	"html/template"
+	"io"
 	"log"
 	"net/http"
 	"strconv"
@@ -49,6 +51,19 @@ func main() {
 		log.Fatal(err)
 	}
 
+	_, err = db.Exec(`
+	CREATE TABLE IF NOT EXISTS
+		upload (
+			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			name TEXT,
+			content BLOB,
+			date TEXT
+		);
+	`)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	http.HandleFunc("/", indexHandler)
 
 	http.HandleFunc("/til/", tilHandler)
@@ -63,6 +78,9 @@ func main() {
 
 	http.HandleFunc("/paste/", pasteHandler)
 	flushTable("paste")
+
+	http.HandleFunc("/upload/", uploadHandler)
+	flushTable("upload")
 
 	http.HandleFunc("/ping", pingHandler)
 
@@ -197,6 +215,97 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
 	tmpl, err := template.ParseFiles("templates/paste.html")
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+		return
+	}
+	tmpl.Execute(w, page)
+}
+
+type uploadPage struct {
+	Items []item
+}
+
+func uploadHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		file, metadata, err := r.FormFile("file")
+		if err != nil {
+			w.Write([]byte("bad request" + err.Error()))
+			return
+		}
+		defer file.Close()
+		buf := bytes.NewBuffer(nil)
+		_, err = io.Copy(buf, file)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+		name := metadata.Filename
+		content := buf.Bytes()
+
+		_, err = db.Exec(`
+			INSERT INTO
+				upload (
+					name,
+					content,
+					date
+				)
+				VALUES (
+					?,
+					?,
+					DATETIME('NOW')
+				)
+		`, name, content)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+
+		w.Header().Add("Location", "/upload/")
+		w.WriteHeader(http.StatusSeeOther)
+		return
+	}
+
+	name := r.URL.Path[len("/upload/"):]
+	if name != "" {
+		row := db.QueryRow("SELECT content FROM upload WHERE name=?", name)
+		var content string
+		err := row.Scan(&content)
+		if err != nil {
+			notFoundHandler(w, r)
+			return
+		}
+		w.Header().Set("Content-Disposition", "attachment; filename=\""+name+"\"")
+		w.Write([]byte(content))
+		return
+	}
+
+	page := pastePage{}
+
+	rows, err := db.Query("SELECT id,name,date FROM upload ORDER BY id DESC")
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+		return
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var (
+			id   int
+			name string
+			date string
+		)
+		err := rows.Scan(&id, &name, &date)
+
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+		page.Items = append(page.Items, item{id, name, date})
+	}
+
+	w.Header().Set("Content-Type", "text/html; charset=utf-8")
+
+	tmpl, err := template.ParseFiles("templates/upload.html")
 	if err != nil {
 		w.Write([]byte("internal server error" + err.Error()))
 		return

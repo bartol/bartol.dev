@@ -70,6 +70,12 @@ Update:
 up
 ```
 
+After nginx config changes run:
+
+```bash
+sudo certbot --nginx -n -d bartol.dev -d www.bartol.dev --reinstall
+```
+
 ## Tech stack
 
 - [Eleventy](https://www.11ty.io/) - static site generator

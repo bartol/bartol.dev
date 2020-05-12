@@ -5,8 +5,8 @@ Description=web
 Type=simple
 Restart=always
 RestartSec=5s
-WorkingDirectory=/home/bartol/bartol.dev
-ExecStart=/home/bartol/bartol.dev/web
+WorkingDirectory=/home/admin/bartol.dev
+ExecStart=/home/admin/bartol.dev/web
 
 [Install]
 WantedBy=multi-user.target

@@ -7,8 +7,6 @@ Restart=always
 RestartSec=5s
 WorkingDirectory=/home/bartol/bartol.dev
 ExecStart=/home/bartol/bartol.dev/web
-StandardOutput=append:/home/bartol/web.log
-StandardError=append:/home/bartol/web.log
 
 [Install]
 WantedBy=multi-user.target

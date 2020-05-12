@@ -40,8 +40,9 @@ func main() {
 	CREATE TABLE IF NOT EXISTS
 		paste (
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
+			name TEXT,
 			content TEXT,
-			created_at TEXT
+			date TEXT
 		);
 	`)
 	if err != nil {
@@ -110,6 +111,7 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 
 type item struct {
 	ID   int
+	Name string
 	Date string
 }
 
@@ -119,9 +121,10 @@ type pastePage struct {
 
 func pasteHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
+		name := r.FormValue("name")
 		content := r.FormValue("content")
 
-		if content == "" {
+		if name == "" || content == "" {
 			w.Write([]byte("bad request"))
 			return
 		}
@@ -129,14 +132,16 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 		result, err := db.Exec(`
 			INSERT INTO
 				paste (
+					name,
 					content,
-					created_at
+					date
 				)
 				VALUES (
 					?,
+					?,
 					DATETIME('NOW')
 				)
-		`, content)
+		`, name, content)
 		if err != nil {
 			w.Write([]byte("internal server error" + err.Error()))
 			return
@@ -168,7 +173,7 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 
 	page := pastePage{}
 
-	rows, err := db.Query("SELECT id,created_at FROM paste ORDER BY id DESC")
+	rows, err := db.Query("SELECT id,name,date FROM paste ORDER BY id DESC")
 	if err != nil {
 		w.Write([]byte("internal server error" + err.Error()))
 		return
@@ -177,15 +182,16 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 	for rows.Next() {
 		var (
 			id   int
+			name string
 			date string
 		)
-		err := rows.Scan(&id, &date)
+		err := rows.Scan(&id, &name, &date)
 
 		if err != nil {
 			w.Write([]byte("internal server error" + err.Error()))
 			return
 		}
-		page.Items = append(page.Items, item{id, date})
+		page.Items = append(page.Items, item{id, name, date})
 	}
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")

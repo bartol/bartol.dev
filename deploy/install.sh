@@ -33,7 +33,7 @@ sudo nginx -s reload
 
 # service
 sudo ln -sv ~/bartol.dev/deploy/service /lib/systemd/system/web.service
-sudo service web start
+sudo systemctl start web
 
 # certbot
 sudo apt install -y python3-acme python3-certbot python3-mock python3-openssl \

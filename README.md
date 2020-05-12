@@ -47,8 +47,6 @@ Directory names same as routes on website.
 
 ## Deploy
 
-Install:
-
 ```bash
 # setup admin user
 adduser admin
@@ -59,8 +57,11 @@ chown -R admin:admin /home/admin/.ssh
 # install curl
 apt update
 apt install -y curl
+```
 
-# run script
+Install:
+
+```bash
 curl https://raw.githubusercontent.com/bartol/bartol.dev/master/deploy/install.sh | bash
 ```
 
@@ -68,11 +69,15 @@ Update:
 
 ```bash
 up
+
+# or
+~/bartol.dev/deploy/update.sh
 ```
 
 After nginx config changes run:
 
 ```bash
+sudo cp -svf ~/bartol.dev/deploy/nginx /etc/nginx/sites-available/bartol.dev
 sudo certbot --nginx -n -d bartol.dev -d www.bartol.dev --reinstall
 ```
 

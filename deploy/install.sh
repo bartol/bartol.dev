@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# create non-root user
 if [ "$EUID" -eq 0 ]; then
 	adduser bartol
 	usermod -aG sudo bartol
@@ -21,6 +22,12 @@ rm "go$GOVERSION.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin" >> .profile
 source .profile
 
+# code
+git clone https://github.com/bartol/bartol.dev
+cd bartol.dev
+go build -o web
+cd ..
+
 # ufw
 sudo apt install -y ufw
 sudo ufw allow OpenSSH
@@ -37,12 +44,6 @@ sudo nginx -s reload
 # service
 sudo ln -siv ~/bartol.dev/deploy/service /lib/systemd/system/web.service
 sudo service web start
-
-# code
-git clone https://github.com/bartol/bartol.dev
-cd bartol.dev
-go build -o web
-cd ..
 
 # certbot
 sudo apt install -y python3-acme python3-certbot python3-mock python3-openssl \

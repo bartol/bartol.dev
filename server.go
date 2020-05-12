@@ -243,6 +243,14 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 		name := metadata.Filename
 		content := buf.Bytes()
 
+		if metadata.Size > 20000000 {
+			ok := basicAuth(w, r)
+			if !ok {
+				http.Error(w, "Not authorized", 401)
+				return
+			}
+		}
+
 		_, err = db.Exec(`
 			INSERT INTO
 				upload (

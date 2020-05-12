@@ -1,4 +1,5 @@
 <form action="/paste/" method="POST">
+	<input type="text" name="name" placeholder="name">
 	<textarea name="content" placeholder="paste here" rows="20" cols="80"></textarea>
 	<button type="submit">Paste</button>
 </form>
@@ -6,7 +7,7 @@
 <div class="items">
 {{ range $item := .Items }}
 	<div class="item">
-		{{ $item.Date }} <a href="/paste/{{ $item.ID }}">{{ $item.ID }}</a>
+		{{ $item.Date }} <a href="/paste/{{ $item.ID }}">{{ $item.Name }}</a>
 	</div>
 {{ end }}
 </div>
@@ -17,7 +18,7 @@
 		max-width: 500px;
 		margin: 0 auto;
 	}
-	textarea, button {
+	input, textarea, button {
 		display: block;
 		margin: 1rem;
 	}

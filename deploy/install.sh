@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-# create non-root user
-if [ "$EUID" -eq 0 ]; then
-	adduser bartol
-	usermod -aG sudo bartol
-	cp -r ~/.ssh /home/bartol
-	chown -R bartol:bartol /home/bartol/.ssh
-	echo "please login as bartol and re-run script"
-	exit
-fi
-
 # dependencies
 sudo apt update -y
 sudo apt install -y curl git gcc

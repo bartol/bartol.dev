@@ -51,3 +51,7 @@ sudo apt install -y python3-acme python3-certbot python3-mock python3-openssl \
 sudo apt install -y python3-certbot-nginx
 sudo certbot --nginx -d bartol.dev -d www.bartol.dev -m b@bartol.dev --redirect
 sudo certbot renew --dry-run
+
+# alias
+echo "alias up=~/bartol.dev/deploy/update.sh" >> .profile
+source .profile

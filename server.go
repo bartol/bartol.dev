@@ -19,9 +19,7 @@ import (
 // GET  - /blog/:path      - blog post content
 // GET  - /blog/:path.md   - blog post source
 
-// GET  - /upload          - upload index
-// POST - /upload          - new upload
-// GET  - /upload/:id      - view upload
+// GET  - /flush           - delete logins, cookies...
 
 // GET  - /share           - webrtc file share
 // GET  - /chess           - webrtc chess

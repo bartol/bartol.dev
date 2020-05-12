@@ -1,7 +1,6 @@
 node_modules
 _site
-.DS_Store
-tags
-stuff.db
-stuff.log
-bartol.dev
+
+web
+web.db
+web.log

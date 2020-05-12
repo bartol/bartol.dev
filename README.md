@@ -50,7 +50,7 @@ Directory names same as routes on website.
 Install:
 
 ```bash
-# setup non-root user
+# setup admin user
 adduser admin
 usermod -aG sudo admin
 cp -r ~/.ssh /home/admin
@@ -74,6 +74,12 @@ After nginx config changes run:
 
 ```bash
 sudo certbot --nginx -n -d bartol.dev -d www.bartol.dev --reinstall
+```
+
+After service config changes run:
+
+```bash
+sudo systemctl daemon-reload
 ```
 
 ## Tech stack

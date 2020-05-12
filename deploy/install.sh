@@ -31,7 +31,7 @@ cd ..
 # ufw
 sudo apt install -y ufw
 sudo ufw allow OpenSSH
-sudo ufw enable
+yes | sudo ufw enable
 
 # nginx
 sudo apt install -y nginx
@@ -49,7 +49,7 @@ sudo service web start
 sudo apt install -y python3-acme python3-certbot python3-mock python3-openssl \
 	python3-pkg-resources python3-pyparsing python3-zope.interface
 sudo apt install -y python3-certbot-nginx
-sudo certbot --nginx -d bartol.dev -d www.bartol.dev -m b@bartol.dev --redirect
+sudo certbot --nginx -d bartol.dev -d www.bartol.dev -m b@bartol.dev --no-redirect
 sudo certbot renew --dry-run
 
 # alias

@@ -51,10 +51,10 @@ Install:
 
 ```bash
 # setup non-root user
-adduser bartol
-usermod -aG sudo bartol
-cp -r ~/.ssh /home/bartol
-chown -R bartol:bartol /home/bartol/.ssh
+adduser admin
+usermod -aG sudo admin
+cp -r ~/.ssh /home/admin
+chown -R admin:admin /home/admin/.ssh
 
 # install curl
 apt update

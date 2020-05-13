@@ -1,7 +1,7 @@
 server {
     server_name bartol.dev www.bartol.dev;
     listen 443 ssl;
-    gzip on;
+    client_max_body_size 75M;
 
     location / {
         proxy_pass http://localhost:8080;

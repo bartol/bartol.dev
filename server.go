@@ -68,6 +68,7 @@ func main() {
 	http.HandleFunc("/til.xml", tilFeedHandler)
 
 	serveFile("/robots.txt")
+	serveFile("/favicon.ico")
 	serveDir("/css/")
 	serveDir("/js/")
 	serveDir("/files/")
@@ -87,13 +88,24 @@ func main() {
 
 // handlers ////////////////////////////////////////////////////////////////////
 
+type Page struct {
+	Title string
+}
+
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		notFoundHandler(w, r)
 		return
 	}
 
-	w.Write([]byte("index"))
+	page := Page{Title: "Bartol Deak"}
+
+	tmpl, err := template.ParseFiles("templates/layout.html", "templates/index.html")
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+		return
+	}
+	tmpl.Execute(w, page)
 }
 
 func tilHandler(w http.ResponseWriter, r *http.Request) {

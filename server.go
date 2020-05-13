@@ -89,7 +89,9 @@ func main() {
 // handlers ////////////////////////////////////////////////////////////////////
 
 type Page struct {
-	Title string
+	Title       string
+	Stylesheets []string
+	Scripts     []string
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
@@ -98,7 +100,11 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	page := Page{Title: "Bartol Deak"}
+	page := Page{
+		Title:       "Bartol Deak",
+		Stylesheets: []string{"code"},
+		Scripts:     []string{"message"},
+	}
 
 	tmpl, err := template.ParseFiles("templates/layout.html", "templates/index.html")
 	if err != nil {

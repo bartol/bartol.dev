@@ -2,6 +2,7 @@
 
 # dependencies
 sudo apt update
+sudo apt upgrade -y
 sudo apt install -y git gcc
 
 # go
@@ -26,7 +27,7 @@ yes | sudo ufw enable
 # nginx
 sudo apt install -y nginx
 sudo ufw allow 'Nginx Full'
-sudo ln -sv ~/bartol.dev/deploy/nginx /etc/nginx/sites-available/bartol.dev
+sudo cp -sv ~/bartol.dev/deploy/nginx /etc/nginx/sites-available/bartol.dev
 sudo ln -sv /etc/nginx/sites-available/bartol.dev /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo nginx -s reload

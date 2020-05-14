@@ -2,7 +2,7 @@
 
 body {
 	width: 95%;
-	max-width: 50rem;
+	max-width: 1250px;
 	margin: 0 auto;
 
 	font-family: "Helvetica", "Arial", sans-serif;
@@ -40,7 +40,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 2.5% 0;
+	padding: 2.5% 0;
 }
 
 .logo {
@@ -55,7 +55,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 2.5% 0;
+	padding: 2.5% 0;
 }
 
 [rel="license"] img {

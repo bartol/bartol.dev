@@ -1,14 +1,6 @@
 /* layout *********************************************************************/
 
-html {
-	height: 100%;
-}
-
 body {
-	display: flex;
-	flex-direction: column;
-
-	height: 100%;
 	width: 95%;
 	max-width: 1000px;
 	margin: 0 auto;
@@ -37,10 +29,6 @@ pre {
 
 input {
 	font-size: 1rem;
-}
-
-main {
-	flex: 1 0 auto;
 }
 
 /* header *********************************************************************/
@@ -77,7 +65,6 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	flex-shrink: 0;
 	margin: 2.5% 0;
 }
 

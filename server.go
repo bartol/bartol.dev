@@ -203,7 +203,14 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	page := pastePage{}
+	page := struct {
+		Page
+		Items []item
+	}{
+		Page: Page{
+			Title: "Paste",
+		},
+	}
 
 	rows, err := db.Query("SELECT id,name,date FROM paste ORDER BY id DESC")
 	if err != nil {
@@ -228,7 +235,7 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
-	tmpl, err := template.ParseFiles("templates/paste.html")
+	tmpl, err := template.ParseFiles("templates/layout.html", "templates/header.html", "templates/footer.html", "templates/paste.html")
 	if err != nil {
 		w.Write([]byte("internal server error" + err.Error()))
 		return

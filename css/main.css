@@ -68,7 +68,7 @@ nav {
 nav > * {
 	margin: 0.2rem 0.4rem;
 
-	text-align: right;
+	text-align: end;
 }
 
 .logo {

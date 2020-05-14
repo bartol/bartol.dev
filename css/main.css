@@ -61,14 +61,14 @@ header {
 
 nav {
 	display: flex;
-	justify-content: right;
+	justify-content: flex-end;
 	flex-wrap: wrap;
 }
 
 nav > * {
 	margin: 0.2rem 0.4rem;
 
-	text-align: end;
+	text-align: right;
 }
 
 .logo {

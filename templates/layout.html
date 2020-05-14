@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>{{ .Title }}</title>
+		<title>{{.Title}}</title>
 		<link rel="icon" href="/favicon.ico">
 
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />
-		{{ range $stylesheet := .Stylesheets }}
-		<link rel="stylesheet" type="text/css" href="/css/{{ $stylesheet }}.css" />
-		{{ end }}
+		{{range $stylesheet := .Stylesheets}}
+		<link rel="stylesheet" type="text/css" href="/css/{{$stylesheet}}.css" />
+		{{end}}
 	</head>
 	<body>
-		// header
+		{{template "header"}}
+		{{template "body"}}
+		{{template "footer"}}
 
-		{{ template "body" }}
-
-		// footer
-
-		{{ range $script := .Scripts }}
+		{{range $script := .Scripts}}
 		<script src="/js/{{ $script }}.js"></script>
-		{{ end }}
+		{{end}}
 	</body>
 </html>

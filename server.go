@@ -101,12 +101,10 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	page := Page{
-		Title:       "Bartol Deak",
-		Stylesheets: []string{"code"},
-		Scripts:     []string{"message"},
+		Title: "Bartol Deak",
 	}
 
-	tmpl, err := template.ParseFiles("templates/layout.html", "templates/index.html")
+	tmpl, err := template.ParseFiles("templates/layout.html", "templates/header.html", "templates/footer.html", "templates/index.html")
 	if err != nil {
 		w.Write([]byte("internal server error" + err.Error()))
 		return

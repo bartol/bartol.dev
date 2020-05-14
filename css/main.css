@@ -2,14 +2,14 @@
 
 body {
 	width: 95%;
-	max-width: 1250px;
+	max-width: 1000px;
 	margin: 0 auto;
 
 	font-family: "Helvetica", "Arial", sans-serif;
 	line-height: 1.5;
 
-	background-color: rgb(24, 26, 27);
-	color: rgb(209, 205, 198);
+	color: #eee;
+	background-color: #222;
 }
 
 a {
@@ -26,12 +26,16 @@ h1,
 h2,
 h3,
 strong {
-	color: rgb(219, 217, 212);
+	color: #fff;
 }
 
 code,
 pre {
-	background-color: rgb(29, 31, 32);
+	background-color: #333;
+}
+
+input {
+	font-size: 1rem;
 }
 
 /* header *********************************************************************/

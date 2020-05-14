@@ -11,7 +11,11 @@
 	</head>
 	<body>
 		{{template "header"}}
-		{{template "body" .}}
+
+		<main>
+			{{template "body" .}}
+		</main>
+
 		{{template "footer"}}
 
 		{{range $script := .Scripts}}

@@ -1,6 +1,14 @@
 /* layout *********************************************************************/
 
+html {
+	height: 100%;
+}
+
 body {
+	display: flex;
+	flex-direction: column;
+
+	height: 100%;
 	width: 95%;
 	max-width: 1000px;
 	margin: 0 auto;
@@ -38,13 +46,29 @@ input {
 	font-size: 1rem;
 }
 
+main {
+	flex: 1 0 auto;
+}
+
 /* header *********************************************************************/
 
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 2.5% 0;
+	margin: 2.5% 0;
+}
+
+nav {
+	display: flex;
+	justify-content: right;
+	flex-wrap: wrap;
+}
+
+nav > * {
+	margin: 0.2rem 0.4rem;
+
+	text-align: right;
 }
 
 .logo {
@@ -59,7 +83,13 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 2.5% 0;
+	flex-wrap: wrap;
+	flex-shrink: 0;
+	margin: 2.5% 0;
+}
+
+footer > * {
+	margin: 0.25rem;
 }
 
 [rel="license"] img {

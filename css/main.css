@@ -16,8 +16,8 @@ body {
 	font-family: "Helvetica", "Arial", sans-serif;
 	line-height: 1.5;
 
-	color: #eee;
-	background-color: #222;
+	color: #fff;
+	background-color: #000;
 }
 
 a {
@@ -30,16 +30,9 @@ a:hover {
 	text-decoration: underline;
 }
 
-h1,
-h2,
-h3,
-strong {
-	color: #fff;
-}
-
 code,
 pre {
-	background-color: #333;
+	background-color: #111;
 }
 
 input {

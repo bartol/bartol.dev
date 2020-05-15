@@ -19,8 +19,6 @@ import (
 // GET  - /blog/:path      - blog post content
 // GET  - /blog/:path.md   - blog post source
 
-// GET  - /flush           - delete logins, cookies...
-
 // GET  - /share           - webrtc file share
 // GET  - /chess           - webrtc chess
 
@@ -94,6 +92,22 @@ type Page struct {
 	Scripts     []string
 }
 
+var layout = template.Must(template.ParseFiles(
+	"templates/layout.html",
+	"templates/header.html",
+	"templates/footer.html",
+))
+
+func parseTemplates(filenames ...string) *template.Template {
+	return template.Must(layout.ParseFiles(filenames...))
+}
+
+var tmpl = map[string]*template.Template{
+	"index":  parseTemplates("templates/index.html"),
+	"paste":  parseTemplates("templates/paste.html"),
+	"upload": parseTemplates("templates/upload.html"),
+}
+
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
 		notFoundHandler(w, r)
@@ -104,12 +118,10 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 		Title: "Bartol Deak",
 	}
 
-	tmpl, err := template.ParseFiles("templates/layout.html", "templates/header.html", "templates/footer.html", "templates/index.html")
+	err := tmpl["index"].Execute(w, page)
 	if err != nil {
 		w.Write([]byte("internal server error" + err.Error()))
-		return
 	}
-	tmpl.Execute(w, page)
 }
 
 func tilHandler(w http.ResponseWriter, r *http.Request) {

@@ -5,8 +5,11 @@ import (
 	"database/sql"
 	"html/template"
 	"io"
+	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 	"strconv"
 	"strings"
 
@@ -92,21 +95,12 @@ type Page struct {
 	Scripts     []string
 }
 
-var layout = template.Must(template.ParseFiles(
+var indexTemplates = template.Must(template.ParseFiles(
 	"templates/layout.html",
 	"templates/header.html",
 	"templates/footer.html",
+	"templates/index.html",
 ))
-
-func parseTemplates(filenames ...string) *template.Template {
-	return template.Must(layout.ParseFiles(filenames...))
-}
-
-var tmpl = map[string]*template.Template{
-	"index":  parseTemplates("templates/index.html"),
-	"paste":  parseTemplates("templates/paste.html"),
-	"upload": parseTemplates("templates/upload.html"),
-}
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
@@ -118,7 +112,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 		Title: "Bartol Deak",
 	}
 
-	err := tmpl["index"].Execute(w, page)
+	err := indexTemplates.Execute(w, page)
 	if err != nil {
 		w.Write([]byte("internal server error" + err.Error()))
 	}
@@ -127,12 +121,24 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 func tilHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Path[len("/til/"):]
 	if path != "" {
-		if strings.HasSuffix(path, ".md") {
-			w.Write([]byte("md " + path))
+		realPath := getRealPath("./til/" + path)
+		if !postExists(realPath) {
+			notFoundHandler(w, r)
 			return
 		}
 
-		w.Write([]byte("html " + path))
+		md, err := ioutil.ReadFile(realPath)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+			return
+		}
+
+		if strings.HasSuffix(path, ".md") {
+			w.Write(md)
+			return
+		}
+
+		w.Write([]byte("html " + realPath))
 		return
 	}
 
@@ -410,4 +416,21 @@ func logRequest(handler http.Handler) http.Handler {
 		log.Printf("%s %s %s\n", r.RemoteAddr, r.Method, r.URL)
 		handler.ServeHTTP(w, r)
 	})
+}
+
+func getRealPath(path string) string {
+	if strings.HasSuffix(path, "/") {
+		path = path[:len(path)-1] + ".md"
+	}
+
+	if !strings.HasSuffix(path, ".md") {
+		path += ".md"
+	}
+
+	return path
+}
+
+func postExists(path string) bool {
+	info, err := os.Stat(path)
+	return err == nil && !info.IsDir() && filepath.Ext(path) == ".md"
 }

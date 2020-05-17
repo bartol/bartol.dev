@@ -1,0 +1,14 @@
+[Unit]
+Description=Fossil server
+After=network.target
+
+[Service]
+User=admin
+WorkingDirectory=/home/admin/fossil
+ExecStart=/usr/bin/fossil server . --port 9090 --baseurl "https://fossil.bartol.dev/" --repolist
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=sockets.target
+WantedBy=multi-user.target

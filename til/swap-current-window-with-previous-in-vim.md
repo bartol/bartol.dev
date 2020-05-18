@@ -1,12 +1,6 @@
----
-layout: post
-title: Swap current window with previous in Vim
-date: 2020-04-24
-tags:
- - vim
----
+# Swap current window with previous in Vim
 
-title
+_2020-04-24_
 
 `<C-w>x`
 

@@ -1,11 +1,6 @@
----
-layout: post
-title: Rename files with Vim
-date: 2020-04-26
-tags:
-  - unix
-  - vim
----
+# Rename files with Vim
+
+_2020-04-26_
 
 You will first have to install [moreutils](https://joeyh.name/code/moreutils/).
 After that you can run command:

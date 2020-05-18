@@ -1,10 +1,6 @@
----
-layout: post
-title: Diff output of 2 commands
-date: 2020-04-25
-tags:
-  - shell
----
+# Diff output of 2 commands
+
+_2020-04-25_
 
 In bash:
 

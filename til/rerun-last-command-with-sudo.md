@@ -1,10 +1,6 @@
----
-layout: post
-title: Rerun last command with sudo
-date: 2020-04-25
-tags:
-  - shell
----
+# Rerun last command with sudo
+
+_2020-04-25_
 
 ```bash
 sudo !!

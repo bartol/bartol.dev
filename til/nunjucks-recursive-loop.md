@@ -1,11 +1,6 @@
----
-layout: post
-title: Nunjucks recursive loop
-date: 2020-04-24
-tags:
-  - nunjucks
-templateEngineOverride: md
----
+# Nunjucks recursive loop
+
+_2020-04-24_
 
 Nunjucks does not have recursive loop option by default but you can create it
 using simple macro.

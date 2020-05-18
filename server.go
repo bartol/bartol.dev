@@ -15,6 +15,8 @@ import (
 	"strings"
 
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/renderer/html"
 )
 
 // GET  - /blog            - blog index
@@ -126,8 +128,7 @@ type Post struct {
 
 type PostPage struct {
 	Page
-	Name    string
-	Content []byte
+	Content template.HTML
 }
 
 type PostIndexPage struct {
@@ -174,12 +175,20 @@ func tilHandler(w http.ResponseWriter, r *http.Request) {
 			w.Write([]byte("internal server error" + err.Error()))
 		}
 
+		renderer := goldmark.New(goldmark.WithRendererOptions(html.WithUnsafe()))
+		var buf bytes.Buffer
+		err = renderer.Convert(md, &buf)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+		}
+
+		content := template.HTML(buf.Bytes())
+
 		page := PostPage{
 			Page{
 				Title: title + " :: Today I Learned :: Bartol Deak",
 			},
-			title,
-			md,
+			content,
 		}
 
 		err = postTemplates.Execute(w, page)

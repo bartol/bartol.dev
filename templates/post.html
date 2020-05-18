@@ -1,11 +1,3 @@
-<html>
-  <head>
-    <title>{{ .Metadata.Title }} - Bartol Deak</title>
-  </head>
-
-  <body>
-    <h1>{{ .Metadata.Title }}</h1>
-    {{ .Metadata.Date.Format "02/01/2006" }}
-    {{ .Body }}
-  </body>
-</html>
+{{define "body"}}
+<h1>{{.Name}}</h1>
+{{end}}

@@ -124,6 +124,12 @@ type Post struct {
 	Path  string
 }
 
+type PostPage struct {
+	Page
+	Name    string
+	Content []byte
+}
+
 type PostIndexPage struct {
 	Page
 	Posts []Post
@@ -163,8 +169,17 @@ func tilHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		page := Page{
-			Title: "post - bartol",
+		title, err := getTitle(realPath)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+		}
+
+		page := PostPage{
+			Page{
+				Title: title + " :: Today I Learned :: Bartol Deak",
+			},
+			title,
+			md,
 		}
 
 		err = postTemplates.Execute(w, page)
@@ -175,26 +190,19 @@ func tilHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var posts []Post
-	err := filepath.Walk("./til/", func(path string, info os.FileInfo, e error) error {
-		if e != nil {
-			return e
+	err := filepath.Walk("./til/", func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
 		}
 
 		if isPost(path) {
-			file, err := os.Open(path)
-			if err != nil {
-				return err
-			}
-			defer file.Close()
-
-			reader := bufio.NewReader(file)
-			firstLine, err := reader.ReadString('\n')
+			title, err := getTitle(path)
 			if err != nil {
 				return err
 			}
 
 			post := Post{
-				Title: firstLine[len("# ") : len(firstLine)-1],
+				Title: title,
 				Path:  "/" + path[:len(path)-len(".md")] + "/",
 			}
 
@@ -209,7 +217,7 @@ func tilHandler(w http.ResponseWriter, r *http.Request) {
 
 	page := PostIndexPage{
 		Page{
-			Title: "test",
+			Title: "Today I Learned :: Bartol Deak",
 		},
 		posts,
 	}
@@ -508,4 +516,20 @@ func getRealPath(path string) string {
 func isPost(path string) bool {
 	info, err := os.Stat(path)
 	return err == nil && !info.IsDir() && filepath.Ext(path) == ".md"
+}
+
+func getTitle(path string) (string, error) {
+	file, err := os.Open(path)
+	if err != nil {
+		return "", err
+	}
+	defer file.Close()
+
+	reader := bufio.NewReader(file)
+	firstLine, err := reader.ReadString('\n')
+	if err != nil {
+		return "", err
+	}
+
+	return firstLine[len("# ") : len(firstLine)-1], nil
 }

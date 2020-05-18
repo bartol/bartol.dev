@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"database/sql"
 	"html/template"
@@ -118,11 +119,35 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+type Post struct {
+	Title string
+	Path  string
+}
+
+type PostIndexPage struct {
+	Page
+	Posts []Post
+}
+
+var postTemplates = template.Must(template.ParseFiles(
+	"templates/layout.html",
+	"templates/header.html",
+	"templates/footer.html",
+	"templates/post.html",
+))
+
+var postIndexTemplates = template.Must(template.ParseFiles(
+	"templates/layout.html",
+	"templates/header.html",
+	"templates/footer.html",
+	"templates/post_index.html",
+))
+
 func tilHandler(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Path[len("/til/"):]
 	if path != "" {
 		realPath := getRealPath("./til/" + path)
-		if !postExists(realPath) {
+		if !isPost(realPath) {
 			notFoundHandler(w, r)
 			return
 		}
@@ -138,11 +163,61 @@ func tilHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		w.Write([]byte("html " + realPath))
+		page := Page{
+			Title: "post - bartol",
+		}
+
+		err = postTemplates.Execute(w, page)
+		if err != nil {
+			w.Write([]byte("internal server error" + err.Error()))
+		}
 		return
 	}
 
-	w.Write([]byte("til index"))
+	var posts []Post
+	err := filepath.Walk("./til/", func(path string, info os.FileInfo, e error) error {
+		if e != nil {
+			return e
+		}
+
+		if isPost(path) {
+			file, err := os.Open(path)
+			if err != nil {
+				return err
+			}
+			defer file.Close()
+
+			reader := bufio.NewReader(file)
+			firstLine, err := reader.ReadString('\n')
+			if err != nil {
+				return err
+			}
+
+			post := Post{
+				Title: firstLine[len("# ") : len(firstLine)-1],
+				Path:  "/" + path[:len(path)-len(".md")] + "/",
+			}
+
+			posts = append(posts, post)
+		}
+
+		return nil
+	})
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+	}
+
+	page := PostIndexPage{
+		Page{
+			Title: "test",
+		},
+		posts,
+	}
+
+	err = postIndexTemplates.Execute(w, page)
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+	}
 }
 
 func tilFeedHandler(w http.ResponseWriter, r *http.Request) {
@@ -430,7 +505,7 @@ func getRealPath(path string) string {
 	return path
 }
 
-func postExists(path string) bool {
+func isPost(path string) bool {
 	info, err := os.Stat(path)
 	return err == nil && !info.IsDir() && filepath.Ext(path) == ".md"
 }

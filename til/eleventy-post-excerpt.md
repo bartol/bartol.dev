@@ -1,12 +1,6 @@
----
-layout: post
-title: Eleventy post excerpt
-date: 2020-04-25
-tags:
-  - eleventy
-  - nunjucks
-templateEngineOverride: md
----
+# Eleventy post excerpt
+
+_2020-04-25_
 
 This is how you get post excerpt in eleventy using nunjucks.
 

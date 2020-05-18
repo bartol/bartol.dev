@@ -1,11 +1,6 @@
----
-layout: post
-title: Remove underline from link
-date: 2020-04-24
-tags:
-  - html
-  - css
----
+# Remove underline from link
+
+_2020-04-24_
 
 This is so simple, yet I always forget how to do it.
 

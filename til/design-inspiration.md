@@ -1,10 +1,6 @@
----
-layout: post
-title: Design inspiration
-date: 2020-04-24
-tags:
-  - design
----
+# Design inspiration
+
+_2020-04-24_
 
 This is where I go when I have no idea how to design something.
 

@@ -24,12 +24,7 @@ import (
 // /memory.xml 		- memory index rss feed
 // t: memory.xml
 
-// /ping 			- pong
-// t: n/a
-
 // unauthorizedHandler
-
-// ...
 
 // GET  - /share           - webrtc file share
 // GET  - /chess           - webrtc chess

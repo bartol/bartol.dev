@@ -1,34 +1,36 @@
-<form action="/upload/" method="POST" enctype="multipart/form-data">
-	<input type="file" name="file">
-	<button type="submit">Upload</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{{template "meta" .}}
 
-<div class="items">
-{{ range $item := .Items }}
-	<div class="item">
-		{{ $item.Date }} <a href="/upload/{{ $item.Name }}">{{ $item.Name }}</a>
-	</div>
-{{ end }}
-</div>
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	</head>
+	<body>
+		{{template "header"}}
 
-<style>
-	form, .items {
-		width: 95%;
-		max-width: 650px;
-		margin: 2.5% auto;
-	}
-	input, textarea, button {
-		display: block;
-		margin: 1rem 0;
-	}
-	textarea {
-		width: 100%;
-	}
-	.items {
-		margin-top: 2.5%;
-	}
-	.item {
-		display: block;
-		margin: 0.5rem 0;
-	}
-</style>
+		<form action="/upload/" method="POST" enctype="multipart/form-data">
+			<input type="file" name="file">
+			<button type="submit">Upload</button>
+		</form>
+
+		<ul>
+			{{range $item := .Items}}
+			<li>
+				<a href="{{$item.Path}}">{{$item.Name}}</a>
+			</li>
+			{{end}}
+		</ul>
+
+		<style>
+			input, textarea, button {
+				display: block;
+				margin: 1rem 0;
+			}
+			textarea {
+				width: 100%;
+			}
+		</style>
+
+		{{template "footer"}}
+	</body>
+</html>

@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 
 	_ "github.com/mattn/go-sqlite3"
@@ -21,15 +22,6 @@ import (
 
 // /memory.xml 		- memory index rss feed
 // t: memory.xml
-
-// /paste/ 			- paste index page
-// t: paste.html, head.html
-
-// /paste/:path 	- view paste
-// t: n/a
-
-// /paste/flush 	- flush paste table
-// t: n/a
 
 // /upload/ 		- upload index page
 // t: upload.html, head.html
@@ -65,8 +57,7 @@ func main() {
 		paste (
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
 			name TEXT,
-			content TEXT,
-			date TEXT
+			content TEXT
 		);
 	`)
 	if err != nil {
@@ -78,8 +69,7 @@ func main() {
 		upload (
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
 			name TEXT,
-			content BLOB,
-			date TEXT
+			content BLOB
 		);
 	`)
 	if err != nil {
@@ -97,8 +87,8 @@ func main() {
 	serveDir("/js/")
 	serveDir("/files/")
 
-	// http.HandleFunc("/paste/", pasteHandler)
-	// flushTable("paste")
+	http.HandleFunc("/paste/", pasteHandler)
+	flushTable("paste")
 
 	// http.HandleFunc("/upload/", uploadHandler)
 	// flushTable("upload")
@@ -212,6 +202,89 @@ func postHandler(w http.ResponseWriter, r *http.Request, path, pathPrefixTitle s
 	}
 }
 
+func pasteHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		name := r.FormValue("name")
+		content := r.FormValue("content")
+
+		if name == "" || content == "" {
+			badRequestHandler(w, r)
+			return
+		}
+
+		result, err := db.Exec(`
+			INSERT INTO
+				paste (name,content)
+				VALUES (?,?)
+		`, name, content)
+		if err != nil {
+			internalServerErrorHandler(w, r)
+			return
+		}
+
+		id, err := result.LastInsertId()
+		if err != nil {
+			internalServerErrorHandler(w, r)
+			return
+		}
+
+		w.Header().Add("Location", "/paste/"+strconv.FormatInt(id, 10))
+		w.WriteHeader(http.StatusSeeOther)
+		return
+	}
+
+	id := r.URL.Path[len("/paste/"):]
+	if id != "" {
+		row := db.QueryRow("SELECT content FROM paste WHERE id=?", id)
+		var content string
+		err := row.Scan(&content)
+		if err != nil {
+			notFoundHandler(w, r)
+			return
+		}
+
+		w.Write([]byte(content))
+		return
+	}
+
+	var items []item
+	rows, err := db.Query("SELECT id,name FROM paste ORDER BY id DESC")
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var (
+			id   int
+			name string
+		)
+		err := rows.Scan(&id, &name)
+		if err != nil {
+			internalServerErrorHandler(w, r)
+			return
+		}
+
+		item := item{
+			Name: name,
+			Path: "/paste/" + strconv.Itoa(id),
+		}
+
+		items = append(items, item)
+	}
+
+	page := pasteData{
+		MetaTitle: "Paste :: Bartol Deak",
+		Items:     items,
+	}
+
+	err = pasteTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
+}
+
 // templates ///////////////////////////////////////////////////////////////////
 
 var indexTemplates = template.Must(template.ParseFiles(
@@ -239,14 +312,18 @@ var postTemplates = template.Must(template.ParseFiles(
 // 	"templates/memory.xml",
 // ))
 
-// var pasteTemplates = template.Must(template.ParseFiles(
-// 	"templates/paste.html",
-// 	"templates/meta.html",
-// ))
+var pasteTemplates = template.Must(template.ParseFiles(
+	"templates/paste.html",
+	"templates/meta.html",
+	"templates/header.html",
+	"templates/footer.html",
+))
 
 // var uploadTemplates = template.Must(template.ParseFiles(
 // 	"templates/upload.html",
 // 	"templates/meta.html",
+// 	"templates/header.html",
+// 	"templates/footer.html",
 // ))
 
 // template data ///////////////////////////////////////////////////////////////
@@ -267,7 +344,10 @@ type postData struct {
 
 // type memoryFeedData struct {}
 
-// type pasteData struct {}
+type pasteData struct {
+	MetaTitle string
+	Items     []item
+}
 
 // type uploadData struct {}
 
@@ -276,122 +356,15 @@ type post struct {
 	Path  string
 }
 
+type item struct {
+	Name string
+	Path string
+}
+
 // old.handlers - delete ///////////////////////////////////////////////////////
 /*
 func tilFeedHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("til feed"))
-}
-
-func searchHandler(w http.ResponseWriter, r *http.Request) {
-	query := r.URL.Query().Get("q")
-	if query != "" {
-		w.Write([]byte("search query: " + query))
-		return
-	}
-
-	w.Write([]byte("enter search query"))
-}
-
-type item struct {
-	ID   int
-	Name string
-	Date string
-}
-
-type pastePage struct {
-	Items []item
-}
-
-func pasteHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method == http.MethodPost {
-		name := r.FormValue("name")
-		content := r.FormValue("content")
-
-		if name == "" || content == "" {
-			w.Write([]byte("bad request"))
-			return
-		}
-
-		result, err := db.Exec(`
-			INSERT INTO
-				paste (
-					name,
-					content,
-					date
-				)
-				VALUES (
-					?,
-					?,
-					DATETIME('NOW')
-				)
-		`, name, content)
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-			return
-		}
-
-		id, err := result.LastInsertId()
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-			return
-		}
-		location := "/paste/" + strconv.FormatInt(id, 10)
-		w.Header().Add("Location", location)
-		w.WriteHeader(http.StatusSeeOther)
-		return
-	}
-
-	id := r.URL.Path[len("/paste/"):]
-	if id != "" {
-		row := db.QueryRow("SELECT content FROM paste WHERE id=?", id)
-		var content string
-		err := row.Scan(&content)
-		if err != nil {
-			notFoundHandler(w, r)
-			return
-		}
-		w.Write([]byte(content))
-		return
-	}
-
-	page := struct {
-		Page
-		Items []item
-	}{
-		Page: Page{
-			Title: "Paste",
-		},
-	}
-
-	rows, err := db.Query("SELECT id,name,date FROM paste ORDER BY id DESC")
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-		return
-	}
-	defer rows.Close()
-	for rows.Next() {
-		var (
-			id   int
-			name string
-			date string
-		)
-		err := rows.Scan(&id, &name, &date)
-
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-			return
-		}
-		page.Items = append(page.Items, item{id, name, date})
-	}
-
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-
-	tmpl, err := template.ParseFiles("templates/layout.html", "templates/header.html", "templates/footer.html", "templates/paste.html")
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-		return
-	}
-	tmpl.Execute(w, page)
 }
 
 type uploadPage struct {
@@ -504,6 +477,10 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 
 func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("500"))
+}
+
+func badRequestHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("400"))
 }
 
 // unauthorizedHandler

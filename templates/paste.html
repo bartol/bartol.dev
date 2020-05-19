@@ -1,32 +1,37 @@
-{{define "body"}}
-<form action="/paste/" method="POST">
-	<input type="text" name="name" placeholder="name">
-	<textarea name="content" placeholder="paste here" rows="20"></textarea>
-	<button type="submit">Paste</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{{template "meta" .}}
 
-<div class="items">
-	{{range $item := .Items}}
-	<div class="item">
-		{{$item.Date}} <a href="/paste/{{$item.ID}}">{{$item.Name}}</a>
-	</div>
-	{{end}}
-</div>
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	</head>
+	<body>
+		{{template "header"}}
 
-<style>
-	input, textarea, button {
-		display: block;
-		margin: 1rem 0;
-	}
-	textarea {
-		width: 100%;
-	}
-	.items {
-		margin-top: 2.5%;
-	}
-	.item {
-		display: block;
-		margin: 0.5rem 0;
-	}
-</style>
-{{end}}
+		<form action="/paste/" method="POST">
+			<input type="text" name="name" placeholder="name">
+			<textarea name="content" placeholder="paste here" rows="20"></textarea>
+			<button type="submit">Paste</button>
+		</form>
+
+		<ul>
+			{{range $item := .Items}}
+			<li>
+				<a href="{{$item.Path}}">{{$item.Name}}</a>
+			</li>
+			{{end}}
+		</ul>
+
+		<style>
+			input, textarea, button {
+				display: block;
+				margin: 1rem 0;
+			}
+			textarea {
+				width: 100%;
+			}
+		</style>
+
+		{{template "footer"}}
+	</body>
+</html>

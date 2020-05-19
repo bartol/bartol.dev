@@ -1,7 +1,15 @@
-{{define "body"}}
-<h1>Under construction</h1>
-<pre>
-<code>test</code>
-</pre>
-{{end}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{{template "head" .}}
 
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	</head>
+	<body>
+		{{template "header"}}
+
+		index {{.title}}
+
+		{{template "footer"}}
+	</body>
+</html>

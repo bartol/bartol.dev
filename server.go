@@ -204,46 +204,13 @@ func postHandler(w http.ResponseWriter, r *http.Request, path, pathPrefixTitle s
 
 func pasteHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
-		name := r.FormValue("name")
-		content := r.FormValue("content")
-
-		if name == "" || content == "" {
-			badRequestHandler(w, r)
-			return
-		}
-
-		result, err := db.Exec(`
-			INSERT INTO
-				paste (name,content)
-				VALUES (?,?)
-		`, name, content)
-		if err != nil {
-			internalServerErrorHandler(w, r)
-			return
-		}
-
-		id, err := result.LastInsertId()
-		if err != nil {
-			internalServerErrorHandler(w, r)
-			return
-		}
-
-		w.Header().Add("Location", "/paste/"+strconv.FormatInt(id, 10))
-		w.WriteHeader(http.StatusSeeOther)
+		pasteCreateHandler(w, r)
 		return
 	}
 
 	id := r.URL.Path[len("/paste/"):]
 	if id != "" {
-		row := db.QueryRow("SELECT content FROM paste WHERE id=?", id)
-		var content string
-		err := row.Scan(&content)
-		if err != nil {
-			notFoundHandler(w, r)
-			return
-		}
-
-		w.Write([]byte(content))
+		pasteViewHandler(w, r)
 		return
 	}
 
@@ -283,6 +250,48 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		internalServerErrorHandler(w, r)
 	}
+}
+
+func pasteCreateHandler(w http.ResponseWriter, r *http.Request) {
+	name := r.FormValue("name")
+	content := r.FormValue("content")
+
+	if name == "" || content == "" {
+		badRequestHandler(w, r)
+		return
+	}
+
+	result, err := db.Exec(`
+		INSERT INTO
+			paste (name,content)
+			VALUES (?,?)
+	`, name, content)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	id, err := result.LastInsertId()
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	w.Header().Add("Location", "/paste/"+strconv.FormatInt(id, 10))
+	w.WriteHeader(http.StatusSeeOther)
+}
+
+func pasteViewHandler(w http.ResponseWriter, r *http.Request) {
+	id := r.URL.Path[len("/paste/"):]
+	row := db.QueryRow("SELECT content FROM paste WHERE id=?", id)
+	var content string
+	err := row.Scan(&content)
+	if err != nil {
+		notFoundHandler(w, r)
+		return
+	}
+
+	w.Write([]byte(content))
 }
 
 // templates ///////////////////////////////////////////////////////////////////

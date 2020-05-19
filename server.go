@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"database/sql"
 	"html/template"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -23,17 +24,10 @@ import (
 // /memory.xml 		- memory index rss feed
 // t: memory.xml
 
-// /upload/ 		- upload index page
-// t: upload.html, head.html
-
-// /upload/:path 	- download upload
-// t: n/a
-
-// /upload/flush 	- flush paste table
-// t: n/a
-
 // /ping 			- pong
 // t: n/a
+
+// unauthorizedHandler
 
 // ...
 
@@ -90,10 +84,10 @@ func main() {
 	http.HandleFunc("/paste/", pasteHandler)
 	flushTable("paste")
 
-	// http.HandleFunc("/upload/", uploadHandler)
-	// flushTable("upload")
+	http.HandleFunc("/upload/", uploadHandler)
+	flushTable("upload")
 
-	// http.HandleFunc("/ping", pingHandler)
+	http.HandleFunc("/ping", pingHandler)
 
 	log.Fatal(http.ListenAndServe(":8080", logRequest(http.DefaultServeMux)))
 }
@@ -202,6 +196,9 @@ func postHandler(w http.ResponseWriter, r *http.Request, path, pathPrefixTitle s
 	}
 }
 
+// func memoryFeedHandler(w http.ResponseWriter, r *http.Request) {
+// }
+
 func pasteHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		pasteCreateHandler(w, r)
@@ -262,9 +259,9 @@ func pasteCreateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	result, err := db.Exec(`
-		INSERT INTO
-			paste (name,content)
-			VALUES (?,?)
+	INSERT INTO
+		paste (name,content)
+		VALUES (?,?)
 	`, name, content)
 	if err != nil {
 		internalServerErrorHandler(w, r)
@@ -292,6 +289,122 @@ func pasteViewHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Write([]byte(content))
+}
+
+func uploadHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		uploadCreateHandler(w, r)
+		return
+	}
+
+	name := r.URL.Path[len("/upload/"):]
+	if name != "" {
+		uploadViewHandler(w, r)
+		return
+	}
+
+	var items []item
+	rows, err := db.Query("SELECT name FROM upload ORDER BY id DESC")
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var name string
+		err := rows.Scan(&name)
+		if err != nil {
+			internalServerErrorHandler(w, r)
+			return
+		}
+
+		item := item{
+			Name: name,
+			Path: "/upload/" + name,
+		}
+
+		items = append(items, item)
+	}
+
+	page := uploadData{
+		MetaTitle: "Upload :: Bartol Deak",
+		Items:     items,
+	}
+
+	err = uploadTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
+}
+
+func uploadCreateHandler(w http.ResponseWriter, r *http.Request) {
+	file, metadata, err := r.FormFile("file")
+	if err != nil {
+		badRequestHandler(w, r)
+		return
+	}
+	defer file.Close()
+
+	buf := bytes.NewBuffer(nil)
+	_, err = io.Copy(buf, file)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	name := metadata.Filename
+	content := buf.Bytes()
+	if metadata.Size > 20000000 {
+		ok := basicAuth(w, r)
+		if !ok {
+			http.Error(w, "Not authorized", 401)
+			return
+		}
+	}
+
+	_, err = db.Exec(`
+	INSERT INTO
+		upload (name,content)
+		VALUES (?,?)
+		`, name, content)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	w.Header().Add("Location", "/upload/")
+	w.WriteHeader(http.StatusSeeOther)
+}
+
+func uploadViewHandler(w http.ResponseWriter, r *http.Request) {
+	name := r.URL.Path[len("/upload/"):]
+	row := db.QueryRow("SELECT content FROM upload WHERE name=?", name)
+	var content string
+	err := row.Scan(&content)
+	if err != nil {
+		notFoundHandler(w, r)
+		return
+	}
+
+	w.Header().Set("Content-Disposition", "attachment; filename=\""+name+"\"")
+	w.Write([]byte(content))
+}
+
+func pingHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Ping-Pong, Umjetnost Zdravog Đira"))
+}
+
+func notFoundHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("404"))
+}
+
+func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("500"))
+}
+
+func badRequestHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("400"))
 }
 
 // templates ///////////////////////////////////////////////////////////////////
@@ -328,12 +441,12 @@ var pasteTemplates = template.Must(template.ParseFiles(
 	"templates/footer.html",
 ))
 
-// var uploadTemplates = template.Must(template.ParseFiles(
-// 	"templates/upload.html",
-// 	"templates/meta.html",
-// 	"templates/header.html",
-// 	"templates/footer.html",
-// ))
+var uploadTemplates = template.Must(template.ParseFiles(
+	"templates/upload.html",
+	"templates/meta.html",
+	"templates/header.html",
+	"templates/footer.html",
+))
 
 // template data ///////////////////////////////////////////////////////////////
 
@@ -358,7 +471,10 @@ type pasteData struct {
 	Items     []item
 }
 
-// type uploadData struct {}
+type uploadData struct {
+	MetaTitle string
+	Items     []item
+}
 
 type post struct {
 	Title string
@@ -369,130 +485,6 @@ type item struct {
 	Name string
 	Path string
 }
-
-// old.handlers - delete ///////////////////////////////////////////////////////
-/*
-func tilFeedHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("til feed"))
-}
-
-type uploadPage struct {
-	Items []item
-}
-
-func uploadHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method == http.MethodPost {
-		file, metadata, err := r.FormFile("file")
-		if err != nil {
-			w.Write([]byte("bad request" + err.Error()))
-			return
-		}
-		defer file.Close()
-		buf := bytes.NewBuffer(nil)
-		_, err = io.Copy(buf, file)
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-			return
-		}
-		name := metadata.Filename
-		content := buf.Bytes()
-
-		if metadata.Size > 20000000 {
-			ok := basicAuth(w, r)
-			if !ok {
-				http.Error(w, "Not authorized", 401)
-				return
-			}
-		}
-
-		_, err = db.Exec(`
-			INSERT INTO
-				upload (
-					name,
-					content,
-					date
-				)
-				VALUES (
-					?,
-					?,
-					DATETIME('NOW')
-				)
-		`, name, content)
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-			return
-		}
-
-		w.Header().Add("Location", "/upload/")
-		w.WriteHeader(http.StatusSeeOther)
-		return
-	}
-
-	name := r.URL.Path[len("/upload/"):]
-	if name != "" {
-		row := db.QueryRow("SELECT content FROM upload WHERE name=?", name)
-		var content string
-		err := row.Scan(&content)
-		if err != nil {
-			notFoundHandler(w, r)
-			return
-		}
-		w.Header().Set("Content-Disposition", "attachment; filename=\""+name+"\"")
-		w.Write([]byte(content))
-		return
-	}
-
-	page := pastePage{}
-
-	rows, err := db.Query("SELECT id,name,date FROM upload ORDER BY id DESC")
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-		return
-	}
-	defer rows.Close()
-	for rows.Next() {
-		var (
-			id   int
-			name string
-			date string
-		)
-		err := rows.Scan(&id, &name, &date)
-
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-			return
-		}
-		page.Items = append(page.Items, item{id, name, date})
-	}
-
-	w.Header().Set("Content-Type", "text/html; charset=utf-8")
-
-	tmpl, err := template.ParseFiles("templates/upload.html")
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-		return
-	}
-	tmpl.Execute(w, page)
-}
-
-func pingHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Ping-Pong, Umjetnost Zdravog Đira"))
-}
-*/
-
-func notFoundHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("404"))
-}
-
-func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("500"))
-}
-
-func badRequestHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("400"))
-}
-
-// unauthorizedHandler
 
 // utils ///////////////////////////////////////////////////////////////////////
 

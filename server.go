@@ -2,39 +2,54 @@ package main
 
 import (
 	"bufio"
-	"bytes"
 	"database/sql"
 	"html/template"
-	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
-	"strconv"
 	"strings"
 
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/yuin/goldmark"
-	"github.com/yuin/goldmark/renderer/html"
 )
 
+// routes //////////////////////////////////////////////////////////////////////
+
 // / 				- index page
+// t: index.html, head.html, header.html, footer.html
 
 // /memory/ 		- memory index page
+// t: memory.html, head.html, header.html, footer.html
+
 // /memory/:path 	- memory post page
+// t: post.html, head.html, header.html, footer.html
+
 // /memory/:path.md - memory post source page
+// t: n/a
+
 // /memory.xml 		- memory index rss feed
+// t: memory.xml
 
 // /paste/ 			- paste index page
+// t: paste.html, head.html
+
 // /paste/:path 	- view paste
+// t: n/a
+
 // /paste/flush 	- flush paste table
+// t: n/a
 
 // /upload/ 		- upload index page
+// t: upload.html, head.html
+
 // /upload/:path 	- download upload
+// t: n/a
+
 // /upload/flush 	- flush paste table
+// t: n/a
 
 // /ping 			- pong
+// t: n/a
 
 // ...
 
@@ -81,30 +96,84 @@ func main() {
 
 	http.HandleFunc("/", indexHandler)
 
-	http.HandleFunc("/til/", tilHandler)
-	http.HandleFunc("/til.xml", tilFeedHandler)
+	// http.HandleFunc("/memory/", memoryHandler)
+	// http.HandleFunc("/memory.xml", memoryFeedHandler)
 
-	serveFile("/robots.txt")
 	serveFile("/favicon.ico")
+	serveFile("/robots.txt")
 	serveDir("/css/")
 	serveDir("/js/")
 	serveDir("/files/")
 
-	http.HandleFunc("/search", searchHandler)
+	// http.HandleFunc("/paste/", pasteHandler)
+	// flushTable("paste")
 
-	http.HandleFunc("/paste/", pasteHandler)
-	flushTable("paste")
+	// http.HandleFunc("/upload/", uploadHandler)
+	// flushTable("upload")
 
-	http.HandleFunc("/upload/", uploadHandler)
-	flushTable("upload")
-
-	http.HandleFunc("/ping", pingHandler)
+	// http.HandleFunc("/ping", pingHandler)
 
 	log.Fatal(http.ListenAndServe(":8080", logRequest(http.DefaultServeMux)))
 }
 
+// templates ///////////////////////////////////////////////////////////////////
+
+var indexTemplates = template.Must(template.ParseFiles(
+	"templates/index.html",
+	"templates/meta.html",
+	"templates/header.html",
+	"templates/footer.html",
+))
+
+// var memoryTemplates = template.Must(template.ParseFiles(
+// 	"templates/memory.html",
+// 	"templates/meta.html",
+// 	"templates/header.html",
+// 	"templates/footer.html",
+// ))
+
+// var postTemplates = template.Must(template.ParseFiles(
+// 	"templates/post.html",
+// 	"templates/meta.html",
+// 	"templates/header.html",
+// 	"templates/footer.html",
+// ))
+
+// var memoryFeedTemplates = template.Must(template.ParseFiles(
+// 	"templates/memory.xml",
+// ))
+
+// var pasteTemplates = template.Must(template.ParseFiles(
+// 	"templates/paste.html",
+// 	"templates/meta.html",
+// ))
+
+// var uploadTemplates = template.Must(template.ParseFiles(
+// 	"templates/upload.html",
+// 	"templates/meta.html",
+// ))
+
 // handlers ////////////////////////////////////////////////////////////////////
 
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		notFoundHandler(w, r)
+		return
+	}
+
+	page := map[string]string{
+		"meta_title": "meta titleeee",
+		"title":      "normal titleeeee",
+	}
+
+	err := indexTemplates.Execute(w, page)
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+	}
+}
+
+// old.handlers ////////////////////////////////////////////////////////////////
+/*
 type Page struct {
 	Title       string
 	Stylesheets []string
@@ -468,6 +537,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 func pingHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Ping-Pong, Umjetnost Zdravog Đira"))
 }
+*/
 
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("404"))

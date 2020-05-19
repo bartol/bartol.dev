@@ -8,7 +8,13 @@
 	<body>
 		{{template "header"}}
 
-		memory
+		<ul>
+			{{range $post := .Posts}}
+			<li>
+				<a href="{{$post.Path}}">{{$post.Title}}</a>
+			</li>
+			{{end}}
+		</ul>
 
 		{{template "footer"}}
 	</body>

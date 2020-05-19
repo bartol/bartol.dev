@@ -116,6 +116,24 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", logRequest(http.DefaultServeMux)))
 }
 
+// handlers ////////////////////////////////////////////////////////////////////
+
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		notFoundHandler(w, r)
+		return
+	}
+
+	page := indexData{
+		MetaTitle: "Bartol Deak",
+	}
+
+	err := indexTemplates.Execute(w, page)
+	if err != nil {
+		w.Write([]byte("internal server error" + err.Error()))
+	}
+}
+
 // templates ///////////////////////////////////////////////////////////////////
 
 var indexTemplates = template.Must(template.ParseFiles(
@@ -153,26 +171,23 @@ var indexTemplates = template.Must(template.ParseFiles(
 // 	"templates/meta.html",
 // ))
 
-// handlers ////////////////////////////////////////////////////////////////////
+// template data ///////////////////////////////////////////////////////////////
 
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		notFoundHandler(w, r)
-		return
-	}
-
-	page := map[string]string{
-		"meta_title": "meta titleeee",
-		"title":      "normal titleeeee",
-	}
-
-	err := indexTemplates.Execute(w, page)
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-	}
+type indexData struct {
+	MetaTitle string
 }
 
-// old.handlers ////////////////////////////////////////////////////////////////
+// type memoryData struct{}
+
+// type postData struct{}
+
+// type memoryFeedData struct {}
+
+// type pasteData struct {}
+
+// type uploadData struct {}
+
+// old.handlers - delete ///////////////////////////////////////////////////////
 /*
 type Page struct {
 	Title       string

@@ -2,8 +2,10 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"database/sql"
 	"html/template"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -11,21 +13,11 @@ import (
 	"strings"
 
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/yuin/goldmark"
+	"github.com/yuin/goldmark/renderer/html"
 )
 
 // routes //////////////////////////////////////////////////////////////////////
-
-// / 				- index page
-// t: index.html, head.html, header.html, footer.html
-
-// /memory/ 		- memory index page
-// t: memory.html, head.html, header.html, footer.html
-
-// /memory/:path 	- memory post page
-// t: post.html, head.html, header.html, footer.html
-
-// /memory/:path.md - memory post source page
-// t: n/a
 
 // /memory.xml 		- memory index rss feed
 // t: memory.xml
@@ -96,7 +88,7 @@ func main() {
 
 	http.HandleFunc("/", indexHandler)
 
-	// http.HandleFunc("/memory/", memoryHandler)
+	http.HandleFunc("/memory/", memoryHandler)
 	// http.HandleFunc("/memory.xml", memoryFeedHandler)
 
 	serveFile("/favicon.ico")
@@ -130,7 +122,93 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 	err := indexTemplates.Execute(w, page)
 	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
+		internalServerErrorHandler(w, r)
+	}
+}
+
+func memoryHandler(w http.ResponseWriter, r *http.Request) {
+	path := r.URL.Path[len("/memory/"):]
+	if path != "" {
+		postHandler(w, r, path, "Memory")
+		return
+	}
+
+	var posts []post
+	err := filepath.Walk("./memory/", func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		if isPost(path) {
+			title, err := getPostTitle(path)
+			if err != nil {
+				return err
+			}
+
+			post := post{
+				Title: title,
+				Path:  "/" + path[:len(path)-len(".md")] + "/",
+			}
+
+			posts = append(posts, post)
+		}
+
+		return nil
+	})
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	page := memoryData{
+		MetaTitle: "Memory :: Bartol Deak",
+		Posts:     posts,
+	}
+
+	err = memoryTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
+}
+
+func postHandler(w http.ResponseWriter, r *http.Request, path, pathPrefixTitle string) {
+	srcPath := getSourcePath(r.URL.Path)
+	if !isPost(srcPath) {
+		notFoundHandler(w, r)
+		return
+	}
+
+	md, err := ioutil.ReadFile(srcPath)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	if strings.HasSuffix(path, ".md") {
+		w.Write(md)
+		return
+	}
+
+	title, err := getPostTitle(srcPath)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	html, err := renderMarkdown(md)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	page := postData{
+		MetaTitle: title + " :: " + pathPrefixTitle + " :: Bartol Deak",
+		Content:   html,
+	}
+
+	err = postTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
 	}
 }
 
@@ -143,19 +221,19 @@ var indexTemplates = template.Must(template.ParseFiles(
 	"templates/footer.html",
 ))
 
-// var memoryTemplates = template.Must(template.ParseFiles(
-// 	"templates/memory.html",
-// 	"templates/meta.html",
-// 	"templates/header.html",
-// 	"templates/footer.html",
-// ))
+var memoryTemplates = template.Must(template.ParseFiles(
+	"templates/memory.html",
+	"templates/meta.html",
+	"templates/header.html",
+	"templates/footer.html",
+))
 
-// var postTemplates = template.Must(template.ParseFiles(
-// 	"templates/post.html",
-// 	"templates/meta.html",
-// 	"templates/header.html",
-// 	"templates/footer.html",
-// ))
+var postTemplates = template.Must(template.ParseFiles(
+	"templates/post.html",
+	"templates/meta.html",
+	"templates/header.html",
+	"templates/footer.html",
+))
 
 // var memoryFeedTemplates = template.Must(template.ParseFiles(
 // 	"templates/memory.xml",
@@ -177,9 +255,15 @@ type indexData struct {
 	MetaTitle string
 }
 
-// type memoryData struct{}
+type memoryData struct {
+	MetaTitle string
+	Posts     []post
+}
 
-// type postData struct{}
+type postData struct {
+	MetaTitle string
+	Content   template.HTML
+}
 
 // type memoryFeedData struct {}
 
@@ -187,153 +271,13 @@ type indexData struct {
 
 // type uploadData struct {}
 
-// old.handlers - delete ///////////////////////////////////////////////////////
-/*
-type Page struct {
-	Title       string
-	Stylesheets []string
-	Scripts     []string
-}
-
-var indexTemplates = template.Must(template.ParseFiles(
-	"templates/layout.html",
-	"templates/header.html",
-	"templates/footer.html",
-	"templates/index.html",
-))
-
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		notFoundHandler(w, r)
-		return
-	}
-
-	page := Page{
-		Title: "Bartol Deak",
-	}
-
-	err := indexTemplates.Execute(w, page)
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-	}
-}
-
-type Post struct {
+type post struct {
 	Title string
 	Path  string
 }
 
-type PostPage struct {
-	Page
-	Content template.HTML
-}
-
-type PostIndexPage struct {
-	Page
-	Posts []Post
-}
-
-var postTemplates = template.Must(template.ParseFiles(
-	"templates/layout.html",
-	"templates/header.html",
-	"templates/footer.html",
-	"templates/post.html",
-))
-
-var postIndexTemplates = template.Must(template.ParseFiles(
-	"templates/layout.html",
-	"templates/header.html",
-	"templates/footer.html",
-	"templates/post_index.html",
-))
-
-func tilHandler(w http.ResponseWriter, r *http.Request) {
-	path := r.URL.Path[len("/til/"):]
-	if path != "" {
-		realPath := getRealPath("./til/" + path)
-		if !isPost(realPath) {
-			notFoundHandler(w, r)
-			return
-		}
-
-		md, err := ioutil.ReadFile(realPath)
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-			return
-		}
-
-		if strings.HasSuffix(path, ".md") {
-			w.Write(md)
-			return
-		}
-
-		title, err := getTitle(realPath)
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-		}
-
-		renderer := goldmark.New(goldmark.WithRendererOptions(html.WithUnsafe()))
-		var buf bytes.Buffer
-		err = renderer.Convert(md, &buf)
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-		}
-
-		content := template.HTML(buf.Bytes())
-
-		page := PostPage{
-			Page{
-				Title: title + " :: Today I Learned :: Bartol Deak",
-			},
-			content,
-		}
-
-		err = postTemplates.Execute(w, page)
-		if err != nil {
-			w.Write([]byte("internal server error" + err.Error()))
-		}
-		return
-	}
-
-	var posts []Post
-	err := filepath.Walk("./til/", func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-
-		if isPost(path) {
-			title, err := getTitle(path)
-			if err != nil {
-				return err
-			}
-
-			post := Post{
-				Title: title,
-				Path:  "/" + path[:len(path)-len(".md")] + "/",
-			}
-
-			posts = append(posts, post)
-		}
-
-		return nil
-	})
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-	}
-
-	page := PostIndexPage{
-		Page{
-			Title: "Today I Learned :: Bartol Deak",
-		},
-		posts,
-	}
-
-	err = postIndexTemplates.Execute(w, page)
-	if err != nil {
-		w.Write([]byte("internal server error" + err.Error()))
-	}
-}
-
+// old.handlers - delete ///////////////////////////////////////////////////////
+/*
 func tilFeedHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("til feed"))
 }
@@ -558,7 +502,10 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("404"))
 }
 
-// internalServerErrorHandler
+func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("500"))
+}
+
 // unauthorizedHandler
 
 // utils ///////////////////////////////////////////////////////////////////////
@@ -608,7 +555,7 @@ func logRequest(handler http.Handler) http.Handler {
 	})
 }
 
-func getRealPath(path string) string {
+func getSourcePath(path string) string {
 	if strings.HasSuffix(path, "/") {
 		path = path[:len(path)-1] + ".md"
 	}
@@ -617,7 +564,7 @@ func getRealPath(path string) string {
 		path += ".md"
 	}
 
-	return path
+	return "." + path
 }
 
 func isPost(path string) bool {
@@ -625,7 +572,7 @@ func isPost(path string) bool {
 	return err == nil && !info.IsDir() && filepath.Ext(path) == ".md"
 }
 
-func getTitle(path string) (string, error) {
+func getPostTitle(path string) (string, error) {
 	file, err := os.Open(path)
 	if err != nil {
 		return "", err
@@ -639,4 +586,15 @@ func getTitle(path string) (string, error) {
 	}
 
 	return firstLine[len("# ") : len(firstLine)-1], nil
+}
+
+func renderMarkdown(md []byte) (template.HTML, error) {
+	renderer := goldmark.New(goldmark.WithRendererOptions(html.WithUnsafe()))
+	var buf bytes.Buffer
+	err := renderer.Convert(md, &buf)
+	if err != nil {
+		return template.HTML(""), err
+	}
+
+	return template.HTML(buf.Bytes()), nil
 }

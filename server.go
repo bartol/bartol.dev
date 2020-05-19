@@ -19,11 +19,24 @@ import (
 	"github.com/yuin/goldmark/renderer/html"
 )
 
-// GET  - /blog            - blog index
-// GET  - /blog.xml        - blog index rss
-// GET  - /blog/:path      - blog subindex
-// GET  - /blog/:path      - blog post content
-// GET  - /blog/:path.md   - blog post source
+// / 				- index page
+
+// /memory/ 		- memory index page
+// /memory/:path 	- memory post page
+// /memory/:path.md - memory post source page
+// /memory.xml 		- memory index rss feed
+
+// /paste/ 			- paste index page
+// /paste/:path 	- view paste
+// /paste/flush 	- flush paste table
+
+// /upload/ 		- upload index page
+// /upload/:path 	- download upload
+// /upload/flush 	- flush paste table
+
+// /ping 			- pong
+
+// ...
 
 // GET  - /share           - webrtc file share
 // GET  - /chess           - webrtc chess

@@ -90,7 +90,9 @@ func main() {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
-		notFoundHandler(w, r)
+		w.Header().Add("Location", "/")
+		w.WriteHeader(http.StatusMovedPermanently)
+		// notFoundHandler(w, r)
 		return
 	}
 

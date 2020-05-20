@@ -49,5 +49,11 @@ sudo certbot --nginx -n -m b@bartol.dev --agree-tos --no-redirect \
 	-d bartol.dev -d www.bartol.dev -d fossil.bartol.dev
 sudo certbot renew --dry-run
 
+# goaccess
+sudo apt install -y goaccess
+
+# htop
+sudo apt install -y htop
+
 # alias
 echo "alias up=~/bartol.dev/deploy/update.sh" >> .profile

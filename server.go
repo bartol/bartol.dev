@@ -68,7 +68,6 @@ func main() {
 	http.HandleFunc("/", indexHandler)
 
 	http.HandleFunc("/memory/", memoryHandler)
-	// http.HandleFunc("/memory.xml", memoryFeedHandler)
 
 	serveFile("/favicon.ico")
 	serveFile("/robots.txt")
@@ -190,9 +189,6 @@ func postHandler(w http.ResponseWriter, r *http.Request, path, pathPrefixTitle s
 		internalServerErrorHandler(w, r)
 	}
 }
-
-// func memoryFeedHandler(w http.ResponseWriter, r *http.Request) {
-// }
 
 func pasteHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
@@ -425,10 +421,6 @@ var postTemplates = template.Must(template.ParseFiles(
 	"templates/footer.html",
 ))
 
-// var memoryFeedTemplates = template.Must(template.ParseFiles(
-// 	"templates/memory.xml",
-// ))
-
 var pasteTemplates = template.Must(template.ParseFiles(
 	"templates/paste.html",
 	"templates/meta.html",
@@ -458,8 +450,6 @@ type postData struct {
 	MetaTitle string
 	Content   template.HTML
 }
-
-// type memoryFeedData struct {}
 
 type pasteData struct {
 	MetaTitle string

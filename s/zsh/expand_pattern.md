@@ -1,12 +1,4 @@
----
-title: Expand file names with pattern 
-date: 2019-10-25
-tags:
-  - terminal
-  - til
----
-
-I have just randomly discovered this awesome feature, so I figured out I'll share it. You can tab complete filename with `*` in it. It can also complete multiple filenames. For a quick example let's say you have `index.html`, `index.js` and `main.js` files in directory.
+# Expand file names with pattern
 
 ```bash
 some_command *.js

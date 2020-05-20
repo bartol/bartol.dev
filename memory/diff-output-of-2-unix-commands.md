@@ -2,8 +2,8 @@
 
 In bash:
 
-	diff <(cmd1) <(cmd2)
+	$ diff <(cmd1) <(cmd2)
 
 In zsh:
 
-	diff =(cmd1) =(cmd2)
+	$ diff =(cmd1) =(cmd2)

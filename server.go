@@ -28,6 +28,7 @@ import (
 
 // GET  - /share           - webrtc file share
 // GET  - /chess           - webrtc chess
+// GET  - /sudoku          - sudoku
 
 // GET  - /color           - color image api
 // GET  - /random          - generate random number

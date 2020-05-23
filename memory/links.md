@@ -3,14 +3,13 @@
 ## Tools
 
 - [Accessible Brand Colors](https://abc.useallfive.com/)
-- [Blobmaker](https://www.blobmaker.app/)
 - [Feather](https://feathericons.com/)
-- [Get Waves](https://getwaves.io/)
 - [Unsplash](https://unsplash.com/)
 - [Squoosh](https://squoosh.app/)
 - [SVGOMG](https://jakearchibald.github.io/svgomg/)
 - [removebg](https://www.remove.bg/upload)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
+- [Google Search Console](https://search.google.com/search-console)
 - [Website Speed Test](https://tools.pingdom.com/)
 - [What Does My Site Cost?](https://whatdoesmysitecost.com/)
 - [Can I email...](https://www.caniemail.com/)
@@ -22,6 +21,7 @@
 - [explainshell.com](https://explainshell.com/)
 - [Firefox Send](https://send.firefox.com/)
 - [Google Fonts](https://fonts.google.com/)
+- [BrowserStack](https://www.browserstack.com/)
 - [Have I Been Pwned](https://haveibeenpwned.com/)
 - [JavaScript Event KeyCodes](https://keycode.info/)
 - [JS Bin](https://jsbin.com/)
@@ -29,26 +29,42 @@
 - [Temp Mail](https://temp-mail.org/)
 - [VirusTotal](https://www.virustotal.com/gui/home/upload)
 - [Dynamic Dummy Image Generator](https://dummyimage.com/)
+- [Blobmaker](https://www.blobmaker.app/)
+- [Get Waves](https://getwaves.io/)
+- [Google Translate](https://translate.google.com/)
+- [Yandex Translate](https://translate.yandex.com/)
+
+## Documentation
+
+- [MDN](https://developer.mozilla.org/en-US/)
+- [DevDocs](https://devdocs.io/)
+- [RegexOne](https://regexone.com/)
+- [Learn X in Y minutes](https://learnxinyminutes.com/)
+- [1loc](https://1loc.dev/)
+- [HTML DOM](https://htmldom.dev/)
+- [Modern CSS Solutions](https://moderncss.dev/)
+- [i Hate Regex](https://ihateregex.io/)
+- [Destroy All Software](https://www.destroyallsoftware.com/screencasts/catalog)
+- [Git from the inside out](https://codewords.recurse.com/issues/two/git-from-the-inside-out)
+- [Go by Example](https://gobyexample.com/)
 
 ## Libraries
 
 - [goldmark](https://github.com/yuin/goldmark)
 - [progressbar](https://github.com/schollz/progressbar)
-- [envconfig](https://github.com/kelseyhightower/envconfig)
 - [Plyr](https://plyr.io/)
 - [chakra](https://chakra-ui.com/)
-- [CodeJar](https://medv.io/codejar/)
-- [Chart.xkcd](https://timqian.com/chart.xkcd/)
-- [Sortable](https://sortablejs.github.io/Sortable/)
 - [mark.js](https://markjs.io/)
-- [hammer.js](https://hammerjs.github.io/)
 - [hyperlink](https://github.com/Munter/hyperlink)
-
-## Random
-
 - [esh](https://github.com/jirutka/esh)
 - [cstate](https://github.com/cstate/cstate)
+- [Awesome Go](https://awesome-go.com/)
 - [PostHog](https://posthog.com/)
 - [Metabase](https://www.metabase.com/)
 - [Chatwoot](https://www.chatwoot.com/)
 - [Concourse](https://concourse-ci.org/)
+
+## Blogs
+
+- [Thoughts from Inside the Box](https://frominsidethebox.com/)
+- [egoless.tech](https://egoless.tech/)

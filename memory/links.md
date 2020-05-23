@@ -58,6 +58,8 @@
 - [hyperlink](https://github.com/Munter/hyperlink)
 - [esh](https://github.com/jirutka/esh)
 - [cstate](https://github.com/cstate/cstate)
+- [wifite2](https://github.com/derv82/wifite2)
+- [cpscam](https://github.com/codewatchorg/cpscam)
 - [Awesome Go](https://awesome-go.com/)
 - [PostHog](https://posthog.com/)
 - [Metabase](https://www.metabase.com/)

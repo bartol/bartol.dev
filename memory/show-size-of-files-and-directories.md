@@ -1,6 +1,6 @@
 # Show size of files and directories
 
-	ls | xargs du -sh
+	$ ls | xargs du -sh
 
 Why not `ls -l`?
 

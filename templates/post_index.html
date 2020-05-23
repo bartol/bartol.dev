@@ -1,9 +1,0 @@
-{{define "body"}}
-<h1>Today I Learned</h1>
-<div class="posts">
-	{{range $index, $post := .Posts}}
-	{{if ne $index 0}}--{{end}}
-	<a href="{{$post.Path}}">{{$post.Title}}</a>
-	{{end}}
-</div>
-{{end}}

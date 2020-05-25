@@ -1,4 +1,4 @@
-# Remove underline from html link
+# Remove underline from HTML link
 
 This is so simple, yet I always forget how to do it.
 

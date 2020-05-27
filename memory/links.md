@@ -26,6 +26,7 @@
 - [JavaScript Event KeyCodes](https://keycode.info/)
 - [JS Bin](https://jsbin.com/)
 - [RegExr](https://regexr.com/)
+- [Speed Test](https://speed.cloudflare.com/)
 - [Temp Mail](https://temp-mail.org/)
 - [VirusTotal](https://www.virustotal.com/gui/home/upload)
 - [Dynamic Dummy Image Generator](https://dummyimage.com/)

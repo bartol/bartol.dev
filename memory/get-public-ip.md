@@ -1,3 +1,3 @@
 # Get public IP
 
-	$ curl ipinfo.io
+	$ curl icanhazip.com

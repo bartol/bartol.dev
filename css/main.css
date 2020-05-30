@@ -24,6 +24,9 @@ a:hover {
 
 code,
 pre {
+	font-family: "Fira Mono", "Andale Mono", monospace;
+	line-height: normal;
+
 	background-color: #333;
 }
 
@@ -47,8 +50,6 @@ nav {
 }
 
 nav > * {
-	margin: 0.2rem 0.4rem;
-
 	text-align: right;
 }
 
@@ -64,16 +65,6 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	flex-wrap: wrap;
+	flex-wrap : wrap;
 	margin: 2.5% 0;
-}
-
-footer > * {
-	/* margin: 0.25rem; */
-}
-
-[rel="license"] img {
-	display: block;
-	width: 88px;
-	height: 31px;
 }

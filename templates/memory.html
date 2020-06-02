@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		{{template "meta" .}}
-
-		<link rel="stylesheet" type="text/css" href="/css/main.css" />
-	</head>
-	<body>
-		{{template "header"}}
-
-		<h1>Memory</h1>
-		<ul>
-			{{range $post := .Posts}}
-			<li>
-				<a href="{{$post.Path}}">{{$post.Title}}</a>
-			</li>
-			{{end}}
-		</ul>
-
-		{{template "footer"}}
-	</body>
-</html>
+{{define "content"}}
+<h1>Memory</h1>
+<ul>
+	{{range $post := .Posts}}
+	<li>
+		<a href="{{$post.Path}}">{{$post.Title}}</a>
+	</li>
+	{{end}}
+</ul>
+{{end}}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{{template "meta" .}}
+
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	</head>
+	<body>
+		{{template "header"}}
+
+        <h1>{{.MetaTitle}}</h1>
+        <p>
+            <a href="/">Go to home</a>
+            or
+            <a href="http://web.archive.org/web/*/https://bartol.dev{{.URL}}">look in web archive</a>
+        </p>
+
+		{{template "footer"}}
+	</body>
+</html>

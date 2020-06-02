@@ -84,6 +84,7 @@ func main() {
 
 	http.HandleFunc("/ping", pingHandler)
 
+	log.Println("server listening on :8080")
 	log.Fatal(http.ListenAndServe(":8080", logRequest(http.DefaultServeMux)))
 }
 
@@ -91,9 +92,7 @@ func main() {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/" {
-		w.Header().Add("Location", "/")
-		w.WriteHeader(http.StatusMovedPermanently)
-		// notFoundHandler(w, r)
+		notFoundHandler(w, r)
 		return
 	}
 
@@ -390,15 +389,39 @@ func pingHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("404"))
+	page := errorData{
+		MetaTitle: "404 Not Found",
+		URL:       r.URL.Path,
+	}
+
+	err := errorTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
 }
 
 func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("500"))
+	page := errorData{
+		MetaTitle: "500 Internal Server Error",
+		URL:       r.URL.Path,
+	}
+
+	err := errorTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
 }
 
 func badRequestHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("400"))
+	page := errorData{
+		MetaTitle: "400 Bad Request",
+		URL:       r.URL.Path,
+	}
+
+	err := errorTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
 }
 
 // templates ///////////////////////////////////////////////////////////////////
@@ -438,6 +461,13 @@ var uploadTemplates = template.Must(template.ParseFiles(
 	"templates/footer.html",
 ))
 
+var errorTemplates = template.Must(template.ParseFiles(
+	"templates/error.html",
+	"templates/meta.html",
+	"templates/header.html",
+	"templates/footer.html",
+))
+
 // template data ///////////////////////////////////////////////////////////////
 
 type indexData struct {
@@ -462,6 +492,11 @@ type pasteData struct {
 type uploadData struct {
 	MetaTitle string
 	Items     []item
+}
+
+type errorData struct {
+	MetaTitle string
+	URL       string
 }
 
 type post struct {

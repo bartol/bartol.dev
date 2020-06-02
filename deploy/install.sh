@@ -36,17 +36,12 @@ sudo nginx -s reload
 sudo ln -sv ~/bartol.dev/deploy/service /lib/systemd/system/www.service
 sudo systemctl start www
 
-# fossil
-sudo apt install -y fossil
-sudo ln -sv ~/bartol.dev/deploy/fossil /lib/systemd/system/fossil.service
-sudo systemctl start fossil
-
 # certbot
 sudo apt install -y python3-acme python3-certbot python3-mock python3-openssl \
 	python3-pkg-resources python3-pyparsing python3-zope.interface
 sudo apt install -y python3-certbot-nginx
 sudo certbot --nginx -n -m b@bartol.dev --agree-tos --no-redirect \
-	-d bartol.dev -d www.bartol.dev -d fossil.bartol.dev
+	-d bartol.dev -d www.bartol.dev
 sudo certbot renew --dry-run
 
 # goaccess

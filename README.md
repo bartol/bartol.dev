@@ -1,10 +1,12 @@
 <a href="https://bartol.dev">
-  <img alt="logo" src="https://bartol.dev/files/logo.svg" align="right" width="200" height="205" />
+  <img alt="logo" src="https://bartol.dev/files/logo.svg" align="right" width="200" height="205">
 </a>
 
 # [bartol.dev](https://bartol.dev)
 
 my website
+
+<br>
 
 ## Deploy instructions
 

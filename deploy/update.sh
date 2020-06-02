@@ -3,5 +3,5 @@
 cd ~/bartol.dev
 git reset --hard HEAD
 git pull
-go build -o web
-sudo systemctl restart web
+go build -o www
+sudo systemctl restart www

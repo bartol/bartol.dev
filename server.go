@@ -37,7 +37,7 @@ var db *sql.DB
 
 func main() {
 	var err error
-	db, err = sql.Open("sqlite3", "./web.db")
+	db, err = sql.Open("sqlite3", "./www.db")
 	if err != nil {
 		log.Fatal(err)
 	}

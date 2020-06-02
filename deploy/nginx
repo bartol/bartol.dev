@@ -14,12 +14,3 @@ server {
 
     return 301 https://$host$request_uri;
 }
-
-server {
-    server_name fossil.bartol.dev;
-    listen 443 ssl;
-
-    location / {
-        proxy_pass http://localhost:9090/;
-    }
-}

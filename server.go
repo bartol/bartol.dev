@@ -70,7 +70,7 @@ func main() {
 
 	http.HandleFunc("/memory/", memoryHandler)
 
-	serveFile("/favicon.ico")
+	serveFile("/manifest.webmanifest")
 	serveFile("/robots.txt")
 	serveDir("/css/")
 	serveDir("/js/")
@@ -98,6 +98,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 	page := indexData{
 		MetaTitle: "Bartol Deak",
+		MetaURL:   r.URL.Path,
 	}
 
 	err := indexTemplates.Execute(w, page)
@@ -142,6 +143,7 @@ func memoryHandler(w http.ResponseWriter, r *http.Request) {
 
 	page := memoryData{
 		MetaTitle: "Memory :: Bartol Deak",
+		MetaURL:   r.URL.Path,
 		Posts:     posts,
 	}
 
@@ -183,6 +185,7 @@ func postHandler(w http.ResponseWriter, r *http.Request, path, pathPrefixTitle s
 
 	page := postData{
 		MetaTitle: title + " :: " + pathPrefixTitle + " :: Bartol Deak",
+		MetaURL:   r.URL.Path,
 		Content:   html,
 	}
 
@@ -233,6 +236,7 @@ func pasteHandler(w http.ResponseWriter, r *http.Request) {
 
 	page := pasteData{
 		MetaTitle: "Paste :: Bartol Deak",
+		MetaURL:   r.URL.Path,
 		Items:     items,
 	}
 
@@ -322,6 +326,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 
 	page := uploadData{
 		MetaTitle: "Upload :: Bartol Deak",
+		MetaURL:   r.URL.Path,
 		Items:     items,
 	}
 
@@ -391,7 +396,7 @@ func pingHandler(w http.ResponseWriter, r *http.Request) {
 func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	page := errorData{
 		MetaTitle: "404 Not Found",
-		URL:       r.URL.Path,
+		MetaURL:   r.URL.Path,
 	}
 
 	err := errorTemplates.Execute(w, page)
@@ -403,7 +408,7 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
 	page := errorData{
 		MetaTitle: "500 Internal Server Error",
-		URL:       r.URL.Path,
+		MetaURL:   r.URL.Path,
 	}
 
 	err := errorTemplates.Execute(w, page)
@@ -415,7 +420,7 @@ func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
 func badRequestHandler(w http.ResponseWriter, r *http.Request) {
 	page := errorData{
 		MetaTitle: "400 Bad Request",
-		URL:       r.URL.Path,
+		MetaURL:   r.URL.Path,
 	}
 
 	err := errorTemplates.Execute(w, page)
@@ -427,76 +432,81 @@ func badRequestHandler(w http.ResponseWriter, r *http.Request) {
 // templates ///////////////////////////////////////////////////////////////////
 
 var indexTemplates = template.Must(template.ParseFiles(
-	"templates/index.html",
-	"templates/meta.html",
+	"templates/base.html",
 	"templates/header.html",
 	"templates/footer.html",
+	"templates/index.html",
 ))
 
 var memoryTemplates = template.Must(template.ParseFiles(
-	"templates/memory.html",
-	"templates/meta.html",
+	"templates/base.html",
 	"templates/header.html",
 	"templates/footer.html",
+	"templates/memory.html",
 ))
 
 var postTemplates = template.Must(template.ParseFiles(
-	"templates/post.html",
-	"templates/meta.html",
+	"templates/base.html",
 	"templates/header.html",
 	"templates/footer.html",
+	"templates/post.html",
 ))
 
 var pasteTemplates = template.Must(template.ParseFiles(
-	"templates/paste.html",
-	"templates/meta.html",
+	"templates/base.html",
 	"templates/header.html",
 	"templates/footer.html",
+	"templates/paste.html",
 ))
 
 var uploadTemplates = template.Must(template.ParseFiles(
-	"templates/upload.html",
-	"templates/meta.html",
+	"templates/base.html",
 	"templates/header.html",
 	"templates/footer.html",
+	"templates/upload.html",
 ))
 
 var errorTemplates = template.Must(template.ParseFiles(
-	"templates/error.html",
-	"templates/meta.html",
+	"templates/base.html",
 	"templates/header.html",
 	"templates/footer.html",
+	"templates/error.html",
 ))
 
 // template data ///////////////////////////////////////////////////////////////
 
 type indexData struct {
 	MetaTitle string
+	MetaURL   string
 }
 
 type memoryData struct {
 	MetaTitle string
+	MetaURL   string
 	Posts     []post
 }
 
 type postData struct {
 	MetaTitle string
+	MetaURL   string
 	Content   template.HTML
 }
 
 type pasteData struct {
 	MetaTitle string
+	MetaURL   string
 	Items     []item
 }
 
 type uploadData struct {
 	MetaTitle string
+	MetaURL   string
 	Items     []item
 }
 
 type errorData struct {
 	MetaTitle string
-	URL       string
+	MetaURL   string
 }
 
 type post struct {

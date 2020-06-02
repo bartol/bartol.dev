@@ -13,7 +13,7 @@ body {
 a {
 	text-decoration: none;
 
-	color: hsla(190, 80%, 50%, 1);
+	color: hsl(190, 80%, 50%);
 }
 
 a:hover {

@@ -399,6 +399,7 @@ func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 		MetaURL:   r.URL.Path,
 	}
 
+	w.WriteHeader(http.StatusNotFound)
 	err := errorTemplates.Execute(w, page)
 	if err != nil {
 		internalServerErrorHandler(w, r)
@@ -411,6 +412,7 @@ func internalServerErrorHandler(w http.ResponseWriter, r *http.Request) {
 		MetaURL:   r.URL.Path,
 	}
 
+	w.WriteHeader(http.StatusInternalServerError)
 	err := errorTemplates.Execute(w, page)
 	if err != nil {
 		internalServerErrorHandler(w, r)
@@ -423,6 +425,20 @@ func badRequestHandler(w http.ResponseWriter, r *http.Request) {
 		MetaURL:   r.URL.Path,
 	}
 
+	w.WriteHeader(http.StatusBadRequest)
+	err := errorTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
+}
+
+func unauthorizedHandler(w http.ResponseWriter, r *http.Request) {
+	page := errorData{
+		MetaTitle: "401 Unauthorized",
+		MetaURL:   r.URL.Path,
+	}
+
+	w.WriteHeader(http.StatusUnauthorized)
 	err := errorTemplates.Execute(w, page)
 	if err != nil {
 		internalServerErrorHandler(w, r)
@@ -537,7 +553,7 @@ func flushTable(table string) {
 	http.HandleFunc(path, func(w http.ResponseWriter, r *http.Request) {
 		ok := basicAuth(w, r)
 		if !ok {
-			http.Error(w, "Not authorized", 401)
+			unauthorizedHandler(w, r)
 			return
 		}
 
@@ -554,9 +570,9 @@ func flushTable(table string) {
 func basicAuth(w http.ResponseWriter, r *http.Request) bool {
 	w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
 
-	username, password, authOK := r.BasicAuth()
-	// env[pw]...
-	return authOK && username == "usr" && password == "pw"
+	username, password, ok := r.BasicAuth()
+
+	return ok && username == "usr" && password == "pw"
 }
 
 func logRequest(handler http.Handler) http.Handler {

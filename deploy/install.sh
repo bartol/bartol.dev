@@ -16,7 +16,7 @@ source .profile
 # code
 git clone https://github.com/bartol/bartol.dev
 cd bartol.dev
-go build -o web
+go build -o www
 cd ..
 
 # ufw
@@ -33,8 +33,8 @@ sudo nginx -t
 sudo nginx -s reload
 
 # service
-sudo ln -sv ~/bartol.dev/deploy/service /lib/systemd/system/web.service
-sudo systemctl start web
+sudo ln -sv ~/bartol.dev/deploy/service /lib/systemd/system/www.service
+sudo systemctl start www
 
 # fossil
 sudo apt install -y fossil

@@ -1,12 +1,12 @@
 [Unit]
-Description=web
+Description=www
 
 [Service]
 Type=simple
 Restart=always
 RestartSec=5s
 WorkingDirectory=/home/admin/bartol.dev
-ExecStart=/home/admin/bartol.dev/web
+ExecStart=/home/admin/bartol.dev/www
 
 [Install]
 WantedBy=multi-user.target

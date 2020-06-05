@@ -1,3 +1,3 @@
 # Generate random hex code in JavaScript
 
-    '#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');
+	'#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');

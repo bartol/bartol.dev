@@ -1,5 +1,5 @@
 # Check if JavaScript array contains
 
-    if (users.includes('b')) {
+	if (users.includes('b')) {
 		// ...
 	}

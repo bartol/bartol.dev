@@ -8,6 +8,7 @@
 - [Squoosh](https://squoosh.app/)
 - [SVGOMG](https://jakearchibald.github.io/svgomg/)
 - [removebg](https://www.remove.bg/upload)
+- [Shape Divider](https://www.shapedivider.app/)
 - [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
 - [Google Search Console](https://search.google.com/search-console)
 - [Website Speed Test](https://tools.pingdom.com/)

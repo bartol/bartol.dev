@@ -1,6 +1,6 @@
 # Customize prompt in Zsh
 
-	PS1="[%n@%m %~]%(#.#.$) "
+	PROMPT="[%n@%m %~]%(#.#.$) "
 
 - `%n` - username
 - `%m` - hostname

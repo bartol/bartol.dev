@@ -459,6 +459,7 @@ var memoryTemplates = template.Must(template.ParseFiles(
 	"templates/header.html",
 	"templates/footer.html",
 	"templates/memory.html",
+	"templates/search.html",
 ))
 
 var postTemplates = template.Must(template.ParseFiles(

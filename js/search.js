@@ -23,10 +23,10 @@ function search(query) {
   let count = 0;
   [...el.list].forEach((e) => {
     if (e.innerText.toLowerCase().includes(query.toLowerCase())) {
-      e.parentElement.classList.remove("notmatch");
+      e.parentElement.classList.remove("hidden");
       count++;
     } else {
-      e.parentElement.classList.add("notmatch");
+      e.parentElement.classList.add("hidden");
     }
   });
   el.count.innerText = count;

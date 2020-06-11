@@ -55,3 +55,7 @@ nav {
 	width: 60px;
 	height: 60px;
 }
+
+.hidden {
+	display: none;
+}

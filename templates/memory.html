@@ -1,8 +1,6 @@
 {{define "content"}}
-<div style="display: flex; justify-content: space-between">
-	<h1>Memory</h1>
-	{{template "search"}}
-</div>
+<h1>Memory</h1>
+{{template "search"}}
 <ul>
 	{{range $post := .Posts}}
 	<li>

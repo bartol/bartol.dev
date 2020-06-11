@@ -3,9 +3,11 @@ const el = {
   input: document.getElementById("input"),
   count: document.getElementById("count"),
 };
+const qs = new URLSearchParams(location.search);
 const markjs = new Mark(el.list);
 
 el.count.innerText = el.list.length;
+el.input.value = qs.get("q");
 el.input.value && search(el.input.value);
 
 input.addEventListener("keyup", (e) => {
@@ -28,4 +30,8 @@ function search(query) {
     }
   });
   el.count.innerText = count;
+
+  qs.set("q", query);
+  const newURL = location.href.split("?")[0] + "?" + qs.toString();
+  window.history.replaceState(null, "", newURL);
 }

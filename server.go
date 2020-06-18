@@ -72,6 +72,7 @@ func main() {
 
 	serveFile("/manifest.webmanifest")
 	serveFile("/robots.txt")
+	serveFile("/sitemap.xml")
 	serveDir("/css/")
 	serveDir("/js/")
 	serveDir("/files/")

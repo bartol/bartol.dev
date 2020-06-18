@@ -83,6 +83,14 @@ func main() {
 	http.HandleFunc("/upload/", uploadHandler)
 	flushTable("upload")
 
+	redirect("/m/", "/memory/")
+	redirect("/p/", "/paste/")
+	redirect("/u/", "/upload/")
+	redirect("/d/", "https://raw.githubusercontent.com/bartol/dotfiles/master/")
+	redirect("/dotfiles/", "https://raw.githubusercontent.com/bartol/dotfiles/master/")
+	redirect("/s/", "https://raw.githubusercontent.com/bartol/dotfiles/master/scripts/")
+	redirect("/scripts/", "https://raw.githubusercontent.com/bartol/dotfiles/master/scripts/")
+
 	http.HandleFunc("/ping", pingHandler)
 
 	log.Println("server listening on :8080")
@@ -566,6 +574,13 @@ func flushTable(table string) {
 		}
 
 		w.Write([]byte("done"))
+	})
+}
+
+func redirect(from, to string) {
+	http.HandleFunc(from, func(w http.ResponseWriter, r *http.Request) {
+		path := r.URL.Path[len(from):]
+		http.Redirect(w, r, to+path, http.StatusTemporaryRedirect)
 	})
 }
 

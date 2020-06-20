@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+title=$1
+file=memory/$(echo ${title,,} | sed -E 's/( |\.)/-/g').md
+
+echo "#" $title > $file
+vi $file

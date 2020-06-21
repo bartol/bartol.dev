@@ -1,3 +1,3 @@
 # Script execute permission
 
-	$ chmod +x script.sh
+	$ chmod +rx script.sh

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -ex
 
 title=$1
 file=memory/$(echo ${title,,} | sed -E "s/( |\.)/-/g" | sed -E "s/'//g").md

@@ -2,10 +2,11 @@
 
 download iso
 
-- [Manjaro](https://manjaro.org/download/)
 - [Ubuntu](https://ubuntu.com/download/desktop)
-- [Debian](https://www.debian.org/distrib/netinst)
+- [Xubuntu](https://xubuntu.org/download)
 - [PopOS](https://pop.system76.com/)
+- [Debian](https://www.debian.org/distrib/netinst)
+- [Manjaro](https://manjaro.org/download/)
 
 flash iso to usb
 

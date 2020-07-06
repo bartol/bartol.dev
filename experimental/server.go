@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
 
@@ -27,6 +28,20 @@ var (
 
 func main() {
 	tree = getContent("content/")
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path == "/" {
+			w.Write([]byte("index"))
+			return
+		}
+		body, ok := posts[r.URL.Path]
+		log.Println(body) // todo
+		if ok {
+			w.Write([]byte("post"))
+			return
+		}
+		w.Write([]byte("404"))
+	})
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func getContent(root string) []node {

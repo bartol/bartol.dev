@@ -17,29 +17,86 @@ import (
 type node struct {
 	Title    string
 	Path     string
+	URL      string
 	Type     string
 	Children []node
 }
 
+type indexTmplData struct {
+	MetaTitle string
+	MetaURL   string
+	Tree      []node
+}
+
+type postTmplData struct {
+	MetaTitle string
+	MetaURL   string
+	Body      template.HTML
+}
+
+type errorTmplData struct {
+	MetaTitle string
+	MetaURL   string
+}
+
 var (
-	posts = make(map[string]template.HTML)
-	tree  []node
+	posts     = make(map[string]template.HTML)
+	tree      []node
+	indexTmpl = template.Must(template.ParseFiles(
+		"templates/base.html",
+		"templates/index.html",
+		"templates/node.html",
+	))
+	postTmpl = template.Must(template.ParseFiles(
+		"templates/base.html",
+		"templates/post.html",
+	))
+	errorTmpl = template.Must(template.ParseFiles(
+		"templates/base.html",
+		"templates/error.html",
+	))
 )
 
 func main() {
 	tree = getContent("content/")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path == "/" {
-			w.Write([]byte("index"))
+			data := indexTmplData{
+				"Bartol Deak",
+				r.URL.Path,
+				tree,
+			}
+			err := indexTmpl.Execute(w, data)
+			if err != nil {
+				w.Write([]byte("internal server error"))
+			}
 			return
 		}
 		body, ok := posts[r.URL.Path]
-		log.Println(body) // todo
 		if ok {
-			w.Write([]byte("post"))
+			title, err := getTitle("content" + r.URL.Path + ".md")
+			if err != nil {
+				w.Write([]byte("internal server error"))
+			}
+			data := postTmplData{
+				title,
+				r.URL.Path,
+				body,
+			}
+			err = postTmpl.Execute(w, data)
+			if err != nil {
+				w.Write([]byte("internal server error"))
+			}
 			return
 		}
-		w.Write([]byte("404"))
+		data := errorTmplData{
+			"404 Not Found",
+			r.URL.Path,
+		}
+		err := errorTmpl.Execute(w, data)
+		if err != nil {
+			w.Write([]byte("internal server error"))
+		}
 	})
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
@@ -57,6 +114,7 @@ func getContent(root string) []node {
 			t = append(t, node{
 				title,
 				path,
+				"",
 				"folder",
 				getContent(path),
 			})
@@ -67,9 +125,12 @@ func getContent(root string) []node {
 		if err != nil {
 			log.Fatal(err)
 		}
+		ext := filepath.Ext(path)
+		url := path[len("content") : len(path)-len(ext)]
 		t = append(t, node{
 			title,
 			path,
+			url,
 			"post",
 			[]node{},
 		})
@@ -77,8 +138,6 @@ func getContent(root string) []node {
 		if err != nil {
 			log.Fatal(err)
 		}
-		ext := filepath.Ext(path)
-		url := path[len("content") : len(path)-len(ext)]
 		posts[url] = body
 	}
 	return t

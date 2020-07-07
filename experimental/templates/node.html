@@ -1,0 +1,12 @@
+{{define "node"}}
+{{if eq .Type "folder"}}
+<details>
+	<summary>{{.Title}}</summary>
+	{{range .Children}}
+	{{template "node" .}}
+	{{end}}
+</details>
+{{else}}
+<a href="{{.URL}}">{{.Title}}</a>
+{{end}}
+{{end}}

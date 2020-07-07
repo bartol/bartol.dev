@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{.MetaTitle}}</title>
+		<meta name="description" content="my website">
+		<meta name="image" content="/files/social.png">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		<link rel="shortcut icon" href="/files/icons/icon-48x48.png">
+		<link rel="manifest" href="/manifest.webmanifest">
+		<meta name="theme-color" content="hsl(190, 80%, 50%)">
+		<link rel="apple-touch-icon" sizes="48x48" href="/files/icons/icon-48x48.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/files/icons/icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="96x96" href="/files/icons/icon-96x96.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/files/icons/icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="192x192" href="/files/icons/icon-192x192.png">
+		<link rel="apple-touch-icon" sizes="256x256" href="/files/icons/icon-256x256.png">
+		<link rel="apple-touch-icon" sizes="384x384" href="/files/icons/icon-384x384.png">
+		<link rel="apple-touch-icon" sizes="512x512" href="/files/icons/icon-512x512.png">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://bartol.dev{{.MetaURL}}">
+		<meta name="twitter:title" content="{{.MetaTitle}}">
+		<meta name="twitter:description" content="my website">
+		<meta name="twitter:image" content="/files/social.png">
+		<meta property="og:url" content="https://bartol.dev{{.MetaURL}}">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="{{.MetaTitle}}">
+		<meta property="og:description" content="my website">
+		<meta property="og:image" content="/files/social.png">
+		<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+	</head>
+	<body>
+		<header>
+			<a href="/">
+				<img src="/files/logo.svg" alt="Home" class="logo">
+			</a>
+			<nav>
+				<a href="/memory/">Memory</a>
+			</nav>
+		</header>
+		{{template "content" .}}
+		<footer>
+			<a href="mailto:b@bartol.dev">b@bartol.dev</a>
+			<a href="https://github.com/bartol">git</a>
+			<a href="https://web.archive.org/web/*/https://bartol.dev/*">web archive</a>
+		</footer>
+	</body>
+</html>

@@ -23,9 +23,6 @@ import (
 
 // routes //////////////////////////////////////////////////////////////////////
 
-// /memory.xml 		- memory index rss feed
-// t: memory.xml
-
 // unauthorizedHandler
 
 // GET  - /share           - webrtc file share
@@ -234,8 +231,6 @@ func sitemapHandler(w http.ResponseWriter, r *http.Request) {
 		internalServerErrorHandler(w, r)
 		return
 	}
-
-	//w.Header().Add("Content-Type", "application/xml")
 
 	page := sitemapData{
 		Posts: posts,

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+	<loc>https://bartol.dev/</loc>
+	<lastmod>{{.Date}}</lastmod>
+	<priority>1.00</priority>
+</url>
+<url>
+	<loc>https://bartol.dev/memory/</loc>
+	<lastmod>{{.Date}}</lastmod>
+	<priority>1.00</priority>
+</url>
+<url>
+	<loc>https://bartol.dev/paste/</loc>
+	<lastmod>{{.Date}}</lastmod>
+	<priority>0.50</priority>
+</url>
+<url>
+	<loc>https://bartol.dev/upload/</loc>
+	<lastmod>{{.Date}}</lastmod>
+	<priority>0.50</priority>
+</url>
+{{$date := .Date}}
+{{range .Posts}}
+<url>
+	<loc>https://bartol.dev/{{.Path}}</loc>
+	<lastmod>{{$date}}</lastmod>
+	<priority>0.80</priority>
+</url>
+{{end}}
+
+</urlset>

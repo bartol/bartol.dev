@@ -13,6 +13,8 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	textTemplate "text/template"
+	"time"
 
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/yuin/goldmark"
@@ -72,10 +74,11 @@ func main() {
 
 	serveFile("/manifest.webmanifest")
 	serveFile("/robots.txt")
-	serveFile("/sitemap.xml")
 	serveDir("/css/")
 	serveDir("/js/")
 	serveDir("/files/")
+
+	http.HandleFunc("/sitemap.xml", sitemapHandler)
 
 	http.HandleFunc("/paste/", pasteHandler)
 	flushTable("paste")
@@ -199,6 +202,47 @@ func postHandler(w http.ResponseWriter, r *http.Request, path, pathPrefixTitle s
 	}
 
 	err = postTemplates.Execute(w, page)
+	if err != nil {
+		internalServerErrorHandler(w, r)
+	}
+}
+
+func sitemapHandler(w http.ResponseWriter, r *http.Request) {
+	var posts []post
+	err := filepath.Walk("./memory/", func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		if isPost(path) {
+			title, err := getPostTitle(path)
+			if err != nil {
+				return err
+			}
+
+			post := post{
+				Title: title,
+				Path:  "/" + path[:len(path)-len(".md")] + "/",
+			}
+
+			posts = append(posts, post)
+		}
+
+		return nil
+	})
+	if err != nil {
+		internalServerErrorHandler(w, r)
+		return
+	}
+
+	//w.Header().Add("Content-Type", "application/xml")
+
+	page := sitemapData{
+		Posts: posts,
+		Date:  time.Now().Format(time.RFC3339),
+	}
+
+	err = sitemapTemplates.Execute(w, page)
 	if err != nil {
 		internalServerErrorHandler(w, r)
 	}
@@ -478,6 +522,10 @@ var postTemplates = template.Must(template.ParseFiles(
 	"templates/post.html",
 ))
 
+var sitemapTemplates = textTemplate.Must(textTemplate.ParseFiles(
+	"templates/sitemap.xml",
+))
+
 var pasteTemplates = template.Must(template.ParseFiles(
 	"templates/base.html",
 	"templates/header.html",
@@ -516,6 +564,11 @@ type postData struct {
 	MetaTitle string
 	MetaURL   string
 	Content   template.HTML
+}
+
+type sitemapData struct {
+	Date  string
+	Posts []post
 }
 
 type pasteData struct {

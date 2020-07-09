@@ -14,7 +14,6 @@ import (
 	"strconv"
 	"strings"
 	textTemplate "text/template"
-	"time"
 
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/yuin/goldmark"
@@ -212,13 +211,12 @@ func sitemapHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if isPost(path) {
-			title, err := getPostTitle(path)
 			if err != nil {
 				return err
 			}
 
 			post := post{
-				Title: title,
+				Title: "",
 				Path:  "/" + path[:len(path)-len(".md")] + "/",
 			}
 
@@ -234,7 +232,6 @@ func sitemapHandler(w http.ResponseWriter, r *http.Request) {
 
 	page := sitemapData{
 		Posts: posts,
-		Date:  time.Now().Format(time.RFC3339),
 	}
 
 	err = sitemapTemplates.Execute(w, page)
@@ -562,7 +559,6 @@ type postData struct {
 }
 
 type sitemapData struct {
-	Date  string
 	Posts []post
 }
 

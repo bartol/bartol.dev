@@ -86,9 +86,7 @@ func main() {
 	redirect("/p/", "/paste/")
 	redirect("/u/", "/upload/")
 	redirect("/d/", "https://raw.githubusercontent.com/bartol/dotfiles/master/")
-	redirect("/dotfiles/", "https://raw.githubusercontent.com/bartol/dotfiles/master/")
-	redirect("/s/", "https://raw.githubusercontent.com/bartol/dotfiles/master/scripts/")
-	redirect("/scripts/", "https://raw.githubusercontent.com/bartol/dotfiles/master/scripts/")
+	redirect("/s/", "https://raw.githubusercontent.com/bartol/scripts/")
 
 	http.HandleFunc("/ping", pingHandler)
 

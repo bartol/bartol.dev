@@ -8,18 +8,7 @@
 1. Boot to USB and follow instructions
 
 ## Install and upgrade software
-
-- Update package info
-
-	  $ sudo apt update
-
-- Upgrade existing software
-
-	  $ sudo apt upgrade
-
-- Install new software
-
-	  $ sudo apt install git curl vim-gtk ack entr xclip trash-cli golang-go
+link
 
 ## Firefox
 
@@ -35,36 +24,11 @@ Filter lists > Annoyances)
 
 ## Xfce
 
-...
-
 ## GitHub
-
-1. Create SSH key
-
-	   $ ssh-keygen -t rsa -b 4096 -C "b@bartol.dev"
-
-1. Start SSH agent
-
-	   $ eval "$(ssh-agent -s)"
-
-1. Add key to SSH agent
-
-	   $ ssh-add ~/.ssh/id_rsa
-
-1. Copy key to clipboard
-
-	   $ xclip -sel clip < ~/.ssh/id_rsa.pub
-
-1. Add key in [GitHub settings](https://github.com/settings/keys)
+link
 
 ## Dotfiles
-
-	$ git clone https://github.com/bartol/dotfiles
-	$ ln -sb dotfiles/.vimrc
-	$ ln -sb dotfiles/.bashrc
-	$ ln -sb dotfiles/.inputrc
-	$ ln -sb dotfiles/.gitconfig
-	$ ln -sb dotfiles/.editorconfig
+link
 
 ## Projects
 

@@ -6,3 +6,5 @@
 	$ ln -sb dotfiles/.inputrc
 	$ ln -sb dotfiles/.gitconfig
 	$ ln -sb dotfiles/.editorconfig
+	$ mkdir .ssh
+	$ ln -sb dotfiles/.ssh/config .ssh/

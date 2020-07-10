@@ -1,0 +1,3 @@
+# Bash expand completion
+
+`Esc*`

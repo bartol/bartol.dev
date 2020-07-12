@@ -1,6 +1,6 @@
 # Setup dotfiles
 
-	$ git clone https://github.com/bartol/dotfiles ~/dotfiles
+	$ git clone https://git.bartol.dev/dotfiles ~/dotfiles
 	$ ln -sb ~/dotfiles/.vimrc ~
 	$ ln -sb ~/dotfiles/.bashrc ~
 	$ ln -sb ~/dotfiles/.inputrc ~

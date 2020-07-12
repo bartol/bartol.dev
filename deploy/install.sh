@@ -14,7 +14,7 @@ echo "export PATH=$PATH:/usr/local/go/bin" >> .profile
 source .profile
 
 # code
-git clone https://github.com/bartol/bartol.dev
+git clone https://git.bartol.dev/bartol.dev
 cd bartol.dev
 go build -o www
 cd ..

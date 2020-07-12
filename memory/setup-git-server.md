@@ -37,6 +37,8 @@ add repository:
 	$ mkdir repo
 	$ cd repo
 	$ git init --bare
+	$ echo section=web >> cgitrc
+	$ echo owner=bartol >> cgitrc
 	$ vi description
 
 open repository on local machine

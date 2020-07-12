@@ -1,0 +1,33 @@
+server {
+	server_name git.bartol.dev;
+	listen 80;
+	listen [::]:80;
+	listen 443 ssl http2;
+	listen [::]:443 ssl http2;
+
+	if ($scheme != "https") {
+		return 301 https://$host$request_uri;
+	}
+
+	location / {
+		root /usr/lib/cgit/cgit.cgi;
+		include /etc/nginx/fastcgi_params;
+		fastcgi_pass unix:/run/fcgiwrap.socket;
+	}
+
+	location /cgit.css {
+		alias /usr/share/cgit/cgit.css;
+	}
+
+	location /cgit.png {
+		alias /usr/share/cgit/cgit.png;
+	}
+
+	location /favicon.ico {
+		alias /usr/share/cgit/favicon.ico;
+	}
+
+	location /.well-known/ {
+		root /var/lib/letsencrypt/;
+	}
+}

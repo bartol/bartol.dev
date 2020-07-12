@@ -1,21 +1,9 @@
 css=/cgit.css
 logo=/cgit.png
+scan-path=/srv/git/
 
 root-title=git.bartol.dev
 root-desc=my git repositories
 
 readme=:README.md
 about-filter=/usr/lib/cgit/filters/about-formatting.sh
-
-# add all repositories automatically
-
-scan-path=/srv/git/
-
-# or add repositories manually
-
-# section=web
-
-# repo.url=bartol.dev
-# repo.path=/srv/git/bartol.dev.git
-# repo.desc=my website
-# repo.owner=bartol

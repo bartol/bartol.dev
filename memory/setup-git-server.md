@@ -16,18 +16,7 @@ login to debian-based vps
 
 copy your public key from local machine
 
-	$ cd /srv/git
-	$ mkdir repo.git
-	$ cd repo.git
-	$ git init --bare
-
-open repository on local machine
-
-	$ git remote add server git@server:/srv/git/repo.git
-	$ git push server master
-
-login back to vps
-
+	$ exit
 	$ sudo vi /etc/cgitrc
 
 [cgitrc](/files/setup-git-server/cgitrc)
@@ -40,3 +29,18 @@ login back to vps
 	$ sudo nginx -t
 	$ sudo nginx -s reload
 	$ sudo certbot --nginx --no-redirect -d git.bartol.dev
+
+add repository:
+
+	$ su git
+	$ cd /srv/git
+	$ mkdir repo
+	$ cd repo
+	$ git init --bare
+	$ vi description
+
+open repository on local machine
+
+	$ git remote add server git@server:/srv/git/repo
+	$ git push --all server
+

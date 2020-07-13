@@ -39,6 +39,7 @@ add repository:
 	$ git init --bare
 	$ echo section=web >> cgitrc
 	$ echo owner=bartol >> cgitrc
+	$ echo readme=:README.md >> cgitrc
 	$ vi description
 
 open repository on local machine

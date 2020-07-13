@@ -5,5 +5,4 @@ scan-path=/srv/git/
 root-title=git.bartol.dev
 root-desc=my git repositories
 
-readme=:README.md
 about-filter=/usr/lib/cgit/filters/about-formatting.sh

@@ -1,5 +1,7 @@
 # Nginx reverse proxy
 
+`/etc/nginx/sites-available/bartol.dev`
+
 	server {
 		server_name bartol.dev www.bartol.dev;
 		listen 80;
@@ -19,3 +21,7 @@
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 		}
 	}
+
+```
+$ ln -s /etc/nginx/sites-available/bartol.dev /etc/nginx/sites-enabled/
+```

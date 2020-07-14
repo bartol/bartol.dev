@@ -1,14 +1,21 @@
 # Nginx reverse proxy
 
-Reverse proxy with ssl and http2.
-
 	server {
-		server_name bartol.dev;
-		listen 443 http2 ssl;
+		server_name bartol.dev www.bartol.dev;
+		listen 80;
+		listen [::]:80;
+		listen 443 ssl http2;
+		listen [::]:443 ssl http2;
+
+		if ($scheme != "https") {
+			return 301 https://$host$request_uri;
+		}
 
 		location / {
 			proxy_pass http://localhost:8080;
+
+			proxy_set_header Host $host;
+			proxy_set_header X-Real-IP $remote_addr;
+			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 		}
 	}
-
-Then run `certbot --nginx -d bartol.dev` to add certificate file.

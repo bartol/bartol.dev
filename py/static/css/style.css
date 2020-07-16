@@ -1,0 +1,61 @@
+body {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  font-family: "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+
+  color: #fff;
+  background-color: #222;
+}
+
+a {
+  text-decoration: none;
+
+  color: hsl(190, 80%, 50%);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: "Fira Mono", "Andale Mono", monospace;
+  font-size: 0.9rem;
+  line-height: normal;
+
+  background-color: #333;
+}
+
+input {
+  font-size: 1rem;
+}
+
+header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: 2.5% 0;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: block;
+
+  width: 60px;
+  height: 60px;
+}
+
+.hidden {
+  display: none;
+}

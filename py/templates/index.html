@@ -1,0 +1,13 @@
+{% extends 'layout.html' %} 
+{% block content %}
+<ul class="tree">
+  {% for post in posts recursive %}
+  <li>
+    <a href="{{ post.path }}">{{ post.title }}</a>
+    {% if post.children | length %}
+    <ul>{{ loop(post.children) }}</ul>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

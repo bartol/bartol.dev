@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title>{{ title }}{% if title %} :: Bartol Deak{% else %}Bartol Deak{% endif %}</title>
+    {% endblock %}
+  </head>
+  <body>
+    <main>{% block content %}{% endblock %}</main>
+  </body>
+</html>

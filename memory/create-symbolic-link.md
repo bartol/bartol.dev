@@ -1,3 +1,3 @@
 # Create symbolic link
 
-	$ ln -svi file link
+	$ ln -s file link

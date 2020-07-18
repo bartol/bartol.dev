@@ -38,7 +38,7 @@ add repository:
 	$ cd repo
 	$ git init --bare
 	$ echo section=web >> cgitrc
-	$ echo owner=bartol >> cgitrc
+	$ echo owner=Bartol Deak >> cgitrc
 	$ echo readme=:README.md >> cgitrc
 	$ vi description
 

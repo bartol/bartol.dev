@@ -1,3 +1,3 @@
 # View file mtime, atime and ctime
 
-	$ stat todo.txt
+	$ stat file.txt

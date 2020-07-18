@@ -18,6 +18,9 @@ def get_post_content(path):
         return markdown(''.join(f.readlines()))
 
 def get_post_path(subpath):
-    if subpath[-1] == '/':
+    if subpath and subpath[-1] == '/':
         subpath = subpath[:-1]
     return 'content/' + subpath + '.md'
+
+def get_dir_path(subpath):
+    return 'content/' + subpath

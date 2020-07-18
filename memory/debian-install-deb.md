@@ -1,3 +1,3 @@
-# Ubuntu install .deb
+# Debian install .deb
 
 	$ sudo apt install ./file.deb

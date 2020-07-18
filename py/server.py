@@ -1,34 +1,27 @@
-from flask import Flask, render_template, jsonify
-from os.path import isfile, isdir
+#!/usr/bin/env python3
+
+import web
+import os
 import helpers
 
-app = Flask(__name__)
+urls = (
+    '/(.*)', 'content',
+)
+app = web.application(urls, globals())
+render = web.template.render('templates', base='layout')
 
-@app.route('/')
-def index():
-    posts = helpers.get_tree('content/')
-    return render_template('index.html', posts=posts)
+class content:
+    def GET(self, path):
+        post_path = helpers.get_post_path(path)
+        dir_path = helpers.get_dir_path(path)
+        if os.path.isfile(post_path):
+            title = helpers.get_post_title(post_path)
+            content = helpers.get_post_content(post_path)
+            return render.post(title, content)
+        if os.path.isdir(dir_path):
+            posts = helpers.get_tree(dir_path)
+            return render.index(path, posts)
+        return render.notfound(path)
 
-@app.route('/<path:subpath>')
-def content(subpath):
-    post_path = helpers.get_post_path(subpath)
-    dir_path = 'content/' + subpath
-    if isfile(post_path):
-        title = helpers.get_post_title(post_path)
-        content = helpers.get_post_content(post_path)
-        return render_template('post.html', title=title, content=content)
-    if isdir(dir_path):
-        posts = helpers.get_tree(dir_path)
-        return render_template('index.html', title=subpath, posts=posts)
-    return render_template('404.html'), 404
-
-@app.errorhandler(404)
-def not_found(e):
-    return render_template('404.html'), 404
-
-# $ python3.6 -m venv .venv
-# $ . .venv/bin/activate
-# $ pip install flask markdown
-# $ export FLASK_APP=server.py
-# $ export FLASK_DEBUG=1
-# $ flask run
+if __name__ == "__main__":
+    app.run()

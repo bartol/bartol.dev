@@ -1,13 +1,19 @@
-{% extends 'layout.html' %} 
-{% block content %}
+$def with (path, posts)
+$if path:
+  $var title: $path | Bartol Deak
+$else:
+  $var title: Bartol Deak
+
+$def tree(posts):
+  $for post in posts:
+    <li>
+      <a href="$post['path']">$post['title']</a>
+      $if post['children']:
+        <ul>
+          $:tree(post['children'])
+        </ul>
+    </li>
+
 <ul class="tree">
-  {% for post in posts recursive %}
-  <li>
-    <a href="{{ post.path }}">{{ post.title }}</a>
-    {% if post.children | length %}
-    <ul>{{ loop(post.children) }}</ul>
-    {% endif %}
-  </li>
-  {% endfor %}
+  $:tree(posts)
 </ul>
-{% endblock %}

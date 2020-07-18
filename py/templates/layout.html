@@ -1,12 +1,10 @@
+$def with (content)
 <!DOCTYPE html>
 <html>
   <head>
-    {% block head %}
-    <link rel="stylesheet" href="/static/css/style.css" />
-    <title>{{ title }}{% if title %} :: Bartol Deak{% else %}Bartol Deak{% endif %}</title>
-    {% endblock %}
+    <title>$content.title</title>
   </head>
   <body>
-    <main>{% block content %}{% endblock %}</main>
+    $:content
   </body>
 </html>

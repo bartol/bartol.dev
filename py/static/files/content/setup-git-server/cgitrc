@@ -1,0 +1,8 @@
+css=/cgit.css
+logo=/cgit.png
+scan-path=/srv/git/
+
+root-title=git.bartol.dev
+root-desc=my git repositories
+
+about-filter=/usr/lib/cgit/filters/about-formatting.sh

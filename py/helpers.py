@@ -3,9 +3,9 @@ from markdown import markdown
 
 def get_tree(root):
     posts = []
-    for path in glob(root + "/*/"): # folders
+    for path in sorted(glob(root + "/*/")): # folders
         posts.append({ 'title': path[len(root):], 'path': '/' + path[len('content/'):-1], 'children': get_tree(path) })
-    for path in glob(root + "/*.md"): # posts
+    for path in sorted(glob(root + "/*.md")): # posts
         posts.append({ 'title': get_post_title(path), 'path': '/' + path[len('content/'):-len('.md')], 'children': [] })
     return posts
 

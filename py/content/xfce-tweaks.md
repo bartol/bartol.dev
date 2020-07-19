@@ -1,0 +1,16 @@
+# Xfce tweaks
+
+1. Terminal increase font to 11px (Edit > Preferences > Appearance)
+1. Terminal set "Unlimited scrollback" (Edit > Preferences > General)
+1. Add Workspace Switcher to Panel (Panel > Panel Preferences > Items)
+1. Start Clipman on login (Settings Manager > Session and Startup > Application Autostart)
+1. Change screensaver to "Floating Xfce" (Settings Manager > Screensaver)
+1. Disable "Wrap workspaces when reaching the screen edge" (Settings Manager > Window Manager > Advanced)
+1. Suspend when laptop lid is closed (Settings Manager > Power Manager > General)
+1. Ask when power button is pressed (Settings Manager > Power Manager > General)
+1. Adjust Display power management (Settings Manager > Power Manager > Display)
+1. Add HR keyboard (Settings Manager > Keyboard > Layout)
+1. Set change layout shortcut to Win+Space (Settings Manager > Keyboard > Layout)
+1. Check "Configure new displays when connected" (Settings Manager > Display > Advanced)
+1. Check "Automatically enable profiles when new display is connected" (Settings Manager > Display > Advanced)
+1. Create external display profile (Settings Manager > Display > Advanced)

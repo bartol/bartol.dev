@@ -1,0 +1,3 @@
+# View suspended processes
+
+	$ jobs

@@ -21,7 +21,12 @@ class content:
         if os.path.isdir(dir_path):
             posts = helpers.get_tree(dir_path)
             return render.index(path, posts)
-        return render.notfound(path)
+        raise web.notfound()
+
+def notfound():
+    return web.notfound(render.notfound(web.ctx.path))
+
+app.notfound = notfound
 
 if __name__ == "__main__":
     app.run()

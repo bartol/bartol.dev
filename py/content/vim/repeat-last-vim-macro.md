@@ -1,3 +1,0 @@
-# Repeat last Vim macro
-
-`@@`

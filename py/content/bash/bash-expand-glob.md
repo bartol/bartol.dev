@@ -1,3 +1,0 @@
-# Bash expand glob
-
-`^x*`

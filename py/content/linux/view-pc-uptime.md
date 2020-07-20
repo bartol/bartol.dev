@@ -1,3 +1,0 @@
-# View PC uptime
-
-	$ uptime

@@ -1,3 +1,0 @@
-# Create file in Netrw
-
-`%`

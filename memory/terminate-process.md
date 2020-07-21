@@ -1,0 +1,3 @@
+# Terminate process
+
+	$ kill pid

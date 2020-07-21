@@ -1,0 +1,26 @@
+$def with (title, posts)
+$if title != 'memory/':
+  $var title: $title :: Memory :: Bartol Deak
+$else:
+  $var title: Memory :: Bartol Deak
+
+<h1>$title</h1>
+
+$def tree(posts):
+  $for post in posts:
+    <li>
+      <a href="$post['path']">$post['title']</a>
+      $if post['children']:
+        <ul class="list">
+          $:tree(post['children'])
+        </ul>
+    </li>
+
+<ul class="tree list">
+  $:tree(posts)
+</ul>
+
+<ul class="search list"></ul>
+
+<script src="/static/js/memory.js" defer></script>
+<script src="https://raw.githubusercontent.com/farzher/fuzzysort/master/fuzzysort.js" defer></script>

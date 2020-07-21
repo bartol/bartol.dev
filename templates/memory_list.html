@@ -5,6 +5,7 @@ $else:
   $var title: Memory :: Bartol Deak
 
 <h1>$title</h1>
+<input type="text" placeholder="search" class="input">
 
 $def tree(posts):
   $for post in posts:
@@ -20,7 +21,7 @@ $def tree(posts):
   $:tree(posts)
 </ul>
 
-<ul class="search list"></ul>
+<ul class="results list"></ul>
 
+<script src="https://unpkg.com/fuzzysort@1.1.4/fuzzysort.js" defer></script>
 <script src="/static/js/memory.js" defer></script>
-<script src="https://raw.githubusercontent.com/farzher/fuzzysort/master/fuzzysort.js" defer></script>

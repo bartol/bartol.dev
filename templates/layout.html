@@ -1,0 +1,25 @@
+$def with (content)
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$content.title</title>
+    <meta name="description" content="my website">
+    <meta name="image" content="/static/files/img/social.png">
+    <link rel="shortcut icon" href="/static/files/img/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/static/files/img/logo.svg" alt="Home" class="logo">
+      </a>
+      <a href="/memory">Memory</a>
+    </header>
+    $:content
+    <footer>
+      <a href="mailto:b@bartol.dev">b@bartol.dev</a>
+      <a href="https://git.bartol.dev">git</a>
+      <a href="https://web.archive.org/web/*/https://bartol.dev/*">web archive</a>
+    </footer>
+  </body>
+</html>

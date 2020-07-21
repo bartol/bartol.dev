@@ -23,7 +23,7 @@ def get_list(root):
     for path in sorted(glob(root + "/**/*.md", recursive=True)):
         posts.append({ 
             'title': get_post_title(path), 
-            'path': '/' + path[:-len('.md')] 
+            'path': '/' + path[:-len('.md')]
         })
     return posts
 

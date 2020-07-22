@@ -8,7 +8,7 @@ document.querySelectorAll(".tree a").forEach((a) => {
 });
 
 const cache = {};
-const cacheChars = "abcdefghijklmnopqrstuvwxyz";
+const cacheChars = "abcdefghijklmnopqrstuvwxyz ";
 let cachePromise, cacheCanceled, startms;
 
 const options = {
@@ -20,6 +20,7 @@ function getQuery() {
   return inputEl.value.toLowerCase();
 }
 
+cacheNextLevel();
 inputEl.addEventListener("keyup", () => {
   const query = getQuery();
   treeEl.style.display = !query ? "block" : "none";

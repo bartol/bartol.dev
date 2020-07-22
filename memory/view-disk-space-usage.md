@@ -1,3 +1,3 @@
 # View disk space usage
 
-	$ df
+	$ df -h

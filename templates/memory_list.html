@@ -4,24 +4,26 @@ $if title != 'memory/':
 $else:
   $var title: Memory :: Bartol Deak
 
-<h1>$title</h1>
-<input type="text" placeholder="search" class="input">
+<div class="input_wrapper">
+  <h1>$title</h1>
+  <input type="text" autofocus placeholder="search" class="input">
+</div>
 
 $def tree(posts):
   $for post in posts:
     <li>
       <a href="$post['path']">$post['title']</a>
       $if post['children']:
-        <ul class="list">
+        <ul>
           $:tree(post['children'])
         </ul>
     </li>
 
-<ul class="tree list">
+<ul class="tree">
   $:tree(posts)
 </ul>
 
-<ul class="results list"></ul>
+<ul class="results"></ul>
 
 <script src="https://unpkg.com/fuzzysort@1.1.4/fuzzysort.js" defer></script>
 <script src="/static/js/memory_list.js" defer></script>

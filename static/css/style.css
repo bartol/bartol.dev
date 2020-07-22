@@ -31,7 +31,13 @@ pre {
   background-color: #333;
 }
 
-.list {
+.tree,
+.results {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tree ul {
   list-style: none;
   padding-left: 1rem;
 }
@@ -48,4 +54,20 @@ footer {
   display: block;
   width: 60px;
   height: 60px;
+}
+
+.input_wrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.input {
+  font-size: 2rem;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  flex-grow: 1;
+  margin-left: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
 }

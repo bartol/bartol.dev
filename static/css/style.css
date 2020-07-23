@@ -59,6 +59,7 @@ footer {
 .input_wrapper {
   display: flex;
   align-items: baseline;
+  margin-top: -1.5rem;
 }
 
 .input {

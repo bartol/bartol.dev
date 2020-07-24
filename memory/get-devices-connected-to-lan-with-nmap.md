@@ -1,8 +1,9 @@
 # Get devices connected to LAN with nmap
 
-get lan ip
+[Get LAN IP](/memory/get-lan-ip)
 
-	$ ifconfig | grep "inet " | grep -v "127.0.0.1"
+for example:
+
 	inet 192.168.8.102  netmask 255.255.255.0  broadcast 192.168.8.255
 
 run nmap in ping scanning mode

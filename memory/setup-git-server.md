@@ -19,11 +19,11 @@ copy your public key from local machine
 	$ exit
 	$ sudo vi /etc/cgitrc
 
-[cgitrc](/static/files/memory/setup-git-server/cgitrc)
+[cgitrc](/static/memory/setup-git-server/cgitrc)
 
 	$ sudo vi /etc/nginx/sites-available/git.bartol.dev
 
-[nginx-site](/static/files/memory/setup-git-server/nginx-site)
+[nginx-site](/static/memory/setup-git-server/nginx-site)
 
 	$ sudo ln -s /etc/nginx/sites-available/git.bartol.dev /etc/nginx/sites-enabled/
 	$ sudo nginx -t

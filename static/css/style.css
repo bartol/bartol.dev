@@ -31,8 +31,12 @@ pre {
   background-color: #333;
 }
 
+pre {
+  overflow-x: scroll;
+}
+
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .tree,

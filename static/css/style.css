@@ -31,10 +31,6 @@ pre {
   background-color: #333;
 }
 
-pre {
-  overflow-x: scroll;
-}
-
 img {
   max-width: 100%;
 }

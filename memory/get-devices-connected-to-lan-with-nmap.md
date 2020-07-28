@@ -8,4 +8,4 @@ for example:
 
 run nmap in ping scanning mode
 
-	$ nmap -sP 192.168.8.0/24
+	$ nmap -sn 192.168.8.0/24

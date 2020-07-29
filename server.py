@@ -7,7 +7,7 @@ import helpers
 
 urls = (
     '/', 'index',
-    '/memory([^\.]*)(|\.html|\.json|\.md)', 'memory',
+    '/wiki([^\.]*)(|\.html|\.json|\.md)', 'wiki',
 )
 app = web.application(urls, globals())
 wsgiapp = app.wsgifunc()
@@ -18,7 +18,7 @@ class index:
     def GET(self):
         return render.index()
 
-class memory:
+class wiki:
     def GET(self, path, content_type):
         post_path = helpers.get_post_path(path)
         if os.path.isfile(post_path):
@@ -36,7 +36,7 @@ class memory:
 
             title = helpers.get_post_title(post_path)
             html = helpers.get_post_html(post_path)
-            return render.memory_post(title, html)
+            return render.wiki_post(title, html)
 
         dir_path = helpers.get_dir_path(path)
         if os.path.isdir(dir_path):
@@ -49,7 +49,7 @@ class memory:
 
             title = helpers.get_dir_title(dir_path)
             posts = helpers.get_tree(dir_path)
-            return render.memory_list(title, posts)
+            return render.wiki_list(title, posts)
 
         raise web.notfound()
 

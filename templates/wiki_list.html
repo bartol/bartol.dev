@@ -1,8 +1,8 @@
 $def with (title, posts)
-$if title != 'memory/':
-  $var title: $title :: Memory :: Bartol Deak
+$if title != 'wiki/':
+  $var title: $title : wiki : Bartol Deak
 $else:
-  $var title: Memory :: Bartol Deak
+  $var title: wiki : Bartol Deak
 
 <div class="input_wrapper">
   <h1>$title</h1>
@@ -26,4 +26,4 @@ $def tree(posts):
 <ul class="results"></ul>
 
 <script src="https://unpkg.com/fuzzysort@1.1.4/fuzzysort.js" defer></script>
-<script src="/static/js/memory_list.js" defer></script>
+<script src="/static/js/wiki_list.js" defer></script>

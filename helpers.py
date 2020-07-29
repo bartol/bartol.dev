@@ -41,7 +41,7 @@ def get_post_html(path):
 def get_post_path(path):
     if path and path[-1] == '/':
         path = path[:-len('/')]
-    return 'memory' + path + '.md'
+    return 'wiki' + path + '.md'
 
 def get_dir_title(path):
     if path and path[-1] == '/':
@@ -49,4 +49,4 @@ def get_dir_title(path):
     return basename(path) + '/'
 
 def get_dir_path(path):
-    return 'memory' + path
+    return 'wiki' + path

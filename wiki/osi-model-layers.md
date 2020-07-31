@@ -1,3 +1,3 @@
 # OSI model layers
 
-![](/static/memory/osi-model-layers/layers.jpeg)
+![](/static/wiki/osi-model-layers.jpeg)

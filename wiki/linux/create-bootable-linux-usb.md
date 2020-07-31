@@ -12,4 +12,4 @@ flash iso to usb
 
 - [balenaEtcher](https://www.balena.io/etcher/)
 - [Rufus](https://rufus.ie/) (Windows)
-- [dd](/memory/linux-flash-iso-to-usb/)
+- [dd](/wiki/linux/linux-flash-iso-to-usb)

@@ -1,6 +1,6 @@
 # Get devices connected to LAN with nmap
 
-[Get LAN IP](/memory/get-lan-ip)
+[Get LAN IP](/wiki/linux/get-lan-ip-address)
 
 for example:
 

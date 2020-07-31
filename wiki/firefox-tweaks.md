@@ -1,6 +1,6 @@
 # Firefox tweaks
 
-1. [Download extensions](/memory/browser-extensions) and enable them to run in private mode
+1. [Download extensions](/wiki/browser-extensions) and enable them to run in private mode
 1. Customize toolbar icons (Menu > Customize)
 1. Show bookmarks toolbar (Menu > Customize > Toolbars)
 1. Import bookmarks

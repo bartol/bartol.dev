@@ -1,3 +1,3 @@
 # TCP vs UDP
 
-![](/static/memory/tcp-vs-udp/tcp-udp.svg)
+![](/static/wiki/tcp-udp.svg)

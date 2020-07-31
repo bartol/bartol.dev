@@ -1,3 +1,3 @@
 # Teardrop attack
 
-![](/static/memory/teardrop-attack/teardrop.jpg)
+![](/static/wiki/teardrop-attack.jpg)

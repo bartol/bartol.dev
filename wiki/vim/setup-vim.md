@@ -1,6 +1,6 @@
 # Setup Vim
 
-[Setup dotfiles](/memory/setup-dotfiles/)
+[Setup dotfiles](/wiki/linux/setup-dotfiles)
 
 	$ mkdir -p ~/.vim/undo
 	$ git clone https://github.com/fatih/vim-go ~/.vim/pack/plugins/start/vim-go

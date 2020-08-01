@@ -5,3 +5,7 @@
 or
 
 	$ dig bartol.dev
+
+or
+
+	$ whois bartol.dev

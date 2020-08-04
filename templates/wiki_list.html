@@ -1,11 +1,16 @@
 $def with (title, posts)
 $if title != 'wiki/':
-  $var title: $title : wiki : Bartol Deak
+  $var title: $title : Bartol Deak
 $else:
-  $var title: wiki : Bartol Deak
+  $var title: Bartol Deak
 
 <div class="input_wrapper">
-  <h1>$title</h1>
+  <h1>
+    $if title != 'wiki/':
+      $title
+    $else:
+      Bartol Deak
+  </h1>
   <input type="text" placeholder="search" class="input">
 </div>
 

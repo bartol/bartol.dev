@@ -6,17 +6,14 @@ import json
 import helpers
 
 urls = (
-    '/', 'index',
-    '/wiki([^\.]*)(|\.html|\.json|\.md)', 'wiki',
+    '/([^\.]*)(|\.html|\.json|\.md)',
+    'wiki',
 )
 app = web.application(urls, globals())
 wsgiapp = app.wsgifunc()
 
 render = web.template.render('templates', base='layout')
 
-class index:
-    def GET(self):
-        return render.index()
 
 class wiki:
     def GET(self, path, content_type):
@@ -53,8 +50,10 @@ class wiki:
 
         raise web.notfound()
 
+
 def notfound():
     return web.notfound(render.notfound())
+
 
 app.notfound = notfound
 

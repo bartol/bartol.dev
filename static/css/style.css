@@ -59,6 +59,10 @@ footer {
   margin-top: -1.5rem;
 }
 
+.input_wrapper h1 {
+  white-space: nowrap;
+}
+
 .input {
   font-size: 2rem;
   color: #fff;
@@ -74,4 +78,15 @@ footer {
 .input:focus {
   outline: none;
   box-shadow: 0 0 0 3px hsl(190, 80%, 50%);
+}
+
+@media(max-width: 600px) {
+  .input_wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input {
+    margin-left: 0;
+  }
 }

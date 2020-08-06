@@ -1,3 +1,3 @@
 # Rsync exclude
 
-	$ rsync -a --exclude=/dir/.git dir [user@]host[:dest]
+	$ rsync -a --exclude=/dir/.git dir [user@]host:dest

@@ -23,5 +23,5 @@
 	}
 
 ```
-$ ln -s /etc/nginx/sites-available/bartol.dev /etc/nginx/sites-enabled/
+$ sudo ln -s /etc/nginx/sites-available/bartol.dev /etc/nginx/sites-enabled/
 ```

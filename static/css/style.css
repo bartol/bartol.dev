@@ -45,6 +45,15 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+footer {
+  margin: 1.5rem -0.5rem;
+}
+
+footer > * {
+  margin: 0 0.5rem;
 }
 
 .logo {

@@ -1,3 +1,3 @@
 # VPS backup
 
-	$ rsync --dry-run server:/ -aAXvh --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} /backup/server/main
+	$ rsync --dry-run -azvh --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} server:/ /usr/local/backup/server

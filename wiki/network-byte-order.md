@@ -2,4 +2,4 @@
 
 Big-endian
 
-[Read more](/wiki/endianness)
+[Read more](/endianness)

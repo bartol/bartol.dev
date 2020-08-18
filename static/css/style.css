@@ -1,15 +1,11 @@
 @font-face {
   font-family: 'Noto Sans';
-  font-style: normal;
-  font-weight: 400;
   src: local('Noto Sans'), local('NotoSans'),
        url('../fonts/noto-sans-v9-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Inconsolata';
-  font-style: normal;
-  font-weight: 400;
   src: local(''),
        url('../fonts/inconsolata-v20-latin-regular.woff2') format('woff2');
 }
@@ -28,6 +24,7 @@ h1,
 h2,
 h3 {
   margin: 1.5rem 0 0.5rem 0;
+  line-height: normal;
 }
 
 a {
@@ -58,22 +55,13 @@ ul {
 header,
 footer {
   margin: 1.5rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
 }
 
-footer {
-  margin: 1.5rem -0.5rem;
-}
-
-footer > * {
-  margin: 0 0.5rem;
+hr {
+  border-color: #333;
 }
 
 .logo {
-  display: block;
   width: 60px;
   height: 60px;
 }

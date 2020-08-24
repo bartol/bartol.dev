@@ -1,3 +1,3 @@
 # View memory and swap usage
 
-	$ free
+	$ free -m

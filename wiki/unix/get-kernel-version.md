@@ -5,5 +5,3 @@
 or
 
 	$ uname -a
-
-also works with openbsd

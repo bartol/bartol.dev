@@ -4,8 +4,7 @@
 	$ sudo apt upgrade
 	$ sudo apt install git ssh curl vim-gtk ack entr editorconfig xclip trash-cli ripgrep htop net-tools youtube-dl tree wakeonlan nnn imagemagick \
 		golang-go nodejs npm arduino python3-pip sqlite3 libsqlite3-dev shellcheck ruby ruby-dev vagrant \
-		gnome-disk-utility gparted xfce4-clipman network-manager-openvpn-gnome obs-studio ffmpeg vlc wireshark virtualbox thunderbird \
-		fonts-inconsolata
+		gnome-disk-utility gparted xfce4-clipman network-manager-openvpn-gnome obs-studio ffmpeg vlc wireshark virtualbox thunderbird
 	$ pip3 install ansible
 	$ gem install mailcatcher
 

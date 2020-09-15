@@ -9,7 +9,7 @@
 	$ ln -sb ~/config/.editorconfig ~
 
 	$ mkdir ~/.ssh
-	$ ln -sb ~/config/.ssh/config ~/.ssh/
+	$ ln -sb {~/config,~}/.ssh/config
 
 	$ mkdir ~/.local/bin
-	$ ln -s ~/config/.local/bin/* ~/.local/bin/
+	$ ln -s {~/config,~}/.local/bin/*

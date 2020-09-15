@@ -1,10 +1,10 @@
 # Setup Git server
 
-working demo: [git.bartol.dev](https://git.bartol.dev)
+working demo: [git.bdeak.net](https://git.bdeak.net)
 
 login to debian-based vps
 
-	$ sudo apt install git cgit fcgiwrap nginx python3-markdown
+	$ sudo apt install git cgit fcgiwrap nginx certbot python3-certbot-nginx
 	$ sudo adduser git
 	$ sudo mkdir /srv/git
 	$ sudo chown -R git /srv/git
@@ -17,18 +17,11 @@ login to debian-based vps
 copy your public key from local machine
 
 	$ exit
-	$ sudo vi /etc/cgitrc
-
-[cgitrc](/static/wiki/git-server/cgitrc)
-
-	$ sudo vi /etc/nginx/sites-available/git.bartol.dev
-
-[nginx](/static/wiki/git-server/nginx)
-
-	$ sudo ln -s /etc/nginx/sites-available/git.bartol.dev /etc/nginx/sites-enabled/
-	$ sudo nginx -t
+	$ curl https://bartol.dev/static/wiki/git-server/cgitrc | sudo tee /etc/cgitrc
+	$ curl https://bartol.dev/static/wiki/git-server/nginx | sudo tee -a /etc/nginx/sites-available/bdeak.net
+	$ sudo ln -s /etc/nginx/sites-available/bdeak.net /etc/nginx/sites-enabled/
 	$ sudo nginx -s reload
-	$ sudo certbot --nginx --no-redirect -d git.bartol.dev
+	$ sudo certbot --nginx -d git.bdeak.net
 
 add repository:
 
@@ -39,11 +32,13 @@ add repository:
 	$ git init --bare
 	$ echo section=web >> cgitrc
 	$ echo owner=Bartol Deak >> cgitrc
-	$ echo readme=:README.md >> cgitrc
 	$ vi description
 
-open repository on local machine
+open existing repository on local machine
 
-	$ git remote add server git@server:/srv/git/repo
-	$ git push --all server
+	$ git remote add srv1 git@srv1:/srv/git/repo
+	$ git push --all srv1
 
+or clone empty repository
+
+	$ git clone git@srv1:/srv/git/repo

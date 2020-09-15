@@ -1,8 +1,11 @@
+#
+# cgit config
+# see cgitrc(5) for details
+
 css=/cgit.css
 logo=/cgit.png
+
 scan-path=/srv/git/
 
-root-title=git.bartol.dev
+root-title=git.bdeak.net
 root-desc=my git repositories
-
-about-filter=/usr/lib/cgit/filters/about-formatting.sh

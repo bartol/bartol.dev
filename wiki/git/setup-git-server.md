@@ -35,7 +35,7 @@ add repository:
 	$ echo owner=Bartol Deak >> cgitrc
 	$ echo enable-blame=1 >> cgitrc
 	$ echo enable-commit-graph=1 >> cgitrc
-	$ echo clone-url=git@srv1:/srv/git/$CGIT_REPO_URL >> cgitrc
+	$ echo clone-url=ssh://git@srv1:/srv/git/bdeak.net >> cgitrc
 	$ echo max-stats=year >> cgitrc
 	$ vi description
 

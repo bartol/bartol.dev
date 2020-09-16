@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: local('Noto Sans'), local('NotoSans'),
+       url('./static/fonts/noto-sans-v9-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: local(''),
+       url('./static/fonts/inconsolata-v20-latin-regular.woff2') format('woff2');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+  	font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin-top: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+a {
+	color: #9DC;
+  	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+pre {
+ 	font-family: 'Inconsolata', monospace;
+}
+
+#wrapper {
+	display: flex;
+	flex-grow: 1;
+}
+
+#sidebar {
+	background-color: #156;
+	color: #fff;
+	width: 240px;
+	flex-shrink: 0;
+	padding: 0.75em;
+	position: relative;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding-left: 0.5rem;
+	list-style: none;
+}
+
+li {
+	padding: 0.1em 0;
+}
+
+#sidebar h2:first-of-type {
+	margin-top: 0;
+}
+
+#content {
+	flex-grow: 1;
+	padding: 0.75em;
+}
+
+.navigation {
+	background-color: #145;
+	color: #fff;
+	padding: 0.75em;
+}
+
+@media (max-width: 650px) {
+	#wrapper {
+		flex-direction: column-reverse;
+	}
+	#sidebar {
+		width: 100%;
+	}
+}

@@ -31,7 +31,12 @@ add repository:
 	$ cd repo
 	$ git init --bare
 	$ echo section=web >> cgitrc
+	$ echo homepage=https://www.bdeak.net >> cgitrc
 	$ echo owner=Bartol Deak >> cgitrc
+	$ echo enable-blame=1 >> cgitrc
+	$ echo enable-commit-graph=1 >> cgitrc
+	$ echo clone-url=git@srv1:/srv/git/$CGIT_REPO_URL >> cgitrc
+	$ echo max-stats=year >> cgitrc
 	$ vi description
 
 open existing repository on local machine

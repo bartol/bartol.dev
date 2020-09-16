@@ -4,7 +4,7 @@
 
 css=/cgit.css
 logo=/cgit.png
-
+logo-link=https://www.bdeak.net
 root-title=git.bdeak.net
 root-desc=my git repositories
 

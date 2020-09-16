@@ -30,14 +30,14 @@ add repository:
 	$ mkdir repo
 	$ cd repo
 	$ git init --bare
-	$ echo section=web >> cgitrc
-	$ echo homepage=https://www.bdeak.net >> cgitrc
-	$ echo owner=Bartol Deak >> cgitrc
-	$ echo enable-blame=1 >> cgitrc
-	$ echo enable-commit-graph=1 >> cgitrc
-	$ echo clone-url=ssh://git@srv1:/srv/git/bdeak.net >> cgitrc
-	$ echo max-stats=year >> cgitrc
-	$ vi description
+	^D
+	$ echo | sudo tee -a /etc/cgitrc
+	$ echo repo.url=bdeak.net | sudo tee -a /etc/cgitrc
+	$ echo repo.path=/srv/git/bdeak.net | sudo tee -a /etc/cgitrc
+	$ echo repo.desc=my website | sudo tee -a /etc/cgitrc
+	$ echo repo.owner=Bartol Deak | sudo tee -a /etc/cgitrc
+	$ echo repo.section=web | sudo tee -a /etc/cgitrc
+	$ echo repo.homepage=https://www.bdeak.net | sudo tee -a /etc/cgitrc
 
 open existing repository on local machine
 

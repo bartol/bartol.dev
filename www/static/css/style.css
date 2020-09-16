@@ -84,7 +84,7 @@ li {
 	padding: 0.75em;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 720px) {
 	#wrapper {
 		flex-direction: column-reverse;
 	}

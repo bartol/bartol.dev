@@ -32,6 +32,10 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.5rem;
 }
 
+h1 {
+	margin: 0;
+}
+
 a {
 	color: #9DC;
   text-decoration: none;
@@ -43,6 +47,10 @@ a:hover {
 
 pre {
  	font-family: 'Inconsolata', monospace;
+}
+
+ul {
+  padding-left: 1.5rem;
 }
 
 li {
@@ -76,10 +84,17 @@ li {
 #content {
 	flex-grow: 1;
 	padding: 0.75em;
+	max-width: 960px;
 }
 
 #content a {
 	color: #156;
+}
+
+#search_wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .navigation {

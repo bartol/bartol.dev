@@ -93,6 +93,7 @@ def gen(nodes, path = []):
 		nav_path = render_nav_path(node, path, src_path)
 
 		html = layout_tmpl.substitute(title=title, content=content, path=nav_path)
+		Path(out_path).parent.mkdir(exist_ok=True)
 		Path(out_path).write_text(html)
 
 		print(out_path)

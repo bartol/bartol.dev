@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
 	color: #9DC;
-  	text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
@@ -76,6 +76,10 @@ li {
 #content {
 	flex-grow: 1;
 	padding: 0.75em;
+}
+
+#content a {
+	color: #156;
 }
 
 .navigation {

@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Noto Sans';
   src: local('Noto Sans'), local('NotoSans'),
-       url('./static/fonts/noto-sans-v9-latin-regular.woff2') format('woff2');
+       url('/fonts/noto-sans-v9-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Inconsolata';
   src: local(''),
-       url('./static/fonts/inconsolata-v20-latin-regular.woff2') format('woff2');
+       url('/fonts/inconsolata-v20-latin-regular.woff2') format('woff2');
 }
 
 * {

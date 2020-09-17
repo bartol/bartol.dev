@@ -1,9 +1,9 @@
-const inputEl = document.querySelector(".input");
-const resultsEl = document.querySelector(".results");
-const treeEl = document.querySelector(".tree");
+const inputEl = document.querySelector("#search");
+const resultsEl = document.querySelector("#results");
+const treeEl = document.querySelector("#tree");
 
 const posts = [];
-document.querySelectorAll(".tree a").forEach((a) => {
+document.querySelectorAll("#tree a").forEach((a) => {
   posts.push({ title: fuzzysort.prepare(a.innerText), path: a.href });
 });
 

@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 
-import sys
+import sys, os
 from pathlib import Path
-from subprocess import run
 from slugify import slugify
 
 out_dir = '../content'
 
 title   = sys.argv[1]
-subpath = sys.argv[2]
+subpath = sys.argv[2] if len(sys.argv) > 2 else ''
 
 path    = out_dir + '/' + subpath + '/' + slugify(title) + '.md'
 content = '# ' + title + '\n\n\n'
 
 Path(path).write_text(content)
-run(['vim', '+', '+startinsert', path])
+os.system('vim + +startinsert ' + path)

@@ -8,7 +8,7 @@ from markdown import markdown
 layout_tmpl = Template(Path('./layout.html').read_text())
 list_tmpl = Template(Path('./list.html').read_text())
 
-src_dir = '../wiki'
+src_dir = '../content'
 out_dir = './out'
 
 Path(out_dir).mkdir(exist_ok=True)

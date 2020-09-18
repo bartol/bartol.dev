@@ -5,7 +5,7 @@ from pathlib import Path
 from subprocess import run
 from slugify import slugify
 
-out_dir = '../wiki'
+out_dir = '../content'
 
 title   = sys.argv[1]
 subpath = sys.argv[2]

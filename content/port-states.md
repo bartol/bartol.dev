@@ -4,4 +4,4 @@
 - Closed: port accessible, no application listening on it, may mean that there is no firewall
 - Filtered: blocked by firewall
 
-![](/static/wiki/syn-handshake.png)
+![](/files/syn-handshake.png)

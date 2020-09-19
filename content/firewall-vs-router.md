@@ -1,3 +1,3 @@
 # Firewall vs Router
 
-![](/static/wiki/firewall-router.jpg)
+![](/files/firewall-router.jpg)

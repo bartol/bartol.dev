@@ -1,3 +1,3 @@
 # Simplex vs Half-duplex vs Full-duplex
 
-![](/static/wiki/simplex-halfduplex-fullduplex.jpg)
+![](/files/simplex-halfduplex-fullduplex.jpg)

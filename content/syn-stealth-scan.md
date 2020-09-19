@@ -2,4 +2,4 @@
 
 connection not established, request not logged
 
-![](/static/wiki/stealth-port-scan.png)
+![](/files/stealth-port-scan.png)

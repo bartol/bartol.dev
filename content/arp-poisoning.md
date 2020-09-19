@@ -1,3 +1,3 @@
 # ARP poisoning
 
-![](/static/wiki/arp-poisoning.png)
+![](/files/arp-poisoning.png)

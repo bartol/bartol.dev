@@ -1,3 +1,3 @@
 # TCP vs UDP
 
-![](/static/wiki/tcp-udp.svg)
+![](/files/tcp-udp.svg)

@@ -17,11 +17,11 @@ login to debian-based vps
 copy your public key from local machine
 
 	$ exit
-	$ curl https://bartol.dev/files/git-server/cgitrc | sudo tee /etc/cgitrc
-	$ curl https://bartol.dev/files/git-server/nginx | sudo tee -a /etc/nginx/sites-available/bdeak.net
+	$ curl https://www.bdeak.net/files/git-server/cgitrc | sudo tee /etc/cgitrc
+	$ curl https://www.bdeak.net/files/git-server/nginx | sudo tee -a /etc/nginx/sites-available/bdeak.net
 	$ sudo ln -s /etc/nginx/sites-available/bdeak.net /etc/nginx/sites-enabled/
 	$ sudo nginx -s reload
-	$ sudo certbot --nginx -d git.bdeak.net
+	$ sudo certbot --nginx -d git.bdeak.net --redirect
 
 add repository:
 

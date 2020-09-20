@@ -5,6 +5,12 @@ sudo mkdir -p /home/www-data/www.bdeak.net
 sudo chown -R $USER /home/www-data/www.bdeak.net
 cat << 'EOF' | sudo tee -a /etc/nginx/sites-available/bdeak.net
 server {
+    server_name bdeak.net;
+
+    return 302 https://www.bdeak.net$request_uri;
+}
+
+server {
     server_name www.bdeak.net;
 
 	root /home/www-data/www.bdeak.net;
@@ -17,9 +23,10 @@ server {
 		try_files $uri $uri.html $uri/ =404;
 	}
 }
+
 EOF
 sudo ln -s /etc/nginx/sites-{available,enabled}/bdeak.net
-sudo certbot --nginx -n -d www.bdeak.net --redirect
+sudo certbot --nginx -n -d www.bdeak.net -d bdeak.net --redirect
 END
 
 ./generate.py

@@ -3,28 +3,7 @@
 [ "$1" == "init" ] && ssh srv1 << 'END'
 sudo mkdir -p /home/www-data/www.bdeak.net
 sudo chown -R $USER /home/www-data/www.bdeak.net
-cat << 'EOF' | sudo tee -a /etc/nginx/sites-available/bdeak.net
-server {
-    server_name bdeak.net;
-
-    return 302 https://www.bdeak.net$request_uri;
-}
-
-server {
-    server_name www.bdeak.net;
-
-	root /home/www-data/www.bdeak.net;
-	autoindex on;
-
-	location / {
-		if ($request_uri ~ ^/(.*)\.html) {
-			return 301 /$1;
-		}
-		try_files $uri $uri.html $uri/ =404;
-	}
-}
-
-EOF
+curl https://www.bdeak.net/nginx-site | sudo tee -a /etc/nginx/sites-available/bdeak.net
 sudo ln -s /etc/nginx/sites-{available,enabled}/bdeak.net
 sudo certbot --nginx -n -d www.bdeak.net -d bdeak.net --redirect
 END

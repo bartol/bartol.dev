@@ -49,7 +49,7 @@ def get_list(nodes, src_path):
 
 		if node['type'] == 'directory':
 			content += get_list(node['contents'], node_src_path)
-		
+
 		content += '</li>'
 	content += '</ul>'
 
@@ -58,10 +58,10 @@ def get_list(nodes, src_path):
 
 def render_content(node, src_path):
 	if node['type'] == 'file':
-		return markdown(Path(src_path).read_text())
+		return markdown(Path(src_path).read_text(), extensions=['tables'])
 	else:
 		return list_tmpl.substitute(
-			title=render_title(node, src_path), 
+			title=render_title(node, src_path),
 			list=get_list(node['contents'], src_path))
 
 

@@ -1,5 +1,4 @@
 # Sudski registar
 
-- [Pretraga](https://sudreg.pravosudje.hr/registar/)
-- [API](https://sudreg-podaci.pravosudje.hr/)
-
+[Pretraga](https://sudreg.pravosudje.hr/registar/)
+[API](https://sudreg-podaci.pravosudje.hr/)

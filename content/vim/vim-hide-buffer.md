@@ -1,0 +1,3 @@
+# Vim hide buffer
+
+`:hide`

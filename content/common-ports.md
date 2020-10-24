@@ -1,3 +1,3 @@
 # Common ports
 
-![](/files/common-ports.png)
+<https://packetlife.net/media/library/23/common_ports.pdf>

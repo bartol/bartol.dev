@@ -1,13 +1,13 @@
 # Namecheap dynamic dns
 
-enable:
+enable ddns:
 
 `Domain -> Advanced DNS -> Dynamic DNS` switch to ON
 
 add new record:
 
-set type to `A+ Dynamic DNS Record`
-set value to `192.168.1.1`
+- set type to `A+ Dynamic DNS Record`
+- set value to `192.168.1.1`
 
 install ddns client:
 

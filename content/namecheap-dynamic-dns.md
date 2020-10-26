@@ -18,7 +18,7 @@ add record to `/etc/ddclient.conf`:
 	use=web, web=checkip.dyndns.com/, web-skip='IP Address'
 	protocol=namecheap
 	server=dynamicdns.park-your-domain.com
-	login=NAMECHEAP_DOMAIN
+	login=DOMAIN
 	password='NAMECHEAP_DDNS_PASSWORD'
 	srv2
 

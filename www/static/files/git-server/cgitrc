@@ -7,6 +7,7 @@ logo=/cgit.png
 logo-link=https://www.bdeak.net
 root-title=git.bdeak.net
 root-desc=my git repositories
+enable-index-links=1
 
 enable-blame=1
 enable-commit-graph=1

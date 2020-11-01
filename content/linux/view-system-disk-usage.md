@@ -1,4 +1,4 @@
 # View system disk usage
 
-	$ df | awk '$NF=="/"{print 0+$5}'
+	$ df | awk '$NF=="/"{printf "%d\n",$5}'
 

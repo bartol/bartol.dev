@@ -1,6 +1,6 @@
 # amadeus-kasa
 
-inventory management software for 21st century
+modular inventory management software
 
 work in progress...
 

@@ -1,0 +1,3 @@
+# Vim switch character case
+
+`~`

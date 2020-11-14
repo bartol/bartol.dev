@@ -11,3 +11,4 @@
 - `%(#.#.$)` - `#` for root user, `$` for others
 - `%?` - exit code of previous command
 - `%(?..%?)` - show exit code only if error
+- `%*` - show current time

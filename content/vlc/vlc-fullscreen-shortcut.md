@@ -1,0 +1,3 @@
+# VLC fullscreen shortcut
+
+`f`

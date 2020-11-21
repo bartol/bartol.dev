@@ -1,3 +1,0 @@
-# VLC shuffle shortcut
-
-`r`

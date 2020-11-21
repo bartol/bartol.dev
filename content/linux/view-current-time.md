@@ -1,3 +1,0 @@
-# View current time
-
-	$ timedatectl

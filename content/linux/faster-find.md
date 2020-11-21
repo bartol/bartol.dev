@@ -1,3 +1,0 @@
-# Faster find
-
-	$ locate file

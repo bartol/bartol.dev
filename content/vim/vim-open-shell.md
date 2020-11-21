@@ -1,3 +1,0 @@
-# Vim open shell
-
-`:sh`

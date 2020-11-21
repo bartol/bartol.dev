@@ -1,3 +1,0 @@
-# HTML multiplication sign
-
-	&times;

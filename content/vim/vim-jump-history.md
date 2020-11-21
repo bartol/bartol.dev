@@ -1,3 +1,0 @@
-# Vim jump history
-
-`:jumps`

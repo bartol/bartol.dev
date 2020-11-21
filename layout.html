@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>$title</title>
+    <title>$title$</title>
     <meta name="description" content="my website">
+    <meta name="author" content="Bartol Deak">
     <meta name="image" content="/files/artwork/logo-landscape.png">
     <link rel="shortcut icon" href="/files/favicon.png">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
     <header class="navigation">
-      $path
+      <a href="/">Bartol Deak</a>
     </header>
     <div id="wrapper">
       <aside id="sidebar">
+        <ul>
+          <li><a href="/notes">notes</a></li>
+        </ul>
+
         <h2>Services</h2>
         <ul>
-          <li><a href="https://www.bdeak.net">www</a></li>
           <li><a href="https://git.bdeak.net">git</a></li>
           <li><a href="https://polr.bdeak.net">polr</a></li>
           <li><a href="https://linx.bdeak.net">linx</a></li>
@@ -45,11 +49,11 @@
         </ul>
       </aside>
       <main id="content">
-        $content
+        $body$
       </main>
     </div>
     <footer class="navigation">
-      $path
+      <a href="/">Bartol Deak</a>
     </footer>
   </body>
 </html>

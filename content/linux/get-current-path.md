@@ -1,3 +1,0 @@
-# Get current path
-
-	$ pwd

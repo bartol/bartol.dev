@@ -1,3 +1,0 @@
-# HTML copyright symbol
-
-	&copy;

@@ -1,7 +1,0 @@
-# Vim indent line
-
-`>>`
-
-or
-
-`<<`

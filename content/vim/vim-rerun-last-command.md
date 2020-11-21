@@ -1,3 +1,0 @@
-# Vim rerun last command
-
-`@:`

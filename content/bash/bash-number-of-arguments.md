@@ -1,3 +1,0 @@
-# Bash number of arguments
-
-	$#

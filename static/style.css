@@ -73,10 +73,10 @@ li {
   list-style: none;
 }
 
-/*#sidebar h2:first-of-type {
+#sidebar h2:first-of-type {
   margin-top: 0;
 }
-*/
+
 #content {
   flex-grow: 1;
   padding: 0.75em;

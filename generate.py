@@ -103,3 +103,6 @@ def gen(nodes, path = []):
 
 
 gen(nodes)
+
+os.system("rsync -r --delete out/ srv1:/home/www-data/www.bdeak.net")
+os.system("rm -r out")

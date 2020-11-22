@@ -10,5 +10,5 @@ for file in $(find out -name "*.md"); do
   echo $file_out
 done
 
-# rsync -r --delete out/ srv1:/home/www-data/www.bdeak.net
+rsync -r --delete out/ srv1:/home/www-data/www.bdeak.net
 rm -r out

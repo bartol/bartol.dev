@@ -1,3 +1,5 @@
 # Bartol Deak
 
-[/notes](/notes)
+my website
+
+[view notes](/notes)

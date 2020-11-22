@@ -1,6 +1,7 @@
 # C
 
-# C infinite loop
+
+## Infinite loop
 
 	for(;;)
 	{
@@ -14,15 +15,18 @@ or
 
 	}
 
-# C undefine symbolic constant
+
+## Undefine symbolic constant
 
 	#undef NAME
 
-# C write to stderr
+
+## Write to stderr
 
 	fprintf(stderr, "err!\n");
 
-# Colorful printf output in C
+
+# Colorful printf output
 
 	RED     | "\x1b[31m"
 	GREEN   | "\x1b[32m"
@@ -42,6 +46,7 @@ example:
 	  return 0;
 	}
 
+
 # Compile C program
 
 on debian:
@@ -50,7 +55,8 @@ on debian:
 	$ gcc program.c -o program
 	$ ./program
 
-# Float fraction digits in C
+
+# Float fraction digits
 
 	#include <stdio.h>
 
@@ -65,10 +71,12 @@ on debian:
 
 output: `3.14`
 
+
 # i++ and ++i
 
 - post increment (`i++`) - returns the value, then increments it
 - pre increment (`++i`) - increments the value, then returns it
+
 
 # Number width in C
 
@@ -82,7 +90,8 @@ output: `3.14`
 		return 0;
 	}
 
-# Run system command from C
+
+# Run shell command
 
 	#include <stdlib.h>
 
@@ -91,6 +100,7 @@ output: `3.14`
 		system("ls -la");
 		return 0;
 	}
+
 
 # Symbolic constants in C
 

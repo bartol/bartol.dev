@@ -1,12 +1,14 @@
 # Go
 
-# Check if program exists in Go
+## Check if program exists
 
-	path, err := exec.LookPath("kak")
-# Clean go.mod
+	path, err := exec.LookPath("vim")
+
+## Clean go.mod
 
 	$ go mod tidy
-# Convert string to kebab case in Go
+
+## Convert string to kebab case
 
 	var re = regexp.MustCompile("[^a-z0-9]+")
 
@@ -15,30 +17,38 @@
 	}
 
 [source](https://www.reddit.com/r/golang/comments/3a5asx/slugify_a_very_simple_and_small_library_to_create/cs9m2lu/)
-# Go delete file
+
+## Delete file
 
 	err := os.Remove("/path/to/file")
-# Go int64 to int
+
+## int64 to int
 
 	numint := int(numint64)
-# Go int to int64
+
+## int to int64
 
 	numint64 := int64(numint)
-# Go printf to variable
+
+## Printf to variable
 
 	pi := fmt.Sprintf("%.2f\n", 3.1415)
-# Go print struct
+
+## Print struct
 
 	fmt.Printf("%#v\n", data)
-# Go run specific test
+
+## Run specific test
 
 	$ go test -run NameOfTest
-# Go slugify string
+
+## Slugify string
 
 add `github.com/metal3d/go-slugify` to imports
 
-	post.URL = slugify.Marshal(post.Title)
-# Go templates recursive loop
+	post.URL = slugify.Marshal(post.Title, true)
+
+## Go templates recursive loop
 
 	{{ define "item" }}
 	<li>
@@ -58,6 +68,7 @@ add `github.com/metal3d/go-slugify` to imports
 		{{ template "item" . }}
 		{{ end }}
 	</ul>
-# JSON to Go struct
+
+## JSON to Go struct
 
 <https://mholt.github.io/json-to-go/>

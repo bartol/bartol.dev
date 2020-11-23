@@ -1,6 +1,5 @@
 # C
 
-
 ## Infinite loop
 
 	for(;;)
@@ -15,18 +14,15 @@ or
 
 	}
 
-
 ## Undefine symbolic constant
 
 	#undef NAME
-
 
 ## Write to stderr
 
 	fprintf(stderr, "err!\n");
 
-
-# Colorful printf output
+## Colorful printf output
 
 	RED     | "\x1b[31m"
 	GREEN   | "\x1b[32m"
@@ -46,8 +42,7 @@ example:
 	  return 0;
 	}
 
-
-# Compile C program
+## Compile C program
 
 on debian:
 
@@ -55,8 +50,7 @@ on debian:
 	$ gcc program.c -o program
 	$ ./program
 
-
-# Float fraction digits
+## Float fraction digits
 
 	#include <stdio.h>
 
@@ -71,14 +65,12 @@ on debian:
 
 output: `3.14`
 
-
-# i++ and ++i
+## i++ and ++i
 
 - post increment (`i++`) - returns the value, then increments it
 - pre increment (`++i`) - increments the value, then returns it
 
-
-# Number width in C
+## Number width in C
 
 	#include <stdio.h>
 
@@ -90,8 +82,7 @@ output: `3.14`
 		return 0;
 	}
 
-
-# Run shell command
+## Run shell command
 
 	#include <stdlib.h>
 
@@ -101,8 +92,7 @@ output: `3.14`
 		return 0;
 	}
 
-
-# Symbolic constants in C
+## Symbolic constants in C
 
 	#define NAME value
 

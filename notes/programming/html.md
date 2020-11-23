@@ -1,29 +1,33 @@
-# CKEditor set min height
+# HTML
 
-	.ck-editor__editable {
-		min-height: 400px;
-	}
-# Empty title
+## Empty title
 
 	<title>&lrm;</title>
-# HTML arrow symbols
+
+## Symbols
+
+### Arrows
 
 - `&larr;` (&larr;)
 - `&rarr;` (&rarr;)
 - `&uarr;` (&uarr;)
 - `&darr;` (&darr;)
-# HTML clock
+
+### Copyright
+
+	&copy;
+
+### Multiplication sign
+
+	&times;
+
+## Clock
 
 	<body onload="setInterval(()=>document.getElementById('clock').innerHTML=new Date().toGMTString().slice(17,25))">
 		<div id="clock"></div>
 	</body>
-# HTML copyright symbol
 
-	&copy;
-# HTML multiplication sign
-
-	&times;
-# HTML skip to content button
+## HTML skip to content button
 
 html:
 
@@ -47,17 +51,9 @@ js:
 		document.getElementById("content").focus();
 	});
 
-# Bootstrap masonry layout
+## SEO
 
-	<div class="card-columns">
-		<div class="card mb-3">
-			<a href="https://www.bdeak.net/files/artwork/logo.png">
-				<img src="https://www.bdeak.net/files/artwork/logo.png" width="100%">
-			</a>
-		</div>
-	</div>
-
-# SEO checklist
+### Checklist
 
 **Optimize content for your users, not search engines.**
 
@@ -79,7 +75,8 @@ js:
 17. Setup asset caching
 18. Optimize and resize images
 19. Use SSL
-# SEO tools
+
+### SEO tools
 
 - [Twitter card validator](https://cards-dev.twitter.com/validator)
 - [Facebook Open Graph debugger](https://developers.facebook.com/tools/debug/)
@@ -90,9 +87,10 @@ js:
 - [Bing webmaster tools](https://www.bing.com/toolbox/webmaster)
 - [Rich results test](https://search.google.com/test/rich-results)
 - [Rich results gallery](https://developers.google.com/search/docs/guides/search-gallery)
-# Social sharing meta tags
 
-## Open Graph
+### Social sharing meta tags
+
+#### Open Graph
 
 	<meta property="og:locale" content="...">
 	<meta property="og:type" content="...">
@@ -105,7 +103,7 @@ js:
 	<meta property="og:image:height" content="...">
 	<meta property="article:published_time" content="...">
 
-## Twitter
+#### Twitter
 
 	<meta name="twitter:card" content="...">
 	<meta name="twitter:image" content="...">
@@ -114,7 +112,8 @@ js:
 	<meta name="twitter:title" content="...">
 	<meta name="twitter:description" content="...">
 	<meta name="twitter:url" content="...">
-# Structured data for article
+
+### Structured data for article
 
 	<script type="application/ld+json">
 	  {
@@ -152,9 +151,27 @@ js:
 	  }
 	</script>
 
-## Allow access with robots.txt
+### Allow access with robots.txt
 
 	User-agent: *
 	Disallow:
 
 or don't create it
+
+## Random libs
+
+### CKEditor set min height
+
+	.ck-editor__editable {
+		min-height: 400px;
+	}
+
+### Bootstrap masonry layout
+
+	<div class="card-columns">
+		<div class="card mb-3">
+			<a href="https://www.bdeak.net/files/artwork/logo.png">
+				<img src="https://www.bdeak.net/files/artwork/logo.png" width="100%">
+			</a>
+		</div>
+	</div>

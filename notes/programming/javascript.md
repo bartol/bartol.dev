@@ -1,4 +1,6 @@
-# Assert in JavaScript
+# JavaScript
+
+## Assert func
 
 	function assert(condition, message) {
 		if (!condition) {
@@ -7,7 +9,8 @@
 	}
 
 [source](https://stackoverflow.com/questions/15313418/what-is-assert-in-javascript)
-# Async forEach in JavaScript
+
+## Async forEach
 
 	async function asyncForEach(array, callback) {
 		for (let index = 0; index < array.length; index++) {
@@ -16,70 +19,89 @@
 	}
 
 [source](https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404)
-# Check if JavaScript array contains
+
+## Check if array contains
 
 	if (users.includes('b')) {
 		// ...
-	}# Check if JavaScript array of objects contains
+	}
+
+## Check if JavaScript array of objects contains
 
 	if (users.some(u => u.name === 'b')) {
 		// ...
-	}# Check if string ends with in JavaScript
+	}
 
-	name.endsWith('b')# Check if string starts with in JavaScript
+## Check if string ends with
 
-	name.startsWith('b')# Check is string snake case in JavaScript
+	name.endsWith('b')
+	
+## Check if string starts with
+
+	name.startsWith('b')
+	
+## Check is string snake case
 
 	const re = /^([a-z]{1,})(_[a-z0-9]{1,})*$/;
 	const isSnakeCase = re.test(str)
-# Clear local storage
 
-	localStorage.clear()# ESLint disable rule for current file
+## Clear local storage
 
-on top add:
+	localStorage.clear()
 
-	/* eslint rule-name: 0 */
-# Gatsby console message
+## Generate random hex code
 
-in `gatsby-browser.js`:
+	'#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');
 
-	console.log("hey")
-# Generate random hex code in JavaScript
-
-	'#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');# Get current ISO date in JavaScript
+## Get current ISO date
 
 	new Date().toISOString().substring(0, 10)
-# Get current Unix timestamp in JavaScript
+
+## Get current Unix timestamp
 
 	Math.round(new Date().getTime() / 1000)
 
-[source](https://stackoverflow.com/questions/11893083/convert-normal-date-to-unix-timestamp/11893157#11893157)# Get current URL
+[source](https://stackoverflow.com/questions/11893083/convert-normal-date-to-unix-timestamp/11893157#11893157)
+
+## Get current URL
 
 	window.location.href
-# Get date X months ago in JavaScript
+
+## Get date X months ago
 
 	const threeMonthsAgo = new Date()
-	threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3)# Get last element from JavaScript array
+	threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3)
+	
+## Get last element from array
 
-	arr[arr.length - 1]# Get last X elements from JavaScript array
+	arr[arr.length - 1]
+	
+## Get last X elements from array
 
-	const last3 = arr.slice(-3)# Get random element from JavaScript array
+	const last3 = arr.slice(-3)
+
+## Get random element from array
 
 	const random = arr[Math.floor(Math.random() * arr.length)]
-# Get Unix timestamp for date in JavaScript
+
+## Get Unix timestamp for date
 
 	Math.round(new Date("2002-09-16").getTime() / 1000)
 
-[source](https://stackoverflow.com/questions/11893083/convert-normal-date-to-unix-timestamp/11893157#11893157)# Get user agent
+[source](https://stackoverflow.com/questions/11893083/convert-normal-date-to-unix-timestamp/11893157#11893157)
+
+## Get user agent
 
 	navigator.userAgent
-# Javascript convert string to kebab case
+
+## Convert string to kebab case
 
 	const x = title
 		.replace(/([a-z])([A-Z])/g, '$1-$2')
 		.replace(/[\s_]+/g, '-')
 		.toLowerCase()
-# JavaScript currying
+
+## JavaScript currying
 
 example:
 
@@ -93,7 +115,8 @@ example:
 	const finishTheJob = doTheHardStuff(10)
 	finishTheJob(20)
 	finishTheJob(30)
-# Javascript default parameters
+
+## Default parameters
 
 	const sayHi = (user = "default user") => {
 		return `Hey, ${user}!`;
@@ -105,7 +128,8 @@ or
 		saveNameToDB(name);
 		console.log(greeting);
 	};
-# JavaScript error reporter
+
+## Error reporter
 
 	window.onerror = function(msg, _path, line, column, error) {
 		fetch('/errors', {
@@ -115,35 +139,49 @@ or
 			msg: msg,
 		})
 		return false
-	}# JavaScript integer only input
+	}
+	
+## Integer only input
 
 	el.addEventListener('keyup', (e) => {
 		const int = e.target.value | 0
 		console.log("int value is", int)
 	})
-# JavaScript remove HTML tags from string
+
+## Remove HTML tags from string
 
 	`<p>content<img onload="alert('hey')"></p>`.replace(/<[^>]*>/g, '')
 	// output: content
-# Javascript rename destructured variable
+
+## Rename destructured variable
 
 	const { firstName: name, lastName } = user
-# JavaScript scroll left max
+
+## Scroll left max
 
 	const scrollLeftMax = element.scrollWidth - element.clientWidth
-# JavaScript scroll top max
+
+## Scroll top max
 
 	const scrollTopMax = element.scrollHeight - element.clientHeight
-# Local storage get item
 
-	localStorage.getItem('key')# Local storage remove item
+## Local storage get item
 
-	localStorage.removeItem('key')# Local storage set item
+	localStorage.getItem('key')
 
-	localStorage.setItem('key', 'value')# Make whole web page editable
+## Local storage remove item
+
+	localStorage.removeItem('key')
+	
+## Local storage set item
+
+	localStorage.setItem('key', 'value')
+	
+## Make whole web page editable
 
 	document.designMode = 'on'
-# Node create directory if it doesn't exist
+
+## Node.js create directory if it doesn't exist
 
 	const fs = require('fs')
 
@@ -156,43 +194,54 @@ or
 or
 
 	const json = JSON.parse(fs.readFileSync("file.json", "utf8"))
-# Private property in package.json
+
+## Private property in package.json
 
 used to prevent accidental package publishing
-# Reload page with JavaScript
+
+## Reload page
 
 	window.location.reload()
 
 hard reload
 
-	window.location.reload(true)# Remove duplicates in JavaScript array
+	window.location.reload(true)# Remove duplicates array
 
-	[...new Set(arr)]# Repeat string in JavaScript
+	[...new Set(arr)]# Repeat string
 
-	'a'.repeat(3) // 'aaa'# Replace substring in JavaScript string
+	'a'.repeat(3) // 'aaa'# Replace substring string
 
-	'hi world'.replace('hi', 'hello') // 'hello world'# Reset HTML form state with JavaScript
+	'hi world'.replace('hi', 'hello') // 'hello world'
+	
+## Reset HTML form state
 
 	document.querySelector('form').reset()
-# Return object from JavaScript arrow function
 
-	const arrowFunc = () => ({ user: 'b' })# Reverse array in JavaScript
+## Return object from arrow function
+
+	const arrowFunc = () => ({ user: 'b' })
+	
+## Reverse array
 
 	[...arr].reverse()
-# Reverse string in JavaScript
 
-	[...name].reverse().join('')# Shuffle an array in JavaScript
+## Reverse string
+
+	[...name].reverse().join('')
+	
+# Shuffle an array
 
 	arr.sort(() => Math.random() - 0.5);
 
-# Split JavaScript array in chunks
+## Split array in chunks
 
 	const chunkSize = 5
 	for (let i = 0; i < arr.length; i += chunkSize) {
 		const chunk = arr.slice(i, i + chunk)
 		// ...
 	}
-# Trim string in JavaScript
+
+## Trim string
 
 	'      hello world  '.trim()      // 'hello world'
 	'      hello world  '.trimStart() // 'hello world  '
@@ -200,7 +249,9 @@ hard reload
 
 	if (typeof window !== 'undefined') {
 		// ...
-	}# Use window object in Next
+	}
+
+## Use window object in Next.js
 
 	if (process.browser) {
 		// ...

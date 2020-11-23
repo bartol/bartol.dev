@@ -1,14 +1,24 @@
 # Computer Science
 
-# Binary to decimal number
+## Number conversions
+
+### Binary to decimal number
 
 The number 100101<sub>2</sub> is 1 x 2<sup>5</sup> + 0 x 2<sup>4</sup> + 0 x 2<sup>3</sup> + 1 x 2<sup>2</sup> + 0 x 2<sup>1</sup> + 1 x 2<sup>0</sup> or 32 + 4 + 1 or 37.
 
-# Bitwise operations
+### Hexadecimal to decimal number
+
+The number 25<sub>16</sub> is 2 x 16<sup>1</sup> + 5 x 16<sup>0</sup> or 32 + 5 or 37.
+
+### Octal to decimal number
+
+The number 45<sub>8</sub> is 4 x 8<sup>1</sup> + 5 x 8<sup>0</sup> or 32 + 5 or 37.
+
+## Bitwise operations
 
 Bitwise operations take strings of 0/1 values and apply Boolean operators to all of them in parallel. For example, the bitwise OR of 0011 and 0101 is 0111.
 
-# Boolean algebra arithmetic operators
+## Boolean algebra arithmetic operators
 
 NOT takes one operand (that is, applies to a single value) and negates it: NOT 0 is 1, and NOT 1 is 0.
 
@@ -20,15 +30,15 @@ EXCLUSIVE OR, or XOR, takes two operands, and yields a true value if one of its 
 
 [source](https://www.eskimo.com/~scs/cclass/mathintro/sx4.html)
 
-# Endianness
+## Endianness
 
 ordering of bytes within a binary representation of data
 
 Big-endian and Little-endian
 
-![](/files/endianpig.png)
+![](/files/programming/cs/endianpig.png)
 
-# First class data type
+## First class data type
 
 First class means that type can be:
 
@@ -37,7 +47,7 @@ First class means that type can be:
 - The value returned by a function
 - Anonymous
 
-# Function as a black box
+## Function as a black box
 
 1. It performs some well-defined task, which will be useful to other parts of the program.
 1. It might be useful to other programs as well; that is, we might be able to reuse it (and without having to rewrite it).
@@ -48,11 +58,7 @@ First class means that type can be:
 
 [source](https://www.eskimo.com/~scs/cclass/notes/sx5.html)
 
-# Hexadecimal to decimal number
-
-The number 25<sub>16</sub> is 2 x 16<sup>1</sup> + 5 x 16<sup>0</sup> or 32 + 5 or 37.
-
-# Most important programming skill
+## Most important programming skill
 
 ability to think abstractly
 
@@ -63,49 +69,45 @@ don't have to think about them all the time.
 
 [source](https://www.eskimo.com/~scs/cclass/progintro/sx1.html)
 
-# Network byte order
+## Network byte order
 
 Big-endian
 
 [Read more](/notes/programming/cs#endianness)
 
-# Octal to decimal number
-
-The number 45<sub>8</sub> is 4 x 8<sup>1</sup> + 5 x 8<sup>0</sup> or 32 + 5 or 37.
-
-# OSI model layers
+## OSI model layers
 
 ![](/files/programming/cs/osi-model-layers.jpeg)
 
-# What is a compiler?
+## What is a compiler?
 
 program that builds other programs
 
 compiler translates program into a sequence of machine language instructions which do the same thing
 
-# What is a linker?
+## What is a linker?
 
 program that inserts functions which you didn't write into your program
 
-# What is a real number?
+## What is a real number?
 
 A real number is simply a number with a fractional part.
 
-# What is a segmentation fault?
+## What is a segmentation fault?
 
 error caused by accessing memory that does not belong to you
 
-# What is an integer?
+## What is an integer?
 
 An integer is a number without a fractional part, a number you could use to count things (although integers may also be negative).
 
-# What is Boolean algebra?
+## What is Boolean algebra?
 
 Boolean algebra is a system of algebra (named after the mathematician who studied it, George Boole) based on only two numbers, 0 and 1, commonly thought of as "false" and "true." Binary numbers and Boolean algebra are natural to use with modern digital computers, which deal with switches and electrical currents which are either on or off. (In fact, binary numbers and Boolean algebra aren't just natural to use with modern digital computers, they are the fundamental basis of modern digital computers.)
 
 [source](https://www.eskimo.com/~scs/cclass/mathintro/sx4.html)
 
-# What is exponential notation?
+## What is exponential notation?
 
 Exponential or Scientific Notation is simply a method of writing a number as a base number times some power of ten. For example, we could write the number 2,000,000 as 2 x 10<sup>6</sup>, the number 0.00023 as 2.3 x 10<sup>-4</sup>, and the number 123.456 as 1.23456 x 10<sup>2</sup>.
 

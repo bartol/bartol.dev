@@ -1,6 +1,17 @@
 # notes
 
 - programming
+	- Go
+	- C
+	- PHP
+	- Python
 - sysadmin
-	- [Linux](/notes/sysadmin/linux)
+	- [CLI](/notes/sysadmin/cli)
 		- [Git](/notes/sysadmin/linux/git)
+	- GUI
+		- Firefox
+		- VLC
+	- Debian
+	- FreeBSD
+	- Android
+	- Windows

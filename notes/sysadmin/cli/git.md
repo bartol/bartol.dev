@@ -43,7 +43,7 @@ if there are conflicts run:
 
 ### Rebase current branch
 
-![git branch graph](/files/sysadmin/linux/git/git-rebase-graph.png){height=300px}
+![git branch graph](/files/sysadmin/cli/git/git-rebase-graph.png){height=300px}
 
 	$ git rebase master
 

@@ -7,7 +7,7 @@
 	- Python
 - sysadmin
 	- [CLI](/notes/sysadmin/cli)
-		- [Git](/notes/sysadmin/linux/git)
+		- [Git](/notes/sysadmin/cli/git)
 	- GUI
 		- Firefox
 		- VLC

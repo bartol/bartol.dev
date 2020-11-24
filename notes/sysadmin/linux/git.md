@@ -6,15 +6,15 @@
 
 	$ git branch
 
-### Change branch
-
-	$ git checkout <branch-name>
-
 ### Create branch
 
 	$ git branch <branch-name>
 
-### Create and change branch
+### Checkout branch
+
+	$ git checkout <branch-name>
+
+### Create and checkout branch
 
 	$ git checkout -b <branch-name>
 
@@ -43,7 +43,7 @@ if there are conflicts run:
 
 ### Rebase current branch
 
-![](/files/sysadmin/linux/git/git-rebase-graph.png)
+![git branch graph](/files/sysadmin/linux/git/git-rebase-graph.png){height=300px}
 
 	$ git rebase master
 
@@ -55,6 +55,33 @@ if there are conflicts run:
 or stop rebase and restore original branch:
 
 	$ git rebase --abort
+
+### Apply changes from commit in other branch
+
+	$ git cherry-pick <commit-hash>
+
+### Create branch from tag
+
+	$ git checkout <tag-name>
+	$ git checkout -b <branch-name>
+
+## Tags
+
+### List all tags
+
+	$ git tag
+
+### Create tag
+
+	$ git tag <tag-name>
+
+### Checkout tag
+
+	$ git checkout <tag-name>
+
+### Delete tag
+
+	$ git tag -d <tag-name>
 
 ## Config
 

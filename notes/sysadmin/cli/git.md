@@ -95,3 +95,7 @@ or stop rebase and restore original branch:
 
 	$ git rm --cached test.pyc
 	$ git commit
+
+## Note sources
+
+- <http://tkrajina.github.io/uvod-u-git/git.pdf>

@@ -36,6 +36,26 @@ force:
 
 	$ git merge <branch-name>
 
+if there are conflicts run:
+
+	$ git mergetool
+	$ git commit
+
+### Rebase current branch
+
+![](/files/sysadmin/linux/git/git-rebase-graph.png)
+
+	$ git rebase master
+
+if there are conflicts run:
+
+	$ git mergetool
+	$ git rebase --continue
+
+or stop rebase and restore original branch:
+
+	$ git rebase --abort
+
 ## Config
 
 ### Set merge tool

@@ -8,4 +8,4 @@ receiver:
 
 sender:
 
-    $ xclip -selection clipboard -o | nc <receiving-machine-hostname> 1234
+    $ xclip -selection clipboard -o | nc <receiver-hostname> 1234

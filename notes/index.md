@@ -22,8 +22,8 @@
 		- VLC
 	- OS
 		- Debian
-		- FreeBSD
 		- Android
 		- Windows
 	- hardware
 	- search
+- electronics

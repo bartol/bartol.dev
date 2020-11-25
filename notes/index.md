@@ -5,13 +5,25 @@
 	- C
 	- PHP
 	- Python
+	- SQL
+	- Shell
+	- Regex
+	- HTML
+	- CSS
+	- JavaScript
 - sysadmin
 	- [CLI](/notes/sysadmin/cli)
-		- [Git](/notes/sysadmin/cli/git)
+		- [git](/notes/sysadmin/cli/git)
+		- vim
+		- zsh
+		- psql
 	- GUI
 		- Firefox
 		- VLC
-	- Debian
-	- FreeBSD
-	- Android
-	- Windows
+	- OS
+		- Debian
+		- FreeBSD
+		- Android
+		- Windows
+	- hardware
+	- search

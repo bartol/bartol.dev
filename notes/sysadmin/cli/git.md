@@ -6,6 +6,14 @@
 
 	$ git branch
 
+### List branches merged in branch
+
+	$ git branch --merged <branch>
+
+### List branches not merged in branch
+
+	$ git branch --no-merged <branch>
+
 ### Create branch
 
 	$ git branch <branch-name>
@@ -176,13 +184,104 @@ or stop rebase and restore original branch:
 
 	$ git reflog
 
+## Remote
+
+### Clone repository
+
+	$ git clone <repository-url>
+
+### Fast clone with only recent history
+
+	$ git clone --depth 5 --no-hardlinks <repository-url>
+
+### Show remote branches
+
+	$ git branch -a
+
+### Show remotes
+
+	$ git remote
+
+### Show remotes with their addresses
+
+	$ git remote -v
+
+### Add remote
+
+	$ git remote add <name> <address>
+
+### Remove remote
+
+	$ git remote remove <name>
+
+### Pull changes from remote
+
+	$ git fetch
+	$ git merge <remote>/<branch>
+
+or
+
+	$ git pull
+
+### Push changes
+
+	$ git push <remote> <branch>
+
+### Push local tags
+
+	$ git push <remote> --tags
+
+### Remove tag from remote
+
+	$ git push origin :refs/tags/<tag-name>
+
+### Create local branch from remote
+
+	$ git checkout <remote>/<branch>
+	$ git checkout -b <local-branch>
+
+### Remove branch from remote
+
+	$ git push origin :<branch-name>
+
+### Remove branches removed from remote
+
+	$ git fetch --prune
+
+### Working with multiple remotes
+
+get changes from remote:
+
+	$ git fetch <remote>
+
+try out changes:
+
+	$ git checkout <remote>/<branch>
+
+if we want to merge changes from remote:
+
+	$ git checkout <branch>
+	$ git merge <remote>/<branch>
+
 ## Config
 
 ### Set merge tool
 
 	$ git config --global merge.tool vimdiff
 
-## Ignored files
+### Make repository bare (for servers)
+
+	$ git config --bool core.bare true
+
+## Files
+
+### Remove untracked files
+
+	$ git clean -id
+
+### Cleanup unnecessary files
+
+	$ git gc
 
 ### Remove ignored file that is already committed but keep local ignored copy
 

@@ -120,6 +120,20 @@ or stop rebase and restore original branch:
 
 	$ git reset --hard HEAD~<x>
 
+### Get last commit hash
+
+	$ git log -n1 --format=%H
+
+## Add
+
+### Add all changes
+
+	$ git add -A
+
+### Interactively add changes
+
+	$ git add -p
+
 ## Diff
 
 ### Diff between 2 branches
@@ -262,6 +276,24 @@ if we want to merge changes from remote:
 
 	$ git checkout <branch>
 	$ git merge <remote>/<branch>
+
+## Bisect
+
+	$ git bisect start
+	$ git bisect bad
+
+checkout to commit far away in the history that passes the test script:
+
+	$ git checkout <commit-hash>
+	$ git bisect good
+	$ git bisect run <command>
+
+if `<command>` returns 0 bisect will make commit good and if it returns between
+1 and 127 bisect will make commit bad until it finds first bad commit
+
+return to original HEAD:
+
+	$ git bisect reset
 
 ## Config
 

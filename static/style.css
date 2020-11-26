@@ -52,6 +52,20 @@ li {
   padding: 0.1em 0;
 }
 
+kbd {
+	display: inline-block;
+	margin: 0 .1em;
+	padding: .1em .6em;
+  font-family: 'Noto Sans', sans-serif;
+	font-size: 11px;
+	color: #242729;
+	text-shadow: 0 1px 0 #fff;
+	background-color: #e4e6e8;
+	border: 1px solid #9fa6ad;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(12,13,14,0.15),inset 0 1px 0 0 #fff;
+}
+
 #wrapper {
   display: flex;
   flex-grow: 1;

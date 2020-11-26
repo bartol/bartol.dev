@@ -69,6 +69,14 @@ or stop rebase and restore original branch:
 	$ git checkout <commit-name>
 	$ git checkout -b <branch-name>
 
+### Undo unpushed merge
+
+	$ git reset --hard <merge-commit-hash>^1
+
+### Undo pushed merge
+
+	$ git revert -m 1 <merge-commit-hash>
+
 ## Tags
 
 ### List all tags
@@ -88,6 +96,14 @@ or stop rebase and restore original branch:
 	$ git tag -d <tag-name>
 
 ## Commits
+
+### Commit staged changes
+
+	$ git commit
+
+### Commit staged changes with inline message
+
+	$ git commit -m "message..."
 
 ### Commit references
 
@@ -114,15 +130,54 @@ or stop rebase and restore original branch:
 
 	$ git revert <commit-hash>
 
-(creates new commit, used only for recent commits)
+(creates new commit, used only for recent commits, can be used for remote commits)
 
 ### Delete last x commits
 
 	$ git reset --hard HEAD~<x>
 
+(can be used only for local commits)
+
 ### Get last commit hash
 
 	$ git log -n1 --format=%H
+
+### Fix commiting in wrong branch
+
+last commit in the wrong branch:
+
+	$ git checkout <right-branch-name>
+	$ git cherry-pick <wrong-branch-name>
+	$ git checkout <wrong-branch-name>
+	$ git reset --hard <wrong-branch-name>~1
+
+last 2 commits are in the wrong branch:
+
+	$ git checkout <right-branch-name>
+	$ git cherry-pick <wrong-branch-name>~1 # second to last commit
+	$ git cherry-pick <wrong-branch-name>   # last commit
+	$ git checkout <wrong-branch-name>
+	$ git reset --hard <wrong-branch-name>~2
+
+### Move commit from master to new branch
+
+	git branch <new-branch-name>
+	git reset --hard HEAD~1
+	git checkout <new-branch-name>
+
+### Git time machine
+
+	$ git reflog
+	$ git reset HEAD@{index}
+
+### Add change to last commit
+
+	$ git add <file>
+	$ git commit --amend --no-edit
+
+### Change last commit message
+
+	$ git commit --amend
 
 ## Add
 
@@ -155,6 +210,10 @@ or stop rebase and restore original branch:
 ### Diff for commit and its predecessor
 
 	$ git diff <commit-hash>{~1,}
+
+### Diff staged changes
+
+	$ git diff --staged
 
 ## Log
 
@@ -194,7 +253,7 @@ or stop rebase and restore original branch:
 
 	$ git blame -C <file>
 
-### Show HEAD history
+### Show HEAD history in all branches
 
 	$ git reflog
 
@@ -322,4 +381,5 @@ return to original HEAD:
 
 ## Note sources
 
-- <http://tkrajina.github.io/uvod-u-git/git.pdf>
+- <https://tkrajina.github.io/uvod-u-git/git.pdf>
+- <https://ohshitgit.com/>

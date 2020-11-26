@@ -14,7 +14,7 @@
 - sysadmin
 	- [CLI](/notes/sysadmin/cli)
 		- [git](/notes/sysadmin/cli/git)
-		- vim
+		- [vim](/notes/sysadmin/cli/vim)
 		- zsh
 		- psql
 	- GUI

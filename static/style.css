@@ -52,8 +52,11 @@ li {
   padding: 0.1em 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 kbd {
-	display: inline-block;
 	margin: 0 .1em;
 	padding: .1em .6em;
   font-family: 'Noto Sans', sans-serif;

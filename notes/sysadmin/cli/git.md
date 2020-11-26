@@ -384,6 +384,18 @@ if we want to merge changes from remote:
 	$ git clone <repository-url>
 	$ cd <repository-dir>
 
+### Git shell
+
+used to restrict access when hosting repository on server with ssh access
+
+	$ chsh -s /usr/bin/git-shell git
+	$ cp -R /usr/share/doc/git/contrib/git-shell-commands /home/git/
+	$ chmod +x /home/git/git-shell-commands/help
+	$ chmod +x /home/git/git-shell-commands/list
+
+only `help` and `list` commands will be available if user tries to log in to
+server via ssh
+
 ## Bisect
 
 	$ git bisect start
@@ -411,6 +423,14 @@ return to original HEAD:
 ### Make repository bare (for servers)
 
 	$ git config --bool core.bare true
+
+## Plugin
+
+create executable file `git-<script-name>` and add it to shell path
+
+run plugin:
+
+	$ git <plugin-name>
 
 ## Files
 

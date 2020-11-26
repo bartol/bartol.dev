@@ -118,6 +118,10 @@ or stop rebase and restore original branch:
 - `@{"1 day ago"}` is reference to commit from 1 day ago
 - `@{2020-11-25}` is reference to commit from 25/11/2020
 
+### Get commit reference from hash
+
+	$ git name-rev <commit-hash>
+
 ### Apply changes from commit in other branch
 
 	$ git cherry-pick <commit-hash>
@@ -257,6 +261,36 @@ last 2 commits are in the wrong branch:
 
 	$ git reflog
 
+### Show log sorted by author
+
+	$ git shortlog
+
+## Stash
+
+### Stash local changes
+
+	$ git stash
+
+### Get stash changes
+
+	$ git stash pop <stash-ref>
+
+### Get changes from last stash
+
+	$ git stash pop
+
+### List stashes
+
+	$ git stash list
+
+### Show stash changed files
+
+	$ git stash show <stash-ref>
+
+### Show stash diff
+
+	$ git stash show -v <stash-ref>
+
 ## Remote
 
 ### Clone repository
@@ -379,6 +413,10 @@ return to original HEAD:
 	$ git config --bool core.bare true
 
 ## Files
+
+### Check repository for corruption
+
+	$ git fsck
 
 ### Remove untracked files
 

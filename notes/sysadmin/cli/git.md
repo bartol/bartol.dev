@@ -306,7 +306,7 @@ or
 
 ### Remove tag from remote
 
-	$ git push origin :refs/tags/<tag-name>
+	$ git push <remote> :refs/tags/<tag-name>
 
 ### Create local branch from remote
 
@@ -315,7 +315,7 @@ or
 
 ### Remove branch from remote
 
-	$ git push origin :<branch-name>
+	$ git push <remote> :<branch-name>
 
 ### Remove branches removed from remote
 
@@ -335,6 +335,20 @@ if we want to merge changes from remote:
 
 	$ git checkout <branch>
 	$ git merge <remote>/<branch>
+
+### Reset local branch state to remote branch state
+
+	$ git fetch <remote>
+	$ git checkout <branch>
+	$ git reset --hard <remote>/<branch>
+	$ git clean -df
+
+### Reset local repository state to remote repository state
+
+	$ cd ..
+	$ rm -rf <repository-dir>
+	$ git clone <repository-url>
+	$ cd <repository-dir>
 
 ## Bisect
 

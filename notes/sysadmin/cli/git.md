@@ -426,7 +426,7 @@ return to original HEAD:
 
 ## Plugin
 
-create executable file `git-<script-name>` and add it to shell path
+create executable file `git-<plugin-name>` and add it to shell path
 
 run plugin:
 

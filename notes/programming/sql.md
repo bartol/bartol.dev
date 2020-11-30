@@ -3,13 +3,12 @@
 all snippets work in PostgreSQL
 
 <!-- 
-commnents
-default column value
 select
 select all
 select all from table alias
 column match regex
 insert
+insert multiple values
 update
 delete 
 create table
@@ -27,6 +26,10 @@ multiple primary keys
 extract year from date
 extract month from date
 partition table (by hash?)
+explain statement
+<> operator
+IS NULL 
+IS NOT NULL operators
 -->
 
 ## Table joins
@@ -65,6 +68,17 @@ each resource can have one category, multiple resources can have save category
     <column-name> MONEY
 
 possible value: `8.99`
+
+### Decimal number
+
+    <column-name> NUMERIC(<precision>, <scale>)
+
+example parameters:
+
+- `<precision>` - `9`
+- `<scale>` - `2`
+
+this can store up to 9999999.99
 
 ### Date
 
@@ -105,6 +119,10 @@ possible values: `'t'`, `'n'`
     <column-name> INTEGER,
     FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>(<foreign-column-name>)
 
+### Default value
+
+    <column-name> <COLUMN-TYPE> DEFAULT <column-value>
+
 ## Table relationships
 
 ### Many to many
@@ -134,9 +152,46 @@ for example resource status
         FOREIGN KEY (status) REFERENCES <table-name>_status(status)
     );
 
-## SQL Rules
+## Null
+
+from SQL Antipatterns book:
+
+Suppose Stan is thirty years old, while Oliver's age is unknown. If I ask
+you whether Stan is older than Oliver, your only possible answer is "I
+don't know." If I ask you whether Stan is the same age as Oliver, your
+answer is also "I don't know." If I ask you what is the sum of Stan's age
+and Oliver's age, your answer is the same.
+
+null in scalar expressions:
+
+| Expression         | Expected | Actual |
+| ------------------ | -------- | ------ |
+| NULL = 0           | TRUE     | NULL   |
+| NULL = 12345       | FALSE    | NULL   |
+| NULL <> 12345      | TRUE     | NULL   |
+| NULL + 12345       | 12345    | NULL   |
+| NULL \|\| 'string' | 'string' | NULL   |
+| NULL = NULL        | TRUE     | NULL   |
+| NULL <> NULL       | FALSE    | NULL   |
+
+null in boolean expressions:
+
+| Expression        | Expected | Actual |
+| ----------------- | -------- | ------ |
+| NULL AND TRUE     | FALSE    | NULL   |
+| NULL AND FALSE    | FALSE    | FALSE  |
+| NULL OR FALSE     | FALSE    | NULL   |
+| NULL OR TRUE      | TRUE     | TRUE   |
+| NOT (NULL)        | TRUE     | NULL   |
+
+## Comments
+
+    -- comment
+
+## SQL recommendations
 
 - Don't let data spawn metadata
+- Avoid float if you can
 
 ## Note sources
 

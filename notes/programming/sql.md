@@ -23,6 +23,10 @@ column alias
 count rows
 ON DELETE CASCADE
 ON UPDATE CASCADE
+multiple primary keys
+extract year from date
+extract month from date
+partition table (by hash?)
 -->
 
 ## Table joins
@@ -129,6 +133,10 @@ for example resource status
         status TEXT,
         FOREIGN KEY (status) REFERENCES <table-name>_status(status)
     );
+
+## SQL Rules
+
+- Don't let data spawn metadata
 
 ## Note sources
 

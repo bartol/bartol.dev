@@ -5,7 +5,7 @@
 	- C
 	- PHP
 	- Python
-	- SQL
+	- [SQL](/notes/programming/sql)
 	- Shell
 	- Regex
 	- HTML

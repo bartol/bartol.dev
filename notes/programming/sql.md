@@ -9,8 +9,6 @@ current time
 get timestamp for one hour from now
 COALESE
 decimal column
-table alias
-column alias
 count rows
 ON DELETE CASCADE
 ON UPDATE CASCADE
@@ -93,6 +91,20 @@ TSVECTOR for full text searching
 ### Delete all rows
 
     DELETE FROM <table-name>;
+
+## Aliases
+
+### Table alias
+
+    SELECT <column-name> FROM <table-name> AS <table-alias>;
+
+table alias can be now be used for joins, ...
+
+### Column alias
+
+    SELECT <column-name> AS <column-alias> FROM <table-name>;
+
+output will now show column alias instead of column name
 
 ## Conditions
 

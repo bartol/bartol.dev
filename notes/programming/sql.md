@@ -3,12 +3,6 @@
 all snippets work in PostgreSQL
 
 <!-- 
-select
-select all
-select all from table alias
-column match regex
-insert
-insert multiple values
 update
 delete 
 create table
@@ -16,12 +10,15 @@ foreign key
 current date and time
 current date
 current time
+get timestamp for one hour from now
+COALESE
 decimal column
 table alias
 column alias
 count rows
 ON DELETE CASCADE
 ON UPDATE CASCADE
+UNIQUE
 multiple primary keys
 extract year from date
 extract month from date
@@ -30,7 +27,61 @@ explain statement
 <> operator
 IS NULL 
 IS NOT NULL operators
+IS DISTINCT FROM
+LIMIT
+get random row (with offset)
+TSVECTOR for full text searching
 -->
+
+## Statements
+
+### Select column from all rows
+
+    SELECT <column-name> FROM <table-name>;
+
+### Select all columns from all rows
+
+    SELECT * FROM <table-name>;
+
+### Select rows conditionaly
+
+    SELECT * FROM <table-name>
+    WHERE <column-name> = <column-value>;
+
+more operators for where statement can be found below
+
+### Select all columns from table alias
+
+    SELECT <table-alias>.*
+    FROM <table-name> AS <table-alias>;
+
+### Concatenate multiple queries
+
+    (SELECT * FROM <table-name>)
+    UNION ALL
+    (SELECT * FROM <table-name>)
+
+### Concatenate multiple queries and return only distinct rows
+
+    (SELECT * FROM <table-name>)
+    UNION
+    (SELECT * FROM <table-name>)
+
+### Insert row
+
+    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>) 
+    VALUES (<column-value>, <column-value>, <column-value>);
+
+### Insert multiple rows
+
+    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>) 
+    VALUES (<column-value>, <column-value>, <column-value>),
+           (<column-value>, <column-value>, <column-value>),
+           (<column-value>, <column-value>, <column-value>);
+
+## Operators
+
+## Functions
 
 ## Table joins
 
@@ -75,10 +126,10 @@ possible value: `8.99`
 
 example parameters:
 
-- `<precision>` - `9`
-- `<scale>` - `2`
+- `<precision>` = `9`
+- `<scale>` = `2`
 
-this can store up to 9999999.99
+these can store decimal up to 9999999.99
 
 ### Date
 
@@ -188,10 +239,15 @@ null in boolean expressions:
 
     -- comment
 
-## SQL recommendations
+## Recommendations
 
+- Use table relationships instead of storing values in comma separated text
 - Don't let data spawn metadata
 - Avoid float if you can
+- Use null to signify a missing value for any data type
+- Define `NOT NULL` constraint on columns whose missing value could break application
+- Always spell out all the columns you need, instead of relying on wildcards or implicit column lists
+- Generate different salt for each password and save it in the same table
 
 ## Note sources
 

@@ -3,10 +3,6 @@
 all snippets work in PostgreSQL
 
 <!-- 
-current date and time
-current date
-current time
-get timestamp for one hour from now
 COALESE
 decimal column
 count rows
@@ -23,7 +19,6 @@ IS NULL
 IS NOT NULL operators
 IS DISTINCT FROM
 LIMIT
-get random row (with offset)
 TSVECTOR for full text searching
 -->
 
@@ -109,6 +104,50 @@ output will now show column alias instead of column name
 ## Conditions
 
 ## Functions
+
+### Test function without query
+
+    SELECT <function>;
+
+### Get current date
+
+    NOW()::DATE
+
+### Get current time
+
+    NOW()::TIME
+
+### Get current date and time
+
+    NOW()::TIMESTAMP
+
+### Get date and time 1 hour from now
+
+    NOW()::TIMESTAMP + INTERVAL '1 hour'
+
+### Get date and time 1 day from now
+
+    NOW()::TIMESTAMP + INTERVAL '1 day'
+
+### Get date and time 1 minute from now
+
+    NOW()::TIMESTAMP + INTERVAL '1 minute'
+
+### Get date and time 1 hour ago
+
+    NOW()::TIMESTAMP - INTERVAL '1 hour'
+
+### Get date and time 1 day ago
+
+    NOW()::TIMESTAMP - INTERVAL '1 day'
+
+### Get date and time 1 minute ago
+
+    NOW()::TIMESTAMP - INTERVAL '1 minute'
+
+### Chain intervals
+
+    NOW()::TIMESTAMP + INTERVAL '1 day' - INTERVAL '1 hour' + INTERVAL '1 minute'
 
 ## Tables
 

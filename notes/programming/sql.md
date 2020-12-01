@@ -3,10 +3,6 @@
 all snippets work in PostgreSQL
 
 <!-- 
-update
-delete 
-create table
-foreign key
 current date and time
 current date
 current time
@@ -46,9 +42,7 @@ TSVECTOR for full text searching
 ### Select rows conditionaly
 
     SELECT * FROM <table-name>
-    WHERE <column-name> = <column-value>;
-
-more operators for where statement can be found below
+    WHERE <condition>;
 
 ### Select all columns from table alias
 
@@ -79,9 +73,50 @@ more operators for where statement can be found below
            (<column-value>, <column-value>, <column-value>),
            (<column-value>, <column-value>, <column-value>);
 
-## Operators
+### Update rows
+
+    UPDATE <table-name>
+    SET <column-name> = <column-value>,
+        <column-name> = <column-value>
+    WHERE <condition>;
+
+### Update all rows
+
+    UPDATE <table-name>
+    SET <column-name> = <column-value>,
+        <column-name> = <column-value>;
+
+### Delete rows
+
+    DELETE FROM <table-name> WHERE <condition>;
+
+### Delete all rows
+
+    DELETE FROM <table-name>;
+
+## Conditions
 
 ## Functions
+
+## Tables
+
+### Create table
+
+    CREATE TABLE <table-name> (
+        <column-name> <COLUMN-TYPE>,
+        <column-name> <COLUMN-TYPE>
+    );
+
+### Create table if it doesn't exist
+
+    CREATE TABLE IF NOT EXISTS <table-name> (
+        <column-name> <COLUMN-TYPE>,
+        <column-name> <COLUMN-TYPE>
+    );
+
+### Delete table
+
+    DROP TABLE <table-name>;
 
 ## Table joins
 
@@ -241,6 +276,7 @@ null in boolean expressions:
 
 ## Recommendations
 
+- Name primary keys `product_id` instead of just `id`
 - Use table relationships instead of storing values in comma separated text
 - Don't let data spawn metadata
 - Avoid float if you can

@@ -10,8 +10,6 @@ ON DELETE CASCADE
 ON UPDATE CASCADE
 UNIQUE
 multiple primary keys
-extract year from date
-extract month from date
 partition table (by hash?)
 explain statement
 <> operator
@@ -148,6 +146,26 @@ output will now show column alias instead of column name
 ### Chain intervals
 
     NOW()::TIMESTAMP + INTERVAL '1 day' - INTERVAL '1 hour' + INTERVAL '1 minute'
+
+### Extract year from date column
+
+    SELECT EXTRACT(YEAR FROM <date-column-name>) FROM <table-name>;
+
+### Extract month from date column
+
+    SELECT EXTRACT(MONTH FROM <date-column-name>) FROM <table-name>;
+
+### Extract day from date column
+
+    SELECT EXTRACT(DAY FROM <date-column-name>) FROM <table-name>;
+
+### Extract century from date column
+
+    SELECT EXTRACT(CENTURY FROM <date-column-name>) FROM <table-name>;
+
+### Extract decade from date column
+
+    SELECT EXTRACT(DECADE FROM <date-column-name>) FROM <table-name>;
 
 ## Tables
 

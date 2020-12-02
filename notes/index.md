@@ -3,6 +3,7 @@
 - programming
 	- Go
 	- C
+	- Zig
 	- PHP
 	- Python
 	- [SQL](/notes/programming/sql)

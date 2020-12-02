@@ -81,6 +81,10 @@ TSVECTOR for full text searching
 
     DELETE FROM <table-name>;
 
+### Return only distinct rows
+
+    SELECT DISTINCT ON (<distinct-column-name>) * FROM <table-name>;
+
 ### Limit returned rows
 
     SELECT * FROM <table-name> LIMIT <limit>;

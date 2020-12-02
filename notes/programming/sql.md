@@ -4,8 +4,6 @@ all snippets work in PostgreSQL
 
 <!-- 
 COALESE
-decimal column
-count rows
 ON DELETE CASCADE
 ON UPDATE CASCADE
 UNIQUE
@@ -15,7 +13,6 @@ partition table (by hash?)
 IS NULL 
 IS NOT NULL operators
 IS DISTINCT FROM
-LIMIT
 TSVECTOR for full text searching
 -->
 
@@ -83,6 +80,18 @@ TSVECTOR for full text searching
 ### Delete all rows
 
     DELETE FROM <table-name>;
+
+### Limit returned rows
+
+    SELECT * FROM <table-name> LIMIT <limit>;
+
+### Offset returned rows
+
+    SELECT * FROM <table-name> OFFSET <offset>;
+
+### Count rows in table
+
+    SELECT COUNT(*) FROM <table-name>;
 
 ### View query performance
 

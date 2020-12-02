@@ -11,7 +11,6 @@ ON UPDATE CASCADE
 UNIQUE
 multiple primary keys
 partition table (by hash?)
-explain statement
 <> operator
 IS NULL 
 IS NOT NULL operators
@@ -84,6 +83,10 @@ TSVECTOR for full text searching
 ### Delete all rows
 
     DELETE FROM <table-name>;
+
+### View query performance
+
+    EXPLAIN ANALYZE <query>;
 
 ## Aliases
 

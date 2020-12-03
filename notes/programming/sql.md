@@ -14,6 +14,8 @@ IS NULL
 IS NOT NULL operators
 IS DISTINCT FROM
 TSVECTOR for full text searching
+aggregate functions: SUM, AVG, MIN, MAX
+cast column value to text
 -->
 
 ## Statements

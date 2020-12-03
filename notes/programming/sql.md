@@ -101,6 +101,12 @@ TSVECTOR for full text searching
 
     EXPLAIN ANALYZE <query>;
 
+### Return all columns as comma separated list
+
+    SELECT STRING_AGG(column_name, ',') AS columns 
+    FROM information_schema.columns 
+    WHERE table_name = <table-name>
+
 ## Aliases
 
 ### Table alias

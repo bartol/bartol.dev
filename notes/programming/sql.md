@@ -93,10 +93,6 @@ TSVECTOR for full text searching
 
     SELECT * FROM <table-name> OFFSET <offset>;
 
-### Count rows in table
-
-    SELECT COUNT(*) FROM <table-name>;
-
 ### View query performance
 
     EXPLAIN ANALYZE <query>;
@@ -242,6 +238,16 @@ true if atleast one is true:
 ### Extract decade from date column
 
     SELECT EXTRACT(DECADE FROM <date-column-name>) FROM <table-name>;
+
+## Aggregate functions
+
+### Count rows
+
+    COUNT(*)
+
+### Return column as joined string
+
+    STRING_AGG(<column-name>, <separator>)
 
 ## Tables
 

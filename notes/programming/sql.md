@@ -245,7 +245,7 @@ true if atleast one is true:
 
     COUNT(*)
 
-### Return column as joined string
+### Return column values as joined string
 
     STRING_AGG(<column-name>, <separator>)
 

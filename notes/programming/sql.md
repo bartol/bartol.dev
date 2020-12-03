@@ -9,7 +9,7 @@ ON UPDATE CASCADE
 UNIQUE
 multiple primary keys
 partition table (by hash?)
-<> operator
+LIKE
 IS NULL 
 IS NOT NULL operators
 IS DISTINCT FROM
@@ -116,6 +116,60 @@ table alias can be now be used for joins, ...
 output will now show column alias instead of column name
 
 ## Conditions
+
+### Equal
+
+    <column-name> = <column-value>
+
+### Not equal
+
+    <column-name> <> <column-value>
+
+### Greater than
+
+    <column-name> > <column-value>
+
+### Less than
+
+    <column-name> < <column-value>
+
+### Greater than or equal
+
+    <column-name> >= <column-value>
+
+### Less than or equal
+
+    <column-name> <= <column-value>
+
+### Between range
+
+    <column-name> BETWEEN <low> AND <high>
+
+### Not between range
+
+    <column-name> NOT BETWEEN <low> AND <high>
+
+### Multiple possible values
+
+    <column-name> IN (<column-value>, <column-value>)
+
+### Multiple excluded values
+
+    <column-name> NOT IN (<column-value>, <column-value>)
+
+### Chain multiple conditions
+
+true if all are true:
+
+    <condition> AND <condition>
+
+true if atleast one is true:
+
+    <condition> OR <condition>
+
+### Negate condition
+
+    NOT <condition>
 
 ## Functions
 

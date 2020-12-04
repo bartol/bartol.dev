@@ -3,7 +3,6 @@
 all snippets work in PostgreSQL
 
 <!-- 
-COALESE
 ON DELETE CASCADE
 ON UPDATE CASCADE
 UNIQUE
@@ -238,6 +237,10 @@ true if atleast one is true:
 ### Extract decade from date column
 
     SELECT EXTRACT(DECADE FROM <date-column-name>) FROM <table-name>;
+
+### Return first non-null value
+
+    COALESE(<column-name>, <column-name>, <column-name>)
 
 ### Cast column value to text
 

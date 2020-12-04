@@ -220,23 +220,23 @@ true if atleast one is true:
 
 ### Extract year from date column
 
-    SELECT EXTRACT(YEAR FROM <date-column-name>) FROM <table-name>;
+    EXTRACT(YEAR FROM <date-column-name>)
 
 ### Extract month from date column
 
-    SELECT EXTRACT(MONTH FROM <date-column-name>) FROM <table-name>;
+    EXTRACT(MONTH FROM <date-column-name>)
 
 ### Extract day from date column
 
-    SELECT EXTRACT(DAY FROM <date-column-name>) FROM <table-name>;
+    EXTRACT(DAY FROM <date-column-name>)
 
 ### Extract century from date column
 
-    SELECT EXTRACT(CENTURY FROM <date-column-name>) FROM <table-name>;
+    EXTRACT(CENTURY FROM <date-column-name>)
 
 ### Extract decade from date column
 
-    SELECT EXTRACT(DECADE FROM <date-column-name>) FROM <table-name>;
+    EXTRACT(DECADE FROM <date-column-name>)
 
 ### Return first non-null value
 

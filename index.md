@@ -2,4 +2,4 @@
 
 my website
 
-[view notes](/notes)
+[notes](/notes)

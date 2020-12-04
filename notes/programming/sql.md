@@ -14,8 +14,6 @@ IS NULL
 IS NOT NULL operators
 IS DISTINCT FROM
 TSVECTOR for full text searching
-aggregate functions: SUM, AVG, MIN, MAX
-cast column value to text
 -->
 
 ## Statements
@@ -241,11 +239,31 @@ true if atleast one is true:
 
     SELECT EXTRACT(DECADE FROM <date-column-name>) FROM <table-name>;
 
+### Cast column value to text
+
+    <column-name>::TEXT
+
 ## Aggregate functions
 
 ### Count rows
 
     COUNT(*)
+
+### Return largest column value
+
+    MAX(<column-name>)
+
+### Return smallest column value
+
+    MIN(<column-name>)
+
+### Return average of column values
+
+    AVG(<column-name>)
+
+### Return sum of column values
+
+    SUM(<column-name>)
 
 ### Return column values as joined string
 

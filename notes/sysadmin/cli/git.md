@@ -443,17 +443,17 @@ for example:
 
 ### Run shell command from git alias
 
-	$ git config --global alias.<alias-name> "!<shell-command>"
+	$ git config --global alias.<alias-name> "\!<shell-command>"
 
 for example:
 
-	$ git config --global alias.echo "!echo hi"
+	$ git config --global alias.echo "\!echo hi"
 
 ### Useful git aliases
 
 push all branches to all remotes:
 
-	$ git config --global alias.p "!git remote | xargs -L1 git push --all"
+	$ git config --global alias.p "\!git remote | xargs -L1 git push --all"
 
 compact log:
 
@@ -461,7 +461,7 @@ compact log:
 
 add all changes and commit them:
 
-	$ git config --global alias.ca "!git add -A && git commit"
+	$ git config --global alias.ca "\!git add -A && git commit"
 
 ### Make repository bare (for servers)
 

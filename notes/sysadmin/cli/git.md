@@ -416,13 +416,68 @@ return to original HEAD:
 
 ## Config
 
+### Set identity
+
+	$ git config --global user.name <your-name>
+	$ git config --global user.email <your-email>
+
+### Show diff in commit editor
+
+	$ git config --global commit.verbose true
+
 ### Set merge tool
 
 	$ git config --global merge.tool vimdiff
 
+### Remove backup files from merge
+
+	$ git config --global mergetool.keepBackup false
+
+### Set command alias
+
+	$ git config --global alias.<alias-name> <command>
+
+for example:
+
+	$ git config --global alias.s status
+
+### Run shell command from git alias
+
+	$ git config --global alias.<alias-name> "!<shell-command>"
+
+for example:
+
+	$ git config --global alias.echo "!echo hi"
+
+### Useful git aliases
+
+push all branches to all remotes:
+
+	$ git config --global alias.p "!git remote | xargs -L1 git push --all"
+
+compact log:
+
+	$ git config --global alias.l "log --oneline --graph"
+
+add all changes and commit them:
+
+	$ git config --global alias.ca "!git add -A && git commit"
+
 ### Make repository bare (for servers)
 
 	$ git config --bool core.bare true
+
+### Change default branch for new repositories
+
+	$ git config --global init.defaultBranch master
+
+### Autocorrect commands
+
+	$ git config --global help.autocorrect 1
+
+add 2 second delay:
+
+	$ git config --global help.autocorrect 20
 
 ## Plugin
 

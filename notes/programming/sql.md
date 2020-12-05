@@ -2,14 +2,14 @@
 
 all snippets work in PostgreSQL
 
-<!-- 
+<!--
 ON DELETE CASCADE
 ON UPDATE CASCADE
 UNIQUE
 multiple primary keys
 partition table (by hash?)
 LIKE
-IS NULL 
+IS NULL
 IS NOT NULL operators
 IS DISTINCT FROM
 TSVECTOR for full text searching
@@ -49,12 +49,12 @@ TSVECTOR for full text searching
 
 ### Insert row
 
-    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>) 
+    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
     VALUES (<column-value>, <column-value>, <column-value>);
 
 ### Insert multiple rows
 
-    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>) 
+    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
     VALUES (<column-value>, <column-value>, <column-value>),
            (<column-value>, <column-value>, <column-value>),
            (<column-value>, <column-value>, <column-value>);
@@ -80,6 +80,14 @@ TSVECTOR for full text searching
 
     DELETE FROM <table-name>;
 
+### Sort in ascending order
+
+    SELECT * FROM <table-name> ORDER BY <column-name> ASC;
+
+### Sort in descending order
+
+    SELECT * FROM <table-name> ORDER BY <column-name> DESC;
+
 ### Return only distinct rows
 
     SELECT DISTINCT ON (<distinct-column-name>) * FROM <table-name>;
@@ -98,8 +106,8 @@ TSVECTOR for full text searching
 
 ### Return all columns as comma separated list
 
-    SELECT STRING_AGG(column_name, ',') AS columns 
-    FROM information_schema.columns 
+    SELECT STRING_AGG(column_name, ',') AS columns
+    FROM information_schema.columns
     WHERE table_name = <table-name>
 
 ## Aliases
@@ -304,7 +312,7 @@ true if atleast one is true:
 
 each resource can have one category, multiple resources can have save category
 
-    SELECT * 
+    SELECT *
     FROM <table-name> AS <table-alias>
     INNER JOIN <foreign-table-name> AS <foreign-table-alias>
     ON <table-alias>.<column-name> = <foreign-table-alias>.<foreign-column-name>;

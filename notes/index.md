@@ -4,7 +4,7 @@
 	- Go
 	- C
 	- PHP
-	- Python
+	- Perl
 	- [SQL](/notes/programming/sql)
 	- Shell
 	- Regex
@@ -25,5 +25,6 @@
 		- Android
 		- Windows
 	- hardware
-	- search
+	- google
 - electronics
+- [links](/notes/links)

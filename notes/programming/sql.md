@@ -3,12 +3,7 @@
 all snippets work in PostgreSQL
 
 <!--
-ON DELETE CASCADE
-ON UPDATE CASCADE
-partition table (by hash?)
 LIKE
-IS NULL
-IS NOT NULL operators
 IS DISTINCT FROM
 TSVECTOR for full text searching
 -->
@@ -163,6 +158,14 @@ output will now show column alias instead of column name
 ### Multiple excluded values
 
     <column-name> NOT IN (<column-value>, <column-value>)
+
+### Null
+
+    <column-name> IS NULL
+
+### Not null
+
+    <column-name> IS NOT NULL
 
 ### Chain multiple conditions
 
@@ -397,6 +400,16 @@ now columns must be unique pair
 
     <column-name> INTEGER,
     FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>
+
+### Delete row if foreign row is deleted
+
+    <column-name> INTEGER,
+    FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name> ON DELETE CASCADE
+
+### Update row if foreign row id is updated
+
+    <column-name> INTEGER,
+    FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name> ON UPDATE CASCADE
 
 ### Default value
 

@@ -20,6 +20,8 @@
 	- GUI
 		- Firefox
 		- VLC
+		- KeePassXC
+		- Visual Studio Code
 	- OS
 		- Debian
 		- Android

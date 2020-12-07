@@ -28,6 +28,7 @@
 ### sysadmin
 
 - <https://crontab.guru/>
+- <https://dnstools.ws/>
 - <https://explainshell.com/>
 - <https://www.mail-tester.com/>
 - <http://multirbl.valli.org/>

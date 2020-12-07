@@ -27,6 +27,6 @@
 		- Android
 		- Windows
 	- hardware
-	- google
+	- Google
 - electronics
 - [links](/notes/links)

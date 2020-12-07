@@ -5,8 +5,6 @@ all snippets work in PostgreSQL
 <!--
 ON DELETE CASCADE
 ON UPDATE CASCADE
-UNIQUE
-multiple primary keys
 partition table (by hash?)
 LIKE
 IS NULL
@@ -378,6 +376,14 @@ possible values: `'t'`, `'n'`
 
     <table-name>_id SERIAL PRIMARY KEY
 
+### Composite primary keys
+
+    <column-name> <COLUMN-TYPE>,
+    <column-name> <COLUMN-TYPE>,
+    PRIMARY KEY (<column-name>, <column-name>)
+
+now columns must be unique pair
+
 ### Not null
 
     <column-name> <COLUMN-TYPE> NOT NULL
@@ -387,9 +393,18 @@ possible values: `'t'`, `'n'`
     <column-name> INTEGER,
     FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>(<foreign-column-name>)
 
+### Foreign key shorter syntax if columns have same name
+
+    <column-name> INTEGER,
+    FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>
+
 ### Default value
 
     <column-name> <COLUMN-TYPE> DEFAULT <column-value>
+
+### Unique
+
+    <column-name> <COLUMN-TYPE> UNIQUE
 
 ## Table relationships
 

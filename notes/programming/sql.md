@@ -469,30 +469,30 @@ create table with text search vector column:
         tsv TSVECTOR
     );
 
-add function to update text search vector on every update:
+add trigger to update text search vector on every update:
 
-    CREATE FUNCTION products_tsv_trigger() RETURNS TRIGGER AS $$
-    BEGIN
-        NEW.tsv :=
-        SETWEIGHT(TO_TSVECTOR(NEW.name), 'A')
-        || SETWEIGHT(TO_TSVECTOR(NEW.description), 'B');
-        RETURN NEW;
-    END
+    CREATE FUNCTION products_trigger() RETURNS trigger AS $$
+    begin
+    new.tsv :=
+        setweight(to_tsvector(coalesce(new.name,'')), 'A') ||
+        setweight(to_tsvector(coalesce(new.description,'')), 'B');
+    return new;
+    end
     $$ LANGUAGE plpgsql;
 
-    CREATE TRIGGER products_tsv_update BEFORE INSERT OR UPDATE
-    ON products FOR EACH ROW EXECUTE PROCEDURE products_tsv_trigger();
+    CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
+    ON products FOR EACH ROW EXECUTE PROCEDURE products_trigger();
 
 create index for text search vector column:
 
-    CREATE INDEX products_tsv_index ON products USING GIN (tsv);
+    CREATE INDEX products_tsv_idx ON products USING GIN (tsv);
 
 search with highlight:
 
-    SELECT TS_HEADLINE(name, query), description
-    FROM products, TO_TSQUERY('thinkpad') query
+    SELECT ts_headline(name, query), description
+    FROM products, to_tsquery('thinkpad') query
     WHERE query @@ tsv
-    ORDER BY TS_RANK(tsv, query) DESC;
+    ORDER BY ts_rank(tsv, query) DESC;
 
 ## Null
 

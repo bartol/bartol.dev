@@ -2,10 +2,6 @@
 
 all snippets work in PostgreSQL
 
-<!--
-TSVECTOR for full text searching
--->
-
 ## Statements
 
 ### Select column from all rows
@@ -461,6 +457,42 @@ for example resource status
         status TEXT,
         FOREIGN KEY (status) REFERENCES <table-name>_status(status)
     );
+
+## Full text search
+
+create table with text search vector column:
+
+    CREATE TABLE products (
+        product_id SERIAL PRIMARY KEY,
+        name TEXT,
+        description TEXT,
+        tsv TSVECTOR
+    );
+
+add function to update text search vector on every update:
+
+    CREATE FUNCTION products_tsv_trigger() RETURNS TRIGGER AS $$
+    BEGIN
+        NEW.tsv :=
+        SETWEIGHT(TO_TSVECTOR(NEW.name), 'A')
+        || SETWEIGHT(TO_TSVECTOR(NEW.description), 'B');
+        RETURN NEW;
+    END
+    $$ LANGUAGE plpgsql;
+
+    CREATE TRIGGER products_tsv_update BEFORE INSERT OR UPDATE
+    ON products FOR EACH ROW EXECUTE PROCEDURE products_tsv_trigger();
+
+create index for text search vector column:
+
+    CREATE INDEX products_tsv_index ON products USING GIN (tsv);
+
+search with highlight:
+
+    SELECT TS_HEADLINE(name, query), description
+    FROM products, TO_TSQUERY('thinkpad') query
+    WHERE query @@ tsv
+    ORDER BY TS_RANK(tsv, query) DESC;
 
 ## Null
 

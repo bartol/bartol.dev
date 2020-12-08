@@ -44,6 +44,10 @@
 - <https://fonts.google.com/>
 - <https://icons8.com/line-awesome>
 - <https://unsplash.com/>
+- <https://www.heropatterns.com/>
+- <https://csslayout.io/patterns/>
+- <https://caniuse.com/>
+- <https://www.caniemail.com/>
 
 ### writing
 
@@ -56,16 +60,6 @@
 ### cooking
 
 - <https://whatthefuckshouldimakefordinner.com/>
-
-## Docs
-
-- <https://moderncss.dev/>
-- <https://csslayout.io/patterns/>
-- <https://caniuse.com/>
-- <https://www.caniemail.com/>
-- <https://learnxinyminutes.com/>
-- <https://1loc.dev/>
-- <https://htmldom.dev/>
 
 ## APIs
 

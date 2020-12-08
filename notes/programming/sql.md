@@ -3,8 +3,6 @@
 all snippets work in PostgreSQL
 
 <!--
-LIKE
-IS DISTINCT FROM
 TSVECTOR for full text searching
 -->
 
@@ -166,6 +164,22 @@ output will now show column alias instead of column name
 ### Not null
 
     <column-name> IS NOT NULL
+
+### Contains
+
+    <column-name> LIKE '%<contains>%'
+
+### Starts with
+
+    <column-name> LIKE '<starts-with>%'
+
+### Ends with
+
+    <column-name> LIKE '%<ends-with>'
+
+### Starts and ends with
+
+    <column-name> LIKE '<starts-with>%<ends-with>'
 
 ### Chain multiple conditions
 

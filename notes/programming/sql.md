@@ -485,13 +485,13 @@ add trigger to update text search vector on every update:
 
 create index for text search vector column:
 
-    CREATE INDEX products_tsv_idx ON products USING GIN (tsv);
+    CREATE INDEX tsvector_idx ON products USING GIN (tsv);
 
 search with highlight:
 
-    SELECT ts_headline(name, query), description
+    SELECT ts_headline(name, query) AS name, description
     FROM products, to_tsquery('thinkpad') query
-    WHERE query @@ tsv
+    WHERE tsv @@ query
     ORDER BY ts_rank(tsv, query) DESC;
 
 ## Null

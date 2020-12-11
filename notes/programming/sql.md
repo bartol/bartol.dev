@@ -471,11 +471,13 @@ create table with text search vector column:
 
 add trigger to update text search vector on every update:
 
+    CREATE EXTENSION unaccent;
+
     CREATE FUNCTION products_trigger() RETURNS trigger AS $$
     begin
     new.tsv :=
-        setweight(to_tsvector(coalesce(new.name,'')), 'A') ||
-        setweight(to_tsvector(coalesce(new.description,'')), 'B');
+        setweight(to_tsvector(unaccent(coalesce(new.name,''))), 'A') ||
+        setweight(to_tsvector(unaccent(coalesce(new.description,''))), 'B');
     return new;
     end
     $$ LANGUAGE plpgsql;
@@ -490,7 +492,7 @@ create index for text search vector column:
 search with highlight:
 
     SELECT ts_headline(name, query) AS name, description
-    FROM products, to_tsquery('thinkpad') query
+    FROM products, plainto_tsquery(unaccent('thinkpad'))
     WHERE tsv @@ query
     ORDER BY ts_rank(tsv, query) DESC;
 

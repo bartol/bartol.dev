@@ -27,7 +27,7 @@
 		- Debian
 		- Android
 		- Windows
-	- hardware
+	- [hardware](/notes/sysadmin/hardware)
 	- Google
 - electronics
 - [links](/notes/links)

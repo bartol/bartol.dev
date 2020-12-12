@@ -458,44 +458,6 @@ for example resource status
         FOREIGN KEY (status) REFERENCES <table-name>_status(status)
     );
 
-## Full text search
-
-create table with text search vector column:
-
-    CREATE TABLE products (
-        product_id SERIAL PRIMARY KEY,
-        name TEXT,
-        description TEXT,
-        tsv TSVECTOR
-    );
-
-add trigger to update text search vector on every update:
-
-    CREATE EXTENSION unaccent;
-
-    CREATE FUNCTION products_trigger() RETURNS trigger AS $$
-    begin
-    new.tsv :=
-        setweight(to_tsvector(unaccent(coalesce(new.name,''))), 'A') ||
-        setweight(to_tsvector(unaccent(coalesce(new.description,''))), 'B');
-    return new;
-    end
-    $$ LANGUAGE plpgsql;
-
-    CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
-    ON products FOR EACH ROW EXECUTE PROCEDURE products_trigger();
-
-create index for text search vector column:
-
-    CREATE INDEX tsvector_idx ON products USING GIN (tsv);
-
-search with highlight:
-
-    SELECT ts_headline(name, query) AS name, description
-    FROM products, plainto_tsquery(unaccent('thinkpad'))
-    WHERE tsv @@ query
-    ORDER BY ts_rank(tsv, query) DESC;
-
 ## Null
 
 from SQL Antipatterns book:

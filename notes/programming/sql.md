@@ -458,6 +458,24 @@ for example resource status
         FOREIGN KEY (status) REFERENCES <table-name>_status(status)
     );
 
+## Alter table
+
+### Add column
+
+    ALTER TABLE <table-name>
+    ADD COLUMN <column-name> <COLUMN-TYPE>;
+
+### Change column type
+
+    ALTER TABLE <table-name>
+    ALTER COLUMN <column-name> TYPE <COLUMN-TYPE>;
+
+if automatic type casting isn't possible, you'll have to define it manually, for example:
+
+    ALTER TABLE <table-name>
+    ALTER COLUMN <column-name> TYPE INTEGER
+    USING <column-name>::INTEGER;
+
 ## Null
 
 from SQL Antipatterns book:

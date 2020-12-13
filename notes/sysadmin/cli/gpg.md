@@ -1,21 +1,21 @@
 # gpg
 
-# Generate new key
+## Generate new key
 
     $ gpg --full-generate-key
 
-# List keys
+## List keys
 
     $ gpg --list-secret-keys
 
-# Export public key
+## Export public key
 
     $ gpg --output <file> --armor --export <email>
 
-# Export private key
+## Export private key
 
     $ gpg --output <file> --armor --export-secret-key <email>
 
-# Import key
+## Import key
 
     $ gpg --import <private-key-file>

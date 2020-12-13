@@ -17,6 +17,7 @@
 		- [git](/notes/sysadmin/cli/git)
 		- [vim](/notes/sysadmin/cli/vim)
 		- zsh
+		- [gpg](/notes/sysadmin/cli/gpg)
 		- psql
 	- GUI
 		- Firefox

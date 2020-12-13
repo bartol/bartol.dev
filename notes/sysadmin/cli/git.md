@@ -261,9 +261,9 @@ last 2 commits are in the wrong branch:
 
 	$ git reflog
 
-### Show log sorted by author
+### Show commit authors
 
-	$ git shortlog
+	$ git shortlog -sen
 
 ## Stash
 

@@ -183,6 +183,10 @@ last 2 commits are in the wrong branch:
 
 	$ git commit --amend
 
+### Sign commit with gpg
+
+	$ git commit -S
+
 ## Add
 
 ### Add all changes
@@ -436,6 +440,10 @@ return to original HEAD:
 ### Remove backup files from merge
 
 	$ git config --global mergetool.keepBackup false
+
+### Sign commits with gpg
+
+	$ git config --global commit.gpgsign true
 
 ### Set command alias
 

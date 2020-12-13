@@ -416,6 +416,10 @@ return to original HEAD:
 
 ## Config
 
+### List all options currently used
+
+	$ git config -l
+
 ### Set identity
 
 	$ git config --global user.name <your-name>

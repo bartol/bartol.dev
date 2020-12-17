@@ -165,6 +165,10 @@ output will now show column alias instead of column name
 
     <column-name> LIKE '%<contains>%'
 
+### Case-insensitive contains
+
+    <column-name> ILIKE '%<contains>%'
+
 ### Starts with
 
     <column-name> LIKE '<starts-with>%'
@@ -260,6 +264,14 @@ true if atleast one is true:
 ### Return first non-null value
 
     COALESE(<column-name>, <column-name>, <column-name>)
+
+### Convert column to upper case
+
+    UPPER(<column-name>)
+
+### Convert column to lower case
+
+    LOWER(<column-name>)
 
 ### Cast column value to text
 

@@ -46,6 +46,7 @@ a:hover {
 
 pre {
   font-family: 'Inconsolata', monospace;
+  overflow-x: auto;
 }
 
 li {

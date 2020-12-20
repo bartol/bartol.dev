@@ -223,6 +223,10 @@ last 2 commits are in the wrong branch:
 
 	$ git diff --staged
 
+### Show diff for words instead of lines
+
+	$ git diff --word-diff
+
 ## Log
 
 ### Show log for current branch
@@ -260,6 +264,10 @@ last 2 commits are in the wrong branch:
 ### Show who changed line in file
 
 	$ git blame -C <file>
+
+### Show files modified by each commit
+
+	$ git log --stat
 
 ### Show HEAD history in all branches
 

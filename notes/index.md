@@ -17,6 +17,9 @@
 		- [git](/notes/sysadmin/cli/git)
 		- [vim](/notes/sysadmin/cli/vim)
 		- zsh
+		- tmux
+		- grep
+		- ssh
 		- [gpg](/notes/sysadmin/cli/gpg)
 		- psql
 	- GUI

@@ -1,7 +1,5 @@
 # SQL
 
-all snippets work in PostgreSQL
-
 ## Statements
 
 ### Select column from all rows

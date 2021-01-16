@@ -1,37 +1,10 @@
 # notes
 
-- programming
-	- Go
-	- C
-	- PHP
-	- Perl
-	- Python
-	- [SQL](/notes/programming/sql)
-	- Shell
-	- Regex
-	- HTML
-	- CSS
-	- JavaScript
-- sysadmin
-	- [CLI](/notes/sysadmin/cli)
-		- [git](/notes/sysadmin/cli/git)
-		- [vim](/notes/sysadmin/cli/vim)
-		- zsh
-		- tmux
-		- grep
-		- ssh
-		- [gpg](/notes/sysadmin/cli/gpg)
-		- psql
-	- GUI
-		- Firefox
-		- VLC
-		- KeePassXC
-		- Visual Studio Code
-	- OS
-		- Debian
-		- Android
-		- Windows
-	- [hardware](/notes/sysadmin/hardware)
-	- Google
-- electronics
+- [git](/notes/git)
+- [postgresql](/notes/postgresql)
+- [gpg](/notes/gpg)
+- [linux](/notes/linux)
+- [vim](/notes/vim)
+- [hardware](/notes/hardware)
 - [links](/notes/links)
+- [random](/notes/random)

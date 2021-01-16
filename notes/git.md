@@ -499,6 +499,10 @@ add 2 second delay:
 
 	$ git config --global help.autocorrect 20
 
+### global git ignore
+
+	$ git config --global core.excludesFile '~/.gitignore'
+
 ## Plugin
 
 create executable file `git-<plugin-name>` and add it to shell path
@@ -530,3 +534,15 @@ run plugin:
 
 - <https://tkrajina.github.io/uvod-u-git/git.pdf>
 - <https://ohshitgit.com/>
+
+## number of commits between 2 commits
+
+	$ git log <start-commit-hash>..<end-commit-hash> --oneline | wc -l
+
+## changed lines between 2 commits
+
+	$ git log <start-commit-hash>..<end-commit-hash> --numstat --pretty=tformat: --numstat | nawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }'
+
+## stash only one file
+
+	$ git stash push <file>

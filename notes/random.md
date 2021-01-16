@@ -60,3 +60,7 @@ change command parameters as needed
 | Ч ч      | Č č      |
 | Џ џ      | Dž dž    |
 | Ш ш      | Š š      |
+
+## pocetak programiranja
+
+ljeto 2018

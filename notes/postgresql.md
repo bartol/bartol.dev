@@ -1,4 +1,4 @@
-# SQL
+# PostgreSQL
 
 ## Statements
 

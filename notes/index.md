@@ -4,7 +4,7 @@
 - [postgresql](/notes/postgresql)
 - [linux](/notes/linux)
 - [vim](/notes/vim)
-- [html](/notes/html)
+- [zsh](/notes/zsh)
 - [hardware](/notes/hardware)
 - [links](/notes/links)
 - [random](/notes/random)

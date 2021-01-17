@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 mkdir out
 cp -r static/* notes index.md out
@@ -7,8 +7,7 @@ for file in $(find out -name "*.md"); do
   pandoc $file -o $file_out \
     --template layout.html \
     --metadata title="$(head -1 $file | cut -c3-)"
-  echo $file_out
 done
 
-rsync -r --delete out/ srv1:/home/www-data/www.bdeak.net
+rsync -r --delete --stats out/ srv1:/home/www-data/www.bdeak.net
 rm -r out

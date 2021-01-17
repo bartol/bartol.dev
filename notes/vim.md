@@ -1,5 +1,7 @@
 # vim
 
+	$ curl -L bdeak.net/c/.vimrc
+
 ## Start vim without .vimrc
 
     $ vim -u NONE
@@ -39,9 +41,17 @@
 
 ## open vertical split
 
+	<C-w>v
+
+or
+
 	:vsp
 
 ## open horizontal split
+
+	<C-w>s
+
+or
 
 	:s
 

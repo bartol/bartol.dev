@@ -1,5 +1,8 @@
 # git
 
+	$ curl -L bdeak.net/c/.gitconfig
+	$ curl -L bdeak.net/c/.gitignore
+
 ## Branches
 
 ### List all branches

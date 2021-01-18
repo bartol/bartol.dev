@@ -117,3 +117,15 @@ sender:
 ## random number with x digits
 
 	$ tr -cd 0-9 </dev/urandom | head -c <digits>
+
+## view time info
+
+	$ timedatectl
+
+## list timezones
+
+	$ timedatectl list-timezones
+
+## change timezone
+
+	# timedatectl set-timezone <timezone-name>

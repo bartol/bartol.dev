@@ -87,7 +87,7 @@ or
 
 	:s/<old>/<new>/g
 
-## hide search highlight
+## remove search highlight
 
 	:noh
 

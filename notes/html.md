@@ -20,3 +20,6 @@
 
 	<a href="mailto:[email]?body=[body]">[text]</a>
 
+## auto refresh page
+
+	<meta http-equiv="refresh" content="[seconds]">

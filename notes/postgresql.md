@@ -561,6 +561,14 @@ null in boolean expressions:
 
     -- comment
 
+## dump database to file
+
+	$ pg_dump -Fc <database> > <file>
+
+## restore database from file
+
+	$ pg_restore -d <database> -c <file>
+
 ## Recommendations
 
 - Name primary keys `product_id` instead of just `id`

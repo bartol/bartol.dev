@@ -486,6 +486,45 @@ if automatic type casting isn't possible, you'll have to define it manually, for
     ALTER COLUMN <column-name> TYPE INTEGER
     USING <column-name>::INTEGER;
 
+## Full text search
+
+create table with text search vector column:
+
+    CREATE TABLE products (
+        product_id SERIAL PRIMARY KEY,
+        name TEXT,
+        description TEXT,
+        tsv TSVECTOR
+    );
+
+add trigger to update text search vector on every update:
+
+    CREATE EXTENSION unaccent;
+
+    CREATE FUNCTION products_trigger() RETURNS trigger AS $$
+    begin
+    new.tsv :=
+        setweight(to_tsvector(unaccent(coalesce(new.name,''))), 'A') ||
+        setweight(to_tsvector(unaccent(coalesce(new.product_id::text,''))), 'B') ||
+        setweight(to_tsvector(unaccent(coalesce(new.description,''))), 'B');
+    return new;
+    end
+    $$ LANGUAGE plpgsql;
+
+    CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
+    ON products FOR EACH ROW EXECUTE PROCEDURE products_trigger();
+
+create index for text search vector column:
+
+    CREATE INDEX tsvector_idx ON products USING GIN (tsv);
+
+search with highlight:
+
+    SELECT ts_headline(name, query) AS name, description
+    FROM products, websearch_to_tsquery(unaccent('thinkpad')) query
+    WHERE tsv @@ query
+    ORDER BY ts_rank(tsv, query) DESC;
+
 ## Null
 
 from SQL Antipatterns book:

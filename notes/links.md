@@ -1,22 +1,12 @@
 # links
 
-## Tools
+## utils
 
 - <https://temp-mail.org/>
 - <https://www.online-convert.com/>
-- <https://downforeveryoneorjustme.com/>
-- <https://downdetector.com/>
 - <https://www.justbeamit.com/>
 - <https://wetransfer.com/>
-- <https://squoosh.app/>
-- <https://speed.cloudflare.com/>
-- <https://www.speedtest.net/>
 - <https://www.virustotal.com/gui/>
-- <https://www.photopea.com/>
-- <https://www.lightningmaps.org/>
-- <https://www.vesselfinder.com/>
-- <https://www.flightradar24.com>
-- <https://sudreg.pravosudje.hr/registar/>
 
 ### programming
 
@@ -57,9 +47,24 @@
 - <https://languagetool.org/>
 - <https://translate.google.com/>
 
-### cooking
+### img
 
-- <https://whatthefuckshouldimakefordinner.com/>
+- <https://www.photopea.com/>
+- <https://squoosh.app/>
+
+### internet
+
+- <https://speed.cloudflare.com/>
+- <https://www.speedtest.net/>
+- <https://downforeveryoneorjustme.com/>
+- <https://downdetector.com/>
+
+### data
+
+- <https://www.lightningmaps.org/>
+- <https://www.vesselfinder.com/>
+- <https://www.flightradar24.com>
+- <https://sudreg.pravosudje.hr/registar/>
 
 ## APIs
 

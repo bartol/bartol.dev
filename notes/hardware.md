@@ -2,10 +2,12 @@
 
 ## servers
 
-- `srv1.bdeak.net` - aws lightsail, hosting: www.bdeak.net, git.bdeak.net
-- `srv2.bdeak.net` - raspberry pi, hosting: linx.bdeak.net
-- `srv3.bdeak.net` - racknerd, hosting: posthog.bdeak.net
-- `srv4.bdeak.net` - aws lightsail, hosting: amadeus2.hr (flask)
+hostname         | device/provider | services
+---------------- | --------------- | -------------------------------------
+`srv1.bdeak.net` | aws lightsail   | <https://www.bdeak.net>, <https://git.bdeak.net>
+`srv2.bdeak.net` | raspberry pi    | <https://linx.bdeak.net>
+`srv3.bdeak.net` | racknerd        | <https://posthog.bdeak.net>
+`srv4.bdeak.net` | aws lightsail   | <https://amadeus2.hr> (flask app), postgresql database
 
 ## Laptop boot menu keys
 

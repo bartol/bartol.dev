@@ -26,6 +26,12 @@ change command parameters as needed
 
     $ deemix -b 320 -p ~/stuff/music <url>
 
+## Windows and Office activation
+
+<https://github.com/massgravel/Microsoft-Activation-Scripts/releases>
+
+[archived](https://web.archive.org/web/20201204023249/https://github.com/massgravel/Microsoft-Activation-Scripts/releases)
+
 ## Azbuka
 
 | Ćirilica | Latinica |

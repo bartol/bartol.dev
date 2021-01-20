@@ -53,7 +53,7 @@ or
 
 or
 
-	:s
+	:sp
 
 ## make splits equal size
 
@@ -102,3 +102,7 @@ or
 ## concat next line with current
 
 	J
+
+## Open ripgrep results
+
+	$ rg -l <search> | xargs -o vim

@@ -9,3 +9,7 @@ all examples posix compatible
 		trap - SIGINT SIGTERM ERR EXIT
 		# ...
 	}
+
+## replace extension in file name
+
+	new_filename=${<old-filename>%.<old-extension>}.<new-extension>

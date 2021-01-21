@@ -10,6 +10,16 @@ sender:
 
     $ xclip -selection clipboard -o | nc <receiver-hostname> 1234
 
+## ssh
+
+### kill session
+
+<kbd>~</kbd> + <kbd>.</kbd> + <kbd>Enter</kbd>
+
+### ssh fix permissions are too open error
+
+	$ chmod 600 <key-file>
+
 ## gpg
 
 ### Generate new key
@@ -129,3 +139,25 @@ sender:
 ## change timezone
 
 	# timedatectl set-timezone <timezone-name>
+
+## aws s3
+
+### list objects in bucket
+
+	$ aws s3 ls <bucket>
+
+### upload file
+
+	$ aws s3 cp <file> s3://<bucket>/<file>
+
+### download file
+
+	$ aws s3 cp s3://<bucket>/<file> <file>
+
+### upload from stdin
+
+	$ <command> | aws s3 cp - s3://<bucket>/<file>
+
+### download to stdout
+
+	$ aws s3 cp s3://<bucket>/<file> -

@@ -140,7 +140,7 @@ sender:
 
 	# timedatectl set-timezone <timezone-name>
 
-## aws s3
+## aws s3 cli
 
 ### list objects in bucket
 

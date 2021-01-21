@@ -1,3 +1,5 @@
+move to linux.md
+
 # Run commands non-interactively
 
 	#!/usr/bin/env bash

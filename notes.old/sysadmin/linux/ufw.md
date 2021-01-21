@@ -1,3 +1,5 @@
+
+move to linux.md
 # Disable ufw firewall
 
 	$ sudo ufw disable

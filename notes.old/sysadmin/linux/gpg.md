@@ -1,3 +1,6 @@
+move to linux.md
+
+
 # GPG decrypt file
 
 	$ gpg file.asc

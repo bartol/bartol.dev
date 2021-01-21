@@ -1,3 +1,5 @@
+move to linux.md
+
 # Get devices connected to LAN with nmap
 
 [Get LAN IP](/linux/get-lan-ip-address)

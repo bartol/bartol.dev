@@ -72,3 +72,5 @@
 - <https://www.openstreetmap.org/>
 - <https://www.google.com/maps/>
 - <https://sudreg-podaci.pravosudje.hr/>
+- <https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml>
+- <https://icanhazip.com>

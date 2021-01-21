@@ -1,10 +1,22 @@
 # random
 
-## Audio formats
+## audio formats
 
 - FLAC: (1411kbps) lossless compression, best sound quality, large file size
 - MP3: (320kbps) lossy compression, good enough sound quality, acceptable file size
 - MP3: (128kbps) lossy compression, meh sound quality, small file size
+
+## image formats
+
+- PNG: lossless compression, transparency support, use for anything digitally generated
+- JPEG: lossy compression, small file size, use for images viewed by humans
+
+## Calculate uncompressed JPG image size
+
+	(width × height × 3) / 1048576
+
+- why 3? size of RGB color (24 bits)
+- why 1048576? convert bytes to megabytes (1024 × 1024)
 
 ## Download music
 
@@ -67,6 +79,86 @@ change command parameters as needed
 | Џ џ      | Dž dž    |
 | Ш ш      | Š š      |
 
+## CARNet @skole.hr email postavke za desktop klijent
+
+- Dolazne postavke: IMAP imap.skole.hr 143 STARTTLS
+- Odlazne postavke: SMTP smtp.skole.hr 587 STARTTLS
+
+## HEP cijena struje
+
+- dnevna: 0.84 kn
+- noćna: 0.41 kn
+
 ## pocetak programiranja
 
 ljeto 2018
+
+## skracenice
+
+skracenica | znacenje
+---------- | ------------------
+i18n       | internationalization
+l10n       | localization
+a11y       | accessibility
+k8s        | kubernetes
+GNU        | GNU's Not Unix
+PHP        | PHP: Hypertext Preprocessor
+cURL       | Curl URL Request Library
+PIP        | PIP Installs Packages
+bcc        | blind carbon copy
+cc         | carbon copy
+API        | application programming interface
+ARP        | address resolution protocol
+DHCP       | dynamic host configuration protocol
+DNS        | domain name system
+LLC        | limited liability company
+
+## what is
+
+what        | is
+----------- | --------
+MAC address |  unique identifier assigned to a network interface controller
+API         | program to program interface
+process     | running program
+Surface web | web visible to search crawlers (news sites, web shops, social networs, wikipedia, ...)
+Deep web    | web not visible to search crawlers (password protected content, page which isn't linked from anywhere, ...)
+Dark web    | web accessible only using special protocols/tools/configuration (tor, ...)
+ARP         | maps IP addresses to MAC addresses (helps resolve an address of a specific computer in the ethernet network)
+DHCP        | used to dynamically assign IP addresses to devices on an network
+DNS         | maps domains to IP addresses
+
+## browser bookmarks
+
+### Show website layout
+
+	javascript: (function() {
+		const element = document.querySelector('#test-layout-styles');
+		if (element) {
+			document.head.removeChild(element);
+		} else {
+			const style = document.createElement('style');
+			style.id = 'test-layout-styles';
+			style.innerHTML = `
+				* { background-color: rgba(255,0,0,.2); }
+				* * { background-color: rgba(255,0,255,.2); }
+				* * * { background-color: rgba(0,255,255,.2); }
+				* * * * { background-color: rgba(255,255,0,.2); }
+				* * * * * { background-color: rgba(0,255,0,.2); }
+				* * * * * * { background-color: rgba(0,0,255,.2); }
+				* * * * * * * { background-color: rgba(255,0,0,.2); }
+				* * * * * * * * { background-color: rgba(255,255,0,.2); }
+				* * * * * * * * * { background-color: rgba(0,255,255,.2); }
+			`;
+			document.head.appendChild(style);
+		}
+	})();
+
+[source](https://gist.github.com/vcastroi/e0d296171842e74ad7d4eef7daf15df6#gistcomment-3017296)
+
+### View web page in Wayback Machine shortcut
+
+	javascript: window.location = "https://web.archive.org/web/*/" + window.location
+
+### Post to HN shortcut
+
+	javascript: window.location = "https://news.ycombinator.com/submitlink?u=" + encodeURIComponent(document.location) + "&t=" + encodeURIComponent(document.title)

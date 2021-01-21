@@ -25,3 +25,13 @@ Samsung      | Esc, F12, F2
 Sony         | F11, Esc, F10
 Toshiba      | F12
 others...    | F12, Esc
+
+## ruteri
+
+device name     | settings               | username | password
+--------------- | ---------------------- | -------- | -------------------
+Huawei B310     | <http://192.168.8.1>   | `admin`  | `admin`
+Huawei B315s    | <http://192.168.8.1>   | `admin`  | `admin`
+Huawei HG658 V2 | <http://192.168.2.1>   | `user`   | last 8 digits of S/N
+Huawei HG8245Q2 | <http://192.168.100.1> | `root`   | `adminHW`
+

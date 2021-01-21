@@ -54,7 +54,7 @@ if there are conflicts run:
 
 ### Rebase current branch
 
-![git branch graph](/files/sysadmin/cli/git/git-rebase-graph.png)
+![git branch graph](/files/git/git-rebase-graph.png)
 
 	$ git rebase master
 
@@ -116,7 +116,7 @@ or stop rebase and restore original branch:
 - `<commit>~1` is reference to commit before commit
 - `<commit>^1` is reference to first parent commit
 
-![git parent reference graph](/files/sysadmin/cli/git/git-parent-reference-graph.png)
+![git parent reference graph](/files/git/git-parent-reference-graph.png)
 
 - `@{"1 day ago"}` is reference to commit from 1 day ago
 - `@{2020-11-25}` is reference to commit from 25/11/2020

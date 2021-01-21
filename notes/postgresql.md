@@ -44,12 +44,26 @@
            (<column-value>, <column-value>, <column-value>),
            (<column-value>, <column-value>, <column-value>);
 
+### Insert row and return columns
+
+    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
+    VALUES (<column-value>, <column-value>, <column-value>)
+    RETURNING <column-name>, <column-name>;
+
 ### Update rows
 
     UPDATE <table-name>
     SET <column-name> = <column-value>,
         <column-name> = <column-value>
     WHERE <condition>;
+
+### Update rows and return columns
+
+    UPDATE <table-name>
+    SET <column-name> = <column-value>,
+        <column-name> = <column-value>
+    WHERE <condition>
+    RETURNING <column-name>, <column-name>;
 
 ### Update all rows
 
@@ -486,6 +500,34 @@ if automatic type casting isn't possible, you'll have to define it manually, for
     ALTER COLUMN <column-name> TYPE INTEGER
     USING <column-name>::INTEGER;
 
+## databases
+
+### create database
+
+	CREATE DATABASE <database-name> OWNER <user-name>;
+
+### drop database
+
+	DROP DATABASE <database-name>;
+
+## users
+
+### create user
+
+	CREATE USER <user-name> WITH PASSWORD '<user-password>';
+
+### drop user
+
+	DROP USER <user-name>;
+
+### add superuser role to user
+
+	ALTER USER <user-name> WITH SUPERUSER;
+
+### remove superuser role from user
+
+	ALTER USER <user-name> WITH NOSUPERUSER;
+
 ## Full text search
 
 create table with text search vector column:
@@ -568,6 +610,24 @@ null in boolean expressions:
 ## restore database from file
 
 	$ pg_restore -d <database> -c <file>
+
+## migrations
+
+create file with:
+
+	BEGIN
+
+	-- migration queries
+
+	ROLLBACK
+
+tweak and [run](#run-sql-from-file) it until done, then replace `ROLLBACK` with `COMMIT`
+
+## psql
+
+### run sql from file
+
+	\i <file>
 
 ## Recommendations
 

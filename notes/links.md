@@ -30,10 +30,8 @@
 ### design
 
 - <https://abc.useallfive.com/>
-- <https://jakearchibald.github.io/svgomg/>
 - <https://fonts.google.com/>
 - <https://icons8.com/line-awesome>
-- <https://unsplash.com/>
 - <https://www.heropatterns.com/>
 - <https://csslayout.io/patterns/>
 - <https://caniuse.com/>
@@ -51,6 +49,8 @@
 
 - <https://www.photopea.com/>
 - <https://squoosh.app/>
+- <https://jakearchibald.github.io/svgomg/>
+- <https://unsplash.com/>
 
 ### internet
 

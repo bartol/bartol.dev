@@ -33,3 +33,38 @@ usage:
 	calculate(.operator=sub, .y=7); // -7
 
 [source](https://news.ycombinator.com/item?id=25178132)
+
+## infinite loop
+
+	for(;;)
+	{
+
+	}
+
+or
+
+	while(1)
+	{
+
+	}
+
+## colors in printf output
+
+color   | escape code
+------- | ------------
+red     | `\x1b[31m`
+green   | `\x1b[32m`
+yellow  | `\x1b[33m`
+blue    | `\x1b[34m`
+magenta | `\x1b[35m`
+cyan    | `\x1b[36m`
+reset   | `\x1b[0m`
+
+example:
+
+	#include <stdio.h>
+
+	int main () {
+		printf("\x1b[36mhey\033[0m!");
+		return 0;
+	}

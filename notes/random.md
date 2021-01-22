@@ -120,6 +120,47 @@ d.d.       | dioničko društvo
 d.o.o.     | društvo s ograničenom odgovornošću
 j.d.o.o.   | jednostavno društvo s ograničenom odgovornošću
 
+## Hack Chrome Dino
+
+Open Console with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>k</kbd> and paste following command:
+
+	Runner.prototype.gameOver = function() {}
+
+This command deletes function that would end game when you hit object.
+
+## Terminal colors
+
+<https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html>
+
+# Namecheap dynamic dns
+
+enable ddns:
+
+`Domain -> Advanced DNS -> Dynamic DNS` switch to ON
+
+add new record:
+
+- set type to `A+ Dynamic DNS Record`
+- set value to `192.168.1.1`
+
+install ddns client:
+
+	# apt install ddclient
+
+add record to `/etc/ddclient.conf`:
+
+	use=web, web=icanhazip.com
+	protocol=namecheap
+	server=dynamicdns.park-your-domain.com
+	login=<domain>
+	password='<ddns-password>'
+	<subdomain>
+
+force record update:
+
+	# rm /var/cache/ddclient/ddclient.cache
+	# ddclient
+
 ## browser bookmarks
 
 ### Show website layout
@@ -155,3 +196,9 @@ j.d.o.o.   | jednostavno društvo s ograničenom odgovornošću
 ### Post to HN shortcut
 
 	javascript: window.location = "https://news.ycombinator.com/submitlink?u=" + encodeURIComponent(document.location) + "&t=" + encodeURIComponent(document.title)
+
+## browser extensions
+
+- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+- [KeePassXC-Browser](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/)
+- [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)

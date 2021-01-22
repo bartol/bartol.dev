@@ -42,6 +42,24 @@ sender:
 
     $ gpg --import <private-key-file>
 
+## ffmpeg
+
+### compress .mp4
+
+	$ ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
+
+[source](https://unix.stackexchange.com/a/38380)
+
+### convert .mkv to .mp4
+
+	$ ffmpeg -i input.mkv -codec copy output.mp4
+
+### split video in chunks with FFmpeg
+
+	$ ffmpeg -i input.mp4 -c copy -map 0 -segment_time 00:10:00 -f segment -reset_timestamps 1 output_%03d.mp4
+
+adjust `-segment_time`
+
 ## systemd
 
 ### systemd service status
@@ -161,3 +179,9 @@ sender:
 ### download to stdout
 
 	$ aws s3 cp s3://<bucket>/<file> -
+
+## youtube-dl
+
+### download .mp3
+
+	$ youtube-dl --extract-audio --audio-format mp3 <url>

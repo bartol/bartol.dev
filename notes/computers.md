@@ -1,4 +1,4 @@
-# hardware
+# computers
 
 ## servers
 

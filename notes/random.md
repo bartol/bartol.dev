@@ -44,6 +44,10 @@ change command parameters as needed
 
 [archived](https://web.archive.org/web/20201204023249/https://github.com/massgravel/Microsoft-Activation-Scripts/releases)
 
+## Sign in to all Slack workspaces
+
+<https://slack.com/get-started#find>
+
 ## Azbuka
 
 | Ćirilica | Latinica |
@@ -112,20 +116,9 @@ ARP        | address resolution protocol
 DHCP       | dynamic host configuration protocol
 DNS        | domain name system
 LLC        | limited liability company
-
-## what is
-
-what        | is
------------ | --------
-MAC address |  unique identifier assigned to a network interface controller
-API         | program to program interface
-process     | running program
-Surface web | web visible to search crawlers (news sites, web shops, social networs, wikipedia, ...)
-Deep web    | web not visible to search crawlers (password protected content, page which isn't linked from anywhere, ...)
-Dark web    | web accessible only using special protocols/tools/configuration (tor, ...)
-ARP         | maps IP addresses to MAC addresses (helps resolve an address of a specific computer in the ethernet network)
-DHCP        | used to dynamically assign IP addresses to devices on an network
-DNS         | maps domains to IP addresses
+d.d.       | dioničko društvo
+d.o.o.     | društvo s ograničenom odgovornošću
+j.d.o.o.   | jednostavno društvo s ograničenom odgovornošću
 
 ## browser bookmarks
 

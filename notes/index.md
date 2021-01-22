@@ -14,6 +14,7 @@
 - [html](/notes/html)
 - [css](/notes/css)
 - [javascript](/notes/javascript)
-- [hardware](/notes/hardware)
+- [networks](/notes/networks)
+- [computers](/notes/computers)
 - [links](/notes/links)
 - [random](/notes/random)

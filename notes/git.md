@@ -549,3 +549,25 @@ run plugin:
 ## stash only one file
 
 	$ git stash push <file>
+
+## merge repositories
+
+merge `<project-a>` in `<project-b>`
+
+(optional) put merged repository in subfolder
+
+	$ git clone <url>
+	$ cd <project-a>
+	$ git filter-repo --to-subdirectory-filter <project-a>
+
+merge
+
+	$ cd path/to/<project-b>
+	$ git remote add <project-a> /path/to/<project-a>
+	$ git fetch <project-a> --tags
+	$ git merge --allow-unrelated-histories <project-a>/<branch>
+	$ git remote remove <project-a>
+
+## last commit diff
+
+	$ git diff HEAD~1

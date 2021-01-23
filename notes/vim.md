@@ -75,6 +75,10 @@ or
 
 	:r !<command>
 
+## reload current buffer
+
+	:r
+
 ## run shell command from vim
 
 	:!<command>
@@ -103,6 +107,10 @@ or
 
 	J
 
-## Open ripgrep results
+## open ripgrep results
 
 	$ rg -l <search> | xargs -o vim
+
+## swap splits
+
+	<C-w><C-r>

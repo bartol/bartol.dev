@@ -4,12 +4,12 @@
 
 ## Start vim without .vimrc
 
-    $ vim -u NONE
+	$ vim -u NONE
 
 ## vimdiff save merge and exit
 
-    :w
-    :qa
+	:w
+	:qa
 
 ## open terminal in vertical split
 

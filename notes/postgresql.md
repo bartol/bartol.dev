@@ -4,122 +4,122 @@
 
 ### Select column from all rows
 
-    SELECT <column-name> FROM <table-name>;
+	SELECT <column-name> FROM <table-name>;
 
 ### Select all columns from all rows
 
-    SELECT * FROM <table-name>;
+	SELECT * FROM <table-name>;
 
 ### Select rows conditionaly
 
-    SELECT * FROM <table-name>
-    WHERE <condition>;
+	SELECT * FROM <table-name>
+	WHERE <condition>;
 
 ### Select all columns from table alias
 
-    SELECT <table-alias>.*
-    FROM <table-name> AS <table-alias>;
+	SELECT <table-alias>.*
+	FROM <table-name> AS <table-alias>;
 
 ### Concatenate multiple queries
 
-    (SELECT * FROM <table-name>)
-    UNION ALL
-    (SELECT * FROM <table-name>)
+	(SELECT * FROM <table-name>)
+	UNION ALL
+	(SELECT * FROM <table-name>)
 
 ### Concatenate multiple queries and return only distinct rows
 
-    (SELECT * FROM <table-name>)
-    UNION
-    (SELECT * FROM <table-name>)
+	(SELECT * FROM <table-name>)
+	UNION
+	(SELECT * FROM <table-name>)
 
 ### Insert row
 
-    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
-    VALUES (<column-value>, <column-value>, <column-value>);
+	INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
+	VALUES (<column-value>, <column-value>, <column-value>);
 
 ### Insert multiple rows
 
-    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
-    VALUES (<column-value>, <column-value>, <column-value>),
-           (<column-value>, <column-value>, <column-value>),
-           (<column-value>, <column-value>, <column-value>);
+	INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
+	VALUES (<column-value>, <column-value>, <column-value>),
+		   (<column-value>, <column-value>, <column-value>),
+		   (<column-value>, <column-value>, <column-value>);
 
 ### Insert row and return columns
 
-    INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
-    VALUES (<column-value>, <column-value>, <column-value>)
-    RETURNING <column-name>, <column-name>;
+	INSERT INTO <table-name> (<column-name>, <column-name>, <column-name>)
+	VALUES (<column-value>, <column-value>, <column-value>)
+	RETURNING <column-name>, <column-name>;
 
 ### Update rows
 
-    UPDATE <table-name>
-    SET <column-name> = <column-value>,
-        <column-name> = <column-value>
-    WHERE <condition>;
+	UPDATE <table-name>
+	SET <column-name> = <column-value>,
+		<column-name> = <column-value>
+	WHERE <condition>;
 
 ### Update rows and return columns
 
-    UPDATE <table-name>
-    SET <column-name> = <column-value>,
-        <column-name> = <column-value>
-    WHERE <condition>
-    RETURNING <column-name>, <column-name>;
+	UPDATE <table-name>
+	SET <column-name> = <column-value>,
+		<column-name> = <column-value>
+	WHERE <condition>
+	RETURNING <column-name>, <column-name>;
 
 ### Update all rows
 
-    UPDATE <table-name>
-    SET <column-name> = <column-value>,
-        <column-name> = <column-value>;
+	UPDATE <table-name>
+	SET <column-name> = <column-value>,
+		<column-name> = <column-value>;
 
 ### Delete rows
 
-    DELETE FROM <table-name> WHERE <condition>;
+	DELETE FROM <table-name> WHERE <condition>;
 
 ### Delete all rows
 
-    DELETE FROM <table-name>;
+	DELETE FROM <table-name>;
 
 ### Sort in ascending order
 
-    SELECT * FROM <table-name> ORDER BY <column-name> ASC;
+	SELECT * FROM <table-name> ORDER BY <column-name> ASC;
 
 ### Sort in descending order
 
-    SELECT * FROM <table-name> ORDER BY <column-name> DESC;
+	SELECT * FROM <table-name> ORDER BY <column-name> DESC;
 
 ### Return only distinct rows
 
-    SELECT DISTINCT ON (<distinct-column-name>) * FROM <table-name>;
+	SELECT DISTINCT ON (<distinct-column-name>) * FROM <table-name>;
 
 ### Limit returned rows
 
-    SELECT * FROM <table-name> LIMIT <limit>;
+	SELECT * FROM <table-name> LIMIT <limit>;
 
 ### Offset returned rows
 
-    SELECT * FROM <table-name> OFFSET <offset>;
+	SELECT * FROM <table-name> OFFSET <offset>;
 
 ### View query performance
 
-    EXPLAIN ANALYZE <query>;
+	EXPLAIN ANALYZE <query>;
 
 ### Return all columns as comma separated list
 
-    SELECT STRING_AGG(column_name, ',') AS columns
-    FROM information_schema.columns
-    WHERE table_name = <table-name>
+	SELECT STRING_AGG(column_name, ',') AS columns
+	FROM information_schema.columns
+	WHERE table_name = <table-name>
 
 ## Aliases
 
 ### Table alias
 
-    SELECT <column-name> FROM <table-name> AS <table-alias>;
+	SELECT <column-name> FROM <table-name> AS <table-alias>;
 
 table alias can be now be used for joins, ...
 
 ### Column alias
 
-    SELECT <column-name> AS <column-alias> FROM <table-name>;
+	SELECT <column-name> AS <column-alias> FROM <table-name>;
 
 output will now show column alias instead of column name
 
@@ -127,213 +127,213 @@ output will now show column alias instead of column name
 
 ### Equal
 
-    <column-name> = <column-value>
+	<column-name> = <column-value>
 
 ### Not equal
 
-    <column-name> <> <column-value>
+	<column-name> <> <column-value>
 
 ### Greater than
 
-    <column-name> > <column-value>
+	<column-name> > <column-value>
 
 ### Less than
 
-    <column-name> < <column-value>
+	<column-name> < <column-value>
 
 ### Greater than or equal
 
-    <column-name> >= <column-value>
+	<column-name> >= <column-value>
 
 ### Less than or equal
 
-    <column-name> <= <column-value>
+	<column-name> <= <column-value>
 
 ### Between range
 
-    <column-name> BETWEEN <low> AND <high>
+	<column-name> BETWEEN <low> AND <high>
 
 ### Not between range
 
-    <column-name> NOT BETWEEN <low> AND <high>
+	<column-name> NOT BETWEEN <low> AND <high>
 
 ### Multiple possible values
 
-    <column-name> IN (<column-value>, <column-value>)
+	<column-name> IN (<column-value>, <column-value>)
 
 ### Multiple excluded values
 
-    <column-name> NOT IN (<column-value>, <column-value>)
+	<column-name> NOT IN (<column-value>, <column-value>)
 
 ### Null
 
-    <column-name> IS NULL
+	<column-name> IS NULL
 
 ### Not null
 
-    <column-name> IS NOT NULL
+	<column-name> IS NOT NULL
 
 ### Contains
 
-    <column-name> LIKE '%<contains>%'
+	<column-name> LIKE '%<contains>%'
 
 ### Case-insensitive contains
 
-    <column-name> ILIKE '%<contains>%'
+	<column-name> ILIKE '%<contains>%'
 
 ### Starts with
 
-    <column-name> LIKE '<starts-with>%'
+	<column-name> LIKE '<starts-with>%'
 
 ### Ends with
 
-    <column-name> LIKE '%<ends-with>'
+	<column-name> LIKE '%<ends-with>'
 
 ### Starts and ends with
 
-    <column-name> LIKE '<starts-with>%<ends-with>'
+	<column-name> LIKE '<starts-with>%<ends-with>'
 
 ### Chain multiple conditions
 
 true if all are true:
 
-    <condition> AND <condition>
+	<condition> AND <condition>
 
 true if atleast one is true:
 
-    <condition> OR <condition>
+	<condition> OR <condition>
 
 ### Negate condition
 
-    NOT <condition>
+	NOT <condition>
 
 ## Functions
 
 ### Test function without query
 
-    SELECT <function>;
+	SELECT <function>;
 
 ### Get current date
 
-    NOW()::DATE
+	NOW()::DATE
 
 ### Get current time
 
-    NOW()::TIME
+	NOW()::TIME
 
 ### Get current date and time
 
-    NOW()::TIMESTAMP
+	NOW()::TIMESTAMP
 
 ### Get date and time 1 hour from now
 
-    NOW()::TIMESTAMP + INTERVAL '1 hour'
+	NOW()::TIMESTAMP + INTERVAL '1 hour'
 
 ### Get date and time 1 day from now
 
-    NOW()::TIMESTAMP + INTERVAL '1 day'
+	NOW()::TIMESTAMP + INTERVAL '1 day'
 
 ### Get date and time 1 minute from now
 
-    NOW()::TIMESTAMP + INTERVAL '1 minute'
+	NOW()::TIMESTAMP + INTERVAL '1 minute'
 
 ### Get date and time 1 hour ago
 
-    NOW()::TIMESTAMP - INTERVAL '1 hour'
+	NOW()::TIMESTAMP - INTERVAL '1 hour'
 
 ### Get date and time 1 day ago
 
-    NOW()::TIMESTAMP - INTERVAL '1 day'
+	NOW()::TIMESTAMP - INTERVAL '1 day'
 
 ### Get date and time 1 minute ago
 
-    NOW()::TIMESTAMP - INTERVAL '1 minute'
+	NOW()::TIMESTAMP - INTERVAL '1 minute'
 
 ### Chain intervals
 
-    NOW()::TIMESTAMP + INTERVAL '1 day' - INTERVAL '1 hour' + INTERVAL '1 minute'
+	NOW()::TIMESTAMP + INTERVAL '1 day' - INTERVAL '1 hour' + INTERVAL '1 minute'
 
 ### Extract year from date column
 
-    EXTRACT(YEAR FROM <date-column-name>)
+	EXTRACT(YEAR FROM <date-column-name>)
 
 ### Extract month from date column
 
-    EXTRACT(MONTH FROM <date-column-name>)
+	EXTRACT(MONTH FROM <date-column-name>)
 
 ### Extract day from date column
 
-    EXTRACT(DAY FROM <date-column-name>)
+	EXTRACT(DAY FROM <date-column-name>)
 
 ### Extract century from date column
 
-    EXTRACT(CENTURY FROM <date-column-name>)
+	EXTRACT(CENTURY FROM <date-column-name>)
 
 ### Extract decade from date column
 
-    EXTRACT(DECADE FROM <date-column-name>)
+	EXTRACT(DECADE FROM <date-column-name>)
 
 ### Return first non-null value
 
-    COALESE(<column-name>, <column-name>, <column-name>)
+	COALESE(<column-name>, <column-name>, <column-name>)
 
 ### Convert column to upper case
 
-    UPPER(<column-name>)
+	UPPER(<column-name>)
 
 ### Convert column to lower case
 
-    LOWER(<column-name>)
+	LOWER(<column-name>)
 
 ### Cast column value to text
 
-    <column-name>::TEXT
+	<column-name>::TEXT
 
 ## Aggregate functions
 
 ### Count rows
 
-    COUNT(*)
+	COUNT(*)
 
 ### Return largest column value
 
-    MAX(<column-name>)
+	MAX(<column-name>)
 
 ### Return smallest column value
 
-    MIN(<column-name>)
+	MIN(<column-name>)
 
 ### Return average of column values
 
-    AVG(<column-name>)
+	AVG(<column-name>)
 
 ### Return sum of column values
 
-    SUM(<column-name>)
+	SUM(<column-name>)
 
 ### Return column values as joined string
 
-    STRING_AGG(<column-name>, <separator>)
+	STRING_AGG(<column-name>, <separator>)
 
 ## Tables
 
 ### Create table
 
-    CREATE TABLE <table-name> (
-        <column-name> <COLUMN-TYPE>,
-        <column-name> <COLUMN-TYPE>
-    );
+	CREATE TABLE <table-name> (
+		<column-name> <COLUMN-TYPE>,
+		<column-name> <COLUMN-TYPE>
+	);
 
 ### Create table if it doesn't exist
 
-    CREATE TABLE IF NOT EXISTS <table-name> (
-        <column-name> <COLUMN-TYPE>,
-        <column-name> <COLUMN-TYPE>
-    );
+	CREATE TABLE IF NOT EXISTS <table-name> (
+		<column-name> <COLUMN-TYPE>,
+		<column-name> <COLUMN-TYPE>
+	);
 
 ### Delete table
 
-    DROP TABLE <table-name>;
+	DROP TABLE <table-name>;
 
 ## Table joins
 
@@ -364,42 +364,42 @@ Select all records from Table A and Table B, regardless of whether the join cond
 
 ### Shorter syntax if join columns have same name
 
-    SELECT *
-    FROM <table-name>
-    <JOIN-TYPE> JOIN <foreign-table-name> USING (<column-name>);
+	SELECT *
+	FROM <table-name>
+	<JOIN-TYPE> JOIN <foreign-table-name> USING (<column-name>);
 
 ### one to many join
 
 each resource can have one category, multiple resources can have save category
 
-    SELECT *
-    FROM <table-name> AS <table-alias>
-    INNER JOIN <foreign-table-name> AS <foreign-table-alias>
-    ON <table-alias>.<column-name> = <foreign-table-alias>.<foreign-column-name>;
+	SELECT *
+	FROM <table-name> AS <table-alias>
+	INNER JOIN <foreign-table-name> AS <foreign-table-alias>
+	ON <table-alias>.<column-name> = <foreign-table-alias>.<foreign-column-name>;
 
 ## Column types
 
 ### Integer
 
-    <column-name> INTEGER
+	<column-name> INTEGER
 
 ### Auto-incrementing integer
 
-    <column-name> SERIAL
+	<column-name> SERIAL
 
 ### Text
 
-    <column-name> TEXT
+	<column-name> TEXT
 
 ### Money
 
-    <column-name> MONEY
+	<column-name> MONEY
 
 possible value: `8.99`
 
 ### Decimal number
 
-    <column-name> NUMERIC(<precision>, <scale>)
+	<column-name> NUMERIC(<precision>, <scale>)
 
 example parameters:
 
@@ -410,25 +410,25 @@ these can store decimal up to 9999999.99
 
 ### Date
 
-    <column-name> DATE
+	<column-name> DATE
 
 possible value: `2020-11-30`
 
 ### Time
 
-    <column-name> TIME
+	<column-name> TIME
 
 possible value: `11:24:02`
 
 ### Date and time
 
-    <column-name> TIMESTAMP
+	<column-name> TIMESTAMP
 
 possible value: `2020-11-30 11:24:02`
 
 ### Boolean
 
-    <column-name> BOOLEAN
+	<column-name> BOOLEAN
 
 possible values: `'t'`, `'n'`
 
@@ -436,47 +436,47 @@ possible values: `'t'`, `'n'`
 
 ### Primary key
 
-    <table-name>_id SERIAL PRIMARY KEY
+	<table-name>_id SERIAL PRIMARY KEY
 
 ### Composite primary keys
 
-    <column-name> <COLUMN-TYPE>,
-    <column-name> <COLUMN-TYPE>,
-    PRIMARY KEY (<column-name>, <column-name>)
+	<column-name> <COLUMN-TYPE>,
+	<column-name> <COLUMN-TYPE>,
+	PRIMARY KEY (<column-name>, <column-name>)
 
 now columns must be unique pair
 
 ### Not null
 
-    <column-name> <COLUMN-TYPE> NOT NULL
+	<column-name> <COLUMN-TYPE> NOT NULL
 
 ### Foreign key
 
-    <column-name> INTEGER,
-    FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>(<foreign-column-name>)
+	<column-name> INTEGER,
+	FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>(<foreign-column-name>)
 
 ### Foreign key shorter syntax if columns have same name
 
-    <column-name> INTEGER,
-    FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>
+	<column-name> INTEGER,
+	FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name>
 
 ### Delete row if foreign row is deleted
 
-    <column-name> INTEGER,
-    FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name> ON DELETE CASCADE
+	<column-name> INTEGER,
+	FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name> ON DELETE CASCADE
 
 ### Update row if foreign row id is updated
 
-    <column-name> INTEGER,
-    FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name> ON UPDATE CASCADE
+	<column-name> INTEGER,
+	FOREIGN KEY (<column-name>) REFERENCES <foreign-table-name> ON UPDATE CASCADE
 
 ### Default value
 
-    <column-name> <COLUMN-TYPE> DEFAULT <column-value>
+	<column-name> <COLUMN-TYPE> DEFAULT <column-value>
 
 ### Unique
 
-    <column-name> <COLUMN-TYPE> UNIQUE
+	<column-name> <COLUMN-TYPE> UNIQUE
 
 ## Table relationships
 
@@ -496,44 +496,44 @@ intersection table is needed
 
 for example each account can have multiple products and each product can have multiple owners
 
-    CREATE TABLE accounts_products (
-        account_id INTEGER,
-        product_id INTEGER,
-        FOREIGN KEY (account_id) REFERENCES accounts(account_id),
-        FOREIGN KEY (product_id) REFERENCES products(product_id)
-    );
+	CREATE TABLE accounts_products (
+		account_id INTEGER,
+		product_id INTEGER,
+		FOREIGN KEY (account_id) REFERENCES accounts(account_id),
+		FOREIGN KEY (product_id) REFERENCES products(product_id)
+	);
 
 ### Enum column (emulated)
 
 for example resource status
 
-    CREATE TABLE <table-name>_status (
-        status TEXT PRIMARY KEY
-    );
+	CREATE TABLE <table-name>_status (
+		status TEXT PRIMARY KEY
+	);
 
-    CREATE TABLE <table-name> (
-        -- ...
-        status TEXT,
-        FOREIGN KEY (status) REFERENCES <table-name>_status(status)
-    );
+	CREATE TABLE <table-name> (
+		-- ...
+		status TEXT,
+		FOREIGN KEY (status) REFERENCES <table-name>_status(status)
+	);
 
 ## Alter table
 
 ### Add column
 
-    ALTER TABLE <table-name>
-    ADD COLUMN <column-name> <COLUMN-TYPE>;
+	ALTER TABLE <table-name>
+	ADD COLUMN <column-name> <COLUMN-TYPE>;
 
 ### Change column type
 
-    ALTER TABLE <table-name>
-    ALTER COLUMN <column-name> TYPE <COLUMN-TYPE>;
+	ALTER TABLE <table-name>
+	ALTER COLUMN <column-name> TYPE <COLUMN-TYPE>;
 
 if automatic type casting isn't possible, you'll have to define it manually, for example:
 
-    ALTER TABLE <table-name>
-    ALTER COLUMN <column-name> TYPE INTEGER
-    USING <column-name>::INTEGER;
+	ALTER TABLE <table-name>
+	ALTER COLUMN <column-name> TYPE INTEGER
+	USING <column-name>::INTEGER;
 
 ## databases
 
@@ -567,40 +567,40 @@ if automatic type casting isn't possible, you'll have to define it manually, for
 
 create table with text search vector column:
 
-    CREATE TABLE products (
-        product_id SERIAL PRIMARY KEY,
-        name TEXT,
-        description TEXT,
-        tsv TSVECTOR
-    );
+	CREATE TABLE products (
+		product_id SERIAL PRIMARY KEY,
+		name TEXT,
+		description TEXT,
+		tsv TSVECTOR
+	);
 
 add trigger to update text search vector on every update:
 
-    CREATE EXTENSION unaccent;
+	CREATE EXTENSION unaccent;
 
-    CREATE FUNCTION products_trigger() RETURNS trigger AS $$
-    begin
-    new.tsv :=
-        setweight(to_tsvector(unaccent(coalesce(new.name,''))), 'A') ||
-        setweight(to_tsvector(unaccent(coalesce(new.product_id::text,''))), 'B') ||
-        setweight(to_tsvector(unaccent(coalesce(new.description,''))), 'B');
-    return new;
-    end
-    $$ LANGUAGE plpgsql;
+	CREATE FUNCTION products_trigger() RETURNS trigger AS $$
+	begin
+	new.tsv :=
+		setweight(to_tsvector(unaccent(coalesce(new.name,''))), 'A') ||
+		setweight(to_tsvector(unaccent(coalesce(new.product_id::text,''))), 'B') ||
+		setweight(to_tsvector(unaccent(coalesce(new.description,''))), 'B');
+	return new;
+	end
+	$$ LANGUAGE plpgsql;
 
-    CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
-    ON products FOR EACH ROW EXECUTE PROCEDURE products_trigger();
+	CREATE TRIGGER tsvectorupdate BEFORE INSERT OR UPDATE
+	ON products FOR EACH ROW EXECUTE PROCEDURE products_trigger();
 
 create index for text search vector column:
 
-    CREATE INDEX tsvector_idx ON products USING GIN (tsv);
+	CREATE INDEX tsvector_idx ON products USING GIN (tsv);
 
 search with highlight:
 
-    SELECT ts_headline(name, query) AS name, description
-    FROM products, websearch_to_tsquery(unaccent('thinkpad')) query
-    WHERE tsv @@ query
-    ORDER BY ts_rank(tsv, query) DESC;
+	SELECT ts_headline(name, query) AS name, description
+	FROM products, websearch_to_tsquery(unaccent('thinkpad')) query
+	WHERE tsv @@ query
+	ORDER BY ts_rank(tsv, query) DESC;
 
 ## Null
 
@@ -636,7 +636,7 @@ null in boolean expressions:
 
 ## Comments
 
-    -- comment
+	-- comment
 
 ## dump database to file
 

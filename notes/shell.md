@@ -12,4 +12,12 @@ all examples posix compatible
 
 ## replace extension in file name
 
-	new_filename=${<old-filename>%.<old-extension>}.<new-extension>
+	${<old-filename>%.<old-extension>}.<new-extension>
+
+## strip suffix
+
+	${<string>%<suffix>}
+
+## strip prefix
+
+	${<string>#<prefix>}

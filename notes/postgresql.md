@@ -337,13 +337,38 @@ true if atleast one is true:
 
 ## Table joins
 
+### inner join
+
+![](/files/postgresql/inner-join.png)
+
+Select all records from Table A and Table B, where the join condition is met.
+
+### left join
+
+![](/files/postgresql/left-join.png)
+
+Select all records from Table A, along with records from Table B for which the join condition is met (if at all).
+
+### right join
+
+![](/files/postgresql/right-join.png)
+
+Select all records from Table B, along with records from Table A for which the join condition is met (if at all).
+
+### full join
+
+![](/files/postgresql/full-join.png)
+
+Select all records from Table A and Table B, regardless of whether the join condition is met or not.
+
+
 ### Shorter syntax if join columns have same name
 
     SELECT *
     FROM <table-name>
     <JOIN-TYPE> JOIN <foreign-table-name> USING (<column-name>);
 
-### Join one to many
+### one to many join
 
 each resource can have one category, multiple resources can have save category
 
@@ -455,7 +480,17 @@ now columns must be unique pair
 
 ## Table relationships
 
-### Many to many
+### one to many
+
+![](/files/postgresql/one-to-many.png)
+
+### one to one
+
+![](/files/postgresql/one-to-one.png)
+
+### many to many
+
+![](/files/postgresql/many-to-many.png)
 
 intersection table is needed
 

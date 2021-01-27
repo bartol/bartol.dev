@@ -1,4 +1,4 @@
-# Bartol Deak
+% Bartol Deak
 
 my website
 

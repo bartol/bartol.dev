@@ -1,4 +1,4 @@
-# latex
+% latex
 
 ## insert pdf
 

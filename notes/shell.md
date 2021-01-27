@@ -1,4 +1,4 @@
-# shell
+% shell
 
 all examples posix compatible
 

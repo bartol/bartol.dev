@@ -1,4 +1,4 @@
-# linux
+% linux
 
 ## Send clipboard to another machine in local network
 

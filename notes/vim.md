@@ -1,4 +1,4 @@
-# vim
+% vim
 
 	$ curl -L bdeak.net/c/.vimrc
 

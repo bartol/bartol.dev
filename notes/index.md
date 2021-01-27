@@ -1,4 +1,4 @@
-# notes
+% notes
 
 - [postgresql](/notes/postgresql)
 - [linux](/notes/linux)

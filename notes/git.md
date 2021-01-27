@@ -1,4 +1,4 @@
-# git
+% git
 
 	$ curl -L bdeak.net/c/.gitconfig
 	$ curl -L bdeak.net/c/.gitignore

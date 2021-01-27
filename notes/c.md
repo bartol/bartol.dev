@@ -1,4 +1,4 @@
-# c
+% c
 
 ## assert with message
 

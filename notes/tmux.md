@@ -1,1 +1,1 @@
-# tmux
+% tmux

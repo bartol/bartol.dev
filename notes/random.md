@@ -1,4 +1,4 @@
-# random
+% random
 
 ## audio formats
 

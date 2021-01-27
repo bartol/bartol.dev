@@ -185,3 +185,7 @@ adjust `-segment_time`
 ### download .mp3
 
 	$ youtube-dl --extract-audio --audio-format mp3 <url>
+
+### download .mp4
+
+	$ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <url>

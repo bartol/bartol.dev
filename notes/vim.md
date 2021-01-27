@@ -114,3 +114,14 @@ or
 ## swap splits
 
 	<C-w><C-r>
+
+## convert spaces to tabs
+
+	:set noet
+	:set ts=4
+	:%retab!
+
+## convert tabs to spaces
+
+	:set et
+	:%retab!

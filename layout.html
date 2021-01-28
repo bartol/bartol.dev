@@ -1,80 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>$pagetitle$</title>
-    <meta name="description" content="my website">
-    <meta name="author" content="Bartol Deak">
-    <meta name="image" content="/artwork/logo-landscape.png">
-    <link rel="shortcut icon" href="/favicon.png">
-    <link rel="stylesheet" type="text/css" href="/style.css">
-	    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,500" rel="stylesheet">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/" class="logo">Bartol Deak</a>
-        <ul class="right">
-          <li><a href="/notes">notes</a></li>
-          <li><a href="/projects">projects</a></li>
-        </ul>
-      </nav>
-    </header>
-<!--    <header class="navigation">
-      <a href="/">Bartol Deak</a>
-    </header> -->
-<!--      <aside id="sidebar">
-        <h2>Sitemap</h2>
-        <ul>
-          <li><a href="/notes">notes</a></li>
-        </ul>
-
-        <h2>Hosted services</h2>
-        <ul>
-          <li><a href="https://git.bdeak.net">git.bdeak.net</a></li>
-          <li><a href="https://linx.bdeak.net">linx.bdeak.net</a></li>
-          <li><a href="https://posthog.bdeak.net">posthog.bdeak.net</a></li>
-        </ul>
-
-        <h2>Software</h2>
-        <ul>
-          <li>
-            <a href="https://amadeus2.hr">amadeus2.hr</a>
-            (<a href="https://git.bdeak.net/amadeus2.hr">src</a>)
-          </li>
-        </ul>
-
-        <h2>Contact</h2>
-        <ul>
-        </ul>
-
-        <h2>Other</h2>
-      </aside> -->
-	<h1>$title$</h1>
-	  <div class="updatedon">Updated on $moddate$</div>
-      <main>
-	  $if(toc)$
-	  <div class="toc">$toc$</div>
-	  $endif$
-
-
-	  $body$</main>
-
-    <footer>
-      <nav>
-        <ul class="left">
-          <li><a href="mailto:b@bdeak.net">b@bdeak.net</a></li>
-          <li><a href="/public.pgp">pgp</a></li>
-          <li><a href="https://github.com/bartol">github</a></li>
-          <li><a href="https://git.sr.ht/~bd">sourcehut</a></li>
-        </ul>
-
-        <ul class="right">
-          <li><a href="https://uptime.bdeak.net">uptime</a></li>
-          <li><a href="https://web.archive.org/web/*/https://www.bdeak.net/*">archive</a></li>
-        </ul>
-      </nav>
-    </footer>
-  </body>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>$pagetitle$</title>
+	<link rel="shortcut icon" href="/favicon.png">
+	<meta name="author" content="Bartol Deak">
+	<meta name="image" content="/a/logo-landscape.png">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<!-- google fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto:wght@400;500&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto:wght@400;500&display=swap" media="print" onload="this.media='all'">
+</head>
+<body>
+	<header>
+		<a href="/" class="logo">Bartol Deak</a>
+		<nav>
+			<a href="/notes">notes</a>
+			<a href="/projects">projects</a>
+		</nav>
+	</header>
+	<main>
+		<h1>$title$</h1>
+		$if(moddate)$
+		<section class="moddate">Updated on $moddate$</section>
+		$endif$
+		$if(toc)$
+		<section class="toc">$toc$</section>
+		$endif$
+		$body$
+	</main>
+	<footer>
+		<nav>
+			<a href="mailto:b@bdeak.net">b@bdeak.net</a>
+			<a href="/public.pgp">pgp</a>
+			<a href="https://github.com/bartol">github</a>
+			<a href="https://git.sr.ht/~bd">sourcehut</a>
+		</nav>
+		<nav>
+			<a href="https://uptime.bdeak.net">uptime</a>
+			<a href="https://web.archive.org/web/*/https://www.bdeak.net/*">archive</a>
+		</nav>
+	</footer>
+</body>
 </html>

@@ -22,7 +22,7 @@
 
 one time setup:
 
-    $ pip install deemix
+	$ pip install deemix
 
 1. register [here](https://www.deezer.com/us/register) with [this](https://temp-mail.org/)
 2. open storage dev tools: <kbd>Shift</kbd> + <kbd>F9</kbd> (Firefox)
@@ -36,7 +36,7 @@ for every download:
 
 change command parameters as needed
 
-    $ deemix -b 320 -p ~/stuff/music <url>
+	$ deemix -b 320 -p ~/stuff/music <url>
 
 ## Windows and Office activation
 

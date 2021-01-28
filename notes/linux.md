@@ -4,11 +4,11 @@
 
 receiver:
 
-    $ nc -l 1234 | xclip -selection clipboard
+	$ nc -l 1234 | xclip -selection clipboard
 
 sender:
 
-    $ xclip -selection clipboard -o | nc <receiver-hostname> 1234
+	$ xclip -selection clipboard -o | nc <receiver-hostname> 1234
 
 ## ssh
 
@@ -24,23 +24,23 @@ sender:
 
 ### Generate new key
 
-    $ gpg --full-generate-key
+	$ gpg --full-generate-key
 
 ### List keys
 
-    $ gpg --list-secret-keys
+	$ gpg --list-secret-keys
 
 ### Export public key
 
-    $ gpg --output <file> --armor --export <email>
+	$ gpg --output <file> --armor --export <email>
 
 ### Export private key
 
-    $ gpg --output <file> --armor --export-secret-key <email>
+	$ gpg --output <file> --armor --export-secret-key <email>
 
 ### Import key
 
-    $ gpg --import <private-key-file>
+	$ gpg --import <private-key-file>
 
 ## ffmpeg
 

@@ -25,7 +25,7 @@ one time setup:
 	$ pip install deemix
 
 1. register [here](https://www.deezer.com/us/register) with [this](https://temp-mail.org/)
-2. open storage dev tools: <kbd>Shift</kbd> + <kbd>F9</kbd> (Firefox)
+2. open storage dev tools: `Shift + F9` (Firefox)
 3. click on `Cookies` and then `Cookies` in sidebar
 4. find `arl` in list and copy its value
 
@@ -122,7 +122,7 @@ j.d.o.o.   | jednostavno društvo s ograničenom odgovornošću
 
 ## Hack Chrome Dino
 
-Open Console with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>k</kbd> and paste following command:
+Open Console with `Ctrl + Shift + k` and paste following command:
 
 	Runner.prototype.gameOver = function() {}
 

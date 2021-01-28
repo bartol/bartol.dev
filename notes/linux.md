@@ -14,7 +14,7 @@ sender:
 
 ### kill session
 
-<kbd>~</kbd> + <kbd>.</kbd> + <kbd>Enter</kbd>
+`~` + `.` + Enter
 
 ### ssh fix permissions are too open error
 

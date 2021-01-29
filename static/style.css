@@ -111,6 +111,18 @@ footer {
 	justify-content: space-between;
 	align-items: center;
 }
+@media (max-width: 30em) {
+	footer {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	footer nav:first-child {
+		margin-bottom: 6px;
+	}
+	footer nav:last-child {
+		margin-top: 0;
+	}
+}
 nav {
 	margin: 1em -6px;
 }

@@ -26,5 +26,6 @@ alias x='vim ~/x'
 alias t="cd $(mktemp -d /tmp/dir.XXXXX)"
 
 # env variables
+export PATH=~/bin:$PATH
 export GOPATH=~/.go
 export PATH=~/.go/bin:$PATH

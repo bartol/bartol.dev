@@ -129,3 +129,31 @@ or
 ## delete until search match
 
 	d/<search><CR>
+
+## run git blame for current file
+
+	:!git blame %
+
+## vim switch to last file
+
+	<C-6>
+
+or
+
+	<C-^>
+
+## complete word
+
+	<C-p>
+
+or
+
+	<C-n>
+
+## complete whole line
+
+	<C-x><C-l>
+
+## complete file path
+
+	<C-x><C-f>

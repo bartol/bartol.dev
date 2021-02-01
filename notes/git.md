@@ -413,17 +413,22 @@ server via ssh
 
 ## Bisect
 
-	$ git bisect start
+	$ git bisect start <bad-commit> <good-commit>
+
+test if bug is present and run:
+
+	$ git bisect good
+
+or
+
 	$ git bisect bad
 
-checkout to commit far away in the history that passes the test script:
+automated way:
 
-	$ git checkout <commit-hash>
-	$ git bisect good
-	$ git bisect run <command>
+	$ git bisect run <script>
 
-if `<command>` returns 0 bisect will make commit good and if it returns between
-1 and 127 bisect will make commit bad until it finds first bad commit
+if script returns 0 exit code bisect will make commit good and if it returns
+between 1 and 127 bisect will make commit bad until it finds first bad commit
 
 return to original HEAD:
 
@@ -571,3 +576,7 @@ merge
 ## last commit diff
 
 	$ git diff HEAD~1
+
+## list all commits for branch
+
+	$ git rev-list <branch>

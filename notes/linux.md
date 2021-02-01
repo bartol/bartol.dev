@@ -189,3 +189,7 @@ adjust `-segment_time`
 ### download .mp4
 
 	$ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <url>
+
+## output every fifth line
+
+	$ <command> | awk 'NR % 5 == 0'

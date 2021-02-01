@@ -125,3 +125,7 @@ or
 
 	:set et
 	:%retab!
+
+## delete until search match
+
+	d/<search><CR>

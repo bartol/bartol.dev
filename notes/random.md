@@ -202,3 +202,17 @@ force record update:
 - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
 - [KeePassXC-Browser](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/)
 - [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
+
+## delete github repository deployments
+
+	#!/bin/sh
+	token=<token>
+	repo=<repo>
+	user=<user>
+
+	for id in $(curl -u $user:$token https://api.github.com/repos/$user/$repo/deployments | jq ".[].id"); do
+	    curl -X POST -u $user:$token -d '{"state":"inactive"}' -H 'accept: application/vnd.github.ant-man-preview+json' https://api.github.com/repos/$user/$repo/deployments/$id/statuses
+	    curl -X DELETE -u $user:$token https://api.github.com/repos/$user/$repo/deployments/$id
+	done
+
+[source](https://stackoverflow.com/a/62477591)

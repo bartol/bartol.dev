@@ -102,6 +102,14 @@ or stop rebase and restore original branch:
 
 	$ git tag -d <tag-name>
 
+### delete remote tag
+
+	$ git push --delete <remote> <tag>
+
+### list remote tags
+
+	$ git ls-remote --tags <remote>
+
 ## Commits
 
 ### Commit staged changes

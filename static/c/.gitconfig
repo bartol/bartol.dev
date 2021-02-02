@@ -24,6 +24,6 @@
 	ca = !git add -A && git commit
 	co = checkout
 	d = diff
-	l = log --oneline --graph
+	l = log --graph
 	p = !git remote | xargs -L1 git push --all
 	pl = pull

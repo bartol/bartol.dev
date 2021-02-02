@@ -76,6 +76,10 @@ or stop rebase and restore original branch:
 
 	$ git reset --hard <merge-commit-hash>^1
 
+### undo last merge
+
+	$ git reset --hard master@{1}
+
 ### Undo pushed merge
 
 	$ git revert -m 1 <merge-commit-hash>
@@ -199,6 +203,9 @@ last 2 commits are in the wrong branch:
 ### Interactively add changes
 
 	$ git add -p
+
+- stage change: `y`
+- skip file: `d`
 
 ## Diff
 

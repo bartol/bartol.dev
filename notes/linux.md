@@ -193,3 +193,11 @@ adjust `-segment_time`
 ## output every fifth line
 
 	$ <command> | awk 'NR % 5 == 0'
+
+## diff output of 2 commands
+
+	$ diff <(command) <(command)
+
+## list background jobs
+
+	$ jobs

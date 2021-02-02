@@ -157,3 +157,19 @@ or
 ## complete file path
 
 	<C-x><C-f>
+
+## open file
+
+	$ vim <file>
+
+## open file read only
+
+	$ view <file>
+
+## open stdin as file
+
+	$ <command> | vim -
+
+## open stdin as file read only
+
+	$ <command> | view -

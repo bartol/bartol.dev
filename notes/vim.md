@@ -173,3 +173,15 @@ or
 ## open stdin as file read only
 
 	$ <command> | view -
+
+## jump to first line
+
+	gg
+
+## jump to last line
+
+	G
+
+## jump to line
+
+	12G

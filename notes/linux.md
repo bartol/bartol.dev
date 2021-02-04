@@ -60,6 +60,12 @@ sender:
 
 adjust `-segment_time`
 
+### mp4 fast start
+
+puts metadata at the beginning
+
+	$ ffmpeg -i input.mp4 -c copy -movflags +faststart output.mp4
+
 ## systemd
 
 ### systemd service status

@@ -25,3 +25,24 @@ or
 ## break into post mortem debugger
 
 	import pdb; pdb.pm()
+
+
+## code patterns
+
+### handling errors
+
+bad:
+
+	if path:
+		# readfile
+	else:
+		# handle no path
+
+good:
+
+	try:
+		# readfile
+	except PathErr:
+		# handle no path
+
+- use only one function in try block

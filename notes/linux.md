@@ -207,3 +207,45 @@ puts metadata at the beginning
 ## list background jobs
 
 	$ jobs
+
+## list currently logged in users
+
+	$ w
+
+## send message to all logged in users
+
+	# wall <message>
+
+## grep
+
+### search in file
+
+	$ grep <query> <file>
+
+### search in all files in directory recursively
+
+	$ grep -R <query> <dir>
+
+### return only filenames
+
+	$ grep -Rl <query> <dir>
+
+### case insensitive
+
+	$ grep -i <query> <file>
+
+### return all lines that don't match
+
+	$ grep -v <query> <file>
+
+### return all files that didn't match
+
+	$ grep -RL <query> <dir>
+
+### one or another word
+
+	$ egrep "(one|another)" <file>
+
+### optional characters
+
+	$ grep "car[s]" <file>

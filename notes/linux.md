@@ -66,6 +66,20 @@ puts metadata at the beginning
 
 	$ ffmpeg -i input.mp4 -c copy -movflags +faststart output.mp4
 
+## curl
+
+### request urls from file
+
+	$ xargs -n1 curl < urls.txt
+
+### extract all links from url
+
+	$ curl -sL <url> | grep -oP '(?<=href=").*?(?=")' | awk '{print (substr($0,0,1)=="/" ? "https://<domain>" : "")$0}'
+
+### extract title from url
+
+	$ curl -sL <url> | grep -oP '(?<=<title>).*(?=</title>)'
+
 ## systemd
 
 ### systemd service status
@@ -249,3 +263,7 @@ puts metadata at the beginning
 ### optional characters
 
 	$ grep "car[s]" <file>
+
+### return only matched text
+
+	$ grep -o <query> <file>

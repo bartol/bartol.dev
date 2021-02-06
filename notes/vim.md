@@ -185,3 +185,11 @@ or
 ## jump to line
 
 	12G
+
+## append to lines
+
+	:%s/$/<append>/
+
+## prepend to lines
+
+	:%s/^/<prepend>/

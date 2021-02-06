@@ -203,6 +203,15 @@ force record update:
 - [KeePassXC-Browser](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/)
 - [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
 
+### uBlock Origin
+
+#### remove youtube distractions
+
+add to `My filters`
+
+	www.youtube.com###secondary
+	www.youtube.com###comments
+
 ## delete github repository deployments
 
 	#!/bin/sh

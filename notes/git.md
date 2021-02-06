@@ -39,6 +39,10 @@ force:
 
 	$ git branch -D <branch-name>
 
+### delete remote branch
+
+	$ git push <remote> --delete <branch-name>
+
 ### Get file from another branch
 
 	$ git checkout <branch-name> -- <file-name>

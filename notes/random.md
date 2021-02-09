@@ -189,11 +189,15 @@ force record update:
 
 [source](https://gist.github.com/vcastroi/e0d296171842e74ad7d4eef7daf15df6#gistcomment-3017296)
 
-### View web page in Wayback Machine shortcut
+### View web page in Wayback Machine
 
 	javascript: window.location = "https://web.archive.org/web/*/" + window.location
 
-### Post to HN shortcut
+### translate page
+
+	javascript: window.location = "https://translate.google.com/translate?sl=en&tl=hr&u=" + encodeURIComponent(document.location)
+
+### Post to HN
 
 	javascript: window.location = "https://news.ycombinator.com/submitlink?u=" + encodeURIComponent(document.location) + "&t=" + encodeURIComponent(document.title)
 

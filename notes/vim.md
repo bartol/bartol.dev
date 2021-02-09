@@ -146,10 +146,6 @@ or
 
 	<C-p>
 
-or
-
-	<C-n>
-
 ## complete whole line
 
 	<C-x><C-l>
@@ -193,3 +189,7 @@ or
 ## prepend to lines
 
 	:%s/^/<prepend>/
+
+## search command history
+
+`:` + query + &uarr;

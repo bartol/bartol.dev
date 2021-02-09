@@ -522,7 +522,7 @@ for example resource status
 ### Add column
 
 	ALTER TABLE <table-name>
-	ADD COLUMN <column-name> <COLUMN-TYPE>;
+	ADD COLUMN <column-name> <COLUMN-TYPE> DEFAULT <column-default-value>;
 
 ### Change column type
 
@@ -534,6 +534,16 @@ if automatic type casting isn't possible, you'll have to define it manually, for
 	ALTER TABLE <table-name>
 	ALTER COLUMN <column-name> TYPE INTEGER
 	USING <column-name>::INTEGER;
+
+### remove column
+
+	ALTER TABLE <table-name>
+	DROP <column-name>;
+
+### rename table
+
+	ALTER TABLE <table-name>
+	RENAME TO <new-table-name>;
 
 ## databases
 
@@ -658,6 +668,17 @@ create file with:
 
 tweak and [run](#run-sql-from-file) it until done, then replace `ROLLBACK` with `COMMIT`
 
+## query order of execution
+
+1. FROM and JOIN
+1. WHERE
+1. GROUP BY
+1. HAVING
+1. SELECT
+1. DISTINCT
+1. ORDER BY
+1. LIMIT and OFFSET
+
 ## psql
 
 ### run sql from file
@@ -678,3 +699,4 @@ tweak and [run](#run-sql-from-file) it until done, then replace `ROLLBACK` with 
 ## Note sources
 
 - <https://pragprog.com/titles/bksqla/sql-antipatterns/>
+- <https://sqlbolt.com/>

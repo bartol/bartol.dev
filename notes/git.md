@@ -206,6 +206,81 @@ last 2 commits are in the wrong branch:
 
 	$ git commit -S
 
+### Fixing up older commits
+
+there is mistake in second to last commit, create fix and commit it, then run:
+
+	git rebase -i HEAD~3
+
+output:
+
+	pick XXXXXXX change 1
+	pick XXXXXXX change 2
+	pick XXXXXXX fix for change 1
+
+change to:
+
+	pick XXXXXXX change 1
+	fixup XXXXXXX fix for change 1
+	pick XXXXXXX change 2
+
+save and close editor
+
+### Squashing several commits into one
+
+	$ git rebase -i HEAD~3
+
+output:
+
+	pick XXXXXXX change 1
+	pick XXXXXXX change 2
+	pick XXXXXXX change 3
+
+change to:
+
+	pick XXXXXXX change 1
+	squash XXXXXXX change 2
+	squash XXXXXXX change 3
+
+save and close editor
+
+edit commit message
+
+### Splitting one commit into several
+
+	$ git rebase -i HEAD~3
+
+output:
+
+	pick XXXXXXX change 1
+	pick XXXXXXX change 2
+	pick XXXXXXX change 3
+
+change to:
+
+	pick XXXXXXX change 1
+	edit XXXXXXX change 2
+	pick XXXXXXX change 3
+
+save and close editor
+
+	$ git reset HEAD^
+
+stage and commit changes, then:
+
+	$ git rebase --continue
+
+if there are conflicts, open file and resolve them, then run:
+
+	$ git add <file>
+	$ git rebase --continue
+
+### Reorder commits
+
+	$ git rebase -i HEAD~3
+
+reorder lines in file then save and close editor
+
 ## Add
 
 ### Add all changes
@@ -561,6 +636,7 @@ run plugin:
 
 - <https://tkrajina.github.io/uvod-u-git/git.pdf>
 - <https://ohshitgit.com/>
+- <https://git-rebase.io/>
 
 ## number of commits between 2 commits
 

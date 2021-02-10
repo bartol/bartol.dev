@@ -2,7 +2,15 @@
 
 ## digit
 
+	\d
+
+or
+
 	[0-9]
+
+## not digit
+
+	\D
 
 ## letter
 
@@ -28,6 +36,10 @@
 
 	word$
 
-### one word followed by another
+## one word followed by another
 
 	one.*another
+
+## note sources
+
+- <https://regexone.com/>

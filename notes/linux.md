@@ -10,6 +10,14 @@ sender:
 
 	$ xclip -selection clipboard -o | nc <receiver-hostname> 1234
 
+## backup file when modifing it on server
+
+	$ cp <file>{,.$(date +%Y-%m-%d)}
+
+## beep while pinging server
+
+	$ ping -a <server-address>
+
 ## ssh
 
 ### kill session
@@ -267,3 +275,13 @@ puts metadata at the beginning
 ### return only matched text
 
 	$ grep -o <query> <file>
+
+## awk
+
+### print last column
+
+	$ awk '{print $NF}' <file>
+
+### print second to last column
+
+	$ awk '{print $(NF-1)}' <file>

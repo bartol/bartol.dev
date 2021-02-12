@@ -72,6 +72,95 @@ what        | is
 ----------- | --------
 API         | program to program interface
 process     | running program
+bus         | communication channel between components inside a computer or between computers
+os          | used to abstract hardware to the programmer or user
+
+## Calculate uncompressed JPG image size
+
+	(width × height × 3) / 1048576
+
+- why 3? size of RGB color (24 bits)
+- why 1048576? convert bytes to megabytes (1024 × 1024)
+
+## number conversion
+
+### kilobits to kilobytes
+
+divide by 8
+
+### Hexadecimal
+
+base 16, used to make it easier for humans to think about binary numbers
+
+base 10 won't work because to represent 10 different elements in binary we need
+4 bits, but 4 bits give us 16 possible combinations so it was just easier to
+invent base 16 number system than convert between binary and base 10.
+
+hexadecimal uses base 10 digits + `A`, `B`, `C`, `D`, `E`, `F`
+
+traditionally prefixed with `0x`
+
+## bit masking
+
+![](/files/computers/bit-masking.png)
+
+## clock speed
+
+measured in GHz
+
+speed that internal clock in CPU pulses
+
+The pulses are used within the processor to keep it internally synchronised. On
+each tick or pulse another operation can be started.
+
+## memory hierarchy
+
+Speed   | Memory | Description
+------- | ------ | -------------------------------
+fastest | Cache  | embedded inside the CPU, very fast, typically taking only one cycle to access, but since it is embedded directly into the CPU there is a limit to how big it can be
+faster  | RAM    | All instructions and storage addresses for the processor must come from RAM. Although RAM is very fast, there is still some significant time taken for the CPU to access it
+fast    | SSD    | quite fast, quite large, quite cheap, persistent
+slow    | HDD    | very slow, large, cheap, persistent
+
+## kernel
+
+![](/files/computers/kernel.png)
+
+## boolean operations
+
+### NOT
+
+input | output
+----- | ------
+0     | 1
+1     | 0
+
+### OR
+
+input 1 | input 2 | output
+------- | ------- | ------
+0       | 0       | 0
+0       | 1       | 1
+1       | 0       | 1
+1       | 1       | 1
+
+### AND
+
+input 1 | input 2 | output
+------- | ------- | ------
+0       | 0       | 0
+0       | 1       | 0
+1       | 0       | 0
+1       | 1       | 1
+
+### XOR
+
+input 1 | input 2 | output
+------- | ------- | ------
+0       | 0       | 0
+0       | 1       | 1
+1       | 0       | 1
+1       | 1       | 0
 
 ## servers
 

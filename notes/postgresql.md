@@ -107,7 +107,23 @@
 
 	SELECT STRING_AGG(column_name, ',') AS columns
 	FROM information_schema.columns
-	WHERE table_name = <table-name>
+	WHERE table_name = <table-name>;
+
+### label based on conditional
+
+	SELECT
+		CASE WHEN (price > 1000) THEN
+			'expensive'
+		ELSE
+			'cheap'
+		END AS cost
+	FROM <table-name>;
+
+### get row with lastest date
+
+	SELECT <column-name>
+	FROM <table-name>
+	WHERE updated_at = (SELECT MAX(updated_at) FROM <table-name>);
 
 ## Aliases
 
@@ -285,9 +301,21 @@ true if atleast one is true:
 
 	LOWER(<column-name>)
 
+### Left pad string
+
+	LPAD(<column-name>, <length>, '0')
+
+### Right pad string
+
+	RPAD(<column-name>, <length>, '0')
+
 ### Cast column value to text
 
 	<column-name>::TEXT
+
+### concatinate strings
+
+	<column-name> || ' ' || <column-name>
 
 ## Aggregate functions
 
@@ -700,3 +728,4 @@ tweak and [run](#run-sql-from-file) it until done, then replace `ROLLBACK` with 
 
 - <https://pragprog.com/titles/bksqla/sql-antipatterns/>
 - <https://sqlbolt.com/>
+- <https://pgexercises.com/>

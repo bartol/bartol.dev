@@ -49,6 +49,14 @@
 
 - <https://ga-dev-tools.appspot.com/campaign-url-builder/>
 
+## stocks
+
+- <https://finviz.com/>
+
+## crypto
+
+- <https://www.coingecko.com/en>
+
 ## img
 
 - <https://www.photopea.com/>

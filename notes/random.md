@@ -125,7 +125,11 @@ This command deletes function that would end game when you hit object.
 
 <https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html>
 
-# Namecheap dynamic dns
+## libreoffice calc freeze rows
+
+right click on colum number for column below one you want to freeze and check freeze option
+
+## Namecheap dynamic dns
 
 enable ddns:
 

@@ -87,7 +87,7 @@ or
 
 	:%s/<old>/<new>/g
 
-## replace in linne
+## replace in line
 
 	:s/<old>/<new>/g
 
@@ -192,4 +192,4 @@ or
 
 ## search command history
 
-`:` + query + &uarr;
+`:` + start of command + &uarr;

@@ -709,9 +709,81 @@ tweak and [run](#run-sql-from-file) it until done, then replace `ROLLBACK` with 
 
 ## psql
 
+### connect to remote postgresql server
+
+default port: `5432`
+
+	$ psql -U <user> -h <host> -p <port> -d <database>
+
+### connect to local postgresql server
+
+	$ psql -U postgres
+
+### exit
+
+	\q
+
 ### run sql from file
 
 	\i <file>
+
+### list databases
+
+	\l
+
+more info (size, description):
+
+	\l+
+
+### display tables
+
+	\dt
+
+### view table columns
+
+	\d <table>
+
+### list format
+
+narrow:
+
+	\x on
+
+wide:
+
+	\x off
+
+let terminal decide:
+
+	\x auto
+
+### connect to database
+
+	\c <database>
+
+### display users
+
+	\du
+
+### create database
+
+	$ createdb <database>
+
+### timing
+
+show how much it takes to complete command
+
+turn on:
+
+	\timing on
+
+turn off:
+
+	\timing off
+
+### repeat last command every 5 seconds
+
+	\watch 5
 
 ## Recommendations
 
@@ -729,3 +801,4 @@ tweak and [run](#run-sql-from-file) it until done, then replace `ROLLBACK` with 
 - <https://pragprog.com/titles/bksqla/sql-antipatterns/>
 - <https://sqlbolt.com/>
 - <https://pgexercises.com/>
+- <https://tomcam.github.io/postgres/>

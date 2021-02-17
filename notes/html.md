@@ -38,11 +38,11 @@
 
 	<link rel="stylesheet" type="text/css" href="/css/main.css" />
 
-# Reset form state button
+## Reset form state button
 
 	<input type="reset">
 
-# Responsive HTML email template
+## Responsive HTML email template
 
 	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<html xmlns="http://www.w3.org/1999/xhtml">

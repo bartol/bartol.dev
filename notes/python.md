@@ -137,6 +137,40 @@ to 2 digits:
 	data = f.read()
 	f.close()
 
+## import module
+
+	import <module>
+
+## import specific objects in current namespace
+
+	from <package/module> import <object>
+
+## import all objects in current namespace
+
+	from <package/module> import *
+
+## change module namespace
+
+	import <package/module> as x
+
+## run code when running as script and not when being imported
+
+	if __name__ == '__main__':
+		# ...
+
+## view global namespace
+
+	globals()
+
+## view local namespace
+
+	locals()
+
+## create package from directory
+
+- create `__init__.py` file
+- import all objects from modules in it
+
 ## sources
 
 - <https://archive.org/details/comp3321/mode/2up>

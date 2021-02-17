@@ -15,6 +15,7 @@
 - <https://keycode.info/>
 - <https://regexr.com/>
 - <https://godbolt.org/>
+- <https://devdocs.io/>
 
 ## sysadmin
 

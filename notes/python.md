@@ -158,18 +158,38 @@ to 2 digits:
 	if __name__ == '__main__':
 		# ...
 
-## view global namespace
-
-	globals()
-
-## view local namespace
-
-	locals()
-
 ## create package from directory
 
 - create `__init__.py` file
 - import all objects from modules in it
+
+## sort list
+
+	sorted(x)
+
+## sort list of dicts
+
+	import operator
+	sorted(x, key=operator.itemgetter('name'))
+
+## reverse sort
+
+	reversed(sorted(x))
+
+## pretty print data
+
+	from pprint import pprint
+	pprint(x)
+
+## format string
+
+	'formatted {}'.format('string')
+	'{fo} {st}'.format(st='string', fo='formatted')
+
+or
+
+	st = 'string'
+	f'formatted {st}'
 
 ## sources
 

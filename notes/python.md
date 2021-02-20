@@ -134,7 +134,14 @@ to 2 digits:
 ## read data from file
 
 	f = open('data.txt', 'r')
-	data = f.read()
+	data = f.read() # or f.readlines()
+	f.close()
+
+## read data from remote file
+
+	from urllib.request import urlopen
+	f = urlopen('https://bdeak.net/c/.vimrc')
+	data = f.read() # or f.readlines()
 	f.close()
 
 ## import module
@@ -190,6 +197,106 @@ or
 
 	st = 'string'
 	f'formatted {st}'
+
+## map over list
+
+	list(map(lambda x: len(x) * 2, ['x', 'abc'])
+
+## reduce list
+
+	from functools import reduce
+	reduce(lambda a, x: a + x, [2,3,4,5])
+
+## args
+
+	import argparse
+	parser = argparse.ArgumentParser(prog='xyz', description='about program...')
+	parser.add_argument('f')
+	parser.add_argument('-n', type=int, default=5, help='num of lines')
+	parser.add_argument('--version', action='version', version='1.0.0')
+	parser.add_argument('-i', '--input')
+	parser.add_argument('-p', action=argparse.BooleanOptionalAction)
+	parser.add_argument('--verbose', '-v', action='count', default=0)
+	args = parser.parse_args()
+
+## date and time
+
+### unix time
+
+	import time
+	time.time()
+
+### wait for x seconds
+
+	import time
+	time.sleep(x)
+
+### date
+
+	import datetime
+	datetime.date(2020, 12, 25)
+
+### today's date
+
+	import datetime
+	datetime.date.today()
+
+### yesterday's date
+
+	import datetime
+	datetime.date.today() - datetime.timedelta(days=1)
+
+### date from timestamp
+
+	import datetime
+	datetime.date.fromtimestamp(ts)
+
+## logging
+
+	import logging
+	logging.critical('x')
+	logging.error('x')
+	logging.warning('x')
+	logging.info('x')
+	logging.debug('x')
+
+### show all levels
+
+	import logging
+	logging.basicConfig(level=logging.DEBUG)
+
+### log to file and console
+
+	import logging
+	from logging.handlers import RotatingFileHandler
+	logging.basicConfig(
+		handlers=[
+			RotatingFileHandler('debug.log', maxBytes=2000000, backupCount=25)
+			logging.StreamHandler()
+		]
+	)
+
+### show stack trace
+
+	import logging
+	logging.error("Exception occurred", exc_info=True)
+
+## run regex on string
+
+	import re
+	m = re.search('regex', 'string')
+	m.group(idx)
+
+## compile regex
+
+	import re
+	c = re.compile('regex')
+	m = c.search('string')
+
+## hash string
+
+	from hashlib import sha256
+	sha256('abc'.encode('ascii')).hexdigest()
 
 ## sources
 

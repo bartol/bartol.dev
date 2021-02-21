@@ -44,6 +44,10 @@ or
 
 	.*
 
+non greedy version:
+
+	.*?
+
 ## one or more characters
 
 	.+

@@ -298,6 +298,48 @@ or
 	from hashlib import sha256
 	sha256('abc'.encode('ascii')).hexdigest()
 
+## capture output from shell command
+
+	import subprocess
+	output = subprocess.check_output('cmd', shell=True)
+
+## pad string with whitespace
+
+	'test'.ljust(20)
+	'test'.rjust(20)
+	'test'.center(20)
+
+## remove whitespace from string
+
+	'  test  '.strip()
+
+## copy text to clipboard
+
+install:
+
+	$ pip install pyperclip
+
+use:
+
+	import pyperclip
+	pyperclip.copy('test')
+
+## paste text from clipboard
+
+install:
+
+	$ pip install pyperclip
+
+use:
+
+	data = pyperclip.paste()
+
+## open url in web browser
+
+	import webbrowser
+	webbrowser.open('https://www.bdeak.net/')
+
 ## sources
 
 - <https://archive.org/details/comp3321/mode/2up>
+- <https://automatetheboringstuff.com/>

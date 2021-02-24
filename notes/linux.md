@@ -285,3 +285,13 @@ puts metadata at the beginning
 ### print second to last column
 
 	$ awk '{print $(NF-1)}' <file>
+
+## date
+
+### get current timestamp
+
+	$ date +%s
+
+### get yesterday's date
+
+	$ date -d '-1 day'

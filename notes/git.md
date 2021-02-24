@@ -43,6 +43,16 @@ force:
 
 	$ git push <remote> --delete <branch-name>
 
+### rename local branch
+
+	$ git branch -m old new
+
+### rename remote branch
+
+	$ git branch -m old new
+	$ git push -u origin new
+	$ git push origin :old
+
 ### Get file from another branch
 
 	$ git checkout <branch-name> -- <file-name>
@@ -372,7 +382,15 @@ reorder lines in file then save and close editor
 
 ### Show commit authors
 
-	$ git shortlog -sen
+	$ git shortlog -se
+
+### show commits that are in one and not in other branch
+
+	$ git log <other>...<one>
+
+### reverse log
+
+	$ git log --reverse
 
 ## Stash
 
@@ -429,6 +447,10 @@ reorder lines in file then save and close editor
 ### Remove remote
 
 	$ git remote remove <name>
+
+### change address for remote
+
+	$ git remote set-url <name> <address>
 
 ### Pull changes from remote
 
@@ -675,3 +697,15 @@ merge
 ## list all commits for branch
 
 	$ git rev-list <branch>
+
+## create repository
+
+	$ git init <name>
+
+## create repository in current directory
+
+	$ git init
+
+## create repository on server
+
+	$ git init --bare <name>

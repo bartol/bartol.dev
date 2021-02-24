@@ -11,5 +11,7 @@
 - [latex](/notes/latex)
 - [html](/notes/html), [css](/notes/css), [javascript](/notes/javascript)
 - [computers](/notes/computers), [networks](/notes/networks)
+- electronics
+- finance
 - [links](/notes/links)
 - [random](/notes/random)

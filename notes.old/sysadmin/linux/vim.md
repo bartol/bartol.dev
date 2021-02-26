@@ -77,20 +77,9 @@ add to vimrc
 	endif# Paste last deleted text
 
 `"1p`
-# Pipe stdin to Vim
-
-	$ echo "hey" | vim -
 # Rename file or directory in Netrw
 
 `R`
-# Repeat last Vim macro
-
-`@@`
-# Search for word under cursor in Vim
-
-`#`# Select last selection in Vim
-
-`gv`
 # Setup Vim
 
 [Setup dotfiles](/linux/setup-dotfiles)
@@ -186,9 +175,6 @@ or
 # Vim insert another file after cursor
 
 	:r file
-# Vim insert output of shell command after cursor
-
-	:r!ls
 # Vim jump history
 
 `:jumps`

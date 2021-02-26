@@ -193,3 +193,15 @@ or
 ## search command history
 
 `:` + start of command + &uarr;
+
+## repeat last macro
+
+	@@
+
+## search for word under cursor
+
+	#
+
+# select last selection
+
+	gv

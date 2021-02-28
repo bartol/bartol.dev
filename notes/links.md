@@ -7,6 +7,7 @@
 - <https://pastebin.com/>
 - <https://www.online-convert.com/>
 - <https://www.virustotal.com/gui/>
+- <https://www.random.org/>
 - <http://libgen.rs/>
 
 ## programming

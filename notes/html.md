@@ -1,5 +1,9 @@
 % html
 
+## ping url on link click
+
+	<a href="/location" ping="/track_click">...</a>
+
 ## mailto
 
 ### mail to link

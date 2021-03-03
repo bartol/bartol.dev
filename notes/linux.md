@@ -295,3 +295,43 @@ puts metadata at the beginning
 ### get yesterday's date
 
 	$ date -d '-1 day'
+
+## mount disk
+
+	# mount /dev/sdb1 /mnt
+
+pwd
+cd <directory>                         change directory
+cp <file> <directory>
+mkdir                                  create directory
+rmdir                                  remove empty directory
+cp -r
+mv <source> <target>
+rm <file>
+rm -r <directory>
+ln -s <source> <target>                create symbolic link
+readlink <link>                        symbolic link source
+rm <file>
+echo
+tar -xf
+cal                                    current month calendar
+cal -y                                 current year calendar
+cal <year>                             calendar for year
+cal <month> <year>                     calendar for month in year
+ls                                     files in current directory
+ls <directory>                         files in directory
+ls -a                                  hidden files
+ls -lh                                 files in list with human readable sizes
+df -h /                                used disk space
+last $USER                             last logins
+wget <url>                             download file
+ip addr show                           network info
+ip addr show <interface>               network info for interface
+whois <domain>                         domain info
+clear                                  clear terminal
+man <command>                          docs
+man -k <keyword>                       search docs
+wc -l <file>                           count lines
+who                                    active users
+printenv                               environment variables
+ls | cut -d. -f1                       files without extensions

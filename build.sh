@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir out
-cp -r static/* notes *.md out
+cp -r static/* about.txt manual.txt notes *.md out
 
 for file in $(find out -name "*.md"); do
 	case $file in

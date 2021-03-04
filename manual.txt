@@ -3,12 +3,23 @@ MANUAL
 linux
 =====
 
+awk 'NR % 5 == 0'                      every fifth line
+awk '{print $(NF-1)}' <file>           second to last column
+awk '{print $NF}' <file>               last column
 cal                                    current month calendar
 cal <month> <year>                     calendar for month in year
 cal -y                                 current year calendar
 cal <year>                             calendar for year
+cd $(mktemp -d /tmp/dir.XXXXX)         create tmp dir
+cd                                     change directory to home
 cd <directory>                         change directory
+chmod 600 <key-file>                   fix ssh key file permissions too open
 clear                                  clear terminal
+cp $1{,.$(date +%Y-%m-%d)} }           snapshot file
+date -d '-1 day'                       yesterday's date
+date +%s                               date in unix timestamp format
+date                                   today's date
+date +%Y-%m-%d                         date in iso format
 df -h /                                used disk space
 ip addr show <interface>               network info for interface
 ip addr show                           network info
@@ -22,13 +33,25 @@ ls -lh                                 files in list with human readable sizes
 man <command>                          command docs
 man -k <keyword>                       search docs
 mkdir                                  create directory
+mount /dev/sdb1 /mnt/disk              mount disk
+ping -a <address>                      beep while pinging
+ping <address>                         ping address
 printenv                               environment variables
+ps -A --no-headers | wc -l             system tasks
 readlink <link>                        symbolic link source
 rmdir                                  remove empty directory
+timedatectl list-timezones             list timezones
+timedatectl set-timezone <timezone>    change timezone
+timedatectl                            system time info
+tr -cd 0-9 < /dev/urandom | head -c 5  random number with 5 digits
+umount /mnt/disk                       unmount disk
+uptime | awk -F': ' '{print $2}'       system load average
+uptime -p | cut -d" " -f2-             system uptime
 wc -l <file>                           count lines
 wget <url>                             download file
-who                                    active users
 whois <domain>                         domain info
+who                                    who is logged on
+w                                      who is logged on and what are they doing
 
 git
 ===
@@ -65,3 +88,21 @@ regex
 
 latex
 =====
+
+nginx
+=====
+
+cs
+==
+
+networks
+========
+
+electronics
+===========
+
+links
+=====
+
+random
+======

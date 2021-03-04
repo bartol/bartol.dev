@@ -10,23 +10,11 @@ sender:
 
 	$ xclip -selection clipboard -o | nc <receiver-hostname> 1234
 
-## backup file when modifing it on server
-
-	$ cp <file>{,.$(date +%Y-%m-%d)}
-
-## beep while pinging server
-
-	$ ping -a <server-address>
-
 ## ssh
 
 ### kill session
 
 `~` + `.` + Enter
-
-### ssh fix permissions are too open error
-
-	$ chmod 600 <key-file>
 
 ## gpg
 
@@ -130,18 +118,6 @@ puts metadata at the beginning
 
 	$ df | awk '$NF=="/"{printf "%d\n",$5}'
 
-## system uptime
-
-	$ uptime -p | cut -d" " -f2-
-
-## system tasks
-
-	$ ps -A --no-headers | wc -l
-
-## system load average
-
-	$ uptime | awk -F': ' '{print $2}'
-
 ## top sort by memory usage
 
 	$ top -o\%MEM
@@ -169,22 +145,6 @@ puts metadata at the beginning
 ## ps output without header
 
 	$ ps -A --no-headers
-
-## random number with x digits
-
-	$ tr -cd 0-9 </dev/urandom | head -c <digits>
-
-## view time info
-
-	$ timedatectl
-
-## list timezones
-
-	$ timedatectl list-timezones
-
-## change timezone
-
-	# timedatectl set-timezone <timezone-name>
 
 ## aws s3 cli
 
@@ -218,10 +178,6 @@ puts metadata at the beginning
 
 	$ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <url>
 
-## output every fifth line
-
-	$ <command> | awk 'NR % 5 == 0'
-
 ## diff output of 2 commands
 
 	$ diff <(command) <(command)
@@ -229,10 +185,6 @@ puts metadata at the beginning
 ## list background jobs
 
 	$ jobs
-
-## list currently logged in users
-
-	$ w
 
 ## send message to all logged in users
 
@@ -276,62 +228,12 @@ puts metadata at the beginning
 
 	$ grep -o <query> <file>
 
-## awk
-
-### print last column
-
-	$ awk '{print $NF}' <file>
-
-### print second to last column
-
-	$ awk '{print $(NF-1)}' <file>
-
-## date
-
-### get current timestamp
-
-	$ date +%s
-
-### get yesterday's date
-
-	$ date -d '-1 day'
-
-## mount disk
-
-	# mount /dev/sdb1 /mnt
-
 pwd
-cd <directory>                         change directory
 cp <file> <directory>
-mkdir                                  create directory
-rmdir                                  remove empty directory
 cp -r
 mv <source> <target>
 rm <file>
 rm -r <directory>
-ln -s <source> <target>                create symbolic link
-readlink <link>                        symbolic link source
 rm <file>
 echo
 tar -xf
-cal                                    current month calendar
-cal -y                                 current year calendar
-cal <year>                             calendar for year
-cal <month> <year>                     calendar for month in year
-ls                                     files in current directory
-ls <directory>                         files in directory
-ls -a                                  hidden files
-ls -lh                                 files in list with human readable sizes
-df -h /                                used disk space
-last $USER                             last logins
-wget <url>                             download file
-ip addr show                           network info
-ip addr show <interface>               network info for interface
-whois <domain>                         domain info
-clear                                  clear terminal
-man <command>                          docs
-man -k <keyword>                       search docs
-wc -l <file>                           count lines
-who                                    active users
-printenv                               environment variables
-ls | cut -d. -f1                       files without extensions

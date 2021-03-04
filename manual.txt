@@ -1,0 +1,67 @@
+MANUAL
+
+linux
+=====
+
+cal                                    current month calendar
+cal <month> <year>                     calendar for month in year
+cal -y                                 current year calendar
+cal <year>                             calendar for year
+cd <directory>                         change directory
+clear                                  clear terminal
+df -h /                                used disk space
+ip addr show <interface>               network info for interface
+ip addr show                           network info
+last $USER                             last logins
+ln -s <source> <target>                create symbolic link
+ls -a                                  hidden files
+ls | cut -d. -f1                       files without extensions
+ls <directory>                         files in directory
+ls                                     files in current directory
+ls -lh                                 files in list with human readable sizes
+man <command>                          command docs
+man -k <keyword>                       search docs
+mkdir                                  create directory
+printenv                               environment variables
+readlink <link>                        symbolic link source
+rmdir                                  remove empty directory
+wc -l <file>                           count lines
+wget <url>                             download file
+who                                    active users
+whois <domain>                         domain info
+
+git
+===
+
+postgresql
+==========
+
+c
+=
+
+php
+===
+
+shell
+=====
+
+python
+======
+
+go
+==
+
+vim
+===
+
+zsh
+===
+
+tmux
+====
+
+regex
+=====
+
+latex
+=====

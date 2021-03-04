@@ -3,55 +3,77 @@ MANUAL
 linux
 =====
 
-awk 'NR % 5 == 0'                      every fifth line
-awk '{print $(NF-1)}' <file>           second to last column
-awk '{print $NF}' <file>               last column
-cal                                    current month calendar
-cal <month> <year>                     calendar for month in year
-cal -y                                 current year calendar
-cal <year>                             calendar for year
-cd $(mktemp -d /tmp/dir.XXXXX)         create tmp dir
-cd                                     change directory to home
-cd <directory>                         change directory
-chmod 600 <key-file>                   fix ssh key file permissions too open
-clear                                  clear terminal
-cp $1{,.$(date +%Y-%m-%d)} }           snapshot file
-date -d '-1 day'                       yesterday's date
-date +%s                               date in unix timestamp format
-date                                   today's date
-date +%Y-%m-%d                         date in iso format
-df -h /                                used disk space
-ip addr show <interface>               network info for interface
-ip addr show                           network info
-last $USER                             last logins
-ln -s <source> <target>                create symbolic link
-ls -a                                  hidden files
-ls | cut -d. -f1                       files without extensions
-ls <directory>                         files in directory
-ls                                     files in current directory
-ls -lh                                 files in list with human readable sizes
-man <command>                          command docs
-man -k <keyword>                       search docs
-mkdir                                  create directory
-mount /dev/sdb1 /mnt/disk              mount disk
-ping -a <address>                      beep while pinging
-ping <address>                         ping address
-printenv                               environment variables
-ps -A --no-headers | wc -l             system tasks
-readlink <link>                        symbolic link source
-rmdir                                  remove empty directory
-timedatectl list-timezones             list timezones
-timedatectl set-timezone <timezone>    change timezone
-timedatectl                            system time info
-tr -cd 0-9 < /dev/urandom | head -c 5  random number with 5 digits
-umount /mnt/disk                       unmount disk
-uptime | awk -F': ' '{print $2}'       system load average
-uptime -p | cut -d" " -f2-             system uptime
-wc -l <file>                           count lines
-wget <url>                             download file
-whois <domain>                         domain info
-who                                    who is logged on
-w                                      who is logged on and what are they doing
+awk 'NR % 5 == 0'                       every fifth line
+awk '{print $(NF-1)}' <file>            second to last column
+awk '{print $NF}' <file>                last column
+cal                                     current month calendar
+cal <month> <year>                      calendar for month in year
+cal -y                                  current year calendar
+cal <year>                              calendar for year
+cd $(mktemp -d /tmp/dir.XXXXX)          create tmp dir
+cd                                      change directory to home
+cd <directory>                          change directory
+chmod 600 <key-file>                    fix ssh key file permissions too open
+clear                                   clear terminal
+cp $1{,.$(date +%Y-%m-%d)}              snapshot file
+curl -L <url>                           follow redirects
+curl -o <file> <url>                    download file and change name
+curl -O <url>                           download file
+curl -s <url>                           hide progress bar
+date -d '-1 day'                        yesterday's date
+date +%s                                date in unix timestamp format
+date                                    today's date
+date +%Y-%m-%d                          date in iso format
+df -h /                                 used disk space
+ip addr show <interface>                network info for interface
+ip addr show                            network info
+last $USER                              last logins
+ln -s <source> <target>                 create symbolic link
+ls -a                                   hidden files
+ls | cut -d. -f1                        files without extensions
+ls <directory>                          files in directory
+ls                                      files in current directory
+ls -lh                                  files in list with human readable sizes
+man <command>                           command docs
+man -k <keyword>                        search docs
+mkdir                                   create directory
+mount /dev/sdb1 /mnt/disk               mount disk
+ping -a <address>                       beep while pinging
+ping <address>                          ping address
+printenv                                environment variables
+ps -e --no-headers | wc -l              number of system tasks
+ps -eo pid,user,%cpu,%mem,time,command  custom columns
+ps -e --sort -%cpu                      sort by cpu usage
+ps -e --sort -%mem                      sort by memory usage
+ps                                      running processes
+pstree                                  tree of running processes
+readlink <link>                         symbolic link source
+rmdir                                   remove empty directory
+systemctl cat <service>                 service configuration
+systemctl disable <service>             disable service
+systemctl enable <service>              enable service
+systemctl restart <service>             restart service
+systemctl start <service>               start service
+systemctl status <service>              service status
+systemctl stop <service>                stop service
+timedatectl list-timezones              list timezones
+timedatectl set-timezone <timezone>     change timezone
+timedatectl                             system time info
+top -bn1 > <file>                       output to file
+top -o %CPU                             sort by cpu usage
+top -o %MEM                             sort by memory usage
+top                                     running processes
+tr -cd 0-9 < /dev/urandom | head -c 5   random number with 5 digits
+umount /mnt/disk                        unmount disk
+uptime | awk -F': ' '{print $2}'        system load average
+uptime -p | cut -d" " -f2-              system uptime
+wc -l <file>                            count lines
+wget <url>                              download file
+whois <domain>                          domain info
+who                                     who is logged on
+w                                       who is logged on and what are they doing
+
+\^ +<option>                            man page search for option
 
 git
 ===
@@ -88,6 +110,11 @@ regex
 
 latex
 =====
+
+\newpage                                page break
+\textbf{...}                            bold
+\textit{...}                            italic
+\underline{...}                         underline
 
 nginx
 =====

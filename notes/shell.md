@@ -21,3 +21,4 @@ all examples posix compatible
 ## strip prefix
 
 	${<string>#<prefix>}
+

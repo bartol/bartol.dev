@@ -1,4 +1,4 @@
-set ai ts=4 sw=4 hls is ic udf
+set ai ts=4 sw=4 hls is ic udf cc=80
 set list listchars=tab:>\ ,trail:-,nbsp:+
 nmap <leader>b :ls<cr>:b<space>
 nmap <leader>p :reg<cr>:norm "p<left>

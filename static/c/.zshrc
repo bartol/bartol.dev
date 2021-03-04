@@ -17,13 +17,10 @@ HISTFILE=~/.zsh_history
 # editor
 bindkey -e
 export EDITOR=vim
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey "^x^e" edit-command-line
 
 # aliases
-alias x='vim ~/x'
-alias t="cd $(mktemp -d /tmp/dir.XXXXX)"
+t() { cd $(mktemp -d /tmp/dir.XXXXX) } # create tmp dir
+b() { cp $1{,.$(date +%Y-%m-%d)} } # snapshot file
 
 # env variables
 export PATH=~/bin:$PATH

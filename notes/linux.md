@@ -170,7 +170,6 @@ puts metadata at the beginning
 
 	$ grep -o <query> <file>
 
-pwd
 cp <file> <directory>
 cp -r
 mv <source> <target>

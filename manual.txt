@@ -10,6 +10,7 @@ cal                                     current month calendar
 cal <month> <year>                      calendar for month in year
 cal -y                                  current year calendar
 cal <year>                              calendar for year
+cat <file>                              output file content
 cd $(mktemp -d /tmp/dir.XXXXX)          create tmp dir
 cd                                      change directory to home
 cd <directory>                          change directory
@@ -38,6 +39,7 @@ man <command>                           command docs
 man -k <keyword>                        search docs
 mkdir                                   create directory
 mount /dev/sdb1 /mnt/disk               mount disk
+nl -ba <file>                           output file content with line numbers
 ping -a <address>                       beep while pinging
 ping <address>                          ping address
 printenv                                environment variables
@@ -47,6 +49,7 @@ ps -e --sort -%cpu                      sort by cpu usage
 ps -e --sort -%mem                      sort by memory usage
 ps                                      running processes
 pstree                                  tree of running processes
+pwd                                     current directory
 readlink <link>                         symbolic link source
 rmdir                                   remove empty directory
 systemctl cat <service>                 service configuration

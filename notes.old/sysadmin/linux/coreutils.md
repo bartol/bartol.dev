@@ -10,8 +10,3 @@ move to linux.md
 # Append output to file with sudo
 
 	$ ls -la | sudo tee -a /etc/file
-
-
-# Add line numbers to output
-
-	$ command | nl -ba

@@ -1,0 +1,105 @@
+electronics
+===========
+
+## electricity
+
+electricity - flow of charge
+
+atomic number - number of protons in atom
+
+/slika/
+
+electrons carry charge
+
+/slika/
+
+Electrostatic Force
+
+/slika/
+
+electric current
+
+conductors - materials that don't hold tightly to their electrons
+
+insulators - materials with low conductivity
+
+static electricity
+
+electricity "at rest", insulator prevents mixing 2 sides to balance system out
+
+/slika/
+
+when charges find way to equalize static discharge occurs, attraction becomes so
+great that they can flow through insulators
+
+/slika/
+
+example of static discharge: lightning
+
+current electricity
+
+in order to flow electricity needs never ending loop of conductive material
+
+kinetic energy - energy in motion
+
+potential energy - energy stored in object at rest
+
+electric potential - amount of electric potential energy divided by the amount of charge
+
+voltage is the difference in potential between two points in an electric field, it gives
+us an idea of just how much pushing force an electric field has
+
+charges are propelled by an electric field. We need a source of electric potential (voltage),
+which pushes electrons from a point of low potential energy to higher potential energy.
+
+Electricity wants to flow from a higher voltage to a lower voltage
+
+convention is that current flows from + to - but current really flows from - to +,
+as long as everyone uses the same convention, we can all build circuits that work just fine
+
+/slika/
+
+short circuit
+
+/slika/
+
+damaging led
+
+- Voltage is the difference in charge between two points.
+- Current is the rate at which charge is flowing.
+- Resistance is a material's tendency to resist the flow of charge (current).
+
+ohm's law: V = IR
+power = P = VI
+
+water analogy:
+/4 slike/
+
+resistors
+
+/2 slike/
+
+Variable Resistors (i.e. Potentiometers) - resistors which can be adjusted between a specific range of values
+
+led current limiting
+
+R = (Vs - Vf) / If
+
+VS is the source voltage - usually a battery or power supply voltage.
+VF and IF are the LED's forward voltage and the desired current that runs through it.
+
+LEDs
+
+/slika/
+
+transistors
+
+/slika/
+
+NPN: Not Pointing iN
+
+semiconductor is a material that's not quite a pure conductor (like copper wire) but also not an insulator (like air).
+
+Schematic Symbols
+
+/slika/

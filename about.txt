@@ -1,0 +1,9 @@
+Bartol Deak
+
+email: b@bdeak.net
+github: https://github.com/bartol
+sourcehut: https://git.sr.ht/~bd
+btc:
+eth:
+xmr:
+pgp:

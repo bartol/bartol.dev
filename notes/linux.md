@@ -1,21 +1,5 @@
 % linux
 
-## Send clipboard to another machine in local network
-
-receiver:
-
-	$ nc -l 1234 | xclip -selection clipboard
-
-sender:
-
-	$ xclip -selection clipboard -o | nc <receiver-hostname> 1234
-
-## ssh
-
-### kill session
-
-`~` + `.` + Enter
-
 ## gpg
 
 ### Generate new key
@@ -75,18 +59,6 @@ puts metadata at the beginning
 ### extract title from url
 
 	$ curl -sL <url> | grep -oP '(?<=<title>).*(?=</title>)'
-
-## system memory usage %
-
-	$ free -m | awk 'NR==2{printf "%d\n",$3*100/$2}'
-
-## system cpu usage %
-
-	$ mpstat 1 2 | awk 'END{printf "%d\n",100-$NF}'
-
-## system disk usage %
-
-	$ df | awk '$NF=="/"{printf "%d\n",$5}'
 
 ## aws s3 cli
 
@@ -170,11 +142,7 @@ puts metadata at the beginning
 
 	$ grep -o <query> <file>
 
-cp <file> <directory>
-cp -r
-mv <source> <target>
-rm <file>
-rm -r <directory>
-rm <file>
 echo
 tar -xf
+
+# ethtool -p eth1           # Blink the ethernet led - very useful when supported

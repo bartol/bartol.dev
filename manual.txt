@@ -15,9 +15,13 @@ cd $(mktemp -d /tmp/dir.XXXXX)          create tmp dir
 cd                                      change directory to home
 cd <directory>                          change directory
 chmod 600 <key-file>                    fix ssh key file permissions too open
+chown <user>:<group> <file>             change file ownership
 clear                                   clear terminal
 cp $1{,.$(date +%Y-%m-%d)}              snapshot file
+cp <file> <directory>                   copy file to directory
+cp -r <directory <directory>            copy directory to directory
 curl -L <url>                           follow redirects
+mv <source> <target>                    move source to target
 curl -o <file> <url>                    download file and change name
 curl -O <url>                           download file
 curl -s <url>                           hide progress bar
@@ -25,23 +29,38 @@ date -d '-1 day'                        yesterday's date
 date +%s                                date in unix timestamp format
 date                                    today's date
 date +%Y-%m-%d                          date in iso format
+df -h                                   disk usage info
 df -h /                                 used disk space
+dmesg                                   hardware and boot messages
+du -sh                                  current directory size
+du -sh *                                size of files in current directory
+free -h --si                            memory usage info
+hostname                                system hostname
 ip addr show <interface>                network info for interface
 ip addr show                            network info
-last $USER                              last logins
+kill -9 <pid>                           kill process by pid
+killall -9 <name>                       kill process by name
+last $USER                              user login history
+last reboot                             reboot history
 ln -s <source> <target>                 create symbolic link
 ls -a                                   hidden files
 ls | cut -d. -f1                        files without extensions
 ls <directory>                          files in directory
 ls                                      files in current directory
 ls -lh                                  files in list with human readable sizes
+lsof -i :<port>                         processes running on port
+lspci                                   pci devices
+lsusb                                   usb devices
 man <command>                           command docs
 man -k <keyword>                        search docs
 mkdir                                   create directory
+mount | column -t                       mounted filesystems
 mount /dev/sdb1 /mnt/disk               mount disk
 nl -ba <file>                           output file content with line numbers
+pgrep -l <keyword>                      search processes
 ping -a <address>                       beep while pinging
 ping <address>                          ping address
+pkill -9 <keyword>                      kill processes returned by search
 printenv                                environment variables
 ps -e --no-headers | wc -l              number of system tasks
 ps -eo pid,user,%cpu,%mem,time,command  custom columns
@@ -52,6 +71,8 @@ pstree                                  tree of running processes
 pwd                                     current directory
 readlink <link>                         symbolic link source
 rmdir                                   remove empty directory
+rm <file>                               remove file
+rm -r <directory>                       remove directory
 systemctl cat <service>                 service configuration
 systemctl disable <service>             disable service
 systemctl enable <service>              enable service
@@ -68,15 +89,49 @@ top -o %MEM                             sort by memory usage
 top                                     running processes
 tr -cd 0-9 < /dev/urandom | head -c 5   random number with 5 digits
 umount /mnt/disk                        unmount disk
+uname -a                                system kernel version
 uptime | awk -F': ' '{print $2}'        system load average
 uptime -p | cut -d" " -f2-              system uptime
 wc -l <file>                            count lines
 wget <url>                              download file
+whoami                                  current user
 whois <domain>                          domain info
 who                                     who is logged on
 w                                       who is logged on and what are they doing
+lsof <file>                             processes accessing file
+dd if=/dev/cdrom of=/tmp/cd.iso bs=2048 rip cd/dvd
 
 \^ +<option>                            man page search for option
+~.<Enter>                               kill frozen ssh session
+
+temporary swap:
+activate:
+dd if=/dev/zero of=/swap2gb bs=1024k count=2000
+mkswap /swap2gb
+swapon /swap2gb
+deactivate:
+swapoff /swap2gb
+rm /swap2gb
+
+memory filesystem:
+activate:
+mkdir /memdisk
+mount -t tmpfs -osize=64m tmpfs /memdisk
+deactivate:
+umount /memdisk
+rmdir /memdisk
+
+send clipboard over network:
+receiver: nc -l 1234 | xclip -se c
+sender: xclip -se c -o | nc <receiver> 1234
+
+usage %:
+cpu: mpstat 1 2 | awk 'END{printf "%d\n",100-$NF}'
+memory: free | awk 'NR==2{printf "%d\n",$3*100/$2}'
+disk: df | awk '$NF=="/"{printf "%d\n",$5}'
+
+sources:
+- http://cb.vu/unixtoolbox.xhtml
 
 git
 ===

@@ -20,25 +20,9 @@ add to {bash,zsh}rc
 # Append output to file with sudo
 
 	$ ls -la | sudo tee -a /etc/file
-# Base64 decode
-
-	$ base64 -d encoded > img.png
-# Base64 encode
-
-	$ base64 img.png > encoded
 # Change directory ownership
 
 	$ sudo chown -R USER ~/path/to/dir
-# Change directory to home
-
-	$ cd
-
-or
-
-	$ cd ~
-# Change directory to previous
-
-	$ cd -
 # Change email stored in RSA key
 
 	ssh-keygen -c -f ~/.ssh/id_rsa -C "b@bdeak.net"
@@ -49,18 +33,12 @@ or
 # Change ssh key passphrase
 
 	$ ssh-keygen -p
-# Change timezone
-
-	$ sudo timedatectl set-timezone Europe/Zagreb
 # Change welcome message
 
 	$ vi /etc/motd
 # Check if machine is 64 or 32 bit
 
 	$ getconf LONG_BIT
-# Check if web server works
-
-	$ ping bartol.dev
 # Clone disk
 
 this can destroy your data. use carefully
@@ -80,51 +58,9 @@ add to {bash,zsh}rc
 
 	$ sudo apt-get install rdesktop
 	$ rdesktop -p- 192.168.100.28
-# Copy directory
-
-	$ cp -R dir_1 dir_2
-
-There is one more tricky thing with `cp` and directories.
-
-If you include `/` after directory name, it will only copy files from `dir_1`
-and not directory itself.
-
-	$ cp -R dir_1/ dir_2
-# Copy file
-
-	$ cp file_1 file_2
-
-Copying multiple files in directory:
-
-	$ cp file_1 file_2 directory_1
-
-Useful flags:
-
-- `-n` - don't overwrite an existing file
-- `-f` - if destination file can't be opened, delete it and create new file
-- `-p` - preserve file modification time, access time...
-- `-v` - verbose output (print copied files to stdout)
 # Count number of lines in directory
 
 	$ find . -type f -exec cat {} + | wc -l
-# Create blank file
-
-	$ touch filename
-# Create bootable Linux USB
-
-download iso
-
-- [Ubuntu](https://ubuntu.com/download/desktop)
-- [Xubuntu](https://xubuntu.org/download)
-- [PopOS](https://pop.system76.com/)
-- [Debian](https://www.debian.org/distrib/netinst)
-- [Manjaro](https://manjaro.org/download/)
-
-flash iso to usb
-
-- [balenaEtcher](https://www.balena.io/etcher/)
-- [Rufus](https://rufus.ie/) (Windows)
-- [dd](/linux/linux-flash-iso-to-usb)
 # Create disk image
 
 this can destroy your data. use carefully
@@ -136,30 +72,6 @@ this can destroy your data. use carefully
 
 	# dd if=/dev/sda1 of=~/partition.img
 
-# Create symbolic link
-
-	$ ln -s file link
-# Debian add PPA
-
-	$ sudo add-apt-repository ppa:something
-# Debian install .deb
-
-	$ sudo apt install ./file.deb
-# Debian list all fonts
-
-	$ fc-list
-# Debian list monospace fonts
-
-	$ fc-list :spacing=mono
-# Debian remove no longer required packages
-
-	$ sudo apt autoremove
-# Debian remove PPA
-
-	$ sudo add-apt-repository --remove ppa:something
-# Debian view all installed software
-
-	$ apt list --installed
 # Decompress .gz file
 
 	$ gunzip file.gz
@@ -172,9 +84,6 @@ bash:
 zsh:
 
 	$ diff =(cmd1) =(cmd2)
-# Display command output in columns
-
-	$ mount | column -t
 # Echo without newline
 
 	$ echo -n without newline
@@ -199,13 +108,6 @@ zsh:
 
 	$ chmod -x script.sh
 
-# Find man pages
-
-	$ man -k vi
-
-or find by whole word:
-
-	$ man -f vi
 # Find path to executable
 
 	$ command -v kak

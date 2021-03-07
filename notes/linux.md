@@ -144,5 +144,10 @@ puts metadata at the beginning
 
 echo
 tar -xf
+which
 
 # ethtool -p eth1           # Blink the ethernet led - very useful when supported
+curl icanhazip.com - returns your IP address
+curl icanhazptr.com - returns the reverse DNS record (PTR) for your IP
+curl icanhaztrace.com - returns a traceroute from my servers to your IP address
+curl icanhazepoch.com - returns the epoch time (also called Unix time)

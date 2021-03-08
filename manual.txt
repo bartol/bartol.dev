@@ -16,6 +16,7 @@ cd                                      change directory to home
 cd -                                    change directory to previous
 cd <directory>                          change directory
 chmod 600 <key-file>                    fix ssh key file permissions too open
+chmod +x <file>                         make file executable
 chown <user>:<group> <file>             change file ownership
 clear                                   clear terminal
 cp $1{,.$(date +%Y-%m-%d)}              snapshot file
@@ -26,6 +27,8 @@ mv <source> <target>                    move source to target
 curl -o <file> <url>                    download file and change name
 curl -O <url>                           download file
 curl -s <url>                           hide progress bar
+curl icanhazip.com                      your public ip address
+curl icanhazptr.com                     reverse dns for your ip address
 date -d '-1 day'                        yesterday's date
 date +%s                                date in unix timestamp format
 date                                    today's date
@@ -97,7 +100,8 @@ uptime -p | cut -d" " -f2-              system uptime
 wc -l <file>                            count lines
 wget <url>                              download file
 whoami                                  current user
-whois <domain>                          domain info
+whois <domain>                          domain owner info
+host <domain>                           domain dns info
 who                                     who is logged on
 w                                       who is logged on and what are they doing
 lsof <file>                             processes accessing file
@@ -106,6 +110,9 @@ base64 <file>                           base64 encode
 base64 -d <file>                        base64 decode
 touch <file>                            create empty file
 touch <file>                            update file modification time
+poweroff                                power off system
+reboot                                  reboot system
+tail -f <file>                          output appended lines as file grows
 
 \^ +<option>                            man page search for option
 ~.<Enter>                               kill frozen ssh session
@@ -127,9 +134,13 @@ deactivate:
 umount /memdisk
 rmdir /memdisk
 
-send clipboard over network:
+send clipboard over local network:
 receiver: nc -l 1234 | xclip -se c
 sender: xclip -se c -o | nc <receiver> 1234
+
+send file over local network:
+receiver: nc -l 1234 > <file>
+sender: nc <receiver> 1234 < <file>
 
 usage %:
 cpu: mpstat 1 2 | awk 'END{printf "%d\n",100-$NF}'

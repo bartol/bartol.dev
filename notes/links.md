@@ -34,11 +34,13 @@
 
 - <https://abc.useallfive.com/>
 - <https://fonts.google.com/>
-- <https://icons8.com/line-awesome>
-- <https://www.heropatterns.com/>
+- <https://feathericons.com/>
+- <https://ratiobuddy.com/>
+- <https://larsenwork.com/easing-gradients/>
 - <https://csslayout.io/patterns/>
 - <https://caniuse.com/>
 - <https://www.caniemail.com/>
+
 
 ## writing
 

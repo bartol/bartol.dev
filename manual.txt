@@ -26,7 +26,10 @@ curl -L <url>                           follow redirects
 mv <source> <target>                    move source to target
 curl -o <file> <url>                    download file and change name
 curl -O <url>                           download file
-curl -s <url>                           hide progress bar
+curl -I <url>                           display only response headers
+curl -X <method> <url>                  send request with specific http method
+curl -T <file> <url>                    upload file via put request
+curl -s <url>                           hide progress info
 curl icanhazip.com                      your public ip address
 curl icanhazptr.com                     reverse dns for your ip address
 date -d '-1 day'                        yesterday's date

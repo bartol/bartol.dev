@@ -1,47 +1,12 @@
+password protect directory:
+encrypt: tar -cz <directory> | gpg -c -o <directory>.tgz.gpg
+decrypt: gpg -d <directory>.tar.gpg | tar -xz
 
+tar -czvf <archive>.tgz <directory>     archive and compress directory
+tar -czvf <archive>.tgz <file> <file>   archive and compress files
+tar -xzvf <archive>.tgz                 decompress and extract archive
+tar -tzvf <archive>.tgz                 files in archive
 
-move to linux.md
-
-# Archive and compress directory with tar
-
-	$ tar cvzf etc.tar.gz /etc
-# Archive and compress files with tar
-
-	$ tar cvzf archive.tar.gz file1 file2
-# Archive directory with tar
-
-	$ tar cvf etc.tar /etc
-# Archive files with tar
-
-	$ tar cvf archive.tar file1 file2
-# Decompress and extract .tar.gz file
-
-	$ gunzip file.tar.gz
-	$ tar xvf file.tar
-
-or
-
-	$ zcat file.tar.gz | tar xvf -
-
-or
-
-	$ tar zxvf file.tar.gz
-
-# Extract .tar file
-
-	$ tar xvf archive.tar
-# Extract .tar.gz from internet without local saving
-
-	$ wget -qO - "https://www.bdeak.net/archive.tar.gz" | tar zxvf -
-# List content of tar archive
-
-	$ tar tvf archive.tar
-# Password protect directory
-
-encrypt:
-
-	$ tar c dir | gpg -c -o dir.tar.gpg
-
-decrypt:
-
-	$ gpg -d dir.tar.gpg | tar x
+curl <url> | tar -xvzf -                extract remote file
+wget -qO- <url>                         remote file content
+curl <url>                              remote file content

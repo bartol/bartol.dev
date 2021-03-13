@@ -142,8 +142,4 @@ puts metadata at the beginning
 
 	$ grep -o <query> <file>
 
-echo
-tar -xf
-which
-
 # ethtool -p eth1           # Blink the ethernet led - very useful when supported

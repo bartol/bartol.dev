@@ -10,7 +10,7 @@ cal                                     current month calendar
 cal <month> <year>                      calendar for month in year
 cal -y                                  current year calendar
 cal <year>                              calendar for year
-cat <file>                              output file content
+cat <file>                              file content
 cd $(mktemp -d /tmp/dir.XXXXX)          create tmp dir
 cd                                      change directory to home
 cd -                                    change directory to previous
@@ -19,7 +19,7 @@ chmod 600 <key-file>                    fix ssh key file permissions too open
 chmod +x <file>                         make file executable
 chown <user>:<group> <file>             change file ownership
 clear                                   clear terminal
-cp $1{,.$(date +%Y-%m-%d)}              snapshot file
+cp <file>{,.$(date +%Y-%m-%d)}          snapshot file
 cp <file> <directory>                   copy file to directory
 cp -r <directory <directory>            copy directory to directory
 curl -L <url>                           follow redirects
@@ -102,6 +102,7 @@ uptime | awk -F': ' '{print $2}'        system load average
 uptime -p | cut -d" " -f2-              system uptime
 wc -l <file>                            count lines
 wget <url>                              download file
+wget -mkpE <url>                        download website
 whoami                                  current user
 whois <domain>                          domain owner info
 host <domain>                           domain dns info
@@ -116,6 +117,17 @@ touch <file>                            update file modification time
 poweroff                                power off system
 reboot                                  reboot system
 tail -f <file>                          output appended lines as file grows
+sed "/<keyword>/d" <file>               file content without lines with keyword
+sed "s/<from>/<to>/g" <file>            file content with replaced keyword
+sed -i <pattern> <file>                 edit file in place
+rsync <user>@<host>:<file> <target>     copy file from remote
+rsync <file> <user>@<host>:<target>     copy file to remote
+rsync -a <user>@<host>:<dir> <target>   copy directory from remote
+rsync -a <dir> <user>@<host>:<target>   copy directory to remote
+rsync -a --delete <source> <target>     delete files deleted in source
+rsync -z <source> <target>              compress
+echo <string>                           echo string
+which <command>                         full path to command
 
 \^ +<option>                            man page search for option
 ~.<Enter>                               kill frozen ssh session

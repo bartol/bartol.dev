@@ -6,6 +6,8 @@ linux
 awk 'NR % 5 == 0'                       every fifth line
 awk '{print $(NF-1)}' <file>            second to last column
 awk '{print $NF}' <file>                last column
+base64 -d <file>                        base64 decode
+base64 <file>                           base64 encode
 cal                                     current month calendar
 cal <month> <year>                      calendar for month in year
 cal -y                                  current year calendar
@@ -22,26 +24,28 @@ clear                                   clear terminal
 cp <file>{,.$(date +%Y-%m-%d)}          snapshot file
 cp <file> <directory>                   copy file to directory
 cp -r <directory <directory>            copy directory to directory
-curl -L <url>                           follow redirects
-mv <source> <target>                    move source to target
-curl -o <file> <url>                    download file and change name
-curl -O <url>                           download file
-curl -I <url>                           display only response headers
-curl -X <method> <url>                  send request with specific http method
-curl -T <file> <url>                    upload file via put request
-curl -s <url>                           hide progress info
 curl icanhazip.com                      your public ip address
 curl icanhazptr.com                     reverse dns for your ip address
+curl -I <url>                           display only response headers
+curl -L <url>                           follow redirects
+curl -o <file> <url>                    download file and change name
+curl -O <url>                           download file
+curl -s <url>                           hide progress info
+curl -T <file> <url>                    upload file via put request
+curl -X <method> <url>                  send request with specific http method
 date -d '-1 day'                        yesterday's date
 date +%s                                date in unix timestamp format
 date                                    today's date
 date +%Y-%m-%d                          date in iso format
+dd if=/dev/cdrom of=/tmp/cd.iso bs=2048 rip cd/dvd
 df -h                                   disk usage info
 df -h /                                 used disk space
 dmesg                                   hardware and boot messages
 du -sh                                  current directory size
 du -sh *                                size of files in current directory
+echo <string>                           echo string
 free -h --si                            memory usage info
+host <domain>                           domain dns info
 hostname                                system hostname
 ip addr show <interface>                network info for interface
 ip addr show                            network info
@@ -55,20 +59,23 @@ ls | cut -d. -f1                        files without extensions
 ls <directory>                          files in directory
 ls                                      files in current directory
 ls -lh                                  files in list with human readable sizes
+lsof <file>                             processes accessing file
 lsof -i :<port>                         processes running on port
 lspci                                   pci devices
 lsusb                                   usb devices
 man <command>                           command docs
-man -k <keyword>                        search docs
 man -f <keyword>                        search docs by whole word
+man -k <keyword>                        search docs
 mkdir                                   create directory
 mount | column -t                       mounted filesystems
 mount /dev/sdb1 /mnt/disk               mount disk
+mv <source> <target>                    move source to target
 nl -ba <file>                           output file content with line numbers
 pgrep -l <keyword>                      search processes
 ping -a <address>                       beep while pinging
 ping <address>                          ping address
 pkill -9 <keyword>                      kill processes returned by search
+poweroff                                power off system
 printenv                                environment variables
 ps -e --no-headers | wc -l              number of system tasks
 ps -eo pid,user,%cpu,%mem,time,command  custom columns
@@ -78,9 +85,19 @@ ps                                      running processes
 pstree                                  tree of running processes
 pwd                                     current directory
 readlink <link>                         symbolic link source
+reboot                                  reboot system
 rmdir                                   remove empty directory
 rm <file>                               remove file
 rm -r <directory>                       remove directory
+rsync -a --delete <source> <target>     delete files deleted in source
+rsync -a <dir> <user>@<host>:<target>   copy directory to remote
+rsync -a <user>@<host>:<dir> <target>   copy directory from remote
+rsync <file> <user>@<host>:<target>     copy file to remote
+rsync <user>@<host>:<file> <target>     copy file from remote
+rsync -z <source> <target>              compress
+sed -i <pattern> <file>                 edit file in place
+sed "/<keyword>/d" <file>               file content without lines with keyword
+sed "s/<from>/<to>/g" <file>            file content with replaced keyword
 systemctl cat <service>                 service configuration
 systemctl disable <service>             disable service
 systemctl enable <service>              enable service
@@ -88,6 +105,7 @@ systemctl restart <service>             restart service
 systemctl start <service>               start service
 systemctl status <service>              service status
 systemctl stop <service>                stop service
+tail -f <file>                          output appended lines as file grows
 timedatectl list-timezones              list timezones
 timedatectl set-timezone <timezone>     change timezone
 timedatectl                             system time info
@@ -95,39 +113,21 @@ top -bn1 > <file>                       output to file
 top -o %CPU                             sort by cpu usage
 top -o %MEM                             sort by memory usage
 top                                     running processes
+touch <file>                            create empty file
+touch <file>                            update file modification time
 tr -cd 0-9 < /dev/urandom | head -c 5   random number with 5 digits
 umount /mnt/disk                        unmount disk
 uname -a                                system kernel version
 uptime | awk -F': ' '{print $2}'        system load average
 uptime -p | cut -d" " -f2-              system uptime
 wc -l <file>                            count lines
-wget <url>                              download file
 wget -mkpE <url>                        download website
+wget <url>                              download file
+which <command>                         full path to command
 whoami                                  current user
 whois <domain>                          domain owner info
-host <domain>                           domain dns info
 who                                     who is logged on
 w                                       who is logged on and what are they doing
-lsof <file>                             processes accessing file
-dd if=/dev/cdrom of=/tmp/cd.iso bs=2048 rip cd/dvd
-base64 <file>                           base64 encode
-base64 -d <file>                        base64 decode
-touch <file>                            create empty file
-touch <file>                            update file modification time
-poweroff                                power off system
-reboot                                  reboot system
-tail -f <file>                          output appended lines as file grows
-sed "/<keyword>/d" <file>               file content without lines with keyword
-sed "s/<from>/<to>/g" <file>            file content with replaced keyword
-sed -i <pattern> <file>                 edit file in place
-rsync <user>@<host>:<file> <target>     copy file from remote
-rsync <file> <user>@<host>:<target>     copy file to remote
-rsync -a <user>@<host>:<dir> <target>   copy directory from remote
-rsync -a <dir> <user>@<host>:<target>   copy directory to remote
-rsync -a --delete <source> <target>     delete files deleted in source
-rsync -z <source> <target>              compress
-echo <string>                           echo string
-which <command>                         full path to command
 
 \^ +<option>                            man page search for option
 ~.<Enter>                               kill frozen ssh session

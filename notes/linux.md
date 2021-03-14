@@ -60,28 +60,6 @@ puts metadata at the beginning
 
 	$ curl -sL <url> | grep -oP '(?<=<title>).*(?=</title>)'
 
-## aws s3 cli
-
-### list objects in bucket
-
-	$ aws s3 ls <bucket>
-
-### upload file
-
-	$ aws s3 cp <file> s3://<bucket>/<file>
-
-### download file
-
-	$ aws s3 cp s3://<bucket>/<file> <file>
-
-### upload from stdin
-
-	$ <command> | aws s3 cp - s3://<bucket>/<file>
-
-### download to stdout
-
-	$ aws s3 cp s3://<bucket>/<file> -
-
 ## youtube-dl
 
 ### download .mp3
@@ -91,10 +69,6 @@ puts metadata at the beginning
 ### download .mp4
 
 	$ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <url>
-
-## diff output of 2 commands
-
-	$ diff <(command) <(command)
 
 ## list background jobs
 
@@ -141,5 +115,3 @@ puts metadata at the beginning
 ### return only matched text
 
 	$ grep -o <query> <file>
-
-# ethtool -p eth1           # Blink the ethernet led - very useful when supported

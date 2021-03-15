@@ -192,7 +192,7 @@ force record update:
 
 ### translate page
 
-	javascript: window.location = "https://translate.google.com/translate?sl=en&tl=hr&u=" + encodeURIComponent(document.location)
+	javascript: window.location = "https://translate.google.com/translate?sl=auto&tl=en&u=" + encodeURIComponent(document.location)
 
 ### Post to HN
 

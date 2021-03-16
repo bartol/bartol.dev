@@ -130,6 +130,7 @@ who                                     who is logged on
 w                                       who is logged on and what are they doing
 diff <(<command>) <(<command>)          compare command outputs
 diff <file> <file>                      compare files
+ethtool -p <interface>                  blink ethernet adapter led
 
 \^ +<option>                            man page search for option
 ~.<Enter>                               kill frozen ssh session

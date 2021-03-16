@@ -70,10 +70,6 @@ puts metadata at the beginning
 
 	$ youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4' <url>
 
-## list background jobs
-
-	$ jobs
-
 ## send message to all logged in users
 
 	# wall <message>

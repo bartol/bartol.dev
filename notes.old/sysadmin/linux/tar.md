@@ -11,4 +11,4 @@ curl <url> | tar -xvzf -                extract remote file
 wget -qO- <url>                         remote file content
 curl <url>                              remote file content
 
-ethtool -p <interface>                  blink ethernet adapter led
+jobs                                    background jobs

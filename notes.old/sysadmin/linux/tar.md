@@ -9,6 +9,4 @@ tar -tzvf <archive>.tgz                 files in archive
 
 curl <url> | tar -xvzf -                extract remote file
 wget -qO- <url>                         remote file content
-curl <url>                              remote file content
 
-jobs                                    background jobs

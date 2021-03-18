@@ -3,7 +3,9 @@ MANUAL
 linux
 =====
 
+awk '{$5="";print $0}'                  every except fifth column
 awk 'NR % 5 == 0'                       every fifth line
+awk '{print $5}'                        fifth column
 awk '{print $(NF-1)}' <file>            second to last column
 awk '{print $NF}' <file>                last column
 base64 -d <file>                        base64 decode
@@ -32,6 +34,7 @@ curl -o <file> <url>                    download file and change name
 curl -O <url>                           download file
 curl -s <url>                           hide progress info
 curl -T <file> <url>                    upload file via put request
+curl <url>                              remote file content
 curl -X <method> <url>                  send request with specific http method
 date -d '-1 day'                        yesterday's date
 date +%s                                date in unix timestamp format
@@ -40,15 +43,19 @@ date +%Y-%m-%d                          date in iso format
 dd if=/dev/cdrom of=/tmp/cd.iso bs=2048 rip cd/dvd
 df -h                                   disk usage info
 df -h /                                 used disk space
+diff <(<command>) <(<command>)          compare command outputs
+diff <file> <file>                      compare files
 dmesg                                   hardware and boot messages
 du -sh                                  current directory size
 du -sh *                                size of files in current directory
 echo <string>                           echo string
+ethtool -p <interface>                  blink ethernet adapter led
 free -h --si                            memory usage info
 host <domain>                           domain dns info
 hostname                                system hostname
 ip addr show <interface>                network info for interface
 ip addr show                            network info
+jobs                                    background jobs
 kill -9 <pid>                           kill process by pid
 killall -9 <name>                       kill process by name
 last $USER                              user login history
@@ -128,9 +135,6 @@ whoami                                  current user
 whois <domain>                          domain owner info
 who                                     who is logged on
 w                                       who is logged on and what are they doing
-diff <(<command>) <(<command>)          compare command outputs
-diff <file> <file>                      compare files
-ethtool -p <interface>                  blink ethernet adapter led
 
 \^ +<option>                            man page search for option
 ~.<Enter>                               kill frozen ssh session

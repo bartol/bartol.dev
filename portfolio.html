@@ -1,0 +1,144 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	
+</head>
+
+<body>
+	<header>
+		<h1><a href="/">Bartol Deak</a></h1>
+		<div>
+			<a href="mailto:b@bdeak.net">b@bdeak.net</a>
+			<a href="https://github.com/bartol" target="_blank">github</a>
+			<a href="https://git.sr.ht/~bd" target="_blank">sourcehut</a>
+		</div>
+	</header>
+	<h2 class="title">Previous work</h2>
+	<div class="project">
+		<div class="text">
+			<h2>amadeus2.hr</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+				maximus dapibus convallis. Donec nec aliquam mauris, eu aliquam
+				nulla. Fusce pulvinar tortor at consectetur luctus. Praesent sit
+				amet quam non velit pellentesque tempus eu eget elit. Nunc ut odio
+				nunc. Sed id purus malesuada, dignissim ipsum sed, pellentesque
+				massa.
+			</p>
+			<p>
+				<a href="/" target="_blank">Live</a>
+				<a href="/" target="_blank">Source</a>
+			</p>
+		</div>
+		<div class="gallery">
+			<div class="images">
+				<a href="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c" target="_blank" style="display: initial;">
+					<img src="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c">
+				</a>
+				<a href="https://images.unsplash.com/photo-1611095789391-947c8f94179c" target="_blank" style="display: none;">
+					<img src="https://images.unsplash.com/photo-1611095789391-947c8f94179c">
+				</a>
+				<a href="https://images.unsplash.com/photo-1616569600315-ec3207298bae" target="_blank" style="display: none;">
+					<img src="https://images.unsplash.com/photo-1616569600315-ec3207298bae">
+				</a>
+			</div>
+			<div class="controls">
+				<a href="#" onclick="return prev_img(this)">Previous</a>
+				<a href="#" onclick="return next_img(this)">Next</a>
+			</div>
+		</div>
+	</div>
+	<div class="project">
+		<div class="gallery">
+			<div class="images">
+				<a href="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c" target="_blank" style="display: none;">
+					<img src="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c">
+				</a>
+				<a href="https://images.unsplash.com/photo-1611095789391-947c8f94179c" target="_blank" style="display: initial;">
+					<img src="https://images.unsplash.com/photo-1611095789391-947c8f94179c">
+				</a>
+				<a href="https://images.unsplash.com/photo-1616569600315-ec3207298bae" target="_blank" style="display: none;">
+					<img src="https://images.unsplash.com/photo-1616569600315-ec3207298bae">
+				</a>
+			</div>
+			<div class="controls">
+				<a href="#" onclick="return prev_img(this)">Previous</a>
+				<a href="#" onclick="return next_img(this)">Next</a>
+			</div>
+		</div>
+		<div class="text">
+			<h2>chatter</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+				maximus dapibus convallis. Donec nec aliquam mauris, eu aliquam
+				nulla. Fusce pulvinar tortor at consectetur luctus. Praesent sit
+				amet quam non velit pellentesque tempus eu eget elit. Nunc ut odio
+				nunc. Sed id purus malesuada, dignissim ipsum sed, pellentesque
+				massa.
+			</p>
+			<p>
+				<a href="/" target="_blank">Live</a>
+				<a href="/" target="_blank">Source</a>
+			</p>
+		</div>
+	</div>
+	<div class="project">
+		<div class="gallery">
+			<div class="images">
+				<a href="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c" target="_blank" style="display: none;">
+					<img src="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c">
+				</a>
+				<a href="https://images.unsplash.com/photo-1611095789391-947c8f94179c" target="_blank" style="display: none;">
+					<img src="https://images.unsplash.com/photo-1611095789391-947c8f94179c">
+				</a>
+				<a href="https://images.unsplash.com/photo-1616569600315-ec3207298bae" target="_blank" style="display: initial;">
+					<img src="https://images.unsplash.com/photo-1616569600315-ec3207298bae">
+				</a>
+			</div>
+			<div class="controls">
+				<a href="#" onclick="return prev_img(this)">Previous</a>
+				<a href="#" onclick="return next_img(this)">Next</a>
+			</div>
+		</div>
+		<div class="text">
+			<h2>tempera</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+				maximus dapibus convallis. Donec nec aliquam mauris, eu aliquam
+				nulla. Fusce pulvinar tortor at consectetur luctus. Praesent sit
+				amet quam non velit pellentesque tempus eu eget elit. Nunc ut odio
+				nunc. Sed id purus malesuada, dignissim ipsum sed, pellentesque
+				massa.
+			</p>
+			<p>
+				<a href="/" target="_blank">Live</a>
+				<a href="/" target="_blank">Source</a>
+			</p>
+		</div>
+	</div>
+	<script>
+		function prev_img(el) {
+			const imgs = el.parentElement.previousElementSibling
+			const selected_img = imgs.querySelector("a[style=\"display: initial;\"]")
+			let prev_img = selected_img.previousElementSibling
+			if (prev_img === null) { prev_img = imgs.lastElementChild }
+			selected_img.style.display = "none"
+			prev_img.style.display = "initial"
+			return false
+		}
+		function next_img(el) {
+			const imgs = el.parentElement.previousElementSibling
+			const selected_img = imgs.querySelector("a[style=\"display: initial;\"]")
+			let next_img = selected_img.nextElementSibling
+			if (next_img === null) { next_img = imgs.firstElementChild }
+			selected_img.style.display = "none"
+			next_img.style.display = "initial"
+			return false
+		}
+	</script>
+</body>
+</html

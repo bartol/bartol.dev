@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: 'Inconsolata', monospace;
+	max-width: 1250px;
+	margin: 0 auto;
+	padding: 16px;
+}
+a {
+	color: cyan;
+}
+a:hover {
+	text-decoration: none;
+}
+::selection {
+	color: #000;
+	background: cyan;
+}
+header {
+	background-color: #000;
+	padding: 16px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #333;
+}
+header h1 {
+	margin: 0;
+}
+header h1 a {
+	color: #fff;
+	text-decoration: none;
+}
+.title {
+	font-size: 64px;
+	text-align: center;
+	margin: 128px 0 64px 0;
+}
+.project {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50%;
+	margin-bottom: 128px;
+}
+@media(min-width: 800px) {
+}
+.project .text,
+.project .gallery {
+	width: calc(50% - 32px);
+}
+.project .text h2 {
+	font-size: 32px;
+	margin: 0;
+}
+.project .gallery:nth-child(even) {
+	margin-right: 16px;
+}
+.project .gallery:nth-child(odd) {
+	margin-left: 16px;
+}
+.project .gallery img {
+	width: 100%;
+	border-radius: 4px;
+	display: block;
+}
+.gallery:nth-child(even) {
+	transform: perspective(1000px) rotateY(-25deg);
+}
+.gallery:nth-child(odd) {
+	transform: perspective(1000px) rotateY(25deg);
+}
+.controls {
+	margin-top: 8px;
+}
+.gallery:nth-child(odd) .controls {
+	text-align: right;
+}
+

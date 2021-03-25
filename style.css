@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
-
 body {
 	background-color: #000;
 	color: #fff;
@@ -17,6 +16,9 @@ a:hover {
 ::selection {
 	color: #000;
 	background: cyan;
+}
+th {
+	text-align: left;
 }
 header {
 	background-color: #000;
@@ -38,6 +40,7 @@ header h1 a {
 	text-align: center;
 	margin: 128px 0 64px 0;
 }
+section,
 .project {
 	display: flex;
 	justify-content: space-between;
@@ -45,8 +48,12 @@ header h1 a {
 	height: 50%;
 	margin-bottom: 128px;
 }
+.project:nth-child(even) {
+	flex-direction: row-reverse;
+}
 @media(min-width: 800px) {
 }
+section > *,
 .project .text,
 .project .gallery {
 	width: calc(50% - 32px);
@@ -55,27 +62,54 @@ header h1 a {
 	font-size: 32px;
 	margin: 0;
 }
-.project .gallery:nth-child(even) {
-	margin-right: 16px;
-}
-.project .gallery:nth-child(odd) {
+.project:nth-child(even) .gallery {
+	transform: perspective(1000px) rotateY(25deg);
 	margin-left: 16px;
+}
+.project:nth-child(odd) .gallery {
+	transform: perspective(1000px) rotateY(-25deg);
+	margin-right: 16px;
 }
 .project .gallery img {
 	width: 100%;
 	border-radius: 4px;
 	display: block;
 }
-.gallery:nth-child(even) {
-	transform: perspective(1000px) rotateY(-25deg);
-}
-.gallery:nth-child(odd) {
-	transform: perspective(1000px) rotateY(25deg);
-}
 .controls {
 	margin-top: 8px;
 }
-.gallery:nth-child(odd) .controls {
+.project:nth-child(even) .gallery .controls {
 	text-align: right;
 }
-
+.contact form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+button, input, textarea {
+	border: 1px solid #333;
+	border-radius: 4px;
+	padding: 8px;
+	background-color: #000;
+	color: #fff;
+}
+button {
+	cursor: pointer;
+}
+input, textarea {
+	margin-bottom: 8px;
+}
+textarea {
+	resize: vertical;
+}
+button:active, button:focus, textarea:focus, input:focus {
+	border-color: cyan;
+	outline: none !important;
+}
+::placeholder {
+	color: #999;
+	opacity: 1;
+}
+:invalid {
+	box-shadow: none;
+}

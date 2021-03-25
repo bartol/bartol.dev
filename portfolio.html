@@ -13,6 +13,7 @@
 		<h1><a href="/">Bartol Deak</a></h1>
 		<div>
 			<a href="mailto:b@bdeak.net">b@bdeak.net</a>
+			<a href="/cv.pdf" target="_blank">cv</a>
 			<a href="https://github.com/bartol" target="_blank">github</a>
 			<a href="https://git.sr.ht/~bd" target="_blank">sourcehut</a>
 		</div>
@@ -53,6 +54,21 @@
 		</div>
 	</div>
 	<div class="project">
+		<div class="text">
+			<h2>chatter</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+				maximus dapibus convallis. Donec nec aliquam mauris, eu aliquam
+				nulla. Fusce pulvinar tortor at consectetur luctus. Praesent sit
+				amet quam non velit pellentesque tempus eu eget elit. Nunc ut odio
+				nunc. Sed id purus malesuada, dignissim ipsum sed, pellentesque
+				massa.
+			</p>
+			<p>
+				<a href="/" target="_blank">Live</a>
+				<a href="/" target="_blank">Source</a>
+			</p>
+		</div>
 		<div class="gallery">
 			<div class="images">
 				<a href="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c" target="_blank" style="display: none;">
@@ -70,8 +86,10 @@
 				<a href="#" onclick="return next_img(this)">Next</a>
 			</div>
 		</div>
+	</div>
+	<div class="project">
 		<div class="text">
-			<h2>chatter</h2>
+			<h2>tempera</h2>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
 				maximus dapibus convallis. Donec nec aliquam mauris, eu aliquam
@@ -85,8 +103,6 @@
 				<a href="/" target="_blank">Source</a>
 			</p>
 		</div>
-	</div>
-	<div class="project">
 		<div class="gallery">
 			<div class="images">
 				<a href="https://images.unsplash.com/photo-1616543679218-b9bc817b4d7c" target="_blank" style="display: none;">
@@ -104,22 +120,43 @@
 				<a href="#" onclick="return next_img(this)">Next</a>
 			</div>
 		</div>
-		<div class="text">
-			<h2>tempera</h2>
+	</div>
+	<h2 class="title">Freelancing</h2>
+	<section>
+		<div class="pricing">
+			<h2>Services</h2>
+			<table>
+				<tr><th>Service</th><th>Price</th></tr>
+				<tr><td>create responsive highly converting landing page</td><td>$120</td></tr>
+				<tr><td>create Python automation script to save your time</td><td>$120</td></tr>
+				<tr><td>create security report for your website</td><td>$95</td></tr>
+				<tr><td>create Nginx configuration for your website</td><td>$40</td></tr>
+				<tr><td>create Caddy configuration for your website</td><td>$60</td></tr>
+				<tr><td>fix any Python issue or bug</td><td>$40</td></tr>
+				<tr><td>fix any PHP issue or bug</td><td>$60</td></tr>
+				<tr><td>fix any Golang issue or bug</td><td>$60</td></tr>
+				<tr><td>fix any Nginx configuration issue or bug</td><td>$40</td></tr>
+				<tr><td>fix any Caddy configuration issue or bug</td><td>$60</td></tr>
+			</table>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-				maximus dapibus convallis. Donec nec aliquam mauris, eu aliquam
-				nulla. Fusce pulvinar tortor at consectetur luctus. Praesent sit
-				amet quam non velit pellentesque tempus eu eget elit. Nunc ut odio
-				nunc. Sed id purus malesuada, dignissim ipsum sed, pellentesque
-				massa.
-			</p>
-			<p>
-				<a href="/" target="_blank">Live</a>
-				<a href="/" target="_blank">Source</a>
+				platforms:
+				<a href="/" target="_blank">peopleperhour</a>
+				<a href="/" target="_blank">fiverr</a>
 			</p>
 		</div>
-	</div>
+		<div class="contact">
+			<h2>Contact me</h2>
+			<form>
+				<input type="text" name="name" required placeholder="Name">
+				<input type="email" name="email" required placeholder="Email">
+				<textarea rows="3" name="message" required placeholder="Message"></textarea>
+				<button type="submit">Send</button>
+			</form>
+			<p>...or send me an email at <a href="mailto:b@bdeak.net">b@bdeak.net</a></p>
+		</div>
+	</section>
+
+
 	<script>
 		function prev_img(el) {
 			const imgs = el.parentElement.previousElementSibling

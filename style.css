@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 body {
-	background-color: #000;
-	color: #fff;
 	font-family: 'Inconsolata', monospace;
 	max-width: 1250px;
 	margin: 0 auto;
 	padding: 16px;
+}
+body, button, input, textarea {
+	background-color: #000;
+	color: #fff;
 }
 a {
 	color: cyan;
@@ -17,19 +18,53 @@ a:hover {
 	color: #000;
 	background: cyan;
 }
+button, input, textarea {
+	border: 1px solid #333;
+	border-radius: 4px;
+	padding: 8px;
+}
+button:active, button:focus, textarea:focus, input:focus {
+	border-color: cyan;
+	outline: none !important;
+}
+button {
+	cursor: pointer;
+}
+input, textarea {
+	margin-bottom: 8px;
+}
+textarea {
+	resize: vertical;
+}
+::placeholder {
+	color: #999;
+	opacity: 1;
+}
+:invalid {
+	box-shadow: none;
+}
+table {
+	border-collapse: collapse;
+}
 th {
 	text-align: left;
 }
 header, footer {
-	background-color: #000;
 	padding: 16px 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-header { border-bottom: 1px solid #333; }
-footer { border-top: 1px solid #333; margin-top: 96px; }
-header h1 { margin: 0; }
+header {
+	border-bottom: 1px solid #333;
+}
+footer {
+	border-top: 1px solid #333;
+	margin-top: 96px;
+}
+header h1 {
+	margin: 0;
+}
 header h1 a {
 	color: #fff;
 	text-decoration: none;
@@ -39,16 +74,45 @@ header h1 a {
 	text-align: center;
 	margin: 64px 0 32px 0;
 }
-section,
-.project {
+section {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 48px;
 	flex-direction: column-reverse;
 }
+section h2 {
+	font-size: 32px;
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+.gallery img {
+	width: 100%;
+	border-radius: 4px;
+	display: block;
+}
+.controls {
+	margin-top: 8px;
+	text-align: right;
+}
+.contact {
+	margin-bottom: 48px;
+	width: 100%;
+}
+.contact form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+.copy {
+	color: #999;
+}
 @media(min-width: 750px) {
-	section, .project {
+	.title {
+		font-size: 64px;
+		margin: 192px 0 64px 0;
+	}
+	section {
 		margin-bottom: 128px;
 	}
 	section, .project:nth-child(odd) {
@@ -57,13 +121,10 @@ section,
 	.project:nth-child(even) {
 		flex-direction: row-reverse;
 	}
-	section .pricing,
-	section .contact,
-	.project .text,
-	.project .gallery {
-		width: calc(50% - 32px);
+	section > * {
+		width: calc(50% - 32px) !important;
 	}
-	.project .gallery {
+	.gallery {
 		margin-top: 32px;
 	}
 	.project:nth-child(even) .gallery {
@@ -74,65 +135,13 @@ section,
 		transform: perspective(1000px) rotateY(-25deg);
 		margin-right: 16px;
 	}
-	.project:nth-child(odd) .gallery .controls {
+	.project:nth-child(odd) .controls {
 		text-align: left;
 	}
-	.title {
-		font-size: 64px;
-		margin: 192px 0 64px 0;
-	}
-	.pricing, .contact {
-		margin-bottom: auto !important;
+	.align_top > * {
+		margin-bottom: auto;
 	}
 	footer {
 		margin-top: 192px;
 	}
 }
-section h2, .project h2 {
-	font-size: 32px;
-	margin-top: 0;
-	margin-bottom: 16px;
-}
-.project .gallery img {
-	width: 100%;
-	border-radius: 4px;
-	display: block;
-}
-.controls {
-	margin-top: 8px;
-	text-align: right;
-}
-.pricing,
-.contact {
-	width: 100%;
-}
-.contact {
-	margin-bottom: 48px;
-}
-.contact form {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-}
-button, input, textarea {
-	border: 1px solid #333;
-	border-radius: 4px;
-	padding: 8px;
-	background-color: #000;
-	color: #fff;
-}
-input, textarea { margin-bottom: 8px; }
-button { cursor: pointer; }
-textarea { resize: vertical; }
-button:active, button:focus, textarea:focus, input:focus {
-	border-color: cyan;
-	outline: none !important;
-}
-::placeholder {
-	color: #999;
-	opacity: 1;
-}
-:invalid { box-shadow: none; }
-.copy { color: #999; }
-table { border-collapse: collapse; }
-

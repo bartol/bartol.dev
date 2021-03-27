@@ -1,15 +1,5 @@
 % links
 
-## utils
-
-- <https://temp-mail.org/>
-- <https://wetransfer.com/>
-- <https://pastebin.com/>
-- <https://www.online-convert.com/>
-- <https://www.virustotal.com/gui/>
-- <https://www.random.org/>
-- <http://libgen.rs/>
-
 ## programming
 
 - <https://developers.google.com/speed/pagespeed/insights/>

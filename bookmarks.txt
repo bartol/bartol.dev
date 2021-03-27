@@ -1,0 +1,14 @@
+:: utilities
+https://send.vis.ee/
+https://temp-mail.org/
+https://pastebin.com/
+https://www.online-convert.com/
+https://www.random.org/
+http://libgen.rs/
+
+:: front-end utilities
+https://sharingbuttons.io/
+
+:: front-end libraries
+https://plyr.io/
+https://slideout.js.org/

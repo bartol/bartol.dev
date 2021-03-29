@@ -12,5 +12,9 @@ http://libgen.rs/
 https://sharingbuttons.io/
 
 :: libraries
+https://necolas.github.io/normalize.css/
 https://plyr.io/
 https://slideout.js.org/
+https://quilljs.com/
+https://joshuajohnson.co.uk/Choices/
+https://bevacqua.github.io/rome/

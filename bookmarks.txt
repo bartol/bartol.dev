@@ -1,14 +1,16 @@
-:: utilities
+:: services
 https://send.vis.ee/
 https://temp-mail.org/
+https://www.receivesms.co/
+http://bugmenot.com/
 https://pastebin.com/
 https://www.online-convert.com/
 https://www.random.org/
 http://libgen.rs/
 
-:: front-end utilities
+:: utilities
 https://sharingbuttons.io/
 
-:: front-end libraries
+:: libraries
 https://plyr.io/
 https://slideout.js.org/

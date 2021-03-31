@@ -8,6 +8,12 @@ https://www.online-convert.com/
 https://www.random.org/
 http://libgen.rs/
 
+:: finance
+https://finviz.com/
+https://justetf.com/de-en/find-etf.html
+https://www.coingecko.com/
+https://thecoinperspective.com/
+
 :: utilities
 https://sharingbuttons.io/
 

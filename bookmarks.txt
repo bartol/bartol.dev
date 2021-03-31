@@ -7,15 +7,37 @@ https://pastebin.com/
 https://www.online-convert.com/
 https://www.random.org/
 http://libgen.rs/
-
-:: finance
+https://speed.cloudflare.com/
+https://fakeupdate.net/
+https://www.photopea.com/
+https://squoosh.app/
+https://jakearchibald.github.io/svgomg/
+https://unsplash.com/
 https://finviz.com/
-https://justetf.com/de-en/find-etf.html
 https://www.coingecko.com/
 https://thecoinperspective.com/
-
-:: utilities
 https://sharingbuttons.io/
+https://abc.useallfive.com/
+https://fonts.google.com/
+https://feathericons.com/
+https://ratiobuddy.com/
+https://larsenwork.com/easing-gradients/
+https://caniuse.com/
+https://www.caniemail.com/
+https://crontab.guru/
+https://dnstools.ws/
+https://keycode.info/
+https://regexr.com/
+https://devdocs.io/
+https://cheat.sh/
+https://developers.google.com/speed/pagespeed/insights/
+https://ispravi.me/
+https://jezicna-pomoc.lss.hr/index.php?check
+https://translate.google.com/
+https://www.flightradar24.com/
+https://www.lightningmaps.org/
+https://www.vesselfinder.com/
+https://sudreg.pravosudje.hr/registar/
 
 :: libraries
 https://necolas.github.io/normalize.css/
@@ -24,3 +46,9 @@ https://slideout.js.org/
 https://quilljs.com/
 https://joshuajohnson.co.uk/Choices/
 https://bevacqua.github.io/rome/
+
+:: apis
+https://icanhazip.com/
+https://resmush.it/
+https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
+https://www.openstreetmap.org/

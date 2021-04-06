@@ -30,6 +30,8 @@ https://keycode.info/
 https://regexr.com/
 https://devdocs.io/
 https://cheat.sh/
+https://pkg.go.dev/
+https://mholt.github.io/json-to-go/
 https://developers.google.com/speed/pagespeed/insights/
 https://ispravi.me/
 https://jezicna-pomoc.lss.hr/index.php?check

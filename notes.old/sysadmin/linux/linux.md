@@ -566,7 +566,6 @@ multiple services:
 	Restart=always
 	RestartSec=5
 	Environment="PASSWORD=xxxxxxxxxxxx"
-	WorkingDirectory=/home/bartol/bartol.dev
 	ExecStart=/home/bartol/bartol.dev/server.py
 
 	[Install]

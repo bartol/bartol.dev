@@ -61,12 +61,6 @@ add to {bash,zsh}rc
 this can destroy your data. use carefully
 
 	# dd if=/dev/sda of=~/disk.img
-# Create disk partition image
-
-this can destroy your data. use carefully
-
-	# dd if=/dev/sda1 of=~/partition.img
-
 # Decompress .gz file
 
 	$ gunzip file.gz
@@ -92,23 +86,6 @@ zsh:
 # Extract .zip file
 
 	$ unzip file.zip
-# Faster find
-
-	$ locate file
-# Find path to executable
-
-	$ command -v kak
-	/usr/bin/kak
-# Fix bluetooth adapter not recognized Ubuntu
-
-turn off pc, disconnect power cord, wait few seconds, plug power back in and turn on pc
-# Fix no bootable device on Acer eMMC laptop
-
-[post](http://www.slabbe.org/blogue/2018/05/installing-ubuntu-18.04-on-aspire-es-11-es1-132-c6lg/)
-
-[archived](https://web.archive.org/web/20200421055441/http://www.slabbe.org/blogue/2018/05/installing-ubuntu-18.04-on-aspire-es-11-es1-132-c6lg/)
-# Fix NTFS drive mount error
-
 # Flush Debian DNS cache
 
 	$ sudo systemd-resolve --flush-caches

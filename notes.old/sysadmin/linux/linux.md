@@ -218,14 +218,6 @@ or
 # Linux resize image
 
 	$ convert desktop.png -resize 800x[600] desktop2.png
-# Linux signals
-
-Simbol  | Number | Description
-------- | ------ | ----------------------------------------------
-SIGHUP  | 1      | Hangup - terminal turned off
-SIGINT  | 2      | Terminal interrupt - `Ctrl+C`
-SIGTERM | 15     | Terminate - administratively terminate process
-SIGKILL | 9      | Kill - terminate immediately
 # Linux switch user
 
 	$ su - bartol
@@ -264,24 +256,15 @@ encrypt:
 decrypt:
 
 	$ gpg file.gpg
-# Paste file to pastebin
-
-	$ pastebinit todo.txt
-# Power off PC for X minutes
-
-	# shutdown +10
 # Power off PC
 
-	# 
+	# shutdown
 # Pretend to be busy
 
 	$ while [ true ]; do head -n 100 /dev/urandom; sleep .1; done | hexdump -C | grep "ca fe"
 # Print file in reverse
 
 	$ tac todo.txt
-# Process tree
-
-	$ pstree
 # Redirect standard error to standard output
 
 	$ ls > file 2>&1
@@ -299,17 +282,11 @@ open `/etc/sudoers`
 
 append
 
-	bartol	ALL=(ALL) NOPASSWD:ALL
+	bdeak	ALL=(ALL) NOPASSWD:ALL
 # Rename user
 
 	$ sudo usermod -l <newuser> -d /home/<newuser> <olduser>
 	$ sudo groupmod -n <newgroup> <oldgroup>
-# Reset file mtime, atime and ctime
-
-	$ touch file.txt
-# Restart PC for X minutes
-
-	# shutdown -r +10
 # Restart PC
 
 	# shutdown -r now
@@ -328,9 +305,6 @@ this can destroy your data. use carefully
 
 	$ host bdeak.net
 	$ ^host^dig
-# Run spell checker on file
-
-	$ aspell check post.md
 # Save last command to file
 
 	$ echo "!!" > cmd.sh
@@ -345,20 +319,6 @@ this can destroy your data. use carefully
 	$ sudo shred -v -n1 /dev/sdX
 
 then open gparted and click: `Device` -> `Create partition table`
-# Setup dotfiles
-
-	$ git clone https://git.bdeak.net/config ~/dev/config.tmp
-	$ ~/dev/config.tmp/.local/bin/config-symlink ~/dev/config.tmp -b
-	$ git-clone config
-	$ config-symlink ~/dev/config -f
-	$ rm -rf ~/dev/config.tmp
-
-# Show partition table
-
-	# parted -l
-# Show running processes
-
-	$ ps ax
 # Show size of files and directories
 
 	$ ls | xargs du -sh
@@ -488,9 +448,6 @@ or
 or
 
 	$ netstat -u
-# View PC uptime
-
-	$ uptime
 # View process resource usage
 
 	$ time ls
@@ -518,19 +475,9 @@ only today's logs:
 multiple services:
 
 	journalctl -u nginx.service -u api.service --since today
-# View system memory usage
-
-	$ free -m | awk 'NR==2{printf "%d\n",$3*100/$2}'
-
-# View system's host name
-
-	$ hostname
 # View TCP traffic
 
 	# tcpdump
-# View weather info
-
-	$ curl wttr.in/<city>
 # Web server systemd service
 
 `/lib/systemd/system/name.service`
@@ -547,10 +494,6 @@ multiple services:
 
 	[Install]
 	WantedBy=multi-user.target
-# Wi-Fi analyzer
-
-	$ sudo apt install wavemon
-	$ wavemon
 # Write output to file with sudo
 
 	$ ls -la | sudo tee /etc/file

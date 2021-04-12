@@ -20,34 +20,13 @@
 
 [source](https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404)
 
-## Check if array contains
+## array contains
 
-	if (users.includes('b')) {
-		// ...
-	}
+	<arr>.includes(<val>)
 
-## Check if JavaScript array of objects contains
+## array of objects contains
 
-	if (users.some(u => u.name === 'b')) {
-		// ...
-	}
-
-## Check if string ends with
-
-	name.endsWith('b')
-	
-## Check if string starts with
-
-	name.startsWith('b')
-	
-## Check is string snake case
-
-	const re = /^([a-z]{1,})(_[a-z0-9]{1,})*$/;
-	const isSnakeCase = re.test(str)
-
-## Clear local storage
-
-	localStorage.clear()
+	<arr>.some(el => el.<key> === <val>)
 
 ## Generate random hex code
 
@@ -60,8 +39,6 @@
 ## Get current Unix timestamp
 
 	Math.round(new Date().getTime() / 1000)
-
-[source](https://stackoverflow.com/questions/11893083/convert-normal-date-to-unix-timestamp/11893157#11893157)
 
 ## Get current URL
 

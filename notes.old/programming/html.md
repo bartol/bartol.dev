@@ -1,24 +1,20 @@
 # HTML
 
-## Empty title
-
+empty title
 	<title>&lrm;</title>
 
-## Symbols
+symbols
 
-### Arrows
+arrows
+	&larr;
+	&rarr;
+	&uarr;
+	&darr;
 
-- `&larr;` (&larr;)
-- `&rarr;` (&rarr;)
-- `&uarr;` (&uarr;)
-- `&darr;` (&darr;)
-
-### Copyright
-
+copyright
 	&copy;
 
-### Multiplication sign
-
+multiplication sign
 	&times;
 
 ## Clock
@@ -157,21 +153,3 @@ js:
 	Disallow:
 
 or don't create it
-
-## Random libs
-
-### CKEditor set min height
-
-	.ck-editor__editable {
-		min-height: 400px;
-	}
-
-### Bootstrap masonry layout
-
-	<div class="card-columns">
-		<div class="card mb-3">
-			<a href="https://www.bdeak.net/files/artwork/logo.png">
-				<img src="https://www.bdeak.net/files/artwork/logo.png" width="100%">
-			</a>
-		</div>
-	</div>

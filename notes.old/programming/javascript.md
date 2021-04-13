@@ -142,94 +142,48 @@ or
 
 	const scrollTopMax = element.scrollHeight - element.clientHeight
 
-## Local storage get item
+local storage get item
 
 	localStorage.getItem('key')
 
-## Local storage remove item
+local storage remove item
 
 	localStorage.removeItem('key')
 	
-## Local storage set item
+local storage set item
 
 	localStorage.setItem('key', 'value')
-	
-## Make whole web page editable
 
-	document.designMode = 'on'
 
-## Node.js create directory if it doesn't exist
 
-	const fs = require('fs')
 
-	const createDirectoryIfItDoesntExist = directoryName => {
-		return !fs.existsSync(directoryName) ? fs.mkdirSync(directoryName) : undefined
-	}# Open .json file in Node
-
-	const json = require("file.json")
-
-or
-
-	const json = JSON.parse(fs.readFileSync("file.json", "utf8"))
-
-## Private property in package.json
-
-used to prevent accidental package publishing
-
-## Reload page
-
+html reload page
 	window.location.reload()
 
-hard reload
+array remove duplicates
+	[...new Set(arr)]
 
-	window.location.reload(true)# Remove duplicates array
+string replace substring
+	str.replace('old', 'new')
 
-	[...new Set(arr)]# Repeat string
-
-	'a'.repeat(3) // 'aaa'# Replace substring string
-
-	'hi world'.replace('hi', 'hello') // 'hello world'
-	
-## Reset HTML form state
-
+html form reset state
 	document.querySelector('form').reset()
 
-## Return object from arrow function
-
-	const arrowFunc = () => ({ user: 'b' })
-	
-## Reverse array
-
+array reverse
 	[...arr].reverse()
 
-## Reverse string
+string reverse
+	[...str].reverse().join('')
 
-	[...name].reverse().join('')
-	
-# Shuffle an array
-
+array shuffle
 	arr.sort(() => Math.random() - 0.5);
 
-## Split array in chunks
-
-	const chunkSize = 5
-	for (let i = 0; i < arr.length; i += chunkSize) {
+array split in chunks
+	const chunk_size = 10
+	for (let i = 0; i < arr.length; i += chunk_size) {
 		const chunk = arr.slice(i, i + chunk)
 		// ...
 	}
 
-## Trim string
-
-	'      hello world  '.trim()      // 'hello world'
-	'      hello world  '.trimStart() // 'hello world  '
-	'      hello world  '.trimEnd()   // '      hello world'# Use window object in Gatsby
-
-	if (typeof window !== 'undefined') {
-		// ...
-	}
-
-## Use window object in Next.js
-
-	if (process.browser) {
-		// ...
-	}
+string trim
+	str.trim()

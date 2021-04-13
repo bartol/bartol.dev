@@ -1,5 +1,3 @@
-move to linux.md
-
 # Find all empty directories
 
 	$ find / -type d -empty
@@ -61,19 +59,6 @@ or
 # List all files recursively
 
 	$ $ find . -type f
-# Rename files with editor
-
-You will first have to install [moreutils](https://joeyh.name/code/moreutils/).
-
-	$ vidir
-
-If you want to rename only specific file type:
-
-	$ vidir *.png
-
-And if you want to do it recursively:
-
-	$ find . -type f | vidir -
 # Run command on files in directory
 
 	$ find . -iname '*.py' -exec command {} \;

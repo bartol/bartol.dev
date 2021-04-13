@@ -1,4 +1,3 @@
-move to random
 # Windows 10 LTSC reduce telemetry
 
 1. `Win+R` -> `gpedit.msc`
@@ -6,6 +5,3 @@ move to random
 1. change state to `Enabled`
 1. select `0 - Security [Enterprise Only]` in options
 1. `Apply`
-# Windows server find LAN IP address
-
-	C:\> ipconfig

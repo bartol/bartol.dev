@@ -1,6 +1,5 @@
 # C
 
-
 ## Undefine symbolic constant
 
 	#undef NAME

@@ -1,10 +1,5 @@
 # Bash
 
-test and move to shell.md
-
-
-## Non-interactive
-
 ### All arguments
 
     $@
@@ -22,30 +17,6 @@ test and move to shell.md
 	case $1 in
 		hi|hello)
 			echo hi or hello
-		;;
-	esac
-
-# Case statement value ends with
-
-	case $1 in
-		*l)
-			echo ends with l
-		;;
-	esac
-
-# Bash case value includes
-
-	case $1 in
-		*t*)
-			echo includes t
-		;;
-	esac
-
-# Bash case value starts with
-
-	case $1 in
-		b*)
-			echo starts with b
 		;;
 	esac
 
@@ -95,26 +66,6 @@ test and move to shell.md
 	line 3
 	EOF
 
-# Bash number of arguments
-
-	$#
-
-# Bash print all aliases
-
-	$ alias
-
-# Bash create aliases
-
-	$ alias g="git"
-
-# Bash print all environment variables
-
-	$ env
-
-# Bash print all variables
-
-	$ set
-
 # Bash shebang
 
 	#!/usr/bin/env bash
@@ -158,23 +109,12 @@ test and move to shell.md
 		# ...
 	fi
 
-# Check if program exists
-
-	if command -v kak >/dev/null; then
-		# ...
-	fi
-
 # Multiple variable assignments from command output
 
 	read day month year <<< $(date +'%d %m %y')
-
 	echo $day
 	echo $month
 	echo $year
-
-# Run process in background
-
-	$ go run main.go &
 
 # Add directory to $PATH
 
@@ -182,14 +122,7 @@ add to {bash,zsh}rc
 
 	export PATH=~/.local/bin:$PATH
 
-
 ## Interactive
-
-### Case insensitive completion
-
-add to `~/.inputrc`
-
-	set completion-ignore-case on
 
 # Bash comment out line shortcut
 
@@ -214,7 +147,3 @@ add to `~/.inputrc`
 # Rerun last command
 
 	$ !!
-
-# Run command without alias
-
-	$ \ls

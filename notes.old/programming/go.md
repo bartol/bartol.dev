@@ -68,7 +68,3 @@ add `github.com/metal3d/go-slugify` to imports
 		{{ template "item" . }}
 		{{ end }}
 	</ul>
-
-## JSON to Go struct
-
-<https://mholt.github.io/json-to-go/>

@@ -15,9 +15,17 @@ https://sharingbuttons.io/
 https://pkg.go.dev/
 https://devdocs.io/
 https://mholt.github.io/json-to-go/
-https://developers.google.com/speed/pagespeed/insights/
 https://cheat.sh/
 https://regexr.com/
+https://validator.w3.org/
+https://validator.w3.org/checklink
+
+:: seo
+https://keywordshitter.com/
+https://developers.google.com/speed/pagespeed/insights/
+https://search.google.com/test/mobile-friendly
+https://ahrefs.com/free-seo-tools
+https://trends.google.com/trends/?geo=HR
 
 :: libraries
 https://necolas.github.io/normalize.css/
@@ -26,6 +34,7 @@ https://slideout.js.org/
 https://quilljs.com/
 https://joshuajohnson.co.uk/Choices/
 https://bevacqua.github.io/rome/
+https://frappe.io/datatable
 
 :: apis
 https://icanhazip.com/

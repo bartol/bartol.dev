@@ -9,6 +9,7 @@ https://www.random.org/
 http://libgen.rs/
 https://podbay.fm/
 https://speed.cloudflare.com/
+https://www.yr.no/en
 
 :: programming
 https://sharingbuttons.io/
@@ -22,6 +23,7 @@ https://validator.w3.org/checklink
 
 :: seo
 https://keywordshitter.com/
+https://backlinkshitter.com/
 https://developers.google.com/speed/pagespeed/insights/
 https://search.google.com/test/mobile-friendly
 https://ahrefs.com/free-seo-tools
@@ -50,10 +52,12 @@ https://svgsprit.es/
 https://abc.useallfive.com/
 https://fonts.google.com/
 https://feathericons.com/
+http://cryptoicons.co/
 https://ratiobuddy.com/
 https://larsenwork.com/easing-gradients/
 https://caniuse.com/
 https://www.caniemail.com/
+https://csslayout.io/patterns/
 
 :: sysadmin
 https://crontab.guru/

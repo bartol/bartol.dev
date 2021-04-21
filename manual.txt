@@ -169,9 +169,6 @@ cpu: mpstat 1 2 | awk 'END{printf "%d\n",100-$NF}'
 memory: free | awk 'NR==2{printf "%d\n",$3*100/$2}'
 disk: df | awk '$NF=="/"{printf "%d\n",$5}'
 
-sources:
-- http://cb.vu/unixtoolbox.xhtml
-
 git
 ===
 

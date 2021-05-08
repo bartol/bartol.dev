@@ -7,19 +7,20 @@ https://pastebin.com/
 https://www.online-convert.com/
 https://www.random.org/
 http://libgen.rs/
+https://1337x.to/
 https://podbay.fm/
 https://speed.cloudflare.com/
 https://www.yr.no/en
+https://tineye.com/
 
 :: programming
 https://sharingbuttons.io/
 https://pkg.go.dev/
-https://devdocs.io/
 https://mholt.github.io/json-to-go/
-https://cheat.sh/
 https://regexr.com/
 https://validator.w3.org/
 https://validator.w3.org/checklink
+https://jonassebastianohlsson.com/criticalpathcssgenerator/
 
 :: seo
 https://keywordshitter.com/
@@ -67,6 +68,9 @@ https://fakeupdate.net/
 :: crypto
 https://www.coingecko.com/
 https://thecoinperspective.com/
+https://coinmarketcal.com/
+https://www.blockchaincenter.net/altcoin-season-index/
+https://www.multicoincharts.com/
 
 :: writing
 https://ispravi.me/

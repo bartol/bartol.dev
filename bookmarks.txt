@@ -82,3 +82,10 @@ https://www.flightradar24.com/
 https://www.lightningmaps.org/
 https://www.vesselfinder.com/
 https://sudreg.pravosudje.hr/registar/
+
+:: browser extensions
+https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/
+https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
+https://chrome.google.com/webstore/detail/keywords-everywhere-keywo/hbapdpeemoojbophdfndmlgdhppljgmp
+https://chrome.google.com/webstore/detail/keyword-surfer/bafijghppfhdpldihckdcadbcobikaca

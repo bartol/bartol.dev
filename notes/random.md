@@ -198,12 +198,6 @@ force record update:
 
 	javascript: window.location = "https://news.ycombinator.com/submitlink?u=" + encodeURIComponent(document.location) + "&t=" + encodeURIComponent(document.title)
 
-## browser extensions
-
-- [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
-- [KeePassXC-Browser](https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/)
-- [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
-
 ### uBlock Origin
 
 #### remove youtube distractions

@@ -172,14 +172,11 @@ disk: df | awk '$NF=="/"{printf "%d\n",$5}'
 git
 ===
 
-postgresql
-==========
+sqlite
+======
 
 c
 =
-
-php
-===
 
 shell
 =====
@@ -192,6 +189,62 @@ go
 
 vim
 ===
+
+"0p                                     paste last yanked text
+a                                       switch to insert mode after cursor
+A                                       switch to insert mode on end of line
+b                                       move cursor word back
+caw                                     replace word
+cc                                      replace line
+:%ce                                    center align text
+<c-p>                                   autocomplete word
+<c-r>                                   redo
+<c-V>                                   select block
+daw                                     delete word
+dd                                      delete line
+e                                       move cursor to end of word forward
+F                                       move to char back in line
+f                                       move to char forward in line
+G                                       bottom of document
+ge                                      move cursor to end of word back
+gg                                      top of document
+h                                       left
+i                                       switch to insert mode
+I                                       switch to insert mode on start of line
+j                                       down
+k                                       up
+:%le                                    left align text
+l                                       right
+:!ls                                    run shell command
+mx                                      mark location x
+O                                       insert line above
+o                                       insert line below
+p                                       paste
+P                                       paste before
+:%ri                                    right align text
+:r!ls                                   insert shell command output
+r                                       replace under cursor
+s                                       delete and start insert under cursor
+T                                       move to before char back in line
+t                                       move to before char forward in line
+u                                       undo
+V                                       select line
+v                                       switch to visual mode
+w                                       move cursor word forward
+x                                       delete under cursor
+'x                                      go to marked location x
+:x                                      save file and quit
+yw                                      yank word
+yy                                      yank line
+zb                                      move screen so cursor is on bottom
+zt                                      move screen so cursor is on top
+zz                                      move screen so cursor is in center
+ZZ                                      save and quit
+ZQ                                      discard changes and quit
+H                                       move cursor to top of screen
+M                                       move cursor to center of screen
+L                                       move cursor to bottom of screen
+
 
 zsh
 ===

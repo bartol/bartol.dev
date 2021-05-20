@@ -6,12 +6,13 @@ http://bugmenot.com/
 https://pastebin.com/
 https://www.online-convert.com/
 https://www.random.org/
-http://libgen.rs/
+http://libgen.fun/
 https://1337x.to/
 https://podbay.fm/
 https://speed.cloudflare.com/
 https://www.yr.no/en
 https://tineye.com/
+https://musclewiki.com/
 
 :: programming
 https://sharingbuttons.io/

@@ -6,7 +6,7 @@ http://bugmenot.com/
 https://pastebin.com/
 https://www.online-convert.com/
 https://www.random.org/
-http://libgen.fun/
+http://libgen.rs/
 https://1337x.to/
 https://podbay.fm/
 https://speed.cloudflare.com/
@@ -72,6 +72,7 @@ https://thecoinperspective.com/
 https://coinmarketcal.com/
 https://www.blockchaincenter.net/altcoin-season-index/
 https://www.multicoincharts.com/
+https://moneroocean.stream/
 
 :: writing
 https://ispravi.me/

@@ -244,6 +244,8 @@ ZQ                                      discard changes and quit
 H                                       move cursor to top of screen
 M                                       move cursor to center of screen
 L                                       move cursor to bottom of screen
+<c-a>                                   increment number under cursor
+<c-x>                                   decrement number under cursor
 
 
 zsh

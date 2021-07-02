@@ -1,0 +1,6 @@
+t() { cd $(mktemp -d /tmp/dir.XXXXX) } # tmp dir
+s() { cp $1{,.$(date +%Y-%m-%d)} } # snapshot file
+
+export EDITOR=vim
+export GOPATH=~/.go
+export PATH=~/.go/bin:$PATH

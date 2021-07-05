@@ -1,93 +1,106 @@
-:: general
-https://send.vis.ee/
-https://temp-mail.org/
-https://www.receivesms.co/
-http://bugmenot.com/
-https://pastebin.com/
-https://www.online-convert.com/
-https://www.random.org/
-http://libgen.rs/
-https://1337x.to/
-https://podbay.fm/
-https://speed.cloudflare.com/
-https://www.yr.no/en
-https://tineye.com/
-https://musclewiki.com/
+general
 
-:: programming
-https://sharingbuttons.io/
-https://pkg.go.dev/
-https://mholt.github.io/json-to-go/
-https://regexr.com/
-https://validator.w3.org/
-https://validator.w3.org/checklink
-https://jonassebastianohlsson.com/criticalpathcssgenerator/
+	https://send.vis.ee/
+	https://pastebin.com/
+	https://www.dispostable.com/
+	https://getnada.com/
+	https://www.online-convert.com/
+	https://www.random.org/
+	https://podbay.fm/
+	https://www.yr.no/en
+	https://musclewiki.com/
+	https://speed.cloudflare.com/
+	https://duckduckgo.com/
+	https://tineye.com/
+	https://haveibeenpwned.com/
+	https://mullvad.net/en/ (*$)
 
-:: seo
-https://keywordshitter.com/
-https://backlinkshitter.com/
-https://developers.google.com/speed/pagespeed/insights/
-https://search.google.com/test/mobile-friendly
-https://ahrefs.com/free-seo-tools
-https://trends.google.com/trends/?geo=HR
+programming
 
-:: libraries
-https://necolas.github.io/normalize.css/
-https://plyr.io/
-https://slideout.js.org/
-https://quilljs.com/
-https://joshuajohnson.co.uk/Choices/
-https://bevacqua.github.io/rome/
-https://frappe.io/datatable
+	https://sourcehut.org/ (*)
+	https://validator.w3.org/
+	https://validator.w3.org/checklink
+	https://jonassebastianohlsson.com/criticalpathcssgenerator/
+	https://regexr.com/
+	https://pkg.go.dev/
+	https://mholt.github.io/json-to-go/
+	https://sharingbuttons.io/
+	libraries
+		https://github.com/kyleconroy/sqlc
+		https://swiperjs.com/
+		https://plyr.io/
+		https://slideout.js.org/
+		https://quilljs.com/
+		https://bevacqua.github.io/rome/
+		https://github.com/Choices-js/Choices
+	apis
+		https://icanhazip.com/
+		https://resmush.it/
+		https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
 
-:: apis
-https://icanhazip.com/
-https://resmush.it/
-https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
+sysadmin
 
-:: design
-https://www.photopea.com/
-https://unsplash.com/
-https://squoosh.app/
-https://jakearchibald.github.io/svgomg/
-https://svgsprit.es/
-https://abc.useallfive.com/
-https://fonts.google.com/
-https://feathericons.com/
-http://cryptoicons.co/
-https://ratiobuddy.com/
-https://larsenwork.com/easing-gradients/
-https://caniuse.com/
-https://www.caniemail.com/
-https://csslayout.io/patterns/
+	https://crontab.guru/
+	https://dnstools.ws/
+	https://fakeupdate.net/
+	https://downforeveryoneorjustme.com/
 
-:: sysadmin
-https://crontab.guru/
-https://dnstools.ws/
-https://fakeupdate.net/
+design
 
-:: crypto
-https://www.coingecko.com/
-https://thecoinperspective.com/
-https://coinmarketcal.com/
-https://www.blockchaincenter.net/altcoin-season-index/
-https://www.multicoincharts.com/
-https://moneroocean.stream/
+	https://www.photopea.com/
+	https://unsplash.com/
+	https://squoosh.app/
+	https://jakearchibald.github.io/svgomg/
+	https://svgsprit.es/
+	https://abc.useallfive.com/
+	https://fonts.google.com/
+	https://feathericons.com/
+	http://cryptoicons.co/
+	https://ratiobuddy.com/
+	https://larsenwork.com/easing-gradients/
+	https://caniuse.com/
+	https://www.caniemail.com/
+	https://csslayout.io/patterns/
+	libraries
+		https://tachyons.io/
+		https://necolas.github.io/normalize.css/
 
-:: writing
-https://ispravi.me/
-https://jezicna-pomoc.lss.hr/index.php?check
-https://translate.google.com/
+seo
+	https://keywordshitter.com/
+	https://backlinkshitter.com/
+	https://developers.google.com/speed/pagespeed/insights/
+	https://search.google.com/test/mobile-friendly
+	https://trends.google.com/trends/?geo=HR
+	https://ahrefs.com/ (*$)
+	browser extensions
+		https://chrome.google.com/webstore/detail/keywords-everywhere-keywo/hbapdpeemoojbophdfndmlgdhppljgmp
+		https://chrome.google.com/webstore/detail/keyword-surfer/bafijghppfhdpldihckdcadbcobikaca
 
-:: data
-https://www.flightradar24.com/
-https://www.lightningmaps.org/
-https://www.vesselfinder.com/
-https://sudreg.pravosudje.hr/registar/
+writing
 
-:: browser extensions
-https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
-https://addons.mozilla.org/en-US/firefox/addon/https-everywhere/
-https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
-https://chrome.google.com/webstore/detail/keywords-everywhere-keywo/hbapdpeemoojbophdfndmlgdhppljgmp
-https://chrome.google.com/webstore/detail/keyword-surfer/bafijghppfhdpldihckdcadbcobikaca
+	https://ispravi.me/
+	https://jezicna-pomoc.lss.hr/index.php?check
+	https://translate.google.com/
+
+crypto
+
+	https://www.coingecko.com/
+	https://thecoinperspective.com/
+	https://moneroocean.stream/
+
+piracy
+
+	http://libgen.rs/
+	https://1337x.to/
+	https://himovies.to/
+	https://e-rock.ru/ (*)
+	https://www.warezhr.org/ (*)
+	https://hrti.hrt.hr/ (*)
+
+browser extensions
+
+	https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+	https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
+
+* - requires login
+$ - not free

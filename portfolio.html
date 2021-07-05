@@ -16,8 +16,8 @@
 		<div>
 			<a href="mailto:b@bdeak.net">b@bdeak.net</a>
 			<a href="/cv.pdf" target="_blank">cv</a>
-			<a href="https://github.com/bartol" target="_blank">github</a>
-			<a href="https://git.sr.ht/~bd" target="_blank">sourcehut</a>
+			<a href="https://github.com/bdeak4" target="_blank">github</a>
+			<a href="/hr">hrvatski</a>
 		</div>
 	</header>
 	<h2 class="title">Previous work</h2>
@@ -164,12 +164,17 @@
 			<a href="/" target="_blank">plausible</a>
 			<a href="/" target="_blank">chatwoot</a>
 		</div>-->
+		<!--
 		<div>
 			<a href="/" target="_blank">xmr</a>
 			<a href="/" target="_blank">btc</a>
 			<a href="/" target="_blank">eth</a>
 			<a href="/" target="_blank">nano</a>
 			<a href="/" target="_blank">ada</a>
+		</div>
+		-->
+		<div>
+			<a href="/" target="_blank">payment</a>
 		</div>
 		<div class="copy">&copy; 2021 Bartol Deak</div>
 	</footer>
@@ -178,7 +183,7 @@
 			const imgs = el.parentElement.previousElementSibling
 			const selected_img = imgs.querySelector("a[style=\"display: initial;\"]")
 			let prev_img = selected_img.previousElementSibling
-			if (prev_img === null) { prev_img = imgs.lastElementChild }
+			if (prev_img === null) prev_img = imgs.lastElementChild
 			selected_img.style.display = "none"
 			prev_img.style.display = "initial"
 			return false
@@ -187,7 +192,7 @@
 			const imgs = el.parentElement.previousElementSibling
 			const selected_img = imgs.querySelector("a[style=\"display: initial;\"]")
 			let next_img = selected_img.nextElementSibling
-			if (next_img === null) { next_img = imgs.firstElementChild }
+			if (next_img === null) next_img = imgs.firstElementChild
 			selected_img.style.display = "none"
 			next_img.style.display = "initial"
 			return false

@@ -246,6 +246,12 @@ M                                       move cursor to center of screen
 L                                       move cursor to bottom of screen
 <c-a>                                   increment number under cursor
 <c-x>                                   decrement number under cursor
+gU                                      convert to uppercase
+gu                                      convert to lowercase
+:only                                   close all other windows except current
+:browse oldfiles                        browse files opened in recent sessions
+<C-^>                                   alternative file
+<C-w>=                                  resize all windows to equal size
 
 
 zsh

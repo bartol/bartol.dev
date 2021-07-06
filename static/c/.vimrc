@@ -1,6 +1,6 @@
-set hls ic cc=80 ar
+syn on
+set ic ar cc=80
 set list lcs=tab:>\ ,trail:-,nbsp:+
-nmap <leader>b :ls<cr>:b<space>
-nmap <leader>p :reg<cr>:norm "p<left>
 cmap w!! w !sudo tee % > /dev/null
 au BufWritePost *.go :sil !goimports -w %
+au BufWritePost *.py :sil !black -ql 80 %
